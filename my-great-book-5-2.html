@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Measure spaces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="my-great-book-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book-5.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="my-great-book-5-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">1.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-on-beyond.html" class="internal"><span class="codenumber">1.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="my-great-book-5.html" class="internal"><span class="codenumber">2</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="my-great-book-5-2.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="my-great-book-5-3.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="my-great-book-5-4.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Constructing measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="my-great-book-5-2"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measure spaces</span>
+</h2>
+<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec:, construction" missing or not unique]</code><span class="process-math">\(X\)</span><span class="process-math">\(X\text{,}\)</span><article class="definition definition-like" id="my-great-book-5-2-5"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="my-great-book-5-2-5-1">
+<div class="para"> Let <span class="process-math">\(X\)</span> be a non-empty set, and let <span class="process-math">\(\mathcal{P}(X)\)</span> be the power set of <span class="process-math">\(X\text{.}\)</span> A collection of sets <span class="process-math">\(\mathcal{M} \subseteq \mathcal{P}(X)\)</span> is a \emph{<span class="process-math">\(\sigma\)</span>-algebra}\footnote{The suffix `<span class="process-math">\(\sigma\)</span>-’ is usually used to denote a countably infinite version of whatever word comes after the `<span class="process-math">\(\sigma\)</span>-’. With that information you can probably infer what an \emph{algebra of sets} is.} if</div>
+<ol class="decimal" id="my-great-book-5-2-5-1-9">
+<li id="my-great-book-5-2-5-1-9-1">
+<div class="para" id="my-great-book-5-2-5-1-9-1-1">
+<span class="process-math">\(\emptyset \in \mathcal{M}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-5-1-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#my-great-book-5-2-5-1-9-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-5-1-9-2">
+<div class="para" id="my-great-book-5-2-5-1-9-2-1">if <span class="process-math">\(A \in \mathcal{M}\)</span> then <span class="process-math">\(A^c = X\backslash A \in \mathcal{M}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-5-1-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#my-great-book-5-2-5-1-9-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-5-1-9-3">
+<div class="para" id="my-great-book-5-2-5-1-9-3-1">if <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> is a countable collection of sets in <span class="process-math">\(\mathcal{M}\text{,}\)</span> then <span class="process-math">\(\bigcup_{n=1}^\infty A_n \in \mathcal{M}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-5-1-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#my-great-book-5-2-5-1-9-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.1"><a href="#my-great-book-5-2-5" title="Copy heading and permalink for Definition 2.1.1" aria-label="Copy heading and permalink for Definition 2.1.1">🔗</a></div></article><article class="definition definition-like" id="my-great-book-5-2-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-6-1"> Let <span class="process-math">\(X\)</span> be a non-empty set, and let <span class="process-math">\(\mathcal{M}\)</span> be a <span class="process-math">\(\sigma\)</span>-algebra of subsets of <span class="process-math">\(X\text{.}\)</span> The pair <span class="process-math">\((X, \mathcal{M})\)</span> is called a \emph{measurable space}.\index{measurable space}<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.2"><a href="#my-great-book-5-2-6" title="Copy heading and permalink for Definition 2.1.2" aria-label="Copy heading and permalink for Definition 2.1.2">🔗</a></div></article><div class="para" id="my-great-book-5-2-7">We record some basic properties of <span class="process-math">\(\sigma\)</span>-algebras which we will need frequently.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="my-great-book-5-2-8"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="my-great-book-5-2-8-1">
+<div class="para"> Let <span class="process-math">\((X,\mathcal{M})\)</span> be a measurable space. Then</div>
+<ol class="decimal" id="my-great-book-5-2-8-1-3">
+<li id="my-great-book-5-2-8-1-3-1">
+<div class="para" id="my-great-book-5-2-8-1-3-1-1">
+<span class="process-math">\(X \in \mathcal{M}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-8-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#my-great-book-5-2-8-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-8-1-3-2">
+<div class="para logical" id="my-great-book-5-2-8-1-3-2-1">
+<div class="para">
+<span class="process-math">\(\mathcal{M}\)</span> is closed under countable intersections, i.e. if <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> then</div>
+<div class="displaymath process-math" id="my-great-book-5-2-8-1-3-2-1-3">
+\begin{equation*}
+\bigcap_{n=1}^\infty A_n \in \mathcal{M};
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-8-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#my-great-book-5-2-8-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-8-1-3-3">
+<div class="para" id="my-great-book-5-2-8-1-3-3-1">
+<span class="process-math">\(\mathcal{M}\)</span> is closed under finite unions and finite intersections;<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-8-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#my-great-book-5-2-8-1-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-8-1-3-4">
+<div class="para" id="my-great-book-5-2-8-1-3-4-1">if <span class="process-math">\(A,B \in \mathcal{M}\)</span> then <span class="process-math">\(A\backslash B \in M\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-8-1-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#my-great-book-5-2-8-1-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.1.3"><a href="#my-great-book-5-2-8" title="Copy heading and permalink for Proposition 2.1.3" aria-label="Copy heading and permalink for Proposition 2.1.3">🔗</a></div></article><details id="my-great-book-5-2-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="my-great-book-5-2-9-1">SInce <span class="process-math">\(\emptyset^c = X\text{,}\)</span> it follows from conditions (i) and (ii) of Definition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:, sigma-alg" missing or not unique]</code>, that <span class="process-math">\(X \in \mathcal{M}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="my-great-book-5-2-9-2">
+<div class="para">Let <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> is a countable collection sets in <span class="process-math">\(\mathcal{M}\text{.}\)</span> Then, it follows from conditions (ii) and (iii) of Definition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:, sigma-alg" missing or not unique]</code>  the <span class="process-math">\(\bigcup_n A_n^c \in \mathcal{M}\text{.}\)</span> Using De Morgan’s Identity, and condition (ii) again, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="my-great-book-5-2-9-2-5">
+\begin{equation*}
+\bigcap_{n=1}^\infty A_n = X \left[\backslash \bigcup_{n=1}^\infty A_n^c\right] \in \mathcal{M}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="my-great-book-5-2-9-3">
+<div class="para">Suppose <span class="process-math">\(A_1, \ldots, A_k\)</span> is a finite collection of sets in <span class="process-math">\(\mathcal{M}\text{.}\)</span> For <span class="process-math">\(n &gt;k\text{,}\)</span> let <span class="process-math">\(A_n = \emptyset\text{.}\)</span> Then, by condition (i) of Defintion~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:, sigma-alg" missing or not unique]</code>, <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> is a countable collection of subsets in <span class="process-math">\(\mathcal{M}\text{.}\)</span> By condition (iii),</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="my-great-book-5-2-9-3-8">
+\begin{equation*}
+\bigcup_{n=1}^k A_n = \bigcup_{n=1}^\infty A_n \in \mathcal{M}.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\mathcal{M}\)</span> is also closed under finite unions. Similarly, we can show that <span class="process-math">\(\bigcap_{n=1}^k A_n \in \mathcal{M}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="my-great-book-5-2-9-4">
+<div class="para">Finally, take <span class="process-math">\(A, B \in \mathcal{M}\text{.}\)</span> Note</div>
+<div class="displaymath process-math" id="my-great-book-5-2-9-4-2">
+\begin{equation*}
+A\backslash B = A \cap B^c.
+\end{equation*}
+</div>
+<div class="para">As <span class="process-math">\(\mathcal{M}\)</span> is closed under complements and finite intersections, it follows that <span class="process-math">\(A \backslash B\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.1"><a href="#my-great-book-5-2-9" title="Copy heading and permalink for Proof 2.1.1" aria-label="Copy heading and permalink for Proof 2.1.1">🔗</a></div></article></details><details id="my-great-book-5-2-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="my-great-book-5-2-10-1"> Let <span class="process-math">\(X\)</span> be a non-empty set, and let <span class="process-math">\(\mathcal{P}(X)\)</span> be the power-set of subsets of <span class="process-math">\(X\text{.}\)</span> Then <span class="process-math">\(\mathcal{P}(X)\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra, and thus <span class="process-math">\((X, \mathcal{P}(X))\)</span> is a measurable space.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.4"><a href="#my-great-book-5-2-10" title="Copy heading and permalink for Example 2.1.4" aria-label="Copy heading and permalink for Example 2.1.4">🔗</a></div></article></details><div class="para" id="my-great-book-5-2-11">There are occasions when we will consider measurable spaces of the form <span class="process-math">\((X,\mathcal{P}(X))\text{,}\)</span> (particularly if <span class="process-math">\(X\)</span> is countable). However, in most cases we will consider <span class="process-math">\(\sigma\)</span>-algebras which are strictly contained in <span class="process-math">\(\mathcal{P}(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="my-great-book-5-2-12"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-12-1"> Let <span class="process-math">\(X\)</span> be a non-empty set. Let <span class="process-math">\(\mathcal{S} \subseteq \mathcal{P}(X)\)</span> be a non-empty collection of sets. Then there is a unique <span class="process-math">\(\sigma\)</span>-algebra <span class="process-math">\(\mathcal{M}\)</span> such that <span class="process-math">\(\mathcal{S} \subseteq \mathcal{M}\text{,}\)</span> and if <span class="process-math">\(\mathcal{N}\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{S}\text{,}\)</span> then <span class="process-math">\(\mathcal{M} \subseteq \mathcal{N}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-12-2">That is, there is a unique smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{S}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.1.5"><a href="#my-great-book-5-2-12" title="Copy heading and permalink for Proposition 2.1.5" aria-label="Copy heading and permalink for Proposition 2.1.5">🔗</a></div></article><details id="my-great-book-5-2-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="my-great-book-5-2-13-1">
+<div class="para">Let <span class="process-math">\(Z\)</span> be the collection of all <span class="process-math">\(\sigma\)</span>-algebras of <span class="process-math">\(X\)</span> that contain <span class="process-math">\(\mathcal{S}\text{.}\)</span> Note that <span class="process-math">\(Z\)</span> is non-empty, as <span class="process-math">\(\mathcal{P}(X) \in Z\text{.}\)</span> Let</div>
+<div class="displaymath process-math" id="my-great-book-5-2-13-1-7">
+\begin{equation*}
+\mathcal{M} = \bigcap_{\mathcal{N} \in Z} \mathcal{N}. 
+\end{equation*}
+</div>
+<div class="para">That <span class="process-math">\(\mathcal{M}\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra with the desired properties follows readily.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.2"><a href="#my-great-book-5-2-13" title="Copy heading and permalink for Proof 2.1.2" aria-label="Copy heading and permalink for Proof 2.1.2">🔗</a></div></article></details><article class="definition definition-like" id="my-great-book-5-2-14"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-14-1">Let <span class="process-math">\(X\)</span> be a non-empty set, and let <span class="process-math">\(\mathcal{S} \subseteq \mathcal{P}\)</span> be a non-empty collection of subsets of <span class="process-math">\(X\text{.}\)</span> Let <span class="process-math">\(\mathcal{M}\)</span> be the unique, smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{S}\)</span> (in the sense of Proposition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:, gen, sig-alg" missing or not unique]</code>). We call <span class="process-math">\(\mathcal{M}\)</span> the \emph{<span class="process-math">\(\sigma\)</span>-algebra generated by <span class="process-math">\(\mathcal{S}\text{.}\)</span>}<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.6"><a href="#my-great-book-5-2-14" title="Copy heading and permalink for Definition 2.1.6" aria-label="Copy heading and permalink for Definition 2.1.6">🔗</a></div></article><article class="definition definition-like" id="my-great-book-5-2-15"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-15-1"> Let <span class="process-math">\(X\)</span> be a topological space. Denote by <span class="process-math">\(\mathcal{B}(X)\)</span> the <span class="process-math">\(\sigma\)</span>-algebra generated by the open sets in <span class="process-math">\(X\text{.}\)</span> We call <span class="process-math">\(\mathcal{B}(X)\)</span> the \emph{Borel sets of <span class="process-math">\(X\)</span>}.\index{Borel sets} If <span class="process-math">\(A \in \mathcal{B}(X)\)</span> we say that <span class="process-math">\(A\)</span> is a \emph{Borel set in X}.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-15-2">When <span class="process-math">\(X = \mathbb{R}\text{,}\)</span> we will denote the Borel sets <span class="process-math">\(\mathcal{B}(\mathbb{R})\)</span> by <span class="process-math">\(\mathcal{B}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.7"><a href="#my-great-book-5-2-15" title="Copy heading and permalink for Definition 2.1.7" aria-label="Copy heading and permalink for Definition 2.1.7">🔗</a></div></article><article class="remark remark-like" id="my-great-book-5-2-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-16-1">Recall that every open set <span class="process-math">\(\mathcal{U} \subseteq \mathbb{R}\)</span> is a countable union of open intervals. Thus, the open sets in <span class="process-math">\(\mathbb{R}\)</span> are in the <span class="process-math">\(\sigma\)</span>-algebra generated by the open intervals. Hence, the Borel sets <span class="process-math">\(\mathcal{B}\)</span> is the <span class="process-math">\(\sigma\)</span>-algebra generated by the open intervals in <span class="process-math">\(\mathbb{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.8"><a href="#my-great-book-5-2-16" title="Copy heading and permalink for Remark 2.1.8" aria-label="Copy heading and permalink for Remark 2.1.8">🔗</a></div></article><div class="para" id="my-great-book-5-2-17">We will now (finally) give the definition of a measure and a measure space.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-5-2-18"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="my-great-book-5-2-18-1">
+<div class="para"> Let <span class="process-math">\((X,\mathcal{M})\)</span> be a measure space. A function <span class="process-math">\(\mu \colon \mathcal{M} \rightarrow [0,\infty]\)</span> is a \emph{measure}\index{measure} on <span class="process-math">\((X,\mathcal{M})\)</span> if</div>
+<ol class="decimal" id="my-great-book-5-2-18-1-5">
+<li id="my-great-book-5-2-18-1-5-1">
+<div class="para" id="my-great-book-5-2-18-1-5-1-1">
+<span class="process-math">\(\mu(\emptyset) = 0\text{;}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-18-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#my-great-book-5-2-18-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-18-1-5-2">
+<div class="para logical" id="my-great-book-5-2-18-1-5-2-1">
+<div class="para">if <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> is a countable collection of disjoint sets in <span class="process-math">\(\mathcal{M}\)</span> then</div>
+<div class="displaymath process-math" id="my-great-book-5-2-18-1-5-2-1-3">
+\begin{equation*}
+\mu\left( \bigcup_{n=1}^\infty A_n \right) = \sum_{n=1}^\infty \mu(A_n).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-18-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#my-great-book-5-2-18-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-18-2">If <span class="process-math">\(\mu\)</span> is a measure on a measurable space <span class="process-math">\((X,\mathcal{M})\text{,}\)</span> we call the triple <span class="process-math">\((X,\mathcal{M},\mu)\)</span> a \emph{measure space}. \index{measure space} The sets <span class="process-math">\(A \in \mathcal{M}\)</span> are called \emph{measurable sets}\index{measurable set} in the measure space <span class="process-math">\((X,\mathcal{M},\mu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.9"><a href="#my-great-book-5-2-18" title="Copy heading and permalink for Definition 2.1.9" aria-label="Copy heading and permalink for Definition 2.1.9">🔗</a></div></article><article class="remark remark-like" id="my-great-book-5-2-19"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-19-1">A function which satisfies condition (ii) in Definition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:, measure" missing or not unique]</code> is said to be \emph{countable additive on disjoint sets}\index{countable additivity}. This property is frequently abbreviated to simply \emph{`countably additive’}. We must be careful to remember that countable additivity only applies to \emph{disjoint} sets.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.10"><a href="#my-great-book-5-2-19" title="Copy heading and permalink for Remark 2.1.10" aria-label="Copy heading and permalink for Remark 2.1.10">🔗</a></div></article><div class="para" id="my-great-book-5-2-20">The condition of countable additivity implies finite additivity. If <span class="process-math">\(\{A_k\}_{k=1}^n\)</span> is a finite collection of disjoint sets in a <span class="process-math">\(\sigma\)</span>-algebra <span class="process-math">\(\mathcal{M}\text{,}\)</span> we can extend <span class="process-math">\(\{A_k\}_{k=1}^n\)</span> to a countably infinite collection <span class="process-math">\(\{A_k\}_{k=1}^\infty\)</span> by letting <span class="process-math">\(A_k = \emptyset\)</span> for <span class="process-math">\(k&gt;n\text{,}\)</span> as we did in Proposition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "prop:, sigma-alg, props" missing or not unique]</code>. Then, we have &amp;lt;md&amp;gt; \begin{aligned} \mu\left(\bigcup_{k=1}^n\right) &amp;amp;amp;= \mu\left(\bigcup_{k=1}^\infty\right) \\ &amp;amp;amp;= \sum_{k=1}^\infty \mu(A_k) \\ &amp;amp;amp;= \sum_{k=1}^n \mu(A_k). \end{aligned} &amp;lt;/md&amp;gt;<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-21">Note that the definition of a measure does not assume that <span class="process-math">\(\mu\)</span> only takes finite values, i.e. <span class="process-math">\(\mu(A) = \infty\)</span> is an allowed value, and there is no assumption that the series in condition (ii) of Definition~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def:, measure" missing or not unique]</code> are convergent. We use the usual rules of addition with <span class="process-math">\(\infty\)</span> and <span class="process-math">\(- \infty\text{:}\)</span> &amp;lt;md&amp;gt; \begin{aligned} \infty + x &amp;amp;amp;= \infty, \text{ for all }x \in \mathbb{R};\\ -\infty + x &amp;amp;amp;= -\infty, \text{ for all }x \in \mathbb{R};\\ \infty + \infty &amp;amp;amp;= \infty; \text{ and}\\ -\infty + (-\infty) &amp;amp;amp;= -\infty. \end{aligned} &amp;lt;/md&amp;gt; However, we must be careful to avoid <span class="process-math">\(-\infty + \infty\text{,}\)</span> as <span class="process-math">\(-\infty + \infty\)</span> is undefined.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-5-2-22"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="my-great-book-5-2-22-1">
+<div class="para">\index{measure space!sigma-finite@<span class="process-math">\(\sigma\)</span>-finite} A measure space <span class="process-math">\((X,\mathcal{M},\mu)\)</span> is <span class="process-math">\(\sigma\)</span>-finite if there is a countable collection of sets <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> in <span class="process-math">\(\mathcal{M}\)</span> such that</div>
+<ol class="decimal" id="my-great-book-5-2-22-1-6">
+<li id="my-great-book-5-2-22-1-6-1">
+<div class="para" id="my-great-book-5-2-22-1-6-1-1">
+<span class="process-math">\(\mu(A_n)&lt; \infty\)</span> for each <span class="process-math">\(n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-22-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#my-great-book-5-2-22-1-6-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="my-great-book-5-2-22-1-6-2">
+<div class="para" id="my-great-book-5-2-22-1-6-2-1">
+<span class="process-math">\(\displaystyle X = \bigcup_n^\infty A_n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-22-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#my-great-book-5-2-22-1-6-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="para">If <span class="process-math">\(\mu(X) &lt; \infty\)</span> then <span class="process-math">\((X,\mathcal{M},\mu)\)</span> is a \emph{finite measure space}.\index{measure space!finite}</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.11"><a href="#my-great-book-5-2-22" title="Copy heading and permalink for Definition 2.1.11" aria-label="Copy heading and permalink for Definition 2.1.11">🔗</a></div></article><article class="definition definition-like" id="my-great-book-5-2-23"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-23-1">A measure space <span class="process-math">\((X,\mathcal{M},\mu)\)</span> is \emph{complete} if, for each <span class="process-math">\(A \in \mathcal{M}\)</span> with <span class="process-math">\(\mu(A) = \emptyset\text{,}\)</span> if <span class="process-math">\(B \subseteq A\)</span> then <span class="process-math">\(B \in \mathcal{M}\text{.}\)</span>\index{measure space!complete}<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.12"><a href="#my-great-book-5-2-23" title="Copy heading and permalink for Definition 2.1.12" aria-label="Copy heading and permalink for Definition 2.1.12">🔗</a></div></article><article class="remark remark-like" id="my-great-book-5-2-24"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-24-1">We will pause here to assess where we are going. One of our main motivations for developing measure theory, as discussed in Sections~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec:, intro, ftoc" missing or not unique]</code>~and~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec:, int, lim, swap" missing or not unique]</code>, is to develop a theory of integration on the real line that is more robust than Riemann integration.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="my-great-book-5-2-24-2">
+<div class="para">For an interval <span class="process-math">\(I \subseteq \mathbb{R}\)</span> let <span class="process-math">\(\ell(I)\)</span> denote the length of <span class="process-math">\(I\text{.}\)</span> To form a Riemann sum for a function <span class="process-math">\(f\text{,}\)</span> we partition an interval <span class="process-math">\([a,b]\)</span> into subintervals</div>
+<div class="displaymath process-math" id="my-great-book-5-2-24-2-6">
+\begin{equation*}
+[a,b] = I_1 \cup \ldots\cup I_n 
+\end{equation*}
+</div>
+<div class="para">and the Riemann sum is given by</div>
+<div class="displaymath process-math" id="my-great-book-5-2-24-2-7">
+\begin{equation*}
+\sum_{i=1}^n f(x_i^*) \ell(I_i)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(x_i^*\)</span> is some element of <span class="process-math">\(I_i\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-24-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="my-great-book-5-2-24-3">
+<div class="para">The main idea of Lebesgue integration is to define a measure <span class="process-math">\(m\)</span> on (a <span class="process-math">\(\sigma\)</span>-algebra of) subsets of <span class="process-math">\(\mathbb{R}\text{,}\)</span> so that <span class="process-math">\(m(I) = \ell(I)\)</span> for intervals <span class="process-math">\(I\text{.}\)</span> With <span class="process-math">\(m\)</span> in hand, we can then decompose <span class="process-math">\([a,b]\)</span> using sets other than intervals. I.e., the idea is to use, instead of just Riemann sums, sums of the form</div>
+<div class="displaymath process-math" id="my-great-book-5-2-24-3-8">
+\begin{equation*}
+\sum_{i=1}^n f(x_i^*) m(E_i)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(x_i^* \in E_i\text{,}\)</span> and <span class="process-math">\(\{E_i\}_{i=1}^n\)</span> is a disjoint collection of measurable sets such that <span class="process-math">\(\bigcup_{i=1}^n E_i = [a,b]\text{.}\)</span> Broadening the scope of the sets we can `measure’, i.e. using <span class="process-math">\(m\)</span> to measure sets that are not necessarily intervals, we will develop a theory of integration stronger than Riemann integration.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-24-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-24-4">The exact definition of <span class="process-math">\(m\text{,}\)</span> and the <span class="process-math">\(\sigma\)</span>-algebra <span class="process-math">\(\mathcal{M}\)</span> it acts on, will have to wait until we have some more tools in our belt. We can see now, however, that if <span class="process-math">\(m\)</span> is to do what we want it to do, then <span class="process-math">\(\mathcal{M}\)</span> will have to contain all intervals in <span class="process-math">\(\mathbb{R}\)</span> (and hence <span class="process-math">\(\mathcal{M}\)</span> will have to contain all the Borel sets <span class="process-math">\(\mathcal{B}\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-24-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.13"><a href="#my-great-book-5-2-24" title="Copy heading and permalink for Remark 2.1.13" aria-label="Copy heading and permalink for Remark 2.1.13">🔗</a></div></article><details id="my-great-book-5-2-25" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="my-great-book-5-2-25-1">
+<div class="para"> Let <span class="process-math">\(X\)</span> be any non-empty set and let <span class="process-math">\(\mathcal{P}(X)\)</span> be the <span class="process-math">\(\sigma\)</span>-algebra of all subsets of <span class="process-math">\(X\text{.}\)</span> Define <span class="process-math">\(c \colon \mathcal{P}(X) \rightarrow [0,\infty]\)</span> by</div>
+<div class="displaymath process-math" id="my-great-book-5-2-25-1-7">
+\begin{equation*}
+c(A) = \infty
+\end{equation*}
+</div>
+<div class="para">if <span class="process-math">\(A\)</span> contains infinitely many elements, and <span class="process-math">\(c(A) = n\)</span> if <span class="process-math">\(A\)</span> has <span class="process-math">\(n\)</span> elements, for <span class="process-math">\(n\)</span> finite. Then <span class="process-math">\((X,\mathcal{P}(X),c)\)</span> is a measure space. We call <span class="process-math">\(c\)</span> the \emph{counting measure} on <span class="process-math">\(X\text{.}\)</span>\index{measure!counting measure}</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-25-2">The measure space <span class="process-math">\((X,\mathcal{P}(X),c)\)</span> is always complete; it is <span class="process-math">\(\sigma\)</span>-finite if and only if <span class="process-math">\(X\)</span> is countable; it is finite if and only if <span class="process-math">\(X\)</span> is finite.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.14"><a href="#my-great-book-5-2-25" title="Copy heading and permalink for Example 2.1.14" aria-label="Copy heading and permalink for Example 2.1.14">🔗</a></div></article></details><details id="my-great-book-5-2-26" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="my-great-book-5-2-26-1"> Let <span class="process-math">\((X,\mathcal{F})\)</span> be a measurable space. Fix <span class="process-math">\(x \in X\text{.}\)</span> Define <span class="process-math">\(\delta_x\)</span> on <span class="process-math">\(\mathcal{F}\)</span> by \index{measure!Dirac measure} \begin{equation*} \delta_x(A) = \begin{cases} 1 &amp;amp;\text{if }x \in A\\ 0 &amp;amp;\text{if }x \notin A\end{cases}. \end{equation*} Then <span class="process-math">\(\delta_x\)</span> is a measure on <span class="process-math">\((X,\mathcal{F})\)</span> called the \emph{Dirac measure at <span class="process-math">\(x\)</span>}.\index{measure!Dirac measure}<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.15"><a href="#my-great-book-5-2-26" title="Copy heading and permalink for Example 2.1.15" aria-label="Copy heading and permalink for Example 2.1.15">🔗</a></div></article></details><article class="definition definition-like" id="my-great-book-5-2-27"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-27-1"> Let <span class="process-math">\(X\)</span> be a topological space. A measure <span class="process-math">\(\mu\)</span> on the Borel sets <span class="process-math">\(\mathcal{B}(X)\)</span> is a \emph{Borel measure}\index{Borel measure} if <span class="process-math">\(\mu(K) &lt; \infty\)</span> for all compact subsets <span class="process-math">\(K \subseteq X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.16"><a href="#my-great-book-5-2-27" title="Copy heading and permalink for Definition 2.1.16" aria-label="Copy heading and permalink for Definition 2.1.16">🔗</a></div></article><div class="para" id="my-great-book-5-2-28">We will rarely want to define a measure on a set which does not have some natural topology on it. Indeed, most examples of measures that we will see will be Borel measures. The Dirac measure of Example~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exam:, dirac, measure" missing or not unique]</code> is Borel measure when <span class="process-math">\(X\)</span> is a topological space and <span class="process-math">\(\mathcal{F} = \mathcal{B}(X)\)</span> is the Borel sets (see Exercise~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:, dirac, meas" missing or not unique]</code>). Even the counting measure of Example~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exam:, counting" missing or not unique]</code> is a Borel measure if we endow <span class="process-math">\(X\)</span> with the discrete topology (see Exercise~<code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exer:, counting, Borel" missing or not unique]</code>).<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-29">Probability theory can be naturally described in terms of measure theory. Probability theory is a subject in its own right and has led to some differences in naming and notation conventions.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-5-2-30"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-30-1">A \emph{probability space}\index{probability space}\index{sample space|see{probability space}} is a finite measure space <span class="process-math">\((\Omega, \mathcal{F}, P)\)</span> where <span class="process-math">\(P(\Omega) = 1\text{.}\)</span> The measure <span class="process-math">\(P\)</span> is called a \emph{probability measure}. \index{measure!probability measure}<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.17"><a href="#my-great-book-5-2-30" title="Copy heading and permalink for Definition 2.1.17" aria-label="Copy heading and permalink for Definition 2.1.17">🔗</a></div></article><div class="para" id="my-great-book-5-2-31">We will forgo any further direct mention of probabilty theory until later,<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-32">though it has had an influence on some of the theory we will see along the way.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-5-2-33">We end this section with an important piece of verbiage.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-5-2-34"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-5-2-34-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space. A property <span class="process-math">\(P\)</span> is said to hold for \emph{almost all <span class="process-math">\(x\in X\)</span>}\index{almost all} (abbreviated as \emph{a.a.} <span class="process-math">\(x \in X\)</span>)\index{a.a.|see{almost all}} or \emph{almost everywhere}\index{almost everywhere} (abbreviate \emph{e.e.})\index{a.e.|see{almost everywhere}} if there is a measurable set <span class="process-math">\(E \subseteq X\)</span> with <span class="process-math">\(\mu(E) = 0\)</span> such that <span class="process-math">\(P\)</span> holds on <span class="process-math">\(X \backslash E\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-5-2-34-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.18"><a href="#my-great-book-5-2-34" title="Copy heading and permalink for Definition 2.1.18" aria-label="Copy heading and permalink for Definition 2.1.18">🔗</a></div></article><div class="autopermalink" data-description="Section 2.1: Measure spaces"><a href="#my-great-book-5-2" title="Copy heading and permalink for Section 2.1: Measure spaces" aria-label="Copy heading and permalink for Section 2.1: Measure spaces">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="my-great-book-5.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="my-great-book-5-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
