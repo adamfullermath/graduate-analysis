@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">In the proof of Lemma <a href="sec-nonmeasurable.html#lem-non-Borel" class="xref" data-knowl="./knowl/xref/lem-non-Borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.2.7">Lemma 5.2.7</a>, we prove the existence of a non-Lebesgue measurable set <span class="process-math">\(B \subseteq [0,2]\)</span> and a bijective continuous function <span class="process-math">\(f\colon [0,2] \rightarrow [0,1]\)</span> such that <span class="process-math">\(f(B)\)</span> is Lebesgue measurable. By a simple adjustment, we can assume that <span class="process-math">\(f(B) \subseteq (0,1).\)</span> We extend <span class="process-math">\(f\)</span> to a continuous function on all of <span class="process-math">\(\mathbb{R}\)</span> by setting <span class="process-math">\(f(x) = 1\)</span> for <span class="process-math">\(x \geq 2\)</span> and <span class="process-math">\(f(x) = 0\)</span> for <span class="process-math">\(x \leq 0\text{.}\)</span> Let <span class="process-math">\(A = f(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-comp-not-meas-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Consider the measure space <span class="process-math">\((\mathbb{R},\mathcal{M})\text{,}\)</span> where <span class="process-math">\(\mathcal{M}\)</span> is all Lebesgue measurable sets in <span class="process-math">\(\mathbb{R}\text{.}\)</span> The function <span class="process-math">\(\chi_A\)</span> is a measurable function since <span class="process-math">\(A\)</span> is measurable, Exercise <a href="chap-meas-fun-5.html#exer-char-measurable" class="xref" data-knowl="./knowl/xref/exer-char-measurable.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.3.3">Exercise 7.3.3</a>, and <span class="process-math">\(f\)</span> is measurable since it is continuous, Proposition <a href="chap-meas-fun-3.html#cor-Cont-are-meas" class="xref" data-knowl="./knowl/xref/cor-Cont-are-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.1.5">Corollary 7.1.5</a>. However the function <span class="process-math">\(g = \chi_A \circ f\)</span> is not measurable. Indeed<div class="autopermalink" data-description="Paragraph"><a href="#ex-comp-not-meas-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-non-Borel.html ./knowl/xref/exer-char-measurable.html ./knowl/xref/cor-Cont-are-meas.html">
+\begin{equation*}
+\begin{aligned}
+\{x \in \mathbb{R} \colon g(x) &gt; 0 \} &amp;= \{x \in \mathbb{R} \colon \chi_A(f(x)) &gt;0 \} \\
+&amp;= \{x \in \mathbb{R} \colon f(x) \in A\} \\
+&amp;= B,
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">is not Lebesgue measurable, and hence <span class="process-math">\(g\)</span> is not a measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#ex-comp-not-meas-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 7.1.14"><a href="#ex-comp-not-meas" title="Copy heading and permalink for Example 7.1.14" aria-label="Copy heading and permalink for Example 7.1.14">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-meas-fun-3.html#ex-comp-not-meas">in-context</a></span>
+</body>
+</html>

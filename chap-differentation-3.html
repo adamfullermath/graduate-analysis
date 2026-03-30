@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Radon-Nikodym Theorem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chap-differentation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-differentation.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap-differentation-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">3</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">3.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">4</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">5</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">6</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">7</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">8</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">9</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">9.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">10</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="codenumber">10.2.1</span> <span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">11</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">A</span> <span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.12.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="codenumber">A.12.1.1</span> <span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="codenumber">A.12.1.2</span> <span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.12.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="codenumber">A.12.2.1</span> <span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="codenumber">A.12.2.2</span> <span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.12.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="codenumber">A.12.3.1</span> <span class="title">Volterra’s function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#sec-diff-bounded-4" class="internal"><span class="codenumber">A.12.3.2</span> <span class="title">Simpler example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chap-differentation-3"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Radon-Nikodym Theorem</span>
+</h2>
+<div class="para" id="chap-differentation-3-2">In Exercise <a href="chap-integration-6.html#exer-integration-measure" class="xref" data-knowl="./knowl/xref/exer-integration-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.4.8">Exercise 8.4.8</a> we saw how integration against a non-negative measurable function with respect to a measure <span class="process-math">\(\mu\)</span> gave gives rise to a new measure <span class="process-math">\(\nu\text{.}\)</span> In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-3">We begin by recalling the definition of mutually singular measures, and extending this definition to signed-measures.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap-differentation-3-4"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-3-4-1">Let <span class="process-math">\((X,\mathcal{F})\)</span> be a measurable space, and let <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> be two signed-measures on <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> The measures <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are <em class="emphasis">mutually singular</em>, denoted <span class="process-math">\(\mu \perp \nu\text{,}\)</span> if there are disjoint measurable sets <span class="process-math">\(A,B \subseteq X\)</span> with <span class="process-math">\(A \cup B = X\)</span> such that <span class="process-math">\(A\)</span> is a null set for <span class="process-math">\(\mu\text{,}\)</span> and <span class="process-math">\(B\)</span> is a null set for <span class="process-math">\(\nu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.1.1"><a href="#chap-differentation-3-4" title="Copy heading and permalink for Definition 9.1.1" aria-label="Copy heading and permalink for Definition 9.1.1">🔗</a></div></article><details id="ex-Cantor-Lebesgue-not-abs-cont" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-Cantor-Lebesgue-not-abs-cont-1">Let <span class="process-math">\(\varphi\)</span> be the Cantor-Lebesgue function on <span class="process-math">\([0,1]\text{,}\)</span> let <span class="process-math">\(C\)</span> be the Cantor set in <span class="process-math">\([0,1]\)</span> and let <span class="process-math">\(U = [0,1]\backslash U\text{.}\)</span> Let <span class="process-math">\(\nu\)</span> be the Borel measure on <span class="process-math">\([0,1]\)</span> which is the Carathéodory extension of the premeasure<div class="autopermalink" data-description="Paragraph"><a href="#ex-Cantor-Lebesgue-not-abs-cont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cantor.html ./knowl/xref/exer-cant-len-func-singular.html" id="ex-Cantor-Lebesgue-not-abs-cont-2">
+\begin{equation*}
+\nu((a,b]) = \varphi(b) - \varphi(a), \ \nu(\{0\}) = 0.
+\end{equation*}
+</div>
+<div class="para" id="ex-Cantor-Lebesgue-not-abs-cont-3">By Example <a href="sec-nonmeasurable.html#ex-Cantor" class="xref" data-knowl="./knowl/xref/ex-Cantor.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.3">Example 5.2.3</a>, <span class="process-math">\(m(C) = 0\)</span> and <span class="process-math">\(m(U) =1\text{,}\)</span> and by Exercise <a href="chap-lebesgue-measure-6.html#exer-cant-len-func-singular" class="xref" data-knowl="./knowl/xref/exer-cant-len-func-singular.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.4.10">Exercise 5.4.10</a>, <span class="process-math">\(\nu(C) = 1\)</span>  and <span class="process-math">\(\nu(U) = 1\text{.}\)</span> Thus <span class="process-math">\(\nu\)</span> and <span class="process-math">\(m\)</span> are mutually singular.<div class="autopermalink" data-description="Paragraph"><a href="#ex-Cantor-Lebesgue-not-abs-cont-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.2"><a href="#ex-Cantor-Lebesgue-not-abs-cont" title="Copy heading and permalink for Example 9.1.2" aria-label="Copy heading and permalink for Example 9.1.2">🔗</a></div></article></details><div class="para" id="chap-differentation-3-6">Mutually singular measures are, in some sense, very different from eachother. We now introduce a comparison between measures.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap-differentation-3-7"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-3-7-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(\nu\)</span> be a measure on <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is <em class="emphasis">absolutely continuous with respect to <span class="process-math">\(\mu\)</span></em>, written <span class="process-math">\(\nu \ll \mu\text{,}\)</span> if for <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> <span class="process-math">\(\nu(E) = 0\)</span> if <span class="process-math">\(\mu(E) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-7-2">If <span class="process-math">\(\lambda\)</span> is a signed-measure on <span class="process-math">\((X,\mathcal{F})\text{,}\)</span> then <span class="process-math">\(\lambda\)</span> is <em class="emphasis">absolutely continuous with respect to <span class="process-math">\(\mu\)</span></em>, written <span class="process-math">\(\lambda \ll \mu\text{,}\)</span> if <span class="process-math">\(|\lambda| \ll \mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.1.3"><a href="#chap-differentation-3-7" title="Copy heading and permalink for Definition 9.1.3" aria-label="Copy heading and permalink for Definition 9.1.3">🔗</a></div></article><div class="para" id="chap-differentation-3-8">Let <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> be two non-zero measures on the same measure space. If <span class="process-math">\(\mu \perp \nu\)</span> then <span class="process-math">\(\mu \not\ll \nu\)</span> and <span class="process-math">\(\mu \not\ll \nu\text{.}\)</span> Conversely, if <span class="process-math">\(\mu \ll \nu\)</span> or <span class="process-math">\(\nu \ll \mu\text{,}\)</span> then <span class="process-math">\(\mu \not \perp \nu\text{.}\)</span> Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\text{,}\)</span> we can always write <span class="process-math">\(\nu= \nu_s + \nu_a\)</span> where <span class="process-math">\(\nu_s \perp \mu\)</span> and <span class="process-math">\(\nu_a \ll \mu\text{,}\)</span> (The Lebesgue Decomposition Theorem, Theorem <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.10: Lebesgue Decomposition Theorem">Theorem 9.1.10</a>). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-9">Given a measure <span class="process-math">\(\mu\text{,}\)</span> the next example shows that it is easy to create measures which are absolutely continuous with respect to <span class="process-math">\(\mu\text{.}\)</span> We will see, with some reasonable conditions on <span class="process-math">\((X,\mathcal{F},\mu)\text{,}\)</span> all measures which are absolutely continuous with respect to <span class="process-math">\(\mu\)</span> will be of this form.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-integration-measure-abs-cont" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-integration-measure-abs-cont-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space. Let <span class="process-math">\(f\)</span> be a non-negative measurable function on <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(g\)</span> be an integrable function on <span class="process-math">\(X\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#ex-integration-measure-abs-cont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-integration-measure.html" id="ex-integration-measure-abs-cont-2">
+\begin{equation*}
+\nu_1(E) = \int_E f\,d\mu
+\end{equation*}
+</div>
+<div class="para" id="ex-integration-measure-abs-cont-3">defines a measure on <span class="process-math">\((X,\mathcal{F})\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#ex-integration-measure-abs-cont-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-integration-measure.html" id="ex-integration-measure-abs-cont-4">
+\begin{equation*}
+\nu_2(E) = \int_E g\,d\mu
+\end{equation*}
+</div>
+<div class="para" id="ex-integration-measure-abs-cont-5">defines a signed measure on <span class="process-math">\((X,\mathcal{F})\)</span> (Exercise <a href="chap-integration-6.html#exer-integration-measure" class="xref" data-knowl="./knowl/xref/exer-integration-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.4.8">Exercise 8.4.8</a>). Then <span class="process-math">\(\nu_1 \ll \mu\)</span> and <span class="process-math">\(\nu_2 \ll \mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-integration-measure-abs-cont-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.4"><a href="#ex-integration-measure-abs-cont" title="Copy heading and permalink for Example 9.1.4" aria-label="Copy heading and permalink for Example 9.1.4">🔗</a></div></article></details><div class="para" id="chap-differentation-3-11">We can also get examples of absolutely continuous measures (with respect to the Lebesgue measure) using what we have learnt about Borel measures on <span class="process-math">\(\mathbb{R}\text{.}\)</span> Below is one such example.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-x-2-is-abs-cont" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-x-2-is-abs-cont-1">Let <span class="process-math">\(f(x) = x^2\)</span> on <span class="process-math">\([0,1]\text{.}\)</span> Let <span class="process-math">\(\nu\)</span> be the Borel measure on <span class="process-math">\([0,1]\)</span> induced by <span class="process-math">\(f\text{.}\)</span> That is, <span class="process-math">\(\nu\)</span> is the Borel measure which is the Carathéodory extension of the premeasure<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html" id="ex-x-2-is-abs-cont-2">
+\begin{equation*}
+\nu((a,b]) = b^2 - a^2,\ \nu(\{0\}) = 0
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-is-abs-cont-3">as described in Corollary <a href="sec-borel-on-R.html#cor-cdf-and-Borel" class="xref" data-knowl="./knowl/xref/cor-cdf-and-Borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.3.10">Corollary 5.3.10</a>. We will show that <span class="process-math">\(\nu \ll m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-x-2-is-abs-cont-4">Take Borel set <span class="process-math">\(E \subseteq [0,1]\)</span> such that <span class="process-math">\(m(E) = 0\text{.}\)</span> We want to show that <span class="process-math">\(\nu(E) = 0\text{.}\)</span> Fix <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> We will assume <span class="process-math">\(0 \notin E\)</span> (removing <span class="process-math">\(0\)</span> does not change <span class="process-math">\(m(E)\)</span> or <span class="process-math">\(\nu(E)\)</span>). By Proposition <a href="sec-Lebesgue.html#prop-Lebesgue-outer-measure" class="xref" data-knowl="./knowl/xref/prop-Lebesgue-outer-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.1">Proposition 5.1.1</a>, there is a countable collection <span class="process-math">\(\{(a_i,b_i]\}_{i=1}^\infty\)</span> of subsets of <span class="process-math">\([0,1]\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html" id="ex-x-2-is-abs-cont-5">
+\begin{equation*}
+E \subseteq \bigcup_{i=1}^\infty (a_i,b_i]
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-is-abs-cont-6">and <span class="process-math">\(\sum_{i=1}^\infty m((a_i,b_i])&lt;\varepsilon/2.\)</span> Now<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html" id="ex-x-2-is-abs-cont-7">
+\begin{equation*}
+\begin{aligned}
+\nu(E) \leq \nu\left(\bigcup_{i=1}^\infty (a_i,b_i]\right)
+&amp;\leq \sum_{i=1}^\infty \nu((a_i,b_i]) \\  
+&amp;= \sum_{i=1}^\infty(b_i^2-a_i^2) \\
+&amp;= \sum_{i=1}^\infty(b_i-a_i)(b_i + a_i) \\
+&amp;\leq 2\sum_{i=1}^\infty(b_i-a_i) \\
+&amp;&lt; \varepsilon.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-is-abs-cont-8">As <span class="process-math">\(\nu(E) &lt; \varepsilon\)</span> for all <span class="process-math">\(\varepsilon &gt;0\text{,}\)</span> it follows that <span class="process-math">\(\nu(E) =0\text{.}\)</span> Thus <span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.5"><a href="#ex-x-2-is-abs-cont" title="Copy heading and permalink for Example 9.1.5" aria-label="Copy heading and permalink for Example 9.1.5">🔗</a></div></article></details><article class="theorem theorem-like" id="chap-differentation-3-13"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Radon-Nikodym Theorem.</span>
+</h3>
+<div class="para" id="chap-differentation-3-13-2"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space, and let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu \ll \mu\text{.}\)</span> Then there is a non-negative measurable function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html" id="eq-radon-nikodym">
+\begin{equation*}
+\nu(E) = \int_E f\,d\mu
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-13-4">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Further, if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both non-negative functions satisfying  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a>, then <span class="process-math">\(f=g\)</span> a.e.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9.1.6: Radon-Nikodym Theorem"><a href="#chap-differentation-3-13" title="Copy heading and permalink for Theorem 9.1.6: Radon-Nikodym Theorem" aria-label="Copy heading and permalink for Theorem 9.1.6: Radon-Nikodym Theorem">🔗</a></div></article><details id="chap-differentation-3-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-3-14-1">First assume that both <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are finite measures. If <span class="process-math">\(\nu(E) = 0\)</span> for all <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> then we can take <span class="process-math">\(f = 0\)</span> for  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a> to hold. Thus suppose that <span class="process-math">\(\nu\)</span> is not the zero measure.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-2">Let <span class="process-math">\(\mathcal{A}\)</span> be the collection of non-negative measurable functions <span class="process-math">\(f\)</span> with<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-3">
+\begin{equation*}
+\int_E f\,d\mu \leq \nu(E)
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-4">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Since the zero function <span class="process-math">\(0\)</span> is in <span class="process-math">\(\mathcal{A}\text{,}\)</span> <span class="process-math">\(\mathcal{A}\)</span> is non-empty. Let <span class="process-math">\(a = \sup\{ \int_X f\,d\mu \colon f \in \mathcal{A}\}\text{.}\)</span> Note that, since <span class="process-math">\(\nu\)</span> is finite, <span class="process-math">\(a\)</span> is finite with <span class="process-math">\(a \leq \nu(E)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-5">Clearly, <span class="process-math">\(a \geq 0\text{.}\)</span> We claim that <span class="process-math">\(a &gt; 0\text{.}\)</span> Consider, for each real <span class="process-math">\(\alpha &gt; 0\text{,}\)</span> the signed measure <span class="process-math">\(\sigma_\alpha = \nu - \alpha\mu\text{.}\)</span> For each <span class="process-math">\(\sigma_\alpha\)</span> let <span class="process-math">\(X = P_\alpha \cup N_\alpha\)</span> be a Hahn-Decomposition of <span class="process-math">\(X\)</span> for <span class="process-math">\(\sigma_\alpha\text{.}\)</span> That is <span class="process-math">\(P_\alpha\)</span> is a positive set for <span class="process-math">\(\sigma_\alpha\text{,}\)</span> and <span class="process-math">\(N_\alpha\)</span> is a negative set for <span class="process-math">\(\sigma_\alpha\text{.}\)</span> If <span class="process-math">\(\mu(P_\alpha)= 0\)</span> for all <span class="process-math">\(\alpha\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-6">
+\begin{equation*}
+\nu(E) \leq \alpha \mu(E)
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-7">for all <span class="process-math">\(E \in \mathcal{F}\)</span> and <span class="process-math">\(\alpha &gt; 0\text{.}\)</span> Hence, if <span class="process-math">\(\mu(E) &gt;0\)</span> then <span class="process-math">\(\nu(E) = 0\text{.}\)</span> Since <span class="process-math">\(\nu \ll \mu\)</span> we also have <span class="process-math">\(\mu(E) = 0\)</span> implies <span class="process-math">\(\nu(E) = 0\text{,}\)</span> and so <span class="process-math">\(\nu\)</span> is the <span class="process-math">\(0\)</span> measure. This contradicts the assumption that <span class="process-math">\(\nu\)</span> is non-zero. Hence there is some <span class="process-math">\(\alpha\)</span> for which <span class="process-math">\(\mu(P_\alpha)&gt;0\text{.}\)</span> Let<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-8">
+\begin{equation*}
+\varphi = \alpha \chi_{P_\alpha}.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-9">Then, for any <span class="process-math">\(E \in F\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-10">
+\begin{equation*}
+\int_E \varphi\,d\mu = \alpha \mu(E \cap P_\alpha) \leq \nu(E\cap P_\alpha)\leq \nu(E).
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-11">Thus, <span class="process-math">\(\varphi \in \mathcal{F}\text{.}\)</span> As <span class="process-math">\(\int_X \varphi\,d\mu = \alpha &gt;0\text{,}\)</span> we must have <span class="process-math">\(a &gt; 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-12">We will show that <span class="process-math">\(a\)</span> is attained by a function <span class="process-math">\(f \in \mathcal{A}\text{.}\)</span> Let <span class="process-math">\((f_n)_n\)</span> be a sequence of functions in <span class="process-math">\(\mathcal{A}\)</span> so that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-13">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu = a.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-14">Note also that if <span class="process-math">\(f,g \in \mathcal{A}\)</span> and <span class="process-math">\(h = \max\{f,g\}\)</span> then <span class="process-math">\(h \in \mathcal{A}\text{.}\)</span> Indeed, if <span class="process-math">\(E \in F\)</span> and <span class="process-math">\(F = \{x \in E \colon f(x) &gt; g(x)\}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-15">
+\begin{equation*}
+\begin{aligned}
+\int_E h\,d\mu &amp;= \int_F f \,d\mu + \int_{E\backslash F}g\,d\mu \\
+&amp;\leq \nu(F) + \nu(E\backslash F) = \nu(E).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-16">We can thus assume that the sequence <span class="process-math">\((f_n)_n\)</span> is increasing, by replacing each <span class="process-math">\(f_n\)</span> with <span class="process-math">\(\max\{f_1,\ldots,f_n\}\)</span> if necessary. Let <span class="process-math">\(f(x) = \lim_n f_n(x)\)</span> for all <span class="process-math">\(x \in X\text{.}\)</span> By the Monotone Convergence Theorem<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-17">
+\begin{equation*}
+\int_E f\,d\mu = \lim_n\int_E f_n\,d\mu \leq \nu(E) 
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-18">\ for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Thus <span class="process-math">\(f \in \mathcal{A}\text{.}\)</span> Setting <span class="process-math">\(E = X\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-19">
+\begin{equation*}
+\int_X fd\mu = \lim_n \int_X f_n\,d\mu = a.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-20">Our goal now is to show that <span class="process-math">\(f\)</span> satisfies  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a>. That is, we will show that for all <span class="process-math">\(E \in \mathcal{F}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-21">
+\begin{equation*}
+\nu(E) = \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-22">Define a measure <span class="process-math">\(\lambda\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-23">
+\begin{equation*}
+\lambda(E) = \nu(E) - \int_E f\,d\mu .
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-24">(Note that <span class="process-math">\(\lambda\)</span> is indeed a measure, and not just a signed-measure, since <span class="process-math">\(f \in \mathcal{A}\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-25">Since <span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{,}\)</span> and <span class="process-math">\(E \mapsto \int_E f\,d\mu\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{,}\)</span> <span class="process-math">\(\lambda\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{.}\)</span> Applying the above argument to <span class="process-math">\(\lambda\)</span> (in place of <span class="process-math">\(\nu\)</span>), if <span class="process-math">\(\lambda\)</span> is a non-zero measure, then there is a non-negative measurable function <span class="process-math">\(g\)</span> such that <span class="process-math">\(\int_X g \,d\mu &gt; 0\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-26">
+\begin{equation*}
+\int_E g\,d\mu \leq \lambda(E)
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-27">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-28">Taking any <span class="process-math">\(E \in F\)</span> we  have<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-29">
+\begin{equation*}
+\begin{aligned}
+\int_E g\,d\mu \leq \lambda(E) = \nu(E) - \int_E f\,d\mu.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-30">Thus<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-31">
+\begin{equation*}
+\int_E(f+g) \,d\mu = \int_E f\,d\mu + \int_E g\,d\mu \leq \nu(E).
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-32">Hence <span class="process-math">\(f +g \in F\text{.}\)</span> However<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-33">
+\begin{equation*}
+\int_X(f+g)\,d\mu= a + \int_Xg\,d\mu &gt; a,
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-34">contradicting the definition of <span class="process-math">\(a\text{.}\)</span> Hence <span class="process-math">\(\lambda(E) = 0\)</span> for all <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> and thus<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-35">
+\begin{equation*}
+\nu(E) = \int_E f\,d\mu
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-36">as desired.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-37">Now suppose that <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are both <span class="process-math">\(\sigma\)</span>-finite. There are disjoint sets <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> and disjoint sets <span class="process-math">\(\{B_n\}_{n=1}^\infty\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-37" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-38">
+\begin{equation*}
+\bigcup_n A_n = X = \bigcup_n B_n,
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-39">
+<span class="process-math">\(\mu(A_n)&lt; \infty\)</span> and <span class="process-math">\(\nu(B_n)&lt; \infty\)</span> for all <span class="process-math">\(n\text{.}\)</span> Let <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> be the countable collection of disjoint sets <span class="process-math">\(\{A_n\cap B_m\}_{m,n=1}^\infty\text{.}\)</span> Then <span class="process-math">\(X = \bigcup_k C_k\text{,}\)</span> and for all <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(\mu(C_k)&lt;\infty\)</span> and <span class="process-math">\(\nu(C_k)&lt; \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-14-40">For each <span class="process-math">\(k\)</span> there is a non-negative measurable function <span class="process-math">\(f_k\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-41">
+\begin{equation*}
+\nu(E) = \int_E f_k \,d\mu
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-42">for all measurable <span class="process-math">\(E \subseteq C_k\text{.}\)</span> Extend <span class="process-math">\(f_k\)</span> to all of <span class="process-math">\(x\)</span> by setting <span class="process-math">\(f_k(x) = 0\)</span> for <span class="process-math">\(x \notin C_k\text{.}\)</span> Let <span class="process-math">\(f = \sum_{k=1}^\infty f_k\text{.}\)</span> Take any <span class="process-math">\(E \in F\text{.}\)</span> Applying Corollary <a href="chap-integration-3.html#cor-MCT-series" class="xref" data-knowl="./knowl/xref/cor-MCT-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 8.1.18">Corollary 8.1.18</a>, we get<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html ./knowl/xref/eq-radon-nikodym.html ./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html" id="chap-differentation-3-14-43">
+\begin{equation*}
+\begin{aligned}
+\int_E f\,d\mu &amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f\,d\mu \\
+&amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f_k\,d\mu \\
+&amp;= \sum_{k=1}^\infty \nu(E \cap C_k) \\
+&amp;= \nu(E).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-14-44">The uniqueness (almost everywhere) follows from Exercise <a href="chap-integration-6.html#exer-int-a-e" class="xref" data-knowl="./knowl/xref/exer-int-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.4.1">Exercise 8.4.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-14-44" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.1.1"><a href="#chap-differentation-3-14" title="Copy heading and permalink for Proof 9.1.1" aria-label="Copy heading and permalink for Proof 9.1.1">🔗</a></div></article></details><div class="para" id="chap-differentation-3-15">The following corollary to the Radon-Nikodym Theorem is immediate on taking the Jordan decomposition of a signed-measure and applying the Radon-Nikodym Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-signed-Radon-Nikodym"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="cor-signed-Radon-Nikodym-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space and let <span class="process-math">\(\nu\)</span> be a finite signed-measure on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu \ll \mu\text{.}\)</span> Then there is a measurable function <span class="process-math">\(f\)</span> which is integrable with respect to <span class="process-math">\(\mu\)</span> such that, for all <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-signed-Radon-Nikodym-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="cor-signed-Radon-Nikodym-2">
+\begin{equation*}
+\nu(E) = \int_E f\,d\mu.
+\end{equation*}
+</div>
+<div class="para" id="cor-signed-Radon-Nikodym-3">Further, the function <span class="process-math">\(f\)</span> is unique up to almost everywhere equivalence.<div class="autopermalink" data-description="Paragraph"><a href="#cor-signed-Radon-Nikodym-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 9.1.7"><a href="#cor-signed-Radon-Nikodym" title="Copy heading and permalink for Corollary 9.1.7" aria-label="Copy heading and permalink for Corollary 9.1.7">🔗</a></div></article><article class="definition definition-like" id="chap-differentation-3-17"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-3-17-1"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space and let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure or a finite signed measure on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu \ll \mu\text{.}\)</span> Let <span class="process-math">\(f\)</span> be the measurable function on <span class="process-math">\(X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-3-17-2">
+\begin{equation*}
+\nu(E) = \int_E f\,d\mu
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-17-3">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> The function <span class="process-math">\(f\)</span> is called the <em class="emphasis">Radon-Nikodym derivative</em> of <span class="process-math">\(\nu\)</span> with respect to <span class="process-math">\(\mu\text{.}\)</span>  The Radon-Nikodym derivative is denotated as<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-3-17-4">
+\begin{equation*}
+f = \frac{d\nu}{d\mu}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Definition 9.1.8"><a href="#chap-differentation-3-17" title="Copy heading and permalink for Definition 9.1.8" aria-label="Copy heading and permalink for Definition 9.1.8">🔗</a></div></article><div class="para" id="chap-differentation-3-18">The word ``derivative" in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? Section <a href="sec-ftoc.html" class="internal" title="Section 9.3: The fundamental theorem of calculus">Section 9.3</a>, in particular Theorem <a href="sec-ftoc.html#thm-Borel-radon-nikodym-derivative" class="xref" data-knowl="./knowl/xref/thm-Borel-radon-nikodym-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.3.11">Theorem 9.3.11</a>, goes some way to justify the term. We will satiate ourselves with a simple example now.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-x-2-Radon-Nikodym-derivative" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-x-2-Radon-Nikodym-derivative-1">Let <span class="process-math">\(f(x) = x^2\)</span> on <span class="process-math">\([0,1]\text{.}\)</span> Let <span class="process-math">\(\nu\)</span> be the Carathéodory extension of the premeasure<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-2">
+\begin{equation*}
+\nu((a,b])= f(b) - f(a) = b^2 - a^2
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-Radon-Nikodym-derivative-3">on <span class="process-math">\([0,1]\text{.}\)</span> We saw in  Example <a href="chap-differentation-3.html#ex-x-2-is-abs-cont" class="xref" data-knowl="./knowl/xref/ex-x-2-is-abs-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.1.5">Example 9.1.5</a> that <span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(m\text{.}\)</span> Hence, by the Radon-Nikodym theorem there is a non-negative measurable function <span class="process-math">\(h\)</span> on <span class="process-math">\([0,1]\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-4">
+\begin{equation*}
+\nu(E) = \int_E h\,dm.
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-Radon-Nikodym-derivative-5">In particular, for <span class="process-math">\(0\leq a &lt; b \leq 1\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-6">
+\begin{equation*}
+\nu((a,b]) = \int_{(a,b]}h\,dm
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-Radon-Nikodym-derivative-7">By the Fundamental Theorem of Calculus we also have <details class="ptx-footnote" aria-live="polite" id="ex-x-2-Radon-Nikodym-derivative-7-1"><summary class="ptx-footnote__number" title="Footnote 9.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="ex-x-2-Radon-Nikodym-derivative-7-1">We can comfortably apply the Fundamental Theorem of Calculus since <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> are continuous on <span class="process-math">\([0,1]\text{,}\)</span> and thus are Riemann integrable.</div></details><div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-8">
+\begin{equation*}
+\nu((a,b]) = \int_{[a,b]} 2x \,dm(x).
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-Radon-Nikodym-derivative-9">By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-10">
+\begin{equation*}
+\nu(E) = \int_E f'\,dm = \int_E h\,dm
+\end{equation*}
+</div>
+<div class="para" id="ex-x-2-Radon-Nikodym-derivative-11">for all Borel sets <span class="process-math">\(E \subseteq [a,b]\text{.}\)</span> It follows from Exercise <a href="chap-integration-6.html#exer-same-int-same-func" class="xref" data-knowl="./knowl/xref/exer-same-int-same-func.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.4.7">Exercise 8.4.7</a>, that <span class="process-math">\(f(x) = 2x\text{.}\)</span><details class="ptx-footnote" aria-live="polite" id="ex-x-2-Radon-Nikodym-derivative-11-4"><summary class="ptx-footnote__number" title="Footnote 9.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="ex-x-2-Radon-Nikodym-derivative-11-4">Technically, it means that <span class="process-math">\(h(x) = 2x\)</span> almost everywhere, but <span class="process-math">\(h\)</span> can be chosen so that <span class="process-math">\(h(x) = 2x\text{.}\)</span>
+</div></details> Thus, the Radon-Nikodym derivative of <span class="process-math">\(\nu\)</span> is the derivative of <span class="process-math">\(f\text{.}\)</span> That is<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-Radon-Nikodym-derivative-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-x-2-is-abs-cont.html ./knowl/xref/exer-same-int-same-func.html" id="ex-x-2-Radon-Nikodym-derivative-12">
+\begin{equation*}
+\frac{d\nu}{dm} = \frac{df}{dx}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Example 9.1.9"><a href="#ex-x-2-Radon-Nikodym-derivative" title="Copy heading and permalink for Example 9.1.9" aria-label="Copy heading and permalink for Example 9.1.9">🔗</a></div></article></details><div class="para" id="chap-differentation-3-20">We end this section with an important decomposition theorem due to Lebesgue.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-lebesegue-decomposition"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Decomposition Theorem.</span>
+</h3>
+<div class="para" id="thm-lebesegue-decomposition-2"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space and let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure on <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are mutually orthogonal measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> such that <span class="process-math">\(\nu = \nu_s + \nu_a\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesegue-decomposition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="thm-lebesegue-decomposition-3">
+<li id="thm-lebesegue-decomposition-3-1">
+<div class="para" id="thm-lebesegue-decomposition-3-1-1">
+<span class="process-math">\(\nu_a \ll \mu\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesegue-decomposition-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-lebesegue-decomposition-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-lebesegue-decomposition-3-2">
+<div class="para" id="thm-lebesegue-decomposition-3-2-1">
+<span class="process-math">\(\nu_s \perp \mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesegue-decomposition-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-lebesegue-decomposition-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 9.1.10: Lebesgue Decomposition Theorem"><a href="#thm-lebesegue-decomposition" title="Copy heading and permalink for Theorem 9.1.10: Lebesgue Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 9.1.10: Lebesgue Decomposition Theorem">🔗</a></div></article><details id="chap-differentation-3-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-3-22-1">Let <span class="process-math">\(\lambda = \mu + \nu\text{.}\)</span> Then <span class="process-math">\(\lambda\)</span> is a <span class="process-math">\(\sigma\)</span>-finite measure and <span class="process-math">\(\mu \ll \lambda\text{.}\)</span> By the Radon-Nikodym Theorem, there is a non-negative measurable function <span class="process-math">\(f\)</span> such that, for all <span class="process-math">\(E \in \mathcal{F}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-2">
+\begin{equation*}
+\mu(E) = \int_\lambda f \,d\mu = \int_E f\,d\mu + \int_E f\,d\nu,
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-3">with the last equality following from Exercise <a href="chap-differentation-7.html#ex-integration-sum-measures" class="xref" data-knowl="./knowl/xref/ex-integration-sum-measures.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 9.5.1">Exercise 9.5.1</a>. Let<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-4">
+\begin{equation*}
+X_+ = \{x \in X \colon f(x) &gt; 0\}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-5">and<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-6">
+\begin{equation*}
+X_0 = \{x \in X \colon f(x) = 0\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-7">Define measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-8">
+\begin{equation*}
+\nu_s(E) = \nu(E \cap X_0) \text{ and }\nu_a(E) = \nu(E \cap X_+).
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-9">Then <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> are mutually singular, with <span class="process-math">\(\nu = \nu_s + \nu_a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-3-22-10">That <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu_s\)</span> are mutually singular is clear. It remains to show <span class="process-math">\(\nu_a \ll \mu\text{.}\)</span> Take <span class="process-math">\(E \in \mathcal{F}\)</span> such that <span class="process-math">\(\mu(E) = 0\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-11">
+\begin{equation*}
+0 = \mu(E) = \int_E f\,d\mu + \int_E f\,d\nu.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-12">Thus<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-integration-sum-measures.html ./knowl/xref/exer-positive-integral.html" id="chap-differentation-3-22-13">
+\begin{equation*}
+0 = \int_E f\,d\nu = \int_{E\cap X_+} f\,d\nu = 0.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-3-22-14">Since <span class="process-math">\(f&gt;0\)</span> on <span class="process-math">\(E\cap X_+\text{,}\)</span> it follows that <span class="process-math">\(\nu(E\cap X_+) = 0\)</span> (Exercise <a href="chap-integration-6.html#exer-positive-integral" class="xref" data-knowl="./knowl/xref/exer-positive-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.4.5">Exercise 8.4.5</a>). Thus <span class="process-math">\(\nu_a(E) = 0\text{,}\)</span> and hence <span class="process-math">\(\nu_a\ll\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-22-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.1.2"><a href="#chap-differentation-3-22" title="Copy heading and permalink for Proof 9.1.2" aria-label="Copy heading and permalink for Proof 9.1.2">🔗</a></div></article></details><div class="para" id="chap-differentation-3-23">The following corollary follows by applying the applying the Lebesgue Decomposition Theorem to each of the measures in the Jordan decomposition of the signed-measure.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="chap-differentation-3-24"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-3-24-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space and let <span class="process-math">\(\nu\)</span> be a  finite signed-measure on <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are mutually orthogonal signed-measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> such that <span class="process-math">\(\nu = \nu_s + \nu_a\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="chap-differentation-3-24-2">
+<li id="chap-differentation-3-24-2-1">
+<div class="para" id="chap-differentation-3-24-2-1-1">
+<span class="process-math">\(\nu_a \ll \mu\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-24-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chap-differentation-3-24-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chap-differentation-3-24-2-2">
+<div class="para" id="chap-differentation-3-24-2-2-1">
+<span class="process-math">\(\nu_s \perp \mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-24-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chap-differentation-3-24-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Corollary 9.1.11"><a href="#chap-differentation-3-24" title="Copy heading and permalink for Corollary 9.1.11" aria-label="Copy heading and permalink for Corollary 9.1.11">🔗</a></div></article><article class="definition definition-like" id="chap-differentation-3-25"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-3-25-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space, let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure or a finite signed-measure, and let <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> are mutually orthogonal measures such that <span class="process-math">\(\nu_s \perp \mu\text{,}\)</span> <span class="process-math">\(\nu_a \ll \mu\text{,}\)</span> and <span class="process-math">\(\nu = \nu_s + \nu_a\text{.}\)</span> The measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_a\)</span> are called the <em class="emphasis">Lebesgue decomposition of <span class="process-math">\(\nu\)</span> with respect to <span class="process-math">\(\mu\)</span></em>. We call the Radon-Nikodym derivative of <span class="process-math">\(\nu_a\)</span> witrh respect to <span class="process-math">\(\mu\)</span> the <em class="emphasis">Radon-Nikodym derivative on <span class="process-math">\(\nu\)</span> with respect to <span class="process-math">\(\mu\)</span></em> and denote the it by <span class="process-math">\(\frac{d\nu}{d\mu}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-3-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.1.12"><a href="#chap-differentation-3-25" title="Copy heading and permalink for Definition 9.1.12" aria-label="Copy heading and permalink for Definition 9.1.12">🔗</a></div></article><div class="autopermalink" data-description="Section 9.1: The Radon-Nikodym Theorem"><a href="#chap-differentation-3" title="Copy heading and permalink for Section 9.1: The Radon-Nikodym Theorem" aria-label="Copy heading and permalink for Section 9.1: The Radon-Nikodym Theorem">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chap-differentation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-differentation-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Lebesgue Decomposition of function</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-ftoc.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-differentation.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap-differentation-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">3</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">3.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">4</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">5</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">6</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">7</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">8</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">9</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">9.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">10</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="codenumber">10.2.1</span> <span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">11</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">A</span> <span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.12.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="codenumber">A.12.1.1</span> <span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="codenumber">A.12.1.2</span> <span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.12.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="codenumber">A.12.2.1</span> <span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="codenumber">A.12.2.2</span> <span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.12.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="codenumber">A.12.3.1</span> <span class="title">Volterra’s function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#sec-diff-bounded-4" class="internal"><span class="codenumber">A.12.3.2</span> <span class="title">Simpler example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chap-differentation-6"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Lebesgue Decomposition of function</span>
+</h2>
+<div class="para" id="chap-differentation-6-2">By the Lebesgue Decomposition Theorem <span class="process-math">\(\nu = \nu_a + \nu_s\text{,}\)</span> where <span class="process-math">\(\nu_a \ll m\)</span> and <span class="process-math">\(\nu_s \perp s\text{.}\)</span> Let <span class="process-math">\(f_a\)</span> be the cumulative distribution function for <span class="process-math">\(\nu_a\text{,}\)</span> and let <span class="process-math">\(f_s\)</span> be the cumulative distribution function for <span class="process-math">\(\nu_s\text{.}\)</span> By Proposition <a href="chap-differentation-4.html#prop-abs-cont-meas-and-func" class="xref" data-knowl="./knowl/xref/prop-abs-cont-meas-and-func.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 9.2.7">Proposition 9.2.7</a>, <span class="process-math">\(f_a\)</span> is absolutely continuous. In this section we will further study <span class="process-math">\(f_s\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap-differentation-6-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-3-1">Let <span class="process-math">\(f\)</span> be a continuous function on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(f\)</span> is a continuous <em class="emphasis">singular</em> function if <span class="process-math">\(f'= 0\)</span> a.e.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.4.1"><a href="#chap-differentation-6-3" title="Copy heading and permalink for Definition 9.4.1" aria-label="Copy heading and permalink for Definition 9.4.1">🔗</a></div></article><details id="ex-Cantor-Lebesgue-singular-function" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-Cantor-Lebesgue-singular-function-1">Let <span class="process-math">\(\varphi\)</span> be the Cantor-Lebesgue function on <span class="process-math">\([0,1]\)</span> (see Example <a href="sec-nonmeasurable.html#ex-cantor-lebesgue" class="xref" data-knowl="./knowl/xref/ex-cantor-lebesgue.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.5">Example 5.2.5</a>), let <span class="process-math">\(C\)</span> be the Cantor set in <span class="process-math">\([0,1]\)</span> and let <span class="process-math">\(U = [0,1]\backslash U.\)</span> By the definition of <span class="process-math">\(\varphi\text{,}\)</span> there are disjoint open intervals <span class="process-math">\(\{I_k\}_{k=1}^\infty\)</span> such that <span class="process-math">\(U = \bigcup_{k=1}^\infty I_k\)</span> such that <span class="process-math">\(\varphi\)</span> is constant on each <span class="process-math">\(I_k\text{.}\)</span> It follows that <span class="process-math">\(\varphi'(x)= 0\)</span> for all <span class="process-math">\(x \in U\text{.}\)</span> By Example <a href="sec-nonmeasurable.html#ex-Cantor" class="xref" data-knowl="./knowl/xref/ex-Cantor.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.3">Example 5.2.3</a>, <span class="process-math">\(m(U)  = 1 =m([0,1])\text{.}\)</span> Hence <span class="process-math">\(\varphi'=0\)</span> a.e., and so <span class="process-math">\(\varphi\)</span> is a continuous singular function.<div class="autopermalink" data-description="Paragraph"><a href="#ex-Cantor-Lebesgue-singular-function-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-Cantor-Lebesgue-singular-function-2">Recall that, by Example <a href="chap-differentation-3.html#ex-Cantor-Lebesgue-not-abs-cont" class="xref" data-knowl="./knowl/xref/ex-Cantor-Lebesgue-not-abs-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.1.2">Example 9.1.2</a>, if <span class="process-math">\(\nu\)</span> is the Borel measure on <span class="process-math">\([0,1]\)</span> satisfying <span class="process-math">\(\varphi((c,d]) = \varphi(d) - \varphi(c)\text{,}\)</span> then <span class="process-math">\(\nu\)</span> is a singular measure.<div class="autopermalink" data-description="Paragraph"><a href="#ex-Cantor-Lebesgue-singular-function-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.4.2"><a href="#ex-Cantor-Lebesgue-singular-function" title="Copy heading and permalink for Example 9.4.2" aria-label="Copy heading and permalink for Example 9.4.2">🔗</a></div></article></details><div class="para" id="chap-differentation-6-5">Example <a href="chap-differentation-6.html#ex-Cantor-Lebesgue-singular-function" class="xref" data-knowl="./knowl/xref/ex-Cantor-Lebesgue-singular-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.4.2">Example 9.4.2</a> gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-f-singular"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-f-singular-1">Let <span class="process-math">\(f\)</span> be a right-continuous function of bounded variation on a closed interval <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(\nu_f\)</span> be the Borel signed-measure defined by <span class="process-math">\(\nu_f((c,d]) = f(d) - f(c).\)</span> Then <span class="process-math">\(\nu_f\)</span> is singular if and only if <span class="process-math">\(f' =0\)</span> a.e.<div class="autopermalink" data-description="Paragraph"><a href="#prop-f-singular-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 9.4.3"><a href="#prop-f-singular" title="Copy heading and permalink for Proposition 9.4.3" aria-label="Copy heading and permalink for Proposition 9.4.3">🔗</a></div></article><details id="chap-differentation-6-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-7-1">Note that, as argued in Corollary <a href="sec-ftoc.html#cor-f-integrable" class="xref" data-knowl="./knowl/xref/cor-f-integrable.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 9.3.12">Corollary 9.3.12</a>,<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-f-integrable.html ./knowl/xref/thm-Borel-radon-nikodym-derivative.html" id="chap-differentation-6-7-2">
+\begin{equation*}
+\lim_{r\rightarrow 0}\frac{\nu_f(E_r(x))}{r} = f'(x),
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-7-3">where <span class="process-math">\(E_r(x)\)</span> is <span class="process-math">\((x,x+r]\)</span> or <span class="process-math">\((x-r,x]\text{.}\)</span> From Theorem <a href="sec-ftoc.html#thm-Borel-radon-nikodym-derivative" class="xref" data-knowl="./knowl/xref/thm-Borel-radon-nikodym-derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.3.11">Theorem 9.3.11</a>, <span class="process-math">\(\nu_f\)</span> is singular if and only if, for almost all <span class="process-math">\(x \in [a,b]\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-f-integrable.html ./knowl/xref/thm-Borel-radon-nikodym-derivative.html" id="chap-differentation-6-7-4">
+\begin{equation*}
+\lim_{r\rightarrow 0}\frac{\nu(E_r(x))}{r} = 0.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-7-5">Thus <span class="process-math">\(\nu_f \perp m\)</span> if and only if <span class="process-math">\(f' = 0\)</span> a.e.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.1"><a href="#chap-differentation-6-7" title="Copy heading and permalink for Proof 9.4.1" aria-label="Copy heading and permalink for Proof 9.4.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-Lebesgue-decomp-function"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Decomposition Theorem.</span>
+</h3>
+<div class="para" id="thm-Lebesgue-decomp-function-2"> Let <span class="process-math">\(f\)</span> be a continuous function of bounded variation on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> then there are unique continuous functions <span class="process-math">\(f_a\)</span> and <span class="process-math">\(f_s\)</span> on <span class="process-math">\([a,b]\)</span> satisying <span class="process-math">\(f = f_a + f_s\text{,}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="thm-Lebesgue-decomp-function-3">
+<li id="thm-Lebesgue-decomp-function-3-1">
+<div class="para" id="thm-Lebesgue-decomp-function-3-1-1">
+<span class="process-math">\(f_a\)</span> is absolutely continuous; and<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-Lebesgue-decomp-function-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-Lebesgue-decomp-function-3-2">
+<div class="para" id="thm-Lebesgue-decomp-function-3-2-1">
+<span class="process-math">\(f_s\)</span> is singular.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-Lebesgue-decomp-function-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 9.4.4: Lebesgue Decomposition Theorem"><a href="#thm-Lebesgue-decomp-function" title="Copy heading and permalink for Theorem 9.4.4: Lebesgue Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 9.4.4: Lebesgue Decomposition Theorem">🔗</a></div></article><details id="chap-differentation-6-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-9-1">The result follows immediately from Theorem <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.10: Lebesgue Decomposition Theorem">Theorem 9.1.10</a>, Proposition <a href="chap-differentation-4.html#prop-abs-cont-meas-and-func" class="xref" data-knowl="./knowl/xref/prop-abs-cont-meas-and-func.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 9.2.7">Proposition 9.2.7</a>, and Proposition <a href="chap-differentation-6.html#prop-f-singular" class="xref" data-knowl="./knowl/xref/prop-f-singular.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 9.4.3">Proposition 9.4.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.2"><a href="#chap-differentation-6-9" title="Copy heading and permalink for Proof 9.4.2" aria-label="Copy heading and permalink for Proof 9.4.2">🔗</a></div></article></details><details id="chap-differentation-6-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="chap-differentation-6-10-1">Let <span class="process-math">\(\delta_0\)</span> be the Dirac measure on the Borel sets of <span class="process-math">\([-1,1]\text{,}\)</span> centered at <span class="process-math">\(0\text{.}\)</span> I.e. <span class="process-math">\(\delta_0(E) = 1\)</span> if <span class="process-math">\(0 \in E\text{,}\)</span> and <span class="process-math">\(\delta_0(E)=0\)</span> otherwise. If <span class="process-math">\(H\)</span> is the cumulative distribution function of <span class="process-math">\(\delta_0\text{,}\)</span> then <span class="process-math">\(H\)</span> is not continuous, see Exercise <a href="chap-lebesgue-measure-6.html#exer-dirac-cdf" class="xref" data-knowl="./knowl/xref/exer-dirac-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.4.8">Exercise 5.4.8</a>. Thus Theorem <a href="chap-differentation-6.html#thm-Lebesgue-decomp-function" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-decomp-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.4: Lebesgue Decomposition Theorem">Theorem 9.4.4</a>, does not apply to <span class="process-math">\(H\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.4.5"><a href="#chap-differentation-6-10" title="Copy heading and permalink for Example 9.4.5" aria-label="Copy heading and permalink for Example 9.4.5">🔗</a></div></article></details><article class="remark remark-like" id="chap-differentation-6-11"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-11-1">Let <span class="process-math">\(\nu\)</span> be a Borel measure on <span class="process-math">\([a,b]\text{,}\)</span> with cumulative distribution function <span class="process-math">\(f\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous, then applying Theorem <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.10: Lebesgue Decomposition Theorem">Theorem 9.1.10</a>  to <span class="process-math">\(\nu\)</span> gives the same decomposition as applying Theorem <a href="chap-differentation-6.html#thm-Lebesgue-decomp-function" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-decomp-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.4: Lebesgue Decomposition Theorem">Theorem 9.4.4</a> to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-11-2">If <span class="process-math">\(f\)</span> is not continuous, we can still apply Theorem <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.10: Lebesgue Decomposition Theorem">Theorem 9.1.10</a> to <span class="process-math">\(\nu\)</span> and decompose <span class="process-math">\(f = f_a + f_s\text{,}\)</span> where <span class="process-math">\(f_a\)</span> is absolutely continuous, and <span class="process-math">\(f_s'= 0\)</span> a.e. In this case <span class="process-math">\(f_s\)</span> will not be continuous.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-11-3">This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If <span class="process-math">\(f\)</span> is right-continuous and of bounded variation, how discontinuous can it be?<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 9.4.6"><a href="#chap-differentation-6-11" title="Copy heading and permalink for Remark 9.4.6" aria-label="Copy heading and permalink for Remark 9.4.6">🔗</a></div></article><article class="definition definition-like" id="chap-differentation-6-12"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-12-1">Let <span class="process-math">\(\nu\)</span> be a Borel signed-measure on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is a <em class="emphasis">continuous Borel signed-measure</em> is <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.4.7"><a href="#chap-differentation-6-12" title="Copy heading and permalink for Definition 9.4.7" aria-label="Copy heading and permalink for Definition 9.4.7">🔗</a></div></article><article class="proposition theorem-like" id="chap-differentation-6-13"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-13-1">Let <span class="process-math">\(\nu\)</span> be a Borel signed-measure on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> and let <span class="process-math">\(f(x) = \nu([a,x))\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is continuous if and only if <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 9.4.8"><a href="#chap-differentation-6-13" title="Copy heading and permalink for Proposition 9.4.8" aria-label="Copy heading and permalink for Proposition 9.4.8">🔗</a></div></article><details id="chap-differentation-6-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-14-1">By Theorem <a href="sec-borel-on-R.html#thm-cdf" class="xref" data-knowl="./knowl/xref/thm-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.6">Theorem 5.3.6</a>, <span class="process-math">\(f\)</span> is right continuous. Assume that <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a) = 0\text{.}\)</span> Since <span class="process-math">\(f(a) = 0\text{,}\)</span> <span class="process-math">\(\nu(\{a\}) = 0\text{.}\)</span> Take any <span class="process-math">\(x \in (a,b]\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cdf.html" id="chap-differentation-6-14-2">
+\begin{equation*}
+\begin{aligned}
+\nu(\{x\}) &amp;= \lim_{n\rightarrow \infty}\nu((x-1/n,x]) \\
+&amp; = f(x) - \lim_{n\rightarrow \infty}f(x-1/n)\\
+&amp;= f(x) - f(x) = 0,
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-14-3">by the (left) continuity of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-14-4">Conversely, suppose <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span> Then <span class="process-math">\(f(a) = \nu(\{a\}) =0\text{.}\)</span> If <span class="process-math">\(x \in (a,b]\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cdf.html" id="chap-differentation-6-14-5">
+\begin{equation*}
+\lim_{n\rightarrow \infty} f(x) - f(x-1/n) = 
+lim_{n\rightarrow \infty} \nu((x-1/n,x])=\nu(\{x\}) = 0.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-14-6">Hence <span class="process-math">\(f\)</span> is left-continuous, and therefore continuous, at <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-14-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.3"><a href="#chap-differentation-6-14" title="Copy heading and permalink for Proof 9.4.3" aria-label="Copy heading and permalink for Proof 9.4.3">🔗</a></div></article></details><div class="para" id="chap-differentation-6-15">In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-16">Let <span class="process-math">\(\Lambda\)</span> be an index set, and let <span class="process-math">\(\{a_\lambda\}_{\lambda \in \Lambda}\)</span> be a collection of real numbers indexed by <span class="process-math">\(\Lambda\text{.}\)</span> Let <span class="process-math">\(\mathcal{F}(\Lambda)\)</span> be the collection of all finite subsets of <span class="process-math">\(\Lambda\text{.}\)</span> Let <span class="process-math">\(s\)</span> be a real number. We say <em class="emphasis">the series <span class="process-math">\(\sum_{\lambda \in \Lambda}a_\lambda\)</span> converges to some <span class="process-math">\(s\)</span></em> if for all <span class="process-math">\(\varepsilon &gt;0\)</span> there is an <span class="process-math">\(F \in \mathcal{F}(\Lambda)\)</span> such that if <span class="process-math">\(G \in \mathcal{F}(\Lambda)\)</span> with <span class="process-math">\(F \subseteq G\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/ex-cantor-lebesgue.html ./knowl/xref/ex-Cantor.html ./knowl/xref/ex-Cantor-Lebesgue-not-abs-cont.html ./knowl/xref/ex-Cantor-Lebesgue-singular-function.html ./knowl/xref/cor-f-integrable.html ./knowl/xref/thm-Borel-radon-nikodym-derivative.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/prop-f-singular.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-cdf.html ./knowl/xref/lem-uncountable-series.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-countable-discont.html ./knowl/xref/exer-discrete-measure.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-17">
+\begin{equation*}
+\left| s - \sum_{\lambda \in G}a_\lambda\right|&lt;\varepsilon.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-18">In this case we write <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda =s\text{.}\)</span>\footnote{If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums <span class="process-math">\(\left(\sum_{\lambda\in F}a_\lambda\right)_{F \in \mathcal{F}(\Lambda)}\text{.}\)</span>}<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-19">If each <span class="process-math">\(a_\lambda \geq 0\text{,}\)</span> and <span class="process-math">\(\sum_{\lambda \in \Lambda}a_\lambda = s\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/ex-cantor-lebesgue.html ./knowl/xref/ex-Cantor.html ./knowl/xref/ex-Cantor-Lebesgue-not-abs-cont.html ./knowl/xref/ex-Cantor-Lebesgue-singular-function.html ./knowl/xref/cor-f-integrable.html ./knowl/xref/thm-Borel-radon-nikodym-derivative.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/prop-f-singular.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-cdf.html ./knowl/xref/lem-uncountable-series.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-countable-discont.html ./knowl/xref/exer-discrete-measure.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-20">
+\begin{equation*}
+s = \sup\left\{ \sum_{\lambda \in F}a_\lambda \colon F \subseteq \Lambda\text{ finite}\right\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-21">Further, if <span class="process-math">\(\Lambda = \mathbb{N}\)</span> is the set of natural numbers, then <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda = s\)</span> if and only if <span class="process-math">\(\sum_{n \in \mathbb{N}}a_n\)</span> converges absolutely.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-uncountable-series"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-uncountable-series-1"> Let <span class="process-math">\(\Lambda\)</span> be an index set, and let <span class="process-math">\(\{a_\lambda\}_{\lambda \in \Lambda}\)</span> be a collection of real numbers indexed by <span class="process-math">\(\Lambda\text{.}\)</span> If <span class="process-math">\(\sum_{\lambda \in \Lambda} a_\lambda\)</span> is convergent, then <span class="process-math">\(\{\lambda \colon a_\lambda \neq 0\}\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-uncountable-series-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 9.4.9"><a href="#lem-uncountable-series" title="Copy heading and permalink for Lemma 9.4.9" aria-label="Copy heading and permalink for Lemma 9.4.9">🔗</a></div></article><details id="chap-differentation-6-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-23-1">Let <span class="process-math">\(\Lambda_{\geq 0} = \{\lambda \in \Lambda \colon a_\lambda \geq 0\}\)</span> and <span class="process-math">\(\Lambda_{&lt; 0} = \{\lambda \in \Lambda \colon a_\lambda &lt; 0\}\text{.}\)</span> Note that <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda\)</span> is convergent if and only if <span class="process-math">\(\sum_{\lambda\in\Lambda_{\geq 0}}a_\lambda\)</span> and <span class="process-math">\(\sum_{\lambda\in\Lambda_{&lt;0}}a_\lambda\)</span> are both convergent. We will thus assume that <span class="process-math">\(a_\lambda \geq 0\)</span> for all <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-23-2">Suppose the set <span class="process-math">\(\Lambda_0 = \{\lambda \colon a_\lambda \neq 0\}\)</span> is uncountable. Let <span class="process-math">\(a_0 = \inf_{\lambda \in \Lambda_0} a_\lambda.\)</span> For each <span class="process-math">\(n\text{,}\)</span> choose <span class="process-math">\(\lambda_n \in \Lambda_0\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-23-3">
+\begin{equation*}
+a_0 \leq a_\lambda &lt; a_0 + 1/n.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-23-4">Let <span class="process-math">\(\Lambda_n = \{\lambda \in \Lambda_0 \colon a_\lambda \geq a_{\lambda_n}\}.\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-23-5">
+\begin{equation*}
+\Lambda_0 = \bigcup_{n\geq 1} \Lambda_n.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-23-6">As <span class="process-math">\(\Lambda_0\)</span> is uncountable, it follows that <span class="process-math">\(\Lambda_n\)</span> is countable for some <span class="process-math">\(n\text{.}\)</span> Let <span class="process-math">\(N\)</span> be such that  <span class="process-math">\(\lambda_N \in \Lambda_0\)</span> and the set <span class="process-math">\(\Lambda_N\)</span> is uncountable.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-23-7">For each <span class="process-math">\(m\text{,}\)</span> choose a finite set <span class="process-math">\(F_m \subseteq \Lambda_N\)</span> with <span class="process-math">\(m\)</span> elements. Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-23-8">
+\begin{equation*}
+\sum_{\lambda \in F_n} a_\lambda \geq ma_{\lambda_N}.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-23-9">Hence<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-23-10">
+\begin{equation*}
+\sup_m \sum_{\lambda \in F_m} a_\lambda = \infty,
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-23-11">and therefore<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-23-12">
+\begin{equation*}
+\sum_{\lambda \in \Lambda}a_\lambda = \infty. 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proof 9.4.4"><a href="#chap-differentation-6-23" title="Copy heading and permalink for Proof 9.4.4" aria-label="Copy heading and permalink for Proof 9.4.4">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-bv-countable-discont"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm-bv-countable-discont-1">Let <span class="process-math">\(f\)</span> be a function of bounded variation on <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(f\)</span> the set of discontinuities of <span class="process-math">\(f\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-bv-countable-discont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9.4.10"><a href="#thm-bv-countable-discont" title="Copy heading and permalink for Theorem 9.4.10" aria-label="Copy heading and permalink for Theorem 9.4.10">🔗</a></div></article><details id="chap-differentation-6-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-25-1">Assume that <span class="process-math">\(f\)</span> is increasing. The general result follows from the increasing case by the Jordan Decomposition Theorem. For each <span class="process-math">\(x \in (a,b)\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-uncountable-series.html" id="chap-differentation-6-25-2">
+\begin{equation*}
+a_x = \lim_{y\rightarrow x^-}f(y)\text{ and } b_x = \lim_{y\rightarrow x^+}f(y).
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-25-3">Since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x\)</span> if and only if <span class="process-math">\(a_x = b_x\text{.}\)</span> Further, since <span class="process-math">\(f\)</span> is increasing, <span class="process-math">\(b_x \leq a_y\)</span> when <span class="process-math">\(x&lt;y\text{.}\)</span> The collection of open intervals <span class="process-math">\(\{(a_x,b_x)\}_{x\in(a,b)}\)</span> is therefore a disjoint collection (viewing <span class="process-math">\((a_x,b_x)\)</span> as the empty set when <span class="process-math">\(a_x = b_x\)</span>); and<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-uncountable-series.html" id="chap-differentation-6-25-4">
+\begin{equation*}
+\sum_{x\in(a,b)} (b_x - a_x) \leq f(b) - f(a) &lt; \infty.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-25-5">By Lemma <a href="chap-differentation-6.html#lem-uncountable-series" class="xref" data-knowl="./knowl/xref/lem-uncountable-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 9.4.9">Lemma 9.4.9</a> it follows that <span class="process-math">\(a_x = b_x\)</span> for all but at most countably many points. Thus <span class="process-math">\(f\)</span> the set of discontinuities of <span class="process-math">\(f\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-25-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.5"><a href="#chap-differentation-6-25" title="Copy heading and permalink for Proof 9.4.5" aria-label="Copy heading and permalink for Proof 9.4.5">🔗</a></div></article></details><div class="para" id="chap-differentation-6-26">The following result offers a sort of converse to Theorem <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.10">Theorem 9.4.10</a>: for every countable set <span class="process-math">\(A\)</span> there is an increasing function whose set of discontinuities is <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-countable-discont"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-countable-discont-1">Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a closed interval, and let <span class="process-math">\(A \subseteq [a,b]\)</span> be a countable set. There is an increasing function <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> where <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\backslash A\)</span> and discontinuous on <span class="process-math">\(A\text{.}\)</span> Further, <span class="process-math">\(f\)</span> can be chosen to be right-continuous.<div class="autopermalink" data-description="Paragraph"><a href="#prop-countable-discont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 9.4.11"><a href="#prop-countable-discont" title="Copy heading and permalink for Proposition 9.4.11" aria-label="Copy heading and permalink for Proposition 9.4.11">🔗</a></div></article><details id="chap-differentation-6-28" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-28-1">We will assume that <span class="process-math">\(A\)</span> is countably infinite. The case when <span class="process-math">\(A\)</span> is finite is straightforward. Enumerate the points in <span class="process-math">\(A\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-2">
+\begin{equation*}
+A = \{x_1,x_2,x_3,\ldots\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-3">Let <span class="process-math">\((a_n)_{n=1}^\infty\)</span> be a sequence of positive real numbers such that <span class="process-math">\(\sum_{n=1}^\infty a_n&lt;\infty\text{.}\)</span> Define a function <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-4">
+\begin{equation*}
+f(x) = \sum_{n \colon x_n \leq x}a_n.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-5">We will show that <span class="process-math">\(f\)</span> is right-continuous; <span class="process-math">\(f\)</span> is discontinuous at every point in <span class="process-math">\(A\text{;}\)</span> and <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\backslash A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-28-6">We will first prove right-continuity. Take any <span class="process-math">\(x \in [a,b)\)</span> and fix <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> Suppose there exists <span class="process-math">\(\delta&gt;0\)</span> such that <span class="process-math">\((x,x+\delta) \cap A = \emptyset\text{.}\)</span> If <span class="process-math">\(y&gt;x\)</span> and <span class="process-math">\(|x-y|&lt;\delta\text{,}\)</span> then <span class="process-math">\(|f(x) - f(y)| = 0&lt;\varepsilon\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is right-continuous at <span class="process-math">\(x\text{.}\)</span> Otherwise, for each <span class="process-math">\(\eta&gt;0\)</span> the set <span class="process-math">\((x,x+\eta)\cap A\)</span> is infinite. Fix <span class="process-math">\(\eta&gt;0\text{.}\)</span> The series<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-7">
+\begin{equation*}
+\sum_{n\colon x&lt;x_n\leq x+\eta}a_n&lt;\infty.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-8">Hence, there is a finite set <span class="process-math">\(F \subseteq \{n \colon  x&lt;x_n\leq x+\eta\}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-9">
+\begin{equation*}
+\sum_{n\colon x&lt;x_n\leq x+\eta}a_n - \sum_{n \in F}a_n &lt; \varepsilon.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-10">Fix <span class="process-math">\(\delta&gt;0\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-11">
+\begin{equation*}
+(x,x+\delta) \cap \{x_n \in A \colon n \in F\} = \emptyset.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-12">Take <span class="process-math">\(y&gt;x\)</span> with <span class="process-math">\(|x-y|&lt;\delta.\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-13">
+\begin{equation*}
+|f(y) -f(x)|\leq\sum_{n\colon x&lt;x_n\leq x+\eta}a_n - \sum_{n \in F}a_n &lt; \varepsilon. 
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-14">Hence <span class="process-math">\(f\)</span> is right-continuous at <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-28-15">Take any <span class="process-math">\(x_m \in A\text{,}\)</span> and <span class="process-math">\(y&lt;x_m\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-countable-discont.html" id="chap-differentation-6-28-16">
+\begin{equation*}
+|f(x_m) - f(y)|\geq a_m &gt; 0.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-28-17">Hence <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\(x_m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-28-18">The argument that <span class="process-math">\(f\)</span> is (left) continuous on <span class="process-math">\([a,b]\backslash A\)</span> follows similar reasoning as the argument that <span class="process-math">\(f\)</span> is right-continuous and is left as an exercise (Exercise <a href="chap-differentation-7.html#exer-countable-discont" class="xref" data-knowl="./knowl/xref/exer-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 9.5.7">Exercise 9.5.7</a>).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-28-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.6"><a href="#chap-differentation-6-28" title="Copy heading and permalink for Proof 9.4.6" aria-label="Copy heading and permalink for Proof 9.4.6">🔗</a></div></article></details><div class="para" id="chap-differentation-6-29">What do non-continuous Borel signed-measures look like? Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a closed interval and let <span class="process-math">\(x \in [a,b]\)</span> be any point. The Dirac measure at <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\delta_x\text{,}\)</span> is not a continuous Borel measure, since <span class="process-math">\(\delta_x(\{x\}) = 1 \neq 0\text{.}\)</span> Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap-differentation-6-30"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-30-1">A non-zero Borel signed-measure <span class="process-math">\(\nu\)</span> on a closed interval <span class="process-math">\([a,b]\)</span> is <em class="emphasis">discrete</em> if there is a countable collection of points <span class="process-math">\(\{x_n\}^{\infty}_n\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_{n=1}^\infty\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-differentation-6-30-2">
+\begin{equation*}
+\nu = \sum_{n=1}^\infty a_n \delta_{x_n},
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-30-3">where <span class="process-math">\(\delta_{x_n}\)</span> is the Dirac measure at the point <span class="process-math">\(x_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-30-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 9.4.12"><a href="#chap-differentation-6-30" title="Copy heading and permalink for Definition 9.4.12" aria-label="Copy heading and permalink for Definition 9.4.12">🔗</a></div></article><article class="remark remark-like" id="chap-differentation-6-31"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-31-1">Note that, if <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> is a discrete Borel signed-measure, then the series <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is absolutely convergent.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-31-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-31-2">Conversely, if <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is an absolutely convergent series, and <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> is a countable collection of points in a closed interval <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\sum_{n} a_n \delta_{x_n}\)</span> is a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{,}\)</span> (Exercise <a href="chap-differentation-7.html#exer-discrete-measure" class="xref" data-knowl="./knowl/xref/exer-discrete-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 9.5.8">Exercise 9.5.8</a>).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-31-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 9.4.13"><a href="#chap-differentation-6-31" title="Copy heading and permalink for Remark 9.4.13" aria-label="Copy heading and permalink for Remark 9.4.13">🔗</a></div></article><div class="para" id="chap-differentation-6-32">It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Lebesgue-decomp-function-further"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm-Lebesgue-decomp-function-further-1"> If <span class="process-math">\(\nu\)</span> is a Borel signed-measure on <span class="process-math">\([a,b]\)</span> then there are mutually singular signed Borel measures <span class="process-math">\(\nu_d\text{,}\)</span> <span class="process-math">\(\nu_{sc}\)</span> and <span class="process-math">\(\nu_{ac}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="thm-Lebesgue-decomp-function-further-2">
+<li id="thm-Lebesgue-decomp-function-further-2-1">
+<div class="para" id="thm-Lebesgue-decomp-function-further-2-1-1">
+<span class="process-math">\(\nu = \nu_d + \nu_{sc} + \nu_{ac}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-Lebesgue-decomp-function-further-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-Lebesgue-decomp-function-further-2-2">
+<div class="para" id="thm-Lebesgue-decomp-function-further-2-2-1">
+<span class="process-math">\(\nu_d\)</span> is a discrete Borel signed-measure;<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-Lebesgue-decomp-function-further-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-Lebesgue-decomp-function-further-2-3">
+<div class="para" id="thm-Lebesgue-decomp-function-further-2-3-1">
+<span class="process-math">\(\nu_{sc}\)</span> is a singular continuous Borel signed-measure; and<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-Lebesgue-decomp-function-further-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-Lebesgue-decomp-function-further-2-4">
+<div class="para" id="thm-Lebesgue-decomp-function-further-2-4-1">
+<span class="process-math">\(\nu_{ac}\)</span> is an absolutely continuous Borel signed-measure.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#thm-Lebesgue-decomp-function-further-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 9.4.14"><a href="#thm-Lebesgue-decomp-function-further" title="Copy heading and permalink for Theorem 9.4.14" aria-label="Copy heading and permalink for Theorem 9.4.14">🔗</a></div></article><details id="chap-differentation-6-34" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-34-1">By the Lebesgue decomposition, Theorem <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.10: Lebesgue Decomposition Theorem">Theorem 9.1.10</a>, there are mutually singular measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_{ac}\)</span> where <span class="process-math">\(\nu_s\)</span> is singular, <span class="process-math">\(\nu_{ac}\)</span> is absolutely continuous, and <span class="process-math">\(\nu = \nu_s + \nu_{ac}\text{.}\)</span> It remains to show that we can decompose <span class="process-math">\(\nu_s\)</span> into a discrete part and a continuous part. We will thus assume that <span class="process-math">\(\nu=\nu_s\)</span> is singular.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-34-2">First, assume <span class="process-math">\(\nu\)</span> is a measure. Let <span class="process-math">\(f(x) = \nu([a,x])\)</span> be the cumulative distribution function for <span class="process-math">\(\nu\text{.}\)</span> Then <span class="process-math">\(f\)</span> is a right-continuous increasing function on <span class="process-math">\([a,b]\text{.}\)</span> By Theorem <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.10">Theorem 9.4.10</a> the set <span class="process-math">\(D\)</span> of discontinuities of <span class="process-math">\(f\)</span> is countable. For each <span class="process-math">\(x \in D\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html" id="chap-differentation-6-34-3">
+\begin{equation*}
+a_x = f(x) - lim_{y\rightarrow d^-}f(y)\neq 0.
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-34-4">Note that the sequence <span class="process-math">\(\sum_{x\in D}a_x\)</span> is absolutely convergent, since <span class="process-math">\(f\)</span> is of bounded variation. Let <span class="process-math">\(\nu_d\)</span> be the discrete Borel signed-measure<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html" id="chap-differentation-6-34-5">
+\begin{equation*}
+\nu_d = \sum_{x\in A} a_x \delta_{x},
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-34-6">and let <span class="process-math">\(\nu_{sc} = \nu - \nu_d\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-differentation-6-34-7">For any <span class="process-math">\(x \notin D\text{,}\)</span> <span class="process-math">\(\nu(\{x\}) = \nu_d(\{x\}) = 0\text{,}\)</span> and hence <span class="process-math">\(\nu_{sc}(\{x\}) = 0.\)</span> If <span class="process-math">\(x \in D\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html" id="chap-differentation-6-34-8">
+\begin{equation*}
+\begin{aligned}
+\nu_{sc}(\{x\}) &amp;= \nu(\{x\}) - \nu_d(\{x\})\\ &amp; = \lim_{n\rightarrow \infty} \left(\nu((x-1/n,x]))\right) - a_x\\
+&amp;= \lim_{n\rightarrow \infty}\left(f(x) - f(x-1/n)\right) - a_x \\
+&amp;= a_x - a_x = 0.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-34-9">Hence <span class="process-math">\(\nu_{sc}\)</span> is continuous, completing the proof<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-34-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 9.4.7"><a href="#chap-differentation-6-34" title="Copy heading and permalink for Proof 9.4.7" aria-label="Copy heading and permalink for Proof 9.4.7">🔗</a></div></article></details><div class="para" id="chap-differentation-6-35">Let <span class="process-math">\(H\)</span> be the Heaviside function on <span class="process-math">\(\mathbb{R}\text{.}\)</span> That is<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/ex-cantor-lebesgue.html ./knowl/xref/ex-Cantor.html ./knowl/xref/ex-Cantor-Lebesgue-not-abs-cont.html ./knowl/xref/ex-Cantor-Lebesgue-singular-function.html ./knowl/xref/cor-f-integrable.html ./knowl/xref/thm-Borel-radon-nikodym-derivative.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/prop-abs-cont-meas-and-func.html ./knowl/xref/prop-f-singular.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-Lebesgue-decomp-function.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-cdf.html ./knowl/xref/lem-uncountable-series.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-countable-discont.html ./knowl/xref/exer-discrete-measure.html ./knowl/xref/thm-lebesegue-decomposition.html ./knowl/xref/thm-bv-countable-discont.html ./knowl/xref/exer-dirac-cdf.html ./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-36">
+\begin{equation*}
+H(x) = \begin{cases} 0 &amp; x&lt;0 \\ 1 &amp; x \geq 0.\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="chap-differentation-6-37">The Heaviside function is the cumulative distribution function for the Dirac measure at <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\delta_0\)</span> (see Exercise <a href="chap-lebesgue-measure-6.html#exer-dirac-cdf" class="xref" data-knowl="./knowl/xref/exer-dirac-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.4.8">Exercise 5.4.8</a>). Thus, if <span class="process-math">\(x_0 \in \mathbb{R}\text{,}\)</span> then the cumulative distribution function for the Dirac measure <span class="process-math">\(\delta_{x_0}\)</span> is <span class="process-math">\(H(x-x_0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-37" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="chap-differentation-6-38"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-differentation-6-38-1">Let <span class="process-math">\(f\)</span> be a right-continuous function of bounded variation on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then there are functions <span class="process-math">\(f_d\text{,}\)</span> <span class="process-math">\(f_{sc}\text{,}\)</span> and <span class="process-math">\(f_{ac}\)</span> on <span class="process-math">\([a,b]\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="chap-differentation-6-38-2">
+<li id="chap-differentation-6-38-2-1">
+<div class="para" id="chap-differentation-6-38-2-1-1">
+<span class="process-math">\(f = f_d + f_{sc} + f_{ac}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chap-differentation-6-38-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chap-differentation-6-38-2-2">
+<div class="para" id="chap-differentation-6-38-2-2-1">
+<span class="process-math">\(f_{ac}\)</span> is absolutely continuous on <span class="process-math">\([a,b]\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chap-differentation-6-38-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chap-differentation-6-38-2-3">
+<div class="para" id="chap-differentation-6-38-2-3-1">
+<span class="process-math">\(f_{sc}\)</span> is continuous and singular;<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chap-differentation-6-38-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="chap-differentation-6-38-2-4">
+<div class="para logical" id="chap-differentation-6-38-2-4-1">
+<div class="para">there are points <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> in <span class="process-math">\([a,b]\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_n\)</span> such that</div>
+<div class="displaymath process-math" id="chap-differentation-6-38-2-4-1-4">
+\begin{equation*}
+f_d(x) = \sum_{n=1}^\infty a_nH(x-x_n)
+\end{equation*}
+</div>
+<div class="para"><div class="para" id="chap-differentation-6-38-2-4-1-5">for all <span class="process-math">\(x \in [a,b]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-2-4-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-38-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chap-differentation-6-38-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Corollary 9.4.15"><a href="#chap-differentation-6-38" title="Copy heading and permalink for Corollary 9.4.15" aria-label="Copy heading and permalink for Corollary 9.4.15">🔗</a></div></article><details id="chap-differentation-6-39" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-differentation-6-39-1">Let <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> be a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{.}\)</span> The result follows from Theorem <a href="chap-differentation-6.html#thm-Lebesgue-decomp-function-further" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-decomp-function-further.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.4.14">Theorem 9.4.14</a>, on noting that if <span class="process-math">\(f(x)=\nu([a,x])\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-39-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-39-2">
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty a_nH(x-x_n) = \sum_{n\colon x_n\leq x}a_n. 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proof 9.4.8"><a href="#chap-differentation-6-39" title="Copy heading and permalink for Proof 9.4.8" aria-label="Copy heading and permalink for Proof 9.4.8">🔗</a></div></article></details><div class="autopermalink" data-description="Section 9.4: The Lebesgue Decomposition of function"><a href="#chap-differentation-6" title="Copy heading and permalink for Section 9.4: The Lebesgue Decomposition of function" aria-label="Copy heading and permalink for Section 9.4: The Lebesgue Decomposition of function">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ftoc.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-differentation-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

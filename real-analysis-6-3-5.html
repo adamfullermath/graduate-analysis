@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Locally compact Hausdorff spaces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="real-analysis-6-3-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-6-3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-RMK.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">3</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">3.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">4</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">5</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">6</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">7</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">8</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">9</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">9.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">10</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="codenumber">10.2.1</span> <span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">11</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">A</span> <span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.12.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="codenumber">A.12.1.1</span> <span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="codenumber">A.12.1.2</span> <span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.12.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="codenumber">A.12.2.1</span> <span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="codenumber">A.12.2.2</span> <span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.12.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="codenumber">A.12.3.1</span> <span class="title">Volterra’s function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#sec-diff-bounded-4" class="internal"><span class="codenumber">A.12.3.2</span> <span class="title">Simpler example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="real-analysis-6-3-5"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Locally compact Hausdorff spaces</span>
+</h2>
+<div class="para" id="real-analysis-6-3-5-2">As all continuous functions on <span class="process-math">\([a,b]\)</span> are necessarily bounded, <span class="process-math">\(C([a,b])= C_b([a,b])\)</span> and <span class="process-math">\(C([a,b])\)</span> is a Banach space with the <span class="process-math">\(\sup\)</span>-norm, see Example <a href="real-analysis-6-2-3.html#ex-Cb-Banach" class="xref" data-knowl="./knowl/xref/ex-Cb-Banach.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.1.10">Example 10.1.10</a>. In Section <a href="sec-RMK.html" class="internal" title="Section 11.4: Linear functionals on C_0(X)">Section 11.4</a> we will describe the dual space of <span class="process-math">\(C([a,b])\text{.}\)</span> We will do this by provingt the (more general) Riesz-Markov-Kakutani Theorem. We begin with some topological preliminaries.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-3">In this section we will review some topological facts. Most will be presented without proof. Details can be found in <a href="backmatter-3.html#Folland" class="xref" data-knowl="./knowl/xref/Folland.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 6: Real analysis">[6]</a> or <a href="backmatter-3.html#Roy" class="xref" data-knowl="./knowl/xref/Roy.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 12: Real Analysis">[12]</a> (and umpteen more texts).<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-4">Let <span class="process-math">\(X\)</span> be a topological space. If <span class="process-math">\(x \in X\text{,}\)</span> a set <span class="process-math">\(A \subseteq X\)</span> is a <em class="emphasis">neighborhood of <span class="process-math">\(x\)</span></em> if <span class="process-math">\(x \in A\text{,}\)</span> and there is an open set <span class="process-math">\(U \subseteq X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cb-Banach.html ./knowl/xref/sec-RMK.html ./knowl/xref/Folland.html ./knowl/xref/Roy.html ./knowl/xref/ex-Cb-Banach.html ./knowl/xref/ex-C0-Banach.html ./knowl/xref/ex-Cc-not-Banach.html ./knowl/xref/thm-Lebesgue-regular.html ./knowl/xref/lem-regular-borel.html ./knowl/xref/exer-Borel-on-R-Radon.html" id="real-analysis-6-3-5-5">
+\begin{equation*}
+x \in U \subseteq A.
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-6">Take <span class="process-math">\(K \subseteq X\text{.}\)</span> A collection of open sets <span class="process-math">\(\{U_\alpha\}_{\alpha \in A}\)</span> is an <em class="emphasis">open cover of <span class="process-math">\(K\)</span></em> if <span class="process-math">\(K \subseteq \bigcup_{\alpha \in A}\text{.}\)</span> The set <span class="process-math">\(K\)</span> is <em class="emphasis">compact</em> if given any open cover <span class="process-math">\(\{U_\alpha\}_{\alpha \in A}\)</span> of <span class="process-math">\(K\text{,}\)</span> there is a finite subcover. That is, there are <span class="process-math">\(U_1,\ldots,U_n \in \{U_\alpha\}_{\alpha \in A}\)</span> such that <span class="process-math">\(K \subseteq \bigcup_{k=1}^n U_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-7">The following result gives a useful alternative characterization of compactness.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-compact-finite-intersection"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-compact-finite-intersection-1">Let <span class="process-math">\(X\)</span> be a topological space. The following are equivalent:<div class="autopermalink" data-description="Paragraph"><a href="#prop-compact-finite-intersection-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="prop-compact-finite-intersection-2">
+<li id="prop-compact-finite-intersection-2-1">
+<div class="para" id="prop-compact-finite-intersection-2-1-1">
+<span class="process-math">\(X\)</span> is compact;<div class="autopermalink" data-description="Paragraph"><a href="#prop-compact-finite-intersection-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop-compact-finite-intersection-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="prop-compact-finite-intersection-2-2">
+<div class="para logical" id="prop-compact-finite-intersection-2-2-1">
+<div class="para">if  <span class="process-math">\(\{F_\alpha\}_{\alpha \in A}\)</span> is a collection of closed sets satisfying <span class="process-math">\(\bigcap_{k=1}^nF_k \neq \emptyset\)</span> for any <span class="process-math">\(F_1,\ldots,F_n \in \{F_\alpha\}_{\alpha \in A}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="prop-compact-finite-intersection-2-2-1-4">
+\begin{equation*}
+\bigcap_{\alpha\in A}F_\alpha \neq \emptyset.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-compact-finite-intersection-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop-compact-finite-intersection-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Proposition 11.3.1"><a href="#prop-compact-finite-intersection" title="Copy heading and permalink for Proposition 11.3.1" aria-label="Copy heading and permalink for Proposition 11.3.1">🔗</a></div></article><div class="para" id="real-analysis-6-3-5-9">Given a collection of topology spaces <span class="process-math">\(\{X_\alpha\}_{\alpha\in A}\)</span> we can form the Cartesian product <span class="process-math">\(Y = \prod_{\alpha \in A}X_\alpha\text{.}\)</span> The <em class="emphasis">product topology</em> on <span class="process-math">\(Y\)</span> is the topology generated by the sets <span class="process-math">\(\prod_{\alpha \in A}U_\alpha\)</span> where, for each <span class="process-math">\(\alpha \in A\text{,}\)</span> <span class="process-math">\(U_\alpha \subseteq X_\alpha\)</span> is an open set, and <span class="process-math">\(U_\alpha = X_\alpha\)</span> for all but finitely many <span class="process-math">\(\alpha\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-tychonoff"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tychonoff’s Theorem.</span>
+</h3>
+<div class="para" id="thm-tychonoff-2"> Let  <span class="process-math">\(\{X_\alpha\}_{\alpha\in A}\)</span>  be a collection of topological spaces, let <span class="process-math">\(Y = \prod_{\alpha \in A}X_\alpha\)</span> with the product topology. If <span class="process-math">\(X_\alpha\)</span> is compact for all <span class="process-math">\(\alpha \in A\text{,}\)</span> then <span class="process-math">\(Y\)</span> is compact.<div class="autopermalink" data-description="Paragraph"><a href="#thm-tychonoff-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 11.3.2: Tychonoff’s Theorem"><a href="#thm-tychonoff" title="Copy heading and permalink for Theorem 11.3.2: Tychonoff’s Theorem" aria-label="Copy heading and permalink for Theorem 11.3.2: Tychonoff’s Theorem">🔗</a></div></article><div class="para" id="real-analysis-6-3-5-11">Tychonoff’s Theorem is a non-trivial result. In fact, it can be shown that Tychonoff’s Theorem is equivalent to the axiom of choice.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-12">Recall that <span class="process-math">\(X\)</span> is <em class="emphasis">Hausdorff</em> if given <span class="process-math">\(x,y\in X\)</span> with <span class="process-math">\(x \neq y\text{,}\)</span> there exist open sets <span class="process-math">\(U,V \subseteq X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cb-Banach.html ./knowl/xref/sec-RMK.html ./knowl/xref/Folland.html ./knowl/xref/Roy.html ./knowl/xref/ex-Cb-Banach.html ./knowl/xref/ex-C0-Banach.html ./knowl/xref/ex-Cc-not-Banach.html ./knowl/xref/thm-Lebesgue-regular.html ./knowl/xref/lem-regular-borel.html ./knowl/xref/exer-Borel-on-R-Radon.html" id="real-analysis-6-3-5-13">
+\begin{equation*}
+x \in U,\ y \in V,\ \text{ and }U \cap V = \emptyset.
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-14">Compact Hausdorff spaces are very nice, but if we restrict to compact topological spaces we lose too many important examples. We instead restrict to locally compact spaces:<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="real-analysis-6-3-5-15"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="real-analysis-6-3-5-15-1">Let <span class="process-math">\(X\)</span> be a topological space. The space <span class="process-math">\(X\)</span> is <em class="emphasis">locally compact</em> if every point <span class="process-math">\(x\in X\)</span> has a compact neighborhood.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 11.3.3"><a href="#real-analysis-6-3-5-15" title="Copy heading and permalink for Definition 11.3.3" aria-label="Copy heading and permalink for Definition 11.3.3">🔗</a></div></article><details id="real-analysis-6-3-5-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-16-1">Every compact space is locally compact.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.4"><a href="#real-analysis-6-3-5-16" title="Copy heading and permalink for Example 11.3.4" aria-label="Copy heading and permalink for Example 11.3.4">🔗</a></div></article></details><details id="real-analysis-6-3-5-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-17-1">The real line <span class="process-math">\(\mathbb{R}\)</span> is locally compact and Hausdorff. Indeed, for any <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> the set <span class="process-math">\([x-1,x+1]\)</span> is a compact neighborhood of <span class="process-math">\(\mathbb{R}\text{.}\)</span> More generally, <span class="process-math">\(\mathbb{R}^n\)</span> is locally compact and Hausdorff. Indeed, if <span class="process-math">\(x \in \mathbb{R}^n\text{,}\)</span> then the neighborhood <span class="process-math">\(K = \{y \in \mathbb{R}^n \colon \|x-y\|_2\leq 1\}\)</span> is compact by the Heine-Borel theorem.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.5"><a href="#real-analysis-6-3-5-17" title="Copy heading and permalink for Example 11.3.5" aria-label="Copy heading and permalink for Example 11.3.5">🔗</a></div></article></details><details id="real-analysis-6-3-5-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-18-1">Every metric space is Hausdorff. However, not every metric space is locally compact. In particular, a Banach space <span class="process-math">\(V\)</span> is locally compact if and only if <span class="process-math">\(V\)</span> is finite dimensional.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.6"><a href="#real-analysis-6-3-5-18" title="Copy heading and permalink for Example 11.3.6" aria-label="Copy heading and permalink for Example 11.3.6">🔗</a></div></article></details><details id="real-analysis-6-3-5-19" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-19-1">Let <span class="process-math">\(X\)</span> be a topological space with the discrete topology, i.e. every subset of <span class="process-math">\(X\)</span> is open. Then <span class="process-math">\(X\)</span> is Hausdorff and locally compact. Indeed, if <span class="process-math">\(x \in X\text{,}\)</span> then <span class="process-math">\(\{x\}\)</span> is a compact neighborhood of <span class="process-math">\(x\text{.}\)</span> If <span class="process-math">\(X\)</span> has an infinite cardinality, then <span class="process-math">\(X\)</span> is locally compact, but not compact.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.7"><a href="#real-analysis-6-3-5-19" title="Copy heading and permalink for Example 11.3.7" aria-label="Copy heading and permalink for Example 11.3.7">🔗</a></div></article></details><div class="para" id="real-analysis-6-3-5-20">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space. We denote by <span class="process-math">\(C(X)\)</span> the space of all continuous real-valued functions on <span class="process-math">\(X\text{.}\)</span> We denote by <span class="process-math">\(C_b(X)\)</span> the space of all bounded continuous real-valued functions on <span class="process-math">\(X\text{.}\)</span> The space <span class="process-math">\(C_b(X)\)</span> is a normed-vector space with the <span class="process-math">\(\sup\)</span>-norm<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cb-Banach.html ./knowl/xref/sec-RMK.html ./knowl/xref/Folland.html ./knowl/xref/Roy.html ./knowl/xref/ex-Cb-Banach.html ./knowl/xref/ex-C0-Banach.html ./knowl/xref/ex-Cc-not-Banach.html ./knowl/xref/thm-Lebesgue-regular.html ./knowl/xref/lem-regular-borel.html ./knowl/xref/exer-Borel-on-R-Radon.html" id="real-analysis-6-3-5-21">
+\begin{equation*}
+\|f\|_\infty = \sup_{x\in X} |f(x)|.
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-22">A function <span class="process-math">\(f \in C(X)\)</span> <em class="emphasis">vanishes at infinity</em> if, for all <span class="process-math">\(\varepsilon&gt;0\text{,}\)</span> there is a compact set <span class="process-math">\(K\text{,}\)</span> such that <span class="process-math">\(|f(x)|&lt;\varepsilon\)</span> for all <span class="process-math">\(x \in X \backslash K\text{.}\)</span> Denote by <span class="process-math">\(C_0(X)\)</span> the space of all continuous functions on <span class="process-math">\(X\)</span> which vanish at infinity.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-23">A function <span class="process-math">\(f \in C(X)\)</span> is <em class="emphasis">compactly supported</em>, or of <em class="emphasis">compact support</em>, if there is a compact set <span class="process-math">\(K \subseteq X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cb-Banach.html ./knowl/xref/sec-RMK.html ./knowl/xref/Folland.html ./knowl/xref/Roy.html ./knowl/xref/ex-Cb-Banach.html ./knowl/xref/ex-C0-Banach.html ./knowl/xref/ex-Cc-not-Banach.html ./knowl/xref/thm-Lebesgue-regular.html ./knowl/xref/lem-regular-borel.html ./knowl/xref/exer-Borel-on-R-Radon.html" id="real-analysis-6-3-5-24">
+\begin{equation*}
+\{x \in X \colon h(x) \neq 0\} \subseteq K. 
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-25">When <span class="process-math">\(f\)</span> is compactly supported, we call the closure of <span class="process-math">\(\{x \in X \colon h(x) \neq 0\}\)</span> in <span class="process-math">\(X\text{,}\)</span> the <em class="emphasis">compact support of <span class="process-math">\(f\)</span></em>. We denote by <span class="process-math">\(C_c(X)\)</span> the space of all continuous compactly supported functions on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-26">These definitions are consistent with the definitions in Example <a href="real-analysis-6-2-3.html#ex-Cb-Banach" class="xref" data-knowl="./knowl/xref/ex-Cb-Banach.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.1.10">Example 10.1.10</a>, Example <a href="real-analysis-6-2-3.html#ex-C0-Banach" class="xref" data-knowl="./knowl/xref/ex-C0-Banach.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.1.11">Example 10.1.11</a>, and Example <a href="real-analysis-6-2-3.html#ex-Cc-not-Banach" class="xref" data-knowl="./knowl/xref/ex-Cc-not-Banach.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.1.12">Example 10.1.12</a>. We have that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-Cb-Banach.html ./knowl/xref/sec-RMK.html ./knowl/xref/Folland.html ./knowl/xref/Roy.html ./knowl/xref/ex-Cb-Banach.html ./knowl/xref/ex-C0-Banach.html ./knowl/xref/ex-Cc-not-Banach.html ./knowl/xref/thm-Lebesgue-regular.html ./knowl/xref/lem-regular-borel.html ./knowl/xref/exer-Borel-on-R-Radon.html" id="real-analysis-6-3-5-27">
+\begin{equation*}
+C_c(X) \subseteq C_0(X) \subseteq C_c(X).
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-28">Both <span class="process-math">\(C_b(X)\)</span> and <span class="process-math">\(C_0(X)\)</span> are Banach spaces with the <span class="process-math">\(\sup\)</span>-norm. In general, <span class="process-math">\(C_c(X)\)</span> is not a Banach space. The smallest Banach subspace of <span class="process-math">\(C_b(X)\)</span> containing <span class="process-math">\(C_c(X)\)</span> is <span class="process-math">\(C_0(X)\text{.}\)</span> That is, <span class="process-math">\(C_0(X)\)</span> is the closure of <span class="process-math">\(C_c(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-29">When we work with the real line, we can often find continuous functions that take desired values on certain sets. We have, for example, does this with piecewise linear functions many times throughout these notes. When working with a more general topological space, it is not clear that we can always find these nice continuous functions. The following proposition shows that for locally compact Hausdorff spaces, we can, at times, find continuous functions to do what we want.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="real-analysis-6-3-5-30"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Urysohn’s Lemma.</span>
+</h3>
+<div class="para" id="real-analysis-6-3-5-30-2"> Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space. Let <span class="process-math">\(K \subseteq X\)</span> be compact and <span class="process-math">\(U \subseteq X\)</span> be open such that <span class="process-math">\(K \subseteq U \subseteq X\text{.}\)</span> There exists a continuous, compactly supported function <span class="process-math">\(f \colon X \rightarrow [0,1]\)</span> such that <span class="process-math">\(f(x) = 1\)</span> for all <span class="process-math">\(x \in K\)</span> and <span class="process-math">\(f(x) = 0\)</span> for all <span class="process-math">\(x \in X \backslash U\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-30-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 11.3.8: Urysohn’s Lemma"><a href="#real-analysis-6-3-5-30" title="Copy heading and permalink for Proposition 11.3.8: Urysohn’s Lemma" aria-label="Copy heading and permalink for Proposition 11.3.8: Urysohn’s Lemma">🔗</a></div></article><div class="para" id="real-analysis-6-3-5-31">What we have stated here is actually just a special case of Urysohn’s Lemma. When working in a metric space, the next example shows that the proof of Urysohn’s Lemma is straightforward.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="real-analysis-6-3-5-32" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-32-1">Suppose <span class="process-math">\(X\)</span> is a metric space with metric <span class="process-math">\(d\)</span> (not necessarily locally compact), and that <span class="process-math">\(K \subseteq U \subseteq X\)</span> with <span class="process-math">\(K\)</span> closed and <span class="process-math">\(U\)</span> open. For any closed set <span class="process-math">\(F \subseteq X\text{,}\)</span> let <span class="process-math">\(d_F\)</span> be the function on <span class="process-math">\(X\)</span> defined by <span class="process-math">\(d_F(x) = \inf\{d(x,y)\colon y \in F\}.\)</span> For each closed <span class="process-math">\(F\text{,}\)</span> it can be shown that <span class="process-math">\(d_F\)</span> is a continuous function. Now, define a function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="real-analysis-6-3-5-32-2">
+\begin{equation*}
+f(x) = \frac{d_{X\backslash U}(x)}{d_{X\backslash U}(x) + d_K(x)}.
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-32-3">Then <span class="process-math">\(f\)</span> is a continuous function from <span class="process-math">\(X\)</span> to <span class="process-math">\([0,1]\)</span> satisfying <span class="process-math">\(f(x) = 1\)</span> for <span class="process-math">\(x \in K\text{,}\)</span> and <span class="process-math">\(f(x) = 0\)</span> for <span class="process-math">\(x \in X\backslash U\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-32-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.9"><a href="#real-analysis-6-3-5-32" title="Copy heading and permalink for Example 11.3.9" aria-label="Copy heading and permalink for Example 11.3.9">🔗</a></div></article></details><article class="definition definition-like" id="real-analysis-6-3-5-33"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="real-analysis-6-3-5-33-1">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space, let <span class="process-math">\(K \subseteq X\)</span> be a compact subset, and let <span class="process-math">\(\{U_1,\ldots,U_n\}\)</span> be an open cover for <span class="process-math">\(K\text{.}\)</span> A collection of continuous functions <span class="process-math">\(h_1,\ldots,h_n\)</span> from <span class="process-math">\(X\)</span> to <span class="process-math">\([0,1]\)</span> are <em class="emphasis">partition of unity for <span class="process-math">\(K\)</span> subordinate to <span class="process-math">\(U_1,\ldots,U_n\)</span></em> if<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-33-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="real-analysis-6-3-5-33-2">
+<li id="real-analysis-6-3-5-33-2-1">
+<div class="para" id="real-analysis-6-3-5-33-2-1-1">
+<span class="process-math">\(h_i \in C_c(X)\)</span> for <span class="process-math">\(1\leq i \leq n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-33-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#real-analysis-6-3-5-33-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="real-analysis-6-3-5-33-2-2">
+<div class="para" id="real-analysis-6-3-5-33-2-2-1">
+<span class="process-math">\(\sum_{i=1}^n h_i(x) = 1\)</span> for all <span class="process-math">\(x \in K\text{;}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-33-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#real-analysis-6-3-5-33-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="real-analysis-6-3-5-33-2-3">
+<div class="para" id="real-analysis-6-3-5-33-2-3-1">the compact support of <span class="process-math">\(h_i\)</span> is a subset of <span class="process-math">\(U_i\)</span> for <span class="process-math">\(1\leq i \leq n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-33-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#real-analysis-6-3-5-33-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Definition 11.3.10"><a href="#real-analysis-6-3-5-33" title="Copy heading and permalink for Definition 11.3.10" aria-label="Copy heading and permalink for Definition 11.3.10">🔗</a></div></article><div class="para" id="real-analysis-6-3-5-34">The following result is an application of Urysohn’s Lemma.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-decomp-of-unity"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-decomp-of-unity-1">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space, <span class="process-math">\(K \subseteq X\)</span> be compact, and <span class="process-math">\(\{U_1,\ldots,U_n\}\)</span> be an open cover of <span class="process-math">\(K\text{.}\)</span> There is a partition of unity for <span class="process-math">\(K\)</span> subordinate to <span class="process-math">\(U_1,\ldots,U_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-decomp-of-unity-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 11.3.11"><a href="#prop-decomp-of-unity" title="Copy heading and permalink for Proposition 11.3.11" aria-label="Copy heading and permalink for Proposition 11.3.11">🔗</a></div></article><div class="para" id="real-analysis-6-3-5-36">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space. We denote by <span class="process-math">\(\mathcal{B}(X)\)</span> the Borel sets in <span class="process-math">\(X\text{.}\)</span> That is, <span class="process-math">\(\mathcal{B}(X)\)</span> is the smallest <span class="process-math">\(\sigma\)</span>-algebra of subsets of <span class="process-math">\(X\)</span> containing all the open subsets of <span class="process-math">\(X\text{.}\)</span> Recall that a measure <span class="process-math">\(\mu\)</span> on the measurable space <span class="process-math">\((X,\mathcal{B}(X))\)</span> is a Borel measure if <span class="process-math">\(\mu(K)&lt;\infty\)</span> for all compact sets <span class="process-math">\(K\subseteq X\text{.}\)</span> We will be primarily interested in a special type of Borel measure.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="real-analysis-6-3-5-37"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="real-analysis-6-3-5-37-1">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space and let <span class="process-math">\(\mu\)</span> be a Borel measure on <span class="process-math">\((X,\mathcal{B}(X))\text{.}\)</span> Take <span class="process-math">\(E \in \mathcal{B}(X)\text{.}\)</span> The measure <span class="process-math">\(\mu\)</span> is <em class="emphasis">outer regular</em> on <span class="process-math">\(E\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-37-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="real-analysis-6-3-5-37-2">
+\begin{equation*}
+\mu(E) = \inf\{\mu(U) \colon E \subseteq U,\ U \text{ open}\},
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-37-3">and <em class="emphasis">inner regular</em> on <span class="process-math">\(E\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-37-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="real-analysis-6-3-5-37-4">
+\begin{equation*}
+\mu(E) = \sup\{\mu(K) \colon K \subseteq E,\ K \text{ compact}\}.
+\end{equation*}
+</div>
+<div class="para" id="real-analysis-6-3-5-37-5">The measure <span class="process-math">\(\mu\)</span> is a <em class="emphasis">Radon measure</em> if <span class="process-math">\(\mu\)</span> is outer regular on all Borel sets, and inner regular on all open sets.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-37-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-6-3-5-37-6">A signed Borel measure <span class="process-math">\(\nu\)</span> on <span class="process-math">\((X,\mathcal{B}(X))\)</span> is a <em class="emphasis">Radon signed measure</em> if the measure of total variation <span class="process-math">\(|\nu|\)</span> is a Radon measure.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-37-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 11.3.12"><a href="#real-analysis-6-3-5-37" title="Copy heading and permalink for Definition 11.3.12" aria-label="Copy heading and permalink for Definition 11.3.12">🔗</a></div></article><details id="real-analysis-6-3-5-38" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-38-1">Let <span class="process-math">\(m\)</span> be the Lebesgue measure on the Borel subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span> By Theorem <a href="sec-Lebesgue.html#thm-Lebesgue-regular" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-regular.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.8">Theorem 5.1.8</a>, <span class="process-math">\(m\)</span> is a Radon measure.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-38-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.13"><a href="#real-analysis-6-3-5-38" title="Copy heading and permalink for Example 11.3.13" aria-label="Copy heading and permalink for Example 11.3.13">🔗</a></div></article></details><details id="real-analysis-6-3-5-39" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-39-1">Let <span class="process-math">\(\mu\)</span> be a Borel measure on <span class="process-math">\(\mathbb{R}\text{.}\)</span> By Lemma <a href="sec-ftoc.html#lem-regular-borel" class="xref" data-knowl="./knowl/xref/lem-regular-borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 9.3.10">Lemma 9.3.10</a>, <span class="process-math">\(\mu\)</span> is outer regular on all Borel sets. By Exercise <a href="real-analysis-6-3-7.html#exer-Borel-on-R-Radon" class="xref" data-knowl="./knowl/xref/exer-Borel-on-R-Radon.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 11.5.12">Exercise 11.5.12</a>, <span class="process-math">\(\mu\)</span> is inner regular on open subsets <span class="process-math">\(U \subseteq \mathbb{R}\text{,}\)</span> and hence <span class="process-math">\(\mu\)</span> is a Radon measure.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-39-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.14"><a href="#real-analysis-6-3-5-39" title="Copy heading and permalink for Example 11.3.14" aria-label="Copy heading and permalink for Example 11.3.14">🔗</a></div></article></details><details id="real-analysis-6-3-5-40" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="real-analysis-6-3-5-40-1">Let <span class="process-math">\(X\)</span> be a locally compact Hausdorff space, let <span class="process-math">\(x \in X\)</span> be any pointy, and let <span class="process-math">\(\delta_x\)</span> be the Dirac measure at <span class="process-math">\(x\)</span> on the Borel sets <span class="process-math">\(\mathcal{B}(X)\text{.}\)</span> Then <span class="process-math">\(\delta_x\)</span> is a Radon measure.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-5-40-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 11.3.15"><a href="#real-analysis-6-3-5-40" title="Copy heading and permalink for Example 11.3.15" aria-label="Copy heading and permalink for Example 11.3.15">🔗</a></div></article></details><div class="autopermalink" data-description="Section 11.3: Locally compact Hausdorff spaces"><a href="#real-analysis-6-3-5" title="Copy heading and permalink for Section 11.3: Locally compact Hausdorff spaces" aria-label="Copy heading and permalink for Section 11.3: Locally compact Hausdorff spaces">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="real-analysis-6-3-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-RMK.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

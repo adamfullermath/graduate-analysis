@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Approximations of measurable functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chap-meas-fun-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-meas-fun.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap-meas-fun-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">3</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">3.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">4</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">5</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">6</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">7</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">8</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">9</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">9.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">9.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">9.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">10</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="codenumber">10.2.1</span> <span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">11</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="codenumber">11.2.1</span> <span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">11.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">A</span> <span class="title">Appendices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A.12</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.12.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="codenumber">A.12.1.1</span> <span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="codenumber">A.12.1.2</span> <span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.12.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="codenumber">A.12.2.1</span> <span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="codenumber">A.12.2.2</span> <span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.12.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="codenumber">A.12.3.1</span> <span class="title">Volterra’s function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#sec-diff-bounded-4" class="internal"><span class="codenumber">A.12.3.2</span> <span class="title">Simpler example</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chap-meas-fun-4"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximations of measurable functions</span>
+</h2>
+<div class="para" id="chap-meas-fun-4-2">Equivalently, there are several ways we can say that a sequence <span class="process-math">\((f_n)_n\)</span> of functions converges to a function <span class="process-math">\(f\text{.}\)</span> You will already be familiar with the concept of pointwise convergence of functions and, at least for functions from <span class="process-math">\(\mathbb{R}\)</span> to <span class="process-math">\(\mathbb{R}\text{,}\)</span> uniform convergence. We recall these definitions below, together with an unfamiliar form of convergence: convergence pointwise almost everywhere.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="chap-meas-fun-4-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chap-meas-fun-4-3-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a  measure space, let <span class="process-math">\((f_n)_n\)</span> be a sequence of extended real-valued functions on <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(f\)</span> be an extended real-valued function on <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-3-2">The sequence <span class="process-math">\((f_n)\)</span> <em class="emphasis">converges to <span class="process-math">\(f\)</span> pointwise almost everywhere</em><details class="ptx-footnote" aria-live="polite" id="chap-meas-fun-4-3-2-4"><summary class="ptx-footnote__number" title="Footnote 7.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="chap-meas-fun-4-3-2-4">often abbreviated to <em class="emphasis">pointwise a.e.</em>
+</div></details> if there is an <span class="process-math">\(E \subseteq X\)</span> with <span class="process-math">\(\mu(E) = 0\text{,}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-3-3">
+\begin{equation*}
+\lim_{n \rightarrow \infty} f_n(x) = f(x)
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-3-4">for all <span class="process-math">\(x \in X \backslash E\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-3-5">If<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-3-6">
+\begin{equation*}
+\lim_{n \rightarrow \infty} f_n(x) = f(x)
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-3-7">for all <span class="process-math">\(x \in X\)</span> then we say that the sequence <span class="process-math">\((f_n)_n\)</span> <em class="emphasis">converges pointwise to <span class="process-math">\(f\text{.}\)</span></em><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-3-8">The sequence <span class="process-math">\((f_n)_n\)</span> converges <em class="emphasis">uniformly</em> if for all <span class="process-math">\(\varepsilon &gt;0\)</span> there exists an <span class="process-math">\(N \geq 0\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-3-9">
+\begin{equation*}
+|f_n(x) - f(x)| &lt; \varepsilon
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-3-10">for all <span class="process-math">\(x \in X\)</span> and <span class="process-math">\(n \geq N\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.2.1"><a href="#chap-meas-fun-4-3" title="Copy heading and permalink for Definition 7.2.1" aria-label="Copy heading and permalink for Definition 7.2.1">🔗</a></div></article><article class="remark remark-like" id="rem-types-of-convergence"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-types-of-convergence-1">The relationship between these three forms of convergence is:<div class="autopermalink" data-description="Paragraph"><a href="#rem-types-of-convergence-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="rem-types-of-convergence-2">
+\begin{equation*}
+\text{uniform}\implies \text{pointwise} \implies \text{pointwise a.e.}.
+\end{equation*}
+</div>
+<div class="para" id="rem-types-of-convergence-3">Neither of the implications go the opposite way, however. Recall that the sequence <span class="process-math">\((x^n)_n\)</span> on <span class="process-math">\([0,1]\)</span> converges pointwise to the function<div class="autopermalink" data-description="Paragraph"><a href="#rem-types-of-convergence-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="rem-types-of-convergence-4">
+\begin{equation*}
+f(x) = \begin{cases}
+0 &amp; x \in [0,1)\\
+1 &amp; x = 1,
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="rem-types-of-convergence-5">but <span class="process-math">\((x^n)_n\)</span> does not converge uniformly to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rem-types-of-convergence-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="rem-types-of-convergence-6">Suppose <span class="process-math">\(A \subseteq \mathbb{R}\)</span> is a non-empty Lebesgue measurable set with <span class="process-math">\(m(A) = 0\text{.}\)</span> Define functions<div class="autopermalink" data-description="Paragraph"><a href="#rem-types-of-convergence-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="rem-types-of-convergence-7">
+\begin{equation*}
+f_n(x) = \begin{cases} 0&amp; x \in \mathbb{R} \backslash A, \\
+(-1)^n &amp; x \in A.\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="rem-types-of-convergence-8">Then <span class="process-math">\(f_n\)</span> converges pointwise a.e. to the zero function <span class="process-math">\(0\text{,}\)</span> whilst <span class="process-math">\(f_n\)</span> does not converge pointwise to any function.<div class="autopermalink" data-description="Paragraph"><a href="#rem-types-of-convergence-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 7.2.2"><a href="#rem-types-of-convergence" title="Copy heading and permalink for Remark 7.2.2" aria-label="Copy heading and permalink for Remark 7.2.2">🔗</a></div></article><div class="para" id="chap-meas-fun-4-5">Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, Theorem <a href="chap-meas-fun-4.html#thm-simple-approx" class="xref" data-knowl="./knowl/xref/thm-simple-approx.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.4: The Simple Approximation Theorem">Theorem 7.2.4</a>, which says that any measurable function is a pointwise limit of simple functions; and Ergoroff’s Theorem, Theorem <a href="chap-meas-fun-4.html#thm-ergoroff" class="xref" data-knowl="./knowl/xref/thm-ergoroff.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.5: Ergoroff’s Theorem">Theorem 7.2.5</a>, which says that if <span class="process-math">\((f_n)_n\)</span> converge pointwise to <span class="process-math">\(f\text{,}\)</span> then there is a large set on which the convergence is uniform.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-6">We first establish that a pointwise limit of measurable functions is measurable.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-pw-lim"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-pw-lim-1">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space. Suppose <span class="process-math">\((f_n)_n\)</span> is a sequence of measurable functions on <span class="process-math">\(X\)</span> that converge pointwise almost everywhere to a function <span class="process-math">\(f\text{.}\)</span> Then, if either<div class="autopermalink" data-description="Paragraph"><a href="#prop-pw-lim-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="prop-pw-lim-2">
+<li id="prop-pw-lim-2-1">
+<div class="para" id="prop-pw-lim-2-1-1">
+<span class="process-math">\((X,\mathcal{F},\mu)\)</span> is a complete measure space; or<div class="autopermalink" data-description="Paragraph"><a href="#prop-pw-lim-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop-pw-lim-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="prop-pw-lim-2-2">
+<div class="para" id="prop-pw-lim-2-2-1">the sequence <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-pw-lim-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop-pw-lim-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="para" id="prop-pw-lim-3">then <span class="process-math">\(f\)</span> is a measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#prop-pw-lim-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 7.2.3"><a href="#prop-pw-lim" title="Copy heading and permalink for Proposition 7.2.3" aria-label="Copy heading and permalink for Proposition 7.2.3">🔗</a></div></article><details id="chap-meas-fun-4-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-meas-fun-4-8-1">Let <span class="process-math">\(E\)</span> be a measurable set with <span class="process-math">\(\mu(E) = 0\)</span> such that <span class="process-math">\((f_n(x))_n\)</span> converges to <span class="process-math">\(f(x)\)</span> for all <span class="process-math">\(x \in X \backslash E\text{.}\)</span> If <span class="process-math">\((X,\mathcal{F},\mu)\)</span> is complete, then <span class="process-math">\(f\)</span> is measurable if and only if <span class="process-math">\(f|_{X \backslash E}\)</span> is measurable, by Proposition <a href="chap-meas-fun-3.html#prop-f-g-a-e" class="xref" data-knowl="./knowl/xref/prop-f-g-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1.6">Proposition 7.1.6</a>. Thus, by excising <span class="process-math">\(E\)</span> if necessary, we can assume that <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-8-2">Fix <span class="process-math">\(c \in \mathbb{R}\)</span> and let<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-f-g-a-e.html" id="chap-meas-fun-4-8-3">
+\begin{equation*}
+A = \{x \in X \colon f(x) &gt; c\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-8-4">Our goal is to show that <span class="process-math">\(A\)</span> is a measurable set. Note that, if <span class="process-math">\(x_0 \in A\text{,}\)</span> then there exists an <span class="process-math">\(n, N &gt;0\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-f-g-a-e.html" id="chap-meas-fun-4-8-5">
+\begin{equation*}
+x_0 \in \bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-8-6">Conversely, suppose <span class="process-math">\(x_0 \in X\)</span> satisfies<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-f-g-a-e.html" id="chap-meas-fun-4-8-7">
+\begin{equation*}
+x_0 \in \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-8-8">Then <span class="process-math">\(f(x_0) \geq c + \frac{1}{n} &gt; c\text{,}\)</span> and hence <span class="process-math">\(x_0 \in A\text{.}\)</span> Thus<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-f-g-a-e.html" id="chap-meas-fun-4-8-9">
+\begin{equation*}
+A = \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-8-10">Thus, since each <span class="process-math">\(f_k\)</span> is a measurable function, <span class="process-math">\(A\)</span> is a countable union of a countable intersection of measurable sets. Thus <span class="process-math">\(A\)</span> is measurable. As <span class="process-math">\(c \in \mathbb{R}\)</span> was chosen arbitrarily, <span class="process-math">\(f\)</span> is a measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-8-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.1"><a href="#chap-meas-fun-4-8" title="Copy heading and permalink for Proof 7.2.1" aria-label="Copy heading and permalink for Proof 7.2.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-simple-approx"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Simple Approximation Theorem.</span>
+</h3>
+<div class="para" id="thm-simple-approx-2"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(f\)</span> be an extended real-valued function on <span class="process-math">\(X\text{.}\)</span> Then <span class="process-math">\(f\)</span> is measurable if and only <span class="process-math">\(f\)</span> is the pointwise limit of a sequence of simple functions <span class="process-math">\((\phi_n)_n\)</span> satisfying <span class="process-math">\(|\phi_n|\leq |f|\)</span> for all <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-approx-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-simple-approx-3">If <span class="process-math">\(f\)</span> is a non-negative function, the sequence <span class="process-math">\((\phi_n)_n\)</span> can be chosen to be increasing.<div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-approx-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-simple-approx-4">If <span class="process-math">\((X,\mathcal{F},\mu)\)</span> is <span class="process-math">\(\sigma\)</span>-finite, then the simple functions <span class="process-math">\((\phi_n)_n\)</span> can each be chosen to be of finite support.<div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-approx-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.2.4: The Simple Approximation Theorem"><a href="#thm-simple-approx" title="Copy heading and permalink for Theorem 7.2.4: The Simple Approximation Theorem" aria-label="Copy heading and permalink for Theorem 7.2.4: The Simple Approximation Theorem">🔗</a></div></article><details id="chap-meas-fun-4-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-meas-fun-4-10-1">If <span class="process-math">\(f\)</span> is a pointwise limit of simple functions, then <span class="process-math">\(f\)</span> is measurable by Proposition <a href="chap-meas-fun-4.html#prop-pw-lim" class="xref" data-knowl="./knowl/xref/prop-pw-lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.2.3">Proposition 7.2.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-10-2">Suppose now that <span class="process-math">\(f\)</span> is measurable. Assume first that <span class="process-math">\(f\geq 0\text{.}\)</span> For each <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(k = 1,\ldots, n^2\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-3">
+\begin{equation*}
+E^n_k = f^{-1}\left(\left[\frac{k-1}{n},\frac{k}{n}\right)\right)
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-4">For each <span class="process-math">\(n\text{,}\)</span> the sets <span class="process-math">\(\{E^n_k\}_{k=1}^{n^2}\)</span> are disjoint measurable sets. Define scalars <span class="process-math">\((a^n_k)_{n,k}\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-5">
+\begin{equation*}
+a^n_k = \frac{k-1}{n}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-6">For each <span class="process-math">\(n\)</span> define a simple function <span class="process-math">\(\phi_n\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-7">
+\begin{equation*}
+\phi_n(x) = \begin{cases}
+a_n^k &amp; x \in E_n^k\\
+n&amp;  f(x) \geq n.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-8">Note <span class="process-math">\(\phi_n\leq f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-10-9">We claim that <span class="process-math">\((\phi_n)_n\)</span> converge pointwise to <span class="process-math">\(f\text{.}\)</span> First, suppose <span class="process-math">\(f(x) &lt; \infty\text{.}\)</span> Fix <span class="process-math">\(\varepsilon &gt;0\)</span> Choose an integer <span class="process-math">\(N\)</span> such that <span class="process-math">\(f(x) &lt; N\)</span> and <span class="process-math">\(\frac{1}{N}&lt; \varepsilon\text{.}\)</span> Then, if <span class="process-math">\(n \geq N\text{,}\)</span> there is a <span class="process-math">\(k\)</span> such that <span class="process-math">\(x \in E^n_k\text{.}\)</span> Thus,<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-10">
+\begin{equation*}
+|f(x) - \phi_n(x)| = |f(x) - a^n_k| &lt; \frac{1}{n} &lt; \varepsilon.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-11">Thus <span class="process-math">\(\lim_n \phi_n(x) = f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-10-12">If <span class="process-math">\(f(x) = \infty\text{,}\)</span> then <span class="process-math">\(\phi_n(x) = n\)</span> for all <span class="process-math">\(n\text{.}\)</span> Thus<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-13">
+\begin{equation*}
+\lim_n \phi_n(x) = \lim_n n = \infty = f(x).
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-14">Hence <span class="process-math">\((\phi_n)_n\)</span> converges pointwise to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-10-15">By replacing <span class="process-math">\(\phi_n\)</span> with <span class="process-math">\(\max\{\phi_1,\ldots,\phi_n\}\)</span> we can make sure the sequence <span class="process-math">\((\phi_n)_n\)</span> is increasing.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-10-16">For an arbitrary measurable function <span class="process-math">\(f\)</span> we can find a sequences <span class="process-math">\((\phi_n)_n\)</span> and <span class="process-math">\((\psi_n)_n\)</span> of simple functions which converge pointwise to <span class="process-math">\(f_+\)</span> and <span class="process-math">\(f_-\)</span> respectively, with <span class="process-math">\(\phi_n \leq f_+\)</span> and <span class="process-math">\(\psi_n \leq f_-\text{.}\)</span> Then <span class="process-math">\((\phi_n-\psi_n)_n\)</span> is a sequence of simple functions which  converge pointwise to <span class="process-math">\(f\text{.}\)</span> Further<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-17">
+\begin{equation*}
+|\phi_n - \psi_n| \leq \phi_n + \psi_n \leq f_+ + f_- = |f|.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-18">Finally, suppose that <span class="process-math">\((X,\mathcal{F},\mu)\)</span> is a <span class="process-math">\(\sigma\)</span>-finite measure space and <span class="process-math">\((\phi_n)_n\)</span> is a sequence of simple functions that converge pointwise to a measurable function <span class="process-math">\(f\text{.}\)</span> Let <span class="process-math">\(\{E_n\}_{n=1}^\infty\)</span> be an increasing sequence of measurable sets such that <span class="process-math">\(\mu(E_n) &lt; \infty\)</span> for all <span class="process-math">\(n\geq 1\text{,}\)</span> and <span class="process-math">\(X = \bigcup_{n\in\mathbb{N}}E_n\text{.}\)</span> For each <span class="process-math">\(n\)</span> define the function<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pw-lim.html" id="chap-meas-fun-4-10-19">
+\begin{equation*}
+\psi_n = \phi_n \chi_{E_n}.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-10-20">Then <span class="process-math">\((\psi_n)_n\)</span> is a sequence of finitely supported simple functions which converge pointwise to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-10-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.2"><a href="#chap-meas-fun-4-10" title="Copy heading and permalink for Proof 7.2.2" aria-label="Copy heading and permalink for Proof 7.2.2">🔗</a></div></article></details><div class="para" id="chap-meas-fun-4-11">As noted in Remark <a href="chap-meas-fun-4.html#rem-types-of-convergence" class="xref" data-knowl="./knowl/xref/rem-types-of-convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 7.2.2">Remark 7.2.2</a>, pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff’s Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-ergoroff"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Ergoroff’s Theorem.</span>
+</h3>
+<div class="para" id="thm-ergoroff-2"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a finite measure space and let <span class="process-math">\((f_n)_n\)</span> be a sequence of measurable functions on <span class="process-math">\(X\)</span> which converge pointwise a.e. to a finite a.e. function <span class="process-math">\(f\text{.}\)</span> Then for all <span class="process-math">\(\varepsilon &gt;0\)</span> there is a measurable set <span class="process-math">\(X_\varepsilon \subseteq X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-ergoroff-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="thm-ergoroff-3">
+<li id="thm-ergoroff-3-1">
+<div class="para" id="thm-ergoroff-3-1-1">
+<span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(X_\varepsilon\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ergoroff-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-ergoroff-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-ergoroff-3-2">
+<div class="para" id="thm-ergoroff-3-2-1">
+<span class="process-math">\(\mu(X \backslash X_\varepsilon) &lt; \varepsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-ergoroff-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-ergoroff-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 7.2.5: Ergoroff’s Theorem"><a href="#thm-ergoroff" title="Copy heading and permalink for Theorem 7.2.5: Ergoroff’s Theorem" aria-label="Copy heading and permalink for Theorem 7.2.5: Ergoroff’s Theorem">🔗</a></div></article><details id="chap-meas-fun-4-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-meas-fun-4-13-1">By removing a set of measure <span class="process-math">\(0\)</span> if necessary, we can assume that <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\)</span> on <span class="process-math">\(E\text{.}\)</span> By removing another measure <span class="process-math">\(0\)</span> set, we can assume that <span class="process-math">\(f\)</span> is real-valued.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-13-2">Fix <span class="process-math">\(\eta &gt;0\text{.}\)</span> For each <span class="process-math">\(k\text{,}\)</span> the function <span class="process-math">\(|f-f_k|\)</span> is measurable, and hence the set<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-3">
+\begin{equation*}
+\{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-4">\ is a measurable set. For each <span class="process-math">\(n\)</span> let <span class="process-math">\(E_n\)</span> be the measurable set<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-5">
+\begin{equation*}
+\begin{aligned}
+E_n &amp;= \{x \in E \colon |f(x) - f_k(x)|&lt; \eta,\ k\geq n\} \\
+&amp;= \bigcap_{k \geq n}\{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-6">Then <span class="process-math">\(\{E_n\}_n\)</span> is an increasing sequence of measurable sets and <span class="process-math">\(X = \bigcup_n E_n\text{,}\)</span> since <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\)</span> on <span class="process-math">\(X\text{.}\)</span> By the continuity of measure,<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-7">
+\begin{equation*}
+\lim_{n\rightarrow \infty} \mu(E_n) = \mu(X).
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-8">Thus, for any <span class="process-math">\(\delta &gt;0\)</span> there is an <span class="process-math">\(K\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-9">
+\begin{equation*}
+\mu(X \backslash E_N) =&lt;fn&gt;Note that  is being used here to apply the excision property&lt;/fn&gt;\mu(X) - \mu(E_K) &lt; \delta.
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-10">Note that <span class="process-math">\(|f_k - f|&lt; \eta\)</span> on <span class="process-math">\(E_K\)</span> for <span class="process-math">\(k \geq K\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-13-11">Fix <span class="process-math">\(\varepsilon &gt; 0\text{.}\)</span> For each <span class="process-math">\(n\text{,}\)</span> apply the above argument with <span class="process-math">\(\eta = \frac{1}{n}\)</span> and <span class="process-math">\(\delta = \frac{\varepsilon}{2^{n}}\)</span> to find a measurable set <span class="process-math">\(A_n\)</span> and an index <span class="process-math">\(K_n\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-12">
+\begin{equation*}
+\mu(X \backslash A_n) &lt; \frac{\varepsilon}{2^{n}}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-13">and<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-14">
+\begin{equation*}
+|f_k(x) - f(x)| &lt; \frac{1}{n}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-15">for all <span class="process-math">\(x \in A_n\)</span> and <span class="process-math">\(k \geq K_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-13-16">Let <span class="process-math">\(A = \bigcap_n A_n\text{.}\)</span> We will show that <span class="process-math">\(\mu(X \backslash A) &lt; \varepsilon\)</span> and <span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(A\text{.}\)</span> First note that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-17">
+\begin{equation*}
+\begin{aligned}
+\mu(X\backslash A) &amp;= \mu\left(X \backslash \bigcap_n A_n\right) \\
+&amp;= \mu\left(\bigcup_n X \backslash A_n \right) \\
+&amp;\leq \sum_{n=1}^\infty \mu(X \backslash A_n)\\
+&amp;&lt; \sum_{k=1}^\infty \frac{\varepsilon}{2^{n}}=\varepsilon.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-18">Take any <span class="process-math">\(\zeta &gt; 0\text{.}\)</span> Choose integer <span class="process-math">\(n\)</span> such that <span class="process-math">\(\frac{1}{n}&lt;\zeta\text{.}\)</span> Then, if <span class="process-math">\(k \geq K_n\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-19">
+\begin{equation*}
+|f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-20">for all <span class="process-math">\(x \in A_n\text{.}\)</span> As <span class="process-math">\(A \subseteq A_n\text{,}\)</span> it follows that<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chap-meas-fun-4-13-21">
+\begin{equation*}
+|f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-13-22">for all <span class="process-math">\(x \in A\)</span> and <span class="process-math">\(k \geq K_n\text{.}\)</span> Thus <span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(A\)</span> and <span class="process-math">\(\mu(X\backslash A)&lt; \varepsilon.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-13-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.3"><a href="#chap-meas-fun-4-13" title="Copy heading and permalink for Proof 7.2.3" aria-label="Copy heading and permalink for Proof 7.2.3">🔗</a></div></article></details><article class="corollary theorem-like" id="cor-ergoroff"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Ergoroff’s Theorem on <span class="process-math">\(\mathbb{R}\)</span>.</span>
+</h3>
+<div class="para" id="cor-ergoroff-2"> Let <span class="process-math">\(E \subseteq \mathbb{R}\)</span> be a Lebesegue measurable set with <span class="process-math">\(m(E)&lt; \infty\text{.}\)</span> Let <span class="process-math">\((f_n)_n\)</span> be a sequence of measurable functions on <span class="process-math">\(E\)</span> which converge a.e. to a finite a.e. function <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-ergoroff-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cor-ergoroff-3">For each <span class="process-math">\(\varepsilon &gt; 0\)</span> there is a closed set <span class="process-math">\(F \subseteq E\)</span> such that <span class="process-math">\(m(E \backslash F)&lt; \varepsilon\)</span> and <span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(F\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-ergoroff-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 7.2.6: Ergoroff’s Theorem on \mathbb{R}"><a href="#cor-ergoroff" title="Copy heading and permalink for Corollary 7.2.6: Ergoroff’s Theorem on \mathbb{R}" aria-label="Copy heading and permalink for Corollary 7.2.6: Ergoroff’s Theorem on \mathbb{R}">🔗</a></div></article><details id="chap-meas-fun-4-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chap-meas-fun-4-15-1">Fix <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> By Theorem <a href="chap-meas-fun-4.html#thm-ergoroff" class="xref" data-knowl="./knowl/xref/thm-ergoroff.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.5: Ergoroff’s Theorem">Theorem 7.2.5</a> there is a measurable set <span class="process-math">\(A \subseteq E\)</span> such that <span class="process-math">\(\mu(E \backslash A)&lt; \varepsilon/2\)</span> and <span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(A\text{.}\)</span> By Theorem <a href="sec-Lebesgue.html#thm-Leb-meas-sets-G-delta-F-sigma" class="xref" data-knowl="./knowl/xref/thm-Leb-meas-sets-G-delta-F-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.7: Outer and inner approximation of Lebesgue measure">Theorem 5.1.7</a>, there is a closed set <span class="process-math">\(F \subseteq A\)</span> such that <span class="process-math">\(m(A\backslash F)&lt; \varepsilon /2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chap-meas-fun-4-15-2">As <span class="process-math">\(F \subseteq A\text{,}\)</span> <span class="process-math">\((f_n)_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(F\text{.}\)</span> Also<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ergoroff.html ./knowl/xref/thm-Leb-meas-sets-G-delta-F-sigma.html" id="chap-meas-fun-4-15-3">
+\begin{equation*}
+m(E\backslash F) = m(A\backslash F) + m(E\backslash A) &lt; \varepsilon, 
+\end{equation*}
+</div>
+<div class="para" id="chap-meas-fun-4-15-4">completing the proof.<div class="autopermalink" data-description="Paragraph"><a href="#chap-meas-fun-4-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.4"><a href="#chap-meas-fun-4-15" title="Copy heading and permalink for Proof 7.2.4" aria-label="Copy heading and permalink for Proof 7.2.4">🔗</a></div></article></details><div class="autopermalink" data-description="Section 7.2: Approximations of measurable functions"><a href="#chap-meas-fun-4" title="Copy heading and permalink for Section 7.2: Approximations of measurable functions" aria-label="Copy heading and permalink for Section 7.2: Approximations of measurable functions">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chap-meas-fun-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-meas-fun-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Signed measures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="my-great-book-7.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book-7.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-signed-borel.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">1.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">2</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">3</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="my-great-book-7.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="my-great-book-7-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="my-great-book-7-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">5</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">7.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="my-great-book-7-3"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Signed measures</span>
+</h2>
+<div class="para" id="my-great-book-7-3-2">We have defined measures to only take non-negative values. However, there are some points where it is beneficial to extend the definition of a measure to include negative values (and we will see more as we proceed). For example, Exercise <a href="my-great-book-7-5.html#exer-measures-vec-space" class="xref" data-knowl="./knowl/xref/exer-measures-vec-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.1">Exercise 4.3.1</a> shows that the collection of measures on <span class="process-math">\((X,\mathcal{F})\)</span> is closed under addition and multiplying by non-negative scalars. The set of measures on <span class="process-math">\((X,\mathcal{F})\)</span> is <em class="emphasis">almost</em> a vector space; we just can’t multiply be negative scalars. Allowing for measures which take positive and negative values would allow us to create a vector space (which may, or may not, be useful).<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-3">Less abstractly, in Section <a href="sec-borel-on-R.html" class="internal" title="Section 3.3: Borel measures on \mathbb{R}">Section 3.3</a>, we showed that if <span class="process-math">\(\mu\)</span> is a Borel measure on <span class="process-math">\([a,b]\)</span> then the cumulative distribution function for <span class="process-math">\(\mu\text{,}\)</span> <span class="process-math">\(g_\mu\text{,}\)</span> is an increasing, right-continuous function, Thereom <a href="sec-borel-on-R.html#thm-cdf" class="xref" data-knowl="./knowl/xref/thm-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.6">Theorem 3.3.6</a>. Conversely, given an increasing, right-continuous function <span class="process-math">\(g\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> <span class="process-math">\(g\)</span> uniquely determines a Borel measure on <span class="process-math">\([a,b]\text{,}\)</span> Theorem <a href="sec-borel-on-R.html#thm-lebesgue-stieltjes-measure" class="xref" data-knowl="./knowl/xref/thm-lebesgue-stieltjes-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.7">Theorem 3.3.7</a>. Cumulative distribution functions are increasing precisely because measures take non-negative values. In Theorem <a href="sec-borel-on-R.html#thm-lebesgue-stieltjes-measure" class="xref" data-knowl="./knowl/xref/thm-lebesgue-stieltjes-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.7">Theorem 3.3.7</a>, we need an increasing function in order to define a measure. If we want to use measure theory to study real functions, other than increasing functions, we will need to allow for measures which allow for possibly negative values. This leads us to the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-signed-measure"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-signed-measure-1"> Let <span class="process-math">\((X,\mathcal{F})\)</span> be a measurable space. A function<div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-signed-measure-2">
+\begin{equation*}
+\nu \colon \mathcal{F} \rightarrow [-\infty,\infty]
+\end{equation*}
+</div>
+<div class="para" id="def-signed-measure-3">is a <em class="emphasis">signed measure</em> if<div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="def-signed-measure-4">
+<li id="def-signed-measure-4-1">
+<div class="para" id="def-signed-measure-4-1-1">
+<span class="process-math">\(\nu\)</span> takes at most value from <span class="process-math">\(\{-\infty,\infty\}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#def-signed-measure-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="def-signed-measure-4-2">
+<div class="para" id="def-signed-measure-4-2-1">
+<span class="process-math">\(\nu(\emptyset) = 0\text{;}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#def-signed-measure-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="def-signed-measure-4-3">
+<div class="para logical" id="def-signed-measure-4-3-1">
+<div class="para">if <span class="process-math">\(\{E_k\}_{k=1}^\infty\)</span> are disjoint sets in <span class="process-math">\(\mathcal{F}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="def-signed-measure-4-3-1-3">
+\begin{equation*}
+\nu(\bigcup_{k=1}^\infty E_k) = \sum_{k=1}^\infty \nu(E_k).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#def-signed-measure-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para" id="def-signed-measure-5">The elements of <span class="process-math">\(\mathcal{F}\)</span> are called the <em class="emphasis">measurable sets</em>, or <em class="emphasis"><span class="process-math">\(\nu\)</span>-measurable sets</em>. A signed measure <span class="process-math">\(\nu\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> is <em class="emphasis">finite</em> if <span class="process-math">\(|\nu(X)|&lt; \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-signed-measure-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.1"><a href="#def-signed-measure" title="Copy heading and permalink for Definition 4.1.1" aria-label="Copy heading and permalink for Definition 4.1.1">🔗</a></div></article><div class="para" id="my-great-book-7-3-5">The definition of a signed measure is very similar to that of a measure, but a couple of points are worth discussing. Firstly, the condition that <span class="process-math">\(\nu\)</span> takes at most one value from <span class="process-math">\(\{-\infty,\infty\}\)</span> is necessary in order for the third condition (countable additivity) to make sense. Suppose <span class="process-math">\(\nu\)</span> is a function on a <span class="process-math">\(\sigma\)</span>-algebra <span class="process-math">\(\mathcal{F}\)</span> satisfying conditions (ii) and (iii) of a signed measure. Suppose <span class="process-math">\(\nu(E) = \infty\)</span> and <span class="process-math">\(\nu(F) = -\infty\text{.}\)</span> Condition (iii) then says that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-measures-vec-space.html ./knowl/xref/sec-borel-on-R.html ./knowl/xref/thm-cdf.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/exer-diff-of-measures.html ./knowl/xref/exer-finite-signed-measures.html ./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/exer-cantor-leb-cdf.html ./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html ./knowl/xref/exer-measures-vec-space.html ./knowl/xref/exer-total-variation.html" id="my-great-book-7-3-6">
+\begin{equation*}
+\infty = \nu(E) = \nu(E\backslash F) + \nu(E\cap F).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-7">Hence, <span class="process-math">\(\nu(E \cap F) \neq - \infty\text{.}\)</span> Further<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-measures-vec-space.html ./knowl/xref/sec-borel-on-R.html ./knowl/xref/thm-cdf.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/exer-diff-of-measures.html ./knowl/xref/exer-finite-signed-measures.html ./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/exer-cantor-leb-cdf.html ./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html ./knowl/xref/exer-measures-vec-space.html ./knowl/xref/exer-total-variation.html" id="my-great-book-7-3-8">
+\begin{equation*}
+-\infty = \nu(F) = \nu(F \backslash E) + \nu(E \cap F).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-9">Since <span class="process-math">\(\nu(E\cap F) \neq - \infty\text{,}\)</span> it follows that <span class="process-math">\(\nu(F \backslash E) = - \infty\text{.}\)</span> Thus<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-measures-vec-space.html ./knowl/xref/sec-borel-on-R.html ./knowl/xref/thm-cdf.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/exer-diff-of-measures.html ./knowl/xref/exer-finite-signed-measures.html ./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/exer-cantor-leb-cdf.html ./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html ./knowl/xref/exer-measures-vec-space.html ./knowl/xref/exer-total-variation.html" id="my-great-book-7-3-10">
+\begin{equation*}
+\nu(E \cup F) = \nu(F \backslash E) + \nu(E) = -\infty + \infty.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-11">As <span class="process-math">\(-\infty + \infty\)</span> is not defined, <span class="process-math">\(\nu\)</span> cannot defined to take both of the values <span class="process-math">\(-\infty\)</span> and <span class="process-math">\(\infty\text{.}\)</span> In particular, we could have defined signed measures to only satisfy (ii) and (iii); the above argument shows that condition (i) follows from condition (iii). We include condition (i) for clarity.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-12">Secondly, there is room for some misunderstandings in condition (iii). Suppose <span class="process-math">\(\{E_k\}_{k=1}^\infty\)</span> are disjoint measurable sets, and <span class="process-math">\(E = \bigcup_k E_k\text{,}\)</span> and that <span class="process-math">\(|\nu(E)|&lt;\infty\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-measures-vec-space.html ./knowl/xref/sec-borel-on-R.html ./knowl/xref/thm-cdf.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/thm-lebesgue-stieltjes-measure.html ./knowl/xref/exer-diff-of-measures.html ./knowl/xref/exer-finite-signed-measures.html ./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/exer-cantor-leb-cdf.html ./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html ./knowl/xref/exer-measures-vec-space.html ./knowl/xref/exer-total-variation.html" id="my-great-book-7-3-13">
+\begin{equation*}
+\sum_{k=1}^\infty \nu(E_k) = \nu(E) &lt; \infty.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-14">\ That is, <span class="process-math">\(\sum_{k=1}^\infty \nu(E_k)\)</span> is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set <span class="process-math">\(E\)</span> is independent on the order of the sets <span class="process-math">\(\{E_k\}_{k=1}^\infty\text{,}\)</span> and so <span class="process-math">\(\nu(E)\)</span> is independent of the order of the sets <span class="process-math">\(\{E_k\}_{k=1}^\infty\text{.}\)</span> As <span class="process-math">\(\sum_k \nu(E_k) = \nu(E)\text{,}\)</span> it follows that the (finite) value of <span class="process-math">\(\sum_k \nu(E_k)\)</span> is independent of the order of the terms <span class="process-math">\(\nu(E_k)\text{.}\)</span> It follows that the series <span class="process-math">\(\sum_k \nu(E_k)\)</span> converges <em class="emphasis">absolutely</em>.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-15">Exercise <a href="my-great-book-7-5.html#exer-diff-of-measures" class="xref" data-knowl="./knowl/xref/exer-diff-of-measures.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.3">Exercise 4.3.3</a> says that the difference of two measures is a signed measure. In this section we will show that all signed measures are of this form. We need some preliminary definitions and results first.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-7-3-16"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-16-1">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\)</span> and let <span class="process-math">\(A\)</span> be a measurable set.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="my-great-book-7-3-16-2">
+<li id="my-great-book-7-3-16-2-1">
+<div class="para" id="my-great-book-7-3-16-2-1-1">The set <span class="process-math">\(A \subseteq X\)</span> is <em class="emphasis">positive</em> (or <em class="emphasis"><span class="process-math">\(\nu\)</span>-positive</em> if there is room for confusion) if <span class="process-math">\(B \subseteq A\)</span> is measurable, then <span class="process-math">\(\nu(B) \geq 0\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-16-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#my-great-book-7-3-16-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="my-great-book-7-3-16-2-2">
+<div class="para" id="my-great-book-7-3-16-2-2-1">the set <span class="process-math">\(A \subseteq X\)</span> is <em class="emphasis">negative</em> (or <em class="emphasis"><span class="process-math">\(\nu\)</span>-negative</em> if there is room for confusion) if <span class="process-math">\(B \subseteq A\)</span> is measurable, then <span class="process-math">\(\nu(B) \leq 0\text{;}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-16-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#my-great-book-7-3-16-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="my-great-book-7-3-16-2-3">
+<div class="para" id="my-great-book-7-3-16-2-3-1">the set <span class="process-math">\(A \subseteq X\)</span> is a <em class="emphasis">null set</em> (or <em class="emphasis"><span class="process-math">\(\nu\)</span>-null</em> if there is room for confusion) if <span class="process-math">\(B \subseteq A\)</span> is measurable, then <span class="process-math">\(\nu(B) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-16-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#my-great-book-7-3-16-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Definition 4.1.2"><a href="#my-great-book-7-3-16" title="Copy heading and permalink for Definition 4.1.2" aria-label="Copy heading and permalink for Definition 4.1.2">🔗</a></div></article><article class="remark remark-like" id="my-great-book-7-3-17"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-17-1">Note that null sets are both positive and negative.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.3"><a href="#my-great-book-7-3-17" title="Copy heading and permalink for Remark 4.1.3" aria-label="Copy heading and permalink for Remark 4.1.3">🔗</a></div></article><article class="lemma theorem-like" id="lem-hahn-lemma"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hahn.</span>
+</h3>
+<div class="para" id="lem-hahn-lemma-2">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Suppose <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> with <span class="process-math">\(0 &lt; \nu(E) &lt; \infty\text{.}\)</span> Then there is a positive set <span class="process-math">\(A \subseteq E\)</span> such that <span class="process-math">\(\nu(A)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-hahn-lemma-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 4.1.4: Hahn"><a href="#lem-hahn-lemma" title="Copy heading and permalink for Lemma 4.1.4: Hahn" aria-label="Copy heading and permalink for Lemma 4.1.4: Hahn">🔗</a></div></article><details id="my-great-book-7-3-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="my-great-book-7-3-19-1">If <span class="process-math">\(E\)</span> is positive, then we are done. Otherwise, there are subsets <span class="process-math">\(B \subseteq E\)</span> with <span class="process-math">\(\nu(B)&lt;0\text{.}\)</span> Let <span class="process-math">\(m_1\)</span> be the smallest natural number such that there is a measurable <span class="process-math">\(B_1 \subseteq E\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-2">
+\begin{equation*}
+\nu(B_1) &lt; -\frac{1}{m_1}.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-3">Continuing, choose minimal natural number <span class="process-math">\(m_k\)</span> such that there is a<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-4">
+\begin{equation*}
+B_k \subseteq E \backslash \bigcup_{j=1}^{k-1}B_j
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-5">with<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-6">
+\begin{equation*}
+\nu(B_k) &lt; - \frac{1}{m_k}.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-7">If this process ends after <span class="process-math">\(n\)</span> steps, let<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-8">
+\begin{equation*}
+A = E \backslash \bigcup_{k=1}^n B_k.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-9">Then <span class="process-math">\(A\)</span> is positive, since it contains no subsets <span class="process-math">\(B\)</span> such that <span class="process-math">\(\nu(B)&lt;0\text{.}\)</span> Further,<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-10">
+\begin{equation*}
+\nu(E) = \nu(A) + \sum_{k=1}^n \nu(B_k).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-11">Since <span class="process-math">\(\nu(E)&gt;0\)</span> and <span class="process-math">\(\sum_{k=1}^n \nu(B_k)&lt;0\text{,}\)</span> it follows that <span class="process-math">\(\nu(A)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-19-12">If the process does not end, we get a sequence of sets <span class="process-math">\(B_1,B_2,\ldots.\)</span> Let <span class="process-math">\(B = \bigcup_{k=1}^\infty B_k\)</span> and let <span class="process-math">\(A = E \backslash B.\)</span> Since <span class="process-math">\(\nu(E) &lt; \infty\text{,}\)</span> it follows from Exercise <a href="my-great-book-7-5.html#exer-finite-signed-measures" class="xref" data-knowl="./knowl/xref/exer-finite-signed-measures.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.5">Exercise 4.3.5</a> that <span class="process-math">\(|\nu(B)|&lt;\infty\text{.}\)</span> Thus<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-13">
+\begin{equation*}
+-\infty &lt; \nu(B) = \sum_{k=1}^\infty \nu(B_k)\leq \sum_{k=1}^\infty \frac{-1}{m_k} &lt; 0.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-14">Thus <span class="process-math">\(\lim_{k\rightarrow \infty} m_k = \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-19-15">We will show that <span class="process-math">\(A\)</span> is positive. Suppose <span class="process-math">\(C \subseteq A\)</span> and <span class="process-math">\(\nu(C)&lt;0.\)</span> Then for each <span class="process-math">\(k\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-16">
+\begin{equation*}
+C \subseteq A \subseteq E\backslash \bigcup_{j=1}^{k-1}B_j.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-17">Thus, by the choice of <span class="process-math">\(m_k\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-18">
+\begin{equation*}
+\nu(C) \geq \frac{-1}{m_k-1}.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-19">As this holds for all <span class="process-math">\(k\text{,}\)</span> and <span class="process-math">\(\lim_k m_k = \infty\text{,}\)</span> it follows that <span class="process-math">\(\nu(C)\geq 0\text{.}\)</span> Hene <span class="process-math">\(A\)</span> is a positive set.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-19-20">To show that <span class="process-math">\(\nu(A)&gt;0\)</span> we note that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-finite-signed-measures.html" id="my-great-book-7-3-19-21">
+\begin{equation*}
+\nu(E) = \nu(A) + \nu(B),
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-19-22">Since <span class="process-math">\(\nu(E)&gt;0\)</span> and <span class="process-math">\(\nu(B)&lt;0\text{,}\)</span> it follows that <span class="process-math">\(\nu(A) &gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-19-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.1"><a href="#my-great-book-7-3-19" title="Copy heading and permalink for Proof 4.1.1" aria-label="Copy heading and permalink for Proof 4.1.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-Hahn-decomp"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hahn Decomposition Theorem.</span>
+</h3>
+<div class="para" id="thm-Hahn-decomp-2"> Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are disjoint measurable subsets <span class="process-math">\(A,B \subseteq X\)</span> such that <span class="process-math">\(X = A \cup B\text{,}\)</span> <span class="process-math">\(A\)</span> is positive, and <span class="process-math">\(B\)</span> is negative.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Hahn-decomp-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-Hahn-decomp-3">If <span class="process-math">\(A',B'\)</span> are also disjoint measurable sets with <span class="process-math">\(A'\)</span> positive, <span class="process-math">\(B'\)</span> negative, and <span class="process-math">\(X = A' \cup B'\text{,}\)</span> then the sets<div class="autopermalink" data-description="Paragraph"><a href="#thm-Hahn-decomp-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-Hahn-decomp-4">
+\begin{equation*}
+(A\backslash A') \cup (A'\backslash A)&lt;fn&gt;The set  is called the &lt;em&gt;symmetric difference&lt;/em&gt; of  and &lt;/fn&gt; \text{ and }(B\backslash B') \cup (B'\backslash B)
+\end{equation*}
+</div>
+<div class="para" id="thm-Hahn-decomp-5">are null sets.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Hahn-decomp-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.5: Hahn Decomposition Theorem"><a href="#thm-Hahn-decomp" title="Copy heading and permalink for Theorem 4.1.5: Hahn Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 4.1.5: Hahn Decomposition Theorem">🔗</a></div></article><details id="my-great-book-7-3-21" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="my-great-book-7-3-21-1">Assume that <span class="process-math">\(\nu\)</span> does not take the value <span class="process-math">\(+\infty\)</span> (replace <span class="process-math">\(\nu\)</span> with <span class="process-math">\(-\nu\)</span> if it does). Let <span class="process-math">\(\mathcal{P} \subseteq \mathcal{F}\)</span> be the collection of all positive sets. Note that <span class="process-math">\(\mathcal{P}\)</span> is non-empty since <span class="process-math">\(\emptyset \in \mathcal{P}\text{.}\)</span> Let<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html" id="my-great-book-7-3-21-2">
+\begin{equation*}
+\lambda = \sup \{\nu(A) \colon A \in \mathcal{P}\}.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-21-3">We will show that <span class="process-math">\(\lambda\)</span> is attained, i.e. <span class="process-math">\(\lambda\)</span> is the maximum value in <span class="process-math">\(\{\nu(A)\}_{A \in \mathcal{P}}\text{.}\)</span> Choose a sequence <span class="process-math">\(\{A_k\}_{k=1}^\infty\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html" id="my-great-book-7-3-21-4">
+\begin{equation*}
+\lim_{k\rightarrow \infty} \nu(A_k) = \lambda.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-21-5">Let <span class="process-math">\(A = \bigcup_{k=1}^\infty A_k\text{.}\)</span> Note that <span class="process-math">\(A\)</span> is positive by Exercise <a href="my-great-book-7-5.html#exer-positive-union" class="xref" data-knowl="./knowl/xref/exer-positive-union.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.6">Exercise 4.3.6</a>. Thus <span class="process-math">\(\nu(A) \leq \lambda\text{.}\)</span> Also, since <span class="process-math">\(A\)</span> is positive, <span class="process-math">\(\nu(A \backslash A_k) \geq 0\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html" id="my-great-book-7-3-21-6">
+\begin{equation*}
+\begin{aligned}
+\nu(A) =&amp; \nu(A \backslash A_k) + \nu(A_k)\\
+\geq&amp; \nu(A_k).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-21-7">Taking the limit as <span class="process-math">\(k \rightarrow \infty\text{,}\)</span> we get <span class="process-math">\(\nu(A) \geq \lambda\text{.}\)</span> Thus <span class="process-math">\(\nu(A) = \lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-21-8">Let <span class="process-math">\(B = X \backslash A\text{.}\)</span> We will show that <span class="process-math">\(B\)</span> is negative. If <span class="process-math">\(B\)</span> is not negative, then there is a measurable set <span class="process-math">\(C \subseteq B\)</span> with <span class="process-math">\(\nu(C)&gt;0\text{.}\)</span> Since, by assumption, <span class="process-math">\(\nu\)</span> does not take the value <span class="process-math">\(\infty\text{,}\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html" id="my-great-book-7-3-21-9">
+\begin{equation*}
+0 &lt; \nu(C) &lt; \infty.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-21-10">It follows from Lemma <a href="my-great-book-7-3.html#lem-hahn-lemma" class="xref" data-knowl="./knowl/xref/lem-hahn-lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 4.1.4: Hahn">Lemma 4.1.4</a> that there is a positive set <span class="process-math">\(C' \subseteq C\)</span> with <span class="process-math">\(\nu(C') &gt;0\text{.}\)</span> The set <span class="process-math">\(A \cup C'\)</span> is positive with<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-positive-union.html ./knowl/xref/lem-hahn-lemma.html" id="my-great-book-7-3-21-11">
+\begin{equation*}
+\nu(A \cup C') = \nu(A) + \nu(C') &gt; \lambda.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-21-12">This contradicts the definition of <span class="process-math">\(\lambda\text{.}\)</span> Thus <span class="process-math">\(B\)</span> is negative.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-21-13">Suppose <span class="process-math">\(A'\)</span> and <span class="process-math">\(B'\)</span> are another pair of disjoint measurable sets, with <span class="process-math">\(X = A' \cup B'\text{,}\)</span> <span class="process-math">\(A'\)</span> positive, and <span class="process-math">\(B'\)</span> negative. Then <span class="process-math">\(A\backslash A' \subseteq A\)</span> and <span class="process-math">\(A\backslash A' \subseteq B'\text{.}\)</span> Hence <span class="process-math">\(A \backslash A'\)</span> is both positive and negative. Thus, <span class="process-math">\(A \backslash A'\)</span> is a null set. Similar arguments show that <span class="process-math">\(A'\backslash A\text{,}\)</span> <span class="process-math">\(B\backslash B'\text{,}\)</span> and <span class="process-math">\(B'\backslash B\)</span> are null sets.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-21-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.2"><a href="#my-great-book-7-3-21" title="Copy heading and permalink for Proof 4.1.2" aria-label="Copy heading and permalink for Proof 4.1.2">🔗</a></div></article></details><article class="definition definition-like" id="my-great-book-7-3-22"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-22-1">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint measurable sets satisfying <span class="process-math">\(X = A \cup B\)</span> for disjoint sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> with <span class="process-math">\(A\)</span> positive and <span class="process-math">\(B\)</span> negative, we call <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> a <em class="emphasis">Hahn decomposition</em> for <span class="process-math">\(\nu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.6"><a href="#my-great-book-7-3-22" title="Copy heading and permalink for Definition 4.1.6" aria-label="Copy heading and permalink for Definition 4.1.6">🔗</a></div></article><div class="para" id="my-great-book-7-3-23">The Hahn Decomposition, Theorem <a href="my-great-book-7-3.html#thm-Hahn-decomp" class="xref" data-knowl="./knowl/xref/thm-Hahn-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.5: Hahn Decomposition Theorem">Theorem 4.1.5</a>, says that Hahn decompositions exist for all signed measures.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-24">We can now, as promised, decompose signed measures as the difference of two measures. Before we do this we introduce just one more definition.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="my-great-book-7-3-25"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-25-1">Let <span class="process-math">\((X,\mathcal{F})\)</span> be a measurable space, and let <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> be two measures on <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> The measures <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are <em class="emphasis">mutually singular</em>, denoted <span class="process-math">\(\mu \perp \nu\text{,}\)</span> if there are disjoint measurable sets <span class="process-math">\(A,B \subseteq X\)</span> with <span class="process-math">\(A \cup B = X\)</span> satisfying <span class="process-math">\(\mu(A) = \mu(X)\text{,}\)</span> <span class="process-math">\(\mu(B) = 0\text{,}\)</span> <span class="process-math">\(\nu(A) = 0\text{,}\)</span> and <span class="process-math">\(\nu(B) = \nu(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.7"><a href="#my-great-book-7-3-25" title="Copy heading and permalink for Definition 4.1.7" aria-label="Copy heading and permalink for Definition 4.1.7">🔗</a></div></article><details id="my-great-book-7-3-26" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="my-great-book-7-3-26-1">Let <span class="process-math">\(m\)</span> be the Lebesgue measure on the Borel sets of <span class="process-math">\([0,1]\text{,}\)</span> and let <span class="process-math">\(\mu\)</span> be the Borel measure on the Borel sets of <span class="process-math">\([0,1]\)</span> whose cumulative distribution function is the Cantor-Lebesgue function (see Corollary <a href="sec-borel-on-R.html#cor-cdf-and-Borel" class="xref" data-knowl="./knowl/xref/cor-cdf-and-Borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.3.10">Corollary 3.3.10</a>). It follows from Exercise <a href="chap-lebesgue-measure-6.html#exer-cantor-leb-cdf" class="xref" data-knowl="./knowl/xref/exer-cantor-leb-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.4.11">Exercise 3.4.11</a> that <span class="process-math">\(m\)</span> and <span class="process-math">\(\mu\)</span> are mutually singular.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.1.8"><a href="#my-great-book-7-3-26" title="Copy heading and permalink for Example 4.1.8" aria-label="Copy heading and permalink for Example 4.1.8">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-jordan-decomp-measure"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jordan Decomposition Theorem.</span>
+</h3>
+<div class="para" id="thm-jordan-decomp-measure-2"> Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are mutually orthogonal measures on <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu = \nu_+ - \nu_-\text{,}\)</span> i.e.<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-jordan-decomp-measure-3">
+\begin{equation*}
+\nu(E) = \nu_+(E) - \nu_-(E)
+\end{equation*}
+</div>
+<div class="para" id="thm-jordan-decomp-measure-4">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="thm-jordan-decomp-measure-5">Further, <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> are unique mutually orthogonal measures satisfying <span class="process-math">\(\nu = \nu_+ - \nu_-\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4.1.9: The Jordan Decomposition Theorem"><a href="#thm-jordan-decomp-measure" title="Copy heading and permalink for Theorem 4.1.9: The Jordan Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 4.1.9: The Jordan Decomposition Theorem">🔗</a></div></article><details id="my-great-book-7-3-28" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="my-great-book-7-3-28-1">Let <span class="process-math">\(X = A \cup B\)</span> be a Hahn decomposition for <span class="process-math">\(\nu\text{,}\)</span> with <span class="process-math">\(A\)</span> positive and <span class="process-math">\(B\)</span> negative. For each <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> define<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-2">
+\begin{equation*}
+\begin{aligned}
+\nu_+(E) &amp;= \nu(E\cap A) \text{ and }\\
+\nu_-(E) &amp;= -\nu(E \cap B).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-3">That <span class="process-math">\(\nu_+\)</span> is a measure follows from Exercise <a href="my-great-book-7-5.html#exer-signed-meas-to-meas" class="xref" data-knowl="./knowl/xref/exer-signed-meas-to-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.7">Exercise 4.3.7</a>. That <span class="process-math">\(\nu_-\)</span> is a measure can be proved similarly. That <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> are mutually orthogonal follows from the fact that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-28-4">Suppose now that <span class="process-math">\(\mu_1\)</span> and <span class="process-math">\(\mu_2\)</span> are mutually orthogonal measures satisfying <span class="process-math">\(\nu = \mu_1 - \mu_2\text{.}\)</span> Since <span class="process-math">\(\mu_1\)</span> and <span class="process-math">\(\mu_2\)</span> are mutually orthogonal, there are disjoint measurable sets <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(X = C \cup D\text{,}\)</span> <span class="process-math">\(\mu_1(C) = \mu(X)\text{,}\)</span> <span class="process-math">\(\mu_1(D) = 0\text{,}\)</span> <span class="process-math">\(\mu_2(C) = 0\text{,}\)</span> and <span class="process-math">\(\mu_2(D) = 0\text{.}\)</span> We will show that <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> give a Hahn decomposition for <span class="process-math">\(\nu\text{.}\)</span> That is, we will show that <span class="process-math">\(C\)</span> is <span class="process-math">\(\nu\)</span>-positive and <span class="process-math">\(D\)</span> is <span class="process-math">\(\nu\)</span>-negative. Take any <span class="process-math">\(E \subseteq C\text{.}\)</span> Since <span class="process-math">\(E \subseteq C\text{,}\)</span> <span class="process-math">\(\mu_2(C) = 0\text{,}\)</span> thus<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-5">
+\begin{equation*}
+\nu(E) = \mu_1(E) - \mu_2(E) = \mu_1(E) \geq 0.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-6">Similarly, if <span class="process-math">\(E \subseteq D\text{,}\)</span> then <span class="process-math">\(\mu_1(E) =0\)</span> and so<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-7">
+\begin{equation*}
+\nu(E) = \mu_1(E) - \mu_2(E) = 0 - \mu_2(E) \leq 0.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-8">Since <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are a Hahn decompoistion for <span class="process-math">\(\nu\text{,}\)</span> and <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are a Hahn decompoistion for <span class="process-math">\(\nu\text{,}\)</span> it follows from Theorem <a href="my-great-book-7-3.html#thm-Hahn-decomp" class="xref" data-knowl="./knowl/xref/thm-Hahn-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.5: Hahn Decomposition Theorem">Theorem 4.1.5</a> that <span class="process-math">\(A\backslash C \cup C \backslash A\)</span> and <span class="process-math">\(B \backslash D \cup D \backslash B\)</span> are null sets. Take any <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-9">
+\begin{equation*}
+E \cap C = ([E\cap C] \backslash A)  \cup ([E \cap C] \cap A)
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-10">and<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-11">
+\begin{equation*}
+E \cap A = ([E\cap A] \backslash C)  \cup ([E \cap A] \cap C)
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-12">and so<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="eq-jord-eq">
+\begin{equation*}
+\nu(E\cap C) = \nu(E \cap A).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-14">Take any <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-signed-meas-to-meas.html ./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html" id="my-great-book-7-3-28-15">
+\begin{equation*}
+\begin{aligned}
+\mu_1(E) &amp;= \mu_1(E \cap C) \\
+&amp;= \mu_1(E \cap C) - \mu_2(E \cap C) \\
+&amp;= \nu(E \cap C)\\
+&amp;= \nu(E \cap A) \\
+&amp;= \nu_+(E),
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-28-16">where the penultimate equality comes from  <a href="my-great-book-7-3.html#eq-jord-eq" class="xref" data-knowl="./knowl/xref/eq-jord-eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a>. Hence <span class="process-math">\(\mu_1 = \nu_+\text{.}\)</span> We can show that <span class="process-math">\(\mu_2 = \nu_-\)</span> in a similar fashion.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-28-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.3"><a href="#my-great-book-7-3-28" title="Copy heading and permalink for Proof 4.1.3" aria-label="Copy heading and permalink for Proof 4.1.3">🔗</a></div></article></details><article class="definition definition-like" id="my-great-book-7-3-29"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-29-1">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Let <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> be mutually orthogonal measures on <span class="process-math">\((X,\mathcal{F})\)</span> satisfying<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-29-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-29-2">
+\begin{equation*}
+\nu = \nu_+ - \nu_.
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-29-3">We call <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> the Jordan decomposition of <span class="process-math">\(\nu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-29-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-29-4">We call the measure <span class="process-math">\(\nu_+\)</span> the <em class="emphasis">positive part of <span class="process-math">\(\nu\)</span></em>, and call the measure <span class="process-math">\(\nu_-\)</span> the <em class="emphasis">negative part of <span class="process-math">\(\nu\)</span></em>.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-29-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.10"><a href="#my-great-book-7-3-29" title="Copy heading and permalink for Definition 4.1.10" aria-label="Copy heading and permalink for Definition 4.1.10">🔗</a></div></article><article class="definition definition-like" id="my-great-book-7-3-30"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-30-1">Let <span class="process-math">\(\nu\)</span> be a signed measure and let <span class="process-math">\(\nu = \nu_+ - \nu_-\)</span> be the Jordan decomposition of <span class="process-math">\(\nu\text{.}\)</span> The measure <span class="process-math">\(|\nu|\)</span> defined by<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-30-2">
+\begin{equation*}
+|\nu|(E) = \nu_+(E) + \nu_-(E)
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-30-3">is called the <em class="emphasis">measure of total variation of <span class="process-math">\(\nu\)</span></em>. The value <span class="process-math">\(|\nu|(X)\)</span> is the <em class="emphasis">total variation</em> of <span class="process-math">\(\nu\text{.}\)</span> When <span class="process-math">\(|\nu|(X)\)</span> is finite then <span class="process-math">\(\nu\)</span> is of <em class="emphasis">bounded variation</em>.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-30-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.1.11"><a href="#my-great-book-7-3-30" title="Copy heading and permalink for Definition 4.1.11" aria-label="Copy heading and permalink for Definition 4.1.11">🔗</a></div></article><article class="remark remark-like" id="my-great-book-7-3-31"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="my-great-book-7-3-31-1">Let <span class="process-math">\(\nu\)</span> be a signed measure. Then <span class="process-math">\(|\nu|\text{,}\)</span> measure of total variation of <span class="process-math">\(\nu\text{,}\)</span> is indeed a measure by Exercise <a href="my-great-book-7-5.html#exer-measures-vec-space" class="xref" data-knowl="./knowl/xref/exer-measures-vec-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.1">Exercise 4.3.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-31-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-31-2">It is worth noting that, when <span class="process-math">\(\nu\)</span> is a signed measure, in general it is not true that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-31-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-measures-vec-space.html" id="my-great-book-7-3-31-3">
+\begin{equation*}
+|\nu|(E) = |\nu(E)|
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-31-4">for a <span class="process-math">\(\nu\)</span>-measurable set. That is, the placement of the <span class="process-math">\(|\cdot|\)</span> lines is important.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-31-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-31-5">In general, there is no reason to expect the function <span class="process-math">\(E \mapsto |\nu(E)|\)</span> to be a measure. Can you see why not?<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-31-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 4.1.12"><a href="#my-great-book-7-3-31" title="Copy heading and permalink for Remark 4.1.12" aria-label="Copy heading and permalink for Remark 4.1.12">🔗</a></div></article><div class="para" id="my-great-book-7-3-32">Note that <span class="process-math">\(|\nu|(X)\)</span> is finite if and only if <span class="process-math">\(\nu\)</span> is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to Exercise <a href="my-great-book-7-5.html#exer-total-variation" class="xref" data-knowl="./knowl/xref/exer-total-variation.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.8">Exercise 4.3.8</a><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-bv-signed-meas-as-sup"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-bv-signed-meas-as-sup-1">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then the total variation <span class="process-math">\(|\nu|(X)\)</span> is given by<div class="autopermalink" data-description="Paragraph"><a href="#prop-bv-signed-meas-as-sup-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-bv-signed-meas-as-sup-2">
+\begin{equation*}
+|\nu|(X) = \sup \left\{ \sum_{k=1}^n |\nu(E_k)| \colon \{E_k\}_{k=1}^n \text{ disjoint measurable sets} \right\}. 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 4.1.13"><a href="#prop-bv-signed-meas-as-sup" title="Copy heading and permalink for Proposition 4.1.13" aria-label="Copy heading and permalink for Proposition 4.1.13">🔗</a></div></article><div class="para" id="my-great-book-7-3-34">We end this section with another characterization of <span class="process-math">\(|\nu|(X)\)</span> for finite signed measures.<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-total-variation"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-total-variation-1">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\)</span> with finite total variation <span class="process-math">\(|\nu|(X)\text{.}\)</span> Suppose <span class="process-math">\(\mu_1\)</span> and <span class="process-math">\(\mu_2\)</span> are measures on <span class="process-math">\((X,\mathcal{F})\)</span> satisfying <span class="process-math">\(\nu = \mu_1 - \mu_2\text{.}\)</span> Then <span class="process-math">\(|\nu|(X) \leq \mu_1(X) + \mu_2(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-total-variation-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-total-variation-2">Further, <span class="process-math">\(|\nu|(X) = \mu_1(X) + \mu_2(X)\)</span> if and only if <span class="process-math">\(\mu_1 = \nu_+\)</span> and <span class="process-math">\(\mu_2 = \nu_-\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-total-variation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.1.14"><a href="#prop-total-variation" title="Copy heading and permalink for Proposition 4.1.14" aria-label="Copy heading and permalink for Proposition 4.1.14">🔗</a></div></article><details id="my-great-book-7-3-36" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="my-great-book-7-3-36-1">Let <span class="process-math">\(X = A \cup B\)</span> be a Hahn decomposition for <span class="process-math">\(\nu\)</span> so that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-2">
+\begin{equation*}
+\nu(A) = \nu_+(A),\ \nu(B) = - \nu_+(B)
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-3">and<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-4">
+\begin{equation*}
+\nu_+(B) = 0 = \nu_-(A).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-5">Take any measurable <span class="process-math">\(E \subseteq A\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-6">
+\begin{equation*}
+\begin{aligned}
+\nu_+(E) &amp;= \nu(E) \\
+&amp;= \mu_1(E) - \mu_2(E) \\
+&amp;\leq \mu_1(E).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-7">Similarly, if <span class="process-math">\(F \subseteq B\)</span> is measurable then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-8">
+\begin{equation*}
+\begin{aligned}
+\nu_-(F) &amp;= -\nu(F) \\
+&amp;= \mu_2(F) - \mu_1(F)\\
+&amp;\leq \mu_2(F).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-9">We have then that<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-10">
+\begin{equation*}
+\begin{aligned}
+|\nu|(X) &amp;= \nu_+(X) + \nu_-(X) \\
+&amp;= \nu_+(A) + \nu_-(B) \\
+&amp;\leq \mu_1(A) + \mu_2(B) \\
+&amp;\leq \mu_1(X) + \mu_2(X).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-11">Now suppose that <span class="process-math">\(|\nu|(X) = \mu_1(X) + \mu_2(X)\text{.}\)</span> If <span class="process-math">\(\mu_1(A)&gt;\nu_+(A)\)</span> or <span class="process-math">\(\mu_2(B) &gt; \nu_-(B)\)</span> then, by the same reasoning as earlier in this proof,<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-12">
+\begin{equation*}
+|\nu|(X)&lt; \mu_1(X) + \mu_2(X).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-13">Thus <span class="process-math">\(\mu_1(A) = \nu_+(A)\)</span> and <span class="process-math">\(\mu_2(B) = \nu_+(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-36-14">Take any measurable <span class="process-math">\(E \subseteq A\text{.}\)</span> We have shown that <span class="process-math">\(\mu_1(E) \geq \nu_+(E)\text{.}\)</span> If <span class="process-math">\(\mu_1(E) &gt; \nu_+(E)\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-15">
+\begin{equation*}
+\mu_1(A) = \mu_1(E) + \mu_1(A\backslash E) &gt; \nu_+(A).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-16">As <span class="process-math">\(\mu_1(A) = \nu_+(A)\text{,}\)</span> it follows that <span class="process-math">\(\mu_1(E) = \nu_+(E)\)</span> for all measurable <span class="process-math">\(E \subseteq A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-36-17">Suppose <span class="process-math">\(E \in \mathcal{F}\)</span> satisfies <span class="process-math">\(\mu_1(E) \neq \nu_+(E)\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-18">
+\begin{equation*}
+\mu_1(E) = \mu_1(E \cap A) + \mu_1(E \cap B) = \nu_+(E) + \mu_1(E\cap B).
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-19">Hence, if <span class="process-math">\(\mu_1 \neq \nu_+\text{,}\)</span> then <span class="process-math">\(\mu_1(B)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-36-20">We can similarly show that <span class="process-math">\(\mu_2(F) = \nu_-(F)\)</span> for all measurable <span class="process-math">\(F \subseteq B\text{,}\)</span> and that if <span class="process-math">\(\mu_2 \neq \nu_-\)</span> then <span class="process-math">\(\mu_2(A)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="my-great-book-7-3-36-21">Thus, if <span class="process-math">\(\mu_1 \neq \nu_+\)</span> or <span class="process-math">\(\mu_2 \neq \nu_-\text{,}\)</span> we have<div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="my-great-book-7-3-36-22">
+\begin{equation*}
+\begin{aligned}
+|\nu|(X) &amp;= \mu_1(X) + \mu_2(x) \\
+&amp;= \mu_1(A) + \mu_1(B) + \mu_2(A) + \mu_2(B) \\
+&amp;&gt; \nu_+(A) + \nu_-(B) \\
+&amp;= \nu_+(X) + \nu_-(X).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para" id="my-great-book-7-3-36-23">This contradicts the definition of the total variation <span class="process-math">\(|\nu|(X)\text{.}\)</span> Hence <span class="process-math">\(\mu_1 = \nu_+\)</span> and <span class="process-math">\(\mu_2 = \nu_-\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#my-great-book-7-3-36-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.4"><a href="#my-great-book-7-3-36" title="Copy heading and permalink for Proof 4.1.4" aria-label="Copy heading and permalink for Proof 4.1.4">🔗</a></div></article></details><div class="autopermalink" data-description="Section 4.1: Signed measures"><a href="#my-great-book-7-3" title="Copy heading and permalink for Section 4.1: Signed measures" aria-label="Copy heading and permalink for Section 4.1: Signed measures">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="my-great-book-7.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-signed-borel.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

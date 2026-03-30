@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(g(x) = \frac{\sin(x)}{x}\)</span> on the real line.<div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<figure class="figure figure-like"><div class="image-box" style="width: 20%; margin-left: 40%; margin-right: 40%;"><img src="external/images/not%20lebesgue%20int%202.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.3.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="para">The function <span class="process-math">\(g(x)=\frac{\sin(x)}{x}\)</span> from Example <a href="chap-integration-5.html#ex-not-lebesgue-int-2" class="xref" data-knowl="./knowl/xref/ex-not-lebesgue-int-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.3.8">Example 8.3.8</a><div class="autopermalink" data-description="Paragraph"><a href="#fig-not-lebesgue-int-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Figure 8.3.9"><a href="#fig-not-lebesgue-int-2" title="Copy heading and permalink for Figure 8.3.9" aria-label="Copy heading and permalink for Figure 8.3.9">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">It can be shown that<details class="ptx-footnote" aria-live="polite" id="ex-not-lebesgue-int-2-3-1"><summary class="ptx-footnote__number" title="Footnote 8.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="ex-not-lebesgue-int-2-3-1">Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.</div></details><div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-not-lebesgue-int-2.html">
+\begin{equation*}
+\mathrm{R}{\int}_{-\infty}^\infty g =\pi 
+\end{equation*}
+</div>
+<div class="para">Note for every integer <span class="process-math">\(n \geq 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-not-lebesgue-int-2.html">
+\begin{equation*}
+\begin{aligned}
+\int_{[n\pi,(n+1)\pi]} \left|\frac{\sin(x)}{x}\right|\,dm &amp;\geq \frac{1}{(n+1)\pi} \int_{[n\pi,(n+1)\pi]} |\sin(x)|\, dm\\
+&amp;= \frac{2}{(n+1)\pi}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Hence<div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-not-lebesgue-int-2.html">
+\begin{equation*}
+\int_{[0,\infty]} |g|\,dm \geq \sum_{k=0}^\infty \frac{2}{(n+1)\pi}= \infty.
+\end{equation*}
+</div>
+<div class="para">Thus<div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-not-lebesgue-int-2.html">
+\begin{equation*}
+\int_\mathbb{R} |g|\, dm = \infty
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(g\)</span> is not Lebesgue integrable.<div class="autopermalink" data-description="Paragraph"><a href="#ex-not-lebesgue-int-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 8.3.8"><a href="#ex-not-lebesgue-int-2" title="Copy heading and permalink for Example 8.3.8" aria-label="Copy heading and permalink for Example 8.3.8">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-integration-5.html#ex-not-lebesgue-int-2">in-context</a></span>
+</body>
+</html>

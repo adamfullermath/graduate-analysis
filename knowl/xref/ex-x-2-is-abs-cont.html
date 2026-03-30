@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(f(x) = x^2\)</span> on <span class="process-math">\([0,1]\text{.}\)</span> Let <span class="process-math">\(\nu\)</span> be the Borel measure on <span class="process-math">\([0,1]\)</span> induced by <span class="process-math">\(f\text{.}\)</span> That is, <span class="process-math">\(\nu\)</span> is the Borel measure which is the Carathéodory extension of the premeasure<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html">
+\begin{equation*}
+\nu((a,b]) = b^2 - a^2,\ \nu(\{0\}) = 0
+\end{equation*}
+</div>
+<div class="para">as described in Corollary <a href="sec-borel-on-R.html#cor-cdf-and-Borel" class="xref" data-knowl="./knowl/xref/cor-cdf-and-Borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.3.10">Corollary 5.3.10</a>. We will show that <span class="process-math">\(\nu \ll m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Take Borel set <span class="process-math">\(E \subseteq [0,1]\)</span> such that <span class="process-math">\(m(E) = 0\text{.}\)</span> We want to show that <span class="process-math">\(\nu(E) = 0\text{.}\)</span> Fix <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> We will assume <span class="process-math">\(0 \notin E\)</span> (removing <span class="process-math">\(0\)</span> does not change <span class="process-math">\(m(E)\)</span> or <span class="process-math">\(\nu(E)\)</span>). By Proposition <a href="sec-Lebesgue.html#prop-Lebesgue-outer-measure" class="xref" data-knowl="./knowl/xref/prop-Lebesgue-outer-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.1">Proposition 5.1.1</a>, there is a countable collection <span class="process-math">\(\{(a_i,b_i]\}_{i=1}^\infty\)</span> of subsets of <span class="process-math">\([0,1]\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html">
+\begin{equation*}
+E \subseteq \bigcup_{i=1}^\infty (a_i,b_i]
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(\sum_{i=1}^\infty m((a_i,b_i])&lt;\varepsilon/2.\)</span> Now<div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-cdf-and-Borel.html ./knowl/xref/prop-Lebesgue-outer-measure.html">
+\begin{equation*}
+\begin{aligned}
+\nu(E) \leq \nu\left(\bigcup_{i=1}^\infty (a_i,b_i]\right)
+&amp;\leq \sum_{i=1}^\infty \nu((a_i,b_i]) \\  
+&amp;= \sum_{i=1}^\infty(b_i^2-a_i^2) \\
+&amp;= \sum_{i=1}^\infty(b_i-a_i)(b_i + a_i) \\
+&amp;\leq 2\sum_{i=1}^\infty(b_i-a_i) \\
+&amp;&lt; \varepsilon.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">As <span class="process-math">\(\nu(E) &lt; \varepsilon\)</span> for all <span class="process-math">\(\varepsilon &gt;0\text{,}\)</span> it follows that <span class="process-math">\(\nu(E) =0\text{.}\)</span> Thus <span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-x-2-is-abs-cont-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 9.1.5"><a href="#ex-x-2-is-abs-cont" title="Copy heading and permalink for Example 9.1.5" aria-label="Copy heading and permalink for Example 9.1.5">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-differentation-3.html#ex-x-2-is-abs-cont">in-context</a></span>
+</body>
+</html>
