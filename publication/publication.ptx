@@ -86,7 +86,7 @@
   <!-- Replace the <latex> tag above with the one below to try these-->
 
     <latex
-          print="no"
+          print="yes"
           sides="one"
           open-odd="no"
           pageref="no"
@@ -121,9 +121,9 @@
 
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
-      <!--<knowl
+      <knowl
         theorem="no"
-        proof="yes"
+        proof="no"
         definition="no"
         example="yes"
         example-solution="yes"
@@ -140,7 +140,8 @@
         exercise-divisional="no"
         exercise-worksheet="no"
         exercise-readingquestion="no"
-      />-->
+      />
+
 
     <!-- Specify the theme for the html by giving names to     -->
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
