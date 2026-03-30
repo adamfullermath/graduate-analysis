@@ -450,14 +450,12 @@ Then <m>(X,\mathcal{M}_0,\mu_0)</m> is the <em>completion</em> of <m>(X,\mathcal
     Take any set <m>A \subseteq X</m>.
     Since the sets <m>\{E_k\}_k</m> are disjoint and measurable, we have</p>
 <md numbered="true" xml:id="eq-fin-count">
-&lt;md&gt;
 \begin{aligned}
 \mu^*(A) &amp;= \mu^*(A\cap E_1) + \mu^*(A \cap E_1^c)\\
         &amp;= \mu^*((A\cap E_1) + \mu^*(A \cap E_2) + \mu^*(A \cap (E_1 \cup E_2)^c) \\
         &amp;\vdots \\
         &amp;= \sum_{k=1}^n \mu^*(A \cap E_k) + \mu^*\left( A \cap \left(\bigcup_{k=1}^n E_k\right)^c\right).
 \end{aligned}
-&lt;/md&gt;
 </md>
 <p>In particular,</p>
 <md> \mu^*\left(\bigcup_{k=1}^n E_k\right) = \sum_{k=1}^n \mu^*(E_k).</md>
