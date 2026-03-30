@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter>
+<title>Topology</title>
+<introduction>
+<p>
+We briefly cover some key ideas about topology. 
+In particular, we will focus on the topology on <m>\mathbb{R}</m>.
+Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
+</p>
+</introduction>
+<subsection>
+<title>Open and closed sets in <m>\mathbb{R}</m></title>
+<definition>
+<p>A subset <m>A \subseteq \mathbb{R}</m> is <em>open</em> if for all <m>x\in A</m> there exists <m>r&gt;0</m> such that <m>(x-r, x+r) \subseteq A</m>.</p>
+<p>A subset <m>B \subseteq \mathbb{R}</m> is <em>closed</em> if its complement <m>\mathbb{R}\backslash B</m> is open.</p>
+</definition>
+<p>\begin{egs}</p>
+<ol>
+<li><p><m>\emptyset</m> and <m>\mathbb{R}</m> are open and closed.</p>
+</li>
+<li><p>Open intervals are open, i.e. intervals of the form <m>(-\infty, b),\ (a,+\infty)</m> and <m>(a,b)</m>.</p>
+</li>
+<li><p>Closed intervals are closed, i.e. intervals of the form <m>(-\infty, b],\ [a,+\infty)</m> and <m>[a,b]</m>.</p>
+</li>
+<li><p>Finite subsets of <m>\mathbb{R}</m> are closed.</p>
+</li>
+<li><p>The rational numbers <m>\mathbb{Q}</m> are neither open nor closed.</p>
+</li>
+<li><p>The intervals <m>(a,b]</m> and <m>[a,b)</m> are neither open nor closed.</p>
+</li>
+</ol>
+<p>\end{egs}</p>
+<definition>
+<p>Let <m>X \subseteq \mathbb{R}</m>.
+A set <m>A \subseteq X</m> is <em>open in <m>X</m></em> if there is an open subset <m>A' \subseteq \mathbb{R}</m> such that <m>A = A' \cap X</m>.
+Similarly, a set <m>B \subseteq X</m> is <em>closed in <m>X</m></em> if there is a closed subset <m>B \subseteq \mathbb{R}</m> such that <m>B = B' \cap X</m>.</p>
+</definition>
+<p>The key properties of open sets are:</p>
+<ol>
+<li><p><m>\emptyset,\ \mathbb{R}</m> are open;</p>
+</li>
+<li><p>if <m>\mathcal{F}</m> is any collection of open sets then 
+	<md> \bigcup_{F\in \mathcal{F}} F \text{ is open}; </md>
+</p>
+</li>
+<li><p>if <m>A_1,\ldots, A_n</m> are open then 
+	<md> \bigcap_{i=1}^n A_i \text{ is open.} </md>
+</p>
+</li>
+</ol>
+<remark>
+<p>Using DeMorgan's identities you can use (ii) to show that an arbitrary <em>intersection</em> of closed sets is closed; and using (iii) you can show a finite <em>union</em> of closed sets is closed.</p>
+</remark>
+<p>A useful characterization of closed sets in <m>\mathbb{R}</m> is the following.</p>
+<proposition xml:id="prop-closed">
+<p>A subset <m>B \subseteq \mathbb{R}</m> is closed if and only if given any convergent sequence <m>(x_n)_n</m> of <m>\mathbb{R}</m> with <m>x_n \in B</m> for all <m>n</m>, we must have <m>\lim x_n \in B</m>.</p>
+</proposition>
+<definition>
+<p>Let <m>A\subseteq \mathbb{R}</m>.
+The <em>closure</em> of <m>A</m>, denoted <m>\overline{A}</m> is the smallest closed set containing <m>A</m>.
+The <em>interior</em> of <m>A</m>, denoted <m>A^\circ</m>, is the largest open set contained in <m>A</m>.
+A subset <m>A\subseteq \mathbb{R}</m> is <em>dense</em> in <m>\mathbb{R}</m> if <m>\overline{A}=\mathbb{R}</m>.</p>
+<p>If <m>X \subseteq \mathbb{R}</m> and <m>A \subseteq X</m>, then the <em>closure of <m>A</m> in  <m>X</m></em> is the set <m>\overline{A} \cap X</m>. Similarly, the <em>interior of <m>A</m> in <m>X</m></em> is the set <m>A^\circ \cap X</m>.
+A set <m>A\subseteq X</m> is <em>dense in <m>X</m></em> if the closure of <m>A</m> in <m>X</m> is all of <m>X</m>.</p>
+</definition>
+<example>
+<p>The rational numbers <m>\mathbb{Q}</m> are dense in <m>\mathbb{R}</m>.
+The irrational numbers <m>\mathbb{R}\backslash \mathbb{Q}</m> are also dense in <m>\mathbb{R}</m>.</p>
+</example>
+<p>We will use the following property of open sets later in the course.</p>
+<proposition xml:id="prop-open-sets">
+<p>Every non-empty open set in <m>\mathbb{R}</m> is the disjoint union of countably many open intervals.</p>
+</proposition>
+<proof>
+<p>Let <m>A\subseteq \mathbb{R}</m> be non-empty open set.
+Take <m>x\in A</m>.
+Since <m>A</m> is open, there exists <m>y&gt;x</m> such that <m>(x,y) \subseteq A</m>.
+Similarly, there exists <m>z&lt;x</m> with <m>(z,x) \subseteq A</m>.
+Let</p>
+<md>
+\begin{aligned}
+a_x &amp;= \inf \{z \colon (z,x) \subseteq A\} \\
+	b_x &amp;= \sup \{y \colon (x,y) \subseteq A\}
+\end{aligned}
+</md>
+<p>(allowing for the possibility that <m>a_x = -\infty</m> and <m>b_x = +\infty</m>).
+Let <m>I_x = (a_x, b_x)</m>.
+We will show that <m>I_x\subseteq A</m> but <m>a_x,b_x \notin A</m>.</p>
+<p>Take <m>w\in I_x</m>. Suppose <m>x&lt;w&lt;b_x</m>.
+By definition of <m>b_x</m> as the supremum, there exists <m>y&gt;w</m> such that <m>(x,y) \subseteq A</m>.
+Thus <m>w\in A</m>.
+Similarly, if <m>w&lt; x</m> we get <m>w\in A</m>.
+Hence <m>I_x \subseteq A</m>.</p>
+<p>Now assume <m>b_x \in \mathbb{R}</m> and <m>b_x\in A</m>. 
+Then, since <m>A</m> is open , there is an <m>r&gt;0</m> such that <m>(b_x-r, b_x+r) \subseteq A</m>.
+But then <m>(x, b_x+r)\subseteq A</m>.
+This contradicts the definition of <m>b_x</m> as a supremum, and hence <m>b_x\notin A</m>.
+Similarly, <m>a_x\notin A</m>.</p>
+<p>Take <m>x,y \in A</m>.
+Note that, either <m>I_x = I_y</m> or <m>I_x \cap I_y= \emptyset</m>.
+Hence the collection <m>\{I_x \colon x\in A\}</m> is a disjoint collection of open intervals.
+Further, since <m>x\in I_x</m> for all <m>x\in A</m>, we have</p>
+<md> A = \bigcup_{x\in A} I_x. </md>
+<p>It remains to show that there are countably many distinct intervals <m>I_x</m>.
+Note that, since <m>\mathbb{Q}</m> is dense in <m>\mathbb{R}</m>, each open interval <m>I_x</m> contains rational numbers.
+Thus, the set <m>\{I_x\colon x\in A\}</m> can be indexed by a subset of <m>\mathbb{Q}</m>. 
+Since <m>\mathbb{Q}</m> is countable this indexing set is countable, and we are done.</p>
+</proof>
+<definition>
+<p>A countable intersection of open sets if called a <m>G_\delta</m>-set.
+A countable union of closed sets is called an <m>F_\sigma</m>-set.</p>
+</definition>
+<remark>
+<p>The term <m>G_\delta</m> comes from German. The German for area is `Gebeit', and the German for intersection is `Durschnitt'. Hence a <m>G_\delta</m> set comes from an intersection of areas.</p>
+<p>The term <m>F_\sigma</m>, on the other hand, comes from another language altogether. In French the word for closed is `fermé', and the word for sum is `somme'. Hence an <m>F_\sigma</m> set is a sum of closed sets.</p>
+</remark>
+<p>Recall that continuity of functions on <m>\mathbb{R}</m> can be defined solely in terms of open sets, with out making reference to the distance function on <m>\mathbb{R}</m>.</p>
+<proposition>
+<p><idx><h>continuous function</h></idx>
+Let <m>A,\ B \subseteq \mathbb{R}</m>. 
+A function <m>f \colon A \rightarrow B</m> is continuous if and only <m>f^{-1}(C)</m> is open in <m>A</m> for all open sets <m>C</m> in <m>B</m>.</p>
+</proposition>
+</subsection>
+<section>
+<title>General topology</title>
+<definition>
+<p>A topology on a non-empty set <m>X</m> is a collection of subsets <m>\tau</m> of <m>X</m> with the properties</p>
+<ol>
+<li><p><m>\emptyset</m>, <m>X \in \tau</m>;</p>
+</li>
+<li><p>if <m>\mathcal{F}</m> is a collection of sets in <m>\tau</m> then <m>\bigcup_{F\in \mathcal{F}} F \in \tau</m>;</p>
+</li>
+<li><p>if <m>F_1, \ldots, F_n \in \tau</m> then <m>\bigcap_{i=1}^n F_i \in \tau</m>.</p>
+</li>
+</ol>
+<p>We call the elements of <m>\tau</m> <em>open sets</em>.
+If <m>A</m> is open, we call <m>X\backslash A</m> <em>closed</em>.
+We call <m>(X,\tau)</m>, or simply <m>X</m> if the topology <m>\tau</m> is clear, a <em>topological space</em>.</p>
+</definition>
+<p>Once we have defined what sets we want to be open, we can define what it means for a function to be continuous by mirroring what happened in <m>\mathbb{R}</m>.</p>
+<definition xml:id="def-cont">
+<p>Let <m>(X,\tau_X)</m> and <m>(Y,\tau_Y)</m> be topological spaces.
+A function <m>f \colon X \rightarrow Y</m> is continuous if <m>f^{-1}(A) \in \tau_X</m> for all <m>A\in \tau_Y</m>.</p>
+</definition>
+<example>
+<p>A subset <m>A \subseteq \mathbb{R}^n</m> is open if given <m>x\in A</m> there is an <m>r&gt;0</m> such that</p>
+<md> \{ y \in \mathbb{R}^n \colon \|x-y\| &lt;r \} \subseteq A. </md>
+<p>This defines a topology on <m>\mathbb{R}^n</m>.</p>
+<p>The usual <m>\varepsilon</m>-<m>\delta</m> definition of continuous functions on <m>\mathbb{R}^n</m> coincides with Definition  <xref ref="def-cont"/>.</p>
+</example>
+<example>
+<p>Recall that there are other norms we can put on <m>\mathbb{R}^n</m>:
+For each <m>1\leq p&lt; \infty</m> define</p>
+<md> \|x\|_p = \left(\sum_{i=1}^n |x_i|^p\right)^{\frac{1}{p}}. </md>
+<p>The usual norm <m>\|\cdot\|</m> is the same as the <m>2</m>-norm <m>\|\cdot\|_2</m>.
+We could say that a set <m>A \subseteq \mathbb{R}^n</m> is open with respect to the <m>p</m>-norm if for each <m>x\in A</m> there is an <m>r&gt;0</m> such that</p>
+<md> \{ y \in \mathbb{R}^n \colon \|x-y\|_p &lt;r \} \subseteq A. </md>
+<p>This would also define a topology on <m>\mathbb{R}^n</m>.
+However, the topology defined using a <m>p</m>-norm and the topology defined using the usual <m>2</m>-norm are exactly the same.</p>
+<p>In particular, it follows that if you are interested in studying continuous functions <m>f\colon \mathbb{R}^n \rightarrow \mathbb{R}^m</m> it does not matter which <m>p</m>-norm you use.</p>
+</example>
+<example>
+<p>Let <m>(X,\ d)</m> be a metric space.
+A set <m>A \subseteq X</m> is open if for each <m>x\in A</m> there is an <m>r&gt;0</m> such that</p>
+<md> \{y \in X \colon d(x,y)&lt;r \} \subseteq A. </md>
+<p>Again, this defines a topology on <m>X</m> and the <m>\varepsilon</m>-<m>\delta</m> definition of continuity coincides with Definition  <xref ref="def-cont"/>.</p>
+</example>
+<definition>
+<p>Let <m>(X,\tau)</m> be a topological space.
+Let <m>A\subseteq X</m>.
+The <em>closure</em> of <m>A</m>, denoted <m>\overline{A}</m> is the smallest closed set containing <m>A</m>.
+The <em>interior</em> of <m>A</m>, denoted <m>A^\circ</m>, is the largest open set contained in <m>A</m>.
+A subset <m>A\subseteq X</m> is <em>dense</em> in <m>X</m> if <m>\overline{A}=X</m>.</p>
+</definition>
+</section>
+<section>
+<title>Compactness</title>
+<definition>
+<p>Let <m>(X,\tau)</m> be a topological space and let <m>A \subseteq X</m>.
+An <em>open cover of <m>A</m></em> is a collection of open sets <m>\mathcal{F} \subseteq \tau</m> such that</p>
+<md>
+A \subseteq \bigcup_{F\in\mathcal{F}} F.
+</md>
+<p>An open cover <m>\mathcal{F}</m> of <m>A</m> has a <em>finite subcover of <m>A</m></em> if there is a finite subset <m>\{F_1,\ F_2,\ldots,F_n\} \subseteq \mathcal{F}</m> such that</p>
+<md> A \subseteq F_1 \cup F_2 \cup \ldots \cup F_n. </md>
+<p>A set <m>A \subseteq X</m> is called <em>compact</em> given any open cover <m>\mathcal{F}</m> of <m>A</m>, <m>\mathcal{F}</m> has a finite subcover of <m>A</m>.</p>
+</definition>
+<p>The following theorem gives an easy characterization of compact sets in <m>\mathbb{R}</m>.</p>
+<theorem xml:id="thm-heine-borel">
+<title>Heine-Borel Theorem</title>
+<p><idx><h>Heine-Borel Theorem</h></idx>
+A subset <m>A \subseteq \mathbb{R}</m> is compact if and only if <m>A</m> is closed and bounded.</p>
+</theorem>
+<proof>
+<p>We will first show that a closed bounded interval <m>[a,b]</m> is compact.
+If <m>a=b</m>, then <m>[a,b]</m> is finite and clearly compact.
+Assume <m>a&lt;b</m>.
+Let <m>\mathcal{F}</m> be an arbitrary open cover of <m>[a,b]</m>.
+Note that, for any <m>a\leq x\leq b</m>, <m>\mathcal{F}</m> is also an open cover of <m>[a,x]</m>.
+Let</p>
+<md> E = \{x\in [a,b] \colon \mathcal{F} \text{ has a finite subcover of }[a,x]\}. </md>
+<p>Note that <m>[a,a]= \{a\}</m>.
+As <m>\mathcal{F}</m> is an open cover of <m>[a,b]</m> there is an open set <m>F \in \mathcal{F}</m> such that <m>a\in F</m>.
+Hence <m>a\in E</m>.</p>
+<p>As <m>E</m> is a non-empty, bounded subset of <m>\mathbb{R}</m> we can take its supremum.
+Let</p>
+<md> c = \sup E. </md>
+<p>Clearly, <m>a&lt; c\leq b</m>.
+If we can show that <m>c=b</m> then we are done.</p>
+<p>Now, since <m>c\in [a,b]</m>, there is an open set <m>G \in \mathcal{F}</m> such that <m>c\in G</m>.
+As <m>G</m> is open, there exists <m>r&gt;0</m> such that <m>(c-r,c+r)\subseteq G</m>.
+As <m>c-r</m> is not an upper bounded for <m>E</m>, there exists <m>x\in E</m> such that <m>c-r&lt;x\leq c</m>.
+By definition of <m>E</m>, there are open sets <m>F_1, \ldots, F_n \in \mathcal{F}</m> such that</p>
+<md> [a,x] \subseteq F_1 \cup F_2 \cup \ldots \cup F_n. </md>
+<p>Thus</p>
+<md> [a, c+r) \subseteq F_1 \cup F_2 \cup \ldots \cup G. </md>
+<p>It follows that <m>c=b</m>, otherwise we could find <m>x\in [a,b]</m> with</p>
+<md> a\leq c&lt; x &lt; c+r </md>
+<p>and have <m>[a,x]</m> finitely covered by <m>F_1,\ldots,F_n,G</m>; contradicting the definition of <m>c</m> as the supremum of <m>E</m>.
+We have now shown that <m>[a,b]</m> is compact.</p>
+<p>Let <m>A</m> be an arbitrary closed bounded subset of <m>\mathbb{R}</m> and let <m>\mathcal{F}</m> be any open cover of <m>A</m>.
+As <m>A</m> is bounded there is a closed interval <m>[a,b]</m> such that <m>A \subseteq [a,b]</m>.</p>
+<p>Let <m>A^c = \mathbb{R}\backslash A</m> be the complement of <m>A</m>.
+Since <m>A</m> is closed, <m>A^c</m> is open.
+Let <m>\mathcal{F}' = \mathcal{F} \cup \{A^c\}</m>.
+Then <m>\mathcal{F}'</m> is an open cover of <m>[a,b]</m>.
+Since <m>[a,b]</m> is compact, <m>\mathcal{F}'</m> has a finite subcover of <m>[a,b]</m>.
+That is</p>
+<md> A \subseteq [a,b] \subseteq F_1 \cup \ldots \cup F_n, </md>
+<p>for some <m>F_1,\ldots,F_n \in \mathcal{F}'</m>.
+If <m>F_1,\ldots, F_n \in \mathcal{F}</m>, then we have a finite subcover of <m>A</m> from open sets in <m>\mathcal{F}</m>, and we are done.
+Otherwise one of <m>F_1,\ldots,F_n</m> is equal to <m>A^c</m>.
+Without loss of generality, say <m>F_1 = A^c</m>.
+Then we have</p>
+<md> A \subseteq F_2 \cup \ldots \cup F_n </md>
+<p>and so <m>F_2, \ldots, F_n</m> form a finite open subcover of <m>A</m> from <m>\mathcal{F}</m>.
+Thus <m>A</m> is compact.</p>
+<p>To prove the converse statement, that a set <m>A</m> is closed and bounded if it is compact, it suffices to prove the following two results, which we leave as an exercise:</p>
+<ol>
+<li><p>if <m>A</m> is unbounded then <m>A</m> is not compact;</p>
+</li>
+<li><p>if <m>A</m> is not closed, then <m>A</m> is not compact.</p>
+</li>
+</ol>
+</proof>
+<definition>
+<p>A set <m>A \subseteq \mathbb{R}</m> is called <em>sequentially compact</em> if every infinite sequence of elements of <m>A</m> has a subsequence which converges to an element of <m>A</m>.</p>
+</definition>
+<p>The Bolzano-Weierstrass theorem, together with Proposition  <xref ref="prop-closed"/>, tells us that a set <m>A\subseteq \mathbb{R}</m> is sequentially compact if and only if it is closed and bounded. Combining the Bolzano-Weierstrass Theorem and the Heine-Borel Theorem we get the following result.</p>
+<corollary xml:id="cor-heine-borel">
+<p>Let <m>A\subseteq \mathbb{R}</m>. Then the following are equivalent:</p>
+<ol>
+<li><p><m>A</m> is compact;</p>
+</li>
+<li><p><m>A</m> is sequentially compact;</p>
+</li>
+<li><p><m>A</m> is closed and bounded.</p>
+</li>
+</ol>
+</corollary>
+<p>Many statements which are true for continous real-valued functions on closed bounded intervals, are in fact true for real-valued functions on closed bounded sets, using similar proofs (which rely on compactness/sequential compactness). We record some of these facts below:</p>
+<proposition>
+<p>Let <m>E\subseteq \mathbb{R}</m> be a closed bounded set.
+Let  <m>f \colon E \rightarrow \mathbb{R}</m> be a continuous function.
+Then</p>
+<ol>
+<li><p><m>f</m> is uniformly continuous;</p>
+</li>
+<li><p><m>f</m> attains its maximum and minimum value.</p>
+</li>
+</ol>
+</proposition>
+<remark>
+<p>The Heine-Borel Theorem and Corollary  <xref ref="cor-heine-borel"/> actually hold in <m>\mathbb{R}^n</m>:
+a set <m>A\subseteq \mathbb{R}^n</m> is compact if and only if it is sequentially compact if and only if it is closed and bounded.</p>
+<p>However, in general topology the three conditions need not be the same.
+A metric space <m>X</m> is compact if and only if it is sequentially compact.
+However, there are topological spaces which are not metric spaces, which are sequentially compact but not compact.</p>
+<p>If <m>X</m> is a normed vector space which is complete (i.e. Cauchy sequences are convergent) then the statement: ``<m>A \subseteq X</m> is compact if and only if <m>A</m> is closed and bounded" is true if and only if <m>X</m> is finite dimensional.
+That is, it is possible to find closed and bounded sets which are not compact.</p>
+<p>In this course we will study a large class of complete, normed vector spaces which are infinite dimensional: <m>L^p</m>-spaces.</p>
+</remark>
+</section>
+</chapter>

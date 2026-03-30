@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chap-meas-fun">
+<title>Measurable functions</title>
+<introduction>
+<epigraph>
+<p><em>``Can we convince ourselves of the existence of a mathematical object without defining it? To define always means naming a characteristic property of what is being defined."</em></p>
+<p><source>Henri Lebesgue</source></p>
+</epigraph>
+<p>Many fields of mathematics boil down to one central idea: we study some class of objects and a sensible class of maps between them. At its core, this is the premise of a field called Category Theory. For example, group theory is the study of groups and homomorphisms between them; linear algebra is the study of vector spaces and linear maps. The objects we have been studying are measure spaces. What is the correct set of functions to study between them?</p>
+<p>Less generally, our goal is to develop a theory of integration. We will thus be, primarily, interested into functions into the real line? But again, what types of functions? And how are we to view the real line? Should we view the real line as a measure space, with the Lebesgue measure on the Lebesgue measurable sets? Or should we view the real line as a measure space, with the Lebesgue measure restricted to the Borel sets?</p>
+<p>In this chapter we introduce the concept of measurable functions into the (extended) real line. These will be the functions of most interest to us. These will be the functions we can attempt to integrate. The more general question of what is the right class of functions between measure spaces is addressed in Remark <xref ref="rem-morphisms"/>, but does not play a central role in these notes.</p>
+</introduction>
+<section>
+<title>Measurable functions</title>
+<p>We first need to decide on what class of functions it makes sense to consider. These will be called measurable functions. Given a set <m>X</m>, a function <m>f</m> from <m>X</m> to <m>\mathbb{R}</m> is called a <em>real-valued function</em>; a function from <m>f</m> to the extended reals <m>\mathbb{R} \cup \{-\infty, \infty\}</m> <em>extended real line</em> is an <em>extended real-valued function</em>.<idx><h>real-valued function</h></idx><idx><h>extended real-valued function</h></idx> We will be interested in extended real-valued functions. The following theorem is necessary before the definition of a measurable function.</p>
+<theorem xml:id="thm-measurable-function-equiv">
+<p><idx><h>measurable function</h></idx>
+Let <m>(X,\mathcal{F})</m> be a measurable space.
+Let <m>E \in \mathcal{F}</m> and let <m>f</m> be an extended real-valued function with domain <m>E</m>.
+Then the following are equivalent:</p>
+<ol>
+<li><p>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) &gt; \alpha \} \in \mathcal{M}</m>;</p>
+</li>
+<li><p>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) \geq \alpha \} \in \mathcal{M}</m>;</p>
+</li>
+<li><p>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) &lt; \alpha \} \in \mathcal{M}</m>; and</p>
+</li>
+<li><p>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) \leq \alpha \} \in \mathcal{M}</m>.</p>
+</li>
+</ol>
+</theorem>
+<proof>
+<p>Note that</p>
+<md> \{x \in E \colon f(x) &gt; \alpha \}^c = \{x \in E \colon f(x) \leq \alpha \},</md>
+<p>and</p>
+<md> \{x \in E \colon f(x) &lt; \alpha \}^c = \{x \in E \colon f(x) \geq \alpha \}.</md>
+<p>As the <m>\sigma</m>-algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).</p>
+<p>Assume that (i) holds and take any <m>\alpha \in \mathbb{R}</m>.
+    For each <m>n \in \mathbb{N}</m>, the set <m>\left\{x \in E \colon f(x) &gt; \alpha - \frac{1}{n}\right\}</m> is in <m>\mathcal{M}</m>.
+    As a countable intersection of measurable sets is measurable it follows that</p>
+<md> \{x \in E \colon f(x) \geq \alpha\} = \bigcap_{n=1}^\infty\left\{x \in E \colon f(x) &gt; \alpha - \frac{1}{n}\right\}</md>
+<p>is measurable.
+    Hence (ii) holds.</p>
+<p>Finally, assume (ii) holds and take any <m>\alpha \in \mathbb{R}</m>.
+    For each <m>n \in \mathbb{N}</m>, the set <m>\left\{x \in E \colon f(x) \geq \alpha + \frac{1}{n}\right\}</m> is in <m>\mathcal{M}</m>.
+    As a countable union of measurable sets is measurable it follows that</p>
+<md> \{x \in E \colon f(x) &gt; \alpha\} = \bigcup_{n=1}^\infty\left\{x \in E \colon f(x) \geq \alpha + \frac{1}{n}\right\}</md>
+<p>is measurable.
+    Hence (i) holds.</p>
+</proof>
+<definition xml:id="def-meas-func">
+<p><idx><h>measurable function</h></idx>
+    Let <m>(X,\mathcal{F})</m> be a measurable space, <m>E \in \mathcal{M}</m>, and <m>f \colon E \rightarrow [-\infty,\infty]</m> be an extended real-valued function.
+    Then <m>f</m> is a <em>measurable function with respect to <m>\mu</m></em> if <m>f</m> satisfies any of the equivalent conditions from Theorem <xref ref="thm-measurable-function-equiv"/>.
+    If there is no chance of confusion on what the <m>\sigma</m>-algebra is, we will simply say that <m>f</m> is a measurable function.</p>
+<p>If <m>(X,\mathcal{F},\mu)</m> is a measure space, and <m>f</m> is measurable with respect to <m>\mathcal{F}</m> we also say <m>f</m> is measurable with respect to <m>\mu</m>, or <m>\mu</m>-measurable.</p>
+<p>If <m>f</m> is a measurable function with domain <m>E</m>, and there is a measurable set <m>F \subseteq E</m> such that <m>\mu(F)&lt;\infty</m> and <m>f(x) = 0</m> for all <m>x \in E \backslash F</m>, then <m>f</m> is <em>finitely supported.</em><idx><h>measurable function</h><h>of finite support</h></idx></p>
+</definition>
+<p>Over the next several results we will examples of functions which are measurable. We begin with a simple example. Let <m>X</m> be a set and let <m>A \subseteq X</m>. We define the <em>characteristic function of <m>A</m></em>, <m>\chi_A</m>, by<idx><h>characteristic function</h></idx></p>
+<md> \chi_A(x) = \begin{cases}1 &amp;\text{if }x\in A\\0&amp; \text{if }x \notin A. \end{cases}</md>
+<p>Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, Exercise <xref ref="exer-char-measurable"/>.</p>
+<proposition xml:id="prop-char-measurable">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and take <m>A \subseteq X</m>.
+    The characteristic function <m>\chi_A</m> is a measurable function if and only if <m>A</m> is a measurable set.</p>
+</proposition>
+<p>We now give an alternative characterization of a measurable real-valued function.</p>
+<proposition xml:id="prop-meas-fun-inverse-open">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space.</p>
+<p>If <m>f</m> is an extended real-valued measurable function on <m>X</m>, then <m>f^{-1}(U)</m> is measurable for all open <m>U \subseteq \mathbb{R}</m>.</p>
+<p>If <m>f</m> is a real-valued function and <m>f^{-1}(U)</m> is measurable for all open <m>U \subseteq \mathbb{R}</m>, then <m>f</m> is a measurable function.</p>
+</proposition>
+<proof>
+<p>Let <m>f</m> be a measurable extended real-valued function on <m>\mathbb{R}</m>.
+    Then <m>f^{-1}((-\infty,b))</m> and <m>f^{-1}((a,\infty))</m> are measurable sets for all <m>a,b \in \mathbb{R}.</m>
+    Thus, if <m>a&lt;b</m>, then</p>
+<md> f^{-1}((a,b)) = f^{-1}((a,\infty)) \cap f^{-1}((-\infty,b))</md>
+<p>is the intersection of two measurable sets, and hence measurable.
+    That is, if <m>I \subseteq \mathbb{R}</m> is an open interval, then <m>f^{-1}(I)</m> is measurable.
+    If <m>U \subseteq \mathbb{R}</m> is open, then <m>U = \bigcup_{k=1}^\infty I_k</m> where <m>\{I_k\}_{k=1}^\infty</m> are disjoint open intervals.
+    Thus</p>
+<md> f^{-1}(U) = \bigcup_{k=1}^\infty f^{-1}(I_k) </md>
+<p>is a countable union of measurable sets, and thus is measurable.</p>
+<p>If <m>f</m> is a real-valued function on <m>X</m> an <m>f^{-1}(U)</m> is measurable for open <m>U \subseteq \mathbb{R}</m> then for all <m>\alpha \in \mathbb{R}</m></p>
+<md> \{x \in X \colon f(x) &gt; \alpha \} = f^{-1}((\alpha,\infty))</md>
+<p>is measurable.
+    Hence <m>f</m> is a measurable function.</p>
+</proof>
+<p>Proposition <xref ref="prop-meas-fun-inverse-open"/> immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.</p>
+<corollary xml:id="cor-Cont-are-meas">
+<p>Let <m>X</m> be a topological space, let <m>\mathcal{B}(X)</m> be the <m>\sigma</m>-algebra of Borel sets in <m>X</m>, and let <m>\mathcal{F}</m> be a <m>\sigma</m>-algebra with <m>\mathcal{B}(X) \subseteq \mathcal{F}</m>.
+    Let <m>f \colon X \rightarrow \mathbb{R}</m> be a continuous function.
+    Then <m>f</m> is measurable with respect to <m>\mathcal{F}</m>.</p>
+</corollary>
+<proof>
+<p>Since <m>f</m> is continuous, <m>f^{-1}(U)</m> is open in <m>X</m> for all open sets <m>U \subseteq \mathbb{R}</m>.
+    Hence, by Proposition <xref ref="prop-meas-fun-inverse-open"/>, if <m>U</m> is an open set in <m>\mathbb{R}</m>,</p>
+<md> f^{-1}(U) \in \mathcal{B}(X) \subseteq \mathcal{F}.</md>
+<p>Thus <m>f</m> is measurable with respect to <m>\mathcal{F}</m>.</p>
+</proof>
+<p>Recall that two functions <m>f</m> and <m>g</m> on a measure space <m>(X,\mathcal{F},\mu)</m> are equal almost everywhere if there is a measurable <m>E \subseteq X</m> with <m>\mu(E) = 0</m> so that that <m>f(x) = g(x)</m> for all <m>x \in X \backslash E</m>.</p>
+<proposition xml:id="prop-f-g-a-e">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a complete measure space.
+    Let <m>f,g</m> be functions from a measurable set <m>E</m> to <m>\mathbb{R} \cup \{-\infty,\infty\}</m>.
+    If <m>f = g</m> almost everywhere and <m>f</m> is a measurable function, then <m>g</m> is a measurable function.</p>
+</proposition>
+<proof>
+<p>Let <m>E \subseteq X</m> be a measurable set with <m>\mu(F) = 0</m> such that <m>f(x) = g(x)</m> for all <m>x \in X \backslash F</m>.
+    Fix any <m>c &gt;0</m>. 
+    Then</p>
+<md>
+\begin{aligned}
+\{x \in E \colon g(x) &gt; c \} &amp;= \{x \in E \cap F \colon g(x) &gt; c \} \cup \{x \in E \backslash F \colon g(x) &gt; c\}\\
+        &amp;= \{x \in E \cap F \colon g(x) &gt; c \} \cup \{x \in E \backslash F \colon f(x) &gt; c\}.
+\end{aligned}
+</md>
+<p>Note that</p>
+<md> \{x \in E \backslash F \colon f(x) &gt; c \} = \{x \in E \colon f(x) &gt; c \} \cap F^c</md>
+<p>is the intersection of two measurable sets, and thus is measurable.
+    Further</p>
+<md> \{x \in E \cap F \colon g(x) &gt; c \}  \subseteq F</md>
+<p>thus <m>\{x \in E \cap F \colon g(x) &gt; c \}</m> is measurable, since <m>(X,\mathcal{F},\mu)</m> is complete.
+    Thus <m>\{x \in E \colon g(x) &gt; c \}</m> is the union of two measurable sets, and hence is measurable.</p>
+</proof>
+<remark>
+<p>The completeness of the measure space <m>(X,\mathcal{F},\mu)</m> is necessary in Proposition <xref ref="prop-f-g-a-e"/>, see Example <xref ref="exer-f-g-a-e"/>.</p>
+</remark>
+<p>The following theorem gives some simple ways of creating measurable functions from measurable functions: by linear combinations and products. Before we start we need to do some mild bookkeeping. If <m>f</m> and <m>g</m> are measurable functions, with the same measurable domain <m>F</m>, we want to consider their sum, <m>f+g</m>. However, if there is an <m>x \in F</m> such that <m>f(x) = \infty</m> and <m>g(x) = -\infty</m>, then <m>f(x) + g(x)</m> is undefined. One way to circumvent this issue would be to only consider real-valued measurable functions. However, there will be times when considering functions with infinite values is either unavoidable or desirable.</p>
+<p>Instead, we will focus on measurable that are <em>finite almost everywhere</em>. Let <m>(X,\mathcal{F},\mu)</m> be a measure space. A function <m>f</m> on <m>F \subseteq X</m> is <em>finite almost everywhere</em>,<idx><h>finite almost eveywhere</h></idx> if there is a <m>E\in \mathcal{F}</m> with <m>\mu(E) = 0</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E</m>. If <m>f</m> and <m>g</m> are two measurable functions with common domain <m>F</m>, and <m>f</m> and <m>g</m> are finite almost everywhere, then there is a measurable set <m>E_1</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E_1</m>, and there is a set <m>E_2</m> such that <m>|g(x)|&lt;\infty</m> for all <m>x \in F \backslash E_2</m>. Note that <m>\mu(E_1 \cup E_2) = 0</m>. We can thus, define <m>f+g</m> on <m>F \backslash (E_1 \cup E_2)</m> by</p>
+<md> (f+g)(x) = f(x) + g(x) \text{ for }x \in F \backslash(E_1 \cup E_2).</md>
+<p>For <m>x \in E_1 \cup E_2</m> we will assign arbitrary values to <m>(f+g)(x).</m> We thus are not uniquely defining the function <m>f+g</m>, we are instead defining <m>f+g</m> up the equivalence class of equality almost everywhere. That ``equal almost everywhere" forms an equivalence class in functions is covered by Exercise <xref ref="exer-meas-func-equiv"/>.</p>
+<theorem xml:id="thm-meas-fnc-vec-sp">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+        Let <m>f</m> and <m>g</m> be measurable functions with the same domain <m>E \in \mathcal{F}</m> which are finite almost everywhere.
+        Then</p>
+<ol>
+<li><p>for all <m>\alpha,\beta \in \mathbb{R}</m>, there is a <m>E_0 \subseteq E</m> with <m>\mu(E\backslash E_0) =0</m> such that <m>\alpha f + \beta g</m> is measurable on <m>E_0</m>; and</p>
+</li>
+<li><p>there is a <m>E_0 \subseteq E</m> with <m>\mu(E\backslash E_0) =0</m>, <m>fg</m> is measurable on <m>E_0</m>.</p>
+</li>
+</ol>
+<p>If <m>f</m> or <m>g</m> are real-valued, or if <m>(X,\mathcal{F},\mu)</m> is complete, then we can take <m>E_0 = E</m> in both (i) and (ii).</p>
+</theorem>
+<proof>
+<p>That <m>\alpha f</m> is a measurable function for <m>\alpha \in \mathbb{R}</m> when <m>f</m> is a measurable function is left to Example <xref ref="exer-scale-meas"/>.</p>
+<p>Let <m>f</m> and <m>g</m> be measurable functions on a measurable set <m>E</m>, where both <m>f</m> and <m>g</m> are finite almost everywhere.
+    Then there is a measurable set <m>E_0 \subseteq E</m> such that <m>\mu(E \backslash E_0) = 0</m> and <m>f</m> and <m>g</m> are finite on <m>E_0</m>.
+    Fix <m>c \in \mathbb{R}</m>.
+    We want to show that</p>
+<md> A = \{ x\in E_0 \colon f(x) + g(x) &lt; c \}</md>
+<p>is a measurable set.
+    Take <m>x_0 \in A</m>.
+    Then <m>f(x_0) + g(x_0) &lt; q</m>.
+    By the density of the rationals <m>\mathbb{Q}</m> in <m>\mathbb{R}</m>, there is a <m>q \in \mathbb{Q}</m> such that</p>
+<md> f(x_0) + g(x_0) &lt; q &lt; c.</md>
+<p>Thus</p>
+<md> x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}.</md>
+<p>Conversely, if <m>x_0 \in E_0</m> and there is <m>q \in \mathbb{Q}</m> such that</p>
+<md> x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\},</md>
+<p>then</p>
+<md> f(x_0) + g(x_0) &lt; q + (c-q) = c.</md>
+<p>Thus</p>
+<md> A = \bigcup_{q\in \mathbb{Q}}[\{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}].</md>
+<p>Since <m>f</m> and <m>g</m> are measurable the sets <m>\{x \in E \colon f(x) &lt; q\}</m> and <m>\{x \in E \colon g(x) &lt; c - q\}</m> are measurable for every <m>q \in \mathbb{Q}</m>.
+    Hence <m>A</m> is a measurable set.
+    It follows that <m>f+g</m> is a measurable function on <m>E_0</m>.</p>
+<p>Note that</p>
+<md> fg = \frac{1}{2}(f^2 +g^2 - (f-g)^2).</md>
+<p>Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable.
+    Let <m>f</m> be a measurable on <m>E</m> and take <m>c \geq 0</m>.
+    Then</p>
+<md> \{x \in E \colon f(x)^2 &gt; c \} = \{x \in E \colon f(x) &gt; \sqrt{c}\} \cup \{x \in E \colon f(x) &lt; -\sqrt{c}\}</md>
+<p>is a measurable set.
+    If <m>c&lt;0</m> then <m>\{x \in E \colon f(x)^2 &gt; c \}= \emptyset</m> is also measurable.
+    Thus <m>f^2</m> is a measurable function.</p>
+<p>If <m>(X,\mathcal{F},\mu)</m> is a complete measure space we can take <m>E_0 = E</m> in the above cases, by Proposition <xref ref="prop-f-g-a-e"/>.</p>
+</proof>
+<p>We now introduce an important class of measurable functions: simple functions.</p>
+<definition>
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\varphi</m> be a real-valued measurable function on <m>X</m>.
+    The function <m>\varphi</m> is <em>simple</em><idx><h>simple function</h></idx> if <m>\varphi(X)</m> is a finite set.</p>
+</definition>
+<remark>
+<p>Let <m>\varphi</m> be a simple function on a measurable space <m>(X,\mathcal{F})</m> and let <m>\varphi(X) = \{a_1,a_2,\ldots,a_n\}</m>.
+    For each <m>i = 1,\ldots,n</m> let</p>
+<md> E_i = \{x \in X \colon \varphi(x) = a_i\}.</md>
+<p>By Exercise <xref ref="exer-f-c-meas"/>, each set <m>E_i</m> is a measurable set.
+    Thus</p>
+<md> \varphi = \sum_{i=1}^n a_i \chi_{E_i}.</md>
+<p>Conversely, if <m>F_1,F_2,\ldots, F_m</m> are measurable sets, and <m>b_1,\ldots,b_m</m> are real numbers then  if</p>
+<md> \psi = \sum_{k=1}^m b_k \chi_{F_k},</md>
+<p><m>\psi</m> is a measurable function by Theorem <xref ref="thm-meas-fnc-vec-sp"/>.
+    Further, as <m>\psi</m> takes finitely many values<fn>Note the sets <m>\{F_k\}_{k=1}^m</m> are not necessarily disjoint, so <m>\psi</m> may take values other than the values <m>b_1,b_2,\ldots,b_m</m>.</fn>, <m>\psi</m> is a simple function.</p>
+</remark>
+<p>The following few results give further ways of constructing measurable functions from measurable functions.</p>
+<proposition xml:id="prop-max-min-meas">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a complete measure space and let <m>f_1,\ldots,f_n</m> be measurable functions on <m>X</m>.
+    Then</p>
+<ol>
+<li><p><m>\max\{f_1,\ldots,f_n\}</m> is measurable; and</p>
+</li>
+<li><p><m>\min\{f_1,\ldots,f_n\}</m> is measurable.</p>
+</li>
+</ol>
+</proposition>
+<proof>
+<p>Let <m>f_1,\ldots,f_n</m> be measurable functions, and let <m>f = \max\{f_1,\ldots,f_n\}.</m>
+    Take any <m>c \in \mathbb{R}</m>.
+    Then</p>
+<md> \{x \in X\colon f(x) &gt;c\} = \bigcup_{k=1}^n \{x \in \mathcal{X} \colon f_k(x) &gt; c\}.</md>
+<p>Thus <m>\{x \in X\colon f(x) &gt;c\}</m> is a measurable set, and hence <m>f</m> is a measurale function.</p>
+<p>Note that</p>
+<md> \min\{f_1,\ldots,f_n\} = -\max\{-f_1,-f_2,\ldots,-f_n\}.</md>
+<p>Hence, <m>\min\{f_1,\ldots,f_n\}</m> is a measurable function.</p>
+</proof>
+<definition>
+<p>For a measurable function <m>f</m> on a measurable space <m>(X,\mathcal{F})</m>, <m>f_+ = \max\{f,0\}</m> is the <em>positive part</em> of <m>f</m><idx><h>positive part of a function</h></idx> and <m>f_-</m> is the <em>negative part</em> of <m>f</m>. <idx><h>negative part of a function</h></idx></p>
+</definition>
+<p>Note that, Proposition <xref ref="prop-max-min-meas"/> shows that if <m>f</m> is a measurable function, then <m>f_+</m> and <m>f_-</m> is a measurable function. Further, note that <m>f = f_+ - f_-</m>. That is, <m>f</m> is the difference of two non-negative measurable functions. This decomposition, <m>f = f_+ - f_-</m> will be used frequently when studying integration.</p>
+<corollary xml:id="cor-abs-val">
+<p>Let <m>f</m> be a measurable function on a measurable space <m>(X,\mathcal{F})</m>.
+    The the function <m>|f|</m> is measurable.</p>
+</corollary>
+<proof>
+<p>Note that <m>|f| = f_+ + f_-.</m>
+    Both <m>f_+</m> and <m>f_-</m> are measurable, by Proposition <xref ref="prop-max-min-meas"/>.
+    As <m>f_+</m> and <m>f_-</m> are both non-negative functions, <m>f_+(x) + f_-(x)</m> is defined (possibly infinite) for all <m>x \in X</m>.
+    It follows from the same argument as in Theorem <xref ref="thm-meas-fnc-vec-sp"/>, that <m>f_+ + f_-</m> is a measurable function.</p>
+</proof>
+<p>The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, Example <xref ref="ex-comp-not-meas"/> However, there are circumstances where measurability of a composition is guaranteed, Proposition <xref ref="prop-comp-meas"/>.</p>
+<example xml:id="ex-comp-not-meas">
+<p>In the proof of Lemma <xref ref="lem-non-Borel"/>, we prove the existence of a non-Lebesgue measurable set <m>B \subseteq [0,2]</m> and a bijective continuous function <m>f\colon [0,2] \rightarrow [0,1]</m> such that <m>f(B)</m> is Lebesgue measurable.
+    By a simple adjustment, we can assume that <m>f(B) \subseteq (0,1).</m>
+    We extend <m>f</m> to a continuous function on all of <m>\mathbb{R}</m> by setting <m>f(x) = 1</m> for <m>x \geq 2</m> and <m>f(x) = 0</m> for <m>x \leq 0</m>.
+    Let <m>A = f(B)</m>.</p>
+<p>Consider the measure space <m>(\mathbb{R},\mathcal{M})</m>, where <m>\mathcal{M}</m> is all Lebesgue measurable sets in <m>\mathbb{R}</m>.
+    The function <m>\chi_A</m> is a measurable function since <m>A</m> is measurable, Exercise <xref ref="exer-char-measurable"/>, and <m>f</m> is measurable since it is continuous, Proposition <xref ref="cor-Cont-are-meas"/>.
+    However the function <m>g = \chi_A \circ f</m> is not measurable.
+    Indeed</p>
+<md>
+\begin{aligned}
+\{x \in \mathbb{R} \colon g(x) &gt; 0 \} &amp;= \{x \in \mathbb{R} \colon \chi_A(f(x)) &gt;0 \} \\
+        &amp;= \{x \in \mathbb{R} \colon f(x) \in A\} \\
+        &amp;= B,
+\end{aligned}
+</md>
+<p>is not Lebesgue measurable, and hence <m>g</m> is not a measurable function.</p>
+</example>
+<proposition xml:id="prop-comp-meas">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, let <m>f</m> be a real-valued measurable function on <m>X</m>, and let <m>\varphi \colon \mathbb{R} \rightarrow \mathbb{R}</m> be a continuous function.
+    Then <m>\varphi \circ f</m> is continuous.</p>
+</proposition>
+<proof>
+<p>Take any open set <m>U \subseteq \mathbb{R}</m>, and let <m>V = \varphi^{-1}(U)</m>.
+    Then <m>V</m> is an open subset of <m>\mathbb{R}</m>, since <m>\varphi</m> is continuous.
+    By, Proposition <xref ref="prop-meas-fun-inverse-open"/>, <m>f^{-1}(V)</m> is a measurable set.
+    Thus,</p>
+<md> (f\circ \varphi)^{-1}(U) = f^{-1}(V)</md>
+<p>is measurable for all open sets <m>U \subseteq \mathbb{R}</m>.
+    Hence <m>f \circ \varphi</m> is a measurable function, by Proposition <xref ref="prop-meas-fun-inverse-open"/>.</p>
+</proof>
+<remark xml:id="rem-morphisms">
+<p>We have only considered extended real-valued measurable functions.
+    This is what we will be interested in for the majority of these notes.
+    In more generality, if <m>(X,\mathcal{M})</m> and <m>(Y,\mathcal{N})</m> are two measurable spaces, a function <m>f \colon X \rightarrow Y</m> is <em>measurable with respect to <m>\mathcal{M}</m> and <m>\mathcal{N}</m></em><idx><h>measurable function</h><h>between two measure spaces</h></idx> if <m>f^{-1}(E) \in \mathcal{M}</m> for all <m>E \in \mathcal{N}</m>.
+    This definition is consistent with Definition <xref ref="def-meas-func"/> when <m>Y = \mathbb{R}\cup\{-\infty,\infty\}</m> and <m>\mathcal{N} = \mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>, the Borel sets in the extended real line. See Exercise <xref ref="exer-borel-on-extended"/> for more on <m>\mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>.
+    This fact <em>almost</em> follows from Proposition <xref ref="prop-meas-fun-inverse-open"/>. 
+    The full details are left to Exercise <xref ref="exer-Borel-meas-functions"/>.</p>
+<p>When we study measurable functions from <m>\mathbb{R}</m> to <m>\mathbb{R}</m>, we study measurable functions from with respect to <m>\mathcal{M}</m> and <m>\mathcal{B}</m>, <m>\mathcal{M}</m> is the Lebesgue measurable sets on <m>\mathbb{R}</m> and <m>\mathcal{B}</m> is the Borel sets on <m>\mathbb{R}</m>.
+    I.e. we study measurable functions from the measure space <m>(\mathbb{R},\mathcal{M},m)</m> to the measure space <m>(\mathbb{R},\mathcal{B},m)</m>.
+    The lopsidedness of this naturally raises questions.
+    Firstly, the advantage of the domain being <m>(\mathbb{R},\mathcal{M},m)</m> is that <m>(\mathbb{R},\mathcal{M},m)</m> is a complete measure space.
+    See, e.g., Proposition <xref ref="prop-f-g-a-e"/> for an advantage of having a complete measure space in the domain.</p>
+<p>One reason for taking the Borel sets in the range, instead of all Lebesgue measurable sets, is the following.
+    As described in the proof of Lemma <xref ref="lem-non-Borel"/> and Example <xref ref="ex-comp-not-meas"/>, there is a continuous function <m>f \colon \mathbb{R} \rightarrow \mathbb{R}</m> and a set <m>B \subseteq \mathbb{R}</m> which is not Lebesgue measurable, such that <m>A=f(B)</m> is Lebesgue measurable but <m>A</m> is not a Borel set, and <m>f^{-1}(A) = B</m>.
+    I.e. there is a continuous function <m>f</m> and a Lebesgue measurable set <m>A</m> such that <m>f^{-1}(A)</m> is not Lebesgue measurable.
+    In conclusion, the measurable functions from <m>(\mathbb{R},\mathcal{M})</m> to <m>(\mathbb{R},\mathcal{M})</m> do not include all continuous functions.
+    We do, however, want to study the continuous functions.
+    Hence the measurable functions from <m>(\mathbb{R},\mathcal{M})</m> to <m>(\mathbb{R},\mathcal{M})</m> is not the right class to study.</p>
+</remark>
+</section>
+<section>
+<title>Approximations of measurable functions</title>
+<p>Equivalently, there are several ways we can say that a sequence <m>(f_n)_n</m> of functions converges to a function <m>f</m>. You will already be familiar with the concept of pointwise convergence of functions and, at least for functions from <m>\mathbb{R}</m> to <m>\mathbb{R}</m>, uniform convergence. We recall these definitions below, together with an unfamiliar form of convergence: convergence pointwise almost everywhere.</p>
+<definition>
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a  measure space, let <m>(f_n)_n</m> be a sequence of extended real-valued functions on <m>X</m>, and let <m>f</m> be an extended real-valued function on <m>x</m>.</p>
+<p>The sequence <m>(f_n)</m> <em>converges to <m>f</m> pointwise almost everywhere</em><idx><h>convergence</h><h>pointwise almost everywhere</h></idx><fn>often abbreviated to <em>pointwise a.e.</em></fn> if there is an <m>E \subseteq X</m> with <m>\mu(E) = 0</m>, such that</p>
+<md> \lim_{n \rightarrow \infty} f_n(x) = f(x)</md>
+<p>for all <m>x \in X \backslash E</m>.</p>
+<p>If</p>
+<md> \lim_{n \rightarrow \infty} f_n(x) = f(x)</md>
+<p>for all <m>x \in X</m> then we say that the sequence <m>(f_n)_n</m> <em>converges pointwise to <m>f</m>.</em><idx><h>convergence</h><h>pointwise</h></idx></p>
+<p>The sequence <m>(f_n)_n</m> converges <em>uniformly</em><idx><h>convergence</h><h>uniform</h></idx> if for all <m>\varepsilon &gt;0</m> there exists an <m>N \geq 0</m> such that</p>
+<md> |f_n(x) - f(x)| &lt; \varepsilon</md>
+<p>for all <m>x \in X</m> and <m>n \geq N</m>.</p>
+</definition>
+<remark xml:id="rem-types-of-convergence">
+<p>The relationship between these three forms of convergence is:</p>
+<md> \text{uniform}\implies \text{pointwise} \implies \text{pointwise a.e.}.</md>
+<p>Neither of the implications go the opposite way, however.
+Recall that the sequence <m>(x^n)_n</m> on <m>[0,1]</m> converges pointwise to the function</p>
+<md> f(x) = \begin{cases}
+    0 &amp; x \in [0,1)\\
+    1 &amp; x = 1,
+\end{cases}</md>
+<p>but <m>(x^n)_n</m> does not converge uniformly to <m>f</m>.</p>
+<p>Suppose <m>A \subseteq \mathbb{R}</m> is a non-empty Lebesgue measurable set with <m>m(A) = 0</m>.
+Define functions</p>
+<md> f_n(x) = \begin{cases} 0&amp; x \in \mathbb{R} \backslash A, \\
+(-1)^n &amp; x \in A.\end{cases}</md>
+<p>Then <m>f_n</m> converges pointwise a.e. to the zero function <m>0</m>,
+whilst <m>f_n</m> does not converge pointwise to any function.</p>
+</remark>
+<p>Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, Theorem <xref ref="thm-simple-approx"/>, which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, Theorem <xref ref="thm-ergoroff"/>, which says that if <m>(f_n)_n</m> converge pointwise to <m>f</m>, then there is a large set on which the convergence is uniform.</p>
+<p>We first establish that a pointwise limit of measurable functions is measurable.</p>
+<proposition xml:id="prop-pw-lim">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space. 
+    Suppose <m>(f_n)_n</m> is a sequence of measurable functions on <m>X</m> that converge pointwise almost everywhere to a function <m>f</m>.
+    Then, if either</p>
+<ol>
+<li><p><m>(X,\mathcal{F},\mu)</m> is a complete measure space; or</p>
+</li>
+<li><p>the sequence <m>(f_n)_n</m> converges pointwise to <m>f</m>,</p>
+</li>
+</ol>
+<p>then <m>f</m> is a measurable function.</p>
+</proposition>
+<proof>
+<p>Let <m>E</m> be a measurable set with <m>\mu(E) = 0</m> such that <m>(f_n(x))_n</m> converges to <m>f(x)</m> for all <m>x \in X \backslash E</m>.
+    If <m>(X,\mathcal{F},\mu)</m> is complete, then <m>f</m> is measurable if and only if <m>f|_{X \backslash E}</m> is measurable, by Proposition <xref ref="prop-f-g-a-e"/>.
+    Thus, by excising <m>E</m> if necessary, we can assume that <m>(f_n)_n</m> converges pointwise to <m>f</m>.</p>
+<p>Fix <m>c \in \mathbb{R}</m> and let</p>
+<md> A = \{x \in X \colon f(x) &gt; c\}.</md>
+<p>Our goal is to show that <m>A</m> is a measurable set.
+    Note that, if <m>x_0 \in A</m>, then there exists an <m>n, N &gt;0</m> such that</p>
+<md> x_0 \in \bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+<p>Conversely, suppose <m>x_0 \in X</m> satisfies</p>
+<md> x_0 \in \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+<p>Then <m>f(x_0) \geq c + \frac{1}{n} &gt; c</m>, and hence <m>x_0 \in A</m>.
+    Thus</p>
+<md> A = \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+<p>Thus, since each <m>f_k</m> is a measurable function, <m>A</m> is a countable union of a countable intersection of measurable sets.
+    Thus <m>A</m> is measurable.
+    As <m>c \in \mathbb{R}</m> was chosen arbitrarily, <m>f</m> is a measurable function.</p>
+</proof>
+<theorem xml:id="thm-simple-approx">
+<title>The Simple Approximation Theorem</title>
+<p><idx><h>Simple Approximation Theorem</h></idx>
+Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be an extended real-valued function on <m>X</m>.
+Then <m>f</m> is measurable if and only <m>f</m> is the pointwise limit of a sequence of simple functions <m>(\phi_n)_n</m> satisfying <m>|\phi_n|\leq |f|</m> for all <m>n</m>.</p>
+<p>If <m>f</m> is a non-negative function, the sequence <m>(\phi_n)_n</m> can be chosen to be increasing.</p>
+<p>If <m>(X,\mathcal{F},\mu)</m> is <m>\sigma</m>-finite, then the simple functions <m>(\phi_n)_n</m> can each be chosen to be of finite support.</p>
+</theorem>
+<proof>
+<p>If <m>f</m> is a pointwise limit of simple functions, then <m>f</m> is measurable by Proposition <xref ref="prop-pw-lim"/>.</p>
+<p>Suppose now that <m>f</m> is measurable.
+    Assume first that <m>f\geq 0</m>.
+    For each <m>n</m>, and <m>k = 1,\ldots, n^2</m>, let</p>
+<md> E^n_k = f^{-1}\left(\left[\frac{k-1}{n},\frac{k}{n}\right)\right)</md>
+<p>For each <m>n</m>, the sets <m>\{E^n_k\}_{k=1}^{n^2}</m> are disjoint measurable sets.
+    Define scalars <m>(a^n_k)_{n,k}</m> by</p>
+<md> a^n_k = \frac{k-1}{n}</md>
+<p>For each <m>n</m> define a simple function <m>\phi_n</m> by</p>
+<md> \phi_n(x) = \begin{cases}
+    a_n^k &amp; x \in E_n^k\\
+        n&amp;  f(x) \geq n.
+    \end{cases}</md>
+<p>Note <m>\phi_n\leq f</m>.</p>
+<p>We claim that <m>(\phi_n)_n</m> converge pointwise to <m>f</m>.
+    First, suppose <m>f(x) &lt; \infty</m>.
+    Fix <m>\varepsilon &gt;0</m>
+    Choose an integer <m>N</m> such that <m>f(x) &lt; N</m> and <m>\frac{1}{N}&lt; \varepsilon</m>.
+    Then, if <m>n \geq N</m>, there is a <m>k</m> such that <m>x \in E^n_k</m>.
+    Thus,</p>
+<md> |f(x) - \phi_n(x)| = |f(x) - a^n_k| &lt; \frac{1}{n} &lt; \varepsilon.</md>
+<p>Thus <m>\lim_n \phi_n(x) = f(x)</m>.</p>
+<p>If <m>f(x) = \infty</m>, then <m>\phi_n(x) = n</m> for all <m>n</m>.
+    Thus</p>
+<md> \lim_n \phi_n(x) = \lim_n n = \infty = f(x).</md>
+<p>Hence <m>(\phi_n)_n</m> converges pointwise to <m>f</m>.</p>
+<p>By replacing <m>\phi_n</m> with <m>\max\{\phi_1,\ldots,\phi_n\}</m> we can make sure the sequence <m>(\phi_n)_n</m> is increasing.</p>
+<p>For an arbitrary measurable function <m>f</m> we can find a sequences <m>(\phi_n)_n</m> and <m>(\psi_n)_n</m> of simple functions which converge pointwise to <m>f_+</m> and <m>f_-</m> respectively, with <m>\phi_n \leq f_+</m> and <m>\psi_n \leq f_-</m>.
+    Then <m>(\phi_n-\psi_n)_n</m> is a sequence of simple functions which  converge pointwise to <m>f</m>.
+    Further</p>
+<md> |\phi_n - \psi_n| \leq \phi_n + \psi_n \leq f_+ + f_- = |f|.</md>
+<p>Finally, suppose that <m>(X,\mathcal{F},\mu)</m> is a <m>\sigma</m>-finite measure space and <m>(\phi_n)_n</m> is a sequence of simple functions that converge pointwise to a measurable function <m>f</m>.
+    Let <m>\{E_n\}_{n=1}^\infty</m> be an increasing sequence of measurable sets such that <m>\mu(E_n) &lt; \infty</m> for all <m>n\geq 1</m>, and <m>X = \bigcup_{n\in\mathbb{N}}E_n</m>.
+    For each <m>n</m> define the function</p>
+<md> \psi_n = \phi_n \chi_{E_n}.</md>
+<p>Then <m>(\psi_n)_n</m> is a sequence of finitely supported simple functions which converge pointwise to <m>f</m>.</p>
+</proof>
+<p>As noted in Remark <xref ref="rem-types-of-convergence"/>, pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.</p>
+<theorem xml:id="thm-ergoroff">
+<title>Ergoroff's Theorem</title>
+<p><idx><h>Ergoroff's Theorem</h></idx>
+Let <m>(X,\mathcal{F},\mu)</m> be a finite measure space and let <m>(f_n)_n</m> be a sequence of measurable functions on <m>X</m> which converge pointwise a.e. to a finite a.e. function <m>f</m>.
+Then for all <m>\varepsilon &gt;0</m> there is a measurable set <m>X_\varepsilon \subseteq X</m> such that</p>
+<ol>
+<li><p><m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>X_\varepsilon</m>;</p>
+</li>
+<li><p><m>\mu(X \backslash X_\varepsilon) &lt; \varepsilon</m>.</p>
+</li>
+</ol>
+</theorem>
+<proof>
+<p>By removing a set of measure <m>0</m> if necessary, we can assume that <m>(f_n)_n</m> converges pointwise to <m>f</m> on <m>E</m>.
+    By removing another measure <m>0</m> set, we can assume that <m>f</m> is real-valued.</p>
+<p>Fix <m>\eta &gt;0</m>.
+    For each <m>k</m>, the function <m>|f-f_k|</m> is measurable, and hence the set</p>
+<md> \{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}</md>
+<p>\
+    is a measurable set.
+    For each <m>n</m> let <m>E_n</m> be the measurable set</p>
+<md>
+\begin{aligned}
+E_n &amp;= \{x \in E \colon |f(x) - f_k(x)|&lt; \eta,\ k\geq n\} \\
+    &amp;= \bigcap_{k \geq n}\{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}.
+\end{aligned}
+</md>
+<p>Then <m>\{E_n\}_n</m> is an increasing sequence of measurable sets and <m>X = \bigcup_n E_n</m>, since <m>(f_n)_n</m> converges pointwise to <m>f</m> on <m>X</m>.
+    By the continuity of measure,</p>
+<md> \lim_{n\rightarrow \infty} \mu(E_n) = \mu(X).</md>
+<p>Thus, for any <m>\delta &gt;0</m> there is an <m>K</m> such that</p>
+<md> \mu(X \backslash E_N) =&lt;fn&gt;Note that <m>\mu(X) &lt; \infty</m> is being used here to apply the excision property&lt;/fn&gt;\mu(X) - \mu(E_K) &lt; \delta.</md>
+<p>Note that <m>|f_k - f|&lt; \eta</m> on <m>E_K</m> for <m>k \geq K</m>.</p>
+<p>Fix <m>\varepsilon &gt; 0</m>.
+    For each <m>n</m>, apply the above argument with <m>\eta = \frac{1}{n}</m> and <m>\delta = \frac{\varepsilon}{2^{n}}</m> to find a measurable set <m>A_n</m> and an index <m>K_n</m> such that</p>
+<md> \mu(X \backslash A_n) &lt; \frac{\varepsilon}{2^{n}}</md>
+<p>and</p>
+<md> |f_k(x) - f(x)| &lt; \frac{1}{n}</md>
+<p>for all <m>x \in A_n</m> and <m>k \geq K_n</m>.</p>
+<p>Let <m>A = \bigcap_n A_n</m>.
+    We will show that <m>\mu(X \backslash A) &lt; \varepsilon</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
+    First note that</p>
+<md>
+\begin{aligned}
+\mu(X\backslash A) &amp;= \mu\left(X \backslash \bigcap_n A_n\right) \\
+        &amp;= \mu\left(\bigcup_n X \backslash A_n \right) \\
+        &amp;\leq \sum_{n=1}^\infty \mu(X \backslash A_n)\\
+        &amp;&lt; \sum_{k=1}^\infty \frac{\varepsilon}{2^{n}}=\varepsilon.
+\end{aligned}
+</md>
+<p>Take any <m>\zeta &gt; 0</m>. Choose integer <m>n</m> such that <m>\frac{1}{n}&lt;\zeta</m>.
+    Then, if <m>k \geq K_n</m>,</p>
+<md> |f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta</md>
+<p>for all <m>x \in A_n</m>.
+    As <m>A \subseteq A_n</m>, it follows that</p>
+<md> |f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta</md>
+<p>for all <m>x \in A</m> and <m>k \geq K_n</m>.
+    Thus <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m> and <m>\mu(X\backslash A)&lt; \varepsilon.</m></p>
+</proof>
+<corollary xml:id="cor-ergoroff">
+<title>Ergoroff's Theorem on <m>\mathbb{R}</m></title>
+<p><idx><h>Ergoroff's Theorem</h><h>on the real line</h></idx>
+Let <m>E \subseteq \mathbb{R}</m> be a Lebesegue measurable set with <m>m(E)&lt; \infty</m>.
+Let <m>(f_n)_n</m> be a sequence of measurable functions on <m>E</m> which converge a.e. to a finite a.e. function <m>f</m>.</p>
+<p>For each <m>\varepsilon &gt; 0</m> there is a closed set <m>F \subseteq E</m> such that <m>m(E \backslash F)&lt; \varepsilon</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>F</m>.</p>
+</corollary>
+<proof>
+<p>Fix <m>\varepsilon &gt;0</m>.
+    By Theorem <xref ref="thm-ergoroff"/> there is a measurable set <m>A \subseteq E</m> such that <m>\mu(E \backslash A)&lt; \varepsilon/2</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
+    By Theorem <xref ref="thm-Leb-meas-sets-G-delta-F-sigma"/>, there is a closed set <m>F \subseteq A</m> such that <m>m(A\backslash F)&lt; \varepsilon /2</m>.</p>
+<p>As <m>F \subseteq A</m>, <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>F</m>.
+    Also</p>
+<md> m(E\backslash F) = m(A\backslash F) + m(E\backslash A) &lt; \varepsilon, </md>
+<p>completing the proof.</p>
+</proof>
+</section>
+<exercises>
+<exercise xml:id="exer-f-c-meas">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>f</m> be a measurable extended real-valued function with measurable domain <m>E</m>.
+    Show that the set</p>
+<md> \{x \in E \colon f(x) =c \}</md>
+<p>is measurable for all <m>c \in \mathbb{R}\cup \{-\infty,\infty\}.</m>
+    (HINT: you will need to treat the values <m>c=-\infty</m> and <m>c=\infty</m> differently than <m>c \in \mathbb{R}</m>).</p>
+</exercise>
+<exercise xml:id="exer-f-c-not-meas">
+<p>Give an example of a measurable space <m>(X,\mathcal{F})</m> and an extended real-valued function <m>f</m> with measurable domain <m>E</m> which satisfies</p>
+<md> \{x \in E \colon f(x) =c \}</md>
+<p>is measurable for all <m>c \in \mathbb{R}\cup \{-\infty,\infty\}</m>, but <m>f</m> is <em>not</em> a measurable function.</p>
+</exercise>
+<exercise xml:id="exer-char-measurable">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space.
+    Let <m>A \subseteq X</m> and let <m>f = \chi_A</m> be the characteristic function on <m>A</m>.
+    Show that <m>f</m> is a measurable function if and only if <m>A</m> is a measurable set.</p>
+</exercise>
+<exercise xml:id="exer-f-g-a-e">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space which is not complete.
+    Show that there is a measurable function <m>f</m> on <m>X</m>, and a function <m>g</m> on <m>X</m> such that <m>f =g</m> almost everywhere, but <m>g</m> is not a measurable function.</p>
+</exercise>
+<exercise xml:id="exer-cont-ae">
+<p>Let <m>f,g</m> be two continuous functions on <m>\mathbb{R}</m>.
+    Show that if <m>f = g</m> almost everywhere, then <m>f = g</m>.</p>
+</exercise>
+<exercise xml:id="exer-meas-func-equiv">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>\mathcal{L}</m> be the collection of all extended real-valued functions on <m>X</m>.
+    Define a relation <m>\sim</m> on <m>\mathcal{L}</m> by</p>
+<md> f \sim g \text{ if and only if } f=g \text{ a.e.}</md>
+<p>Show that <m>\sim</m> is an equivalence relation on <m>\mathcal{L}</m>.</p>
+</exercise>
+<exercise xml:id="exer-scale-meas">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>f</m> be a measurable function with measurable domain <m>E \in \mathcal{F}</m>.
+    Show that <m>\alpha f</m> is a measurable function for all <m>\alpha \in \mathbb{R}</m>.</p>
+</exercise>
+<exercise xml:id="exer-simple-disjiont">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space and let</p>
+<md> \varphi = \sum_{k=1}^n b_i \chi_{F_i}</md>
+<p>where <m>F_1,\ldots,F_n \subseteq X</m> are measurable sets, and <m>b_1,\ldots,b_n \in \mathbb{R}</m>.
+    Show that there are disjoint measurable sets <m>E_1,\ldots,E_m</m> and distinct real numbers <m>a_1,\ldots,a_m</m> such that</p>
+<md> \varphi = \sum_{k=1}^m a_k \chi_{E_k}.</md>
+</exercise>
+<exercise xml:id="exer-sup-inf-liminf-limsup">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>(f_n)_n</m> be a sequence of measurable functions on <m>X</m>.
+    Show that the functions</p>
+<ol>
+<li><p><m>\sup_n f_n</m>;</p>
+</li>
+<li><p><m>\inf_n f_n</m>;</p>
+</li>
+<li><p><m>\limsup_n f_n</m>; and</p>
+</li>
+<li><p><m>\liminf_n f_n</m></p>
+</li>
+</ol>
+<p>are all measurable functions.</p>
+</exercise>
+<exercise xml:id="exer-simple-approx-lemma">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>f \colon X \rightarrow \mathbb{R}</m> be a bounded measurable function.
+Show that, for all <m>\varepsilon &gt; 0</m> there exist simple functions <m>\varphi</m> and <m>\psi</m> such that <m>\varphi \leq f \leq \psi</m> and <m>0 \leq \psi - \varphi &lt; \varepsilon</m> on <m>X</m>.</p>
+</exercise>
+<exercise xml:id="exer-uniform-convergence">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>f \colon X \rightarrow \mathbb{R}</m> be a bounded measurable function.
+	Show that there is a sequence <m>(\phi_n)_n</m>  of simple functions with <m>\phi_n\leq f</m> for all, such that <m>(\phi_n)</m> converges uniformly to <m>f</m>. (HINT: Use Exercise <xref ref="exer-simple-approx-lemma"/>)</p>
+</exercise>
+<exercise xml:id="exer-Borel-meas-functions">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space.
+    Let <m>\overline{\mathbb{R}} =\mathbb{R}\cup \{-\infty,\infty\}</m> be the extended real-line and let <m>\mathcal{B}(\overline{\mathbb{R}})</m> be the Borel sets in <m>\overline{\mathbb{R}}</m>, with respect to the topology defined in Exercise <xref ref="exer-top-on-extended"/> (see also Exercise <xref ref="exer-borel-on-extended-2"/>).</p>
+<p>Let <m>f \colon X \rightarrow \overline{\mathbb{R}}</m> be a function.
+    Show that <m>f</m> is a measurable function if and only if <m>f^{-1}(B) \in \mathcal{F}</m> for all <m>B \in \mathcal{B}(\overline{\mathbb{R}})</m>.</p>
+</exercise>
+</exercises>
+</chapter>

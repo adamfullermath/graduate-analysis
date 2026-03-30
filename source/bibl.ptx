@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<references>
+  <biblio type="bibtex" xml:id="AglerMcCarthy">
+  <author>Agler, Jim, McCarthy, John E.</author>
+  <title>Pick interpolation and {H</title>
+  <year>2002</year>
+  <volume>44</volume>
+  <publisher>American Mathematical Society, Providence, RI</publisher>
+  <pages start="xx+308"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="AKTakagi">
+  <author>Allaart, Pieter C., Kawamura, Kiko</author>
+  <title>The {T</title>
+  <journal>Real Anal. Exchange</journal>
+  <year>2011/12</year>
+  <volume>37</volume>
+  <number>1</number>
+  <pages start="1" end="54"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Blass">
+  <author>Blass, Andreas</author>
+  <title>Existence of bases implies the axiom of choice</title>
+  <booktitle>Axiomatic set theory ({B</booktitle>
+  <year>1984</year>
+  <volume>31</volume>
+  <publisher>Amer. Math. Soc., Providence, RI</publisher>
+  <pages start="31" end="33"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="dini2018fondamenti">
+  <author>Dini, U.</author>
+  <title>Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali</title>
+  <year>1878</year>
+</biblio>
+
+<biblio type="bibtex" xml:id="dud">
+  <author>Dudley, R. M.</author>
+  <title>Real analysis and probability</title>
+  <year>2002</year>
+  <volume>74</volume>
+  <publisher>Cambridge University Press, Cambridge</publisher>
+  <pages start="x+555"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Folland">
+  <author>Folland, Gerald B.</author>
+  <title>Real analysis</title>
+  <year>1999</year>
+  <publisher>John Wiley &amp; Sons, Inc., New York</publisher>
+  <pages start="xvi+386"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Fremlin">
+  <author>Fremlin, D.H.</author>
+  <title>Measure Theory</title>
+  <volume>II</volume>
+  <publisher>https://www1.essex.ac.uk/maths/people/fremlin/mt.htm</publisher>
+</biblio>
+
+<biblio type="bibtex" xml:id="RieszNagyFA">
+  <author>Riesz, Frigyes, Sz.-Nagy, B\'ela</author>
+  <title>Functional analysis</title>
+  <year>1990</year>
+  <publisher>Dover Publications, Inc., New York</publisher>
+  <pages start="xii+504"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="lebesgue1902integrale">
+  <author>Lebesgue, Henri</author>
+  <title>Int{\'e</title>
+  <journal>Annali di Matematica Pura ed Applicata (1898-1922)</journal>
+  <year>1902</year>
+  <volume>7</volume>
+  <number>1</number>
+  <publisher>Springer</publisher>
+  <pages start="231" end="359"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Riesz1909">
+  <author>Riesz, Frigyes</author>
+  <title>Sur les op\'{e</title>
+  <journal>Comptes rendus hebdomadaires des s\'{e</journal>
+  <year>1909</year>
+  <volume>149</volume>
+  <pages start="974" end="977"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Riesz1909translate">
+  <author>Riesz, Frigyes</author>
+  <title>Sur les op\'{e</title>
+  <year>2015</year>
+</biblio>
+
+<biblio type="bibtex" xml:id="Roy">
+  <author>Royden, H.L., Fitzpatrick, P.M.</author>
+  <title>Real Analysis</title>
+  <year>2017</year>
+  <publisher>Pearson</publisher>
+</biblio>
+
+<biblio type="bibtex" xml:id="schwarz">
+  <author>Schwarz, HA</author>
+  <title>Neues Beispiel einer stetigen, nicht differentiirbaren Funktion</title>
+  <year>1874</year>
+  <publisher>Schaffhausen</publisher>
+</biblio>
+
+<biblio type="bibtex" xml:id="Strom">
+  <author>Stromberg, Karl R.</author>
+  <title>Introduction to classical real analysis</title>
+  <year>1981</year>
+  <publisher>Wadsworth International, Belmont, CA</publisher>
+  <pages start="ix+575"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Takagi">
+  <author>Takagi, Teiji</author>
+  <title>Collected papers</title>
+  <year>2014</year>
+  <publisher>Springer, Heidelberg</publisher>
+  <pages start="xvi+376"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="thim2003">
+  <author>Thim, Johan</author>
+  <title>Continuous nowhere differentiable functions ({D</title>
+  <year>2003</year>
+</biblio>
+
+<biblio type="bibtex" xml:id="Weier">
+  <title>Classics on fractals</title>
+  <year>2004</year>
+  <publisher>Westview Press. Advanced Book Program, Boulder, CO</publisher>
+  <pages start="xii+366"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="vdw">
+  <author>van der Waerden, B. L.</author>
+  <title>Ein einfaches {B</title>
+  <journal>Math. Z.</journal>
+  <year>1930</year>
+  <volume>32</volume>
+  <number>1</number>
+  <pages start="474" end="475"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="volterra1881sui">
+  <author>Volterra, Vito</author>
+  <title>Sui principi del calcolo integrale</title>
+  <journal>Opere matematiche: memorie e note/Vito Volterra</journal>
+  <year>1881</year>
+  <volume>1</volume>
+  <publisher>Accademia Nazionale dei Lincei</publisher>
+  <pages start="16" end="48"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="Weierstrass">
+  <author>Weierstrass, Karl</author>
+  <title>Mathematische {W</title>
+  <year>1967</year>
+  <publisher>Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint
+              Corp., New York</publisher>
+  <pages start="vi+362"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="wil">
+  <author>Willard, Stephen</author>
+  <title>General topology</title>
+  <year>2004</year>
+  <publisher>Dover Publications, Inc., Mineola, NY</publisher>
+  <pages start="xii+369"/>
+</biblio>
+</references>

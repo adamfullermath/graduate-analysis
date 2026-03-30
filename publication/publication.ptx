@@ -49,6 +49,7 @@
     <!-- relative to your main source file.                               -->
     <directories external="../assets" generated="../generated-assets" />
 
+
     <!-- Set which marked elements are included in this version: -->
     <!-- See
     https://pretextbook.org/doc/guide/html/publication-file-source.html#publication-file-source-version -->
@@ -81,9 +82,9 @@
   <!-- for printing; set @sides="two" if the printing would be two- -->
   <!-- sided.  @pageref="yes/no" controls whether page number are   -->
   <!-- included in cross-references                                 -->
-  <latex>
+
   <!-- Replace the <latex> tag above with the one below to try these-->
-  <!--
+
     <latex
           print="no"
           sides="one"
@@ -91,9 +92,8 @@
           pageref="no"
           font-size="10"
           draft="no"
-          latex-style="dyslexic-font"
       >
-  -->
+
 
     <!-- Control text justification and bottom page behavior. Add content intended for \geometry{} inside the <geometry> element. -->
     <!--

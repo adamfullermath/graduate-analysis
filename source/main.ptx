@@ -4,26 +4,43 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
+  <book xml:id="real-analysis">
     <title>Graduate Real Analysis</title>
     <subtitle>Measure Theory</subtitle>
-
-    
-    <bibliography>
-      <bibtex file="bibl.bib"/>
-    </bibliography>
 
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
+    <part>
+      <title>Prerequisites</title>
+      <xi:include href="./Background1.ptx" />
+      <xi:include href="./Background2.ptx" />
+    </part>
 
+    <part><title>Measure and Integration</title>
     <!-- Include chapters -->
-    <xi:include href="./ch-introduction.ptx" />
-    <xi:include href="./ch-measure-spaces.ptx" />
-    <xi:include href="./ch-measures-on-R.ptx" />
+    <xi:include href="./introduction.ptx" />
+    <xi:include href="./measure_spaces.ptx" />
+    <xi:include href="./measures_on_R.ptx" />
+    <xi:include href="./signed-measures.ptx" />
+    <xi:include href="./meas_fun.ptx" />
+    <xi:include href="./integration.ptx" />
+    <xi:include href="./differentiation.ptx" />
+    </part>
 
+    <part><title>Spaces of Functions</title>
+    <xi:include href="./Lp.ptx" />
+    <xi:include href="./dual-spaces.ptx" />
+    </part>
+
+    <appendix><title>Appendices</title>
+    <xi:include href="./real-examples.ptx" />
+    </appendix>
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
+
+   
+  
 
   </book>
 </pretext>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter>
+<title>Sets and cardinality</title>
+<introduction>
+<epigraph>
+<p><em>``To choose one sock from each of infinitely many pairs of socks requires the Axiom of Choice, but for shoes the Axiom is not needed."</em></p>
+<p><source>Bertrand Russell</source></p>
+</epigraph>
+</introduction>
+<section>
+<title>Set Theory Notation</title>
+<p>The empty-set is denoted by <m>\emptyset</m>. Let <m>X</m> be any set, and let <m>A, B \subseteq X</m>. The <em>union</em> of <m>A</m> and <m>B</m> is given by</p>
+<md> A \cup B = \{x\in X \colon x\in A \text{ or }x\in B\}. </md>
+<p>Their <em>intersection</em> is</p>
+<md> A \cap B =\{x\in X \colon x\in A \text{ and }x\in B\}. </md>
+<p>We will usually call a set whose elements are sets a <em>collection</em>. Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The union and intersection of all sets in <m>\mathcal{F}</m> are written</p>
+<md>
+\bigcup_{F\in \mathcal{F}} F \text{ and } \bigcap_{F \in \mathcal{F}} F
+</md>
+<p>respectively. A collection of sets <m>\mathcal{F}</m> is <em>disjoint</em>, or <em>pairwise disjoint</em>, if <m>F\cap G = \emptyset</m> for all <m>F, G \in \mathcal{F}</m>.</p>
+<p>The <em>complement of <m>A</m> in <m>B</m></em> is given by</p>
+<md> B \backslash A = \{b \in B \colon b\notin A\}. </md>
+<p>When it is clear what ambient set <m>X</m> we are working in we will often refer to <m>X\backslash A</m> as simply the complement of <m>A</m>. We will also  write <m>X\backslash A</m> as <m>A^c</m>. For example, we will often be implicitly be working with subsets of <m>\mathbb{R}</m>. Thus, by ``the complement of <m>[0,1]</m>" we will mean</p>
+<md> \mathbb{R}\backslash [0,1] = (-\infty, 0) \cup (1,\infty). </md>
+<p>The collection of all subsets of a set <m>X</m> is called the <em>the power set of <m>X</m></em><idx><h>power set</h></idx> and is denoted by <m>\mathcal{P}(X)</m>. The notation <m>2^X</m> is also sometimes used for the power-set of <m>X</m>. Note that if <m>X</m> has <m>n</m> elements, then <m>\mathcal{P}(X)</m> has <m>2^n</m> elements.</p>
+<p>Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The following two identities are called <em>De Morgan's Identities</em>.<idx><h>De Morgan's Identities</h></idx></p>
+<md>
+\begin{aligned}
+X \backslash \left[\bigcup_{F\in \mathcal{F}} F\right] &amp; = \bigcap_{F\in \mathcal{F}}X\backslash F, \\
+	X \backslash \left[\bigcap_{F\in \mathcal{F}} F\right] &amp; = \bigcup_{F\in \mathcal{F}}X\backslash F.
+\end{aligned}
+</md>
+<p>Let <m>\Lambda</m> be any set. Suppose for each <m>\lambda \in \Lambda</m> there is a set <m>E_\lambda</m>. Let <m>\mathcal{F} = \{E_\lambda \colon \lambda \in \Lambda\}</m>. We will write the collection <m>\mathcal{F}</m> by</p>
+<md> \mathcal{F} = \{E_\lambda\}_{\lambda \in \Lambda}, </md>
+<p>and call <m>\Lambda</m> an <em>index set</em> for the collection <m>\mathcal{F}</m>.</p>
+<subsection>
+<title>Mappings</title>
+<p>For <m>E \colon B</m> we let</p>
+<md> f^{-1}(E) = \{a\in A \colon f(a) \in E\}. </md>
+<p>We call <m>f^{-1}(E)</m> the <em>inverse image of <m>E</m> under <m>f</m></em>. Note that the inverse image of a set is defined whether or not the mapping <m>f</m> is invertible.</p>
+<p>For subsets <m>E_1,E_2\in B</m> we have the following identities:</p>
+<md>
+\begin{aligned}
+f^{-1}(E_1\cup E_2) &amp;= f^{-1}(E_1) \cup f^{-1}(E_2) \\
+	f^{-1}(E_1\cap E_2) &amp;= f^{-1}(E_1) \cap f^{-1}(E_2) \\
+	f^{-1}(E_1\backslash E_2) &amp;= f^{-1}(E_1) \backslash f^{-1}(E_2).
+\end{aligned}
+</md>
+</subsection>
+</section>
+<section>
+<title>Equivalence Relations and Classes</title>
+<p>A relation <m>\sim</m> on <m>X</m> is an <em>equivalence relation</em><idx><h>equivalence relation</h></idx> if it satisfies the following conditions:</p>
+<ol>
+<li><p><m>x\sim x</m> for all <m>x\in X</m> (<m>\sim</m> is <em>reflexive</em>);</p>
+</li>
+<li><p><m>x\sim y</m> if and only if <m>y\sim x</m> (<m>\sim</m> is <em>symmetric</em>);</p>
+</li>
+<li><p>if <m>x\sim y</m> an <m>y\sim z</m> then <m>x\sim z</m> (<m>\sim</m> is <em>transitive</em>).
+
+Let <m>\sim</m> be an equivalence relation on <m>X</m>.
+For <m>x\in X</m>, the <em>equivalence class</em> of <m>x</m> is
+<md>
+[x] = \{y\in X \colon x\sim y\}.
+</md>
+</p>
+</li>
+</ol>
+<p>Note that <m>x\in [x]</m> for all <m>x\in X</m>. Also if <m>x\in [y]</m>, then <m>y\in [x]</m>. Further <m>[x] \cap [y] \neq \emptyset</m> if and only if <m>[x] = [y]</m>. That is, each element <m>x \in X</m> is in one, and only one, equivalence class. Hence the collection <m>\mathcal{F} = \{[x] \colon x\in X\}</m> is a disjoint collection of subsets of <m>X</m> such that</p>
+<md> X = \bigcup_{F \in \mathcal{F}} F. </md>
+<p>We call such a collection a <em>partition of <m>X</m></em>.</p>
+</section>
+<section>
+<title>Cardinality</title>
+<md> f \colon A \rightarrow B. </md>
+<p>Note that cardinality forms an equivalence relation on sets.</p>
+<p>A set <m>A</m> is called <em>countable</em> if <m>A</m> is finite, or if <m>A</m> has the same cardinality as the natural numbers <m>\mathbb{N}</m>. In the latter case we call <m>A</m> <em>countably infinite</em>.</p>
+<p>If a set is not countable, we say it is <em>uncountable</em>. There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that <m>\mathcal{P}(X)</m> has a larger cardinality than <m>X</m>, for any set <m>X</m>. However, we will primarily be concerned with whether a set is countable or not.</p>
+<p>\begin{egs}</p>
+<ol>
+<li><p><m>\mathbb{N}</m>, <m>\mathbb{Z}</m> and <m>\mathbb{Q}</m> are all countable (see Section 1.3, Corollary 4 of <xref ref="Roy"/>).</p>
+</li>
+<li><p>The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of <xref ref="Roy"/>).</p>
+</li>
+<li><p><m>\mathbb{R}</m> and <m>\mathbb{C}</m> are uncountable (they have the same cardinality).</p>
+</li>
+<li><p>For <m>a&lt;b</m>, <m>a,b\in \mathbb{R}</m>, the intervals <m>(a,b)</m>, <m>[a,b]</m>, <m>(a,b]</m> and <m>[a,b)</m> are uncountable. 
+In fact, they have the same cardinality as <m>\mathbb{R}</m> and <m>\mathbb{C}</m> (see Section 1.3, Theorem 7 of <xref ref="Roy"/>).</p>
+</li>
+</ol>
+<p>\end{egs}</p>
+</section>
+<section>
+<title>Axiom of Choice</title>
+<p>A <em>choice function</em><idx><h>choice function</h></idx> <m>f</m> on <m>\mathcal{F}</m> is a mapping</p>
+<md> f \colon \mathcal{F} \rightarrow \bigcup_{F\in\mathcal{F}} F, </md>
+<p>such that <m>f(F) \in F</m> for all <m>F\in \mathcal{F}</m>. That is, <m>f</m> chooses an element from each set <m>F \in \mathcal{F}</m> <em>The axiom of choice</em><idx><h>axiom of choice</h></idx> states that given any collection of non-empty sets a choice function always exists.</p>
+<p>Note that the axiom of choice is an axiom! It does not follow from the standard set theory axioms (the Zermelo-Fraenkel axioms). While the axiom of choice seems very natural, it does lead to some interesting, counter-intuitive results, e.g. the Banach-Tarski paradox and the well-ordering principal.</p>
+<p>In the first part of the course we will use the axiom of choice to prove the existence of non-measurable sets in <m>\mathbb{R}</m>. We will also make use of Zorn's Lemma,<idx><h>Zorn's Lemma</h></idx> which is logically equivalent to the axiom of choice. The axiom of choice<idx><h>axiom of choice</h></idx> is widely used by working mathematicians, especially in analysis/functional analysis.</p>
+<p>We state Zorn's Lemma here. We will make use of this Lemma several times; it is used frequently in analysis and functional analysis. Zorn's Lemma is also used in other areas. For example, it is a straightforward application of Zorn's lemma to show that every vector space has a basis.<fn>The converse also holds. That is, the assumption that every vector space has a basis is equivalent to the axiom of choice, and hence equivalent to Zorn's Lemma, see <xref ref="Blass"/></fn></p>
+<lemma xml:id="lem-zorn">
+<title>Zorn's Lemma</title>
+<p><idx><h>Zorn's Lemma</h></idx>
+Let <m>\mathcal{Z}</m> be a partially ordered set.
+If every totally ordered subsets <m>\mathcal{C} \subseteq \mathcal{Z}</m> has an upper bound in <m>\mathcal{Z}</m>, then <m>\mathcal{Z}</m> contains maximal elements.</p>
+</lemma>
+<remark>
+<p>The <em>axiom of countable choice</em><idx><h>axiom of choice</h><h>countable choice</h></idx> states that any countable collection of non-empty sets has a choice function.
+This is a weaker axiom than the axiom of choice.
+As most functional analysis is carried out with underlying field <m>\mathbb{C}</m> or <m>\mathbb{R}</m>, which contain countable dense subsets (<m>\mathbb{Q}</m> and <m>\mathbb{Q}+ \mathbb{Q} i</m> respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. 
+However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice.
+It is also worth noting that (uncountable) choice is needed to show the existence of non-measurable sets.</p>
+</remark>
+</section>
+</chapter>

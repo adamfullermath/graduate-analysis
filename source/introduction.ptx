@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="chap-intro">
+<title>Why study measure theory?</title>
+<introduction>
+
+<epigraph>
+<p><em>``The uncertainty that still exists in some fundamental points of the theory of definite integrals compels us to say something in advance about the concept of a definite integral and the scope of its validity."</em></p>
+<p><source>Bernhard Riemann</source></p>
+</epigraph>
+<p>The prerequisites to this course include two semesters of real analysis (or advanced calculus, if you will). You may wonder what else there is to know? In this section we highlight some questions which have been left unanswered by earlier analysis classes; discuss some shortcomings of previously developed tools; and point to some directions beyond single variable real analysis.</p>
+</introduction>
+<section xml:id="sec-intro-ftoc">
+<title>The integral of a derivative</title>
+<p>In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named <em>The Fundamental Theorem of Calculus</em>.<idx><h>Fundamental Theorem of Calculus</h></idx> We will focus on the first of these here (though both will be addressed later in the course).</p>
+<theorem xml:id="thm-FTOCI">
+<title>The Fundamental Theorem of Calculus I</title>
+<p><idx><h>Fundamental Theorem of Calculus</h></idx>
+Suppose</p>
+<md> F \colon [a,b] \rightarrow \mathbb{R}</md>
+<p>is a continuous function which is differentiable on <m>(a,b)</m> and has continuous bounded derivative on <m>(a,b)</m>.
+Then</p>
+<md> \int_a^b F' = F(b) - F(a). </md>
+</theorem>
+<p>This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions <m>F</m> so that the differentiability of <m>F</m> is automatic? Do we need <m>F'</m> to be continuous everywhere in <m>(a,b)</m> for the theorem to hold? Do we need <m>F'</m> to be defined everywhere in <m>(a,b)</m> for the theorem to hold?</p>
+<p>The following simple example shows that there are functions <m>F</m> where the conclusion of the first fundamental theorem holds, but <m>F'</m> is not defined on all of the interval <m>(a,b)</m>.</p>
+<example xml:id="exam-ftoc">
+<p>Let <m>F</m> be the function <m>F(x) = |x|</m> on the interval <m>[a,b]</m>, where <m>a&lt; 0 &lt; b</m>.
+Then <m>F</m> is differentiable at every point in <m>(a,b)</m> except at <m>0</m>.
+Indeed,</p>
+<md>
+F'(x) = \begin{cases}1 &amp;\text{if }x&gt;0 \\
+        -1 &amp; \text{if }x&lt;0.\end{cases}
+</md>
+<p>We can choose any value for <m>F'(0)</m>, but we can not choose a value so that <m>F'</m> is continuous at <m>0</m>.
+However, we can still calculate the Riemann integral <m>\int_{a}^b F'</m>, since a Riemann integral is not changed by the value at a single point.
+We have that</p>
+<md>
+\begin{aligned}
+\int_{a}^b F' &amp;= \int_{a}^0 F' + \int_0^{b} F' \\
+    &amp;= (-a)(-1)+(b)(1) \\ 
+    &amp;= b + a \\
+    &amp;= F(b) - F(a).
+\end{aligned}
+</md>
+</example>
+<p>Example <xref ref="exam-ftoc"/> shows that we can get away with <m>F'</m> not being defined everywhere, and still satisfy the conclusion of the first fundamental theorem, Theorem <xref ref="thm-FTOCI"/>. Similar to Example <xref ref="exam-ftoc"/>, we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.</p>
+<example xml:id="exam-ftoc2">
+<p>Define a function <m>G</m> on <m>[0,1]</m> by</p>
+<md> G(x) = \min\left\{\left|x-\frac{1}{n+1}\right|, \left|x -\frac{1}{n}\right|\right\},\ \text{when }\frac{1}{n+1} \leq x \leq \frac{1}{n}.</md>
+<p>By construction, <m>G</m> is continuous.
+However, <m>G</m> is not differentiable at <m>x= \frac{1}{n}</m> for each integer <m>n &gt; 1</m>; <m>G</m> is differentiable at all other <m>x</m> (where <m>G'(x) = 1</m> or <m>G'(x) = -1</m>).
+<figure xml:id="fig-ftoc-1">
+<image source="images/countable nondiff ftoc.png" width="25%" />
+<caption>
+  <p>A continuous function <m>G(x)</m> which is not differentiable at each <m>x=\frac{1}{n}</m>. Example <xref ref="exam-ftoc2"/></p>
+</caption>
+</figure>
+<p>One can further show that</p>
+</p>
+<md> \int_0^b G' = G(b) </md>
+<p>for each <m>0\leq b \leq 1.</m>
+Thus</p>
+<md> \int_a^b G' = G(b) - G(a).</md>
+</example>
+<p>Example <xref ref="exam-ftoc2"/> shows that the conclusion of the Fundamental Theorem of Calculus holds for some functions where the derivative is undefined at infinitely many points. Can we classify/describe the functions where the Fundamental Theorem of Calculus applies?</p>
+<p>These questions are closely related to another question which many 19th century mathematicians struggled with. What is the relationship between continuity and differentiability? If <m>f</m> is a continuous function, how non-differentiable can it be? Is a continuous function necessarily differentiable at some points? On some intervals? Is a continuous function differentiable `enough' to apply the first fundamental theorem of calculus?</p>
+<p>In Example <xref ref="exam-ftoc2"/>, the function <m>G</m> is not differentiable at each <m>x=1/n</m>. Whilst this gives (countably) infinite points where <m>G</m> is not differentiable, each point where <m>G</m> is not differentiable is isolated (meaning if <m>G</m> is not differentiable at <m>x</m> then there is an interval around <m>x</m> in which <m>G</m> is differentiable at all <m>y \neq x</m>). In the early 1800s, it was widely believed (or suspected, at least) that all examples would satisfy this. That is, it was conjectured that if <m>f</m> was continuous on a closed interval <m>[a,b]</m> then each point where <m>f</m> is not differentiable is isolated). André-Marie Ampère (1775–1836)<idx><h>Ampère, André-Marie</h></idx> went so far as to present a `proof' of this statement.<fn>All mathematicians make mistakes. Most mathematicians go as far to publish mistakes. If you are to remember Ampère<idx><h>Ampère, André-Marie</h></idx> for anything it should not be for this. Augustin-Louis Cauchy (1789 - 1857)<idx><h>Cauchy, Augustin-Louis</h></idx> credits Ampère in influencing his work on the formalization of calculus.</fn></p>
+<p>The question of the relationship between continuity and differentiability was settled by Karl Weierstrass (1815–1897)<idx><h>Weierstrass, Karl</h></idx> and Hermann Schwarz (1843–1921)<idx><h>Schwarz, Hermann</h></idx><idx><h>Schwarz's example</h></idx> in the 1870s. Weierstrass published the first example of a continuous function <m>F \colon [a,b] \rightarrow \mathbb{R}</m> which is differentiable nowhere.</p>
+<p>Schwarz gave an example of a continuous function <m>G</m> which is differentiable at all but countably many points; but the points where <m>G</m> is not differentiable are not isolated. Schwarz's example has an unbounded derivative which is not Riemann integrable.<idx><h>Schwarz's example</h></idx> <fn>The history is more complicated than alluded to here. As earlier as the 1830s Bernard Bolzano (1781-1848) gave an example of a nowhere differentiable function. This work was not published at the time. In Bolzano's work he exhibited the continuity of the function and that it was not differentiable on a dense set. That Bolzano's function is nowhere differentiable was not proved until after Bolzano's manuscript was published in the 1920s. Charles Cellérier (1818-1889) gave an example of a nowhere differentiable continuous function in the 1860s. This was not published until after Cellérier's death, and after Weierstrass's work, in 1890.</fn></p>
+<p>The existence of nowhere differentiable functions means that there are continuous functions for which the first fundamental theorem does not apply. But for which functions does it apply? Which continuous functions are differentiable `enough' to apply the fundamental theorem?</p>
+<p>Here is where we run into some shortcomings of the Riemann integral. Consider the following two examples.</p>
+<example xml:id="exam-popcorn">
+<p><idx><h>Thomae's function</h><see>Riemann's function</see></idx><idx><h>popcorn function</h><see>Riemann's function</see></idx><idx><h>Riemann's function</h></idx>
+Let <m>A = \mathbb{Q} \cap [0,1]</m>.
+Define a function <m>f[0,1] \rightarrow \mathbb{R}</m> on <m>[0,1]</m> by</p>
+<md>
+f(x) = \begin{cases}
+    \frac{1}{n} &amp; \text{if }x= \frac{m}{n}\in A\text{ where } \gcd(m,n)=1.\\
+    0 &amp; \text{if }x \notin A.\\
+\end{cases}
+</md>
+<p>This is function goes by several names, including <em>Riemann's function</em>, <em>Thomae's function</em>, and the <em>popcorn function</em>.
+<figure xml:id="fig-popcorn">
+<image source="images/popcorn.png" width="10%" />
+<caption>
+  <p>Riemann's function, which is Riemann integrable and has a dense set of discontinuities. Example <xref ref="exam-popcorn"/></p>
+</caption>
+</figure>
+<p>Bernhard Riemann (1826 - 1866)<idx><h>Riemann, Bernhard</h></idx> introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, <m>x \in [0,1]\backslash A</m>, and discontinuous at the rational points, <m>x \in A</m>. He further showed that <m>f</m> is Riemann integrable and</p>
+</p>
+<md> \int_0^1 f = 0.</md>
+</example>
+<example xml:id="exam-char-Q">
+<p>Let <m>A = \mathbb{Q} \cap [0,1]</m>.
+Consider the characteristic function <m>\chi_A \colon [0,1] \rightarrow \mathbb{R}</m>.
+That is</p>
+<md>
+\chi_A(x) = \begin{cases} 1 &amp; \text{if }x \in A \\
+    0 &amp; \text{if }x \notin A. \end{cases}
+</md>
+<p>As <m>A</m> is dense in <m>[0,1]</m>, it follows that the lower integral</p>
+<md> \underline{\int_0^1} \chi_A = 0,</md>
+<p>and the upper integral</p>
+<md> \overline{\int_0^1} \chi_A = 1.</md>
+<p>Hence <m>\chi_A</m> is not Riemann integral.</p>
+</example>
+<p>Examples <xref ref="exam-popcorn"/>~and <xref ref="exam-char-Q"/> show that Riemann integration can sometimes work well with countable dense subsets, but not always. Hence Riemann integration may not work well when dealing with the derivative of Schwarz's example. Vito Volterra (1860 - 1940) <idx><h>Volterra, Vito</h></idx> gave an example in 1881 which gives a further complication to the theory.<idx><h>Volterra's function</h></idx> Volterra's function <m>V \colon [0,1] \rightarrow \mathbb{R}</m> is continuous, with <m>V'(x)</m> bounded and defined for all <m>x \in (0,1)</m>. However, <m>V'(x)</m> is <em>not</em> Riemann integrable. Hence, we can not apply Theorem <xref ref="thm-FTOCI"/> to <m>V</m>.</p>
+<p>These failures of the Riemann integral necessitate defining a new type of integral: the <em>Lebesgue integral</em>. Henri Lebesgue (1875 - 1941)<idx><h>Lebesgue, Henri</h></idx> introduced this more robust way integrating functions. For Riemann integrable functions, the Lebesgue integral and the Riemann integral coincide. However, the Lebesgue integral allows us to integrate many functions which are not Riemann integrable, including <m>\chi_A</m> from Example <xref ref="exam-char-Q"/> and the derivative of Volterra's function <m>V'(x)</m>.</p>
+<p>Lebesgue also worked on the theory of differentiation, and its relationship to (both Riemann and Lebesgue) integration. Lebesgue showed that every increasing function is differentiable <em>almost everywhere.</em> This, in turn, can be used to show that a class of continuous functions called <em>absolutely continuous</em> functions<idx><h>absolutely continuous function</h></idx>, are differentiable almost everywhere. The term `almost everywhere' is not a vague colloquialism; it has an exact technical definition that we will see later in this course. In Chapter <xref ref="chap-measure-space"/> we will study measure spaces. In Chapter <xref ref="chap-lebesgue-measure"/> we will introduce the Lebesgue measure on subsets the real line, a generalization of the length function on intervals in <m>\mathbb{R}</m>. In Chapter <xref ref="chap-integration"/> we use these ideas to introduce Lebesgue integration (and generalizations thereof). In Chapter <xref ref="chap-differentation"/> we will study absolutely continuous functions and complete our story on the relationship between (Lebesgue) integration and differentiation. In Theorem <xref ref="thm-Lebesgue-FToC"/> we give Lebesgue's version of the fundamental theorem of calculus:</p>
+<md> \int_a^b f' = f(b) - f(a) </md>
+<p>for all absolutely continuous functions <m>f</m> (where we use the Lebesgue integral to integrate <m>f'</m>).</p>
+</section>
+<section xml:id="sec-int-lim-swap">
+<title>More shortcomings of Riemann integration</title>
+<p>The following theorem should be familiar.</p>
+<theorem xml:id="thm-lim-int">
+<p>Let <m>(f_n)_n</m> be a sequence of continuous functions on a closed interval <m>[a,b]</m> which converge uniformly to a (necessarily continuous) function <m>f</m>.
+    Then</p>
+<md> \lim_n \int_a^b f_n = \int_a^b f.</md>
+</theorem>
+<p>Put another way, Theorem <xref ref="thm-lim-int"/> says that</p>
+<md> \lim_n \int_a^b f_n = \int_a^b \lim f_n.</md>
+<p>That is, when <m>(f_n)_n</m> converges to <m>f</m> uniformly, the limit <em>passes under the integral sign.</em></p>
+<p>A short-coming of this theorem is in the need for <em>uniform</em> convergence. Uniform convergence is a strong condition, that is not always easy to check. A much easier condition to check is pointwise convergence. However, Theorem <xref ref="thm-lim-int"/> does not necessarily hold when uniform convergence is replaced by pointwise convergence. We will see an example of this in Exercise <xref ref="exam-MCT-DCT-failure-for-Riemann"/>.</p>
+<p>Enter, again, Lebesgue integration. We will see that pointwise limits of Lebesgue integral functions are again Lebesgue integrable. Further, we will show that, with some reasonable conditions (less than those implicitly in Theorem <xref ref="thm-lim-int"/>), pointwise limits will pass under the (Lebesgue) integral sign. Several theorems of this type will be proved. The most famous of these is the Lebesgue Dominated Convergence Theorem, Theorem <xref ref="thm-LDC"/>. As the name suggests, this was originally proved by Lebesgue.</p>
+</section>
+<section>
+<title>On beyond</title>
+<p>With the framework set forth by Lebesgue, mathematicians found that they could define measures (and integrals) in a wide array of settings. Rather than develop Lebesgue measure on <m>\mathbb{R}</m> and then generalize, we will develop both theories in tandem. This saves a considerable amount of repetition.</p>
+<p>The following, non-exhaustive, list of applications of measure theory gives some idea as to its value in mathematics, beyond the study of functions on the real line:</p>
+<ul>
+<li><p>series;</p>
+</li>
+<li><p>probability theory;</p>
+</li>
+<li><p>formal definitions of the Dirac delta function <m>\delta_x</m>;</p>
+</li>
+<li><p>topological groups (i.e. abstract harmonic analysis);</p>
+</li>
+<li><p>Hausdorff dimension (e.g. to study fractals).</p>
+</li>
+</ul>
+</section>
+</chapter>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="appendix-real-examples">
+<title>Interesting examples of real valued functions</title>
+<introduction>
+
+<p>
+We present here several examples of continuous functions and their derivatives.
+We will see over the course of this section that there are continuous functions which are not differentiable anywhere ( <xref ref="sec-nowhere-diff"/>), even if a continuous function is differentiable at a point <m>x_0</m>, it may not be differentiable on all points near <m>x_0</m> ( <xref ref="sec-diff-ae"/>); and even if a function is differentiable everywhere, with a bounded derivative, the derivative may not be Riemann integrable ( <xref ref="sec-diff-bounded"/>).
+We include some examples from the late 19th century and early 20th century. 
+These examples played an important role in motivating the development of measure theory in the early 20th century.
+</p>
+
+</introduction>
+<section xml:id="sec-nowhere-diff">
+<title>Nowhere differentiable functions</title>
+<p>In 1872, Karl Weierstrass<idx><h>Weierstrass, Karl</h></idx> gave an example of a real valued function which is nowhere differentiable. This put an end to several decades of attempts by mathematicians to  determine to what extent continuity determined differentiability. Whilst nowhere differentiable functions were difficult to discover, they are, in fact, very common. If we put the <m>\|\cdot\|_\infty</m> norm on <m>C([a,b])</m>, then the nowhere differentiable functions form a dense subset in <m>C([a,b])</m>. Further, there is a natural probability measure on <m>C([a,b])</m> (the classical Wiener measure) with which the nowhere differentiable functions have measure <m>1</m>.</p>
+<p>Before we begin, we should discuss what it means for a function to be differentiable. Let <m>f</m> be a function whose domain includes a point <m>x_0\in\mathbb{R}</m> and an open interval containing <m>x_0</m>. The derivative <m>f'</m> at the point <m>x_0</m> is defined as</p>
+<md>f'(x_0) = \lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h},</md>
+<p>when the limit exists. If the limit does not exist, or if <m>f'(x_0)=\pm \infty,</m> we say <m>f</m> is not differentiable at <m>x_0</m>.</p>
+<p>Thus, there is some ambiguity in the literature on what it means for a function to be <em>nowhere differentiable.</em> The Weierstrass function in Section <xref ref="subsec-weierstrass"/> is nowhere differentiable in our sense. That is,</p>
+<md>\lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h}</md>
+<p>does not exist at any <m>x_0</m>. The example in Section <xref ref="subsec-Tak"/> is nowhere differentiable in the sense of the more restrictive sense of the derivative:</p>
+<md>\lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h}</md>
+<p>is either <m>\pm\infty</m>, or the limit does not exist at each <m>x_0</m>.</p>
+<subsection xml:id="subsec-weierstrass">
+<title>The Weierstrass function</title>
+<p>In this section we study the Weierstrass function, introduced by Weierstrass in 1872. This is, perhaps, the most historically significant example of a nowhere differentiable function: whilst it was not the first example ever written down, it was the first widely known example. For our discussion we will closely follow Weierstrass's own description of the function, see e.g. <xref ref="Weierstrass"/>. The rough idea is to create a function that oscillates wildly at every point.</p>
+<p>Fix an odd integer <m>a</m> and real value <m>b</m> with <m>0&lt;b&lt;1</m> such that</p>
+<md> ab &gt; 1 + \frac{3}{2}\pi.</md>
+<p>Define, for all <m>x\in \mathbb{R}</m>,<idx><h>Weierstrass function</h></idx></p>
+<md>f(x) = \sum_{n=0}^\infty b^n\cos(a^n \pi x).</md>
+<p>We call <m>f</m> the <em>Weierstrass function</em>. A straightforward application of the Weierstrass <m>M</m>-test shows that <m>f</m> is uniformly convergent, and hence continuous.</p>
+<p>Now fix any <m>x_0 \in \mathbb{R}</m>. For each positive integer <m>m\geq0</m>, there is an integer <m>\alpha_m</m> such that</p>
+<md> -1/2&lt;2^mx_0 - \alpha_m \leq 1/2.</md>
+<p>Let <m>x_{m+1} =2^mx_0 - \alpha_m.</m> We define values, <m>y_m'</m> and <m>y_m''</m> by</p>
+<md> y_m' = \frac{\alpha_m - 1}{a^m} \text{ and }y_m'' = \frac{\alpha_m + 1}{a^m}.</md>
+<p>Then</p>
+<md> y_m' - x_0 = - \frac{1 +x_{m+1}}{a^m} &lt; 0,</md>
+<p>and</p>
+<md> y_m'' - x_0 = \frac{1+x_{m+1}}{a^m} &gt;0.</md>
+<p>Thus <m>y_m' &lt; x_0 &lt; y_m''.</m> Further, <m>\lim_{m\rightarrow \infty}y_m' = \lim_{m\rightarrow \infty}y_m'' = x_0.</m></p>
+<p>Now,</p>
+<md>
+\begin{aligned}
+\frac{f(y_m') - f(x_0)}{y_m' - y_0}
+=&amp; \sum_{n=0}^\infty b^n \frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{y_m' - x_0}\\
+=&amp; \sum_{n=0}^{m-1} b^n \frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{y_m' - x_0}\\
+&amp;+ \sum_{n=m}^\infty b^n \frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{y_m' - x_0}\\
+=&amp; \sum_{n=0}^{m-1} (ab)^n \frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{a^n(y_m' - x_0)}\\
+&amp;+ \sum_{n=0}^\infty b^{n+m} \frac{\cos(a^{n+m}\pi y_m') - \cos(a^{n+m}\pi x_0')}{y_m' - x_0}
+\end{aligned}
+</md>
+<p>Fix <m>0\leq n \leq m-1</m>. Using the trigonometric identity</p>
+<md> \cos(\alpha + \beta) - \cos(\alpha - \beta) = -2 \sin(\alpha)\sin(\beta),</md>
+<p>we have</p>
+<md>
+\begin{aligned}
+\frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{a^n(y_m' - x_0)} &amp;= -2 \frac{\sin\left(a^n\pi \frac{y_m'-x_0}{2}\right)\sin\left(a^n\pi \frac{y_m'+x_0}{2}\right)}{a^n(y_m'-x_0)}\\
+    &amp;= -\pi \sin\left(a^n\pi \frac{y_m'-x_0}{2}\right)\frac{\sin\left(a^n\pi \frac{y_m'+x_0}{2}\right)}{a^n\pi\frac{y_m'+x_0}{2}}.
+\end{aligned}
+</md>
+<p>It follows that</p>
+<md> \left|\sum_{n=0}^{m-1} (ab)^n \frac{\cos(a^n\pi y_m') - \cos(a^n\pi x_0')}{a^n(y_m' - x_0)}\right| \leq \pi \sum_{n=0}^{m-1} (ab)^n= \frac{\pi}{ab-1}(ab)^m.</md>
+<p>Since <m>a</m> is an odd number, we have</p>
+<md>
+\begin{aligned}
+\cos(a^{m+n}\pi y_m')&amp;=\cos(a^n\pi(\alpha_m-1))=(-1)^{\alpha_m-1},\text{ and}\\
+    \cos(a^{m+n}\pi x_0)&amp;=\cos(a^n\pi\alpha_m+a^n\pi x_{m+1})=(-1)^{\alpha_m}\cos(a^n\pi x_{m+1}).
+\end{aligned}
+</md>
+<p>Hence</p>
+<md>
+\begin{aligned}
+\sum_{n=0}^\infty &amp; b^{n+m} \frac{\cos(a^{n+m}\pi y_m') - \cos(a^{n+m}\pi x_0')}{y_m' - x_0}\\
+    &amp;= (-1)^{\alpha_m}(ab)^m\sum_{n=0}^\infty b^n \frac{1+\cos(a^n\pi x_{m+1})}{1+x_{m+1}}.
+\end{aligned}
+</md>
+<p>For each <m>n</m>,</p>
+<md>  \frac{1+\cos(a^n\pi x_{m+1})}{1+x_{m+1}} \geq 0.</md>
+<p>Further, since <m>-1/2&lt;x_{m+1}\leq 1/2</m>, <m>\cos(\pi x_{m+1}) \geq0</m>. Hence</p>
+<md>\frac{1+\cos(\pi x_{m+1})}{1+x_{m+1}}\geq \frac{2}{3}. </md>
+<p>Putting all of this together, there is a <m>\eta&gt;0</m> and <m>-1&lt;\varepsilon&lt;1</m> such that</p>
+<md>\frac{f(y_m') - f(x_0)}{y_m' - y_0} = (-1)^{\alpha_m}(ab)^n\eta\left(\frac{2}{3} + \varepsilon \frac{\pi}{ab-1} \right)=:A_m.</md>
+<p>By a similar analysis, there is a <m>\eta'&gt;1</m> and <m>-1&lt;\varepsilon'&lt;1</m> such that</p>
+<md>\frac{f(y_m'') - f(x_0)}{y_m'' - y_0} = -(-1)^{\alpha_m}(ab)^n\eta'\left(\frac{2}{3} + \varepsilon' \frac{\pi}{ab-1} \right)=:B_m.</md>
+<p>Since we have assumed <m>ab&gt;1+\frac{3}{2}\pi</m>,</p>
+<md> \frac{2}{3} &gt; \frac{\pi}{ab-1}.</md>
+<p>Thus, <m>A_m</m> and <m>B_m</m> have opposite signs for each <m>m</m>. Now, since</p>
+<md> \lim_m |A_m| = \infty = \lim_m |B_m|,</md>
+<p>it follows that <m>f</m> is not differentiable at <m>x_0</m>.</p>
+</subsection>
+<subsection xml:id="subsec-Tak">
+<title>Takagi's example</title>
+<p>We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section <xref ref="subsec-weierstrass"/>, this function does  have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in <xref ref="Takagi"/>, see also <xref ref="AKTakagi"/>. A similar function was independently discovered by Van Der Waerden in 1930 <xref ref="vdw"/>. Riesz and Sz.-Nagy's text  <xref ref="RieszNagyFA"/> begins with a presentation of Van Der Waerden's example.</p>
+<p>We present Takagi's example because it is more intuitive than the Weierstrass function. The simplest example of a function not differentiable at a point is <m>f(x) = |x|</m>. This function is not differentiable at <m>x=0</m>; there is a sharp point at <m>0</m>. The idea behind Takagi's example is to create a function made from a series of increasingly many `sharp points'.</p>
+<p>Let</p>
+<md>g(x) = \min\{x-\lfloor{x}\rfloor, \lceil{x}\rceil -x\},</md>
+<p>where <m>\lfloor x \rfloor</m> is the floor function (i.e. <m>x</m> rounded down to the nearest integer) and <m>\lceil{x}\rceil</m> is the ceiling function  (i.e. <m>x</m> rounded up to the nearest integer). The function <m>g</m> is not differentiable at any point <m>x = n/2</m> where <m>n \in \mathbb{Z}</m>. At all other points,</p>
+<md> g'(x) = \begin{cases} 1 &amp;,\ x-\lfloor{x}\rfloor &lt; 1/2\\
+-1 &amp;,\ x-\lfloor{x}\rfloor &gt; 1/2.
+\end{cases}</md>
+<figure xml:id="fig-Tak1">
+<image source="images/takagi-pre.png" width="20%" />
+</figure>
+<p>Define a function <m>f</m> on the closed interval <m>[0,1]</m> by</p>
+<md>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}.</md>
+<p>The series <m>f</m> is uniformly convergent by the Weierstrass <m>M</m>-test; and hence <m>f</m> is continuous.</p>
+<figure xml:id="fig-Tak2">
+<image source="images/Takagi.png" width="20%" />
+<caption>
+<p>Takagi's example <m>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}</m> in  <xref ref="subsec-Tak"/>.</p>
+</caption>
+</figure>
+<p>Fix <m>x_0 \in (0,1)</m>. We can write <m>x_0</m> as a series</p>
+<md> x_0 = \sum_{k=1}^\infty \frac{c_k}{2^k},</md>
+<p>where each <m>c_k \in \{0,1\}.</m> Note that this series expression may not be unique, e.g.</p>
+<md> \frac{1}{2} = \sum_{k=2}^\infty \frac{1}{2^k}.</md>
+<p>In these circumstances, we choose the finite sum instead of the infinite. Note that, for each <m>n</m>,</p>
+<md> g(2^nx_0) = \begin{cases} 2^nx_0 - \lfloor2^n x_0\rfloor &amp; \text{if }c_n = 0,\\
+\lceil2^nx_0\rceil - x_0 &amp; \text{if }c_n = 1.
+\end{cases}</md>
+<p>For each <m>m\geq 0</m> let</p>
+<md> p(m) = \sum_{k=1}^m c_k \text{ and }z(m) = \sum_{k=1}^m1-c_k.</md>
+<p>That is, <m>p(m)</m> is the number of ones in the list <m>c_1,\ldots,c_m</m>, and <m>z(m)</m> is the number of zeros in the list <m>c_1,\ldots,c_m</m>.</p>
+<p>Suppose <m>c_m = 0</m>. Let <m>h = \frac{1}{2^m}.</m> Then, for <m>n \geq m</m>,</p>
+<md> g(2^n(x_0 + h)) - g(2^nx_0) = 0.</md>
+<p>Let</p>
+<md> K_m = \frac{f(x_0+h) - f(x_0)}{h}.</md>
+<p>Then</p>
+<md> K_m= 10^m \sum_{n=0}^{m-1} \frac{g(2^n(x_0 + h)) - g(2^nx_0)}{2^n} = z(m) - p(m).</md>
+<p>For <m>m &gt; 2</m>, if <m>c_m =1</m>, <m>c_{m-1} =0</m>, and <m>c_{m-2}=1</m>, let <m>h = \frac{1}{2^m}.</m> Then, again</p>
+<md> K_m = \frac{f(x_0+h) - f(x_0)}{h} = z(m) - p(m). </md>
+<p>We these values for</p>
+<md> \frac{f(x_0+h) - f(x_0)}{h}</md>
+<p>we can find a subsequence <m>(h_{m_k})_k</m> of <m>(1/2^m)_m</m> such that</p>
+<md> \lim_{k \rightarrow \infty}\frac{f(x_0+h_{m_k}) - f(x_0)}{h_{m_k}}</md>
+<p>either does not exist, or is <m>\infty.</m> Thus <m>f</m> does not have a finite derivative at any point.</p>
+<p>There is nothing special about the role of <m>2</m> in this example. Van der Waerden used base 10 for his example:</p>
+<md>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}.</md>
+<p>Similarly analysis can be done for other bases.</p>
+<figure xml:id="fig-Tak3">
+<image source="images/vanderwaerden.png" width="20%" />
+<caption>
+<p>Van der Waerden's example <m>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}</m> has the same basic idea as Takagi's example from  <xref ref="subsec-Tak"/>.</p>
+</caption>
+</figure>
+</subsection>
+</section>
+<section xml:id="sec-diff-ae">
+<title>Differentiable almost everywhere functions</title>
+<p>The examples presented in this section illustrate further the stark difference between continuity and differentiability. Further, they show the strength of the Lebesgue integral over the Riemann integral. The examples below are all continuous functions <m>f \colon [0,1] \longrightarrow \mathbb{R}</m> with <m>f'</m> defined (almost) everywhere, but <m>f'</m> is <em>not</em> Riemann integrable. However, in these examples <m>f'</m> will be Lebesgue integrable.</p>
+<subsection xml:id="subsec-Schwarz">
+<title>Schwarz's example</title>
+<p>Schwarz published the following example in 1873 <xref ref="schwarz"/>.</p>
+<p>Schwarz presented this function in order to show that it is possible for a continuous function <m>f</m> to be differentiable on some points, but for <m>f'</m> to be undefined on a dense set. Thus, differentiability is not a local property. It was perhaps the first such example. This example served to dispute earlier conjectures on the nature of differentiability. Explicitly, Schwarz gives exhibits a continuous increasing function on <m>[0,1]</m> which is not differentiable on any dyadic rational, i.e. <m>f</m> is not differentiable on any rational of the form <m>m/2^k</m>, where <m>m,k\geq 0</m> are integers.</p>
+<p>Before we give the example, we first introduce a continuous function <m>\varphi</m> on <m>\mathbb{R}</m>. Define <m>\varphi</m> by</p>
+<md>
+\varphi(x) = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}
+</md>
+<p>where <m>\lfloor x \rfloor</m> is the floor function (i.e. <m>x</m> rounded down to the nearest integer).</p>
+<figure xml:id="fig-Schwarz1">
+<image source="images/Schwarz1.png" width="20%" />
+<caption>
+<p>The function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> used to construct Schwarz's example in  <xref ref="subsec-Schwarz"/></p>
+</caption>
+</figure>
+<p>The function <m>\varphi</m> is continuous on all of <m>\mathbb{R}</m>, and is differentiable on all non-integer values. Indeed, it is not hard to show for a <m>x \notin \mathbb{Z}</m></p>
+<md> \varphi'(x) = \frac{1}{2\sqrt{x-\lfloor x\rfloor}}. </md>
+<p>If <m>x\in \mathbb{Z}</m> then <m>\varphi(x) = x</m>, and so, if <m>0&lt;h&lt;1</m> then</p>
+<md>\frac{\varphi(x+h)-\varphi(x)}{h}=\frac{\sqrt{h}}{h}=\frac{1}{\sqrt{h}}.</md>
+<p>Thus, for <m>x \in \mathbb{Z}</m>,</p>
+<md> \lim_{h\rightarrow0^+}\frac{\varphi(x+h)-\varphi(x)}{h}=\infty.</md>
+<p>On the other hand, for <m>x\in\mathbb{Z}</m> and <m>0&lt;h&lt;1</m></p>
+<md> \frac{\varphi(x-h)-\varphi(x)}{-h}=\frac{-1 +\sqrt{1-h}}{-h}</md>
+<p>and so, by an application of L'H\^{o}pital's rule,</p>
+<md> \lim_{h\rightarrow 0^+}\frac{\varphi(x-h) - \varphi(x)}{-h}=\frac{1}{2}.</md>
+<p>Thus <m>\varphi</m> is not differentiable on <m>\mathbb{Z}</m>: the right-sided derivative is <m>\infty</m> and the left-sided derivative is <m>\frac{1}{2}</m> on <m>\mathbb{Z}</m>.</p>
+<p>We now define the function <m>f\colon [0,1]\rightarrow\mathbb{R}</m> by</p>
+<md>
+f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
+</md>
+<p>Note that <m>f</m> is uniformly convergent on all compact subsets of <m>\mathbb{R}</m>, and so <m>f</m> is continuous. This can be shown, e.g., using the inequality <m>\varphi(x) \leq x + 1</m><fn>A better, indeed the best, linear upper bound for <m>\varphi</m> is <m>\varphi(x) \leq x + \frac{1}{4}</m>, but there is no need for precision here.</fn> together with the Weierstrass <m>M</m>-test.</p>
+<p>We will now study <m>f'</m>. The basic idea is that, since <m>\varphi</m> is not differentiable on the integers, <m>f</m> is not differentiable on dyadic rationals.</p>
+<p>Suppose <m>x_0 = m/2^k</m> for some non-negative integers <m>m</m> and <m>k</m>. If <m>0&lt;h&lt;1/2^k</m>, then</p>
+<md>
+\begin{aligned}
+\frac{f(x_0+h) - f(x_0)}{h} &amp;= \sum_{n=1}^\infty\frac{\varphi(2^nx_0+2^nh)-\varphi(2^nx_0)}{4^nh}\\
+    &amp;&gt; \frac{\varphi(2^kx_0+2^kh)-\varphi(2^kx_0)}{4^kh}\\
+    &amp;=\frac{\sqrt{2^kh}}{4^kh}\\
+    &amp;= \frac{1}{(2\sqrt{2})^{k} \sqrt{h}}
+\end{aligned}
+</md>
+<p>Hence</p>
+<md>\lim_{h\rightarrow 0^+} \frac{f(x_0+h) - f(x_0)}{h} = \infty.</md>
+<p>Taking <m>x_0 = m/2^k</m> still, we now consider the left sided derivative. Consider <m>(f(x_0-h)-f(x_0))/(-h)</m>. For <m>n\geq k</m>, <m>2^nx_0</m> is an integer. Note, for any integer <m>y</m> and <m>h&gt;0</m>, if <m>\lfloor y-h\rfloor = y -p</m>, then <m>0\leq p-h &lt; 1</m> and so</p>
+<md> \frac{\varphi(y-h) - \varphi(y)}{-h}=\frac{p -\sqrt{p-h}}{h}\leq 1.</md>
+<p>Thus, for <m>0&lt;h&lt;1</m></p>
+<md>
+\begin{aligned}
+\frac{f(x_0-h) - f(x_0)}{-h} &amp;= \sum_{n=0}^\infty\frac{\varphi(2^nx_0 - 2^nh)-\varphi(2^nx_0)}{2^n(-2^nh)}\\
+    &amp;\leq \sum_{n=0}^{k-1}\frac{\varphi(2^nx_0 - 2^nh)-\varphi(2^nx_0)}{2^n(-2^nh)} + \sum_{n=k}^\infty\frac{1}{2^n}.
+\end{aligned}
+</md>
+<p>By the Weierstrass <m>M</m>-test we see that</p>
+<md> F(h) = \frac{f(x_0-h) - f(x_0)}{-h}</md>
+<p>is uniformly convergent for <m>h \in (0,1).</m> Take the limit as <m>h \rightarrow 0^+</m> we get a left-sided derivative as</p>
+<md> \lim_{h\rightarrow 0^+} \frac{f(x_0-h) - f(x_0)}{-h}= \frac{1}{2^k} + \sum_{n=0}^{k-1}\frac{1}{2^n}\varphi'(2^nx_0).</md>
+<p>The above set shows that there is a dense set on which <m>f</m> is not differentiable. Since <m>f</m> is increasing and continuous, <m>f'</m> is defined almost everywhere, by Corollary <xref ref="cor-f-integrable"/>. Alternatively, a similar analysis to the above can explicitly show that <m>f'(x)</m> exists for <m>x \in (0,1)</m> when <m>x</m> is not a dyadic rational.</p>
+</subsection>
+<subsection>
+<title>A function that is not differentiable on a prescribed set</title>
+<p>Corollary <xref ref="cor-f-integrable"/> tells us that if <m>f</m> is continuous of bounded variation then <m>f'</m> is defined almost everywhere. We will now show that given <m>E \subseteq \mathbb{R}</m> with <m>m(E) = 0</m>, there is a continuous function <m>f</m> of bounded variation which is not differentiable at any point in <m>E</m>, but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book <xref ref="RieszNagyFA"/>.</p>
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>E \subseteq [a,b]</m> be a set with Lebesgue measure <m>0</m>. By Exercise , there is a countable family of open intervals <m>\{(c_k,d_k)\}_{k=1}^\infty</m> in <m>\mathbb{R}</m> such that, for each <m>x \in E</m> there is an infinite subsequence <m>(k_n)</m> of natural numbers such that <m>x \in (c_{k_n},d_{k_n})</m> for each <m>k_n</m> and</p>
+<md> \sum_{k_n} (d_{k_n} - c_{k_n}) &lt;\infty.</md>
+<p>Fix such a collection <m>\{(c_k,d_k)\}_k</m> and define a function <m>f</m> on <m>[a,b]</m> by</p>
+<md> f(x) = \sum_{k=1}^\infty \ell((c_k,d_k) \cap (-\infty, x)),</md>
+<p>where <m>\ell</m> is the length function on intervals in <m>\mathbb{R}</m>.</p>
+</subsection>
+</section>
+<section xml:id="sec-diff-bounded">
+<title>Differentiable functions with bounded derivative</title>
+<p>In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By Exercise <xref ref="exer-bounded-derivative-abs-cont"/> these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, Theorem <xref ref="thm-FTOCI"/> (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, Theorem <xref ref="thm-Lebesgue-FToC"/>, will apply.</p>
+<subsection xml:id="subsec-Volterra">
+<title>Volterra's function</title>
+<p>In this section we will present Volterra's function, introduced by Voltera in 1881 <xref ref="volterra1881sui"/>. This example was likely had an influence on Lebesgue; it is cited in Lebesgue's 1902 thesis<xref ref="lebesgue1902integrale"/>. Volterra presented this example in answer to a question of Dini <xref ref="dini2018fondamenti"/> on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg's text <xref ref="Strom"/>.</p>
+<p>Consider the function <m>f</m> defined by</p>
+<md> f(x) = \begin{cases} x^2\sin\left(\frac{1}{x}\right) &amp; x\neq 0,\\ 0 &amp; x=0.\end{cases}</md>
+<p>The function <m>f</m> is differentiable everywhere, with derivative</p>
+<md> f'(x) = \begin{cases} 2x\sin\left(\frac{1}{x}\right) - \cos\left(\frac{1}{x}\right)&amp; x\neq 0,\\ 0 &amp; x=0.\end{cases}</md>
+<p>Whilst <m>f'</m> is defined everywhere (and is bounded), <m>f'</m> is not continuous at <m>0</m>.</p>
+<figure xml:id="fig-Volterra1">
+<image source="images/x2sin1x.png" width="20%" />
+<caption>
+<p>The function <m>f(x) = x^2\sin(1/x)</m> used to construct Volterra's function in Section <xref ref="subsec-Volterra"/>.</p>
+</caption>
+</figure>
+<p>The idea behind the Volterra function is to create a function <m>V</m> which behaves on some suitably large set the way <m>f</m> behaves at <m>\{0\}</m>. Before defining <m>V</m>, we must first introduce the desired set.</p>
+<p>We will construct a set <m>A \subseteq [0,1]</m> called the <em>Smith-Volterra-Cantor</em> set.<idx><h>Smith-Volterra-Cantor set</h></idx> This construction is very similar to the construction of the Cantor set in, Example <xref ref="ex-Cantor"/>. The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.</p>
+<p>Let <m>A_0 = [0,1]</m>. Create <m>A_1</m> be removing the middle quarter from <m>A_0</m>. Thus</p>
+<md> A_1 = [0,3/8] \cup [5/8,1].</md>
+<p>Create <m>A_2</m> be reomving the middle quarter from each of the two intervals in <m>A_1</m>. Thus</p>
+<md>A_2 = [0,5/32] \cup [7/32,3/8] \cup [5/8,25/32] \cup [27/32,1].</md>
+<p>Continue in this manner to create a sequence of closed sets <m>\{A_n\}_{n=1}^\infty</m>. The {Smith-Volterra-Cantor} set<idx><h>Smith-Volterra-Cantor set</h></idx> is defined as</p>
+<md> A = \bigcap_{n=1}^\infty A_n.</md>
+<p>Like the Cantor set <m>C</m>, <m>A</m> is nowhere dense. That is, <m>A</m> does not contain any intervals as subsets. However, unlike the Cantor set, <m>A</m> has positive Lebesgue measure. Indeed, if <m>U = [0,1]\backslash A,</m> then</p>
+<md> m(U) = \sum_{k=1}^\infty \frac{2^{k-1}}{4^k} = \sum_{k=1}^\infty \frac{1}{2^{k+1}} = \frac{1}{2}.</md>
+<p>Thus <m>m(A)= 1/2&gt;0.</m></p>
+<p>The Smith-Volterra-Cantor set <m>A</m> is closed, hence <m>U = [0,1]\backslash A</m> is open. Let <m>U = \bigcup_{k=1}^\infty (a_k,b_k)</m>, where the intervals <m>\{(a_k,b_k)\}_k</m> are disjoint. We define Volterra's function <m>V</m> on <m>[0,1]</m> as follows.<idx><h>Volterra's function</h></idx> For <m>x \in A</m>, let <m>V(x) = 0</m>. For each <m>k</m>, let <m>c_k = \sup\{x \colon x \leq (b_k-a_k)/2,\ f'(x) = 0\}.</m> For <m>x \in (a_k,b_k)</m> let</p>
+<md> V(x) = \begin{cases} 
+    f(x-a_k) &amp; x-a_k\leq c_k\\
+    f(c) &amp; a_k+c_k \leq x \leq b_k - c_k\\
+    f(b_k - x) &amp; b_k -x \leq c_k.
+\end{cases}</md>
+<p>An illustration of Volterra's function is given in Figure <xref ref="fig-Volterra2"/>. Since <m>f</m> is a continuous function, and <m>f(0) = 0</m>, <m>V</m> is a continuous function.</p>
+<figure xml:id="fig-Volterra2">
+<image source="images/volterra.png" width="30%" />
+<caption>
+<p>Volterra's function.</p>
+</caption>
+</figure>
+<p>By construction, on each interval <m>(a_k,b_k)</m>, <m>V'</m> is a bounded continuous function.</p>
+<p>Take now <m>x \in A</m> and fix <m>h&gt;0</m>. If <m>x+h \in A</m>, then</p>
+<md>\frac{V(x+h)-V(x)}{h} = 0.</md>
+<p>Otherwise, <m>x+h \in U</m>, i.e. <m>x+h \in (a_k,b_k)</m> for some <m>k</m>. Thus <m>x+h = a_k + s</m> for some natural number <m>k</m> and real <m>s&gt;0</m>. If <m>x+h = a_k + s \leq c_k</m>, then</p>
+<md>
+\begin{aligned}
+\frac{V(x+h)-V(x)}{h} &amp;=\frac{V(x+h)}{h}
+    = \frac{V(a_k+s)}{h} \\
+    &amp;= \frac{f(s)}{h} &lt; \frac{f(s)}{s}.
+\end{aligned}
+</md>
+<p>If <m>a+c_k&lt; x + h &lt; b_k - c_k</m>, then</p>
+<md>
+\begin{aligned}
+\frac{V(x+h)-V(x)}{h} &amp;=\frac{V(x+h)}{h}
+    = \frac{V(a_k+s)}{h} \\
+    &amp;= \frac{f(c_k)}{h} &lt; \frac{f(s)}{s}.
+\end{aligned}
+</md>
+<p>Finally, if <m>b_k-c_k\leq x+h &lt; b_k</m>, then <m>x+h = b_k -t</m> for some <m>0&lt;t&lt; c_k</m>, and <m>t &lt; h</m>. Thus</p>
+<md>
+\begin{aligned}
+\frac{V(x+h)-V(x)}{h} &amp;=\frac{V(x+h)}{h}
+    = \frac{V(b_k-t)}{h} \\
+    &amp;= \frac{f(t)}{h} &lt; \frac{f(t)}{t}.
+\end{aligned}
+</md>
+<p>It follows that</p>
+<md> \lim_{h\rightarrow 0^+}\frac{V(x+h)-V(x)}{h} = 0.</md>
+<p>One can similarly show that</p>
+<md> \lim_{h\rightarrow 0^-}\frac{V(x+h)-V(x)}{h} = 0,</md>
+<p>and hence <m>V'(x) = 0</m> for <m>x \in A</m>.</p>
+<p>Hence <m>V'</m> is defined on all of <m>[0,1].</m> Further, since for <m>x \neq 0</m></p>
+<md> |f'(x)| = |2x \sin(1/x) - \cos(1/x)| \leq 2|x| + 1,</md>
+<p><m>|V'|\leq 3.</m> That is, <m>V'</m> is bounded.</p>
+<p>Fix now <m>x \in A</m>. For each <m>n</m>, <m>(x-1/n, x+1/n) \cap U \neq \emptyset.</m> Hence, there is an <m>x_n \in (x-1/n, x+1/n) \cap U</m> such that <m>V'(x_n) = 1.</m> As <m>(x_n)_n</m> converges to <m>x</m>, and <m>(V'(x_n))_n</m> does not converge to <m>V'(x) =0</m>, <m>V'</m> is not continuous at any point in <m>A</m>.</p>
+<p>Note that since <m>V</m> is continuous and <m>V'</m> is bounded, <m>V</m> is absolutely continuous by Exercise <xref ref="exer-bounded-derivative-abs-cont"/>. Hence <m>V'</m> is Lebesgue integrable. However, since the set of discontinuities of <m>V'</m> has Lebesuge measure <m>m(A) = 1/2  &gt; 0</m>, it follows from Theorem <xref ref="thm-Riemann-int"/> that <m>V'</m> is not Riemann integrable.</p>
+</subsection>
+<subsection>
+<title>Simpler example</title>
+</subsection>
+</section>
+</chapter>

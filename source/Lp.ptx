@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter>
+<title><m>L^p</m>-spaces</title>
+<introduction>
+<epigraph>
+<p><em>``You are allowed to lie a little, but you must never mislead."</em></p>
+<p><source>Paul Halmos</source></p>
+</epigraph>
+<p>In this chapter we will study a class of vector spaces of functions, the so-called <em><m>L^p</m>-spaces.</em> Given a measure space <m>(X,\mathcal{F},\mu)</m> and <m>p \geq 1</m>, the <m>L^p</m> functions are the measurable functions <m>f</m> for which <m>f^p</m> is a measurable. Modding out by the equivalence relation of ``equal a.e.", the <m>L^p</m>-functions form a vector space with a norm.</p>
+<p>These vector spaces constitute fundamental examples of Banach spaces. We begin with some general results and definitions for Banach spaces.</p>
+</introduction>
+<section>
+<title>Banach spaces</title>
+<p>Almost everything we cover can just as easily be proved over the field of complex numbers <m>\mathbb{C}</m>. Whilst vector spaces can, of course, be defined over other fields, the analysis we are doing is rarely done on fields other than <m>\mathbb{R}</m> and <m>\mathbb{C}</m>. We will thus stick to using the field <m>\mathbb{R}</m> without comment; suitable adjustments for the field <m>\mathbb{C}</m> can be done, but won't be done here.</p>
+<definition>
+<p>Let <m>V</m> be a (real) vector space.
+A <em>norm</em><idx><h>norm</h></idx> on <m>V</m> is a function <m>\|\cdot\| \colon V \rightarrow \mathbb{R}</m> satisfying</p>
+<ol>
+<li><p><m>\|v\|\geq 0</m> for all <m>v \in V</m>, and <m>\|v\| = 0</m> if and only if <m>v = 0</m>;</p>
+</li>
+<li><p><m>\|\alpha v\| = |\alpha| \|v\|</m> for all <m>v \in V</m> and <m>\alpha \in \mathbb{R}</m>; and</p>
+</li>
+<li><p><m>\|v+w\| \leq \|v\| + \|w\|</m> for all <m>v,w\in V</m> (the <em>triangle inequality</em>).<idx><h>triangle inequality</h><h>for norms</h></idx></p>
+</li>
+</ol>
+<p>If <m>V</m> is a vector space with a norm, we call <m>V</m> a <em>normed vector space</em><idx><h>vector space</h><h>normed</h></idx>.</p>
+</definition>
+<example xml:id="ex-2-norm-on-Rn">
+<p>The field <m>\mathbb{R}</m> itself is a real vector space. The absolute value <m>|\cdot|</m> defines a norm on <m>\mathbb{R}</m>.</p>
+<p>More generally, let <m>V = \mathbb{R}^n</m>.
+    We can define a norm on <m>\mathbb{R}^n</m> by</p>
+<md> \|v\|_2 = \left(\sum_{i=1}^n v_i^2\right)^{1/2}</md>
+<p>for <m>v = (v_1,\ldots,v_n) \in \mathbb{R}^n</m>.
+    This is called the <em>Euclidean norm</em> or the <em><m>2</m>-norm</em> on <m>\mathbb{R}^n</m>.<idx><h>norm</h><h>Euclidean norm</h></idx><idx><h>norm</h><h><m>2</m>-norm on <m>\mathbb{R}^n</m></h></idx>
+    That <m>\mathbb{R}^n</m> is a norm is left as an exercise, Exercise <xref ref="exer-2-norm"/>.</p>
+</example>
+<example xml:id="ex-C_b-X-norm">
+<p>Denote by <m>C_b(\mathbb{R})</m> all continuous, bounded functions on <m>\mathbb{R}</m>.
+Then <m>C_b(\mathbb{R})</m> is a vector space.
+Define  <m>\|\cdot\|_\infty</m> on <m>C_b(\mathbb{R})</m> by</p>
+<md> \|f\|_\infty = \sup_{x \in \mathbb{R}} |f(x)|.</md>
+<p>Then <m>\|\cdot\|_\infty</m> defines a norm on <m>C_b(\mathbb{R})</m> called the <em>infinity norm</em> or the <em><m>\sup</m>-norm</em>.<idx><h>norm</h><h><m>\sup</m>-norm</h></idx></p>
+<p>More generally, if <m>X</m> is a topological space, the <m>C_b(X)</m>, the space of all continuous bounded functions on <m>\mathbb{R}</m>, is a vector space and</p>
+<md> \|f\|_\infty = \sup_{x\in X}|f(x)|</md>
+<p>defines a norm on <m>C_b(X)</m>.</p>
+<p>Denote by <m>C(X)</m> all continuous functions on a topological space <m>X</m>.
+In general, <m>\|\cdot\|_\infty</m> will not define a norm on <m>C(X)</m> (since we could hace <m>\sup_{x\in X}|f(x)|=\infty</m> for some <m>f \in C(X)</m>).
+If <m>X</m> is compact then all continuous functions on <m>X</m> are bounded. In this case <m>C(X) = C_b(X)</m>.</p>
+</example>
+<p>If <m>V</m> is a normed vector space, then we can define a metric, or distance, on <m>V</m>. The distance between two vectors <m>u,v\in V</m> is given by <m>\|u-v\|.</m> With this metric, we can then study convergence of sequences, just as we do in the real line.</p>
+<definition>
+<p>Let <m>V</m> be a normed vector space, and let <m>v</m> be a vector in <m>V</m>, and let <m>(v_n)_n</m> be a sequence of vectors in <m>V</m>.
+    The sequence <m>(v_n)_n</m> is <em>convergent with limit <m>v</m></em> with respect to <m>\|\cdot\|</m>, or <em>convergent to <m>v</m></em> if<idx><h>convergence</h><h>in a normed vector space</h></idx></p>
+<md> \lim_{n \rightarrow \infty} \|v - v_n\| = 0.</md>
+<p>That is, the sequence <m>(v_n)_n</m> converges to <m>v</m> if for all <m>\varepsilon &gt;0</m> there is an <m>N</m> such that if <m>n\geq N</m>, then</p>
+<md>\|v - v_n\|&lt;\varepsilon.</md>
+</definition>
+<p>We can similarly define Cauchy sequences in normed vector spaces.</p>
+<definition>
+<p>Let <m>V</m> be a normed vector space, and let <m>(v_n)_n</m> be a sequence of vectors in <m>V</m>.
+    The sequence <m>(v_n)_n</m> is a <em>Cauchy sequence</em> in <m>V</m><idx><h>Cauchy sequence</h><h>in a normed vector space</h></idx> with respect to <m>\|\cdot\|</m> if for all <m>\varepsilon &gt;0</m> there is an <m>N</m> such that if <m>n,m\geq N</m>, then</p>
+<md>\|v_n- v_m\|&lt;\varepsilon.</md>
+</definition>
+<p>Roughly speaking, a sequence of vectors is convergent if they get closer and closer to some vector; and a sequence of vectors is Cauchy if the vectors get closer and closer to each other. The following proposition should thus not come as a surprise. The proof is analogous to the real-line case.</p>
+<proposition>
+<p>Let <m>V</m> be a normed vector space, and let <m>(v_n)_n</m> be a sequence of vectors in <m>V</m> which converge to some <m>v \in V</m>.
+    Then <m>(v_n)_n</m> is a Cauchy sequence.</p>
+</proposition>
+<p>Whilst all convergent sequences are Cauchy, a Cauchy sequence is not necessarily convergent.</p>
+<example>
+<p>Let <m>V = \mathbb{Q}^n</m> and let <m>\|\cdot\|_2</m> be the <m>2</m>-norm (restricted from the <m>2</m>-norm on <m>\mathbb{R}^n</m>.)
+    Take a sequence <m>(a_n)_n</m> of rationals which converge to <m>\sqrt{2}</m>.
+    E.g. let</p>
+<md> a_1 = 1.4,\ a_2 = 1.41,\ a_3 = 1.414,\ a_4 = 1.4142, \ldots.</md>
+<p>For each <m>k</m>, let</p>
+<md> v_k = (a_k,a_k,\ldots,a_k) \in \mathbb{Q}^n.</md>
+<p>Then <m>(v_k)_k</m> is a Cauchy sequence in <m>\mathbb{Q}^n</m>, but does not converge in <m>\mathbb{Q}^n</m>.
+    If we view <m>(v_k)_k</m> as a sequence in <m>\mathbb{R}^n</m>, then <m>(v_k)_k</m> converges to <m>(\sqrt{2},\ldots,\sqrt{2}) \notin \mathbb{Q}^n</m>.</p>
+</example>
+<p>Recall that all Cauchy sequences in <m>\mathbb{R}</m> converge. That is, <m>\mathbb{R}</m> is complete. The completeness of <m>\mathbb{R}</m> is a fundamental property on which a lot of analysis relies. We are similarly, primarily interested in normed vector spaces in which Cauchy sequences are convergent.</p>
+<definition>
+<p>If <m>V</m> is a normed vector space in which every Cauchy sequence is convergent, then we call <m>V</m> a <em>Banach space</em>.
+    That is, a Banach space a normed vector space which is complete with respect to the metric induced by the norm.</p>
+</definition>
+<example xml:id="ex-Rn-Banach">
+<p>The vector space <m>\mathbb{R}^n</m> with the <m>2</m>-norm is a Banach space, see Exercise <xref ref="exer-Rn-Banach"/>.</p>
+</example>
+<example xml:id="ex-Cb-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval.
+    The normed vector space <m>C_b(I)</m> with norm <m>\|\cdot\|_\infty</m> (see Example <xref ref="ex-C_b-X-norm"/>) is a Banach space, see Exercise <xref ref="exer-Cb-Banach"/></p>
+</example>
+<example xml:id="ex-C0-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval.
+    A continuous function <m>f \colon I\rightarrow \mathbb{R}</m> <em>vanishes at infinity</em><idx><h>vanishes at infinity</h></idx> if for all <m>\varepsilon&gt;0</m> there is a closed interval <m>K \subseteq I</m> such that <m>|f(x)|&lt;\varepsilon</m> for <m>x \in I \backslash K</m>.
+    We denote the collection of all continuous functions on <m>I</m> that vanish at infinity by <m>C_0(I)</m>.</p>
+<p>The space <m>C_0(I)</m> is a vector subspace of <m>C_b(I)</m>, thus <m>C_0(I)</m> is a normed vector space with the <m>\sup</m>-norm <m>\|\cdot\|_\infty</m>.
+    With this norm <m>C_0(I)</m> is a Banach space, see Exercise <xref ref="exer-C0-Banach"/>.</p>
+</example>
+<example xml:id="ex-Cc-not-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval.
+    Let <m>C_c(I)</m> denote all continuous real-valued functions on <m>I</m> which are <em>compactly supported</em><idx><h>compactly supported</h></idx>.
+    That is, a continuous function <m>f</m> on <m>I</m> is in  <m>C_c(I)</m> if there is a compact set <m>K \subseteq I</m> such that <m>f(x) = 0</m> for <m>x \in I \backslash K</m>.
+    Then <m>C_c(I)</m> a vector space of functions with</p>
+<md> C_c(I) \subseteq C_0(I) \subseteq C_b(I).</md>
+<p>However, in general, <m>C_c(I)</m> is not a Banach space, see Exercise <xref ref="exer-Cc-not-Banach"/> and Exercise <xref ref="exer-Cc-Banach"/>.</p>
+</example>
+<p>In many cases, a natural norm on a vector space arises from an inner-product. We will now recall the definition of an inner-product here and explain how we can get a norm from an inner-product.</p>
+<definition>
+<p>Let <m>V</m> be a real-inner product.
+    An <em>inner-product</em><idx><h>inner-product</h></idx> on <m>V</m> is a bilinear, real-valued map</p>
+<md>\langle \cdot,\cdot\rangle \colon V \times V \rightarrow \mathbb{R}</md>
+<p>such that <m>\langle v,v\rangle \geq 0</m> for all <m>v \in V</m>, and <m>\langle v,v\rangle =0</m> if and only if <m>v =0</m>.</p>
+<p>If <m>V</m> is a vector space with an inner-product, then <m>V</m> is called an <em>inner-product space</em>.<idx><h>inner-product space</h></idx></p>
+</definition>
+<p>If <m>V</m> is an inner-product space, then we can make <m>V</m> into a normed vector space. Indeed, if we define</p>
+<md> \|v\| = \langle v,v\rangle ^{1/2}</md>
+<p>then it can be shown that this defines a norm on <m>V</m>. We call this norm the <em>inner-product norm</em><idx><h>norm</h><h>inner-product norm</h></idx>. We will leave proving the general case that an inner-product norm is always a norm to the Exercises. When they arise in the examples we are interested in, it will be clear that an inner-product norm is a norm.</p>
+<definition>
+<p>Let <m>V</m> be an inner-product space.
+    If <m>V</m> is complete, i.e. <m>V</m> is a Banach space, with respect to the inner-product norm, then <m>V</m> is <em>Hilbert space</em>.</p>
+</definition>
+<example xml:id="ex-Rn-Hilbert">
+<p>The dot-product <m>\cdot</m> on <m>\mathbb{R}^n</m> is an inner-product 
+    and the Euclidean-norm/<m>2</m>-norm on <m>\mathbb{R}^n</m> is the inner-product norm induced by the dot-product.
+    As <m>\mathbb{R}^n</m> is a Banach space with the <m>2</m>-norm (Example <xref ref="ex-Rn-Banach"/>), <m>\mathbb{R}^n</m> is a Hilbert space.</p>
+</example>
+<p>A vector space can have more than one norm. It is possible that two different norms may behave the same when it comes to topological concerns: e.g. convergence of sequences. We introduce the idea of equivalent norms now to deal with this instance.</p>
+<definition>
+<p>Let <m>V</m> be a real vector space, and let <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m> be two norms on <m>V</m>.
+    The norm <m>\|\cdot\|_2</m> is equivalent to  <m>\|\cdot\|_2</m>  <idx><h>norm</h><h>equivalent norms</h></idx> if there are scalars <m>c,C&gt;0</m> such that</p>
+<md> c \|v\|_1 \leq \|v\|_2 \leq C\|v\|_1 </md>
+<p>for all <m>v \in V</m>.</p>
+</definition>
+<p>The relation of one norm being equivalent to another does, as the name suggests, form an equivalence relation on the family of all norms on a vector space <m>V</m>.</p>
+<proposition xml:id="prop-norm-equiv">
+<p>Let <m>V</m> be a real vector space, and let <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m> be two norms on <m>V</m>.
+    The norm <m>\|\cdot\|_1</m> is equivalent to  <m>\|\cdot\|_2</m> if and only if the norm <m>\|\cdot\|_2</m> is equivalent to  <m>\|\cdot\|_1</m>.</p>
+</proposition>
+<proof>
+<p>The proof is left as an exercise, Exercise <xref ref="exer-norm-equiv"/></p>
+</proof>
+<p>Let <m>V</m> be a vector space with norms <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m>. If <m>\|\cdot\|_1</m> is equivalent to  <m>\|\cdot\|_2</m> then the norm <m>\|\cdot\|_2</m> is equivalent to  <m>\|\cdot\|_1</m> by Proposition <xref ref="prop-norm-equiv"/>. In this case we will simply say that <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m> are <em>equivalent</em>.<idx><h>norm</h><h>equivalent norms</h></idx></p>
+<p>Properties like convergence do not rely on the exact value of the norms; analytic definitions usually use inequalities, not equalities. Thus, when a vector space has two equivalent norms, it does not usually matter which  one we work with. We formalize this in the following theorem.</p>
+<theorem xml:id="thm-equiv-norms-convergence">
+<p>Let <m>V</m> be a real vector space and let <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m> be equivalent norms on <m>V</m>.
+    Let <m>(v_n)_n</m> be a sequence of vectors in <m>V</m>.
+    Then</p>
+<ol>
+<li><p><m>(v_n)_n</m> is a Cauchy sequence with respect to the norm <m>\|\cdot\|_1</m> if and only if <m>(v_n)_n</m> is a Cauchy sequence with respect to the norm <m>\|\cdot\|_2</m>; and</p>
+</li>
+<li><p><m>(v_n)_n</m> is convergent with respect to <m>v_0 \in V</m> with respect to  <m>\|\cdot\|_1</m> if and only if <m>(v_n)_n</m> is convergent with respect to <m>v_0 \in V</m> with respect to  <m>\|\cdot\|_2</m>.</p>
+</li>
+</ol>
+<p>In particular, <m>V</m> is a Banach space under the norm <m>\|\cdot\|_1</m> if and only if <m>V</m> is a Banach space under the norm <m>\|\cdot\|_2</m>.</p>
+</theorem>
+<proof>
+<p>We will prove (i). Part (ii) is proved similarly.
+Let <m>c,C&gt;0</m> be constants such that <m>c\|\cdot\|_1\leq \|\cdot\|_2\leq C\|\cdot\|_1</m>.
+Suppose <m>(v_n)_n</m> is a Cauchy sequence with respect to the norm <m>\|\cdot\|_1</m>.</p>
+<p>Take <m>\varepsilon&gt;0</m>.
+There exists <m>N &gt;0</m> such that, if <m>n,m\geq N</m> then</p>
+<md> \|v_n - v_m\|_1 &lt; \varepsilon/C.</md>
+<p>Thus, if <m>n,m\geq M</m> then</p>
+<md> \|v_n - v_m\|_2 \leq C\|v_n - v_m\|_1&lt;\varepsilon.</md>
+<p>Thus <m>(v_n)_n</m> is Cauchy with respect to <m>\|\cdot\|_2</m>.</p>
+<p>As <m>\|\cdot\|_2</m> is also equivalent to <m>\|\cdot\|_1</m>, a similar argument gives that if <m>(v_n)_n</m> is Cauchy with respect to <m>\|\cdot\|_2</m> then <m>(v_n)_n</m> is Cauchy with respect to <m>\|\cdot\|_1.</m></p>
+</proof>
+<definition>
+<p>Let <m>V</m> be a normed vector space, and let <m>B \subseteq V</m> be a non-empty subset.
+A set <m>S \subseteq B</m> is <em>dense in <m>B</m></em><idx><h>dense</h></idx> if for all <m>v \in B</m> and <m>\varepsilon&gt;0</m> there exists <m>s \in S</m> such that</p>
+<md> \|v-w\|&lt;\varepsilon.</md>
+<p>A Banach space <m>V</m> is called <em>separable</em><idx><h>Banach space</h><h>separable</h></idx> if there is countable set <m>S \subseteq V</m> which is dense in <m>V</m>.</p>
+</definition>
+<p>Many Banach spaces that we study will be separable. Heuristically, a Banach space being separable means that it is not <em>too</em> big. Non-separable spaces tend to be harder to understand.</p>
+<example xml:id="ex-Rn-separable">
+<p>The rationals <m>\mathbb{Q}</m> are dense in <m>\mathbb{R}</m> and the rationals are countable, and so <m>\mathbb{R}</m> is separable.
+    More generally, <m>\mathbb{Q}^n</m> is a countable dense subset of <m>\mathbb{R}^n</m> (with the <m>2</m>-norm), and so <m>\mathbb{R}^n</m> is separable.</p>
+</example>
+<p>The following results show that infinite dimensional Banach spaces can be separable. We first show that the polynomials are dense in the Banach space of continuous functions on a closed interval <m>[a,b]</m>. This result is known as <em>the Weierstrass Approximation Theorem</em><idx><h>Weierstrass theorem</h></idx>. We then show that there is a countable subset of polynomials which is dense in <m>C([a,b])</m>, and so <m>C([a,b])</m> is a separable Banach space, with the <m>\sup</m>-norm.</p>
+<theorem xml:id="thm-weierstrass">
+<title>Weierstrass Approximation Theorem</title>
+<p><idx><h>Weierstrass Approximation theorem</h></idx>
+Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, let <m>f</m> be a continuous function <m>f\colon [a,b]\rightarrow \mathbb{R}</m>, and let <m>\varepsilon&gt;0</m>.
+There exists a polynomial <m>p</m> such that</p>
+<md> \|f-p\|_\infty &lt; \varepsilon,</md>
+<p>where <m>\|\cdot\|_\infty</m> is the <m>\sup</m>-norm on <m>C([a,b])</m>.</p>
+</theorem>
+<proof>
+<p>First assume that <m>f</m> is a continuous function on <m>[0,1]</m>.
+    I.e., assume <m>[a,b]=[0,1]</m>.
+    We can further assume that <m>f \neq 0</m>, since if <m>f = 0</m> then <m>f</m> is already a polynomial and we can take <m>p = f</m>.</p>
+<p>For each <m>n</m> and <m>0\leq k \leq n</m>, let</p>
+<md> p_{n,k}(x) = \binom{n}{k}x^k(1-x)^{n-k},</md>
+<p>where <m>\binom{n}{k}</m> is the binomial coefficient <em><m>n</m> choose <m>k</m>.</em></p>
+<p>We will need several identities involving <m>p_{n,k}</m>. 
+    Firstly, by the Binomial Theorem,</p>
+<md>
+\begin{aligned}
+1 = (x + (1-x))^n = \sum_{k=0}^n \begin{pmatrix}n\\l\end{pmatrix}x^k(1-x)^{n-k}=\sum_{k=1}^n p_{n,k}(x).
+\end{aligned}
+</md>
+<p>Thus</p>
+<md numbered="true" xml:id="eq-weierstrass-1">
+\sum_{k=1}^n p_{n,k}(x) = 1.
+</md>
+<p>Taking the derivative of  <xref ref="eq-weierstrass-1" text="Equation"/> with respect to <m>x</m> we find</p>
+<md>
+\begin{aligned}
+0 &amp;= \sum_{k=0}^n \binom{n}{k}\left[kx^{k-1}(1-x)^{n-k} -(n-k)x^k(1-x)^{n-k-1}\right]\\
+        &amp;= \sum_{k=0}^n \left[\frac{k}{x}p_{n,k}(x) + \frac{k}{1-x}p_{n,k}(x) -\binom{n}{k}nx^k(1-x)^{n-k-1}\right]\\
+        &amp;= \sum_{k=0}^n \left[\frac{k}{x(1-x)}p_{n,k}(x)\right] -\frac{n}{1-x}(x + (1-x))^n\\
+        &amp;= \frac{k}{x(1-x)}\sum_{k=0}^n p_{n,k}(x) - \frac{nx}{x(1-x)}.
+\end{aligned}
+</md>
+<p>Hence</p>
+<md numbered="true" xml:id="eq-weierstrass-2">
+\sum_{k=0}^n kp_{n,k}(x) = nx.
+</md>
+<p>Taking the derivative of  <xref ref="eq-weierstrass-2" text="Equation"/> with respect to <m>x</m> we find</p>
+<md>
+\begin{aligned}
+n &amp;= \sum_{k=0}^n k\binom{k}{n}\left[kx^{k-1}(1-x)^{n-k} -(n-k)x^k(1-x)^{n-k-1}\right]\\
+        &amp;=\sum_{k=0}^n\left[\frac{k^2}{x}p_{n,k}(x) - \frac{n}{1-x}kp_{n,k}(x) +\frac{k^2}{x-1}p_{n,k}(x) \right] \\
+        &amp;= \sum_{k=0}^n\left[\frac{k^2}{x(x-1)}p_{n,k}(x)\right] - \frac{n}{x-1}nx,
+\end{aligned}
+</md>
+<p>where  <xref ref="eq-weierstrass-2" text="Equation"/> was used in the last equality.
+    It follows that</p>
+<md numbered="true" xml:id="eq-weierstrass-3">
+\sum_{n=0}^n k^2p_{n,k}(x) = nx(1-x) + n^2 x^2.
+</md>
+<p>Hence, using  <xref ref="eq-weierstrass-1" text="Equation"/>,  <xref ref="eq-weierstrass-2" text="Equation"/> and  <xref ref="eq-weierstrass-3" text="Equation"/>, we have that</p>
+<md>
+\begin{aligned}
+\sum_{k=0}^n(k-nx)^2p_{n,k}(x) &amp;= \sum_{k=0}^n(k^2 - 2nkx + n^2x^2)p_{n,k}(x)\\
+        &amp;= nx(1-x) +n^2x^2 -2nx(nx) + n^2x^2.
+\end{aligned}
+</md>
+<p>Thus</p>
+<md numbered="true" xml:id="eq-weierstrass-4">
+\sum_{k=0}^n(k-nx)^2p_{n,k}(x) = nx(1-x).
+</md>
+<p>Consider the polynomials</p>
+<md> B_n(x) = \sum_{k=0}^n f\left(\frac{k}{n}\right) \binom{n}{k}x^k(1-x)^{n-k} =\sum_{k=0}^n f\left(\frac{k}{n}\right) p_{n,k}(x).</md>
+<p>We will show that, for large <m>n</m>, <m>B_n</m> approximates <m>f</m>.</p>
+<p>Since <m>f</m> is continuous on the closed interval <m>[0,1]</m>, <m>f</m> is uniformly continuous.
+    Take <m>\varepsilon &gt;0</m> and choose <m>\delta&gt;0</m> such that if <m>|x-y|&lt;\delta</m> then <m>|f(x)-f(y)|&lt;\varepsilon/2.</m>
+    Choose <m>N</m> so that <m>N &gt; \frac{\|f\|_\infty}{\varepsilon\delta^2}</m>, and fix <m>n \geq N</m>.
+    For <m>x \in [0,1]</m>, let</p>
+<md> C_x = \{ k \colon 1\leq k \leq n,\ \left|k/n -x\right|\geq \delta\}</md>
+<p>and let</p>
+<md> D_x = \{ k \colon 1\leq k \leq n,\ \left|k/n -x\right|&lt;\delta\}.</md>
+<p>Note that, if <m>k \in A_x</m> for some <m>x \in [0,1]</m>, then</p>
+<md> \frac{(k-nx)^2}{\delta^2n^2}\geq 1.</md>
+<p>Thus,</p>
+<md numbered="true" xml:id="eq-weierstrass-5">
+&lt;md&gt;
+\begin{aligned}
+\sum_{k \in C_x}p_{n,k}(x) &amp;\leq \sum_{k \in C_x}p_{n,k}(x) \frac{(k-nx)^2}{\delta^2n^2}\\
+        &amp;\leq \sum_{k=0}^n p_{n,k}(x) \frac{(k-nx)^2}{\delta^2n^2} \\
+        &amp;= \frac{1}{n^2\delta^2} \sum_{k=0}^n(k-nx)^2p_{n,k}(x) \\
+        &amp;= \frac{x(1-x)}{n\delta^2}\\
+        &amp;\leq \frac{1}{4n\delta^2},
+\end{aligned}
+&lt;/md&gt;
+</md>
+<p>where the last equality comes from  <xref ref="eq-weierstrass-4" text="Equation"/> and the last inequality follows since <m>x(1-x)\leq 1/4</m>, for <m>x\in[0,1]</m>.</p>
+<p>Now, for <m>n\geq N</m> and <m>x \in [0,1]</m> we have</p>
+<md>
+\begin{aligned}
+|B_n(x) - f(x)| =&amp; \left| B_n(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right| &amp;\text{ by  <xref ref="eq-weierstrass-1" text="Equation"/>}\\
+        =&amp;\left| \sum_{k=0}^n f\left(\frac{k}{n}\right)p_{n,k}(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right|\\
+        \leq&amp; \sum_{k=0}^n\left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) \\
+        =&amp; \sum_{k\in C_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)\\
+        &amp;+ \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)\\
+        \leq&amp; \frac{2\|f\|_\infty}{4n\delta^2} + \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) &amp; \text{by  <xref ref="eq-weierstrass-5" text="Equation"/>}\\
+        &lt;&amp;  \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} \sum_{k\in D_x}p_{n,k} \\
+        \leq&amp; \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} &amp;\text{by  <xref ref="eq-weierstrass-1" text="Equation"/>}\\
+        &lt;&amp; \frac{\varepsilon}{2} + \frac{\varepsilon}{2}  = \varepsilon,
+\end{aligned}
+</md>
+<p>where the last inequality comes from the choice of <m>n \geq N &gt; \|f\|_\infty/\varepsilon\delta^2</m></p>
+<p>We have proved the result when <m>[a,b] = [0,1]</m>.
+    Consider an arbitrary closed interval <m>[a,b]</m> and take <m>f \in C([a,b])</m>.
+    The polynomial</p>
+<md> \varphi \colon x \mapsto a + x(b-a)</md>
+<p>is a homeomorphism from <m>[0,1]</m> to <m>[a,b]</m> with inverse</p>
+<md> \varphi^{-1} \colon x \mapsto \frac{x-a}{b-a}</md>
+<p>By the above argument, given <m>\varepsilon&gt;0</m> there is a polynomial <m>p</m> on <m>[0,1]</m> such that</p>
+<md> \|f\circ \psi - p\|_\infty&lt;\varepsilon.</md>
+<p>Letting <m>q</m> be the polynomial on <m>[a,b]</m> defined by <m>q = p\circ\varphi^{-1}</m>.
+    Then</p>
+<md> \|f-q\|_\infty = \|f\circ\varphi -q\|_\infty &lt; \varepsilon.</md>
+<p>Hence the polynomials are dense in <m>C([a,b])</m>.</p>
+</proof>
+<p>That <m>C([a,b])</m> is a separable space is a straightfoward corollary to the Weierstrass Approximation Theorem.</p>
+<corollary xml:id="cor-C-a-b-sep">
+<p>Let <m>[a,b]</m> a closed bounded interval in <m>\mathbb{R}</m>.
+    Then the continuous functions on <m>[a,b]</m> with the <m>\sup</m>-norm is a separable Banach space.</p>
+</corollary>
+<proof>
+<p>That <m>C([a,b])</m> is a Banach space is discussed in Example <xref ref="ex-C0-Banach"/>.
+    If <m>a=b</m>, then <m>C([a,b]) = \mathbb{R}</m>, which is separable.</p>
+<p>Assume <m>b&gt;a</m>.
+    Take any <m>f \in C([a,b])</m> and <m>\varepsilon&gt;0</m>
+    By the Weierstrass Approximation Theorem, there is a polynomial <m>p</m> on <m>[a,b]</m> such that</p>
+<md> \|f- p\|_\infty &lt; \varepsilon/2.</md>
+<p>Suppose <m>p</m> has degree <m>n</m>.
+    Then there are scalars <m>a_0,\ldots,a_n</m>, with <m>a_0 \neq 0</m>, such that</p>
+<md> p(x) = a_0 x^n + a_1x^{n-1} + \ldots + a_{n-1}x + a_n.</md>
+<p>Choose rationals <m>q_0,\ldots,q_n</m> such that</p>
+<md> |a_k -q_k| &lt; \frac{\varepsilon}{2(n+1) (|a|+|b|)^k}.</md>
+<p>Let <m>q</m> be the polynomial</p>
+<md> q(x) = q_0 x^n + q_1x^{n-1} + \ldots + q_{n-1}x + q_n.</md>
+<p>Then</p>
+<md>
+\begin{aligned}
+\|q-p\|_\infty &amp;= \sup_{x\in[a,b]}|p(x) - q(x)|\\
+        &amp;\leq \sup_{x\in[a,b]}\sum_{k=0}^n|a_k - q_k||x|^k\\
+        &amp;\leq \sup_{x\in[a,b]}\sum_{k=0}^n|a_k - q_k|(|a|+|b|)^k\\
+        &amp;&lt; \varepsilon/2.
+\end{aligned}
+</md>
+<p>Thus</p>
+<md> \|f-q\|_\infty \leq \|f-p\|_\infty + \|p-q\|_\infty &lt; \varepsilon.</md>
+<p>We have shown that the polynomials with rational coefficients are dense in <m>C([a,b])</m>.
+    The cardinality of the polynomials with rational coefficients is</p>
+<md> \bigcup_{n=1}^\infty \mathbb{Q}^n,</md>
+<p>which is countable.
+    Thus <m>C([a,b])</m> is separable.</p>
+</proof>
+</section>
+<section>
+<title><m>L^p</m>-norms</title>
+<p>Denote by <m>\mathcal{F}</m> be the collection of all extended real-valued measurable functions on <m>X</m> which are finite almost everywhere. By Theorem <xref ref="thm-meas-fnc-vec-sp"/>, <m>\mathcal{F}</m> is a vector space. Let <m>\sim</m> be the equivalence relation: <m>f\sim g</m> if and only if <m>f = g</m> almost everywhere, for <m>f,g \in \mathcal{F}</m>. By Exercise <xref ref="exer-meas-func-equiv"/>, <m>\sim</m> is an equivalence relation on <m>\mathcal{F}</m>. Let <m>\mathcal{F}/\sim</m> be the equivalence classes of <m>\sim</m> in <m>\mathcal{F}</m>. For each <m>f \in \mathcal{F}</m> denote by <m>[f]</m> the equivalence class of <m>f</m> under the equivalence relation <m>\sim</m>. The set <m>\mathcal{F}/\sim</m> inherits a vector space structure from <m>\mathcal{F}</m> by the operations</p>
+<md>
+\begin{aligned}
+[f] + [g] &amp;= [f+g],\ \text{and}\\
+    \alpha[f] &amp;= [\alpha f]
+\end{aligned}
+</md>
+<p>for <m>f,g \in \mathcal{F}</m> and <m>\alpha \in \mathbb{R}</m> (see Exercise <xref ref="exer-ae-vec-space"/>).</p>
+<definition>
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, let <m>\mathcal{F}</m> be all finite almost everywhere measurable functions on <m>\mathcal{F}</m>, and let <m>\sim</m> be the equivalence relation of equivalence almost everywhere on <m>\mathcal{F}</m>.</p>
+<p>For <m>1&lt;p&lt;\infty</m>, define</p>
+<md>L^p(X,\mu) = \{[f] \in \mathcal{F}/\sim \colon |f|^p \text{ integrable}\}.</md>
+<p><idx><h sortby="Lp-space"><m>L^p</m>-space</h></idx>
+We call <m>L^p(X,\mu)</m> the <em><m>L^p</m>-space of <m>(X,\mathcal{M},\mu)</m></em>.</p>
+</definition>
+<remark>
+<p>Note, that <m>L^p(X,\mu)</m> is well-defined.
+Indeed, if <m>f,g \in \mathcal{F}</m> and <m>f = g</m> a.e., then <m>|f|^p =|g|^p</m> a.e. and so <m>|f|^p</m> is integrable if and only if <m>|g|^p</m> is integrable.</p>
+</remark>
+<p>We will also define the <m>L^p</m>-space for <m>p = \infty</m>.</p>
+<definition>
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, let <m>\mathcal{F}</m> be all finite almost everywhere measurable functions on <m>\mathcal{F}</m>, and let <m>\sim</m> be the equivalence relation of equivalence almost everywhere on <m>\mathcal{F}</m>.
+    A function <m>f \in \mathcal{F}</m> is <em>essentially bounded</em><idx><h>essentially bounded</h></idx> if there is a constant <m>M \geq 0</m> such that <m>|f| \leq M</m> almost everywhere.
+    In this case, we call <m>M</m> an <em>essential bound</em><idx><h>essential bound</h></idx> for <m>f</m>.
+    Define <m>L^\infty(X,\mu)</m> as</p>
+<md> L^\infty(X,\mu) = \{[f]\in \mathcal{F}/\sim \colon f \text{ essentially bounded}\}.</md>
+<p><idx><h sortby="Linfinity-space"><m>L^\infty</m>-space</h></idx>
+    We call <m>L^\infty(X,\mu)</m> the <em><m>L^\infty</m>-space</em> for <m>(X,\mathcal{M},\mu).</m></p>
+</definition>
+<remark>
+<p>Note, that <m>L^\infty(X,\mu)</m> is well-defined.
+Indeed, if <m>f,g \in \mathcal{F}</m> and <m>f = g</m> a.e., then <m>f</m> is essentially bounded if and only if <m>g</m> is essentially bounded.</p>
+</remark>
+<remark>
+<p>Let <m>1\leq p \leq \infty</m>.
+    The set <m>L^p(X,\mu)</m> is defined as a subset of <m>\mathcal{F}/\sim</m>.
+    Thus, the elements of <m>L^p(X,\mu)</m> are not functions, but equivalence classes of functions.
+    We will, however, often abuse language and refer to the elements of <m>L^p(X,\mu)</m> as functions.
+    We will often abuse notation, and write, for <m>f \in \mathcal{F}</m>,  <m>f \in L^p(X,\mu)</m> to mean that <m>[f]\in L^p(X,\mu)</m>.</p>
+</remark>
+<p>We will show that each <m>L^p</m>-space is a Banach space under an appropriate norm. To do this, we must first show that each <m>L^p</m>-space is a vector space.</p>
+<proposition>
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, and let <m>1\leq p \leq \infty</m>.
+    Then <m>L^p(X,\mu)</m> is a vector subspace of <m>\mathcal{F}/\sim.</m></p>
+</proposition>
+<proof>
+<p>First, assume that <m>p&lt;\infty</m>.
+    Take <m>f \in L^p(X,\mu)</m> and a scalar <m>\alpha \in \mathbb{R}</m>.
+    Then</p>
+<md> \int_X |\alpha f|^p \,d\mu = |\alpha|^p \int_X|f|^p\,d\mu&lt;\infty.</md>
+<p>Hence <m>\alpha f \in L^p(X,\mu)</m>.</p>
+<p>Note that if <m>a,b\in\mathbb{R}</m>, then <m>|a+b|^p\leq 2^p(|a|^p + |b|^p).</m>
+    Indeed,</p>
+<md> |a+b| \leq |a| + |b| \leq 2\max\{|a|,|b|\},</md>
+<p>and hence</p>
+<md> |a+b|^p \leq 2^p \left(\max\{|a|,|b|\}\right)^p \leq 2^p(|a|^p + |b|^p).</md>
+<p>Thus, if <m>f,g \in L^p(X,\mu)</m>, then</p>
+<md> \int_X |f+g|^p \,d\mu \leq 2^p \int_X |f|^2\,d\mu+2^p \int_X |g|^2\,d\mu&lt;\infty.</md>
+<p>Hence <m>f+g \in L^p(X,\mu)</m>.</p>
+<p>That <m>L^\infty(X,\mu)</m> is a vector space is left as an exercise, Exercise <xref ref="exer-Linf-vector-space"/>.</p>
+</proof>
+<p>We now define a norm on <m>L^p(X,\mu)</m>. To show that these are indeed norms will take some work. Fix <m>1\leq p &lt; \infty</m>.\ For <m>f \in L^p(X,\mu)</m> let</p>
+<md> \|f\|_p = \left( \int_X |f|^p\,d\mu)\right)^{1/p}.</md>
+<p>When <m>p=\infty</m> we define things differently. For <m>f \in L^\infty(X,\mu),</m> define</p>
+<md> \|f\|_\infty = \inf \{M \colon M \text{ an essential bound for }f\}.</md>
+<p>For <m>1\leq p \leq \infty</m> we call <m>\|\cdot\|_p</m> the <em><m>p</m>-norm</em><idx><h>norm</h><h sortby="p-norm"><m>p</m>-norm</h></idx><idx><h>norm</h><h><m>\infty</m>-norm</h></idx> on <m>L^2(X,\mu)</m>.</p>
+<p>The introduction of the <m>p</m>-norms has given us some overlapping notation for <m>\|\cdot\|_2</m> and <m>\|\cdot\|_\infty</m>. We address this in the following remarks.</p>
+<remark xml:id="rem-inf-norms">
+<p>Let <m>I \subseteq \mathbb{R}</m> be a Lebesgue measurable set and let <m>m</m> be the Lebesgue measure on <m>I</m>.
+    We have the <m>\sup</m>-norm <m>\|\cdot\|_\infty</m> on <m>C_b(I)</m>, and we have the <m>\infty</m>-norm <m>\|\cdot\|_\infty</m> on <m>L^\infty(I,m)</m>.
+    Note that any continuous function on <m>I</m> is measurable with respect to Lebesgue measure <m>m</m>, by Corollary <xref ref="cor-Cont-are-meas"/>.
+    Thus, if <m>f \in C_b(I)</m> then <m>f \in L^\infty(I,m)</m>, and the <m>\sup</m>-norm and the <m>\infty</m>-norm of <m>f</m> coincide.
+    Thus the <m>\sup</m>-norm is a restriction of an <m>\infty</m>-norm to continuous bounded functions.</p>
+</remark>
+<remark xml:id="rem-2-norms">
+<p>We also have two <m>2</m>-norms: <m>\|\cdot\|_2</m> on <m>\mathbb{R}^n</m> and <m>\|\cdot\|_2</m> on <m>L^2(X,\mu)</m>.
+    Let <m>A = \{1,2,3,\ldots,n\}</m> and let <m>c</m> be the counting measure on the subsets of <m>A</m>.
+    In this case, the finite a.e. measurable functions on <m>A</m> are all functions <m>f \colon A \rightarrow \mathbb{R}</m>.
+    Further, two functions <m>f</m> and <m>g</m> on <m>A</m> are equal a.e. if and only if <m>f =g</m> everywhere.
+    Letting <m>\mathcal{F}</m> be the collection of all finite a.e. measurable functions  on <m>A</m> as above, we have that
+    <m>L^p(A,c) = \mathcal{F}</m>
+    for all <m>1\leq p \leq \infty.</m>
+    Note that <m>\mathcal{F}</m> is isomorphic to <m>\mathbb{R}^n</m> via the isomorphism</p>
+<md> \psi\colon f \mapsto (f(1),f(2),\ldots,f(n)).</md>
+<p>Take any <m>f \in L^2(A,c)=\mathcal{F}</m>.
+    It is not hard to see that</p>
+<md>\|f\|_2 = \|\psi(f)\|_2.</md>
+<p>Thus, the <m>2</m>-norm on <m>\mathbb{R}^n</m> is an example of a <m>2</m>-norm on a <m>L^2</m>-space.</p>
+</remark>
+<p>Have not yet shown that  <m>\|\cdot\|_p</m> is a norm on <m>L^p(X,\mu)</m>. We will work towards this for the rest of this section. We begin with the simplest cases: <m>p=1</m> and <m>p=\infty</m>.</p>
+<proposition xml:id="prop-1-and-inf-norms">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+    Then <m>\|\cdot\|_1</m> is a norm on <m>L^1(X,\mu)</m> and <m>\|\cdot\|_\infty</m> is a norm on <m>L^\infty(X,\mu)</m>.</p>
+</proposition>
+<proof>
+<p>It is clear that <m>\|f\|_1\geq 0</m> for all <m>f \in L^1(X,\mu)</m>.
+    Suppose, <m>f \in L^1(X,\mu)</m> and <m>\|f\|_1 = 0</m>.
+    Then</p>
+<md> \int_X |f|\,d\mu =0.</md>
+<p>Let <m>X_+ = \{x \in X \colon f(x) \neq 0\}</m> and <m>X_0 = \{x \in X \colon f(x) = 0\}</m>.
+    Then</p>
+<md>
+\begin{aligned}
+0 = \int_X|f|\,d\mu = \int_{X_0}|f|\,d\mu + \int_{X_+}|f|\,d\mu = \int_{X_+}|f|\,d\mu.
+\end{aligned}
+</md>
+<p>Hence, by Exercise <xref ref="exer-positive-integral"/>, <m>\mu(X_+) = 0</m>.
+    That is, <m>f = 0</m> a.e., and so <m>f = 0</m> in <m>L^1(X,\mu)</m>.
+    Therefore <m>\|f\|_1 = 0</m> if and only if <m>f = 0</m>.</p>
+<p>If <m>f \in L^1(X,\mu)</m> and <m>\alpha \in \mathbb{R}</m>, then</p>
+<md> \|\alpha f\|_1 = \int_X |\alpha f|\,d\mu = |\alpha| \int_X |f|\,d\mu = |\alpha| \|f\|_1.</md>
+<p>Finally, suppose <m>f,g\in L^1(X,\mu)</m>.Then</p>
+<md>
+\begin{aligned}
+\|f+g\|_1 &amp;= \int_X|f+g|\,d\mu \\
+        &amp;\leq \int_X(|f| + |g|)\,d\mu = \|f\|_1+ \|g\|_1.
+\end{aligned}
+</md>
+<p>Thus <m>\|\cdot\|_1</m> satisfies the triangle inequality.
+    We have, therefore, shown that <m>\|\cdot\|_1</m> is a norm on <m>L^1(X,\mu)</m>.</p>
+<p>We now consider <m>\|\cdot\|_\infty</m> on <m>L^\infty(X,\mu)</m>.
+    Again, <m>\|f\|_\infty \geq 0</m> for all <m>f \in L^\infty(X,\mu)</m>.
+    If <m>\|f\|_\infty=0</m> then <m>|f(x)| \leq 0</m> for almost all <m>x \in X</m>.
+    Thus <m>\|f\|_\infty =0</m> if and only if <m>f = 0</m> in <m>L^\infty(X,\mu)</m>.</p>
+<p>It is straightforward to show that <m>\|\alpha f\|_\infty = |\alpha| \|f\|_\infty</m> for all <m>\alpha \in \mathbb{R}</m> and <m>f \in L^\infty(X,\mu)</m>.
+    It remains to show that <m>\|\cdot\|_\infty</m> satisfies the triangle inequality.
+    Take <m>f,g \in L^\infty(X,\mu)</m>, and let <m>M</m> be an essential bound for <m>f</m> and <m>N</m> be an essential bound for <m>g</m>.
+    Thus, there exist measurable sets <m>E_f</m> and <m>E_g</m> in <m>X</m> with <m>\mu(E_f) = \mu(E_g) = 0</m>, <m>|f(x)|\leq M</m> for all <m>x\in X\backslash E_f</m>, and <m>|g(x)|\leq N</m> for all <m>x\in X\backslash E_g</m>.
+    Thus, if <m>x \in X\backslash(E_f \cup E_g)</m>, then</p>
+<md> |f(x) + g(x)| \leq |f(x)| + |g(x)| \leq M+N.</md>
+<p>As <m>\mu(E_f \cup E_g) =0</m>, it follows that <m>M+N</m> is an essential bound for <m>f+g</m>.
+    Hence</p>
+<md>
+\begin{aligned}
+&amp;\inf \{M \colon M \text{ an essential bound for }f\} + \inf \{N \colon N \text{ an essential bound for }g\}\\
+        &amp;=  \inf \{M+N \colon  M \text{ an ess. bound for }f,\ N \text{ an ess. bound for }g\}\\
+        &amp;\geq \inf \{K \colon K \text{ an essential bound for }f+g\}.\\
+\end{aligned}
+</md>
+<p>Thus</p>
+<md> \|f\|_\infty + \|g\|_\infty \geq \|f+g\|_\infty.</md>
+<p>Therefore <m>\|\cdot\|_\infty</m> is a norm on <m>L^\infty(X,\mu)</m>.</p>
+</proof>
+<p>In order to show that <m>\|\cdot\|_p</m> is a norm on <m>L^p(X,\mu)</m> for <m>1&lt;p&lt;\infty</m>, we first need to introduce some new definitions and prove some inequalities.</p>
+<definition>
+<p>For <m>1&lt;p&lt;\infty</m>, we define <m>q</m> to be <em>conjugate of <m>p</m></em><idx><h>conjugate</h></idx> when</p>
+<md> q = \frac{p}{p-1}.</md>
+<p>We define the <em>conjugate</em> of <m>1</m> to be <m>\infty</m>, and the <em>conjugate</em> of <m>\infty</m> to be <m>1</m>.</p>
+</definition>
+<remark>
+<p>Note that if <m>1&lt; p &lt;\infty</m> and <m>q</m> is conjugate to <m>p</m>, then <m>q</m> is the unique number such that</p>
+<md> \frac{1}{p} + \frac{1}{q} =1.</md>
+<p>In particular, <m>2</m> is conjugate to <m>2</m>, and if <m>p\neq 2</m> then <m>q \neq p</m>.</p>
+</remark>
+<lemma xml:id="lem-youngs">
+<title>Young's Inequality</title>
+<p><idx><h>Young's Inequality</h></idx>
+    Let <m>1&lt; p &lt; \infty</m> and <m>q</m> be conjugate to <m>p</m>.
+    If <m>a,b&gt;0</m> then</p>
+<md>ab \leq \frac{a^p}{p}+\frac{b^q}{q}.</md>
+</lemma>
+<proof>
+<p>The proof we present here is based on the convexity of the function <m>f(x) = e^x</m>.
+    By <em>convexity</em><idx><h>convex function</h></idx> we mean that, for <m>u,v \in \mathbb{R}</m> and <m>\lambda \in [0,1]</m></p>
+<md numbered="true" xml:id="eq-exp-convex">
+f((1-\lambda)u + \lambda v) \leq (1-\lambda)f(u) + \lambda f(v).
+</md>
+<p>That is, the straight line segment from <m>(u,f(u))</m> to <m>(v,f(v))</m> is above the curve <m>(t,f(t))</m> with <m>u \leq t \leq v</m>.
+    Intuitively, this can be understood since <m>f''(x) = e^x &gt; 0</m> for all <m>x</m>.
+    A formal proof of the inequality  <xref ref="eq-exp-convex" text="Equation"/> is eked out in Exercise <xref ref="exer-exp-convex"/>.</p>
+<p><figure xml:id="fig-exp-convex">
+<image source="Analysis II/exp convex.png" width="20%" />
+<caption>
+  <p>The function <m>f(x)=e^x</m> is convex</p>
+</caption>
+</figure>
+</p>
+<p>Let <m>u = \ln(a^p)</m>, <m>v = \ln(b^q)</m>, and <m>\lambda = \frac{1}{p}.</m>
+    Note that, since <m>p&gt;1</m>, <m>0&lt;\lambda &lt;1</m>.
+    Further, since <m>q</m> is conjugate to <m>p</m>, <m>1-\lambda = \frac{1}{q}</m>.
+    Thus, by  <xref ref="eq-exp-convex" text="Equation"/>,</p>
+<md>
+\begin{aligned}
+\exp\left(\frac{1}{p}\ln(a^p) + \frac{1}{q}\ln(b^q)\right)
+        &amp;\leq \frac{1}{p}\exp(\ln(a^p)) + \frac{1}{q}\exp(\ln(b^q))\\
+        &amp;= \frac{a^p}{p} + \frac{b^q}{q}.
+\end{aligned}
+</md>
+<p>Thus, noting that <m>\ln(a) = \frac{1}{p}\ln(a^p)</m> and <m>\ln(b) = \frac{1}{q}\ln(b^q)</m>,</p>
+<md>
+\begin{aligned}
+ab &amp;= e^{\ln(ab)} = e^{\ln(a) + \ln(b)} \\
+        &amp;=  \exp\left(\frac{1}{p}\ln(a^p) + \frac{1}{q}\ln(b^q)\right) \\
+        &amp;\leq \frac{a^p}{p} + \frac{b^q}{q},
+\end{aligned}
+</md>
+<p>which proves the desired inequality.</p>
+</proof>
+<theorem xml:id="thm-holder">
+<title>Hölder's Inequality</title>
+<p>Let <m>(X,\mathcal{M},\nu)</m> be a measure space, let <m>p</m> be any value <m>1&lt; p &lt; \infty</m> and let <m>q</m> be conjugate to <m>p</m>.
+    If <m>f,g</m> are measurable functions on <m>X</m> then</p>
+<md> \int_X |fg|\,d\mu \leq \left(\int_X |f|^p\,d\mu\right)^{1/p} \left(\int_X |g|^q\,d\mu\right)^{1/q}.</md>
+<p>In particular, if <m>f \in L^q(X,\mu)</m> and <m>g \in L^q(X,\mu)</m> then <m>fg \in L^1(X,\mu)</m> and</p>
+<md> \|fg\|_1 \leq \|f\|_p \|g\|_q.</md>
+</theorem>
+<proof>
+<p>The inequality holds if either <m>f</m> or <m>g</m> are zero almost everywhere in <m>X</m>.
+    We can thus assume that neither <m>f</m> or <m>g</m> is <m>0</m> a.e.
+    If either <m>|f|^p</m> or <m>|g|^q</m> is not intergable, i.e. if</p>
+<md> \int_X |f|^p\,d\mu =\infty \text{ or } \int_X |g|^q\,d\mu =\infty,</md>
+<p>then the desired inequality holds trivially.</p>
+<p>We can thus assume that <m>f \in L^{p}(X,\mu)</m> and <m>g \in L^q(X,\mu)</m> are non-zero.
+    For any non-zero <m>h \in L^p(X,\mu)</m> and non-zero <m>k \in L^q(X,\mu)</m> we have</p>
+<md> |h(x)||k(x)| \leq \frac{|h(x)|^p}{p} + \frac{|k(x)|^q}{q}</md>
+<p>for almost all <m>x \in X</m>, by Young's Inequality, Lemma <xref ref="lem-youngs"/>.
+    Applying this inequality to <m>h = \frac{1}{\|f\|_p}f</m> and <m>k = \frac{1}{\|g\|_q}g</m> we get</p>
+<md>
+\begin{aligned}
+\frac{1}{\|f\|_p\|g\|_q}\int_X |fg|\,d\mu &amp;=
+        \int_X \left(\frac{|f|}{\|f\|_p} \frac{|g|}{\|g\|_q} \right)\,d\mu \\
+        &amp;\leq \int_X\left( \frac{1}{p}\frac{|f|^p}{\|f\|^p_p} + \frac{1}{q}\frac{|g|}{\|g\|^q_q}\right)\,d\mu \\
+        &amp;= \frac{1}{p}+\frac{1}{q} = 1.
+\end{aligned}
+</md>
+<p>Thus <m>\int_X|fg|,d\mu \leq \|f\|_p \|g\|_q.</m></p>
+</proof>
+<p>A special case of Hölder's inequality is when <m>p = q =2.</m> When <m>p = q = 2</m>, we call Hölder's inequality the <em>Cauchy-Schwarz inequality</em><idx><h>Cauchy-Schwarz inequality</h></idx>. For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in Exercise <xref ref="exer-Cauchy-Schwarz-Rn"/>. An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in Exercise <xref ref="exer-Cauchy-Schwarz"/>.</p>
+<theorem xml:id="thm-CS-ineq">
+<title>Cauchy-Schwarz Inequality</title>
+<p><idx><h>Cauchy-Schwarz inequality</h></idx>\label{thm: Cauchy-Schwarz}
+Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+If <m>f,g \in L^2(X,\mu)</m>, then <m>fg</m> is integrable and</p>
+<md> \left| \int_X fg \,d\mu \right| \leq \|f\|_2 \|g\|_2.</md>
+</theorem>
+<p>The following corollary to Hölder's inequality will be used frequently.</p>
+<corollary xml:id="cor-holder-cor">
+<p>Let <m>1&lt; p &lt; \infty</m> and let <m>q</m> be conjugate to <m>p</m>.
+    If <m>f \in L^p(X,\mu)</m>, then there exists <m>g \in L^q(X,\mu)</m>  with <m>\|g\|_q=1</m> such that</p>
+<md> \int_X fg\,d\mu = \|f\|_p.</md>
+</corollary>
+<proof>
+<p>If <m>f = 0</m>, then the result holds for any <m>g \in L^q(X,\mu)</m> with <m>\|g\|_q = 1</m>.
+    Let <m>f \in L^p(X,\mu)</m> be non-zero.
+    Define the <em>sign function</em> for <m>f</m><idx><h>sign function</h></idx> by</p>
+<md> \sgn(x) = \begin{cases} 1 &amp; \text{if }x&gt;0, \\ 0 &amp; \text{if }x=0,\\
+    -1 &amp; \text{if }x&lt;0,\end{cases}</md>
+<p>and let <m>\alpha = \|f\|_p^{1-p}.</m>
+    Let <m>g(x) = \alpha\ \sgn(f(x))|f|^{p-1}.</m>
+    Since <m>f</m> and <m>\sgn(f)</m> are measurable functions, <m>g</m> is measurable.
+    Noting that <m>q(p-1) = p</m>, we have</p>
+<md>
+\begin{aligned}
+\int_X|g|^q\,d\mu &amp;= \alpha^q \int_X |f|^{q(p-1)}\,d\mu\\
+        &amp;= \alpha^q \int_X |f|^p\,d\mu\\
+        &amp;= \|f\|_p^{q(1-p)} \|f\|_p^p =1.
+\end{aligned}
+</md>
+<p>Thus, <m>g \in L^q(X,\mu)</m> and <m>\|g\|_q =1</m>.
+    Further,</p>
+<md>
+\begin{aligned}
+\int_X fg \,d\mu &amp;= \alpha \int_X |f||f|^{p-1}\,d\mu \\
+        &amp; =\alpha \|f\|_p^p = \|f\|_p,
+\end{aligned}
+</md>
+<p>completing the proof.</p>
+</proof>
+<p>We come now to our final named inequality of this section.</p>
+<theorem xml:id="thm-minkowski">
+<title>Minkowski's Inequality</title>
+<p><idx><h>Minkowski's inequality</h></idx>
+    Let <m>(X,\mathcal{M},\mu)</m> be a measure space and take <m>p</m> with <m>1&lt;p&lt;\infty</m>.
+    If <m>f,g \in L^p(X,\mu)</m>, then</p>
+<md> \|f + g\|_q \leq \|f\|_q + \|g\|_q.</md>
+</theorem>
+<proof>
+<p>Let <m>q</m> be conjugate to <m>p</m>.
+    Take <m>f,g \in L^p(X,\mu)</m>.
+    By Corollary <xref ref="cor-holder-cor"/>, there exists <m>h \in L^q(X,\mu)</m> with <m>\|h\|_q = 1</m> such that</p>
+<md>\|f+g\|_p = \int_X(f+g)h\,d\mu.</md>
+<p>Thus</p>
+<md>
+\begin{aligned}
+\|f+g\|_p &amp;= \int_X(f+g)h\,d\mu = \left|\int_X(f+g)h\,d\mu\right|\\
+        &amp;\leq \int_X|fh|\,d\mu + \int_X|gh|\,d\mu \\
+        &amp;\leq \|f\|_p + \|g\|_p,
+\end{aligned}
+</md>
+<p>with the last inequality coming from two applications of Hölder's inequality, and the fact that <m>\|h\|_q=1</m>.</p>
+</proof>
+<p>We now have all we need to show that <m>\|\cdot\|_p</m> is a norm for <m>1&lt;p&lt;\infty</m>.</p>
+<theorem>
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+    For each <m>p</m>, <m>1\leq p \leq \infty</m>, <m>\|\cdot\|_p</m> is a norm on <m>L^p(X,\mu)</m>.</p>
+</theorem>
+<proof>
+<p>The cases when <m>p=1</m> and <m>p= \infty</m> are covered in Proposition <xref ref="prop-1-and-inf-norms"/>.
+    For <m>1&lt;p&lt;\infty</m>, Minkowski's inequality, Theorem <xref ref="thm-minkowski"/>, shows that <m>\|\cdot\|_p</m> satisfies the triangle inequality. That <m>\|\cdot\|_p</m> satisfies the other properties of a norm is straightforward.</p>
+</proof>
+<remark xml:id="rem-L2-inner-prod">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+    If <m>f,g \in L^2(X,\mu)</m>, then the Cauchy-Schwarz inequality (or Hölder's inequality) says that <m>fg</m> is integrable.
+    We can thus define a map</p>
+<md>L^2(X,\mu) \times L^2(X,\mu) \rightarrow \mathbb{R}</md>
+<p>by</p>
+<md>\langle f,g\rangle  = \int_X fg\,d\mu.</md>
+<p>This map is bilinear, by the linearity properties of integration.
+    Further</p>
+<md>\langle f,f\rangle  = \int_X f^2\,d\mu = \int_X |f|^2\,d\mu =\|f\|_2^2.</md>
+<p>Hence <m>\langle \cdot,\cdot\rangle </m> is an inner-product on <m>L^2(X,\mu)</m> and the <m>2</m>-norm is the induced inner-product norm on <m>L^2(X,\mu)</m>.<idx><h>inner-product</h><h>on <m>L^2</m>-space</h></idx></p>
+</remark>
+<p>Given a measure space <m>(X,\mathcal{M},\mu)</m> we now have infinitely many vector space <m>L^p(X,\mu)</m>. What is the relationship between these vector spaces? When do we have <m>L^q(X,\mu) \subseteq L^p(X,\mu)</m>? When <m>\mu(X)&lt;\infty</m> we have the following:</p>
+<theorem xml:id="thm-Lq-in-Lp">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a finite measure space.
+    If <m>1\leq p &lt; q \leq \infty</m>,
+    then <m>L^q(X,\mu) \subseteq L^p(X,\mu)</m>.</p>
+</theorem>
+<proof>
+<p>Take <m>f \in L^q(X,\mu)</m>.
+    If <m>q = \infty</m>, then</p>
+<md> \int|f|^p\,d\mu \leq \|f\|_\infty^p\mu(X)&lt;\infty,</md>
+<p>and hence <m>f \in L^p(X,\mu)</m>.</p>
+<p>Suppose now that <m>1&lt;q&lt;\infty</m>.
+    Note that</p>
+<md> \frac{p}{q} + \frac{q-p}{q} = 1,</md>
+<p>and hence <m>\frac{q}{q-p}</m> is the conjugate of <m>\frac{q}{p}</m>.
+    Applying Hölder's inequality with the conjugates  <m>\frac{q}{q-p}</m> and <m>\frac{q}{p}</m> we have</p>
+<md>
+\begin{aligned}
+\int_X|f|^p\,d\mu &amp;= \int_X|f|^p\cdot \chi_X\,d\mu \\
+        &amp;\leq \left(\int_X (|f|^p)^{q/p}\,d\mu \right)^{p/q}\left(\int_X \chi_X^{q/(q-p)}\,d\mu\right)^{(q-p)/q}\\
+        &amp;= \left(\int_X |f|^q\,d\mu \right)^{p/q} (\mu(X))^{(q-p)/q}\\
+        &amp;= \|f\|_q^p (\mu(X))^{(q-p)/q} &lt;\infty.
+\end{aligned}
+</md>
+<p>Hence, <m>f \in L^p(X,\mu)</m>.</p>
+</proof>
+<p>The following example shows that the containment in Theorem <xref ref="thm-Lq-in-Lp"/> can be strict.</p>
+<example xml:id="ex-Lq-in-Lp">
+<p>Let <m>m</m> be the Lebesgue measure on the interval <m>(0,1) \subseteq \mathbb{R}</m>.
+By Theorem <xref ref="thm-Lq-in-Lp"/>, if  <m>1\leq p &lt; q \leq \infty</m>,
+    then <m>L^q((0,1),m)) \subseteq L^p((0,1),m)</m>.
+    Let <m>f(x) = \frac{1}{\sqrt{x}}.</m>
+    Then <m>f \in L^1((0,1),m)</m> with</p>
+<md> \|f\|_1 = \int_0^1 \frac{1}{\sqrt{x}}\,dm =2.</md>
+<p>However <m>f \notin L^2((0,1),m)</m> since</p>
+<md>\int_{(0,1)}\frac{1}{x}\,dm =\lim_{a\rightarrow 0^+} (\ln(1) - \ln(a)) = \lim_{a\rightarrow 0^+} (1 - \ln(a)) = \infty.</md>
+<p>More generally, if <m>1\leq p &lt; q&lt; \infty</m>
+    and</p>
+<md> f(x) = x^{-(1/q)}</md>
+<p>then <m>f \in L^p((0,1),\mu)</m> but <m>f \notin L^q((0,1),m).</m> 
+    Also, note that <m>f</m> is not bounded, and so <m>f \notin L^\infty((0,1),m).</m>
+    Thus, if <m>1\leq p&lt;q&lt;\infty</m> then</p>
+<md> L^q((0,1),m) \subsetneq L^p((0,1),m).</md>
+</example>
+<p>When <m>\mu(X)=\infty</m> the conclusion of Theorem <xref ref="thm-Lq-in-Lp"/> does not necessarily hold. In fact, we may not have containments in any direction.</p>
+<example xml:id="ex-Lq-not-in-Lp">
+<p>Let <m>m</m> be the Lebesgue measure on <m>(0,\infty)</m>.
+    Suppose <m>1\leq p &lt; q \leq \infty</m>.
+    Let <m>f(x) = x^{-1/p}</m> for <m>x\geq 1</m>, and <m>f(x) = 0</m> for <m>x \in (0,1)</m>.
+    Since <m>f</m> is bounded, we have that <m>f \in L^\infty([1,\infty),m)</m>.
+    If <m>q &lt; \infty</m>, then, since <m>q/p&gt;1</m>, <m>f \in L^q((0,\infty),m)</m>.
+    However, <m>f \notin L^p((0,\infty),m)</m> since <m>1/x</m> is not integrable on <m>[1,\infty)</m>.
+    Thus</p>
+<md>L^q((0,\infty),m) \not\subseteq L^p((0,\infty),m).</md>
+<p>Using the examples from Example <xref ref="ex-Lq-in-Lp"/> we can also show that</p>
+<md>L^p((0,\infty),m) \not\subseteq L^q((0,\infty),m).</md>
+<p>Explicitly, for <m>q&lt; \infty</m>, if <m>f(x) = x^{-1/q}</m> for <m>x \in (0,1)</m> and <m>f(x) = 0</m> for <m>x &gt;0</m>, then <m>f \in L^p((0,\infty),m)</m> but <m>f \notin L^q((0,\infty),m).</m></p>
+</example>
+<subsection>
+<title><m>\ell^p</m>-spaces and <m>\mathbb{R}^n</m></title>
+<p>We pronounce <m>\ell^p(A)</m> as `little <m>lp</m>'. <idx><h sortby="lp-space"><m>\ell^p</m>-space</h></idx> When <m>A = \mathbb{N}</m>, we simply write <m>\ell^p</m> for <m>\ell^p(\mathbb{N})</m>. The space <m>\ell^p</m> thus consists of all sequences of real-numbers <m>(a_n)_n</m> such that</p>
+<md> \sum_{n=1}^\infty |a_n|^p &lt; \infty,</md>
+<p>when <m>1\leq p &lt; \infty</m>; and <m>\ell^\infty</m> consists of all bounded sequences.</p>
+<p>The following result shows that the conclusion of Theorem <xref ref="thm-Lq-in-Lp"/> can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with Example <xref ref="ex-Lq-not-in-Lp"/></p>
+<theorem xml:id="thm-lq-in-lp">
+<p>Let <m>1\leq p&lt;q\leq \infty</m>, then <m>\ell^q(A) \subseteq \ell^p(A)</m> and <m>\|f\|_q \leq \|f\|_p</m> for all <m>f \in \ell^p(A).</m></p>
+</theorem>
+<proof>
+<p>Take any non-negative function <m>g</m> on <m>A</m>.
+    If <m>g</m> is not bounded, then there is an <m>M&gt; 0</m> and a sequence <m>(a_n)_n</m> in <m>A</m> such that <m>g(a_n)\geq M</m> for all <m>n\geq 0</m>.
+    Thus</p>
+<md> \int_A g\,dc \geq \sum_{n=1}^\infty g(a_n) = \infty.</md>
+<p>Hence <m>g</m> is not integrable.
+    Therefore, if  <m>f \in \ell^p(A)</m>, then <m>f</m> is bounded.
+    Take <m>f\in\ell^p(A)</m> and <m>\varepsilon &gt;0</m>. There exists an <m>a \in A</m> such that</p>
+<md> \|f\|_\infty &lt; f(a) + \varepsilon.</md>
+<p>Thus</p>
+<md> \int_A |f|^p\, dc \geq |f(a)|^p &gt; (\|f\|_\infty - \varepsilon)^p.</md>
+<p>As this holds for all <m>\varepsilon&gt;0</m>, it follows that <m>\|f\|_p \geq \|f\|_\infty</m>.</p>
+<p>Suppose now that <m>1\leq p &lt;q &lt; \infty</m>.
+    Then</p>
+<md>
+\begin{aligned}
+\left(\int_A |f|^q\,dc\right)^{1/q} &amp;\leq     \left(\int_A |f|^p|f|^{q-p}\,dc\right)^{1/q}\\
+        &amp;\leq \|f\|_\infty^{(q-p)/p}\left(\int_A |f|^p\,dc\right)^{1/q}\\
+        &amp;= \|f\|_\infty^{(q-p)/q} \|f\|_p^{p/q}\\
+        &amp;\leq \|f\|_p.
+\end{aligned}
+</md>
+<p>Thus <m>f \in \ell^q(A)</m> and <m>\|f\|_q\leq \|f\|_p.</m></p>
+</proof>
+<p>The following example shows that the inclusion of <m>\ell^p(A) \subseteq \ell^q(A)</m> from Theorem <xref ref="thm-lq-in-lp"/> can be strict.</p>
+<example>
+<p>Take <m>1 \leq p&lt;q &lt;\infty</m> and let <m>a_n = \left(\frac{1}{n}\right)^{1/p}.</m>
+Then <m>(a_n)_n \in \ell^q</m> but <m>(a_n)_n\notin\ell^p.</m></p>
+<p>Any non-zero constant sequence is in <m>\ell^\infty</m> but not <m>\ell^p</m> for <m>1\leq p &lt;\infty</m>.
+E.g., if <m>a_n = 1</m> for all <m>n</m>, then <m>(a_n)_n \in \ell^{\infty}</m> but <m>(a_n)_n \notin \ell^p</m> for any <m>p&lt;\infty</m>.</p>
+</example>
+<p>We turn our attention now to finite dimensional vector spaces. Let <m>A = \{1,\ldots,n\}</m>. In Remark <xref ref="rem-2-norms"/> we observed that, for all <m>1\leq p \leq \infty</m>, <m>\ell^p(A)</m> is the real-valued functions on <m>A</m>. Further, we can identify <m>\ell^p(A)</m> with <m>\mathbb{R}^n</m> via the isomorphism</p>
+<md> f \mapsto (f(1),f(2),\ldots,f(n)).</md>
+<p>Under this identification, we have a norms <m>\|\cdot\|_p</m> on <m>\mathbb{R}^n</m> for <m>1\leq p&lt;\infty</m>. These norms are given by</p>
+<md> \|(v_1,\ldots,v_n)\|_p = \left( \sum_{i=1}^n |v_i|^p\right)^{1/p}</md>
+<p>for <m>1\leq p &lt; \infty</m>, and</p>
+<md> \|(v_1,\ldots,v_n)\|_\infty = \max_{1\leq i \leq n}|v_i|.</md>
+<p><idx><h>norm</h><h sortby="p-norm"><m>p</m>-norm</h><h>on <m>\mathbb{R}^n</m></h></idx> When <m>n&gt;1</m> these norms are all different, as illustrated in Figure <xref ref="fig-p-norm"/>. However, the norms are all equivalent.</p>
+<figure xml:id="fig-p-norm">
+<image source="Analysis II/p-norms.png" width="20%" />
+<caption>
+<p>The sets <m>\|v\|_p = 1</m> for different values of <m>p</m> in <m>\mathbb{R}^2</m></p>
+</caption>
+</figure>
+<theorem xml:id="thm-equiv-norms-on-Rn">
+<p>The norms <m>\{\|\cdot\|_p\}_{1\leq p\leq \infty}</m> on <m>\mathbb{R}^n</m> are all equivalent.</p>
+</theorem>
+<proof>
+<p>Take any <m>v=(v_1,\ldots,v_n) \in \mathbb{R}^n</m>.
+    Then</p>
+<md> \|v\|_1 = \sum_{i=1}^n|v_i| \leq n \max_{1\leq i \leq n}\{|v_i|\}= n\|v\|_\infty,</md>
+<p>and</p>
+<md> \|v\|_\infty \leq \sum_{i=1}^n|v_i| = \|v\|_1.</md>
+<p>Thus, the norms <m>1</m>-norm and the <m>\infty</m>-norm are equivalent.</p>
+<p>Let <m>i_0</m> be such that <m>\max\{|v_i|\} = |v_{i_0}|</m>.
+    Then</p>
+<md> \|v\|_\infty^p = |v_{i_0}|^p \leq \sum_{i=1}^n |v_i|^p.</md>
+<p>Thus</p>
+<md> \|v\|_\infty \leq \|v\|_p.</md>
+<p>By Theorem <xref ref="thm-lq-in-lp"/>,  <m>\|v\|_p \leq \|v\|_1</m> for all <m>1\leq p \leq \infty</m>.
+    Thus, for <m>1&lt;p&lt;\infty</m> we have</p>
+<md> \|v\|_\infty \leq \|v\|_p \leq \|v\|_1 \leq n\|v\|_\infty.</md>
+<p>Hence the <m>p</m>-norm is equivalent to the <m>\infty</m>-norm for all <m>1\leq p \leq \infty</m>.
+    Therefore, all the <m>p</m>-norms are equivalent on <m>\mathbb{R}^n</m>.</p>
+</proof>
+</subsection>
+</section>
+<section>
+<title><m>L^p</m>-approximations and the Riesz-Fischer Theorem</title>
+<p>In the proof, we will incidentally end up considering different types of convergence we now have for measurable functions.</p>
+<theorem xml:id="thm-Riesz-Fischer">
+<title>Riesz-Fischer Theorem</title>
+<p><idx><h>Riesz-Fischer Theorem</h></idx>
+    Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+    Then <m>L^p(X,\mathcal{M},\mu)</m> is a Banach space for all <m>1\leq p\leq \infty</m>.</p>
+</theorem>
+<proof>
+<p>First take <m>1\leq p &lt; \infty</m>.
+    Let <m>(f_n)_n</m> be a Cauchy sequence in <m>L^p(X,\mu)</m>.
+    Choose <m>n_1&lt;n_2&lt; \ldots</m> such that</p>
+<md> \|f_n - f_m\|_\infty &lt; \frac{1}{2^k}</md>
+<p>for <m>n,m \geq n_k</m>.
+    Let <m>g_1 = f_{n_1}</m> and <m>g_k = f_{n_{k+1}} - f_{n_{k}}</m> for <m>j &gt;1</m>.
+    Then,</p>
+<md>\sum_{k=1}^\infty \|g_k\|_p \leq \|g_1\|_p + \sum_{k=1}^\infty \frac{1}{2^k} &lt; \infty.</md>
+<p>Let <m>B =\sum_{k=1}^\infty \|g_k\|_p</m>.</p>
+<p>Let <m>G_n = \sum_{k=1}^n |g_k|</m> and <m>G = \sum_{k=1}^\infty |g_k|.</m>
+    Note that</p>
+<md> \|G_n\|_p \leq \sum_{k=1}^n \|g_k\|_p \leq B</md>
+<p>for all <m>n</m>.
+    Since <m>(G_n)_n</m> is an increasing sequence converging pointwise to <m>G</m>,</p>
+<md> \int_X G^p\,d\mu = \lim_{n\rightarrow \infty} \int_X G_n^p\,d\mu =\lim_{n\rightarrow \infty}\|G_n\|_p^p \leq B^p,</md>
+<p>by the Monotone Convergence Theorem.
+    Thus <m>G \in L^p(X,\mu)</m>.
+    In particular, <m>G</m> is finite a.e. and so the series <m>\sum_{k=1}^\infty g_k</m> converges absolutely a.e.
+    Let <m>F = \sum_{k=1}^\infty g_k</m> be the pointwise a.e. limit.
+    Then <m>|F|\leq G</m>, and hence <m>F \in L^p(X,\mu)</m>.
+    Further,</p>
+<md>\left| F - \sum_{k=1}^n g_k\right|^p \leq \left(|F| + \sum_{k=1}^n|g_k|\right)^p\leq (2G)^p.</md>
+<p>Hence, by the Lebesgue Dominated Convergence Theorem,</p>
+<md> \lim_{n\rightarrow \infty}\left\|F-\sum_{k=1}^n g_k\right\|_p^p = \lim_{n\rightarrow 0}\int_X \left|F-\sum_{k=1}^ng_k\right|^p\,d\mu = 0.</md>
+<p>Hence the sequence of partial sums <m>(\sum_{k=1}^n g_k)_n</m> converges to <m>F</m> in <m>p</m>-norm.
+    Note that</p>
+<md> \sum_{k=1}^m g_k = f_{n_m}.</md>
+<p>Thus the subsequence <m>(f_{n_k})_k</m> converges to <m>F</m> in <m>p</m>-norm.
+    It follows that <m>(f_n)_n</m> converges to <m>F</m>, and hence <m>L^p(X,\mu)</m> is complete.</p>
+<p>Now let <m>p= \infty</m> and let <m>(f_n)_n</m> be a Cauchy sequence in <m>L^\infty(X,\mu)</m>.
+    By excising a set of measure <m>0</m> if necessary, assume that each <m>f_n</m> is bounded.
+    Take any <m>\varepsilon&gt;0</m>.
+    There is an <m>N</m> such that for all <m>n,m\geq N</m></p>
+<md> \|f_n-f_m\|_\infty &lt; \varepsilon.</md>
+<p>Take any <m>x \in X</m>, and <m>n,m\geq N</m>, then</p>
+<md> |f_n(x) - f_m(x)|\leq \|f_n-f_m\|_\infty &lt; \infty.</md>
+<p>Thus, <m>(f_n(x))_n</m> is a Cauchy sequence of real numbers.
+    Since <m>\mathbb{R}</m> is complete, <m>(f_n(x))_n</m> is convergent.
+    Define a function <m>f</m> by</p>
+<md> f(x) = \lim_{n\rightarrow\infty} f_n(x)</md>
+<p>for each <m>x \in X</m>.</p>
+<p>There is an <m>N \geq 0</m> such that if <m>n,m\geq N</m> then</p>
+<md> \|f_n - f_m\|_\infty \leq 1.</md>
+<p>Thus, if <m>n \geq N</m>, then</p>
+<md> \|f_n\|_\infty= \|f_n - f_N + f_N\|_\infty \leq \|f_N\|_\infty + 1.</md>
+<p>Letting</p>
+<md> M = \max\{\|f_1\|_\infty,\ldots,\|f_{N-1}\|_\infty,\|f_N\|_\infty +1\},</md>
+<p>we have <m>\|f_n\|_\infty\leq M</m> for all <m>n</m>.
+    Thus, for <m>x \in X</m>,</p>
+<md> |f(x)| = \lim_{n\rightarrow\infty} |f_n(x)| \leq M.</md>
+<p>Hence <m>f \in L^\infty(X,\mu)</m>.</p>
+<p>Take <m>\varepsilon &gt;0</m>.
+    Choose <m>N</m>, such that if <m>n,m\geq N</m> then <m>\|f_n-f_m\|_\infty&lt;\varepsilon/2.</m>
+    Then, for <m>x\in X</m>, if <m>n \geq N</m>,</p>
+<md> |f(x) - f_N(x)| = \lim_{n\rightarrow\infty}|f_n(x) - f_N(x)|&lt;\varepsilon.</md>
+<md>
+\begin{aligned}
+\|f-f_n\|_\infty &amp;= \sup_{x\in X}|f(x) - f_n(x)\|_\infty \\
+        &amp;= \sup_{x\in X} \lim_{m\rightarrow \infty} |f_m(x) -f_n(x)|\\
+        &amp;&lt; \varepsilon.
+\end{aligned}
+</md>
+<p>Hence <m>f</m> is the limit of <m>(f_n)_n</m> in the <m>\infty</m>-norm, and hence <m>L^\infty(X,\mu)</m> is complete.</p>
+</proof>
+<p>For the <m>p&lt;\infty</m> our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for <m>p&lt;\infty</m> we showed that, if <m>(f_n)_n</m> is a Cauchy sequence in <m>L^p(X,\mu)</m> then <m>(f_n)_n</m> converges to some  <m>f \in L^p(X,\mu)</m> in <m>p</m>-norm <em>and</em> there is a subsequence of <m>(f_n)_n</m> that converges pointwise a.e. to <m>f</m>. We record this statement in the following corollary.<fn>Corollary is not the correct word; the result is a corollary of the proof not a corollary of the statement of the Riesz-Fischer theorem itself. The word `Porism' has been used for such results, <xref ref="AglerMcCarthy"/>.</fn></p>
+<corollary xml:id="cor-subseq-pw-ae-conver">
+<p>Let <m>(X,\mathcal{M},\mu)</m>  be a measure space and let <m>1\leq p&lt;\infty.</m>
+    If <m>(f_n)_n</m> is a sequence in <m>L^p(X,\mu)</m> which converges to some <m>f \in L^p(X,\mu)</m> in <m>p</m>-norm, then there is a subsequence of <m>(f_n)_n</m> which converges pointwise a.e. to <m>f</m>.</p>
+</corollary>
+<p>In general, pointwise a.e. convergence does not imply convergence in the <m>p</m>-norm for <m>1\leq p &lt; \infty</m>; and convergence in the <m>p</m>-norm does not imply pointwise a.e. convergence. We can see this in the following examples.</p>
+<example xml:id="ex-pw-not-L1">
+<p>For <m>n\geq 2</m>, let <m>f_n</m> be the function on <m>[0,1]</m> given by</p>
+<md>f(x) = \begin{cases}n^2 x &amp;x \in[0,\frac{1}{n}],\\
+    -n^2x+2n &amp;x\in[\frac{1}{n},\frac{2}{n}], \\
+    0 &amp; x\in[\frac{2}{n},1].\end{cases}</md>
+<p><figure xml:id="fig-pw-not-L1">
+<image source="Analysis II/pw not L1.png" width="20%" />
+<caption>
+  <p>The functions <m>f_2,f_3</m> and <m>f_4</m> in Example <xref ref="ex-pw-not-L1"/>.</p>
+</caption>
+</figure>
+</p>
+<p>The sequence <m>(f_n)_n</m> converges pointwise to <m>0</m>. 
+    Also</p>
+<md> \int_{[0,1]}f_n\,dm = \frac{1}{2}\cdot \frac{2}{n}\cdot{n}=1</md>
+<p>and so each <m>f_n \in L^1([0,1],m)</m> with <m>\|f_n\|_1 = 1</m>.
+    Hence <m>(f_n)_{n\geq 2}</m> does not converge to <m>0</m> in <m>1</m>-norm.</p>
+<p>Note that, the sequence <m>(f_n)_{n\geq 2}</m> can not converge to anything in <m>1</m>-norm. 
+    Indeed, if <m>(f_n)_{n\geq 2}</m> converges in <m>1</m>-norm to some <m>f \in L^1([0,1],m)</m>, then by Corollary <xref ref="cor-subseq-pw-ae-conver"/>, a subsequence would converge pointwise a.e. to <m>f</m>.
+    Since <m>(f_n)_{n\geq 2}</m> converges pointwise to <m>0</m>, any subsequence converges pointwise to <m>0</m>, and so we must have <m>f=0</m>.</p>
+</example>
+<example xml:id="ex-typewriter">
+<p>For each <m>n\geq 1</m>, let</p>
+<md> f_n = \chi_{\left[\frac{k}{2^m},\frac{k+1}{2^m}\right]},</md>
+<p>where <m>m\geq 0</m> and <m>0\leq k &lt; 2^m</m> satisfy</p>
+<md> n = 2^m +k.</md>
+<p>These functions are sometimes called the <em>typewriter functions</em> or <em>dancing functions</em><idx><h>typewriter functions</h></idx><idx><h>dancing functions</h><see>typewriter functions</see></idx>.
+    Explicitly, we have</p>
+<md> f_1 = \chi_{[0,1]},\ f_2 = \chi_{[0,1/2]},\ f_3=\chi_{[1/2,1]}, f_4 = \chi_{[0,1/4]}, f_5 =\chi_{[1/4,1/2]},\ldots</md>
+<p><figure xml:id="fig-typewriter">
+<image source="Analysis II/typewriter.png" width="20%" />
+<caption>
+  <p>The eleventh typewriter function, from Example <xref ref="ex-typewriter"/>.</p>
+</caption>
+</figure>
+<p>If <m>n = 2^m +k</m> as above,</p>
+</p>
+<md> \int_{[0,1]}f_n\,dm = \frac{1}{2^m}.</md>
+<p>Thus <m>f_n \in L^1([0,1],m)</m> and <m>(f_n)_n</m> converges to <m>0</m> in <m>1</m>-norm.
+    However, <m>(f_n)_n</m> does not converge pointwise (nor pointwise a.e.) to any function.
+    Indeed, for any <m>x \in [0,1]</m> there are infinitely many <m>n</m> such that <m>f_n(x) = 0</m> and infinitely many <m>n</m> such that <m>f_n(x) =1</m>.</p>
+</example>
+<p>The <m>\infty</m>-norm plays wholly more nicely with our earlier modes of convergence.</p>
+<proposition>
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>(f_n)_n</m> be a sequence in <m>L^{\infty}(X,\mu)</m>.
+    Then <m>(f_n)_n</m> converges to some <m>f \in L^\infty(X,\mu)</m> if and only if there is a measure zero set <m>X_0</m> such that <m>f_n</m> converges uniformly to <m>f</m> on <m>X\backslash X_0</m>.</p>
+<p>In particular, if <m>(f_n)_n</m> converges to <m>f</m> in the <m>\infty</m>-norm, then <m>f_n</m> converges pointwise a.e. to <m>f</m>.</p>
+</proposition>
+<p>We turn our attention now to the question of separability of <m>L^p</m>-spaces. We first establish that simple functions are dense in <m>L^p(X,\mu)</m>, <m>1\leq p&lt;\infty</m>.</p>
+<proposition xml:id="prop-simple-dense">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, and let <m>1\leq p&lt;\infty</m>. 
+    The collection of simple functions of the form <m>\varphi = \sum_{k=1}^na_k\chi_{E_i}</m> where <m>E_i \in \mathcal{M}</m> with <m>\mu(E_i)&lt;\infty</m> is dense in <m>L^p(X,\mu)</m>.</p>
+</proposition>
+<proof>
+<p>Let <m>\varphi</m> be a simple function on <m>X</m>.
+    There are unique scalars <m>a_1,\ldots,a_n</m> and disjoint measurable sets <m>E_1,\ldots,E_n</m> such that <m>\varphi = \sum_{k=1}^n a_i\chi_{E_i}.</m>
+    If <m>\varphi \in L^p(X,\mu)</m>, then</p>
+<md> \|\varphi\|_p^p = \sum_{k=1}^n |a_i|^p \mu(E_i) &lt; \infty,</md>
+<p>and hence <m>\mu(E_i)&lt;\infty</m> for <m>1\leq i \leq n</m>.
+    Conversely, it <m>\mu(E_i)&lt;\infty</m> for <m>1\leq i \leq n</m>, then</p>
+<md>\int_X|\varphi|^p\,d\mu = \sum_{k=1}^n |a_i|^p \mu(E_i) &lt; \infty,</md>
+<p>and hence <m>\varphi \in L^p(X,\mu)</m>.</p>
+<p>Take any <m>f \in L^p(X,\mu)</m>.
+    By the simple approximation theorem there are simple functions <m>(\phi_n)_n</m> converging pointwise to <m>f</m> such that <m>|\phi_n|\leq |f|</m> for all <m>n</m>.
+    Since <m>f \in L^p(X,\mu)</m> and <m>|\phi_n|^p \leq |f|^p</m>, it follows that <m>\phi_n \in L^p(X,\mu)</m> for all <m>n</m>.
+    Further</p>
+<md> |\phi_n - f|^p \leq (|\phi_n|+|f|)^p\leq 2^p|f|^p.</md>
+<p>As <m>2^p|f|^p</m> is integrable and is an upper bound for <m>|\phi_n-f|^p</m>, the Lebesgue Dominated Convergence theorem says</p>
+<md> 0 = \lim_{n\rightarrow\infty}\int_X|\phi_n-f|^p\,d\mu.</md>
+<p>Hence <m>\lim_{n\rightarrow \infty}\|\phi_n-f\|_p =0</m>. 
+    I.e., <m>(\phi_n)_n</m> converges to <m>f</m> in the <m>p</m>-norm.</p>
+</proof>
+<p>When we are working with the Lebesgue measure on subsets of the real line we go further: replacing simple functions with step functions. We will then use this to show that <m>L^p(E,m)</m> is separable when <m>E \subseteq \mathbb{R}</m> is Lebesgue measurable, and <m>1\leq p&lt;\infty</m>.</p>
+<lemma xml:id="lem-step-dense">
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a bounded closed interval, and let <m>1\leq p &lt; \infty</m>.
+    The step functions on <m>[a,b]</m> are dense in <m>L^p([a,b],m).</m></p>
+</lemma>
+<proof>
+<p>Let <m>E \subseteq [a,b]</m> be a Lebesgue measurable set.
+    We will show that we can approximate <m>\chi_E</m> with a step function in the <m>p</m>-norm.
+    Fix <m>\varepsilon&gt;0</m>.
+    By the outer regularity of the Lebesgue measure, there is an open set <m>E \subseteq U\subseteq \mathbb{R}</m> such that <m>m(U\backslash E)&lt; \varepsilon^p/2.</m>
+    Since <m>U \subseteq \mathbb{R}</m> is open, <m>U</m> is a disjoint union of countably many open intervals <m>\{I_k\}_{k=1}^\infty</m>.
+    Choose <m>n</m>, so that</p>
+<md> \sum_{k=n+1}^\infty m(I_k)&lt;\varepsilon^p/2,</md>
+<p>and let <m>V = \bigcup_{k=1}^n I_k</m>.
+    Then</p>
+<md> m(V \backslash E) \subseteq m(U\backslash E) &lt; \varepsilon^p/2</md>
+<p>and</p>
+<md> m(E\backslash V) \subseteq m(U \backslash V) =\sum_{k=n+1}^\infty m(I_k)&lt;\varepsilon^p/2.</md>
+<p>Note that, since <m>V</m> is a finite union of disjoint intervals, <m>\chi_V</m> is a set function. 
+    By the above calculations we have</p>
+<md>
+\begin{aligned}
+\|\chi_E - \chi_V\|_p &amp;= \left(\int_{[a,b]}|\chi_E - \chi_V|^p \,dm\right)^{1/p} \\
+        &amp;= [m(E\backslash V) + m(V \backslash E)]^{1/p} &lt; \varepsilon.
+\end{aligned}
+</md>
+<p>As simple functions are linear combinations of characteristic functions, it follows now that step functions are dense in the simple functions in <m>L^p([a,b],m)</m>.
+    Hence, by Proposition <xref ref="prop-simple-dense"/>, the step functions are dense in <m>L^p([a,b],m)</m>.</p>
+</proof>
+<lemma xml:id="lem-Lp-separable">
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a bounded closed interval, and let <m>1\leq p &lt; \infty</m>.
+    The Banach space <m>L^p([a,b],m)</m> is separable.</p>
+</lemma>
+<proof>
+<p>Take an arbitrary step function</p>
+<md> \varphi = \sum_{k=1}^n c_i \chi_{[x_{i-1},x_i]}</md>
+<p>where <m>a=x_0&lt;x_1&lt;\ldots&lt;x_n=b</m> is a partition of <m>[a,b]</m>, let <m>\varepsilon &gt;0</m>.
+    Choose rationals <m>y_1,\ldots,y_{n-1} \in [a,b]</m> such that, for <m>1\leq i\leq n-1</m>,</p>
+<md> y_i \leq x_i \text{ and }x_i - y_i &lt;\frac{\varepsilon}{2n(b-a)^p},</md>
+<p>and let <m>y_0=a</m> and <m>y_n =b</m>.
+    Choose <m>q_1,\ldots, q_n \in \mathbb{Q}</m> such that for <m>1\leq i \leq n</m>,</p>
+<md> |q_i - c_i| &lt; \frac{\varepsilon^p}{[2n(x_{i}-x_{i-1})]^{1/p}},</md>
+<p>and let <m>\psi</m> be the step function</p>
+<md> \psi = \sum_{i=1}^n q_i \chi_{[y_{i-1},y_i}].</md>
+<p>Then</p>
+<md>
+\begin{aligned}
+\int_{[a,b]}|\varphi-\psi|^p\,dm &amp;= \sum_{i=1}^n \int_{[x_{i-1},y_i]}|c_i-q_i|^p\,dm + \sum_{i=1}^{n-1}\int_{[y_i,x_i]}|x_i - y_{i+1}|^p\,dm\\
+        &amp;\leq \sum_{i=1}^{n} \frac{\varepsilon^p}{2n} + \sum_{i=1}^{n-1} \frac{\varepsilon^p}{2n}\leq \varepsilon^p.
+\end{aligned}
+</md>
+<p>Hence <m>\|\varphi-\psi\|_p &lt; \varepsilon.</m></p>
+<p>We have shown that the collection <m>\mathcal{S}_\mathbb{Q}([a,b])</m> of all step functions taking rational values on partitions of <m>[a,b]</m> with rational interior endpoints is dense in the collection of all step functions.
+    It follows from Lemma <xref ref="lem-step-dense"/>, that <m>\mathcal{S}_\mathbb{Q}([a,b])</m> is dense in <m>L^p([a,b],m)</m>. 
+    It is not hard to see that <m>\mathcal{S}_\mathbb{Q}([a,b])</m> is countable, and hence <m>L^p([a,b])</m> is separable.</p>
+</proof>
+<p>Having shown that <m>L^p([a,b],m)</m> is separable, we can now show that <m>L^p(E,m)</m> is separable for all <m>1\leq p&lt;\infty</m> and all Lebesgue measurable <m>E \subseteq \mathbb{R}</m>.</p>
+<theorem xml:id="thm-Lp-separable">
+<p>Let <m>E \subseteq \mathbb{R}</m> be a Lebesgue measurable set, and let <m>1\leq p&lt; \infty</m>.
+    The Banach space <m>L^p(E,m)</m> is separable.</p>
+</theorem>
+<proof>
+<p>For a closed bounded interval <m>[a,b] \subseteq \mathbb{R}</m>, let <m>\mathcal{S}_\mathbb{Q}([a,b])</m> be defined as in the proof of Lemma <xref ref="lem-Lp-separable"/>.
+    That is, <m>\mathcal{S}_\mathbb{Q}([a,b])</m> is all rational-valued step functions on <m>[a,b]</m> defined using partitions of <m>[a,b]</m> using rational values.</p>
+<p>First assume that <m>E \subseteq \mathbb{R}</m> is bounded.
+    Let <m>[a,b]</m> be a closed bounded interval such that <m>E \subseteq [a,b]</m>.
+    Since <m>\mathcal{S}_\mathbb{Q}([a,b])</m> is dense in the set of simple functions on <m>[a,b]</m>, the set</p>
+<md> \{\psi|_E \colon \psi \in \mathcal{S}_\mathbb{Q}([a,b])\}</md>
+<p>is dense in the collection of simple functions on <m>E</m>.
+    Hence, <m>L^p(E,m)</m> is separable, by Proposition <xref ref="prop-simple-dense"/>.</p>
+<p>Assume now that <m>E</m> is unbounded.
+    For each <m>n\in\mathbb{N}</m>, let <m>E_n = E \cap [-n,n]</m>.
+    By the above argument, since <m>E_n</m> is bounded, there is a countable set <m>\mathcal{S}_n</m> which is dense in <m>L^p(E_n,m).</m>
+    Extend each <m>\varphi \in \mathcal{S}_n</m> to <m>E</m> by setting <m>\varphi(x) = 0</m> for <m>x \in E \backslash E_n</m>.</p>
+<p>Take <m>\varepsilon &gt;0</m> and fix <m>f \in L^p(E,m).</m>
+    By the continuity of integration, Proposition <xref ref="prop-integral-cont"/>,</p>
+<md> \lim_{n\rightarrow\infty}\int_{E_n} |f|^p\,dm = \int_E |f|^p\,dm&lt;\infty.</md>
+<p>Thus, we can choose <m>n</m> such that</p>
+<md> \int_{E\backslash E_n} |f|^p\,dm &lt; \varepsilon^p/2.</md>
+<p>Since <m>\mathcal{S}_n</m> is dense in <m>L^p(E_n,m)</m>, there exists <m>\varphi \in \mathcal{S}_n</m> such that <m>\|f|_{E_n} - \varphi\|^p_p &lt; \varepsilon/2.</m>
+    Thus</p>
+<md>
+\begin{aligned}
+\|f-\varphi\|^p_p &amp;= \int_E |f-\varphi|^p\,dm \\
+        &amp;= \int_{E_n} |f-\varphi|^p\,dm + \int_{E\backslash E_n} |f|^p\,dm\\
+        &amp;&lt;= \frac{\varepsilon^p}{2} + \frac{\varepsilon^p}{2} = \varepsilon^p.
+\end{aligned}
+</md>
+<p>Thus <m>\|f-\varphi\|_p&lt;\varepsilon</m>.
+    Hence, the countable set <m>\bigcup_n \mathcal{S}_n</m> is dense in <m>L^p(E,m)</m>, and so <m>L^p(E,m)</m> is separable.</p>
+</proof>
+<p>The <m>L^p</m>-spaces for Lebesgue measure are not the only separable nice class of separable <m>L^p</m>-spaces: <m>\ell^p</m>-spaces are also separable.</p>
+<theorem xml:id="thm-lp-separable">
+<p>Let <m>A</m> be a non-empty set and take <m>1\leq p &lt; \infty</m>.
+    Then <m>\ell^p(A)</m> is separable if and only if <m>A</m> is countable.</p>
+</theorem>
+<proof>
+<p>If <m>A</m> is finite, then <m>\ell^p(A) \simeq \mathbb{R}^n</m>, where <m>n</m> is the cardinality of <m>A</m>.
+    Hence <m>\ell^p(A)</m> is separable.</p>
+<p>If <m>A</m> is countably infinite, then there is a bijection from <m>A</m> to <m>\mathbb{N}</m>.
+    This bijection defines an isometric isomorphism from <m>\ell^p(A)</m> to <m>\ell^p</m>.
+    We will thus assume that <m>A = \mathbb{N}</m>.</p>
+<p>The simple functions in <m>\ell^p</m> are the sequences which are finitely non-zero.
+    Take simple <m>a = (a_1,a_2,\ldots,a_n,0,0,\ldots)</m> and <m>\varepsilon &gt;0</m>.
+    For <m>1\leq i \leq n</m>, choose <m>q_i \in \mathbb{Q}</m> such that</p>
+<md>|q_i-a_i|&lt;\frac{\varepsilon}{n^{1/p}}</md>
+<p>and let <m>q = (q_1,q_2,\ldots,q_n,0,\ldots).</m>
+    Then</p>
+<md> \sum_{i=1}^n |q_i-a_i|^p&lt;  \varepsilon^p,</md>
+<p>and so <m>\|a-q\|_p&lt;\varepsilon.</m>
+    Hence the finitely non-zero rational sequences are dense in the finitely non-zero sequences.
+    As the finitely non-zero sequences are dense in <m>\ell^p</m> by Proposition <xref ref="prop-simple-dense"/>, it follows that the rational-valued simple functions are dense in <m>\ell^p</m>.
+    There are countably many finitely non-zero rational sequences, and hence <m>\ell^p</m> is simple.</p>
+<p>That <m>\ell^p(A)</m> is not separable when <m>A</m> is uncountable is left as an exercise, Exercise <xref ref="exer-lp-not-separable"/>.<fn>I recommend looking at the proof of Theorem <xref ref="thm-linf-not-separable"/> before attempting Exercise <xref ref="exer-lp-not-separable"/>.</fn></p>
+</proof>
+<p>Take <m>1\leq p &lt;\infty</m>. We have shown that <m>L^p(E,m)</m> is separable for all Lebesgue measurable <m>E \subseteq \mathbb{R}</m>, and that <m>\ell^p</m> is separable. What happens when <m>p=\infty</m>? In this case, we are not guaranteed separability.</p>
+<theorem xml:id="thm-linf-not-separable">
+<p>The Banach spaces <m>L^\infty([0,1],m)</m> and <m>\ell^\infty</m> are not separable.</p>
+</theorem>
+<proof>
+<p>Consider first <m>L^\infty([0,1],m)</m>.
+    For each <m>x \in [0,1]</m>, let</p>
+<md> F_x = \chi_{[0,x]}.</md>
+<p>Each <m>F_x</m> is bounded and measurable, and hence <m>F_x \in L^\infty([0,1],m)</m>.
+    Note that, if <m>0\leq x &lt; y \leq 1</m> then</p>
+<md> \|F_x-F_y\|_\infty = \|\chi_{(x,y]}\|_\infty = 1.</md>
+<p>Suppose <m>S</m> is a dense subset of <m>L^\infty</m>.
+    For each <m>x\in [0,1]</m>,fix <m>s_x\in S</m> such that</p>
+<md> \|F_x - s_x\|_\infty.</md>
+<p>Note that, if <m>x \neq y</m>,</p>
+<md>
+\begin{aligned}
+1 &amp;= \|F_x-F_y\|_\infty\\
+    &amp;\leq \|F_x -s_x\|_\infty + \|s_x - F_y\|_\infty \\
+    &amp;&lt; \frac{1}{2} + \|s_x - F_y\|_\infty.
+\end{aligned}
+</md>
+<p>Thus, when <m>x \neq y</m>, <m>\|s_x-F_y\|&gt;\frac{1}{2}.</m>
+    In, particular, if <m>x\neq y</m> then <m>s_x \neq s_y.</m>
+    Hence, the collection <m>\{s_x\}_{x\in[0,1]}</m> is uncountable.
+    Therefore, <m>S</m> is uncountable, and hence <m>L^\infty([0,1],m)</m> is not separable.</p>
+<p>The proof that <m>\ell^\infty</m> is not separable is similar.
+    We will outline the details.
+    Let <m>F</m> be the collection of all sequences in of zeros and ones.
+    Note that this is an uncountable collection.
+    Indeed, if we can identify the binary expansion of any <m>x \in [0,1)</m> with a sequence in <m>F</m>, and hence <m>F</m> and <m>[0,1)</m> have the same cardinality.
+    Further, if <m>a,b\in F</m> and <m>a\neq b</m>, then <m>a-b</m> is a sequence  of <m>-1,0</m> and <m>1</m> with at least one non-zero term. 
+    Thus, <m>\|a-b\|_\infty=1</m>.
+    Using <m>F</m> in the role that <m>\{F_x\}_{x\in[0,1]}</m> played in <m>L^\infty([0,1],m)</m>, we can show that any dense set in <m>\ell^\infty</m> has to be uncountable.
+    Hence <m>\ell^\infty</m> is not separable.</p>
+</proof>
+</section>
+<exercises>
+<exercise xml:id="exer-Cauchy-Schwarz-Rn">
+<p><idx><h>Cauchy-Schwarz inequality</h><h>in <m>\mathbb{R}^n</m></h></idx>
+Let <m>u = (u_1,\ldots,u_n)</m> and <m>v = (v_1,\ldots,v_n)</m> be two vectors in <m>\mathbb{R}^n</m>, and let <m>p</m> be the polynomial</p>
+<md> p(x) = \left(\sum_{i=1}^n u_i^2\right)x^2 + 2 \sum_{i=1}^n u_iv_i x +    \sum_{i=1}^n v_i^2.</md>
+<ol>
+<li><p>Show that <m>p(x)\geq 0</m> for all <m>x \in \mathbb{R}</m>.(Hint: write <m>p(x)</m> as a sum of <m>n</m> squares).</p>
+</li>
+<li><p>Use (i) to prove the Cauchy-Schwarz inequality. 
+That is, show that, 
+<md> \left(\sum_{i=1}^n u_iv_i \right)^2 \leq \left(\sum_{i=1}^n u_i^2\right)^2\left(\sum_{i=1}^n v_i^2\right)^2.</md>
+<p><idx><h>Cauchy-Schwarz inequality</h><h>in <m>\mathbb{R}^n</m></h></idx> (Hint: What does (i) tell us about the descriminant of <m>p</m>?)</p>
+</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-2-norm">
+<p>Show that the <m>2</m>-norm <m>\|v\|_2 = \sqrt{\sum_{i=1}^n v_i^2}</m>, defined in Example <xref ref="ex-2-norm-on-Rn"/>, defines a norm on <m>\mathbb{R}^n</m>.
+(HINT: Use Exercise <xref ref="exer-Cauchy-Schwarz-Rn"/> for the triangle inequality).</p>
+</exercise>
+<exercise xml:id="exer-Cauchy-in-Rn">
+<p>Equip <m>\mathbb{R}^n</m> with the <m>2</m>-norm.
+Let <m>(v_k)_k</m> be a sequence in <m>\mathbb{R}^n</m>, with each</p>
+<md> v_k = (v_k^1,v_k^2,\ldots,v_k^n).</md>
+<p>Show that sequence <m>(v_k)_k</m> is a Cauchy sequence in <m>\mathbb{R}^n</m>, if and only if <m>(v_k^i)_k</m> is a Cauchy sequence in <m>\mathbb{R}</m> for <m>1\leq i \leq n</m>.</p>
+</exercise>
+<exercise xml:id="exer-Rn-Banach">
+<p>Show that <m>\mathbb{R}^n</m> with the <m>2</m>-norm is a Banach space.
+(Hint: Consider Exercise <xref ref="exer-Cauchy-in-Rn"/>).</p>
+</exercise>
+<exercise xml:id="exer-Cb-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval
+and let <m>C_b(I)</m> be the collection of all continuous real-valued bounded functions on <m>I</m>.
+For <m>f \in C_b(I)</m> let <m>\|f\|_\infty</m> be the <m>\sup</m>-norm</p>
+<md> \|f\|_\infty = \sup_{x\in I}|f(x)|.</md>
+<ol>
+<li><p>Show that <m>C_b(I)</m> with <m>\|\cdot\|_\infty</m> is a normed vector space.</p>
+</li>
+<li><p>Let <m>(f_n)_n</m> be a sequence in <m>C_b(I)</m> and let <m>f \in C_n(I)</m>.
+    Show that <m>(f_n)_n</m> converges to <m>f</m> with respect to the <m>\sup</m>-norm if and only if <m>(f_n)_n</m> converges uniformly to <m>f</m>.</p>
+</li>
+<li><p>Show that <m>C_b(I)</m> is a Banach space.</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-C0-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval
+and let <m>C_0(I)</m> be the collection of all continuous real-valued  functions on <m>I</m> which vanish at infinity.</p>
+<ol>
+<li><p>Show that <m>C_0(I)</m> is a vector subspace of <m>C_b(I)</m>.</p>
+</li>
+<li><p>Show that <m>C_0(I)</m> is a Banach space with the <m>\sup</m>-norm.</p>
+</li>
+</ol>
+</exercise>
+<exercise>
+<p>Let <m>f</m> be a continuous function on <m>\mathbb{R}</m>.
+    Show that <m>f</m> vanishes at infinity, i.e. <m>f \in C_0(\mathbb{R})</m>, if and only if</p>
+<md> \lim_{x\rightarrow \infty}f(x) = \lim_{x\rightarrow -\infty}f(x)=0. </md>
+<p>Let <m>g</m> be a continuous function on an open interval <m>(a,b)</m>.
+    Show that <m>g</m> vanishes at infinity, i.e. <m>g \in C_0((a,b))</m>, if and only if</p>
+<md> \lim_{x\rightarrow b^-}g(x) = \lim_{x\rightarrow a^-}g(x)=0. </md>
+</exercise>
+<exercise xml:id="exer-norm-equiv">
+<p>Prove Proposition <xref ref="prop-norm-equiv"/>: 
+    Let <m>V</m> be a real vector space, and let <m>\|\cdot\|_1</m> and <m>\|\cdot\|_2</m> be two norms on <m>V</m>.
+    The norm <m>\|\cdot\|_2</m> is equivalent to  <m>\|\cdot\|_2</m> if and only if the norm <m>\|\cdot\|_2</m> is equivalent to  <m>\|\cdot\|_1</m></p>
+</exercise>
+<exercise xml:id="exer-Cc-not-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval
+and let <m>C_c(I)</m> be the collection of all continuous real-valued  compactly supported functions on <m>I</m>.</p>
+<ol>
+<li><p>Show that <m>C_c(I)</m> is a vector subspace of <m>C_0(I)</m>.</p>
+</li>
+<li><p>Show that <m>C_c(\mathbb{R})</m> is not a Banach space.</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-Cc-Banach">
+<p>Let <m>I \subseteq \mathbb{R}</m> be an interval
+and let <m>C_c(I)</m> be the collection of all continuous real-valued  compactly supported functions on <m>I</m>.</p>
+<p>Show that <m>C_c(I)</m> is a Banach space if and only if <m>I</m> is a closed bounded interval, in which case</p>
+<md> C_c(I) = C_0(I) = C_b(I).</md>
+</exercise>
+<exercise xml:id="exer-ae-vec-space">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a vector space, let <m>\mathcal{F}</m> be the collection of all finite a.e. measurable functions on <m>X</m>, and define the equivalence relation <m>\sim</m> on <m>\mathcal{F}</m> by <m>f\sim g</m> if and only if <m>f=g</m> a.e.</p>
+<p>Show that the vector space operations on <m>\mathcal{F}/\sim</m> are well-defined.
+That is, show that if <m>f_1,f_2,g_1,g_2 \in \mathcal{F}</m> with <m>f_1\sim f_2</m> and <m>g_1 \sim g_2</m> then <m>(f_1 + g_1) \sim (f_2 + g_2)</m>; and if <m>f_1\sim f_2</m> and <m>\alpha \in \mathbb{R}</m>, then <m>\alpha f_1 \sim \alpha f_2</m>.</p>
+</exercise>
+<exercise xml:id="exer-Linf-vector-space">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+    Let <m>f</m> and <m>g</m> be essentially bounded measurable functions on <m>X</m>.
+    Show that if <m>\alpha \in \mathbb{R}</m>, then <m>\alpha f</m> is essentially bounded.
+    Show that <m>f+g</m> is essentially bounded.</p>
+</exercise>
+<exercise xml:id="exer-exp-convex">
+<p>The proof of Young's inequality, Lemma <xref ref="lem-youngs"/>, relies on the fact that <m>f(x) = e^x</m> is a convex function.
+    This will be proved in this exercise.
+    Take <m>u,v \in \mathbb{R}</m>.</p>
+<ol>
+<li><p>Assume that <m>u \leq v</m>. 
+    Show that 
+    <md> e^v \geq e^u + e^u(v-u).</md>
+<p>(HINT: First use the Mean Value Theorem to show that there is a <m>w</m> with <m>u\leq w \leq v</m> such that <m>e^v=e^u +e^w(v-u)</m>).</p>
+</p>
+</li>
+<li><p>Assume that <m>u \geq v</m>. Show that
+    <md> e^v \geq e^u + e^u(v-u). </md>
+</p>
+</li>
+<li><p>Take <m>\lambda \in[0,1]</m> and let <m>w = (1-\lambda)  u + \lambda v</m>.
+    Note that, by (i) and (ii),
+    <md>
+\begin{aligned}
+e^u &amp;\geq e^w + e^w(u-w) \\
+        e^v &amp;\geq e^w + e^w(v-w).
+\end{aligned}
+</md>
+<p>Use these inequalities to show that</p>
+<md> (1-\lambda)e^u + \lambda e^v \geq e^w.</md>
+<p>That is, show that <m>e^x</m> is a convex function.<idx><h>convex function</h></idx></p>
+</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-Cauchy-Schwarz">
+<p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space and take <m>f,g \in L^2(X,\mu)</m>.</p>
+<ol>
+<li><p>Show that
+    <md> fg = \frac{1}{2}[(f+g)^2 - f^2 - g^2].</md>
+<p>What can we conclude about <m>fg</m>? (i.e. is <m>fg</m> in some <m>L^p</m>-space?)</p>
+</p>
+</li>
+<li><p>Use the polynomial
+    <md> \lambda^2 \int_X |f|^2\,d\mu + 2\lambda \int_X fg \,d\mu + \int_X |g|^2\,d\mu</md>
+<p>to prove the Cauchy-Schwarz inequality (Theorem <xref ref="thm-CS-ineq"/>). I.e., prove</p>
+<md> \left| \int_X fg\,d \mu \right| \leq \int_X |f|^2\,d\mu \int_X |g|^2\,d\mu.</md>
+</p>
+</li>
+<li><p>Show that the map <m>\langle \cdot,\cdot\rangle  \colon L^2(X,\mu) \times L^2(X,\mu) \rightarrow \mathbb{R}</m> given by
+    <md> \langle f,g\rangle  = \int_X fg \,d\mu</md>
+<p>defines an inner-product on <m>L^2(X,\mu)</m> such that <m>\|f\|_2 = \langle f,f\rangle ^{1/2}</m> for all <m>f \in L^2(X,\mu)</m>.</p>
+</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-lp-not-separable">
+<p>Let <m>A</m> be an uncountable set, and let <m>1\leq p &lt;\infty</m>.
+Show that <m>\ell^p(A)</m> is not separable.</p>
+</exercise>
+</exercises>
+</chapter>
