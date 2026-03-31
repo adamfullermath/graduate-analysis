@@ -78,7 +78,7 @@ For <m>x\in X</m>, the <em>equivalence class</em> of <m>x</m> is
 <p>Note that cardinality forms an equivalence relation on sets.</p>
 <p>A set <m>A</m> is called <em>countable</em> if <m>A</m> is finite, or if <m>A</m> has the same cardinality as the natural numbers <m>\mathbb{N}</m>. In the latter case we call <m>A</m> <em>countably infinite</em>.</p>
 <p>If a set is not countable, we say it is <em>uncountable</em>. There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that <m>\mathcal{P}(X)</m> has a larger cardinality than <m>X</m>, for any set <m>X</m>. However, we will primarily be concerned with whether a set is countable or not.</p>
-<p>\begin{egs}</p>
+<example>
 <ol>
 <li><p><m>\mathbb{N}</m>, <m>\mathbb{Z}</m> and <m>\mathbb{Q}</m> are all countable (see Section 1.3, Corollary 4 of <xref ref="Roy"/>).</p>
 </li>
@@ -90,7 +90,7 @@ For <m>x\in X</m>, the <em>equivalence class</em> of <m>x</m> is
 In fact, they have the same cardinality as <m>\mathbb{R}</m> and <m>\mathbb{C}</m> (see Section 1.3, Theorem 7 of <xref ref="Roy"/>).</p>
 </li>
 </ol>
-<p>\end{egs}</p>
+</example>
 </section>
 <section>
 <title>Axiom of Choice</title>

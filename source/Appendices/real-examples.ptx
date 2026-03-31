@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="appendix-real-examples">
+<appendix xml:id="appendix-real-examples">
 <title>Interesting examples of real valued functions</title>
 <introduction>
 
 
 
-We present here several examples of continuous functions and their derivatives.
+<p>We present here several examples of continuous functions and their derivatives.
 We will see over the course of this section that there are continuous functions which are not differentiable anywhere (\ref{sec: nowhere diff}), even if a continuous function is differentiable at a point <m>x_0</m>, it may not be differentiable on all points near <m>x_0</m> (\ref{sec: diff ae}); and even if a function is differentiable everywhere, with a bounded derivative, the derivative may not be Riemann integrable (\ref{sec: diff bounded}).
 We include some examples from the late 19th century and early 20th century. 
-These examples played an important role in motivating the development of measure theory in the early 20th century.
+These examples played an important role in motivating the development of measure theory in the early 20th century.</p>
 
 
 </introduction>
@@ -211,7 +211,7 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <subsection>
 <title>A function that is not differentiable on a prescribed set</title>
 <p><xref ref="cor-f-integrable" text="Corollary"/> tells us that if <m>f</m> is continuous of bounded variation then <m>f'</m> is defined almost everywhere. We will now show that given <m>E \subseteq \mathbb{R}</m> with <m>m(E) = 0</m>, there is a continuous function <m>f</m> of bounded variation which is not differentiable at any point in <m>E</m>, but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book <xref ref="RieszNagyFA"/>.</p>
-<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>E \subseteq [a,b]</m> be a set with Lebesgue measure <m>0</m>. By <xref ref="exer-meas-0" text="Exercise"/>, there is a countable family of open intervals <m>\{(c_k,d_k)\}_{k=1}^\infty</m> in <m>\mathbb{R}</m> such that, for each <m>x \in E</m> there is an infinite subsequence <m>(k_n)</m> of natural numbers such that <m>x \in (c_{k_n},d_{k_n})</m> for each <m>k_n</m> and</p>
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>E \subseteq [a,b]</m> be a set with Lebesgue measure <m>0</m>. By EXERCISE, there is a countable family of open intervals <m>\{(c_k,d_k)\}_{k=1}^\infty</m> in <m>\mathbb{R}</m> such that, for each <m>x \in E</m> there is an infinite subsequence <m>(k_n)</m> of natural numbers such that <m>x \in (c_{k_n},d_{k_n})</m> for each <m>k_n</m> and</p>
 <md> \sum_{k_n} (d_{k_n} - c_{k_n}) &lt;\infty.</md>
 <p>Fix such a collection <m>\{(c_k,d_k)\}_k</m> and define a function <m>f</m> on <m>[a,b]</m> by</p>
 <md> f(x) = \sum_{k=1}^\infty \ell((c_k,d_k) \cap (-\infty, x)),</md>
@@ -298,4 +298,4 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <p>Note that since <m>V</m> is continuous and <m>V'</m> is bounded, <m>V</m> is absolutely continuous by <xref ref="exer-bounded-derivative-abs-cont" text="Exercise"/>. Hence <m>V'</m> is Lebesgue integrable. However, since the set of discontinuities of <m>V'</m> has Lebesuge measure <m>m(A) = 1/2  &gt; 0</m>, it follows from <xref ref="thm-Riemann-int" text="Theorem"/> that <m>V'</m> is not Riemann integrable.</p>
 </subsection>
 </section>
-</chapter>
+</appendix>
