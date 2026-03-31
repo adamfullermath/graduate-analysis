@@ -3,10 +3,11 @@
 <title>Why study measure theory?</title>
 <introduction>
 
-<epigraph>
+<blockquote>
 <p><em>``The uncertainty that still exists in some fundamental points of the theory of definite integrals compels us to say something in advance about the concept of a definite integral and the scope of its validity."</em></p>
-<p><source>Bernhard Riemann</source></p>
-</epigraph>
+<attribution>Bernhard Riemann</attribution>
+</blockquote>
+
 <p>The prerequisites to this course include two semesters of real analysis (or advanced calculus, if you will). You may wonder what else there is to know? In this section we highlight some questions which have been left unanswered by earlier analysis classes; discuss some shortcomings of previously developed tools; and point to some directions beyond single variable real analysis.</p>
 </introduction>
 <section xml:id="sec-intro-ftoc">

@@ -6,6 +6,7 @@
 <p><em>``I take the bills and coins out of my pocket and give them to the creditor in the order I find them until I have reached the total sum. This is the Riemann integral. But I can proceed differently. After I have taken all the money out of my pocket I order the bills and coins according to identical values and then I pay the several heaps one after the other to the creditor. This is my integral."</em></p>
 <p><source>Henri Lebesgue</source></p>
 </epigraph>
+
 <p>In this chapter we will define integrals of measurable functions and prove main key theorems on integration. We will play particular attention to integration of functions on the real line (with respect to Lebesgue measure) and integration of functions on closed intervals <m>[a,b] \subseteq \mathbb{R}</m> with respect to Borel measures.</p>
 <p>We will define integration in various settings: first for simple functions; then non-negative measurable functions; and finally for more general measurable functions.</p>
 </introduction>

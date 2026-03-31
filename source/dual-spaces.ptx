@@ -6,6 +6,7 @@
 <p><em>``Duality is an important general theme that has manifestations in almost every area of mathematic."</em></p>
 <p><source>Timothy Gowers</source></p>
 </epigraph>
+
 <p>Let <m>V</m> be a normed vector space. Let <m>V^*</m> be all continuous linear maps from <m>V</m> to <m>\mathbb{R}</m>. The space <m>V^*</m> is a key tool in studying <m>V</m>. In this chapter we will study the duals of <m>L^p</m>-spaces; the dual of the space of continuous functions on a closed interval; and the dual of the space of continuous functions on a compact Hausdorff space.</p>
 </introduction>
 <section>
@@ -63,7 +64,7 @@
 <md> \|\varphi\|_{\mathrm{op}} = \sup\{|\varphi(v)| \colon \|v\|=1\}.</md>
 <p>We call <m>\|\cdot\|_{\mathrm{op}}</m> the <em>operator norm</em> on <m>V^*</m>. <idx><h>operator norm</h></idx></p>
 </definition>
-<p>It is relatively straightforward to show that the operator norm is indeed a norm on <m>V^*</m>. We leave the details as an exericse, Exercise <xref ref="exer-operator-norm"/></p>
+<p>It is relatively straightforward to show that the operator norm is indeed a norm on <m>V^*</m>. We leave the details as an exericse, <ref ref="exer: operator norm" text="Exercise"/></p>
 <proposition xml:id="prop-operator-norm">
 <p>Let <m>V</m> be a normed vector space and let <m>\|\cdot\|_{\mathrm{op}}</m> be the operator norm on the dual <m>V^*</m>.
     Then <m>\|\cdot\|_{\mathrm{op}}</m> is a  norm on <m>V^*</m>.</p>
@@ -85,7 +86,7 @@
 <md> T_g(f) = \int_X gf\, d\mu.</md>
 <p>When <m>p&gt;1</m>, that <m>gf</m> is integrable follows from Hölders inequality; when <m>p=1</m>, <m>g \in L^{\infty}(X,\mu)</m> and so <m>gf</m> is integrable. The linearity of <m>T_g</m> then follows from the linearity of integration. Further,</p>
 <md> |T_g(f)| \leq \|g\|_q\|f\|_p</md>
-<p>for all <m>f \in L^p(X,\mu)</m>, and so <m>T_g</m> is continuous by Proposition <xref ref="prop-bounded-cont"/>. Thus the map <m>g \mapsto T_g</m> defines a map from <m>L^q(X,\mu)</m> to <m>(L^p(X,\mu))^*</m>.</p>
+<p>for all <m>f \in L^p(X,\mu)</m>, and so <m>T_g</m> is continuous by <ref ref="prop: bounded = cont" text="Proposition"/>. Thus the map <m>g \mapsto T_g</m> defines a map from <m>L^q(X,\mu)</m> to <m>(L^p(X,\mu))^*</m>.</p>
 <lemma xml:id="lem-holder-for-dual">
 <p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, fix <m>p</m> with <m>1&lt; p&lt;\infty</m> and let <m>q</m> be conjugate to <m>p</m>.
 The map</p>
@@ -104,7 +105,7 @@ T \colon &amp; L^q(X,\mu) \rightarrow (L^p(X,\mu))^* \\
 <md> |T_g(f)| \leq \|g\|_q\|f\|_p</md>
 <p>for all <m>f \in L^p(X,\mu).</m>
     Hence <m>\|T_\mathrm{op}\| \leq \|g\|_q.</m>
-    By Corollary <xref ref="cor-holder-cor"/>, there is an <m>f \in L^p(X,\mu)</m> with <m>\|f\|_p=1</m> such that</p>
+    By <ref ref="cor: holder cor" text="Corollary"/>, there is an <m>f \in L^p(X,\mu)</m> with <m>\|f\|_p=1</m> such that</p>
 <md> T_g(f) = \|g\|_q,</md>
 <p>and hence <m>\|T_g\|_\mathrm{op}=\|g\|_q.</m></p>
 </proof>
@@ -164,7 +165,7 @@ T \colon &amp; L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^* \\
     Thus, <m>g_n \in L^q(X,\mu)</m>.
     For each <m>n</m>, let <m>f_n</m> be the function</p>
 <md> f_n = \|g_n\|_q^{1-q}\operatorname{sgn}(g_n)|g_n|^{q-1}.</md>
-<p>As in the proof of Corollary <xref ref="cor-holder-cor"/>, <m>\|f_n\|_p = 1.</m>
+<p>As in the proof of <ref ref="cor: holder cor" text="Corollary"/>, <m>\|f_n\|_p = 1.</m>
     Now, by Fatou's Lemma, we have</p>
 <md>
 \begin{aligned}
@@ -178,7 +179,7 @@ T \colon &amp; L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^* \\
 <p>Thus <m>g \in L^q(X,\mu)</m> and <m>\|g\|_q \leq M.</m>
     By Hölder's inequality, <m>M \leq \|g\|_q</m>, and so <m>\|g\|_q = M.</m></p>
 <p>Suppose now that <m>p=1</m> and <m>q = \infty</m>.
-    We proceed in a way similar to the proof of Lemma <xref ref="lem-holder-for-dual-p-1"/>.
+    We proceed in a way similar to the proof of <ref ref="lem: holder for dual p=1" text="Lemma"/>.
     Fix <m>\varepsilon&gt;0</m> and let</p>
 <md> A = \{x \colon |g(x)| \geq M + \varepsilon \}.</md>
 <p>If <m>\mu(A)&gt;0</m>, then since <m>\{x \in X \colon g(x) \neq 0 \}</m> is <m>\sigma</m>-finite, there exists measurable <m>B \subseteq A</m> such that</p>
@@ -215,7 +216,7 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
 </theorem>
 <proof>
 <p>Let <m>p</m> and <m>q</m> be conjugate with <m>1&lt;p,q&lt;\infty</m>.
-    That <m>T</m> is a linear isometric map is shown in Lemma <xref ref="lem-holder-for-dual"/>.
+    That <m>T</m> is a linear isometric map is shown in <ref ref="lem: holder for dual" text="Lemma"/>.
     It remains to show that <m>T</m> is a surjective.
     In the proof we will first assume <m>(X,\mathcal{M},\mu)</m> is a finite measure space; then a <m>\sigma</m>-finite measure space; finally we will just assume that <m>(X,\mathcal{M},\mu)</m> is a measure space.</p>
 <p>Assume <m>(X,\mathcal{M},\mu)</m> is a finite measure space, and take <m>\varphi \in (L^p(X,\mu))^*.</m>
@@ -239,7 +240,7 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
 </md>
 <p>We have shown that <m>\nu</m> is a signed-measure on <m>(X,\mathcal{M}).</m>
     Clearly <m>\nu \ll \mu</m>.
-    By the Radon-Nikodym Theorem for signed-measures, Corollary <xref ref="cor-signed-Radon-Nikodym"/>, there is a integrable function <m>g</m> on <m>X</m> such that</p>
+    By the Radon-Nikodym Theorem for signed-measures, <ref ref="cor: signed Radon-Nikodym" text="Corollary"/>, there is a integrable function <m>g</m> on <m>X</m> such that</p>
 <md> \nu(E) = \int_E g \,d\mu = \varphi(\chi_E)</md>
 <p>for all <m>E \in \mathcal{M}</m>.
     By the linearity of integration, if <m>f \in L^p(X,\mu)</m> is a simple function, then</p>
@@ -247,8 +248,8 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
 <p>Thus</p>
 <md>
     \sup \left\{\left|\int_X gf \,d\mu \right| \colon f \in L^p(X,\mu) \text{ simple, and }\|f\|_p=1\right\}\leq \|\varphi\|_\mathrm{op}.</md>
-<p>Hence, by Lemma <xref ref="lem-functional-in-Lq"/>, <m>g \in L^q(X,\mu).</m>
-    As <m>T_g(f) = \varphi(f)</m> for all simple functions <m>f \in L^p(X,\mu)</m>, it follows from Proposition <xref ref="prop-simple-dense"/>, that <m>\varphi = T_g.</m>
+<p>Hence, by <ref ref="lem: functional in Lq" text="Lemma"/>, <m>g \in L^q(X,\mu).</m>
+    As <m>T_g(f) = \varphi(f)</m> for all simple functions <m>f \in L^p(X,\mu)</m>, it follows from <ref ref="prop: simple dense" text="Proposition"/>, that <m>\varphi = T_g.</m>
     Thus <m>T</m> is surjective.</p>
 <p>Assume now that <m>(X,\mathcal{M},\mu)</m> is <m>\sigma</m>-finite.
     Let <m>\{E_n\}_n</m> be an increasing sequence of finite measure sets, such that <m>X = \bigcup_{n=1}^\infty E_n.</m>
@@ -257,7 +258,7 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
     Since <m>\mu(E_n)&lt;\infty</m>, the above arguments shows that for each <m>n</m> there is a <m>g_n \in L^q(E_n,\mu)</m> such that</p>
 <md>\varphi|_{L^q(E_n,\mu)} = T_{g_n}.</md>
 <p>Thus, <m>\|g_n\|_q \leq \|\varphi\|_{\mathrm{op}}</m> for all <m>n</m>.</p>
-<p>By the uniqueness of the Radon-Nikodym derivative in Corollary <xref ref="cor-signed-Radon-Nikodym"/>, if <m>n\geq m</m> then <m>g_n|_{E_m} = g_m</m> almost everywhere.
+<p>By the uniqueness of the Radon-Nikodym derivative in <ref ref="cor: signed Radon-Nikodym" text="Corollary"/>, if <m>n\geq m</m> then <m>g_n|_{E_m} = g_m</m> almost everywhere.
     Thus, as elements of <m>L^q(X,\mu)</m> we have <m>g_n|_{E_m} = g_m</m> when <m>n \geq m.</m>
     We can thus define a function <m>g</m> almost everywhere by</p>
 <md> g(x) = g_n(x) \text{ if } n \in E_n.</md>
@@ -296,7 +297,7 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
     Then</p>
 <md> \int_X |g_A|^q\,d\mu = \int_X |g_F|^q\,d\mu + \int_X |g|^q_{A\backslash F}\,d\mu \leq M^q = \int_X |g_F|^q.</md>
 <p>Thus <m>\|g_{A\backslash F}\|_q = 0,</m> and so  <m>g_A = g_F</m> almost everywhere.
-    If <m>f \in L^p(X,\mu)</m>, then by Theorem <xref ref="thm-f-integrable"/>, the set</p>
+    If <m>f \in L^p(X,\mu)</m>, then by <ref ref="thm: f integrable" text="Theorem"/>, the set</p>
 <md> B = \{x \in X \colon f(x) \neq 0\}</md>
 <p>is <m>\sigma</m>-finite.
     Thus, the set <m>A = B \cup F</m> is <m>\sigma</m>-finite, and</p>
@@ -308,34 +309,34 @@ T \colon &amp;L^\infty(X,\mu) \rightarrow (L^1(X,\mu))^*\\
 </md>
 <p>Hence <m>\varphi = T_g</m>, completing the proof for <m>1&lt;p&lt;\infty.</m></p>
 <p>When <m>p=1</m> and <m>q = \infty</m> the proof follows a similar vein of reasoning (when we assume <m>(X,\mathcal{M},\mu)</m> is <m>\sigma</m>-finite).
-    The details are left as an exercise, Exericse <xref ref="exer-riesz-rep-p-1"/>.</p>
+    The details are left as an exercise, Exericse~\ref{exer: riesz rep p=1}.</p>
 </proof>
 <remark>
-<p>Theorem <xref ref="thm-riesz-rep-Lp"/> shows that in order for the dual of <m>L^1(X,\mu)</m> to be (isometrically isomorphic to) <m>L^\infty(X,\mu)</m>, it is sufficient that <m>\mu</m> be <m>\sigma</m>-finite.
+<p><ref ref="thm: riesz rep Lp" text="Theorem"/> shows that in order for the dual of <m>L^1(X,\mu)</m> to be (isometrically isomorphic to) <m>L^\infty(X,\mu)</m>, it is sufficient that <m>\mu</m> be <m>\sigma</m>-finite.
 	But is it necessary that <m>\mu</m> is <m>\sigma</m>-finite?
-	The proof relies on two key steps: first we show in Lemma <xref ref="lem-holder-for-dual-p-1"/>, that if <m>\mu</m> is <m>\sigma</m>-finite, then the map <m>g \mapsto T_g</m> is a norm preserving map from <m>L^\infty(X,\mu)</m> to <m>(L^1(X,\mu))^*</m>; then in Theorem <xref ref="thm-riesz-rep-Lp"/> we show that the map is surjective.</p>
-<p>You will notice, that the proof of Lemma <xref ref="lem-holder-for-dual-p-1"/> does not fully rely on the fact that <m>\mu</m> is <m>\sigma</m>-finite. 
+	The proof relies on two key steps: first we show in <ref ref="lem: holder for dual p=1" text="Lemma"/>, that if <m>\mu</m> is <m>\sigma</m>-finite, then the map <m>g \mapsto T_g</m> is a norm preserving map from <m>L^\infty(X,\mu)</m> to <m>(L^1(X,\mu))^*</m>; then in <ref ref="thm: riesz rep Lp" text="Theorem"/> we show that the map is surjective.</p>
+<p>You will notice, that the proof of <ref ref="lem: holder for dual p=1" text="Lemma"/> does not fully rely on the fact that <m>\mu</m> is <m>\sigma</m>-finite. 
 	Indeed, the property we use is that if <m>\mu(A)&gt;0</m>, then there is a <m>B \subseteq A</m> with <m>0&lt;\mu(B)&lt;\infty</m>.
 	Measure spaces with this property are called <em>semi-finite</em><idx><h>measure space</h><h>semi-finite</h></idx>.
 	Whilst all <m>\sigma</m>-finite measure spaces are semi-finite, not all semi-finite measure spaces are <m>\sigma</m>-finite.
 	E.g., if <m>X</m> is an uncountable set and <m>c</m> is the counting measure on all the subsets of <m>X</m>, then <m>(X,P(X),c)</m> is semi-finite but not <m>\sigma</m>-finite.</p>
-<p>The proof of surjectivity in Theorem <xref ref="thm-riesz-rep-Lp"/> also does not tell the whole story.
+<p>The proof of surjectivity in <ref ref="thm: riesz rep Lp" text="Theorem"/> also does not tell the whole story.
 	In order for the map <m>g \mapsto T_g</m> to be surjective, a necessary and sufficient condition is that the measure space is <em>localizable</em>.
 	Other than to say that being localizable is a stronger condition than being semi-finite, but a weaker condition than being <m>\sigma</m>-finite, we will say no more on the topic. 
 	We refer the interested reader to the treatise of Fremlin <xref ref="Fremlin"/>.</p>
-<p>In lieu of a more in-depth discussion on the dual of <m>L^1(X,\mu)</m> when <m>\mu</m> is not <m>\sigma</m>-finite, we refer the reader to Exercise <xref ref="exer-yes-dual"/> and Exercise <xref ref="exer-not-dual"/>.
-	In Exercise <xref ref="exer-yes-dual"/>, an example is given of a measure space which is not <m>\sigma</m>-finite, but the dual of <m>L^1(X,\mu)</m> is <m>L^\infty(X,\mu)</m>.
-	In Exercise <xref ref="exer-not-dual"/>, an example is given where the dual of <m>L^1(X,\mu)</m> is not <m>L^\infty(X,\mu)</m>.</p>
+<p>In lieu of a more in-depth discussion on the dual of <m>L^1(X,\mu)</m> when <m>\mu</m> is not <m>\sigma</m>-finite, we refer the reader to <ref ref="exer: yes dual" text="Exercise"/> and <ref ref="exer: not dual" text="Exercise"/>.
+	In <ref ref="exer: yes dual" text="Exercise"/>, an example is given of a measure space which is not <m>\sigma</m>-finite, but the dual of <m>L^1(X,\mu)</m> is <m>L^\infty(X,\mu)</m>.
+	In <ref ref="exer: not dual" text="Exercise"/>, an example is given where the dual of <m>L^1(X,\mu)</m> is not <m>L^\infty(X,\mu)</m>.</p>
 </remark>
 <subsection>
 <title>The dual of <m>\ell^\infty</m></title>
-<p>Notably absent from our discussions so far is the dual of <m>L^\infty(X,\mu)</m>. The dual of <m>L^\infty(X,\mu)</m> can be described, but the description is not as neat as for the dual of <m>L^p(X,\mu)</m> when <m>1&lt;p&lt;\infty</m>. In this subsection we will briefly discuss the dual of <m>\ell^\infty</m>. We leave the general theory of the dual of <m>L^\infty(X,\mu)</m> to a series of exercises: Exercise <xref ref="exer-norm-on-bfa"/>, Exercise <xref ref="exer-bfa-integral"/>, and Exercise <xref ref="exer-kantor"/>.</p>
+<p>Notably absent from our discussions so far is the dual of <m>L^\infty(X,\mu)</m>. The dual of <m>L^\infty(X,\mu)</m> can be described, but the description is not as neat as for the dual of <m>L^p(X,\mu)</m> when <m>1&lt;p&lt;\infty</m>. In this subsection we will briefly discuss the dual of <m>\ell^\infty</m>. We leave the general theory of the dual of <m>L^\infty(X,\mu)</m> to a series of exercises: <ref ref="exer: norm on bfa" text="Exercise"/>, <ref ref="exer: bfa integral" text="Exercise"/>, and <ref ref="exer: kantor" text="Exercise"/>.</p>
 <example xml:id="ex-dual-of-linf">
 <p>Let <m>c_0</m> be the collection of all sequences of real numbers that converge to <m>0</m>.<idx><h sortby="c0">{<m>c_0</m>}</h></idx>
-In Exercise <xref ref="exer-c0"/> we establish that <m>c_0</m> is a separable Banach subspace for <m>\ell^\infty</m>.
+In <ref ref="exer: c0" text="Exercise"/> we establish that <m>c_0</m> is a separable Banach subspace for <m>\ell^\infty</m>.
 For <m>a = (a_n)_n \in \ell^1</m>, we define a linear functional <m>T_a</m> on <m>c_0</m> by</p>
 <md> T_a((b_n)_n) = \sum_{n=1}^\infty a_nb_n. </md>
-<p>Exercise <xref ref="exer-dual-of-c0"/> shows that the map</p>
+<p><ref ref="exer: dual of c0" text="Exercise"/> shows that the map</p>
 <md>
 \begin{aligned}
 T \colon &amp; \ell^1 \rightarrow (c_0)^* \\
@@ -344,10 +345,10 @@ T \colon &amp; \ell^1 \rightarrow (c_0)^* \\
 </md>
 <p>is an isometric bijection.
 That is, <m>(c_0)^* \simeq \ell^1</m>.</p>
-<p>In Exercise <xref ref="exer-dual-of-linf"/> we show that if <m>\varphi \in (\ell^\infty)^*</m> then there is an <m>a \in \ell^1</m> and a <m>\psi \in (\ell^\infty)^*</m> with <m>\psi(b) = 0</m> for all <m>b \in c_0</m> such that</p>
+<p>In <ref ref="exer: dual of linf" text="Exercise"/> we show that if <m>\varphi \in (\ell^\infty)^*</m> then there is an <m>a \in \ell^1</m> and a <m>\psi \in (\ell^\infty)^*</m> with <m>\psi(b) = 0</m> for all <m>b \in c_0</m> such that</p>
 <md> \varphi = T_a + \psi.</md>
 <p>It is reasonable to believe that there are non-zero elements <m>\psi \in (\ell^\infty)^*</m> with <m>\psi|_{c_0} = 0</m>.
-After all, <m>\ell^\infty</m> is a not separable by Theorem <xref ref="thm-linf-not-separable"/>, and <m>c_0</m> is a separable by Exercise <xref ref="exer-c0"/>.
+After all, <m>\ell^\infty</m> is a not separable by <ref ref="thm: linf not separable" text="Theorem"/>, and <m>c_0</m> is a separable by <ref ref="exer: c0" text="Exercise"/>.
 That <m>\ell^\infty</m> is larger than <m>c_0</m> suggests that <m>(\ell^\infty)^*</m> should be larger than <m>(c_0)^*</m>.
 Exhibiting <m>\psi</m> with this property is between difficult and impossible.
 However, with the Hahn-Banach theorem, a significant theorem in the field of Functional Analysis, one can show that such <m>\psi</m> exist.
@@ -363,22 +364,22 @@ For each <m>x \in \beta\mathbb{N}</m> we can define a linear functional <m>\phi_
 <md> \phi_x(f) = f(x). </md>
 <p>One can show that, if <m>x\neq y</m>, then <m>\|\phi_x - \phi_y\|_\mathrm{op} = 1.</m>
 The construction of <m>\beta\mathbb{N}</m> guarantees that <m>\beta\mathbb{N}</m> is uncountable.
-Using an argument similar to the proof of Theorem <xref ref="thm-linf-not-separable"/>, we can use the uncountable collection <m>\{\phi_x\}_{x\in\beta\mathbb{N}}</m> to show that <m>(\ell^\infty)^*</m> is not separable.</p>
-<p>In Example <xref ref="ex-dual-of-ell-inf"/> we give a full description of the dual of <m>\ell^\infty</m> using a class of signed measures on <m>\beta\mathbb{N}</m>.</p>
+Using an argument similar to the proof of <ref ref="thm: linf not separable" text="Theorem"/>, we can use the uncountable collection <m>\{\phi_x\}_{x\in\beta\mathbb{N}}</m> to show that <m>(\ell^\infty)^*</m> is not separable.</p>
+<p>In <ref ref="ex: dual of ell inf" text="Example"/> we give a full description of the dual of <m>\ell^\infty</m> using a class of signed measures on <m>\beta\mathbb{N}</m>.</p>
 </remark>
 <remark>
 <p>With functional analysis tools, we can say more.
 One can show that if <m>X</m> is a Banach space which is not separable, then the dual space <m>X^*</m> is also not separable.
 Proving that the dual of a non-separable space is non-separable relies on the Hahn-Banach theorem.<idx><h>Hahn-Banach theorem</h></idx></p>
 <p>Thus, since <m>\ell^\infty</m> is not separable, we cannot have that <m>\ell^1</m> is isomorphic to <m>(\ell^\infty)^*</m>.
-We also know that <m>L^\infty([0,1],m)</m> is not separable by Theorem <xref ref="thm-linf-not-separable"/>, and thus <m>(L^\infty([0,1],m)^*</m> is not separable.
-As <m>L^1([0,1],m)</m> is separable, by Theorem <xref ref="thm-Lp-separable"/>, we must have that <m>L^1([0,1],m)\not\simeq (L^\infty([0,1],m))^*.</m></p>
+We also know that <m>L^\infty([0,1],m)</m> is not separable by <ref ref="thm: linf not separable" text="Theorem"/>, and thus <m>(L^\infty([0,1],m)^*</m> is not separable.
+As <m>L^1([0,1],m)</m> is separable, by <ref ref="thm: Lp separable" text="Theorem"/>, we must have that <m>L^1([0,1],m)\not\simeq (L^\infty([0,1],m))^*.</m></p>
 </remark>
 </subsection>
 </section>
 <section>
 <title>Locally compact Hausdorff spaces</title>
-<p>As all continuous functions on <m>[a,b]</m> are necessarily bounded, <m>C([a,b])= C_b([a,b])</m> and <m>C([a,b])</m> is a Banach space with the <m>\sup</m>-norm, see Example <xref ref="ex-Cb-Banach"/>. In Section <xref ref="sec-RMK"/> we will describe the dual space of <m>C([a,b])</m>. We will do this by provingt the (more general) Riesz-Markov-Kakutani Theorem. We begin with some topological preliminaries.</p>
+<p>As all continuous functions on <m>[a,b]</m> are necessarily bounded, <m>C([a,b])= C_b([a,b])</m> and <m>C([a,b])</m> is a Banach space with the <m>\sup</m>-norm, see <ref ref="ex: Cb Banach" text="Example"/>. In Section~\ref{sec: RMK} we will describe the dual space of <m>C([a,b])</m>. We will do this by provingt the (more general) Riesz-Markov-Kakutani Theorem. We begin with some topological preliminaries.</p>
 <p>In this section we will review some topological facts. Most will be presented without proof. Details can be found in <xref ref="Folland"/> or <xref ref="Roy"/> (and umpteen more texts).</p>
 <p>Let <m>X</m> be a topological space. If <m>x \in X</m>, a set <m>A \subseteq X</m> is a <em>neighborhood of <m>x</m></em><idx><h>neighborhood</h></idx> if <m>x \in A</m>, and there is an open set <m>U \subseteq X</m> such that</p>
 <md> x \in U \subseteq A.</md>
@@ -436,7 +437,7 @@ As <m>L^1([0,1],m)</m> is separable, by Theorem <xref ref="thm-Lp-separable"/>, 
 <p>A function <m>f \in C(X)</m> is <em>compactly supported</em><idx><h>continuous function</h><h>compactly supported</h></idx>, or of <em>compact support</em>, if there is a compact set <m>K \subseteq X</m> such that</p>
 <md> \{x \in X \colon h(x) \neq 0\} \subseteq K. </md>
 <p>When <m>f</m> is compactly supported, we call the closure of <m>\{x \in X \colon h(x) \neq 0\}</m> in <m>X</m>, the <em>compact support of <m>f</m></em>. We denote by <m>C_c(X)</m> the space of all continuous compactly supported functions on <m>X</m>.</p>
-<p>These definitions are consistent with the definitions in Example <xref ref="ex-Cb-Banach"/>, Example <xref ref="ex-C0-Banach"/>, and Example <xref ref="ex-Cc-not-Banach"/>. We have that</p>
+<p>These definitions are consistent with the definitions in <ref ref="ex: Cb Banach" text="Example"/>, <ref ref="ex: C0 Banach" text="Example"/>, and <ref ref="ex: Cc not Banach" text="Example"/>. We have that</p>
 <md> C_c(X) \subseteq C_0(X) \subseteq C_c(X).</md>
 <p>Both <m>C_b(X)</m> and <m>C_0(X)</m> are Banach spaces with the <m>\sup</m>-norm. In general, <m>C_c(X)</m> is not a Banach space. The smallest Banach subspace of <m>C_b(X)</m> containing <m>C_c(X)</m> is <m>C_0(X)</m>. That is, <m>C_0(X)</m> is the closure of <m>C_c(X)</m>.</p>
 <p>When we work with the real line, we can often find continuous functions that take desired values on certain sets. We have, for example, does this with piecewise linear functions many times throughout these notes. When working with a more general topological space, it is not clear that we can always find these nice continuous functions. The following proposition shows that for locally compact Hausdorff spaces, we can, at times, find continuous functions to do what we want.</p>
@@ -486,12 +487,12 @@ As <m>L^1([0,1],m)</m> is separable, by Theorem <xref ref="thm-Lp-separable"/>, 
 </definition>
 <example>
 <p>Let <m>m</m> be the Lebesgue measure on the Borel subsets of <m>\mathbb{R}</m>.
-	By Theorem <xref ref="thm-Lebesgue-regular"/>, <m>m</m> is a Radon measure.</p>
+	By <ref ref="thm: Lebesgue regular" text="Theorem"/>, <m>m</m> is a Radon measure.</p>
 </example>
 <example>
 <p>Let <m>\mu</m> be a Borel measure on <m>\mathbb{R}</m>.
-	By Lemma <xref ref="lem-regular-borel"/>, <m>\mu</m> is outer regular on all Borel sets.
-	By Exercise <xref ref="exer-Borel-on-R-Radon"/>, <m>\mu</m> is inner regular on open subsets <m>U \subseteq \mathbb{R}</m>, and hence <m>\mu</m> is a Radon measure.</p>
+	By <ref ref="lem: regular borel" text="Lemma"/>, <m>\mu</m> is outer regular on all Borel sets.
+	By <ref ref="exer: Borel on R Radon" text="Exercise"/>, <m>\mu</m> is inner regular on open subsets <m>U \subseteq \mathbb{R}</m>, and hence <m>\mu</m> is a Radon measure.</p>
 </example>
 <example>
 <p>Let <m>X</m> be a locally compact Hausdorff space, let <m>x \in X</m> be any pointy, and let <m>\delta_x</m> be the Dirac measure at <m>x</m> on the Borel sets <m>\mathcal{B}(X)</m>.
@@ -518,7 +519,7 @@ As <m>L^1([0,1],m)</m> is separable, by Theorem <xref ref="thm-Lp-separable"/>, 
 <example xml:id="ex-radon-measure-to-functional">
 <p>Let <m>X</m> be a locally compact Hausdorff space with Borel sets <m>\mathcal{B}(X)</m>,
 	and let <m>\mu</m> be a finite Radon measure on <m>(X,\mathcal{B}(X))</m>.
-	By Corollary <xref ref="cor-Cont-are-meas"/>, every continuous real-valued function <m>f</m> on <m>X</m> is a measurable function on <m>(X,\mathcal{B}(X))</m>.
+	By <ref ref="cor: Cont are meas" text="Corollary"/>, every continuous real-valued function <m>f</m> on <m>X</m> is a measurable function on <m>(X,\mathcal{B}(X))</m>.
 	Since <m>\mu</m> is a finite measure, any bounded measurable function on <m>X</m> is integrable.
 	Thus, if <m>f \in C_0(X)</m>, then <m>f</m> is integrable.
 	Define a linear map from <m>C_0(X)</m> to <m>\mathbb{R}</m>, by</p>
@@ -538,14 +539,14 @@ As <m>L^1([0,1],m)</m> is separable, by Theorem <xref ref="thm-Lp-separable"/>, 
 <md>\|\phi_\mu\|_\mathrm{op} = \mu(X).</md>
 </example>
 <remark>
-<p>Note that Example <xref ref="ex-point-evaluation"/> is a special case of Example <xref ref="ex-radon-measure-to-functional"/>.
+<p>Note that <ref ref="ex: point evaluation" text="Example"/> is a special case of <ref ref="ex: radon measure to functional" text="Example"/>.
 	Indeed, if <m>x\in X</m>, and <m>\delta_x</m> is the Dirac measure at <m>x</m>, then</p>
 <md> \int_X f\,d\delta_x = f(x)</md>
-<p>by Exercise <xref ref="exer-dirac-integration"/>.</p>
+<p>by <ref ref="exer: dirac integration" text="Exercise"/>.</p>
 </remark>
 <p>Let <m>\nu</m> be a finite Radon signed measure on a locally compact space <m>X</m>. Let <m>\nu= \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>. Then both <m>\nu_+</m> and <m>\nu_-</m> are finite Radon measures. If <m>f</m> is a Borel measurable function on <m>X</m> which is integrable with respect to <m>|\nu|</m>, we can define the integral of <m>f</m> with respect to <m>\nu</m> by</p>
 <md> \int_X f\,d\nu = \int_X f\,d\nu_+ - \int_X f\,d\nu_-.</md>
-<p>We can use this to extend Example <xref ref="ex-radon-measure-to-functional"/>.</p>
+<p>We can use this to extend <ref ref="ex: radon measure to functional" text="Example"/>.</p>
 <example xml:id="ex-radon-signed-measure-to-functional">
 <p>Let <m>\nu</m> be a finite Radon signed measure on a locally compact Hausdorff space <m>X</m>.
 	For each <m>f \in C_0(X)</m> define <m>\phi_\nu</m> by</p>
@@ -559,17 +560,17 @@ Note that,</p>
 	&amp;= \int_X|f|\,d|\nu|,
 \end{aligned}
 </md>
-<p>where the last equality follows from Exercise <xref ref="ex-integration-sum-measures"/>.
+<p>where the last equality follows from <ref ref="ex: integration sum measures" text="Exercise"/>.
 Thus, for <m>f \in C_0(X)</m>,</p>
 <md>
 \begin{aligned}
 |\phi_\nu(f)| \leq |\phi_{|\nu|}(f)| \leq \|f\|_\infty |\nu|(X),
 \end{aligned}
 </md>
-<p>where the last inequality comes from Exercise <xref ref="ex-radon-measure-to-functional"/>.
+<p>where the last inequality comes from <ref ref="ex: radon measure to functional" text="Exercise"/>.
 	Hence <m>\phi_\nu \in C_0(X)^*</m>, with <m>\|\phi_\nu\|_\mathrm{op}\leq |\nu|(X).</m></p>
 </example>
-<p>In Example <xref ref="ex-radon-signed-measure-to-functional"/> we showed <m>\|\phi_\nu\|_\mathrm{op} \leq |\nu|(X)</m> for a signed measure <m>\nu</m>. We have left open the question of the exact value of <m>\|\phi_\nu\|_\mathrm{op}</m>. This is answered in Theorem <xref ref="thm-RMK"/>, where it is shown that <m>\|\phi_\nu\|_\mathrm{op} = |\nu|(X)</m>.</p>
+<p>In <ref ref="ex: radon signed measure to functional" text="Example"/> we showed <m>\|\phi_\nu\|_\mathrm{op} \leq |\nu|(X)</m> for a signed measure <m>\nu</m>. We have left open the question of the exact value of <m>\|\phi_\nu\|_\mathrm{op}</m>. This is answered in <ref ref="thm: RMK" text="Theorem"/>, where it is shown that <m>\|\phi_\nu\|_\mathrm{op} = |\nu|(X)</m>.</p>
 <definition>
 <p>Let <m>X</m> be a locally compact Hausdorff space.
 	A linear functional <m>\varphi</m> in the dual space of <m>C_0(X)</m> is <em>positive</em> if <m>\varphi(f)\geq 0</m> for all non-negative functions <m>f \in C_0(X)</m>.<idx><h>linear functional</h><h>positive</h></idx></p>
@@ -577,15 +578,15 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <remark>
 <p>Note that, if <m>\varphi\in C_0(X)^*</m> is a positive linear functional, then</p>
 <md> \|\varphi\|_\mathrm{op} = \sup \{\varphi(f) \colon f\geq 0,\ \|f\|_\infty = 1\}.</md>
-<p>That is, the norm of <m>\varphi</m> can be calculated using only non-negative functions, see Exercise <xref ref="exer-norm-of-positive"/></p>
+<p>That is, the norm of <m>\varphi</m> can be calculated using only non-negative functions, see <ref ref="exer: norm of positive" text="Exercise"/></p>
 </remark>
 <example>
-<p>The linear functionals described in Example <xref ref="ex-radon-measure-to-functional"/> (and Example <xref ref="ex-point-evaluation"/>) are positive linear functionals.
-	The linear functionals in Example <xref ref="ex-radon-signed-measure-to-functional"/> are not necessarily positive.</p>
+<p>The linear functionals described in <ref ref="ex: radon measure to functional" text="Example"/> (and <ref ref="ex: point evaluation" text="Example"/>) are positive linear functionals.
+	The linear functionals in <ref ref="ex: radon signed measure to functional" text="Example"/> are not necessarily positive.</p>
 </example>
-<p>Let <m>\nu</m> be a finite Radon signed measure on a locally compact Hausdorff space <m>X</m>. With the notation from Example <xref ref="ex-radon-measure-to-functional"/> and Example <xref ref="ex-radon-signed-measure-to-functional"/>, we have that</p>
+<p>Let <m>\nu</m> be a finite Radon signed measure on a locally compact Hausdorff space <m>X</m>. With the notation from <ref ref="ex: radon measure to functional" text="Example"/> and <ref ref="ex: radon signed measure to functional" text="Example"/>, we have that</p>
 <md> \phi_\nu = \phi_{\nu_+} - \phi_{\nu_-},</md>
-<p>when <m>\nu = \nu_+ - \nu_-</m> is the Jordan decomposition of <m>\nu</m>. That is, <m>\phi_\nu</m> is the difference of two positive linear functionals. We will show that we can write any linear functional on <m>C_0(X)</m> as the difference of two positive linear functionals. We have seen two theorems called the Jordan Decomposition Theorem: first for signed measures (Theorem <xref ref="thm-jordan-decomp-measure"/>), and then for functions of bounded variation on closed bounded intervals of <m>\mathbb{R}</m> (Theorem <xref ref="thm-jordan-decomp-function"/>). In Proposition <xref ref="prop-jordan-decomp-measure-and-function"/> we saw that restricting Theorem <xref ref="thm-jordan-decomp-measure"/> to Borel signed measures on closed bounded intervals recovers Theorem <xref ref="thm-jordan-decomp-function"/>. That is, the Jordan Decomposition of functions of bounded variation is a special case of the Jordan decomposition of signed measures. We will now state a third theorem called the Jordan Decomposition Theorem, this time for linear functionals. Whilst not yet clear, we will eventually see that this too can be viewed as a special case of the Jordan decomposition of signed measures.</p>
+<p>when <m>\nu = \nu_+ - \nu_-</m> is the Jordan decomposition of <m>\nu</m>. That is, <m>\phi_\nu</m> is the difference of two positive linear functionals. We will show that we can write any linear functional on <m>C_0(X)</m> as the difference of two positive linear functionals. We have seen two theorems called the Jordan Decomposition Theorem: first for signed measures (<ref ref="thm: jordan decomp measure" text="Theorem"/>), and then for functions of bounded variation on closed bounded intervals of <m>\mathbb{R}</m> (<ref ref="thm: jordan decomp function" text="Theorem"/>). In <ref ref="prop: jordan decomp measure and function" text="Proposition"/> we saw that restricting <ref ref="thm: jordan decomp measure" text="Theorem"/> to Borel signed measures on closed bounded intervals recovers <ref ref="thm: jordan decomp function" text="Theorem"/>. That is, the Jordan Decomposition of functions of bounded variation is a special case of the Jordan decomposition of signed measures. We will now state a third theorem called the Jordan Decomposition Theorem, this time for linear functionals. Whilst not yet clear, we will eventually see that this too can be viewed as a special case of the Jordan decomposition of signed measures.</p>
 <theorem xml:id="thm-jordan-decomp-functional">
 <title>Jordan Decomposition Theorem</title>
 <p><idx><h>Jordan Decomposition Theorem</h><h>for linear functionals</h></idx>
@@ -659,7 +660,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <md> -f \leq 2g- f \leq f,</md>
 <p>and so <m>\|2g-f\|_\infty \leq \|f\|_\infty=1</m>.
 	Thus</p>
-<md numbered="true" xml:id="eq-norm-est">
+<md number="yes" xml:id="eq-norm-est">
 \|\varphi\|_\mathrm{op}  \geq \varphi(2g-f)
 		= \varphi(g) + (\varphi(g) - \varphi(f)).
 </md>
@@ -674,11 +675,11 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </definition>
 <remark>
 <p>You may have concerns with the use of the word <em>the</em> in the above definition.
-	Uniqueness was never proved in Theorem <xref ref="thm-jordan-decomp-functional"/>.
+	Uniqueness was never proved in <ref ref="thm: jordan decomp functional" text="Theorem"/>.
 	Rather than proving uniqueness directly (and justifying the terminology), we will leave this quibble for now.
-	The Jordan decomposition of a linear functional is unique; the uniqueness will be addressed in Corollary <xref ref="cor-jordan-unique"/>.</p>
+	The Jordan decomposition of a linear functional is unique; the uniqueness will be addressed in <ref ref="cor: jordan unique" text="Corollary"/>.</p>
 </remark>
-<p>The following theorem goes by several names. Some sources call it the Riesz Representation Theorem; some call it Riesz-Markov Theorem; some call it the Riesz-Markov-Kakutani Theorem. We will leave it unnamed, saving the name <em>Riesz-Markov-Kakutani Theorem</em> for the result that usual bears the name, Theorem <xref ref="thm-RMK"/>.</p>
+<p>The following theorem goes by several names. Some sources call it the Riesz Representation Theorem; some call it Riesz-Markov Theorem; some call it the Riesz-Markov-Kakutani Theorem. We will leave it unnamed, saving the name <em>Riesz-Markov-Kakutani Theorem</em> for the result that usual bears the name, <ref ref="thm: RMK" text="Theorem"/>.</p>
 <theorem xml:id="thm-RMK-positive">
 <p>Let <m>X</m> be a locally compact Hausdorff space and let <m>\varphi</m> be a positive linear functional on <m>C_c(X)</m>.
 	There is a unique finite Radon measure <m>\mu</m> on <m>X</m> such that</p>
@@ -719,7 +720,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <md> \mu(U) = \sup\{ \varphi(f) \colon f\prec U\} \leq \sum_{k=1}^\infty \mu(U_k).</md>
 <p>It follows that if <m>E \subseteq X</m>, then</p>
 <md> \mu^*(E) = \inf\left\{\sum_{k=1}^\infty \colon \{U_k\}_{k=1}^\infty \text{ open},\ E \subset \bigcup_{k=1}^\infty U_k\right\}.</md>
-<p>Hence, by Theorem <xref ref="thm-outer-measure"/>, <m>\mu^*</m> is an outer measure.</p>
+<p>Hence, by <ref ref="thm: outer measure" text="Theorem"/>, <m>\mu^*</m> is an outer measure.</p>
 <p>To show that Borel sets a <m>\mu^*</m>-measurable, it suffices to show that every open <m>U \subseteq X</m> is <m>\mu^*</m>-open.
 	Fix open <m>U \subseteq X</m>.
 	Take an open set <m>E \subseteq U</m>, and <m>\mu(E) &lt; \infty</m>.
@@ -776,7 +777,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 \mu(U)\geq \varphi(f)\geq \mu(K).
 </md>
 <p>Since <m>\mu</m> is outer regular on <m>K</m>, it follows that</p>
-<md numbered="true" xml:id="eq-RMK">
+<md number="yes" xml:id="eq-RMK">
 \mu(K) = \inf\{\varphi(f) \colon f(x)\geq 1\text{ for }x\in K\}.
 </md>
 <p>Hence <m>\mu(K)&lt; \infty</m>.
@@ -841,9 +842,9 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 	As <m>\nu</m> and <m>\mu</m> are outer regular on all Borel sets, it follows that <m>\nu = \mu</m>.</p>
 </proof>
 <p>We have shown that every positive linear functional on <m>C_c(X)</m> is given by integration with respect to a finite Radon measure; and we have shown that every linear functional on <m>C_0(X)</m> can be written as the difference of two positive linear functionals. We will piece these two things together to give a complete description of the dual space <m>C_0(X)</m>.</p>
-<p>We first introduce some notation. When <m>X</m> is a locally compact Hausdorff space, we denote by <m>\mathcal{M}(X)</m> all finite Radon measure on <m>X</m>.<idx><h>Radon measure</h></idx> In Exercise <xref ref="exer-radon-vec-space"/> it is shown that <m>\mathcal{M}(X)</m> is a vector space. We put a norm on <m>\mathcal{M}(X)</m> by setting, for <m>\nu \in \mathcal{M}(X)</m>,</p>
+<p>We first introduce some notation. When <m>X</m> is a locally compact Hausdorff space, we denote by <m>\mathcal{M}(X)</m> all finite Radon measure on <m>X</m>.<idx><h>Radon measure</h></idx> In <ref ref="exer: radon vec space" text="Exercise"/> it is shown that <m>\mathcal{M}(X)</m> is a vector space. We put a norm on <m>\mathcal{M}(X)</m> by setting, for <m>\nu \in \mathcal{M}(X)</m>,</p>
 <md> \|\nu\|_\mathrm{var} = |\nu|(X), </md>
-<p>where <m>|\nu|(X)</m> is the total variation of <m>\nu</m>. That <m>\|\cdot\|_\mathrm{var}</m> defines is also left to Exercise <xref ref="exer-radon-vec-space"/>.</p>
+<p>where <m>|\nu|(X)</m> is the total variation of <m>\nu</m>. That <m>\|\cdot\|_\mathrm{var}</m> defines is also left to <ref ref="exer: radon vec space" text="Exercise"/>.</p>
 <theorem xml:id="thm-RMK">
 <title>Riesz-Markov-Kakutani Theorem</title>
 <p><idx><h>Riesz-Markov-Kakutani Theorem</h></idx>
@@ -854,9 +855,9 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </theorem>
 <proof>
 <p>Take <m>\varphi \in C_0(X)^*</m>.
-	By Theorem <xref ref="thm-jordan-decomp-functional"/>, there are positive linear functionals <m>\phi_+</m> and <m>\phi_-</m> such that <m>\varphi = \phi_+ - \phi_-</m> and <m>\|\varphi\|_\mathrm{op} = \|\phi_+\|_\mathrm{op}+ \|\phi_-\|_\mathrm{op}</m>.
+	By <ref ref="thm: jordan decomp functional" text="Theorem"/>, there are positive linear functionals <m>\phi_+</m> and <m>\phi_-</m> such that <m>\varphi = \phi_+ - \phi_-</m> and <m>\|\varphi\|_\mathrm{op} = \|\phi_+\|_\mathrm{op}+ \|\phi_-\|_\mathrm{op}</m>.
 	Both <m>\phi_+</m> and <m>\phi_-</m> restrict to positive linear functionals on <m>C_c(X)</m>.
-	Thus, by Theorem <xref ref="thm-RMK-positive"/>, there are finite Radon measures <m>\mu_1</m> and <m>\mu_2</m> on <m>X</m> such that, for <m>f \in C_c(X)</m>,</p>
+	Thus, by <ref ref="thm: RMK positive" text="Theorem"/>, there are finite Radon measures <m>\mu_1</m> and <m>\mu_2</m> on <m>X</m> such that, for <m>f \in C_c(X)</m>,</p>
 <md> \phi_+(f) = \int_X f\,d\mu_1 \text{ and }\phi_-(f) = \int_X f\,d\mu_2.</md>
 <p>Further, <m>\|\phi_+\|_\mathrm{op} = \|\mu_1\|_\mathrm{var}</m> and <m>\|\phi_-\|_\mathrm{op} = \|\mu_2\|_\mathrm{var}</m>.
 	As <m>C_c(X)</m> is dense in <m>C_0(X)</m>, we have</p>
@@ -865,31 +866,31 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <p>Let <m>\mu = \mu_1 - \mu_2</m>.
 	Then <m>\mu \in \mathcal{M}(X)</m>.
 	Let <m>\mu = \mu_+ - \mu_-</m> be the Jordan decomposition of <m>\mu</m>.
-	Then, <m>\mu_+ + \mu_2 = \mu_- + \mu_1</m>, and so, by Exercise <xref ref="ex-integration-sum-measures"/>,</p>
+	Then, <m>\mu_+ + \mu_2 = \mu_- + \mu_1</m>, and so, by <ref ref="ex: integration sum measures" text="Exercise"/>,</p>
 <md> \int_X f \,d\mu_+ + \int_X f \,d\mu_2 = \int_X f \,d\mu_- + \int_X f \,d\mu_1, </md>
 <p>for all <m>f \in C_0(X)</m>.
 	Rearranging the above equality, we get</p>
 <md> \int_X f\,d\mu = \int_X f\,d\mu_1 - \int_X f\,d\mu_2 = \varphi(f),</md>
 <p>for all <m>f \in C_0(X)</m>.
-	By Example <xref ref="ex-radon-signed-measure-to-functional"/>,</p>
+	By <ref ref="ex: radon signed measure to functional" text="Example"/>,</p>
 <md> \mu_1(X) + \mu_2(X) = \|\varphi\|_\mathrm{op} \leq |\mu|(X).</md>
-<p>Since <m>\mu = \mu_1 - \mu_2</m>, by Proposition <xref ref="prop-total-variation"/> we also have <m>|\mu|(X) \leq \mu_1(X)+ \mu_2(X)</m>, and so <m>|\mu|(X) = \mu_1(X)+ \mu_2(X)</m>.
+<p>Since <m>\mu = \mu_1 - \mu_2</m>, by <ref ref="prop: total variation" text="Proposition"/> we also have <m>|\mu|(X) \leq \mu_1(X)+ \mu_2(X)</m>, and so <m>|\mu|(X) = \mu_1(X)+ \mu_2(X)</m>.
 	Therefore <m>\|\varphi\|_\mathrm{op} = |\mu|(X)</m>.</p>
 <p>We will now prove uniqueness.
 	Suppose <m>\nu \in \mathcal{M}(X)</m> also satisfies
 	<m>\varphi(x) = \int_X f\,d\nu</m>
 	for all <m>f\in C_0(X)</m>.
 	Let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>.
-	Then, for <m>f \in C_0(X)</m>, two applications of Exercise <xref ref="ex-integration-sum-measures"/> give</p>
+	Then, for <m>f \in C_0(X)</m>, two applications of <ref ref="ex: integration sum measures" text="Exercise"/> give</p>
 <md>
 \begin{aligned}
 \int_X f\,d(\nu_+ + \mu_-) &amp;= \int_X f\,d\nu_+ + \int_X f\,d\mu_-\\ &amp;=\int_X f\,d\nu_- + \int_X f\,d\mu_+\\
 	&amp;=\int_X f\,d(\nu_- + \mu_+).
 \end{aligned}
 </md>
-<p>By the uniqueness in Theorem <xref ref="thm-RMK-positive"/>, <m>\nu_+ + \mu_- = \nu_- + \mu_+</m>, and hence <m>\nu = \mu</m>.</p>
+<p>By the uniqueness in <ref ref="thm: RMK positive" text="Theorem"/>, <m>\nu_+ + \mu_- = \nu_- + \mu_+</m>, and hence <m>\nu = \mu</m>.</p>
 </proof>
-<p>The following corollary follows immediately from Theorem <xref ref="thm-RMK"/>.</p>
+<p>The following corollary follows immediately from <ref ref="thm: RMK" text="Theorem"/>.</p>
 <corollary xml:id="cor-RMK-Banach">
 <p>Let <m>X</m> be a locally compact Hausdorff space, and let <m>\mathcal{M}(X)</m> be the finite Radon signed measures on <m>X</m>.
 	Let <m>\Phi</m> be the map</p>
@@ -907,21 +908,21 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </corollary>
 <proof>
 <p>Let <m>\phi_1,\phi_2</m> be positive linear functionals on <m>C_0(X)</m> such that <m>\varphi = \phi_1 - \phi_2</m> and <m>\|\varphi\|_\mathrm{op} = \|\phi_1\|_\mathrm{op} + \|\phi_2\|_\mathrm{op}</m>.
-	By Theorem <xref ref="thm-RMK"/>, there is a finite Radon signed measure <m>\mu</m>, and finite Radon measures <m>\mu_1</m> and <m>\mu_2</m> such that <m>|\mu|(X) = \|\varphi\|_\mathrm{op}</m>, <m>\mu_1(X) = \|\phi_1\|_\mathrm{op}</m>, and <m>\mu_2(X) = \|\phi_2\|_\mathrm{op}</m>; and for all <m>f \in C_0(X)</m></p>
+	By <ref ref="thm: RMK" text="Theorem"/>, there is a finite Radon signed measure <m>\mu</m>, and finite Radon measures <m>\mu_1</m> and <m>\mu_2</m> such that <m>|\mu|(X) = \|\varphi\|_\mathrm{op}</m>, <m>\mu_1(X) = \|\phi_1\|_\mathrm{op}</m>, and <m>\mu_2(X) = \|\phi_2\|_\mathrm{op}</m>; and for all <m>f \in C_0(X)</m></p>
 <md> \varphi(f) = \int_X f\,d\mu,\ \phi_1(f) = \int_X f\,d\mu_1,\ \text{ and }\phi_2(f) = \int_X f\,d\mu_2.</md>
 <p>Thus, for all <m>f \in C_0(X)</m>,</p>
 <md> \varphi(f) = \int_X f\,d\mu = \int_X f\,d\mu_1 - \int_X f\,d\mu_2 = \int_X f\,d(\mu_1-\mu_2).</md>
-<p>Hence, by the uniqueness of <m>\mu</m> from Theorem <xref ref="thm-RMK"/>,   <m>\mu = \mu_1 - \mu_2</m>.
+<p>Hence, by the uniqueness of <m>\mu</m> from <ref ref="thm: RMK" text="Theorem"/>,   <m>\mu = \mu_1 - \mu_2</m>.
 	We also have that</p>
 <md> |\mu|(X) = \|\phi_1\|_\mathrm{op} + \|\phi_2\|_\mathrm{op} = \mu_1(X) + \mu_2(X).</md>
-<p>Therefore, by Proposition <xref ref="prop-total-variation"/>, <m>\mu_1 - \mu_2</m> is the Jordan decomposition of <m>\mu</m>.
+<p>Therefore, by <ref ref="prop: total variation" text="Proposition"/>, <m>\mu_1 - \mu_2</m> is the Jordan decomposition of <m>\mu</m>.
 	That is <m>\mu_1 = \mu_+</m> and <m>\mu_2 = \mu_-</m>.
-	As the Jordan decomposition of the signed measure <m>\mu</m> is unique, by Theorem <xref ref="thm-jordan-decomp-measure"/>, it follows that <m>\phi_1 = \phi_+</m> and <m>\phi_2 = \phi_-</m> where <m>\varphi = \phi_+ - \phi_-</m> is the Jordan decomposition of <m>\varphi</m>.</p>
+	As the Jordan decomposition of the signed measure <m>\mu</m> is unique, by <ref ref="thm: jordan decomp measure" text="Theorem"/>, it follows that <m>\phi_1 = \phi_+</m> and <m>\phi_2 = \phi_-</m> where <m>\varphi = \phi_+ - \phi_-</m> is the Jordan decomposition of <m>\varphi</m>.</p>
 </proof>
 <example>
 <p>The set of natural numbers <m>\mathbb{N}</m> with the discrete topology is a locally compact Hausdorff space.
 	If <m>c_0</m> is the collection of all sequences which converge to <m>0</m>, then <m>C_0(\mathbb{N}) = c_0</m>.
-	By Exercise <xref ref="exer-dual-of-c0"/>, the dual of <m>c_0</m> is <m>\ell^1</m>; and by Corollary <xref ref="cor-RMK-Banach"/> the dual of <m>c_0 = C_0(\mathbb{N})</m> is <m>\mathcal{M}(\mathbb{N})</m>, the space of all finite Radon signed measures on <m>\mathbb{N}</m>.
+	By <ref ref="exer: dual of c0" text="Exercise"/>, the dual of <m>c_0</m> is <m>\ell^1</m>; and by <ref ref="cor: RMK Banach" text="Corollary"/> the dual of <m>c_0 = C_0(\mathbb{N})</m> is <m>\mathcal{M}(\mathbb{N})</m>, the space of all finite Radon signed measures on <m>\mathbb{N}</m>.
 	Thus <m>\ell^1</m> is isometrically isomorphic <m>\mathcal{M}(\mathbb{N})</m>.</p>
 <p>Explicitly, the maps between <m>\ell^1</m> and <m>\mathcal{M}(\mathbb{N})</m> are given as follows:
 	for <m>a = (a_n)_n \in \ell^1</m>, the function <m>\nu</m> on subsets of <m>\mathbb{N}</m> defined by</p>
@@ -937,7 +938,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <md> C_b(\mathbb{N}) = C(\beta\mathbb{N}). </md>
 <p>The space <m>\beta \mathbb{N}</m> is called the Stone-\u{C}ech compactification of <m>\mathbb{N}</m>.
 	Note that <m>\ell^\infty = C_b(\mathbb{N})</m>.
-	Thus, by Corollary <xref ref="cor-RMK-Banach"/>,</p>
+	Thus, by <ref ref="cor: RMK Banach" text="Corollary"/>,</p>
 <md> (\ell^\infty)^* \simeq \mathcal{M}(\beta \mathbb{N}).</md>
 <p>That is, the dual of <m>\ell^\infty</m> is (isometrically isomorphic to) the Radon signed measures on the Stone-\u{C}ech compactification of <m>\mathbb{N}</m>.</p>
 </example>
@@ -946,21 +947,21 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 	Take <m>\varphi \in C_0(X)^*</m>, and let <m>\varphi = \phi_+ - \phi_-</m> be the Jordan decomposition of <m>\varphi</m>.
 	Let <m>\mu</m> be the finite Radon signed measure such that</p>
 <md> \varphi(f) = \int_X f\,d\mu,</md>
-<p>from Theorem <xref ref="thm-RMK"/>.
+<p>from <ref ref="thm: RMK" text="Theorem"/>.
 	Let <m>\mu = \mu_+ - \mu_-</m> be the Jordan decomposition of <m>\mu</m>.
-	In Corollary <xref ref="cor-jordan-unique"/> it is shown that <m>\mu_+</m> and <m>\mu_-</m> are the unique measures such that</p>
+	In <ref ref="cor: jordan unique" text="Corollary"/> it is shown that <m>\mu_+</m> and <m>\mu_-</m> are the unique measures such that</p>
 <md> \phi_+(f) = \int_X f \,d\mu_+\text{ and }\phi_-(f) = \int_X f \,d\mu_-.</md>
 <p>In other words, the Jordan decomposition for linear functionals on <m>C_0(X)</m> gives the Jordan decomposition for finite Radon signed measures on <m>X</m> (via the Riesz-Markov-Kakutani Theorem). 
 	In this way, the Jordan decomposition for linear functionals can be seen as a special case of the Jordan decomposition for signed measures.</p>
 </remark>
 <remark>
 <p>Let <m>[a,b]\subseteq\mathbb{R}</m> be a closed bounded interval on <m>\mathbb{R}</m>, and let <m>g</m> be a right-continuous function of bounded variation on <m>[a,b]</m>.
-	By Theorem <xref ref="thm-signed-meas-1-1-bv"/> there is a unique Borel signed measure <m>\nu</m> on <m>[a,b]</m> such that <m>g(x) = \nu([a,x])</m>.
+	By <ref ref="thm: signed meas 1-1 bv" text="Theorem"/> there is a unique Borel signed measure <m>\nu</m> on <m>[a,b]</m> such that <m>g(x) = \nu([a,x])</m>.
 	Let <m>\varphi</m> be the linear functional on <m>C([a,b])^*</m>	defined by <m>\varphi(f) = \int_X f\,d\nu</m>.</p>
 <p>Now let <m>g = g_+ - g_-</m>, <m>\nu = \nu_+ - \nu_-</m>, and <m>\varphi = \phi_+ - \phi_-</m> be the Jordan decompositions of <m>g</m>, <m>\nu</m>, and <m>\varphi</m> respectively.
-	Then, by Proposition <xref ref="prop-jordan-decomp-measure-and-function"/>,</p>
+	Then, by <ref ref="prop: jordan decomp measure and function" text="Proposition"/>,</p>
 <md> g_+(x) = \nu_+([a,x]) \text{ and }g_-(x) = \nu_-([a,x]);</md>
-<p>and, as discussed in Remark <xref ref="rem-jordan-comparison"/>,</p>
+<p>and, as discussed in <ref ref="rem: jordan comparison" text="Remark"/>,</p>
 <md> \phi_+(f) = \int_X f\,d\nu_+ \text{ and }\phi_-(f) = \int_X f\,d\nu_-.</md>
 <p>Thus, the Jordan decomposition for linear functionals on <m>C([a,b])</m> recovers the Jordan decomposition for right-continuous functions of bounded variation on <m>[a,b]</m>.</p>
 </remark>
@@ -986,7 +987,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 <p>It is then shown that that</p>
 <md> \varphi(f) = \int_a^b f\,dg,</md>
 <p>for all <m>f \in C([a,b])</m>.</p>
-<p>One can show that the function <m>g</m> is right-continuous. Thus, by Theorem <xref ref="thm-signed-meas-1-1-bv"/>, there is a Borel signed measure <m>\nu</m> on <m>[a,b]</m> such that <m>\nu([a,x]) = f(x)</m> for all <m>x \in [a,b]</m>. It can be shown that, if <m>f</m> is a continuous function on <m>[a,b]</m> then</p>
+<p>One can show that the function <m>g</m> is right-continuous. Thus, by <ref ref="thm: signed meas 1-1 bv" text="Theorem"/>, there is a Borel signed measure <m>\nu</m> on <m>[a,b]</m> such that <m>\nu([a,x]) = f(x)</m> for all <m>x \in [a,b]</m>. It can be shown that, if <m>f</m> is a continuous function on <m>[a,b]</m> then</p>
 <md> \int_a^bf\,dg = \int_{[a,b]} f\,d\nu.</md>
 <p>Thus</p>
 <md> \varphi(f) = \int_{[a,b]} f\,d\nu,</md>
@@ -995,21 +996,21 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </section>
 <exercises>
 <exercise xml:id="exer-operator-norm">
-<p>Prove Proposition <xref ref="prop-operator-norm"/>.
+<p>Prove <ref ref="prop: operator norm" text="Proposition"/>.
     That is, show that the operator norm <m>\|\cdot\|_\mathrm{op}</m> is a norm on the dual space <m>V^*</m>, where <m>V</m> is a normed vector space.</p>
 <p>Further show that</p>
 <md> \|\varphi\|_{\mathrm{op}} = \inf \{M  \colon |\varphi(v)|\leq M\|v\| \text{ for all }v \in V\}</md>
 <p>for all <m>\varphi \in V^*.</m></p>
 </exercise>
 <exercise xml:id="exer-riesz-rep-p-1">
-<p>Prove Theorem <xref ref="thm-riesz-rep-Lp"/> for the case <m>p = 1</m>.
+<p>Prove <ref ref="thm: riesz rep Lp" text="Theorem"/> for the case <m>p = 1</m>.
     That is, assuming that <m>(X,\mathcal{M},\mu)</m> is a <m>\sigma</m>-finite measure space, show that if <m>\varphi \in (L^1(X,\mu))^*</m> that there is a <m>g \in L^\infty(X,\mu)</m> with <m>\|g\|_\infty = \|\varphi\|_\mathrm{op}</m> such that</p>
 <md>\varphi(f) = \int_X fg \,d\mu</md>
 <p>for all <m>f \in L^1(X,\mu)</m>.</p>
 </exercise>
 <exercise xml:id="exer-yes-dual">
 <p>Let <m>X</m> be a non-empty set, and let <m>c</m> be the counting measure on the <m>\sigma</m>-algebra <m>P(X)</m> of all subsets of <m>X</m>.
-	We will show that <m>(\ell^1(X))^* \simeq \ell^\infty(X)</m> by the same isomorphism used in Theorem <xref ref="thm-riesz-rep-Lp"/>.</p>
+	We will show that <m>(\ell^1(X))^* \simeq \ell^\infty(X)</m> by the same isomorphism used in <ref ref="thm: riesz rep Lp" text="Theorem"/>.</p>
 <ol>
 <li><p>For each <m>f \in \ell^1(X)</m>, let <m>L_f = \{x \in X \colon f(x) \neq 0\}</m>. Show that <m>L_f</m> is a countable set, and that 
 		<md> \int_X f\,dc = \sum_{x \in L_f} f(x). </md>
@@ -1017,7 +1018,7 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </li>
 <li><p>Take <m>g \in \ell^\infty(X)</m>. Define 
 		<md> T_g(f) = \int_X gf\,dc</md>
-<p>for all <m>f \in \ell^1(X)</m>. Show that <m>T_g</m> is a linear functional on <m>\ell^1(X)</m> with <m>\|T_g\|_\mathrm{op}= \|g\|_\infty</m>. (You should be able to prove this directly without reference to the proof of Lemma <xref ref="lem-holder-for-dual-p-1"/>).</p>
+<p>for all <m>f \in \ell^1(X)</m>. Show that <m>T_g</m> is a linear functional on <m>\ell^1(X)</m> with <m>\|T_g\|_\mathrm{op}= \|g\|_\infty</m>. (You should be able to prove this directly without reference to the proof of <ref ref="lem: holder for dual p=1" text="Lemma"/>).</p>
 </p>
 </li>
 <li><p>Take <m>\varphi\in (\ell^1(X))^*</m>. For each <m>x \in X</m>, let <m>e_x</m> be the function
@@ -1031,9 +1032,9 @@ Thus, for <m>f \in C_0(X)</m>,</p>
 </exercise>
 <exercise xml:id="exer-not-dual">
 <p>Let <m>X</m> be an uncountable set, and let <m>c</m> be the counting measure on the <m>\sigma</m>-algebra <m>P(X)</m> of all subsets of <m>X</m>.
-	Let <m>c_0</m> be the restriction of <m>c</m> to the <m>\sigma</m>-algebra <m>\mathcal{M}</m> of all subsets of <m>X</m> which are either countable or cocountable (see Exercise <xref ref="exer-cocount-measure"/> for more on <m>\mathcal{M}</m>.)
+	Let <m>c_0</m> be the restriction of <m>c</m> to the <m>\sigma</m>-algebra <m>\mathcal{M}</m> of all subsets of <m>X</m> which are either countable or cocountable (see <ref ref="exer: cocount measure" text="Exercise"/> for more on <m>\mathcal{M}</m>.)
 	We will show that <m>(L^1(X,c_0))^*</m> is not <m>L^\infty(X,c_0)</m>.
-	Exercise <xref ref="exer-yes-dual"/> should be completed before this exercise.</p>
+	<ref ref="exer: yes dual" text="Exercise"/> should be completed before this exercise.</p>
 <ol>
 <li><p>Show that <m>L^1(X,c_0)= \ell^1(X)</m>.</p>
 </li>
@@ -1087,7 +1088,7 @@ Show that <m>(a_n)_n \in \ell^1</m> and that <m>\varphi = T_a</m>. (HINT: consid
 <p>for all <m>(b_n)_n \in \ell^\infty</m> is a linear functional on <m>\ell^\infty</m>.</p>
 </p>
 </li>
-<li><p>Take any <m>\varphi \in (\ell^\infty)^*</m>. For each <m>n</m>, let <m>a_n =  \varphi(e_n)</m>, where <m>e_n</m> is defined as in Exercise <xref ref="exer-dual-of-c0"/>.
+<li><p>Take any <m>\varphi \in (\ell^\infty)^*</m>. For each <m>n</m>, let <m>a_n =  \varphi(e_n)</m>, where <m>e_n</m> is defined as in <ref ref="exer: dual of c0" text="Exercise"/>.
 	Show that <m>a=(a_n)_n \in \ell^1</m>.</p>
 </li>
 <li><p>Take <m>\varphi \in (\ell^\infty)^*</m> and let <m>a=(a_n)_n</m> be as in part (ii). Show that <m>\varphi(b) = T_a(b)</m> for all <m>b \in c_0</m>.</p>
@@ -1126,7 +1127,7 @@ Show that <m>(a_n)_n \in \ell^1</m> and that <m>\varphi = T_a</m>. (HINT: consid
 </p>
 </li>
 <li><p>Let <m>f</m> be a bounded, measurable function on <m>(X,\mathcal{M})</m>.
-		Let <m>(\phi_n)_n</m> be a sequence of simple functions with <m>\phi_n \leq f</m> for all <m>n</m>, which converge uniformly to <m>f</m> (Such a sequence exists by Exercise <xref ref="exer-uniform-convergence"/>).
+		Let <m>(\phi_n)_n</m> be a sequence of simple functions with <m>\phi_n \leq f</m> for all <m>n</m>, which converge uniformly to <m>f</m> (Such a sequence exists by <ref ref="exer: uniform convergence" text="Exercise"/>).
 		Define <m>\int_X f\,d\nu</m> by
 		<md>\int_X f\,d\nu = \lim_{n\rightarrow \infty} \int_X \varphi\,d\nu.</md>
 <p>Show that <m>\int_X f\,d\nu</m> is independent on the choice of sequence <m>(\phi_n)_n</m>.</p>
@@ -1159,7 +1160,7 @@ Show that <m>(a_n)_n \in \ell^1</m> and that <m>\varphi = T_a</m>. (HINT: consid
 <p>The above result is known as the Kantorovitch Representation Theorem.<idx><h>Kantorovitch Representation Theorem</h></idx></p>
 </exercise>
 <exercise>
-<p>Prove Proposition <xref ref="prop-compact-finite-intersection"/>.
+<p>Prove <ref ref="prop: compact finite intersection" text="Proposition"/>.
 	That is, show that <m>X</m> is compact, if and only if whenever <m>\{F_\alpha\}_{\alpha \in A}</m> is a collection of closed sets satisfying <m>\bigcap_{k=1}^nF_k \neq \emptyset</m> for any <m>F_1,\ldots,F_n \in \{F_\alpha\}_{\alpha \in A}</m>, then</p>
 <md> \bigcap_{\alpha\in A}F_\alpha \neq \emptyset.</md>
 <p>(HINT: Note that <m>\bigcap_{\alpha\in A}F_\alpha \neq \emptyset = \emptyset</m> if and only if <m>\{X \backslash F_\alpha\}_{\alpha \in A}</m> is an open cover of <m>X</m>.)</p>

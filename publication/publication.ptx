@@ -15,7 +15,7 @@
       <!--<chunking level="1" />-->
 
     <!-- Depth for table of contents.  0 means no TOC -->
-      <!--<tableofcontents level="1" />-->
+      <tableofcontents level="3" />
 
     <!-- Visibility of exercise components where they first appear.          -->
     <!-- There are four components (statement/hint/answer/solution) for each -->
@@ -92,6 +92,7 @@
           pageref="no"
           font-size="10"
           draft="no"
+          latex-style="CLP"
       >
 
 
@@ -125,7 +126,7 @@
         theorem="no"
         proof="no"
         definition="no"
-        example="yes"
+        example="no"
         example-solution="yes"
         project="no"
         task="no"
@@ -147,7 +148,7 @@
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <!--<css theme="denver"/>-->
+      <css theme="tacoma"/>
 
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->

@@ -243,7 +243,7 @@ Thus, if <m>E \subseteq \bigcup_k E_k</m> we have</p>
 \mu(E) &amp;\leq \mu\left( \bigcup_{k=1}^n E_k \right) \\
     &amp;= \mu\left( \bigcup_{k=1}^n A_k \right) \\
     &amp;= \sum_{k=1}^\infty \mu(A_k) \\
-    &amp;\leq \sum_{k=1}^\infty \mu(E_k).\qedhere
+    &amp;\leq \sum_{k=1}^\infty \mu(E_k).
 \end{aligned}
 </md>
 </proof>
@@ -303,7 +303,7 @@ A_k = \bigcup_{m=1}^k B_m.
 \mu\left(\bigcup_k D_k\right) = \mu(B_1) - \mu\left(\bigcap_k B_k \right).
 </md>
 <p>Combining  <xref ref="eq-cont-meas-1" text="Equation"/> and  <xref ref="eq-cont-meas-2" text="Equation"/> we get</p>
-<md> \mu \left(\bigcap_k B_k \right) = \lim_k \mu(B_k).\qedhere</md>
+<md> \mu \left(\bigcap_k B_k \right) = \lim_k \mu(B_k). \qedhere</md>
 </proof>
 <p>Not all measure spaces that we encounter will be complete. Indeed, we will see that Borel measures need not be complete. We will see an important example of this in the real line later.</p>
 <p>However, the next theorem shows that a measure space that is not complete can always be extended to be complete.</p>
@@ -705,7 +705,6 @@ Further, for each <m>n</m>,</p>
 <p>Finally, if <m>\mu</m> extends <m>\mu_0</m> then every set in <m>\mathcal{S}</m> is measurable, and thus every set in <m>\mathcal{S}_\sigma</m> and <m>\mathcal{S}_{\sigma\delta}</m> is measurable.
 If <m>E</m> is also measurable, then by the excision property</p>
 <md> \mu(E\backslash A) = \mu(E) - \mu(A) = 0.</md>
-<p>\qedhere</p>
 </proof>
 <p>We are now ready for the main theorem of this section: our main tool for constructing measures. The uniqueness in the following theorem is important and will be used frequently. Before stating the theorem we need one more definition. If <m>\mathcal{S}</m> is a collection of subsets of <m>X</m>, and <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> is a function, we say that <m>\mu</m> is <em><m>\sigma</m>-finite</em><idx><h sortby="sigma-finite set function"><m>\sigma</m>-finite set function</h></idx>if there is a countable collection <m>\{E_k\}_{k=1}^\infty</m> of sets in <m>\mathcal{S}</m> with <m>\mu(E_k)&lt; \infty</m> for all <m>k</m>, and <m>X = \bigcup_{k=1}^\infty E_k</m>. Note that this definition is consistent with the definition of a <m>\sigma</m>-finite measure.</p>
 <theorem xml:id="thm-Car-ext-2">

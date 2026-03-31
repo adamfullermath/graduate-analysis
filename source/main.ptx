@@ -33,9 +33,7 @@
     <xi:include href="./dual-spaces.ptx" />
     </part>
 
-    <appendix><title>Appendices</title>
-    <xi:include href="./real-examples.ptx" />
-    </appendix>
+
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
 
