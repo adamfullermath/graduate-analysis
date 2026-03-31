@@ -13,24 +13,24 @@
     <xi:include href="./frontmatter.ptx" />
     <part>
       <title>Prerequisites</title>
-      <xi:include href="./Background1.ptx" />
-      <xi:include href="./Background2.ptx" />
+      <xi:include href="Prereqs/1-Background.ptx" />
+      <xi:include href="Prereqs/2-Background.ptx" />
     </part>
 
     <part><title>Measure and Integration</title>
     <!-- Include chapters -->
-    <xi:include href="./introduction.ptx" />
-    <xi:include href="./measure_spaces.ptx" />
-    <xi:include href="./measures_on_R.ptx" />
-    <xi:include href="./signed-measures.ptx" />
-    <xi:include href="./meas_fun.ptx" />
-    <xi:include href="./integration.ptx" />
-    <xi:include href="./differentiation.ptx" />
+    <xi:include href="./Analysis-I/1-introduction.ptx" />
+    <xi:include href="./Analysis-I/2-measure-spaces.ptx" />
+    <xi:include href="./Analysis-I/3-measures-on-R.ptx" />
+    <xi:include href="./Analysis-I/4-signed-measures.ptx" />
+    <xi:include href="./Analysis-I/5-meas-fun.ptx" />
+    <xi:include href="./Analysis-I/6-integration.ptx" />
+    <xi:include href="./Analysis-I/7-differentiation.ptx" />
     </part>
 
     <part><title>Spaces of Functions</title>
-    <xi:include href="./Lp.ptx" />
-    <xi:include href="./dual-spaces.ptx" />
+    <xi:include href="./Analysis-II/1-Lp.ptx" />
+    <xi:include href="./Analysis-II/2-dual-spaces.ptx" />
     </part>
 
 

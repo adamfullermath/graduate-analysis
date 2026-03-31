@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appendix xml:id="appendix-real-examples">
+<chapter xml:id="appendix-real-examples">
 <title>Interesting examples of real valued functions</title>
 <introduction>
 
-<p>
+
+
 We present here several examples of continuous functions and their derivatives.
-We will see over the course of this section that there are continuous functions which are not differentiable anywhere ( <xref ref="sec-nowhere-diff"/>), even if a continuous function is differentiable at a point <m>x_0</m>, it may not be differentiable on all points near <m>x_0</m> ( <xref ref="sec-diff-ae"/>); and even if a function is differentiable everywhere, with a bounded derivative, the derivative may not be Riemann integrable ( <xref ref="sec-diff-bounded"/>).
+We will see over the course of this section that there are continuous functions which are not differentiable anywhere (\ref{sec: nowhere diff}), even if a continuous function is differentiable at a point <m>x_0</m>, it may not be differentiable on all points near <m>x_0</m> (\ref{sec: diff ae}); and even if a function is differentiable everywhere, with a bounded derivative, the derivative may not be Riemann integrable (\ref{sec: diff bounded}).
 We include some examples from the late 19th century and early 20th century. 
 These examples played an important role in motivating the development of measure theory in the early 20th century.
-</p>
+
 
 </introduction>
 <section xml:id="sec-nowhere-diff">
@@ -17,9 +18,9 @@ These examples played an important role in motivating the development of measure
 <p>Before we begin, we should discuss what it means for a function to be differentiable. Let <m>f</m> be a function whose domain includes a point <m>x_0\in\mathbb{R}</m> and an open interval containing <m>x_0</m>. The derivative <m>f'</m> at the point <m>x_0</m> is defined as</p>
 <md>f'(x_0) = \lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h},</md>
 <p>when the limit exists. If the limit does not exist, or if <m>f'(x_0)=\pm \infty,</m> we say <m>f</m> is not differentiable at <m>x_0</m>.</p>
-<p>Thus, there is some ambiguity in the literature on what it means for a function to be <em>nowhere differentiable.</em> The Weierstrass function in Section <xref ref="subsec-weierstrass"/> is nowhere differentiable in our sense. That is,</p>
+<p>Thus, there is some ambiguity in the literature on what it means for a function to be <em>nowhere differentiable.</em> The Weierstrass function in Section~\ref{subsec: weierstrass} is nowhere differentiable in our sense. That is,</p>
 <md>\lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h}</md>
-<p>does not exist at any <m>x_0</m>. The example in Section <xref ref="subsec-Tak"/> is nowhere differentiable in the sense of the more restrictive sense of the derivative:</p>
+<p>does not exist at any <m>x_0</m>. The example in Section~\ref{subsec: Tak} is nowhere differentiable in the sense of the more restrictive sense of the derivative:</p>
 <md>\lim_{h\rightarrow \infty} \frac{f(x_0+h) - f(x_0)}{h}</md>
 <p>is either <m>\pm\infty</m>, or the limit does not exist at each <m>x_0</m>.</p>
 <subsection xml:id="subsec-weierstrass">
@@ -91,7 +92,7 @@ These examples played an important role in motivating the development of measure
 </subsection>
 <subsection xml:id="subsec-Tak">
 <title>Takagi's example</title>
-<p>We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section <xref ref="subsec-weierstrass"/>, this function does  have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in <xref ref="Takagi"/>, see also <xref ref="AKTakagi"/>. A similar function was independently discovered by Van Der Waerden in 1930 <xref ref="vdw"/>. Riesz and Sz.-Nagy's text  <xref ref="RieszNagyFA"/> begins with a presentation of Van Der Waerden's example.</p>
+<p>We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section~\ref{subsec: weierstrass}, this function does  have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in <xref ref="Takagi"/>, see also <xref ref="AKTakagi"/>. A similar function was independently discovered by Van Der Waerden in 1930 <xref ref="vdw"/>. Riesz and Sz.-Nagy's text  <xref ref="RieszNagyFA"/> begins with a presentation of Van Der Waerden's example.</p>
 <p>We present Takagi's example because it is more intuitive than the Weierstrass function. The simplest example of a function not differentiable at a point is <m>f(x) = |x|</m>. This function is not differentiable at <m>x=0</m>; there is a sharp point at <m>0</m>. The idea behind Takagi's example is to create a function made from a series of increasingly many `sharp points'.</p>
 <p>Let</p>
 <md>g(x) = \min\{x-\lfloor{x}\rfloor, \lceil{x}\rceil -x\},</md>
@@ -108,7 +109,7 @@ These examples played an important role in motivating the development of measure
 <figure xml:id="fig-Tak2">
 <image source="images/Takagi.png" width="20%" />
 <caption>
-<p>Takagi's example <m>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}</m> in  <xref ref="subsec-Tak"/>.</p>
+<p>Takagi's example <m>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}</m> in \ref{subsec: Tak}.</p>
 </caption>
 </figure>
 <p>Fix <m>x_0 \in (0,1)</m>. We can write <m>x_0</m> as a series</p>
@@ -141,7 +142,7 @@ These examples played an important role in motivating the development of measure
 <figure xml:id="fig-Tak3">
 <image source="images/vanderwaerden.png" width="20%" />
 <caption>
-<p>Van der Waerden's example <m>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}</m> has the same basic idea as Takagi's example from  <xref ref="subsec-Tak"/>.</p>
+<p>Van der Waerden's example <m>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}</m> has the same basic idea as Takagi's example from \ref{subsec: Tak}.</p>
 </caption>
 </figure>
 </subsection>
@@ -161,7 +162,7 @@ These examples played an important role in motivating the development of measure
 <figure xml:id="fig-Schwarz1">
 <image source="images/Schwarz1.png" width="20%" />
 <caption>
-<p>The function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> used to construct Schwarz's example in  <xref ref="subsec-Schwarz"/></p>
+<p>The function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> used to construct Schwarz's example in \ref{subsec: Schwarz}</p>
 </caption>
 </figure>
 <p>The function <m>\varphi</m> is continuous on all of <m>\mathbb{R}</m>, and is differentiable on all non-integer values. Indeed, it is not hard to show for a <m>x \notin \mathbb{Z}</m></p>
@@ -205,12 +206,12 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <md> F(h) = \frac{f(x_0-h) - f(x_0)}{-h}</md>
 <p>is uniformly convergent for <m>h \in (0,1).</m> Take the limit as <m>h \rightarrow 0^+</m> we get a left-sided derivative as</p>
 <md> \lim_{h\rightarrow 0^+} \frac{f(x_0-h) - f(x_0)}{-h}= \frac{1}{2^k} + \sum_{n=0}^{k-1}\frac{1}{2^n}\varphi'(2^nx_0).</md>
-<p>The above set shows that there is a dense set on which <m>f</m> is not differentiable. Since <m>f</m> is increasing and continuous, <m>f'</m> is defined almost everywhere, by Corollary <xref ref="cor-f-integrable"/>. Alternatively, a similar analysis to the above can explicitly show that <m>f'(x)</m> exists for <m>x \in (0,1)</m> when <m>x</m> is not a dyadic rational.</p>
+<p>The above set shows that there is a dense set on which <m>f</m> is not differentiable. Since <m>f</m> is increasing and continuous, <m>f'</m> is defined almost everywhere, by <xref ref="cor-f-integrable" text="Corollary"/>. Alternatively, a similar analysis to the above can explicitly show that <m>f'(x)</m> exists for <m>x \in (0,1)</m> when <m>x</m> is not a dyadic rational.</p>
 </subsection>
 <subsection>
 <title>A function that is not differentiable on a prescribed set</title>
-<p>Corollary <xref ref="cor-f-integrable"/> tells us that if <m>f</m> is continuous of bounded variation then <m>f'</m> is defined almost everywhere. We will now show that given <m>E \subseteq \mathbb{R}</m> with <m>m(E) = 0</m>, there is a continuous function <m>f</m> of bounded variation which is not differentiable at any point in <m>E</m>, but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book <xref ref="RieszNagyFA"/>.</p>
-<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>E \subseteq [a,b]</m> be a set with Lebesgue measure <m>0</m>. By Exercise , there is a countable family of open intervals <m>\{(c_k,d_k)\}_{k=1}^\infty</m> in <m>\mathbb{R}</m> such that, for each <m>x \in E</m> there is an infinite subsequence <m>(k_n)</m> of natural numbers such that <m>x \in (c_{k_n},d_{k_n})</m> for each <m>k_n</m> and</p>
+<p><xref ref="cor-f-integrable" text="Corollary"/> tells us that if <m>f</m> is continuous of bounded variation then <m>f'</m> is defined almost everywhere. We will now show that given <m>E \subseteq \mathbb{R}</m> with <m>m(E) = 0</m>, there is a continuous function <m>f</m> of bounded variation which is not differentiable at any point in <m>E</m>, but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book <xref ref="RieszNagyFA"/>.</p>
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>E \subseteq [a,b]</m> be a set with Lebesgue measure <m>0</m>. By <xref ref="exer-meas-0" text="Exercise"/>, there is a countable family of open intervals <m>\{(c_k,d_k)\}_{k=1}^\infty</m> in <m>\mathbb{R}</m> such that, for each <m>x \in E</m> there is an infinite subsequence <m>(k_n)</m> of natural numbers such that <m>x \in (c_{k_n},d_{k_n})</m> for each <m>k_n</m> and</p>
 <md> \sum_{k_n} (d_{k_n} - c_{k_n}) &lt;\infty.</md>
 <p>Fix such a collection <m>\{(c_k,d_k)\}_k</m> and define a function <m>f</m> on <m>[a,b]</m> by</p>
 <md> f(x) = \sum_{k=1}^\infty \ell((c_k,d_k) \cap (-\infty, x)),</md>
@@ -219,7 +220,7 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 </section>
 <section xml:id="sec-diff-bounded">
 <title>Differentiable functions with bounded derivative</title>
-<p>In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By Exercise <xref ref="exer-bounded-derivative-abs-cont"/> these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, Theorem <xref ref="thm-FTOCI"/> (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, Theorem <xref ref="thm-Lebesgue-FToC"/>, will apply.</p>
+<p>In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By <xref ref="exer-bounded-derivative-abs-cont" text="Exercise"/> these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, <xref ref="thm-FTOCI" text="Theorem"/> (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, <xref ref="thm-Lebesgue-FToC" text="Theorem"/>, will apply.</p>
 <subsection xml:id="subsec-Volterra">
 <title>Volterra's function</title>
 <p>In this section we will present Volterra's function, introduced by Voltera in 1881 <xref ref="volterra1881sui"/>. This example was likely had an influence on Lebesgue; it is cited in Lebesgue's 1902 thesis<xref ref="lebesgue1902integrale"/>. Volterra presented this example in answer to a question of Dini <xref ref="dini2018fondamenti"/> on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg's text <xref ref="Strom"/>.</p>
@@ -231,11 +232,11 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <figure xml:id="fig-Volterra1">
 <image source="images/x2sin1x.png" width="20%" />
 <caption>
-<p>The function <m>f(x) = x^2\sin(1/x)</m> used to construct Volterra's function in Section <xref ref="subsec-Volterra"/>.</p>
+<p>The function <m>f(x) = x^2\sin(1/x)</m> used to construct Volterra's function in Section~\ref{subsec: Volterra}.</p>
 </caption>
 </figure>
 <p>The idea behind the Volterra function is to create a function <m>V</m> which behaves on some suitably large set the way <m>f</m> behaves at <m>\{0\}</m>. Before defining <m>V</m>, we must first introduce the desired set.</p>
-<p>We will construct a set <m>A \subseteq [0,1]</m> called the <em>Smith-Volterra-Cantor</em> set.<idx><h>Smith-Volterra-Cantor set</h></idx> This construction is very similar to the construction of the Cantor set in, Example <xref ref="ex-Cantor"/>. The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.</p>
+<p>We will construct a set <m>A \subseteq [0,1]</m> called the <em>Smith-Volterra-Cantor</em> set.<idx><h>Smith-Volterra-Cantor set</h></idx> This construction is very similar to the construction of the Cantor set in, <xref ref="ex-Cantor" text="Example"/>. The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.</p>
 <p>Let <m>A_0 = [0,1]</m>. Create <m>A_1</m> be removing the middle quarter from <m>A_0</m>. Thus</p>
 <md> A_1 = [0,3/8] \cup [5/8,1].</md>
 <p>Create <m>A_2</m> be reomving the middle quarter from each of the two intervals in <m>A_1</m>. Thus</p>
@@ -251,7 +252,7 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
     f(c) &amp; a_k+c_k \leq x \leq b_k - c_k\\
     f(b_k - x) &amp; b_k -x \leq c_k.
 \end{cases}</md>
-<p>An illustration of Volterra's function is given in Figure <xref ref="fig-Volterra2"/>. Since <m>f</m> is a continuous function, and <m>f(0) = 0</m>, <m>V</m> is a continuous function.</p>
+<p>An illustration of Volterra's function is given in Figure~\ref{fig: Volterra2}. Since <m>f</m> is a continuous function, and <m>f(0) = 0</m>, <m>V</m> is a continuous function.</p>
 <figure xml:id="fig-Volterra2">
 <image source="images/volterra.png" width="30%" />
 <caption>
@@ -294,10 +295,7 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <md> |f'(x)| = |2x \sin(1/x) - \cos(1/x)| \leq 2|x| + 1,</md>
 <p><m>|V'|\leq 3.</m> That is, <m>V'</m> is bounded.</p>
 <p>Fix now <m>x \in A</m>. For each <m>n</m>, <m>(x-1/n, x+1/n) \cap U \neq \emptyset.</m> Hence, there is an <m>x_n \in (x-1/n, x+1/n) \cap U</m> such that <m>V'(x_n) = 1.</m> As <m>(x_n)_n</m> converges to <m>x</m>, and <m>(V'(x_n))_n</m> does not converge to <m>V'(x) =0</m>, <m>V'</m> is not continuous at any point in <m>A</m>.</p>
-<p>Note that since <m>V</m> is continuous and <m>V'</m> is bounded, <m>V</m> is absolutely continuous by Exercise <xref ref="exer-bounded-derivative-abs-cont"/>. Hence <m>V'</m> is Lebesgue integrable. However, since the set of discontinuities of <m>V'</m> has Lebesuge measure <m>m(A) = 1/2  &gt; 0</m>, it follows from Theorem <xref ref="thm-Riemann-int"/> that <m>V'</m> is not Riemann integrable.</p>
-</subsection>
-<subsection>
-<title>Simpler example</title>
+<p>Note that since <m>V</m> is continuous and <m>V'</m> is bounded, <m>V</m> is absolutely continuous by <xref ref="exer-bounded-derivative-abs-cont" text="Exercise"/>. Hence <m>V'</m> is Lebesgue integrable. However, since the set of discontinuities of <m>V'</m> has Lebesuge measure <m>m(A) = 1/2  &gt; 0</m>, it follows from <xref ref="thm-Riemann-int" text="Theorem"/> that <m>V'</m> is not Riemann integrable.</p>
 </subsection>
 </section>
-</appendix>
+</chapter>

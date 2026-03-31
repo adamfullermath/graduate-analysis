@@ -3,11 +3,12 @@
 <title>Integration and Differentiation</title>
 <introduction>
 
-<epigraph>
-<p><em>``Mathematics we can compare with a high ridge of mountain, to which lead steep alleys, and stepping on them sometimes requires a great cost of hard work and toil."</em></p>
-<p><source>Otto M. Nikodym</source></p>
-</epigraph>
-
+<blockquote>
+<p><em><q>Mathematics we can compare with a high ridge of mountain, to which lead steep alleys, and stepping on them sometimes requires a great cost of hard work and toil.</q></em></p>
+<attribution>
+<p>Otto M. Nikodym</p>
+</attribution>
+</blockquote>
 <p>In this chapter we will answer a question that has loomed over us since the beginning of these notes: The Fundamental Theorem(s) of Calculus. If <m>f</m> is a continuous function on <m>[a,b]</m>, when can we be guaranteed that</p>
 <md> f(b) - f(a) = \int_{[a,b]}f'\,dm?</md>
 <p>To answer this we must first answer: when is <m>f'</m> defined and integrable?</p>
@@ -15,7 +16,7 @@
 </introduction>
 <section>
 <title>The Radon-Nikodym Theorem</title>
-<p>In Exercise <xref ref="exer-integration-measure"/> we saw how integration against a non-negative measurable function with respect to a measure <m>\mu</m> gave gives rise to a new measure <m>\nu</m>. In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.</p>
+<p>In <xref ref="exer-integration-measure" text="Exercise"/> we saw how integration against a non-negative measurable function with respect to a measure <m>\mu</m> gave gives rise to a new measure <m>\nu</m>. In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.</p>
 <p>We begin by recalling the definition of mutually singular measures, and extending this definition to signed-measures.</p>
 <definition>
 <p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\mu</m> and <m>\nu</m> be two signed-measures on <m>(X,\mathcal{F})</m>.
@@ -25,7 +26,7 @@
 <p>Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m>, let <m>C</m> be the Cantor set in <m>[0,1]</m> and let <m>U = [0,1]\backslash U</m>.
     Let <m>\nu</m> be the Borel measure on <m>[0,1]</m> which is the Carathéodory extension of the premeasure</p>
 <md> \nu((a,b]) = \varphi(b) - \varphi(a), \ \nu(\{0\}) = 0.</md>
-<p>By Example <xref ref="ex-Cantor"/>, <m>m(C) = 0</m> and <m>m(U) =1</m>, and by Exercise <xref ref="exer-cant-len-func-singular"/>, <m>\nu(C) = 1</m>  and <m>\nu(U) = 1</m>.
+<p>By <xref ref="ex-Cantor" text="Example"/>, <m>m(C) = 0</m> and <m>m(U) =1</m>, and by <xref ref="exer-cant-len-func-singular" text="Exercise"/>, <m>\nu(C) = 1</m>  and <m>\nu(U) = 1</m>.
     Thus <m>\nu</m> and <m>m</m> are mutually singular.</p>
 </example>
 <p>Mutually singular measures are, in some sense, very different from eachother. We now introduce a comparison between measures.</p>
@@ -34,7 +35,7 @@
     Then <m>\nu</m> is <em>absolutely continuous with respect to <m>\mu</m></em><idx><h>absolutely continuous measures</h></idx>, written <m>\nu \ll \mu</m>, if for <m>E \in \mathcal{F}</m>, <m>\nu(E) = 0</m> if <m>\mu(E) = 0</m>.</p>
 <p>If <m>\lambda</m> is a signed-measure on <m>(X,\mathcal{F})</m>, then <m>\lambda</m> is <em>absolutely continuous with respect to <m>\mu</m></em><idx><h>absolutely continuous measures</h></idx>, written <m>\lambda \ll \mu</m>, if <m>|\lambda| \ll \mu</m>.</p>
 </definition>
-<p>Let <m>\mu</m> and <m>\nu</m> be two non-zero measures on the same measure space. If <m>\mu \perp \nu</m> then <m>\mu \not\ll \nu</m> and <m>\mu \not\ll \nu</m>. Conversely, if <m>\mu \ll \nu</m> or <m>\nu \ll \mu</m>, then <m>\mu \not \perp \nu</m>. Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures <m>\mu</m> and <m>\nu</m>, we can always write <m>\nu= \nu_s + \nu_a</m> where <m>\nu_s \perp \mu</m> and <m>\nu_a \ll \mu</m>, (The Lebesgue Decomposition Theorem, Theorem <xref ref="thm-lebesegue-decomposition"/>). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.</p>
+<p>Let <m>\mu</m> and <m>\nu</m> be two non-zero measures on the same measure space. If <m>\mu \perp \nu</m> then <m>\mu \not\ll \nu</m> and <m>\mu \not\ll \nu</m>. Conversely, if <m>\mu \ll \nu</m> or <m>\nu \ll \mu</m>, then <m>\mu \not \perp \nu</m>. Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures <m>\mu</m> and <m>\nu</m>, we can always write <m>\nu= \nu_s + \nu_a</m> where <m>\nu_s \perp \mu</m> and <m>\nu_a \ll \mu</m>, (The Lebesgue Decomposition Theorem, <xref ref="thm-lebesegue-decomposition" text="Theorem"/>). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.</p>
 <p>Given a measure <m>\mu</m>, the next example shows that it is easy to create measures which are absolutely continuous with respect to <m>\mu</m>. We will see, with some reasonable conditions on <m>(X,\mathcal{F},\mu)</m>, all measures which are absolutely continuous with respect to <m>\mu</m> will be of this form.</p>
 <example xml:id="ex-integration-measure-abs-cont">
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
@@ -43,7 +44,7 @@
 <md>\nu_1(E) = \int_E f\,d\mu</md>
 <p>defines a measure on <m>(X,\mathcal{F})</m>, and</p>
 <md>\nu_2(E) = \int_E g\,d\mu</md>
-<p>defines a signed measure on <m>(X,\mathcal{F})</m> (Exercise <xref ref="exer-integration-measure"/>).
+<p>defines a signed measure on <m>(X,\mathcal{F})</m> (<xref ref="exer-integration-measure" text="Exercise"/>).
     Then <m>\nu_1 \ll \mu</m> and <m>\nu_2 \ll \mu</m>.</p>
 </example>
 <p>We can also get examples of absolutely continuous measures (with respect to the Lebesgue measure) using what we have learnt about Borel measures on <m>\mathbb{R}</m>. Below is one such example.</p>
@@ -52,12 +53,12 @@
     Let <m>\nu</m> be the Borel measure on <m>[0,1]</m> induced by <m>f</m>.
     That is, <m>\nu</m> is the Borel measure which is the Carathéodory extension of the premeasure</p>
 <md> \nu((a,b]) = b^2 - a^2,\ \nu(\{0\}) = 0</md>
-<p>as described in Corollary <xref ref="cor-cdf-and-Borel"/>.
+<p>as described in <xref ref="cor-cdf-and-Borel" text="Corollary"/>.
     We will show that <m>\nu \ll m</m>.</p>
 <p>Take Borel set <m>E \subseteq [0,1]</m> such that <m>m(E) = 0</m>.
     We want to show that <m>\nu(E) = 0</m>.
     Fix <m>\varepsilon &gt;0</m>. We will assume <m>0 \notin E</m> (removing <m>0</m> does not change <m>m(E)</m> or <m>\nu(E)</m>).
-    By Proposition <xref ref="prop-Lebesgue-outer-measure"/>, there is a countable collection <m>\{(a_i,b_i]\}_{i=1}^\infty</m> of subsets of <m>[0,1]</m> such that</p>
+    By <xref ref="prop-Lebesgue-outer-measure" text="Proposition"/>, there is a countable collection <m>\{(a_i,b_i]\}_{i=1}^\infty</m> of subsets of <m>[0,1]</m> such that</p>
 <md> E \subseteq \bigcup_{i=1}^\infty (a_i,b_i]</md>
 <p>and <m>\sum_{i=1}^\infty m((a_i,b_i])&lt;\varepsilon/2.</m>
     Now</p>
@@ -79,7 +80,7 @@
 <p><idx><h>Radon-Nikodym Theorem</h></idx>
     Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space, and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m>.
     Then there is a non-negative measurable function <m>f</m> on <m>X</m> such that</p>
-<md numbered="true" xml:id="eq-radon-nikodym">
+<md number="yes" xml:id="eq-radon-nikodym">
 \nu(E) = \int_E f\,d\mu
 </md>
 <p>for all <m>E \in \mathcal{F}</m>.
@@ -170,7 +171,7 @@
     Extend <m>f_k</m> to all of <m>x</m> by setting <m>f_k(x) = 0</m> for <m>x \notin C_k</m>.
     Let <m>f = \sum_{k=1}^\infty f_k</m>.
     Take any <m>E \in F</m>. 
-    Applying Corollary <xref ref="cor-MCT-series"/>, we get</p>
+    Applying <xref ref="cor-MCT-series" text="Corollary"/>, we get</p>
 <md>
 \begin{aligned}
 \int_E f\,d\mu &amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f\,d\mu \\
@@ -179,7 +180,7 @@
         &amp;= \nu(E).
 \end{aligned}
 </md>
-<p>The uniqueness (almost everywhere) follows from Exercise <xref ref="exer-int-a-e"/>.</p>
+<p>The uniqueness (almost everywhere) follows from <xref ref="exer-int-a-e" text="Exercise"/>.</p>
 </proof>
 <p>The following corollary to the Radon-Nikodym Theorem is immediate on taking the Jordan decomposition of a signed-measure and applying the Radon-Nikodym Theorem.</p>
 <corollary xml:id="cor-signed-Radon-Nikodym">
@@ -198,13 +199,13 @@
     The Radon-Nikodym derivative is denotated as</p>
 <md> f = \frac{d\nu}{d\mu}.</md>
 </definition>
-<p>The word ``derivative" in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? Section <xref ref="sec-ftoc"/>, in particular Theorem <xref ref="thm-Borel-radon-nikodym-derivative"/>, goes some way to justify the term. We will satiate ourselves with a simple example now.</p>
+<p>The word <q>derivative</q> in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? Section~\ref{sec: ftoc}, in particular <xref ref="thm-Borel-radon-nikodym-derivative" text="Theorem"/>, goes some way to justify the term. We will satiate ourselves with a simple example now.</p>
 <example xml:id="ex-x-2-Radon-Nikodym-derivative">
 <p>Let <m>f(x) = x^2</m> on <m>[0,1]</m>.
     Let <m>\nu</m> be the Carathéodory extension of the premeasure</p>
 <md> \nu((a,b])= f(b) - f(a) = b^2 - a^2</md>
 <p>on <m>[0,1]</m>.
-    We saw in  Example <xref ref="ex-x-2-is-abs-cont"/> that <m>\nu</m> is absolutely continuous with respect to <m>m</m>.
+    We saw in  <xref ref="ex-x-2-is-abs-cont" text="Example"/> that <m>\nu</m> is absolutely continuous with respect to <m>m</m>.
     Hence, by the Radon-Nikodym theorem there is a non-negative measurable function <m>h</m> on <m>[0,1]</m> such that</p>
 <md> \nu(E) = \int_E h\,dm.</md>
 <p>In particular, for <m>0\leq a &lt; b \leq 1</m> we have</p>
@@ -214,7 +215,7 @@
 <p>By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that</p>
 <md> \nu(E) = \int_E f'\,dm = \int_E h\,dm</md>
 <p>for all Borel sets <m>E \subseteq [a,b]</m>.
-   It follows from Exercise <xref ref="exer-same-int-same-func"/>, that <m>f(x) = 2x</m>.<fn>Technically, it means that <m>h(x) = 2x</m> almost everywhere, but <m>h</m> can be chosen so that <m>h(x) = 2x</m>.</fn>
+   It follows from <xref ref="exer-same-int-same-func" text="Exercise"/>, that <m>f(x) = 2x</m>.<fn>Technically, it means that <m>h(x) = 2x</m> almost everywhere, but <m>h</m> can be chosen so that <m>h(x) = 2x</m>.</fn>
    Thus, the Radon-Nikodym derivative of <m>\nu</m> is the derivative of <m>f</m>.
    That is</p>
 <md> \frac{d\nu}{dm} = \frac{df}{dx}.</md>
@@ -237,7 +238,7 @@ Then there are mutually orthogonal measures <m>\nu_s</m> and <m>\nu_a</m> such t
 Then <m>\lambda</m> is a <m>\sigma</m>-finite measure and <m>\mu \ll \lambda</m>.
 By the Radon-Nikodym Theorem, there is a non-negative measurable function <m>f</m> such that, for all <m>E \in \mathcal{F}</m></p>
 <md> \mu(E) = \int_\lambda f \,d\mu = \int_E f\,d\mu + \int_E f\,d\nu,</md>
-<p>with the last equality following from Exercise <xref ref="ex-integration-sum-measures"/>.
+<p>with the last equality following from <xref ref="ex-integration-sum-measures" text="Exercise"/>.
 Let</p>
 <md> X_+ = \{x \in X \colon f(x) &gt; 0\}</md>
 <p>and</p>
@@ -252,7 +253,7 @@ Then</p>
 <md> 0 = \mu(E) = \int_E f\,d\mu + \int_E f\,d\nu.</md>
 <p>Thus</p>
 <md> 0 = \int_E f\,d\nu = \int_{E\cap X_+} f\,d\nu = 0.</md>
-<p>Since <m>f&gt;0</m> on <m>E\cap X_+</m>, it follows that <m>\nu(E\cap X_+) = 0</m> (Exercise <xref ref="exer-positive-integral"/>).
+<p>Since <m>f&gt;0</m> on <m>E\cap X_+</m>, it follows that <m>\nu(E\cap X_+) = 0</m> (<xref ref="exer-positive-integral" text="Exercise"/>).
 Thus <m>\nu_a(E) = 0</m>, and hence <m>\nu_a\ll\mu</m>.</p>
 </proof>
 <p>The following corollary follows by applying the applying the Lebesgue Decomposition Theorem to each of the measures in the Jordan decomposition of the signed-measure.</p>
@@ -308,7 +309,7 @@ Thus <m>\nu_a(E) = 0</m>, and hence <m>\nu_a\ll\mu</m>.</p>
     We say that <m>\nu</m> is <em>absolutely continuous</em> if <m>|\nu| \ll m</m>.<idx><h>absolutely continuous</h><h>measure</h></idx>
     We say the <m>\nu</m> is <em>singular</em><idx><h>singular measures</h><h>Borel measure</h></idx> if <m>\nu_+ \perp m</m> and <m>\nu_- \perp m</m>, where <m>\nu = \nu_+ - \nu_-</m> is the Jordan decomposition of <m>\nu</m>.</p>
 </definition>
-<p>We know that any Borel measure on <m>[a,b]</m> determines a right-continuous function <m>f</m> of bounded variation on <m>[a,b]</m>; and any right-continuous function <m>f</m> on <m>[a,b]</m> determines a Borel measure, Theorem <xref ref="thm-signed-meas-1-1-bv"/>. Example <xref ref="exer-cant-len-func-singular"/> shows that we can get singular measures this way; Example <xref ref="ex-x-2-is-abs-cont"/> shows that we can absolutely continuous measures this way. The following definition is clearly leading to what functions give what types of measures.</p>
+<p>We know that any Borel measure on <m>[a,b]</m> determines a right-continuous function <m>f</m> of bounded variation on <m>[a,b]</m>; and any right-continuous function <m>f</m> on <m>[a,b]</m> determines a Borel measure, <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/>. <xref ref="exer-cant-len-func-singular" text="Example"/> shows that we can get singular measures this way; <xref ref="ex-x-2-is-abs-cont" text="Example"/> shows that we can absolutely continuous measures this way. The following definition is clearly leading to what functions give what types of measures.</p>
 <definition>
 <p>Let <m>[a,b]</m> be a closed interval and let <m>f\colon [a,b] \rightarrow \mathbb{R}</m> be a function.
     The function <m>f</m> is <em>absolutely continuous</em><idx><h>absolutely continuous function</h></idx> if for all <m>\varepsilon &gt;0</m> there is a <m>\delta &gt; 0</m> such that if <m>\{(a_i,b_i)\}_{i=1}^n</m> are disjoint open intervals with</p>
@@ -331,10 +332,10 @@ Thus <m>\nu_a(E) = 0</m>, and hence <m>\nu_a\ll\mu</m>.</p>
 </md>
 <p>Thus, <m>f</m> is absolutely continuous.</p>
 <p>Assume now that <m>f =0</m>.
-    Let <m>\nu</m> be the Borel signed-measure on <m>[a,b]</m> induced by <m>f</m>, from Theorem <xref ref="thm-signed-meas-1-1-bv"/>.
+    Let <m>\nu</m> be the Borel signed-measure on <m>[a,b]</m> induced by <m>f</m>, from <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/>.
     That is, if <m>f = f_1 - f_2</m> is the Jordan decomposition of <m>f</m>, then
      <m>\nu = \nu_+ - \nu_-</m> where <m>\nu_+</m> is the Carathéodory extension of the premeasure <m>\nu_+((c,d]) = f_1(d) - f_1(c)</m> and <m>\nu_-</m> is the Carathéodory extension of the premeasure <m>\nu_-((c,d]) = f_2(d) - f_2(c)</m>, for <m>(c,d] \subseteq [a,b]</m>.
-    Following a similar argument as in Example <xref ref="ex-x-2-is-abs-cont"/>, we can show that <m>\nu</m> is absolutely continuous.</p>
+    Following a similar argument as in <xref ref="ex-x-2-is-abs-cont" text="Example"/>, we can show that <m>\nu</m> is absolutely continuous.</p>
 </example>
 <p>The following theorem has a similar proof to the analogous statements for continuous functions and is left as an exercise.</p>
 <theorem>
@@ -391,7 +392,7 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
 <p>Suppose <m>\nu \ll m</m>.
     First suppose that <m>\nu</m> is a measure, i.e. <m>\nu(E)\geq 0</m> for all Borel sets <m>E \subseteq [a,b]</m>.
     Fix <m>\varepsilon &gt; 0</m>.
-    By Proposition <xref ref="prop-abs-cont-eps-delta"/>, there exists <m>\delta &gt;0</m> such that, if <m>E \subseteq [a,b]</m> is a Borel set with <m>m(E) &lt; \delta</m>, then <m>\nu(E) &lt; \varepsilon</m>.
+    By <xref ref="prop-abs-cont-eps-delta" text="Proposition"/>, there exists <m>\delta &gt;0</m> such that, if <m>E \subseteq [a,b]</m> is a Borel set with <m>m(E) &lt; \delta</m>, then <m>\nu(E) &lt; \varepsilon</m>.
     Let <m>\{[a_k,b_k]\}_{k=1}^n</m> be a family of disjoint intervals in <m>[a,b]</m> such that <m>\sum_k (b_k - a_k) &lt; \delta</m>.
     Note that, since <m>\nu \ll m</m>,</p>
 <md> \nu((c,d)) = \nu([c,d]) = \nu((c,d])</md>
@@ -407,8 +408,8 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
 </md>
 <p>Hence <m>f</m> is an absolutely continuous function.</p>
 <p>Suppose now that <m>\nu</m> is a signed Borel measure.
-    Let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m> (Theorem <xref ref="thm-jordan-decomp-measure"/>).
-    Then, by Proposition <xref ref="prop-jordan-decomp-measure-and-function"/>, the Jordan decomposition of <m>f</m> is given by <m>f = f_1 - f_2</m> where <m>f_1</m> is the cumulative distribution function of <m>\nu_+</m> and <m>f_2</m> is the cumulative distribution function of <m>\nu_-</m>.
+    Let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m> (<xref ref="thm-jordan-decomp-measure" text="Theorem"/>).
+    Then, by <xref ref="prop-jordan-decomp-measure-and-function" text="Proposition"/>, the Jordan decomposition of <m>f</m> is given by <m>f = f_1 - f_2</m> where <m>f_1</m> is the cumulative distribution function of <m>\nu_+</m> and <m>f_2</m> is the cumulative distribution function of <m>\nu_-</m>.
     If <m>\nu \ll m</m> then, by definition, <m>|\nu| = \nu_+ + \nu_-</m> is absolutely continuous with respect to <m>m</m>.
     Hence, <m>\nu_+ \ll m</m> and <m>\nu_- \ll m</m>. 
     It follows by the above argument that <m>f_1</m> and <m>f_2</m> are absolutely continuous, and hence <m>f</m> is absolutely continuous.</p>
@@ -435,10 +436,10 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
 <p>Take now any Borel set <m>E \subseteq [a,b]</m> with <m>m(E) &lt; \delta/2</m>.
     By the outer regularity of the Lebesgue measure, there is an open set <m>U</m> with <m>E \subseteq U</m> and <m>m(U) &lt; \delta</m>.
     Hence <m>\nu(E) \leq \nu(U) &lt; \varepsilon.</m>
-    Hence, by Proposition <xref ref="prop-abs-cont-eps-delta"/>, <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
+    Hence, by <xref ref="prop-abs-cont-eps-delta" text="Proposition"/>, <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
 <p>Now suppose <m>\nu</m> is a Borel signed measure, such that <m>f(x) = \nu([a,x])</m> is absolutely continuous.
     As before, let <m>f_1</m> and <m>f_2</m> be the cumulative distribution functions of <m>\nu_+</m> and <m>\nu_-</m>, respectively. 
-    As <m>f</m> is absolutely continuous, <m>f_1</m> and <m>f_2</m> are absolutely continuous by Proposition <xref ref="prop-abs-cont-jordan-decomp"/>.
+    As <m>f</m> is absolutely continuous, <m>f_1</m> and <m>f_2</m> are absolutely continuous by <xref ref="prop-abs-cont-jordan-decomp" text="Proposition"/>.
     By the above argument, it follows that <m>\nu_+ \ll m</m> and <m>\nu_- \ll m</m>.
     Hence, we have that <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
 </proof>
@@ -463,11 +464,11 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
 <p><figure xml:id="fig-integrable-close-to-cont">
 <image source="images/cont diff.png" width="10%" />
 <caption>
-  <p>An example of <m>g_n</m> defined in the proof of Theorem <xref ref="thm-integrable-close-to-cont"/>.</p>
+  <p>An example of <m>g_n</m> defined in the proof of <xref ref="thm-integrable-close-to-cont" text="Theorem"/>.</p>
 </caption>
 </figure>
 </p>
-<p>For each <m>n</m>, we define <m>g_n</m> by <m>g_n(x) = g(x)</m> for <m>x \in \mathbb{R}</m>; <m>g_n(x) = 0</m> for <m>x \notin (-N-\frac{1}{n},N+\frac{1}{n})</m>; <m>g_n</m> is the straight line from the point <m>(-N-\frac{1}{n},0)</m> to <m>(-N,g(-N))</m> on <m>(-N-\frac{1}{n},-N)</m>; and <m>g_n</m> is the straight line from the point <m>(N,g(N))</m> to <m>(N+\frac{1}{n}),0)</m> on <m>(-N-\frac{1}{n},-N)</m> (see Figure <xref ref="fig-integrable-close-to-cont"/>).
+<p>For each <m>n</m>, we define <m>g_n</m> by <m>g_n(x) = g(x)</m> for <m>x \in \mathbb{R}</m>; <m>g_n(x) = 0</m> for <m>x \notin (-N-\frac{1}{n},N+\frac{1}{n})</m>; <m>g_n</m> is the straight line from the point <m>(-N-\frac{1}{n},0)</m> to <m>(-N,g(-N))</m> on <m>(-N-\frac{1}{n},-N)</m>; and <m>g_n</m> is the straight line from the point <m>(N,g(N))</m> to <m>(N+\frac{1}{n}),0)</m> on <m>(-N-\frac{1}{n},-N)</m> (see Figure~\ref{fig: integrable close to cont}).
     Choose <m>n\geq 0</m> so that <m>g(N)/n&lt;\varepsilon/6</m> and <m>g(-N)/n&lt;\varepsilon/6</m>.
     Then,</p>
 <md>
@@ -480,7 +481,7 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
 </md>
 <p>Hence, to prove the result for <m>f</m>, it suffice to show that the result holds when <m>f</m> is restricted to a closed interval.
     We can thus assume that <m>f</m> is a non-negative integrable function on a closed interval <m>[a,b]</m>.</p>
-<p>By the definition of <m>\int_{[a,b]}f\,dm</m> and by Theorem <xref ref="thm-Riemann-is-Lebesgue"/>,</p>
+<p>By the definition of <m>\int_{[a,b]}f\,dm</m> and by <xref ref="thm-Riemann-is-Lebesgue" text="Theorem"/>,</p>
 <md> \int_{[a,b]} f\,dm = \sup\left\{ \int_{[a,b]} \varphi\,dm \colon 0\leq \varphi \leq f, \ \varphi \text{ a step function}.\right\}.</md>
 <p>Let <m>\varphi</m> be a step function such that <m>0\leq \varphi\leq f</m> and</p>
 <md> \int_{[a,b]}f-\varphi\,dm &lt; \varepsilon/2.</md>
@@ -554,14 +555,14 @@ We will call <m>A_rf</m> the <em>average value function</em> for <m>f</m> with r
 </theorem>
 <proof>
 <p>Fix <m>\alpha &gt;0</m> and let <m>E_\alpha = \{x\in \mathbb{R} \colon Hf(x)&gt; \alpha\}</m>.
-    By Corollary <xref ref="cor-Hardy-Littlewood"/>, <m>E_\alpha</m> is an open set.
+    By <xref ref="cor-Hardy-Littlewood" text="Corollary"/>, <m>E_\alpha</m> is an open set.
     By the continuity of <m>Hf</m>, for each <m>x \in E_\alpha</m> there is an <m>r_x&gt;0</m> such that</p>
 <md> A_{r_x}|f|(y) &gt; \alpha</md>
 <p>for all <m>y \in B(x,r_x)</m>.
     Note that</p>
 <md> E_\alpha = \bigcup_{x\in E_\alpha} B(x,r_x).</md>
 <p>Take any <m>c \in \mathbb{R}</m> with <m>0&lt;c &lt; m(E_\alpha)</m>.
-    By the inner regularity of Lebesgue measure, Theorem <xref ref="thm-Lebesgue-regular"/>, there is a compact set <m>K \subseteq E_\alpha</m> such that</p>
+    By the inner regularity of Lebesgue measure, <xref ref="thm-Lebesgue-regular" text="Theorem"/>, there is a compact set <m>K \subseteq E_\alpha</m> such that</p>
 <md> c &lt; m(K) \leq m(E_\alpha).</md>
 <p>Note that the sets <m>\{B(x,r_x)\}_{x\in E_\alpha}</m> form and open cover of <m>K</m>, since they are an open cover of <m>E_\alpha</m>.
     As <m>K</m> is compact, there are sets <m>A_1,\ldots,A_m \in \{B(x,r_x)\}_{x\in E_\alpha}</m> such that</p>
@@ -605,7 +606,7 @@ c &amp;&lt; m(K) \\
 </theorem>
 <proof>
 <p>Fix <m>\varepsilon &gt;0</m>.
-    By Theorem <xref ref="thm-integrable-close-to-cont"/>, there is an integrable continuous function <m>g</m> such that</p>
+    By <xref ref="thm-integrable-close-to-cont" text="Theorem"/>, there is an integrable continuous function <m>g</m> such that</p>
 <md> \int_\mathbb{R} |f-g|\,dm &lt; \varepsilon.</md>
 <p>Take <m>x \in \mathbb{R}</m> and <m>\eta&gt;0</m>. 
     By the continuity of <m>g</m> there is an <m>r&gt;0</m>, such that if <m>|x-y|&lt;r</m>, then <m>|g(x) -g(y)|&lt;\eta</m>.
@@ -661,7 +662,7 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 <p>Let</p>
 <md>L_f = \{x \in \mathbb{R} \colon \lim_{r\rightarrow}\frac{1}{2r}\int_{B(r,x)}|f(y)-f(x)|\,dm(y) =0 \}.</md>
 <p>For each <m>c \in \mathbb{R}</m>, let <m>g_c(x) = |f(x) -c|.</m>
-    By Theorem <xref ref="thm-lim-avg-f-f"/>, there is a Lebesgue measurable set <m>E_c \subseteq \mathbb{R}</m>, such that <m>m(E_c) = 0</m>, and if <m>x \notin E_c</m>, then</p>
+    By <xref ref="thm-lim-avg-f-f" text="Theorem"/>, there is a Lebesgue measurable set <m>E_c \subseteq \mathbb{R}</m>, such that <m>m(E_c) = 0</m>, and if <m>x \notin E_c</m>, then</p>
 <md> \lim_{r\rightarrow 0} A_rg_c(x) = g_c(x).</md>
 <p>Let</p>
 <md> E = \bigcup_{q \in \mathbb{Q}} E_q.</md>
@@ -689,7 +690,7 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 \end{aligned}
 </md>
 <p>Thus the first equality holds for all <m>x \in L_f</m>.
-    The second equality follows from Theorem <xref ref="thm-lim-avg-f-f"/>.</p>
+    The second equality follows from <xref ref="thm-lim-avg-f-f" text="Theorem"/>.</p>
 </proof>
 <p>We are almost ready to give a concrete description of the Radon-Nikodym derivative of a Borel measure on <m>\mathbb{R}</m>. We first need to understand which Borel measures have continuous cumulative distribution functions.</p>
 <definition>
@@ -708,7 +709,7 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 <md> \nu(E) \leq \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}. </md>
 <p>Fix <m>\varepsilon &gt;0</m> and let <m>f</m> be the cumulative distribution function for <m>\nu</m>. 
     Assume first that <m>a \notin E</m>.
-    By Theorem <xref ref="thm-lebesgue-stieltjes-measure"/>, there is a countable collection of intervals <m>\{(a_k,b_k]\}_{k=1}^\infty</m> in <m>[a,b]</m> such that
+    By <xref ref="thm-lebesgue-stieltjes-measure" text="Theorem"/>, there is a countable collection of intervals <m>\{(a_k,b_k]\}_{k=1}^\infty</m> in <m>[a,b]</m> such that
     <m>E \subseteq \bigcup_{k=1}^\infty (a_k,b_k]</m> and</p>
 <md> \nu(E) + \varepsilon/2 &gt; \sum_{k=1}^\infty \nu((a_k,b_k]).</md>
 <p>By the continuity of measure, for each <m>k</m>,</p>
@@ -750,10 +751,10 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
     By the assumption that <m>\nu\perp m</m>, there are Borel sets <m>A</m> and <m>B=A^c</m> so that <m>\mathbb{R} = A \cup B</m> and <m>\nu(A) = m(B) = 0</m>.
     For each <m>k</m>, let</p>
 <md> F_k = \left\{x \in A \colon \limsup_{r\rightarrow 0}\frac{\nu(B(x,r))}{2r}&gt;\frac{1}{k}\right\}.</md>
-<p>Fix <m>k</m>. We will show that <m>m(F_k) =0</m>. The argument is similar to that in the Hardy-Littlewood Maximal Theorem, Theorem <xref ref="thm-maximal-theorem"/>.</p>
-<p>Since <m>\nu</m> is outer regular, Lemma <xref ref="lem-regular-borel"/>, for each <m>\varepsilon&gt;0</m> there is an open set <m>U_\varepsilon \supseteq A</m>, such that <m>\nu(U_\varepsilon)&lt;\varepsilon.</m>
+<p>Fix <m>k</m>. We will show that <m>m(F_k) =0</m>. The argument is similar to that in the Hardy-Littlewood Maximal Theorem, <xref ref="thm-maximal-theorem" text="Theorem"/>.</p>
+<p>Since <m>\nu</m> is outer regular, <xref ref="lem-regular-borel" text="Lemma"/>, for each <m>\varepsilon&gt;0</m> there is an open set <m>U_\varepsilon \supseteq A</m>, such that <m>\nu(U_\varepsilon)&lt;\varepsilon.</m>
     For each <m>x \in U_\varepsilon</m>, there is a <m>r_x&gt;0</m>, so that <m>B(x,r_x) \subseteq U_\varepsilon.</m>
-    Arguing as in Theorem <xref ref="thm-maximal-theorem"/>, if <m>c &lt; m\left(\bigcup_{x\in F_k} B(x,r_x)\right)</m> then there is a finite collection <m>x_1,\ldots,x_n \in F_k</m> so that <m>\{B(x_i,r_{x_i})\}_{i=1}^n</m> are disjoint and</p>
+    Arguing as in <xref ref="thm-maximal-theorem" text="Theorem"/>, if <m>c &lt; m\left(\bigcup_{x\in F_k} B(x,r_x)\right)</m> then there is a finite collection <m>x_1,\ldots,x_n \in F_k</m> so that <m>\{B(x_i,r_{x_i})\}_{i=1}^n</m> are disjoint and</p>
 <md> c &lt; 3 \sum_{i=1}^n m(B(x_i,r_{x_i}))\leq \sum 3k\sum_{i=1}^n \nu(B(x_i,r_{x_i}))\leq 3k\varepsilon.</md>
 <p>Taking the supremum over all <m>c \leq m(F_k)</m> we get <m>m(F_k)\leq 3k\varepsilon</m> for all <m>\varepsilon &gt;0</m>.
     Hence <m>m(F_k) = 0</m>.
@@ -766,7 +767,7 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
     Applying the Lebesgue Decomposition Theorem to <m>\nu</m>, we have <m>\nu = \nu_a + \nu_s</m> where <m>\nu_a \ll m</m> and <m>\nu_s \perp m</m>.
     In this case</p>
 <md> \frac{d\nu}{dm} = \frac{d\nu_a}{dm} = f.</md>
-<p>By the Lebesgue Differentiation Theorem, Theorem <xref ref="thm-Lebesgue-differentiation"/> and the Radon-Nikodym Theorem,</p>
+<p>By the Lebesgue Differentiation Theorem, <xref ref="thm-Lebesgue-differentiation" text="Theorem"/> and the Radon-Nikodym Theorem,</p>
 <md>
 \begin{aligned}
 \lim_{r\rightarrow 0} \frac{\nu_a(B(x,r))}{2r}  = \lim_{r\rightarrow 0} \frac{1}{2r}\int_{B(x,r)}f\,dm = f(x).
@@ -785,7 +786,7 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 <p>If <m>h \neq 0</m> then</p>
 <md> f(x+h) - f(x) = \begin{cases}\nu((x,x+h]) &amp; \text{if }h&gt;0 \\
                                     -\nu((x+h,x])&amp; \text{if }h&lt;0.\end{cases}</md>
-<p>It follows from Theorem <xref ref="thm-Borel-radon-nikodym-derivative"/></p>
+<p>It follows from <xref ref="thm-Borel-radon-nikodym-derivative" text="Theorem"/></p>
 <md> f'(x) = \lim_{h\rightarrow 0}\frac{f(x+h) - f(x)}{h}=\frac{d\nu}{dm}(x)</md>
 <p>for a.a. <m>x \in [a,b]</m>.
     As the Radon-Nikodym derivative <m>\frac{d\nu}{dm}</m> is integrable, <m>f'</m> is integrable.</p>
@@ -809,11 +810,11 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 <proof>
 <p>By replacing <m>f</m> with <m>f - f(a)</m> we can assume <m>f(a) = 0</m>.
     Assume <m>f</m> is absolutely continuous. 
-    By Proposition <xref ref="prop-abs-cont-jordan-decomp"/>, <m>f</m> is of bounded variation.
-    Thus <m>f'</m> exists a.e. and <m>f'</m> is integrable by Corollary <xref ref="cor-f-integrable"/>.
+    By <xref ref="prop-abs-cont-jordan-decomp" text="Proposition"/>, <m>f</m> is of bounded variation.
+    Thus <m>f'</m> exists a.e. and <m>f'</m> is integrable by <xref ref="cor-f-integrable" text="Corollary"/>.
     Let <m>\nu</m> be the signed-Borel measure such that <m>f</m> is the cumulative distribution function for <m>\nu</m>.
-    Then, by Proposition <xref ref="prop-abs-cont-meas-and-func"/>, <m>\nu</m> is absolutely continuous.
-    Thus, by Theorem <xref ref="thm-Borel-radon-nikodym-derivative"/></p>
+    Then, by <xref ref="prop-abs-cont-meas-and-func" text="Proposition"/>, <m>\nu</m> is absolutely continuous.
+    Thus, by <xref ref="thm-Borel-radon-nikodym-derivative" text="Theorem"/></p>
 <md> f(x) = \nu([a,x]) = \int_{[a,x]}f'\,dm.</md>
 <p>Hence (i) implies (iii).
     That (iii) implies (ii) is clear by setting <m>h = f'</m>.</p>
@@ -826,34 +827,34 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 <p>for Borel sets <m>E \subseteq[a,b]</m>.
     Then <m>\nu</m> is absolutely continuous, and</p>
 <md> f(x) = \nu([a,x]).</md>
-<p>By Proposition <xref ref="prop-abs-cont-meas-and-func"/>, <m>f</m> is absolutely continuous.</p>
+<p>By <xref ref="prop-abs-cont-meas-and-func" text="Proposition"/>, <m>f</m> is absolutely continuous.</p>
 </proof>
 </section>
 <section>
 <title>The Lebesgue Decomposition of function</title>
-<p>By the Lebesgue Decomposition Theorem <m>\nu = \nu_a + \nu_s</m>, where <m>\nu_a \ll m</m> and <m>\nu_s \perp s</m>. Let <m>f_a</m> be the cumulative distribution function for <m>\nu_a</m>, and let <m>f_s</m> be the cumulative distribution function for <m>\nu_s</m>. By Proposition <xref ref="prop-abs-cont-meas-and-func"/>, <m>f_a</m> is absolutely continuous. In this section we will further study <m>f_s</m>.</p>
+<p>By the Lebesgue Decomposition Theorem <m>\nu = \nu_a + \nu_s</m>, where <m>\nu_a \ll m</m> and <m>\nu_s \perp s</m>. Let <m>f_a</m> be the cumulative distribution function for <m>\nu_a</m>, and let <m>f_s</m> be the cumulative distribution function for <m>\nu_s</m>. By <xref ref="prop-abs-cont-meas-and-func" text="Proposition"/>, <m>f_a</m> is absolutely continuous. In this section we will further study <m>f_s</m>.</p>
 <definition>
 <p>Let <m>f</m> be a continuous function on a closed interval <m>[a,b]</m>.
     Then <m>f</m> is a continuous <em>singular</em> function<idx><h>singular</h><h>function</h></idx> if <m>f'= 0</m> a.e.</p>
 </definition>
 <example xml:id="ex-Cantor-Lebesgue-singular-function">
-<p>Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m> (see Example <xref ref="ex-cantor-lebesgue"/>), let <m>C</m> be the Cantor set in <m>[0,1]</m> and let <m>U = [0,1]\backslash U.</m>
+<p>Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m> (see <xref ref="ex-cantor-lebesgue" text="Example"/>), let <m>C</m> be the Cantor set in <m>[0,1]</m> and let <m>U = [0,1]\backslash U.</m>
     By the definition of <m>\varphi</m>, there are disjoint open intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>U = \bigcup_{k=1}^\infty I_k</m> such that <m>\varphi</m> is constant on each <m>I_k</m>.
     It follows that <m>\varphi'(x)= 0</m> for all <m>x \in U</m>.
-    By Example <xref ref="ex-Cantor"/>, <m>m(U)  = 1 =m([0,1])</m>.
+    By <xref ref="ex-Cantor" text="Example"/>, <m>m(U)  = 1 =m([0,1])</m>.
     Hence <m>\varphi'=0</m> a.e., and so <m>\varphi</m> is a continuous singular function.</p>
-<p>Recall that, by Example <xref ref="ex-Cantor-Lebesgue-not-abs-cont"/>, if <m>\nu</m> is the Borel measure on <m>[0,1]</m> satisfying <m>\varphi((c,d]) = \varphi(d) - \varphi(c)</m>, then <m>\nu</m> is a singular measure.</p>
+<p>Recall that, by <xref ref="ex-Cantor-Lebesgue-not-abs-cont" text="Example"/>, if <m>\nu</m> is the Borel measure on <m>[0,1]</m> satisfying <m>\varphi((c,d]) = \varphi(d) - \varphi(c)</m>, then <m>\nu</m> is a singular measure.</p>
 </example>
-<p>Example <xref ref="ex-Cantor-Lebesgue-singular-function"/> gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.</p>
+<p><xref ref="ex-Cantor-Lebesgue-singular-function" text="Example"/> gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.</p>
 <proposition xml:id="prop-f-singular">
 <p>Let <m>f</m> be a right-continuous function of bounded variation on a closed interval <m>[a,b]</m> and let <m>\nu_f</m> be the Borel signed-measure defined by <m>\nu_f((c,d]) = f(d) - f(c).</m>
     Then <m>\nu_f</m> is singular if and only if <m>f' =0</m> a.e.</p>
 </proposition>
 <proof>
-<p>Note that, as argued in Corollary <xref ref="cor-f-integrable"/>,</p>
+<p>Note that, as argued in <xref ref="cor-f-integrable" text="Corollary"/>,</p>
 <md> \lim_{r\rightarrow 0}\frac{\nu_f(E_r(x))}{r} = f'(x),</md>
 <p>where <m>E_r(x)</m> is <m>(x,x+r]</m> or <m>(x-r,x]</m>.
-    From Theorem <xref ref="thm-Borel-radon-nikodym-derivative"/>, <m>\nu_f</m> is singular if and only if, for almost all <m>x \in [a,b]</m>,</p>
+    From <xref ref="thm-Borel-radon-nikodym-derivative" text="Theorem"/>, <m>\nu_f</m> is singular if and only if, for almost all <m>x \in [a,b]</m>,</p>
 <md> \lim_{r\rightarrow 0}\frac{\nu(E_r(x))}{r} = 0.</md>
 <p>Thus <m>\nu_f \perp m</m> if and only if <m>f' = 0</m> a.e.</p>
 </proof>
@@ -869,18 +870,18 @@ Then, for almost all <m>x \in \mathbb{R}</m>,</p>
 </ol>
 </theorem>
 <proof>
-<p>The result follows immediately from Theorem <xref ref="thm-lebesegue-decomposition"/>, Proposition <xref ref="prop-abs-cont-meas-and-func"/>, and Proposition <xref ref="prop-f-singular"/>.</p>
+<p>The result follows immediately from <xref ref="thm-lebesegue-decomposition" text="Theorem"/>, <xref ref="prop-abs-cont-meas-and-func" text="Proposition"/>, and <xref ref="prop-f-singular" text="Proposition"/>.</p>
 </proof>
 <example>
 <p>Let <m>\delta_0</m> be the Dirac measure on the Borel sets of <m>[-1,1]</m>, centered at <m>0</m>.
 I.e. <m>\delta_0(E) = 1</m> if <m>0 \in E</m>, and <m>\delta_0(E)=0</m> otherwise.
-If <m>H</m> is the cumulative distribution function of <m>\delta_0</m>, then <m>H</m> is not continuous, see Exercise <xref ref="exer-dirac-cdf"/>.
-Thus Theorem <xref ref="thm-Lebesgue-decomp-function"/>, does not apply to <m>H</m>.</p>
+If <m>H</m> is the cumulative distribution function of <m>\delta_0</m>, then <m>H</m> is not continuous, see <xref ref="exer-dirac-cdf" text="Exercise"/>.
+Thus <xref ref="thm-Lebesgue-decomp-function" text="Theorem"/>, does not apply to <m>H</m>.</p>
 </example>
 <remark>
 <p>Let <m>\nu</m> be a Borel measure on <m>[a,b]</m>, with cumulative distribution function <m>f</m>. 
-    If <m>f</m> is continuous, then applying Theorem <xref ref="thm-lebesegue-decomposition"/>  to <m>\nu</m> gives the same decomposition as applying Theorem <xref ref="thm-Lebesgue-decomp-function"/> to <m>f</m>.</p>
-<p>If <m>f</m> is not continuous, we can still apply Theorem <xref ref="thm-lebesegue-decomposition"/> to <m>\nu</m> and decompose <m>f = f_a + f_s</m>, where <m>f_a</m> is absolutely continuous, and <m>f_s'= 0</m> a.e.
+    If <m>f</m> is continuous, then applying <xref ref="thm-lebesegue-decomposition" text="Theorem"/>  to <m>\nu</m> gives the same decomposition as applying <xref ref="thm-Lebesgue-decomp-function" text="Theorem"/> to <m>f</m>.</p>
+<p>If <m>f</m> is not continuous, we can still apply <xref ref="thm-lebesegue-decomposition" text="Theorem"/> to <m>\nu</m> and decompose <m>f = f_a + f_s</m>, where <m>f_a</m> is absolutely continuous, and <m>f_s'= 0</m> a.e.
     In this case <m>f_s</m> will not be continuous.</p>
 <p>This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If <m>f</m> is right-continuous and of bounded variation, how discontinuous can it be?</p>
 </remark>
@@ -893,7 +894,7 @@ Thus Theorem <xref ref="thm-Lebesgue-decomp-function"/>, does not apply to <m>H<
     Then <m>\nu</m> is continuous if and only if <m>f</m> is continuous and <m>f(a) = 0</m>.</p>
 </proposition>
 <proof>
-<p>By Theorem <xref ref="thm-cdf"/>, <m>f</m> is right continuous.
+<p>By <xref ref="thm-cdf" text="Theorem"/>, <m>f</m> is right continuous.
     Assume that <m>f</m> is continuous and <m>f(a) = 0</m>.
     Since <m>f(a) = 0</m>, <m>\nu(\{a\}) = 0</m>.
     Take any <m>x \in (a,b]</m>.
@@ -963,10 +964,10 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
     The collection of open intervals <m>\{(a_x,b_x)\}_{x\in(a,b)}</m> is therefore a disjoint collection (viewing <m>(a_x,b_x)</m> as the empty set when <m>a_x = b_x</m>);
     and</p>
 <md> \sum_{x\in(a,b)} (b_x - a_x) \leq f(b) - f(a) &lt; \infty.</md>
-<p>By Lemma <xref ref="lem-uncountable-series"/> it follows that <m>a_x = b_x</m> for all but at most countably many points.
+<p>By <xref ref="lem-uncountable-series" text="Lemma"/> it follows that <m>a_x = b_x</m> for all but at most countably many points.
     Thus <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </proof>
-<p>The following result offers a sort of converse to Theorem <xref ref="thm-bv-countable-discont"/>: for every countable set <m>A</m> there is an increasing function whose set of discontinuities is <m>A</m>.</p>
+<p>The following result offers a sort of converse to <xref ref="thm-bv-countable-discont" text="Theorem"/>: for every countable set <m>A</m> there is an increasing function whose set of discontinuities is <m>A</m>.</p>
 <proposition xml:id="prop-countable-discont">
 <p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>A \subseteq [a,b]</m> be a countable set.
     There is an increasing function <m>f</m> on <m>[a,b]</m> where <m>f</m> is continuous on <m>[a,b]\backslash A</m> and discontinuous on <m>A</m>.
@@ -999,7 +1000,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
     Then</p>
 <md> |f(x_m) - f(y)|\geq a_m &gt; 0.</md>
 <p>Hence <m>f</m> is not continuous at <m>x_m</m>.</p>
-<p>The argument that <m>f</m> is (left) continuous on <m>[a,b]\backslash A</m> follows similar reasoning as the argument that <m>f</m> is right-continuous and is left as an exercise (Exercise <xref ref="exer-countable-discont"/>).</p>
+<p>The argument that <m>f</m> is (left) continuous on <m>[a,b]\backslash A</m> follows similar reasoning as the argument that <m>f</m> is right-continuous and is left as an exercise (<xref ref="exer-countable-discont" text="Exercise"/>).</p>
 </proof>
 <p>What do non-continuous Borel signed-measures look like? Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval and let <m>x \in [a,b]</m> be any point. The Dirac measure at <m>x</m>, <m>\delta_x</m>, is not a continuous Borel measure, since <m>\delta_x(\{x\}) = 1 \neq 0</m>. Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.</p>
 <definition>
@@ -1009,7 +1010,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </definition>
 <remark>
 <p>Note that, if <m>\nu = \sum_{n=1}^\infty a_n\delta_{x_n}</m> is a discrete Borel signed-measure, then the series <m>\sum_{n=1}^\infty a_n</m> is absolutely convergent.</p>
-<p>Conversely, if <m>\sum_{n=1}^\infty a_n</m> is an absolutely convergent series, and <m>\{x_n\}_{n=1}^\infty</m> is a countable collection of points in a closed interval <m>[a,b]</m>, then <m>\sum_{n} a_n \delta_{x_n}</m> is a discrete Borel signed-measure on <m>[a,b]</m>, (Exercise <xref ref="exer-discrete-measure"/>).</p>
+<p>Conversely, if <m>\sum_{n=1}^\infty a_n</m> is an absolutely convergent series, and <m>\{x_n\}_{n=1}^\infty</m> is a countable collection of points in a closed interval <m>[a,b]</m>, then <m>\sum_{n} a_n \delta_{x_n}</m> is a discrete Borel signed-measure on <m>[a,b]</m>, (<xref ref="exer-discrete-measure" text="Exercise"/>).</p>
 </remark>
 <p>It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.</p>
 <theorem xml:id="thm-Lebesgue-decomp-function-further">
@@ -1027,13 +1028,13 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </ol>
 </theorem>
 <proof>
-<p>By the Lebesgue decomposition, Theorem <xref ref="thm-lebesegue-decomposition"/>, there are mutually singular measures <m>\nu_s</m> and <m>\nu_{ac}</m> where <m>\nu_s</m> is singular, <m>\nu_{ac}</m> is absolutely continuous, and <m>\nu = \nu_s + \nu_{ac}</m>.
+<p>By the Lebesgue decomposition, <xref ref="thm-lebesegue-decomposition" text="Theorem"/>, there are mutually singular measures <m>\nu_s</m> and <m>\nu_{ac}</m> where <m>\nu_s</m> is singular, <m>\nu_{ac}</m> is absolutely continuous, and <m>\nu = \nu_s + \nu_{ac}</m>.
     It remains to show that we can decompose <m>\nu_s</m> into a discrete part and a continuous part.
     We will thus assume that <m>\nu=\nu_s</m> is singular.</p>
 <p>First, assume <m>\nu</m> is a measure.
     Let <m>f(x) = \nu([a,x])</m> be the cumulative distribution function for <m>\nu</m>.
     Then <m>f</m> is a right-continuous increasing function on <m>[a,b]</m>.
-    By Theorem <xref ref="thm-bv-countable-discont"/> the set <m>D</m> of discontinuities of <m>f</m> is countable.
+    By <xref ref="thm-bv-countable-discont" text="Theorem"/> the set <m>D</m> of discontinuities of <m>f</m> is countable.
     For each <m>x \in D</m>, let</p>
 <md> a_x = f(x) - lim_{y\rightarrow d^-}f(y)\neq 0.</md>
 <p>Note that the sequence <m>\sum_{x\in D}a_x</m> is absolutely convergent, since <m>f</m> is of bounded variation.
@@ -1053,7 +1054,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </proof>
 <p>Let <m>H</m> be the Heaviside function<idx><h>Heaviside function</h></idx> on <m>\mathbb{R}</m>. That is</p>
 <md> H(x) = \begin{cases} 0 &amp; x&lt;0 \\ 1 &amp; x \geq 0.\end{cases}</md>
-<p>The Heaviside function is the cumulative distribution function for the Dirac measure at <m>0</m>, <m>\delta_0</m> (see Exercise <xref ref="exer-dirac-cdf"/>). Thus, if <m>x_0 \in \mathbb{R}</m>, then the cumulative distribution function for the Dirac measure <m>\delta_{x_0}</m> is <m>H(x-x_0).</m></p>
+<p>The Heaviside function is the cumulative distribution function for the Dirac measure at <m>0</m>, <m>\delta_0</m> (see <xref ref="exer-dirac-cdf" text="Exercise"/>). Thus, if <m>x_0 \in \mathbb{R}</m>, then the cumulative distribution function for the Dirac measure <m>\delta_{x_0}</m> is <m>H(x-x_0).</m></p>
 <corollary>
 <p>Let <m>f</m> be a right-continuous function of bounded variation on a closed interval <m>[a,b]</m>.
     Then there are functions <m>f_d</m>, <m>f_{sc}</m>, and <m>f_{ac}</m> on <m>[a,b]</m> such that</p>
@@ -1073,7 +1074,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </corollary>
 <proof>
 <p>Let <m>\nu = \sum_{n=1}^\infty a_n\delta_{x_n}</m> be a discrete Borel signed-measure on <m>[a,b]</m>.
- The result follows from Theorem <xref ref="thm-Lebesgue-decomp-function-further"/>, on noting that if <m>f(x)=\nu([a,x])</m>, then</p>
+ The result follows from <xref ref="thm-Lebesgue-decomp-function-further" text="Theorem"/>, on noting that if <m>f(x)=\nu([a,x])</m>, then</p>
 <md> f(x) = \sum_{n=1}^\infty a_nH(x-x_n) = \sum_{n\colon x_n\leq x}a_n. </md>
 </proof>
 </section>
@@ -1117,7 +1118,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </ol>
 </exercise>
 <exercise xml:id="exer-abs-cont-not-antisymmetric">
-<p>In Exercise <xref ref="exer-abs-cont-preorder"/> it is shown that <m>\ll</m> is a preorder.</p>
+<p>In <xref ref="exer-abs-cont-preorder" text="Exercise"/> it is shown that <m>\ll</m> is a preorder.</p>
 <ol>
 <li><p>Show that <m>\ll</m> is not a <em>partial order</em>. I.e. show that <m>\ll</m> is not antisymmetric.
     That is, show that we can have <m>\mu \ll \nu</m> and <m>\nu \ll \mu</m> but <m>\mu \neq \nu</m>.</p>
@@ -1125,7 +1126,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 <li><p>For <m>\sigma</m>-finite measures, show that if <m>\mu \ll \nu</m> and <m>\nu \ll \mu</m> then there is a scalar <m>c</m> such that <m>\mu = c \nu</m>.
     That is, let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mu</m> and <m>\nu</m> be non-zero <m>\sigma</m>-finite measures on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m> and <m>\mu \ll \nu</m>.
     Show that the Radon-Nikodym derivatives <m>\frac{d\mu}{d\nu}</m> and <m>\frac{d\nu}{d\mu}</m> are constant and (multiplicative) inverses of eachother.
-    (HINT: Recall Exercise <xref ref="exer-same-int-same-func"/> and Exercise <xref ref="exer-abs-cont-integration"/>).</p>
+    (HINT: Recall <xref ref="exer-same-int-same-func" text="Exercise"/> and <xref ref="exer-abs-cont-integration" text="Exercise"/>).</p>
 </li>
 </ol>
 </exercise>
@@ -1134,7 +1135,7 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 Show that if <m>f'(x)</m> exists for all <m>x</m> and <m>f'</m> is bounded, then <m>f</m> is absolutely continuous. (HINT: Recall the Mean Value Theorem).</p>
 </exercise>
 <exercise xml:id="exer-countable-discont">
-<p>Complete the proof of Proposition <xref ref="prop-countable-discont"/>.
+<p>Complete the proof of <xref ref="prop-countable-discont" text="Proposition"/>.
     That is, if <m>A=\{x_n\}_{n=1}^\infty \subseteq [a,b]</m> is a countable set, <m>\sum_n a_n</m> is a convergent series of positive numbers, and <m>f</m> is the function on <m>[a,b]</m></p>
 <md> f(x) = \sum_{n\colon x_n\leq x}a_n,</md>
 <p>then <m>f</m> is continuous for all <m>x \in [a,b]\backslash A</m>.</p>

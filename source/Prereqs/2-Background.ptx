@@ -2,11 +2,11 @@
 <chapter>
 <title>Topology</title>
 <introduction>
-<p>
+
 We briefly cover some key ideas about topology. 
 In particular, we will focus on the topology on <m>\mathbb{R}</m>.
 Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
-</p>
+
 </introduction>
 <subsection>
 <title>Open and closed sets in <m>\mathbb{R}</m></title>
@@ -14,7 +14,8 @@ Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
 <p>A subset <m>A \subseteq \mathbb{R}</m> is <em>open</em> if for all <m>x\in A</m> there exists <m>r&gt;0</m> such that <m>(x-r, x+r) \subseteq A</m>.</p>
 <p>A subset <m>B \subseteq \mathbb{R}</m> is <em>closed</em> if its complement <m>\mathbb{R}\backslash B</m> is open.</p>
 </definition>
-<p>\begin{egs}</p>
+<example>
+<p>We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.</p>
 <ol>
 <li><p><m>\emptyset</m> and <m>\mathbb{R}</m> are open and closed.</p>
 </li>
@@ -29,7 +30,7 @@ Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
 <li><p>The intervals <m>(a,b]</m> and <m>[a,b)</m> are neither open nor closed.</p>
 </li>
 </ol>
-<p>\end{egs}</p>
+</example>
 <definition>
 <p>Let <m>X \subseteq \mathbb{R}</m>.
 A set <m>A \subseteq X</m> is <em>open in <m>X</m></em> if there is an open subset <m>A' \subseteq \mathbb{R}</m> such that <m>A = A' \cap X</m>.
@@ -146,7 +147,7 @@ A function <m>f \colon X \rightarrow Y</m> is continuous if <m>f^{-1}(A) \in \ta
 <p>A subset <m>A \subseteq \mathbb{R}^n</m> is open if given <m>x\in A</m> there is an <m>r&gt;0</m> such that</p>
 <md> \{ y \in \mathbb{R}^n \colon \|x-y\| &lt;r \} \subseteq A. </md>
 <p>This defines a topology on <m>\mathbb{R}^n</m>.</p>
-<p>The usual <m>\varepsilon</m>-<m>\delta</m> definition of continuous functions on <m>\mathbb{R}^n</m> coincides with Definition  <xref ref="def-cont"/>.</p>
+<p>The usual <m>\varepsilon</m>-<m>\delta</m> definition of continuous functions on <m>\mathbb{R}^n</m> coincides with <xref ref="def-cont" text="Definition"/>.</p>
 </example>
 <example>
 <p>Recall that there are other norms we can put on <m>\mathbb{R}^n</m>:
@@ -163,7 +164,7 @@ However, the topology defined using a <m>p</m>-norm and the topology defined usi
 <p>Let <m>(X,\ d)</m> be a metric space.
 A set <m>A \subseteq X</m> is open if for each <m>x\in A</m> there is an <m>r&gt;0</m> such that</p>
 <md> \{y \in X \colon d(x,y)&lt;r \} \subseteq A. </md>
-<p>Again, this defines a topology on <m>X</m> and the <m>\varepsilon</m>-<m>\delta</m> definition of continuity coincides with Definition  <xref ref="def-cont"/>.</p>
+<p>Again, this defines a topology on <m>X</m> and the <m>\varepsilon</m>-<m>\delta</m> definition of continuity coincides with <xref ref="def-cont" text="Definition"/>.</p>
 </example>
 <definition>
 <p>Let <m>(X,\tau)</m> be a topological space.
@@ -239,14 +240,14 @@ Thus <m>A</m> is compact.</p>
 <ol>
 <li><p>if <m>A</m> is unbounded then <m>A</m> is not compact;</p>
 </li>
-<li><p>if <m>A</m> is not closed, then <m>A</m> is not compact.</p>
+<li><p>if <m>A</m> is not closed, then <m>A</m> is not compact. \qedhere</p>
 </li>
 </ol>
 </proof>
 <definition>
 <p>A set <m>A \subseteq \mathbb{R}</m> is called <em>sequentially compact</em> if every infinite sequence of elements of <m>A</m> has a subsequence which converges to an element of <m>A</m>.</p>
 </definition>
-<p>The Bolzano-Weierstrass theorem, together with Proposition  <xref ref="prop-closed"/>, tells us that a set <m>A\subseteq \mathbb{R}</m> is sequentially compact if and only if it is closed and bounded. Combining the Bolzano-Weierstrass Theorem and the Heine-Borel Theorem we get the following result.</p>
+<p>The Bolzano-Weierstrass theorem, together with <xref ref="prop-closed" text="Proposition"/>, tells us that a set <m>A\subseteq \mathbb{R}</m> is sequentially compact if and only if it is closed and bounded. Combining the Bolzano-Weierstrass Theorem and the Heine-Borel Theorem we get the following result.</p>
 <corollary xml:id="cor-heine-borel">
 <p>Let <m>A\subseteq \mathbb{R}</m>. Then the following are equivalent:</p>
 <ol>
@@ -271,12 +272,12 @@ Then</p>
 </ol>
 </proposition>
 <remark>
-<p>The Heine-Borel Theorem and Corollary  <xref ref="cor-heine-borel"/> actually hold in <m>\mathbb{R}^n</m>:
+<p>The Heine-Borel Theorem and <xref ref="cor-heine-borel" text="Corollary"/> actually hold in <m>\mathbb{R}^n</m>:
 a set <m>A\subseteq \mathbb{R}^n</m> is compact if and only if it is sequentially compact if and only if it is closed and bounded.</p>
 <p>However, in general topology the three conditions need not be the same.
 A metric space <m>X</m> is compact if and only if it is sequentially compact.
 However, there are topological spaces which are not metric spaces, which are sequentially compact but not compact.</p>
-<p>If <m>X</m> is a normed vector space which is complete (i.e. Cauchy sequences are convergent) then the statement: ``<m>A \subseteq X</m> is compact if and only if <m>A</m> is closed and bounded" is true if and only if <m>X</m> is finite dimensional.
+<p>If <m>X</m> is a normed vector space which is complete (i.e. Cauchy sequences are convergent) then the statement: <q><m>A \subseteq X</m> is compact if and only if <m>A</m> is closed and bounded</q> is true if and only if <m>X</m> is finite dimensional.
 That is, it is possible to find closed and bounded sets which are not compact.</p>
 <p>In this course we will study a large class of complete, normed vector spaces which are infinite dimensional: <m>L^p</m>-spaces.</p>
 </remark>

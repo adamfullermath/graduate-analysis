@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter>
+<title>Product measures</title>
+<introduction>
+\epigraph{<em><q>Suppose it is said to thee, What is the area of a triangle of side 10 \emph{khet} and of base 4 \emph{khet}?</q></em>}{Ahmes}
+
+</introduction>
+<section>
+<title>Product measures</title>
+<p>Given two measure spaces <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m>, we want to construct a measure on <m>X\times Y</m> from <m>\mu</m> and <m>\nu</m>. We will call this the <em>product measure</em> of <m>\mu</m> and <m>\nu</m>, and denote the product measure by <m>\mu \times \nu</m>. The basic road-map for this construction is simple: if <m>A \in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>, we define <m>(\mu \times \nu)(A\times B) = \mu(A)\nu(B)</m>. We then show that <m>\mu \times \nu</m> is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem (<xref ref="thm-Car-ext-2" text="Theorem"/>), <m>\mu\times\nu</m> extends to a measure on <m>X \times Y</m>.</p>
+<definition>
+<p>Let <m>(X,\mathcal{M})</m> and <m>(Y,\mathcal{N})</m> be two measurable spaces.
+	If <m>A \in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>, we call the set <m>A \times B</m> a <em>measurable rectangle</em> in <m>X \times Y</m>.<idx><h>measurable rectangle</h></idx></p>
+</definition>
+<proposition xml:id="prop-product-premeas">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be measure spaces; let <m>\mathcal{S}</m> be the measurable rectangles in <m>X\times Y</m>; and let <m>\mu \times \nu</m> be the extended real-valued function on <m>\mathcal{S}</m> defined by</p>
+<md> (\mu\times\nu)(A\times B) = \mu(A)\nu(B)</md>
+<p>for all <m>A \in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>.
+	Then <m>\mathcal{S}</m> is a semiring, and <m>\mu \times \nu</m> is a premeasure on <m>\mathcal{S}</m>.</p>
+</proposition>
+<proof>
+<p>Recall, from <xref ref="exer-product-semiring" text="Exercise"/>, that the collection <m>\mathcal{S}</m> of all measurable rectangles in <m>X \times Y</m> forms a semiring of sets.</p>
+<p>Note that <m>\emptyset \in \mathcal{S}</m>, and <m>(\mu\times\nu)(\emptyset)=\mu(\emptyset)\nu(\emptyset)=0</m>.
+	To show <m>\mu\times \nu</m> is a premeasure it remains to show that <m>\mu\times\nu</m> is finitely additive and countably monotone.</p>
+<p>Suppose <m>A \times B</m> is a measurable rectangle such that</p>
+<md> A\times B = \bigcup_{k=1}^\infty A_k \times B_k, </md>
+<p>where <m>\{A_k \times B_k\}_{k=1}^\infty</m> are disjoint measurable rectangles.
+	For a fixed <m>x \in A</m>, we have</p>
+<md> B = \bigcup_{k \colon x \in A_k} B_k. </md>
+<p>Note that, if <m>x \in A_{k_1}</m> and <m>x \in A_{k_2}</m>, then since <m>A_{k_1}\times B_{k_1}</m> and <m>A_{k_2}\times B_{k_2}</m> are disjoint, <m>B_{k_1}</m> and <m>B_{k_2}</m> are disjoint.
+	Thus, the collection <m>\{B_k\}_{\{k \colon x \in A_k\}}</m> are a disjoint collection of measurable sets is in <m>Y</m>,
+	and hence</p>
+<md> \nu(B) = \sum_{k \colon x \in A_k} \nu(B_k) = \sum_{k=1}^\infty \nu(B_k)\chi_{A_k}(x).</md>
+<p>Hence, for any <m>x \in X</m>,</p>
+<md> \nu(B) \chi_A(x) = \sum_{k=1}^\infty \nu(B_k)\chi_{A_k}(x).</md>
+<p>Now, by the series version of the Monotone Convergence Theorem, <xref ref="cor-MCT-series" text="Corollary"/>,</p>
+<md> \mu(A)\nu(B) = \int_X \nu(B) \chi_A \,d\mu= \sum_{k=1}^\infty \int_X\nu(B_k)\chi_{A_k}\,d\mu = \sum_{k=1}^\infty \mu(A_k)\nu(B_k).</md>
+<p>Hence, <m>\mu\times \nu</m> is countably additive, and therefore finitely additive.</p>
+<p>Note that, for measurable rectangles <m>A\times B</m> and <m>C \times D</m>,</p>
+<md> A \times B \subseteq C \times D </md>
+<p>if and only if</p>
+<md> A \subseteq C \text{ and } B \subseteq D.</md>
+<p>Thus, if <m>A \times B \subseteq C \times D</m>, then</p>
+<md> (\mu\times \nu)(A\times B) \leq (\mu\times \nu)(C\times D).</md>
+<p>Thus, <m>\mu\times \nu</m> is monotonic.</p>
+<p>Let <m>A\times B</m> be a measurable rectangle and <m>\{A_k\times B_k\}_{k=1}^\infty</m> be measurable rectangles, such that</p>
+<md> A\times B \subseteq \bigcup_{k=1}^\infty A_k \times B_k.</md>
+<p>Since the measurable rectangles <m>\mathcal{S}</m> are a semiring, and <m>\mu\times \nu</m> is finitely additive, we can assume that the sets <m>\{A_k \times B_k\}_{k=1}^\infty</m> are disjoint.
+	Thus</p>
+<md>
+\begin{aligned}
+(\mu\times\nu)(A\times B)&amp;= (\mu\times\nu)\left(\bigcup_{k=1}^\infty (A\times B)\cap (A_k \times B_k) \right) \\
+		&amp;= \sum_{k=1}^\infty (\mu\times\nu)\left((A\times B)\cap (A_k \times B_k )\right)\\
+		&amp;\leq \sum_{k=1}^\infty (\mu\times\nu)(A_k \times B_k).
+\end{aligned}
+</md>
+<p>Hence <m>\mu\times \nu</m> is countably monotone, and therefore <m>\mu\times \nu</m> is a premeasure on the measurable rectangles.</p>
+</proof>
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be two measure spaces, and let <m>(\mu\times\nu)(A\times B)= \mu(A)\nu(B)</m> for <m>A\in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>. By <xref ref="prop-product-premeas" text="Proposition"/>, <m>\mu\times\nu</m> is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem (<xref ref="thm-Car-ext-2" text="Theorem"/>), <m>\mu\times\nu</m> extends to a measure on <m>(\mu\times\nu)^*</m>-measurable sets in <m>X\times Y</m> (where <m>(\mu\times\nu)^*</m> is the outer measure induced by the premeasure <m>\mu\times\nu</m>). We denote this extension by <m>\mu \times \nu</m>. The measure <m>\mu\times \nu</m> is called the <em>product measure</em><idx><h>measure</h><h>product measure</h></idx> of <m>\mu</m> and <m>\nu</m>.</p>
+<remark>
+<p>Recall that the Carathéodory-Hahn Theorem does not guarantee uniqueness of the Carathéodory extension.
+	In particular, if <m>\mathcal{P}</m> is the collection of <m>\mu\times\nu</m>-measurable sets, we are not guaranteed that <m>\mu\times \nu</m> is the only measure on <m>(X\times Y,\mathcal{P})</m> satisfying</p>
+<md number="yes" xml:id="eq-prod-meas">
+(\mu\times\nu)(A\times B)= \mu(A)\nu(B),
+</md>
+<p>for all <m>A \in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>.</p>
+<p>We do have uniqueness when <m>\mu\times\nu</m> is <m>\sigma</m>-finite on <m>\mathcal{S}</m>.
+	In particular, if <m>\mu</m> and <m>\nu</m> are <m>\sigma</m>-finite then <m>\mu\times \nu</m> will be <m>\sigma</m>-finite (<xref ref="exer-sigma-finite-product" text="Exercise"/>), and therefore the product measure is the unique measure satisfying  <xref ref="eq-prod-meas" text="Equation"/>.</p>
+<p>An example where the product measure is not the unique measure satisfying  <xref ref="eq-prod-meas" text="Equation"/> is given in <xref ref="exer-prod-meas-not-unique" text="Exercise"/></p>
+</remark>
+<remark xml:id="rem-alt-prod-meas">
+<p>A word of warning: Some texts define the <m>\sigma</m>-algebra that <m>\mu\times \nu</m> is defined on to be the <m>\sigma</m>-algebra generated by the measurable rectangles. Our definition has <m>\mu\times \nu</m> as a function on the <m>\sigma</m>-algebra of <m>(\mu\times\nu)^*</m>-measurable sets.
+	This may be a larger <m>\sigma</m>-algebra.
+	<xref ref="exer-product-measurable-sets" text="Exercise"/> gives sufficient conditions for when the <m>\sigma</m>-algebra generated by measurable rectangles is smaller than <m>(\mu\times\nu)^*</m>-measurable sets.</p>
+<p>We discuss some differences between these different definitions of product measure further in <xref ref="rem-alt-prod-meas-2" text="Remark"/></p>
+</remark>
+<definition>
+<p>Let <m>X</m> and <m>Y</m> be non-empty sets and let <m>E \subseteq X\times Y</m>.
+	For <m>x \in X</m> the <em><m>x</m>-section</em><idx><h>section</h><h>of a set</h></idx> <m>E_x</m> of <m>E</m> is
+	defined as</p>
+<md> E_x = \{y \in Y \colon (x,y) \in E \}.</md>
+<p>For <m>y \in Y</m> the <em><m>y</m>-section</em><idx><h>section</h><h>of a set</h></idx> <m>E^y</m> of <m>E</m> is
+	defined as</p>
+<md> E^y = \{x \in X \colon (x,y) \in E\}.</md>
+<p>If <m>f</m> is a function on <m>X\times Y</m>, and <m>x\in X</m> then the <em><m>x</m>-section</em> <m>f_x</m> of <m>f</m> is a function on <m>Y</m> defined by</p>
+<md> f_x(y)= f(x,y).</md>
+<p>If <m>y\in Y</m> then the <em><m>y</m>-section</em> <m>f^y</m> of <m>f</m> is a function on <m>X</m> defined by</p>
+<md> f^y(x)= f(x,y).</md>
+<p><idx><h>section</h><h>of a function</h></idx></p>
+</definition>
+<p>We will prove two theorems relating an integral with respect to a product measure <m>\mu\times\nu</m> and nested integrals with respect to <m>\mu</m> and <m>\nu</m> separately: Fubini's Theorem and Tonelli's Theorem.</p>
+<p>We begin with some lemmas. The goal of the following lemmas is to describe <m>(\mu\times \nu)(E)</m> as an integral with respect to <m>\mu</m>. This allows us to (nearly immediately) describe the integrals of simple functions on <m>X\times Y</m>. Then, using simple approximations of measurable functions, we will get the general results needed.</p>
+<p>Recall that if <m>\mathcal{R} \subseteq \mathcal{P}(X)</m> is a collection of subsets of a set <m>X</m>, then <m>\mathcal{R}_\sigma</m> is the collection of all countable unions of sets from <m>\mathcal{R}</m>, and <m>\mathcal{R}_{\sigma\delta}</m> is the countable intersection of sets from <m>\mathcal{R}_\sigma</m>.</p>
+<lemma xml:id="lem-prod-meas-as-integral">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be measure spaces and let <m>\mathcal{S}</m> be the collection of all measurable rectangles in <m>X \times Y</m>.
+	If <m>E \in \mathcal{S}_{\sigma\delta}</m> satisfying <m>(\mu\times\nu)(E)&lt;\infty</m>, then the <m>x</m>-section <m>E_x</m> is <m>\nu</m>-measurable for all <m>x \in X</m>, and</p>
+<md> (\mu\times\nu)(E) = \int_X \nu(E_x)\,d\mu(x).</md>
+</lemma>
+<proof>
+<p>Take <m>E \in \mathcal{S}_{\sigma\delta}.</m>
+	By <xref ref="exer-product-measurable-sets" text="Exercise"/>, <m>E_x</m> is <m>\nu</m>-measurable for all <m>x \in X</m>.
+	Alternatively, this can be proved directly by first considering <m>E \in \mathcal{S}</m>, then <m>E \in \mathcal{S}_\sigma</m>, and then <m>E \in \mathcal{S}_{\sigma\delta}</m>.</p>
+<p>If <m>E = A\times B \in \mathcal{S}</m> for some <m>A \in \mathcal{M}</m> and <m>B \in \mathcal{N}</m>, then</p>
+<md> E_x = \begin{cases} B &amp;\text{if }x \in A\\ \emptyset &amp;\text{if }x \notin A.\end{cases}</md>
+<p>Thus</p>
+<md> \int_X \nu(E_x)\,d\mu(x) = \int_X \nu(B)\chi_A\,d\mu = \nu(B)\mu(A) = (\mu\times\nu)(E).</md>
+<p>Now suppose <m>E \in \mathcal{S}_\sigma</m>. 
+	Thus, there are measurable rectangles <m>\{A_k\times B_k\}_{k=1}^\infty</m> such that <m>E = \bigcup_{k=1}^\infty (A_k \times B_k)</m>.
+	Since <m>\mathcal{S}</m> is a semiring, we can assume that the sets <m>\{A_k \times B_k\}_{k=1}^\infty</m> are disjoint.
+	Then, for each <m>x \in X</m>, the <m>x</m>-sections <m>\{(A_k\times B_k)_x\}_{k=1}^\infty</m> are disjoint and <m>E_x = \bigcup_{k=1}^\infty(A_k\times B_k)_x</m>.
+	Thus, applying the series version of the Monotone Convergence Theorem (Corollar~\ref{cor: MCT series}), we have</p>
+<md>
+\begin{aligned}
+\int_X \nu(E_x)\,d\mu(x) &amp;= \int_X \sum_{k=1}^\infty \nu((A_k\times B_k)_x)\,d\mu(x)\\
+		&amp;= \sum_{k=1}^\infty \int_X \nu((A_k\times B_k)_x)\,d\mu(x)\\
+		&amp;= \sum_{k=1}^\infty (\mu\times\nu)(A_k \times B_k)\\
+		&amp;= (\mu\times\nu)(E).
+\end{aligned}
+</md>
+<p>Now suppose that <m>E\in \mathcal{S}_{\sigma\delta}</m> and <m>(\mu\times\nu)(E)&lt;\infty</m>.
+	There are <m>\mathcal{S}_\sigma</m> sets <m>\{E_k\}</m> such that <m>E = \bigcap_{k=1}^\infty E_k</m>.
+	Since <m>\mathcal{S}</m> is a semiring, we can assume that the sets <m>\{E_k\}_{k=1}^\infty</m> are descending.
+	As <m>(\mu\times\nu)(E)</m> is defined as the outer measure induced by <m>\mu\times\nu</m> on <m>\mathcal{S}</m>, we can further assume that <m>(\mu\times\nu)(E_1)= 0</m>.
+	Thus, by the continuity of measure, <m>(\mu\times\nu)(E)= \lim_{k\rightarrow\infty}(\mu\times\nu)(E_k).</m>
+	For each <m>x\in X</m> and <m>k</m>, the <m>x</m>-section <m>(E_k)_x</m> is <m>\nu</m>-measurable.
+	Hence</p>
+<md> E_x = \bigcap_{k=1}^\infty (E_k)_x</md>
+<p>is <m>\nu</m>-measurable.
+	Further, since</p>
+<md> (\mu\times\nu)(E_k)=\int_X \nu((E_k)_x)\,d\mu(x)&lt;\infty,</md>
+<p><m>\nu((E_k)_x)&lt;\infty</m> for almost all <m>x</m>.
+	Hence, for almost all <m>x \in X</m>, <m>\nu(E_x)=\lim_{k\rightarrow\infty} \nu((E_k)_x).</m>
+	Thus, by the Lebesgue Dominated Convergence Theorem,</p>
+<md>
+\begin{aligned}
+\int_X \nu(E_x)\,d\mu(x) &amp;= \lim_{k\rightarrow\infty} \int_X\nu((E_k)_x)\,d\mu(x)\\
+		&amp;= \lim_{k\rightarrow\infty}\nu(E_k)\\
+		&amp;= \nu(E).\qedhere
+\end{aligned}
+</md>
+</proof>
+<remark>
+<p>If <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> are <m>\sigma</m>-finite, then conclusion of <xref ref="lem-prod-meas-as-integral" text="Lemma"/> holds for any <m>E</m> in the <m>\sigma</m>-algebra generated by the measurable rectangles, not just the <m>\mathcal{S}_{\sigma\delta}</m>-sets of finite measure.
+	This is explored in <xref ref="exer-meas-rect-sigma-alg" text="Exercise"/>.</p>
+</remark>
+<lemma xml:id="lem-prod-meas-as-integral-0">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be measure spaces with <m>\nu</m> a complete measure.
+	If <m>E \subseteq X\times Y</m> is <m>(\mu\times \nu)</m>-measurable with <m>(\mu\times\nu)(E)=0</m>, then the <m>x</m>-section <m>E_x</m> is <m>\nu</m>-measurable for almost all <m>x\in X</m> and <m>\nu(E_x)=0</m>.</p>
+</lemma>
+<proof>
+<p>Take <m>\mu\times\nu</m>-measurable <m>E \subseteq X\times Y</m> with <m>(\mu\times \nu)(E)= 0</m>.
+	By <xref ref="prop-sigma-delta-sets" text="Proposition"/>, there is a set an <m>\mathcal{S}_{\sigma\delta}</m>-set <m>A</m> such that
+	<m>E \subseteq A</m>, and  <m>(\mu\times\nu)(A) = 0</m>.
+	Since <m>(\mu\times\nu)(A) = 0&lt;\infty</m>, we can apply <xref ref="lem-prod-meas-as-integral" text="Lemma"/>, to get</p>
+<md> 0 = (\mu\times\nu)(A) = \int_X \nu(A_x)\,d\mu. </md>
+<p>Since the map <m>x \mapsto \nu(A_x)</m> is non-negative, it follows that <m>\nu(A_x)=0</m> for all most all <m>x\in X</m>.
+	Since <m>E_x \subseteq A_x</m> for all <m>x\in X</m>, it follows from the completeness of <m>\nu</m> that if <m>\nu(A_x)=0</m> then <m>E_x</m> is <m>\nu</m>-measurable and <m>\nu(A_x)=0</m>.</p>
+</proof>
+<lemma xml:id="lem-prod-meas-as-integral-general">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be measure spaces with <m>\nu</m> a complete measure.
+	If <m>E\subseteq X\times Y</m> is <m>(\mu\times\nu)</m>-measurable with <m>(\mu\times\nu)(E)&lt;\infty</m>,
+	then the <m>x</m>-sections <m>E_x</m> are <m>\nu</m>-meaurable for almost all <m>x\in X</m>, and the function <m>x \mapsto \nu(E_x)</m> is a  <m>\mu</m>-measurable function.
+	Further,</p>
+<md> (\mu\times\nu)(E) = \int_{X} \nu(E_x)\,d\mu(x). </md>
+</lemma>
+<proof>
+<p>Since <m>(\mu\times\nu)(E)&lt;\infty</m>, by <xref ref="prop-sigma-delta-sets" text="Proposition"/> there is an <m>\mathcal{S}_{\sigma\delta}</m>-set <m>A\subseteq X\times Y</m> such that <m>E \subseteq A</m> and <m>(\mu\times\nu)(E) = (\mu\times\nu)(A)</m>.
+	Thus <m>(\mu\times\nu)(A\backslash E)=0</m> by the excision property.</p>
+<p>By <xref ref="lem-prod-meas-as-integral" text="Lemma"/>, <m>A_x</m> is measurable for all <m>x\in X</m>, and <m>(A\backslash E)_x</m> is measurable for almost all <m>x\in X</m>.
+	For each <m>x\in X</m>,</p>
+<md> E_x = A_x \backslash (A\backslash E)_x. </md>
+<p>Thus, for almost all <m>x\in X</m>, <m>E_x</m> is <m>\nu</m>-measurable and</p>
+<md> \nu(A_x) = \nu(E_x) + \nu((A\backslash E)_x)= \nu(E_x).</md>
+<p>Applying <xref ref="lem-prod-meas-as-integral" text="Lemma"/> again, we have</p>
+<md>
+\begin{aligned}
+(\mu\times \nu)(E) &amp;= (\mu\times \nu)(A)\\
+		&amp;= \int_X\nu(A_x)\,d\mu \\
+		&amp;= \int_X\nu(E_x)\,d\mu.\qedhere
+\end{aligned}
+</md>
+</proof>
+<theorem xml:id="thm-fubini">
+<title>Fubini's Theorem</title>
+<p><idx><h>Fubini's Theorem</h></idx>
+	Let <m>(X,\mathcal{M},\mu)</m> be a measure space, let <m>(Y,\mathcal{N},\nu)</m> be a complete measure space and let <m>f</m> be a measurable function <m>X\times Y</m> which is integrable with respect to <m>\mu\times \nu</m>.</p>
+<p>Then for almost all <m>x\in X</m>, the <m>x</m>-section <m>f_x</m> of <m>f</m> is integrable with respect to <m>\nu</m> and</p>
+<md> \int_{X\times Y} f\,d(\mu\times\nu) = \int_X\left(\int_Y f(x,y)\,d\nu(y)\right)d\mu(x).</md>
+</theorem>
+<proof>
+<p>First suppose that <m>f =\chi_E</m> where <m>E\subseteq X\times Y</m> is a measurable set with <m>(\mu\times\nu)(E)&lt;\infty</m>.
+	Note that, for each <m>x \in X</m>, the <m>x</m>-section <m>f_x</m> is given by</p>
+<md> f_x = \chi_{E_x}. </md>
+<p>By <xref ref="lem-prod-meas-as-integral-general" text="Lemma"/>, <m>E_x</m> is measurable for almost all <m>x\in X</m>, hence <m>f_x</m> is measurable for almost all <m>x\in X</m>.
+	Further, again by <xref ref="lem-prod-meas-as-integral-general" text="Lemma"/>,</p>
+<md> (\mu\times\nu)(E) = \int_X \nu(E_x)\,d\mu(x) &lt;\infty.</md>
+<p>Hence <m>\nu(E_x)&lt;\infty</m> for almost all <m>x\in X</m>.
+	Thus, for almost all <m>x\in X</m>,</p>
+<md> \infty &gt; \nu(E_x) = \int_Y f_x\,d\mu. </md>
+<p>Thus <m>f_x</m> is integrable for almost all <m>x</m>.
+	We have now that</p>
+<md>
+\begin{aligned}
+\int_{X\times Y} f\,d(\mu\times \nu)&amp; = (\mu\times\nu)(E)\\
+	&amp; = \int_X \nu(E_x)\,d\mu(x)\\&amp; = \int_X\left(\int_Y f(x,y)\,d\nu(y)\right)d\mu(x).
+\end{aligned}
+</md>
+<p>By the linearity of integration, the result holds when <m>f</m> is an integrable simple function on <m>X\times Y</m>.</p>
+<p>Now suppose that <m>f</m> is a non-negative integrable function on <m>X \times Y</m>.
+	Let <m>(\phi_n)_n</m> be an increasing sequence of simple functions which converge pointwise to <m>f</m>.
+	By the above arguments, and the Monotone Convergence Theorem, it follows that</p>
+<md>
+\begin{aligned}
+\lim_{n\rightarrow\infty}\int_X\left(\int_Y \phi_n(x,y)\,d\nu(y)\right)\,d\mu(x) &amp;= \lim_{n\rightarrow\infty}\int_{X\times Y} \phi_n \,d(\mu\times \nu)\\
+		&amp; = \int_{X\times Y} f\,d(\mu\times\nu).
+\end{aligned}
+</md>
+<p>To complete the proof we will show that</p>
+<md> \lim_{n\rightarrow\infty}\int_X\left(\int_Y \phi_n(x,y)\,d\nu(y)\right)\,d\mu(x) = \int_X\left(\int_Y f(x,y)\,d\nu(y)\right)d\mu(x).</md>
+<p>By removing a set of measure zero if necessary, we can assume that the <m>x</m>-sections <m>(\phi_n)_x</m> are integrable for all <m>x\in X</m> for all <m>n</m>.
+	Thus, for each <m>x\in X</m>, <m>((\phi_n)_x)_n</m> is an increasing sequence of measurable functions, converging pointwise to <m>f_x</m>.
+	Thus <m>f_x</m> is measurable for each <m>x\in X</m>.
+	For each <m>n</m>, let define a function <m>h_n</m> on <m>X</m> by</p>
+<md> h_n(x) = \int_Y (\phi_n)_x\,d\nu,</md>
+<p>and define a function <m>h</m> on <m>X</m> by</p>
+<md> h(x) = \int_Y f_x\,d\nu.</md>
+<p>Since each <m>\phi_n</m> is simple, it follows that <m>h_n</m> is integrable for all <m>n</m>.
+	Thus sequence <m>(h_n)_n</m> is an increasing sequence of non-negative measurable functions.
+	By the Monotone Covergenece Theorem applied to <m>((\phi_n)_x)_n</m>, <m>(h_n)_n</m> converges pointwise to <m>h</m>.
+	Applying the Monotone Convergence Theorem to the sequence <m>(h_n)_n</m>, we get</p>
+<md> \lim_{n\rightarrow\infty}\int_X h_n \,d\mu = \int_X h\,d\mu;</md>
+<p>i.e.</p>
+<md> \lim_{n\rightarrow\infty} \int_X \left(\int_Y \phi_n(x,y)\,d\nu(y) \right)\,d\mu(x) = \int_X \left(\int_Y f(x,y)\,d\nu(y) \right)\,d\mu(x).</md>
+<p>If <m>f</m> is an arbitrary integrable function on <m>X\times Y</m>, then <m>f = f_+ - f_-</m> where <m>f_+</m> is the positive part of <m>f</m>, and <m>f_-</m> is the negative part of <m>f</m>.
+	Since the result holds for <m>f_+</m> and <m>f_-</m>, the result holds for <m>f</m> by the linearity of integration.</p>
+</proof>
+<remark xml:id="rem-fubini">
+<p>Let <m>f</m> be a measurable function on a product space <m>X\times Y</m>.
+Note that, in order to apply Fubini's theorem, we must first know that <m>f</m> is integrable with repsect to the product measure <m>\mu \times \nu</m>.
+It is possible that the iterated integral</p>
+<md> \int_X \left( \int_Y f(x,y)\,d\nu(y)\right) \,d\mu(x)</md>
+<p>exists and is finite, but <m>f</m> itself is not integral with resepct to <m>\mu \times \nu</m>.
+An example is given in <xref ref="exer-failure-of-fubini" text="Exercise"/>.</p>
+</remark>
+<p>The shortcoming of Fubini's Theorem discussed in <xref ref="rem-fubini" text="Remark"/> does not arise when when we deal exclusively with <m>\sigma</m>-finite measure spaces. This is the famed theorem of Tonelli.</p>
+<theorem xml:id="thm-tonelli">
+<title>Tonelli's Theorem</title>
+<p><idx><h>Tonelli's Theorem</h></idx>
+	Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be <m>\sigma</m>-finite measure spaces, with <m>\nu</m> a complete measure, and let <m>f</m> be a non-negative <m>(\mu\times\nu)</m>-measurable function on <m>X\times Y</m>.
+	Then, for almost all <m>x\in X</m>, the <m>x</m>-section <m>f_x</m> of <m>f</m> is <m>\nu</m>-measurable, and the (almost everywhere defined) function on <m>X</m></p>
+<md> x \mapsto \int_Y f_x\,d\nu</md>
+<p>is <m>\mu</m>-measurable.
+	Further,</p>
+<md> \int_{X \times Y}f\,d(\mu\times \nu) = \int_X \left( \int_Y f(x,y)\,d\nu(y)\right) \,d\mu(x).</md>
+</theorem>
+<proof>
+<p>Since, <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> are <m>\sigma</m>-finite, the product measure <m>\mu \times \nu</m> is <m>\sigma</m>-finite on <m>X\times Y</m>, by <xref ref="exer-sigma-finite-product" text="Exercise"/>.
+	Thus, by the Simple Approximation Theorem, <xref ref="thm-simple-approx" text="Theorem"/>, there is an increasing sequence of simple functions <m>(\phi_n)_n</m> which converge pointwise to <m>f</m> and each <m>\phi_n</m> is supported in a set of finite measure.
+	For each <m>n</m>, since <m>\phi_n</m> is a supported in a set of finite measure, <m>\phi_n</m> is integrable with respect to <m>\mu\times \nu</m>.
+	Hence, we can apply Fubini's Theorem to each function <m>\phi_n</m>, to get</p>
+<md> \int_{X\times Y}{\phi_n}\,d{(\mu\times\nu)} = \int_{X}{\left(\intd{Y}\,d{\phi_n(x,y)}{\nu(y)}\right)}{\mu(x)}.</md>
+<p>The rest of the proof proceeds in a similar vein to that of Fubini's Theorem.</p>
+</proof>
+<p>With obvious modifications, replacing <m>x</m>-sections with <m>y</m>-sections, we can prove the analogous results of Fubini's Theorem and Tonelli's Theorem on <m>X\times Y</m>, for measure space <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> when <m>(X,\mathcal{M},\mu)</m> is complete. Fubini's Theorem and Tonelli's Theorem are often combined into one result, the Fubini-Tonelli Theorem, which combines the two results.</p>
+<theorem>
+<title>The Fubini-Tonelli Theorem</title>
+<p><idx><h>Fubini's Theorem</h><h>The Fubini-Tonelli Theorem</h></idx><idx><h>Tonelli's Theorem</h><see>Fubini's Theorem</see></idx>\label{thm: fubini-tonelli}
+	Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be <m>\sigma</m>-finite complete measure spaces, and let <m>f</m> be a <m>(\mu\times\nu)</m>-measurable function on <m>X\times Y</m>.
+	Then</p>
+<md>
+\begin{aligned}
+\int_{X\times Y}{|f|}\,d{(\mu\times\nu)} &amp;= \int_{X}{\left(\intd{Y}\,d{|f(x,y)|}{\nu(y)}\right)}{\mu(x)}\\
+		 &amp;= \int_{Y}{\left(\intd{X}\,d{|f(x,y)|}{\mu(x)}\right)}{\nu(y)}.
+\end{aligned}
+</md>
+<p>Further, if any of the three integrals above are finite, then <m>f</m> is integrable and</p>
+<md>
+\begin{aligned}
+\int_{X\times Y}{f}\,d{(\mu\times\nu)} &amp;= \int_{X}{\left(\intd{Y}\,d{f(x,y)}{\nu(y)}\right)}{\mu(x)}\\
+		&amp;= \int_{Y}{\left(\intd{X}\,d{f(x,y)}{\mu(x)}\right)}{\nu(y)}.
+\end{aligned}
+</md>
+</theorem>
+<remark xml:id="rem-alt-prod-meas-2">
+<p>We note in <xref ref="rem-alt-prod-meas" text="Remark"/>, that some people only define the product measure to act on the <m>\sigma</m>-algebra generated by the measurable rectangles.
+	Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be <m>\sigma</m>-finite measure spaces, let <m>\mu \times \nu</m> be the product measure on <m>X\times Y</m>, and let <m>\pi</m> be the restriction of <m>\mu\times \nu</m> be the restriction of <m>\mu \times \nu</m> to the <m>\sigma</m>-algebra <m>\mathcal{F}</m> generated by the measurable rectangles.
+	The analogue of Fubini's Theorem<fn>We will not prove this version of Fubini's Theorem.
+		If you wish you can prove it using <xref ref="exer-product-measurable-sets" text="Exercise"/> and similar arguments to how we proved <xref ref="thm-fubini" text="Theorem"/>.</fn> for <m>\pi</m> states: if <m>f</m> is integrable with respect to <m>\pi</m>, then the <m>x</m>-sections <m>f_x</m> are integrable with respect to <m>\nu</m> for all <m>x \in X</m>, and</p>
+<md>
+\begin{aligned}
+\int_{X\times Y}{f}\,d{\pi} &amp;= \int_{X}{\left(\intd{Y}\,d{f(x,y)}{\nu(y)}\right)}{\mu(x)}\\
+	&amp;= \int_{Y}{\left(\intd{X}\,d{f(x,y)}{\mu(x)}\right)}{\nu(y)}.
+\end{aligned}
+</md>
+<p>The key differences between Fubini's Theorem for <m>\mu \times \nu</m> (<em>our</em> version) and for <m>\pi</m> are</p>
+<ol>
+<li><p>we do not need to assume that <m>\nu</m> or <m>\mu</m> is a complete measure to prove Fubini's Theorem for <m>\mu\times\nu</m>;</p>
+</li>
+<li><p>we have that <m>f_x</m> is <m>\nu</m>-integrable for all <m>x\in X</m>, not just for almost all <m>x \in X</m>, in Fubini's Theorem for <m>\pi</m>; and</p>
+</li>
+<li><p>we are assuming that the measure spaces are <m>\sigma</m>-finite in Fubini's Theorem for <m>\pi</m>.</p>
+</li>
+</ol>
+<p>In practice, concerns over these differences rarely matter.
+	For <em>`nice'</em> functions and <em>`nice'</em> <m>\sigma</m>-algebras one usually has that</p>
+<md> \int_{X\times Y}{f}\,d{(\mu\times\nu)} = \int_{X\times Y}{f}\,d{\pi}. </md>
+</remark>
+<subsection>
+<title>Products of three or more measures</title>
+<md> \left\{\prod_{k=1}^N A_k \colon A_k \in \mathcal{M}_k\, \text{for }k=1,\ldots,n \right\}.</md>
+<p>We can similarly define a product measure on <m>X</m>. We leave the details of the next proposition to the exercises, <xref ref="exer-measurable-rectangles-2" text="Exercise"/> and <xref ref="exer-n-dim-prod-measure" text="Exercise"/>.</p>
+<proposition xml:id="prop-n-dim-prod-measure">
+<p>Let <m>\{(X_k,\mathcal{M}_k,\mu_k)\}_{k=1}^n</m> be measure spaces, let <m>\mathcal{S}</m> be the measurable rectangles in <m>\prod_{k=1}^n X_k</m>; and let <m>\mu_1 \times \ldots \mu_n</m> be the extended real-valued function on <m>\mathcal{S}</m> defined by</p>
+<md> (\mu_1 \times \ldots \times \mu_n)(A_1\times \ldots \times A_n) = \mu_1(A_1)\mu_2(A_2)\ldots \mu_n(A_n)</md>
+<p>for <m>A_k \in \mathcal{M}_k</m> for <m>1\leq k \leq n</m>.
+	Then <m>\mathcal{S}</m> is a semiring, and <m>\mu_1\times\ldots\times \mu_n</m> is a premeasure on <m>\mathcal{S}</m>.</p>
+</proposition>
+<p>By <xref ref="prop-n-dim-prod-measure" text="Proposition"/>, we can thus extend <m>\mu_1\times\ldots\times \mu_n</m> to a measure on <m>\prod_{k=1}^n X_k</m> by the Carathéodory-Hahn Theorem. This measure is also called the <em>product measure</em>.<idx><h>product measure</h></idx> Just as in the <m>n=2</m> case, it is not guaranteed that the measure <m>\mu_1\times\ldots\times \mu_n</m> is the unique extension of the its restriction to the measurable rectangles. However, when each measure space <m>(X_k,\mathcal{M}_k,\mu_k)</m> is a <m>\sigma</m>-finite measure space, for <m>1\leq k \leq n</m>, then we do have uniqueness. The uniqueness results also gives the following associativity result.</p>
+<proposition xml:id="prop-n-dim-prod-measure-associative">
+<p>Let <m>(X_1,\mathcal{M}_1,\mu_1)</m>, <m>(X_2,\mathcal{M}_2,\mu_2)</m>, and <m>(X_3,\mathcal{M}_3,\mu_3)</m> be <m>\sigma</m>-finite measure spaces. Then</p>
+<md> \mu_1 \times \mu_2 \times \mu_3 =(\mu_1 \times \mu_2) \times \mu_3 =\mu_1 \times (\mu_2 \times \mu_3).</md>
+</proposition>
+<p>\section{\texorpdfstring{Lebesgue measure on <m>\mathbb{R}^n</m>}{Lebesgue measure on Rn}}</p>
+<definition>
+<p>Let <m>m</m> be the Lebesgue measure on the Lebesgue measurable subsets of <m>\mathbb{R}</m> and let <m>n\geq 1</m>.
+Let <m>m_n</m> be the product measure</p>
+<md> m_n = \underbrace{m \times \ldots \times m}_{n\ \text{times}} </md>
+<p>on <m>\mathbb{R}^n</m>.
+We call <m>m_n</m> the <em>Lebesgue measure on <m>\mathbb{R}^n</m></em>.<idx><h>Lebesgue measure</h><h>on <m>\mathbb{R}^n</m></h></idx>
+The <m>\sigma</m>-algebra of subsets which are measurable with respect to <m>m_n</m> are the <em>Lebesgue measurable subsets of <m>\mathbb{R}^n</m></em>.<idx><h>measurable set</h><h>Lebesgue measurable set</h></idx></p>
+</definition>
+<p>Note that, since the Lebesgue measure <m>m</m> on <m>\mathbb{R}^n</m> is <m>\sigma</m>-finite on <m>\mathbb{R}</m>, <m>m_n</m> is <m>\sigma</m>-finite on <m>\mathbb{R}^n</m>. Further, by inductive application of <xref ref="prop-n-dim-prod-measure-associative" text="Proposition"/>, if <m>k</m> and <m>l</m> are positive integers such that <m>k+l = n</m>, then <m>m_n = m_k \times m_l</m>. Thus the following version of the Fubini-Tonelli Theorem follows from <xref ref="thm-fubini-tonelli" text="Theorem"/>.</p>
+<theorem>
+<title>{The Fubini-Tonelli Theorem on <m>\mathbb{R}^n</m>}</title>
+<p><idx><h>Fubini's Theorem</h><h>The Fubini-Tonelli Theorem</h></idx><idx><h>Tonelli's Theorem</h><see>Fubini's Theorem</see></idx>
+	Let <m>k,l,n</m> be non-negative integers with <m>n = k + l</m> and let <m>f</m> be a Lebesgue measurable function on <m>\mathbb{R}^n</m>.
+	Then</p>
+<md> \intd{\mathbb{R}^n}{|f|}{m_n} = \intd{\mathbb{R}^k}{\intd{\mathbb{R}^l}{|f|}{m_l}}{m_k} \intd{\mathbb{R}^l}{\intd{\mathbb{R}^k}{|f|}{m_k}}{m_l}.</md>
+<p>If any of these values are finite, then <m>f</m> is integrable with respect to <m>m_n</m> and</p>
+<md> \intd{\mathbb{R}^n}{f}{m_n} = \intd{\mathbb{R}^k}{\intd{\mathbb{R}^l}{f}{m_l}}{m_k} \intd{\mathbb{R}^l}{\intd{\mathbb{R}^k}{f}{m_k}}{m_l}.</md>
+</theorem>
+<p>We will see that the Lebesgue measure on <m>\mathbb{R}^n</m> has similar properties to the Lebesgue measure on <m>\mathbb{R}</m>. We first note that all Borel sets in <m>\mathbb{R}^n</m> are Lebesgue measurable.</p>
+<p>We will recall what the Borel subsets of <m>\mathbb{R}^n</m> are. A subset <m>U \subseteq \mathbb{R}^n</m> is <em>open</em> if given <m>x \in U</m>, there is a <m>\varepsilon&gt;0</m> such that</p>
+<md> \{ y \in \mathbb{R}^n \colon \|x-y\|_2 &lt; \varepsilon \} \subseteq U.</md>
+<p>We are using the Euclidean/<m>2</m>-norm on <m>\mathbb{R}^n</m> here; this is the usual and more intuitive way to define open subsets of <m>\mathbb{R}^n</m>. However, the choice of the <m>2</m>-norm is immaterial. It follows from <xref ref="thm-equiv-norms-on-Rn" text="Theorem"/> that the following statements are equivalent for a subset <m>U \subseteq \mathbb{R}^n</m>:</p>
+<ol>
+<li><p><m>U</m> is an open subset of <m>\mathbb{R}^n</m>;</p>
+</li>
+<li><p>given <m>x \in U</m>, there is a <m>\varepsilon&gt;0</m> such that <m>\{ y \in \mathbb{R}^n \colon \|x-y\|_p &lt; \varepsilon \} \subseteq U</m> for some <m>p</m> with <m>1\leq p \leq \infty</m>;</p>
+</li>
+<li><p>given <m>x \in U</m>, for each <m>p</m>, <m>1\leq p \leq \infty</m>, there is an <m>\varepsilon_p&gt;0</m> such that <m>\{ y \in \mathbb{R}^n \colon \|x-y\|_p &lt; \varepsilon_p \} \subseteq U</m>.</p>
+</li>
+</ol>
+<p>That is, to see if a set <m>U \subseteq \mathbb{R}^n</m> is open, it does not matter which <m>p</m>-norm we use. The Borel sets in <m>\mathbb{R}^n</m> are the members of the smallest <m>\sigma</m>-algebra of subsets of <m>\mathbb{R}^n</m> which contains all open subsets of <m>\mathbb{R}^n</m>. We denote the Borel sets in <m>\mathbb{R}^n</m> by <m>\mathcal{B}(\mathbb{R}^n)</m>.<idx><h>Borel sets</h><h>in <m>\mathbb{R}^n</m></h></idx> We leave the details of the following proposition as an exercise, <xref ref="exer-borel-in-Rn" text="Exercise"/>. The result should be compared to <xref ref="thm-Borel-Lebesgue-meas" text="Theorem"/>.</p>
+<proposition xml:id="prop-borel-in-Rn">
+<p>Let <m>B</m> be a Borel subset of <m>\mathbb{R}^n</m>, then <m>B</m> is Lebesgue measurable.</p>
+</proposition>
+<p>Another important property that the Lebesgue measure <m>m_n</m> shares with the Lebesgue measure <m>m</m> on <m>\mathbb{R}</m> is translation invariance.</p>
+<proposition>
+<p>Let <m>n</m> be a non-negative integer, let <m>A \subseteq \mathbb{R}^n</m> be a Lebesgue measurable set,  let <m>v</m> be a vector in <m>\mathbb{R}^n</m>, and
+	let</p>
+<md> A + v = \{x+ y \colon x \in A \}.</md>
+<p>Then <m>m_n(A) = m_n(A+v)</m>.</p>
+</proposition>
+<p>We will now show that the Lebesgue measure <m>m_n</m> has nice regularity conditions.</p>
+<theorem>
+<p>Let <m>E \subseteq \mathbb{R}^n</m> be Lebesgue measurable. Then</p>
+<md> m_n(E) = \inf\{m_n(U)\colon E \subseteq U,\ U \text{ open}\} </md>
+<p>and</p>
+<md> m_n(E) = \sup\{m_n(K)\colon K \subseteq E,\ K \text{ compact}\}. </md>
+</theorem>
+<proof>
+<p>We first assume that <m>E \subseteq \mathbb{R}^n</m> is a bounded Lebesgue measurable set.
+	Fix <m>\varepsilon &gt;0</m>.
+	For each <m>1\leq k \leq n</m>, let <m>\phi_k(E)</m> be all elements <m>x</m> of <m>\mathbb{R}</m> for which there is a <m>v \in E</m> whose <m>k</m>th coordinate is <m>x</m>.
+	Since <m>E</m> is bounded, <m>\phi_k(E)</m> is bounded for each <m>k</m>.
+	Thus, for each <m>k</m>, there is an open set <m>U_k \subseteq \mathbb{R}</m> such that <m>\phi_k(E) \subseteq U_k</m> and</p>
+<md> m(U_k) - m^*(\phi_k(E))&lt; \varepsilon^{1/p}.</md>
+<p>Let</p>
+<md> U = U_1 \times U_2 \times \ldots \times U_n. </md>
+<p>Then <m>U \subseteq \mathbb{R}^n</m> is an open set with <m>E \subseteq U</m> and</p>
+<md> m_n(U \backslash E) = m_n(U) - m_n(E) &lt; \varepsilon. </md>
+<p>Hence  the outer regularity condition</p>
+<md> m_n(E) = \inf\{m_n(U)\colon E \subseteq U,\ U \text{ open}\} </md>
+<p>holds.
+	Using the fact that <m>m_n</m> is <m>\sigma</m>-finite, it can be shown that the result holds when <m>E</m> is unbounded.</p>
+<p>The inner regularity condition</p>
+<md> m_n(E) = \sup\{m_n(K)\colon K \subseteq E,\ K \text{ compact}\} </md>
+<p>follows from the outer regularity condition and the Heine-Borel theorem.</p>
+</proof>
+<corollary xml:id="cor-regular">
+<p>For <m>E \subseteq \mathbb{R}^n</m> the following are equivalent.</p>
+<ol>
+<li><p><m>E</m> is Lebesgue measurable;</p>
+</li>
+<li><p>there is a <m>G_\delta</m> set <m>G \subseteq \mathbb{R}^n</m> such that <m>E \subset G</m> and <m>m_n^*(G\backslash E)=0</m>;</p>
+</li>
+<li><p>there is a <m>F_\sigma</m> set <m>F \subseteq \mathbb{R}^n</m> such that <m>F \subseteq E</m> and <m>m_n^*(E \backslash F)=0.</m></p>
+</li>
+</ol>
+</corollary>
+<p>In the remainder of this section we will study how changes of variables in <m>\mathbb{R}^n</m> effect the integral. We begin by noting that all linear maps from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^n</m> are continuous.</p>
+<lemma xml:id="lem-linear-cont">
+<p>Let <m>T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n</m> be a linear map. Then <m>T</m> is continuous.</p>
+</lemma>
+<proof>
+<p>Let <m>e_1,\ldots,e_n</m> be the canonical basis of <m>\mathbb{R}^n</m>.
+	That is, let <m>e_1= (1,0,\ldots,0)</m>, <m>e_2 = (0,1,0,\ldots,0)</m>, and so on.
+	Take <m>x = (x_1,\ldots,x_n) \in \mathbb{R}^n</m>
+	Then</p>
+<md>
+\begin{aligned}
+\|T(x)\|_2 &amp;= \| x_1 T(e_1) + \ldots + x_nT(e_n)\|_2 \\
+		&amp;\leq \sum_{k=1}^n |x_k| \|T(e_k)\|_2\\
+		&amp;\leq \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2} \|x\|_2,
+\end{aligned}
+</md>
+<p>where the last inequality is an application of the Cauchy-Schwarz inequality.
+	Letting <m>M = \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2}</m>, we have shown that <m>\|T(x)\|_2 \leq M \|x\|_2</m> for all <m>x \in \mathbb{R}^n</m>.
+	Hence, by <xref ref="prop-bounded-cont" text="Proposition"/>, <m>T</m> is continuous.</p>
+</proof>
+<p>If <m>f</m> is a Lebesgue integrable function on <m>\mathbb{R}^n</m>, and <m>T</m> is an invertible linear map on <m>\mathbb{R}^n</m>, we want to compare the integrals <m>\intd{\mathbb{R}^n}{f}{m_n}</m> and <m>\intd{\mathbb{R}^n}{f\circ T}{m_n}</m>. It is not (yet) clear that the second integral is defined. In general, the composition of a measurable function and a continuous function need not be continuous. Note that we can not apply <xref ref="prop-comp-meas" text="Proposition"/> here. Thus, in order to proceed, we must first show that <m>f \circ T</m> is measurable.</p>
+<proposition>
+<p>Let <m>T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n</m> be an invertible linear map and let <m>f</m> be a Lebesgue measurable function on <m>\mathbb{R}^n</m>, then <m>f \circ T</m> is a Lebesgue measurable.</p>
+</proposition>
+<proof>
+<p>Let <m>E \subseteq \mathbb{R}</m> be a bounded Lebesgue measurable set. 
+	By <xref ref="cor-regular" text="Corollary"/> there is an <m>F_\sigma</m>-set <m>F \subseteq E</m> such that <m>m_n(E) = m_n(F) = 0</m>.
+	Let <m>B = E\backslash F</m>. Then <m>m_n(B) = 0</m>.</p>
+<p>Note that, since <m>T</m> is linear, <m>T^{-1}</m> is linear, and therefore continuous. Hence <m>T</m> sends closed sets to closed sets, and hence <m>F_\sigma</m> sets to <m>F_\sigma</m> sets.
+	Further, since there is an <m>M \geq 0</m>, such that <m>\|T(x)\|_2 \leq M \|x\|_2</m>, <m>T</m> sends bounded sets to bounded sets.
+	Hence <m>T(F)</m> is a bounded <m>F_\sigma</m> set.</p>
+</proof>
+</subsection>
+</section>
+<exercises>
+<exercise xml:id="exer-sigma-finite-product">
+<p>x	Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be <m>\sigma</m>-finite measure spaces. Show that the product measure <m>\mu\times \nu</m> is <m>\sigma</m>-finite on <m>X\times Y</m>.</p>
+</exercise>
+<exercise xml:id="exer-prod-meas-not-unique">
+<p>Let <m>([0,1],\mathcal{M},m)</m> be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of <m>[0,1]</m>, and let <m>([0,1],\mathcal{M},c)</m> be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of <m>[0,1]</m>.
+	Let <m>\mathcal{N}</m> denote the <m>\sigma</m>-algebra of subsets of <m>[0,1]\times[0,1]</m> which are measurable with respect to the product measure <m>m\times c</m>.</p>
+<p>For <m>E \in \mathcal{N}</m> and <m>y \in [0,1]</m>, let <m>E^y</m> be the <m>y</m>-section of <m>E</m>.
+	Define a map <m>\sigma</m> on <m>\mathcal{N}</m> by</p>
+<md> \sigma(E) = \sum_{y\in[0,1]} m(E^y)</md>
+<p>(See <xref ref="lem-uncountable-series" text="Lemma"/> and the preceding paragraphs for information on series of sets indexed by uncountable sets).</p>
+<ol>
+<li><p>Show that <m>\sigma</m> is a measure on <m>([0,1]\times[0,1],\mathcal{N})</m>.</p>
+</li>
+<li><p>Show that <m>\sigma(A\times B)=m(A)c(B)</m> for all <m>A,B \in \mathcal{M}</m>.</p>
+</li>
+</ol>
+<p>Let <m>D = \{(x,x) \colon x \in [0,1]\}</m>.
+	Note that</p>
+<md>D = \bigcap_{n=1}^\infty \bigcup_{k=1}^n \left[\frac{k-1}{n},\frac{k}{n} \right] \times \left[\frac{k-1}{n},\frac{k}{n} \right],</md>
+<p>and hence <m>D \in \mathcal{M}</m>.</p>
+<ol>
+<li><p>Show that <m>\sigma(D) = 0</m>.</p>
+</li>
+<li><p>Show that <m>(m\times c)(D)=\infty</m>.
+		(Hint: show that if <m>\{A_k\times B_k\}_{k=1}^\infty</m> are measurable rectangles such that <m>D \subseteq \bigcup_{k=1}^\infty A_k \times B_k</m>, then
+		<md>\sum_{k=1}^\infty m(A_k)c(B_k) = \infty.)</md>
+</p>
+</li>
+</ol>
+<p>We have thus given an example of a measure <m>\sigma</m> on <m>[0,1]\times[0,1]</m> which agrees with the product measure <m>m\times c</m> on measurable rectangles, but is not equal to the product measure.</p>
+</exercise>
+<exercise xml:id="exer-product-measurable-sets">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be measure spaces.</p>
+<ol>
+<li><p>Let <m>\mathcal{L}</m> be the collection of sets <m>F \subseteq X\times Y</m> such that the <m>x</m>-section <m>F_x\in \mathcal{N}</m> for all <m>x \in X</m>.
+		Show that <m>\mathcal{L}</m> is a <m>\sigma</m>-algebra.</p>
+</li>
+<li><p>Show that if <m>E \subseteq X\times Y</m> is in the <m>\sigma</m>-algebra generated by the measurable rectangles, then the <m>x</m>-section <m>E_x \in \mathcal{N}</m> for all <m>x \in X</m>.
+		(HINT: Show that the measurable rectangles are in the <m>\sigma</m>-algebra <m>\mathcal{L}</m>.)</p>
+</li>
+<li><p>Take non-empty <m>A \in \mathcal{M}</m> such that <m>\mu(A)=0</m>; and take <m>B \subseteq Y</m> which is not measurable, i.e. <m>B\notin \mathcal{N}</m>.
+		
+		Show that <m>A\times B</m> is measurable with respect to the product measure <m>\mu\times \nu</m>.
+		Show that <m>A\times B</m> is not in <m>\mathcal{L}</m>.</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-meas-rect-sigma-alg">
+<p>Let <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> be <m>\sigma</m>-finite measure spaces and let <m>\mathcal{F}</m> be the <m>\sigma</m>-algebra of subsets of <m>X \times Y</m> generated by the measurable rectangles.
+		In this exercise we will prove, for all <m>E \in \mathcal{F}</m>, that the map <m>x \mapsto \nu(E_x)</m> is measurable and</p>
+<md number="yes" xml:id="eq-meas-rect-sigma-alg">
+(\mu\times \nu)(E) = \int_X \nu(E_x)\,d\mu.
+</md>
+<p>We will do this over several parts.</p>
+<p>For <m>E \in \mathcal{F}</m>, define a map <m>\Phi_E</m> on <m>X</m>, by <m>\Phi_E(x)= \nu(E_x)</m>.		
+		Let <m>\mathcal{S}</m> be all the measurable rectangles in <m>X \times Y</m>; let <m>\mathcal{S}'</m> be all finite unions of disjoint sets in <m>\mathcal{S}</m>; let <m>\mathcal{C}</m> be the smallest collection of subsets containing <m>\mathcal{S}</m> which is closed under countable unions and countable intersections; and let <m>\mathcal{G}</m> be the collection of sets <m>E \in \mathcal{F}</m> for which <m>\Phi_E</m> is measurable and  <xref ref="eq-meas-rect-sigma-alg" text="Equation"/> holds.</p>
+<ol>
+<li><p>Note that if <m>E \in \mathcal{F}</m>, then the <m>x</m>-section <m>E_x</m> is measurable for all <m>x \in X</m>. Hence <m>\Phi_E</m> is defined on all <m>x \in X</m>. (HINT: This is already done in <xref ref="exer-product-measurable-sets" text="Exercise"/>).</p>
+</li>
+<li><p>Show that <m>\mathcal{S} \subseteq \mathcal{G}</m>. (HINT: This is already done in <xref ref="lem-prod-meas-as-integral" text="Lemma"/> when <m>(\mu\times\nu)(E)&lt;\infty</m>. What needs to change in the argument if <m>(\mu\times\nu)(E)=\infty</m>?).</p>
+</li>
+<li><p>Show that <m>\mathcal{G}</m> is closed under countable unions.</p>
+</li>
+</ol>
+<p>Until we state otherwise, we will now assume that <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> are finite measure spaces.</p>
+<ol>
+<li><p>Show that <m>\mathcal{G}</m> is closed under countable intersections.</p>
+</li>
+<li><p>Conclude that <m>\mathcal{C} \subseteq \mathcal{G}</m>.</p>
+</li>
+</ol>
+<p>For <m>E \in \mathcal{C}</m> let</p>
+<md> \mathcal{C}(E) = \{ F \in \mathcal{C} \colon E \cap F,\, E\backslash F,\, F \backslash E \in \mathcal{C}\}.</md>
+<ol>
+<li><p>Show that <m>\mathcal{S}' \subseteq \mathcal{C}</m>.</p>
+</li>
+<li><p>Show that for each <m>E \in \mathcal{C}</m>, <m>\mathcal{C}(E)</m> is closed under countable unions and countable intersections.</p>
+</li>
+<li><p>\label{part: meas rect sigma-alg} Show that if <m>E \in \mathcal{S}'</m>, then <m>\mathcal{S}' \subseteq \mathcal{C}(E)</m> (HINT: Recall <xref ref="lem-Car-ext-2" text="Lemma"/>). Conclude that <m>\mathcal{C}(E) = \mathcal{C}</m>.</p>
+</li>
+<li><p>Show that if <m>F \in \mathcal{C}</m>, then <m>\mathcal{C}(F)= \mathcal{C}</m>. (Consider the symmetry in definition of <m>\mathcal{C}(E)</m> and part~\ref{part: meas rect sigma-alg}.)</p>
+</li>
+<li><p>Show that <m>\mathcal{C}</m> is closed under complements, finite unions, and finite intersections.</p>
+</li>
+<li><p>Show that <m>\mathcal{C}</m> is closed under countable unions. Conclude that <m>\mathcal{C}</m> is a <m>\sigma</m>-algebra.</p>
+</li>
+<li><p>Conclude that <m>\mathcal{C} = \mathcal{F}</m>, and hence <m>\mathcal{G} = \mathcal{F}</m>.</p>
+</li>
+<li><p>Assume now that <m>(X,\mathcal{M},\mu)</m> and <m>(Y,\mathcal{N},\nu)</m> are <m>\sigma</m>-finite measure spaces. Show that <m>\mathcal{G} = \mathcal{F}</m>.</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-failure-of-fubini">
+<p>Let <m>([0,1],\mathcal{M},m)</m> be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of <m>[0,1]</m>; let <m>([0,1],\mathcal{M},c)</m> be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of <m>[0,1]</m>; and let <m>D = \{(x,x) \colon x \in [0,1]\}</m>.</p>
+<p>Show that</p>
+<md> \int_{[0,1]\times[0,1]} \chi_D\,d(m\times c) \neq \int_{[0,1]}\left(\int_{[0,1]} \chi_D(x,y)\,dc(y)\right)dm(x).</md>
+<p>Why does this not contradict Fubini's Theorem? Why does this not contradict Tonelli's Theorem?
+		(HINT: The first part of this question is essentially a rephrasing of <xref ref="exer-prod-meas-not-unique" text="Exercise"/>.)</p>
+</exercise>
+<exercise xml:id="exer-measurable-rectangles-2">
+<p>Let <m>\{(X_K,\mathcal{M}_k,\mu_k)\}_{k=1}^n</m> be measure spaces, let <m>\mathcal{S}</m> be the measurable rectangles in <m>\prod_{k=1}^n X_k</m>.
+	Show that <m>\mathcal{S}</m> is a semiring.</p>
+<p>Note that this exercise completes part of the proof of <xref ref="prop-n-dim-prod-measure" text="Proposition"/>.
+	The remainder is proved in <xref ref="exer-n-dim-prod-measure" text="Exercise"/>.</p>
+</exercise>
+<exercise xml:id="exer-n-dim-prod-measure">
+<p>Let <m>\{(X_K,\mathcal{M}_k,\mu_k)\}_{k=1}^n</m> be measure spaces, let <m>\mathcal{S}</m> be the measurable rectangles in <m>\prod_{k=1}^n X_k</m>; and let <m>\mu_1 \times \ldots \times \mu_n</m> be the extended real-valued function on <m>\mathcal{S}</m> defined by</p>
+<md> (\mu_1 \times \ldots \times \mu_n)(A_1\times \ldots \times A_n) = \mu_1(A_1)\mu_2(A_2)\ldots \mu_n(A_n)</md>
+<p>for <m>A_k \in \mathcal{M}_k</m> for <m>1\leq k \leq n</m>.
+	Show that <m>\mu_1 \times \ldots \times\mu_n</m> is a premeasure on <m>\mathcal{S}</m>.</p>
+<p>Note that this exercise completes part of the proof of <xref ref="prop-n-dim-prod-measure" text="Proposition"/>.
+	The first part is proved in <xref ref="exer-measurable-rectangles-2" text="Exercise"/>.</p>
+</exercise>
+<exercise xml:id="exer-borel-in-Rn">
+<p>Prove <xref ref="prop-borel-in-Rn" text="Proposition"/>.
+	That is, show that is <m>B</m> is a Borel subset of <m>\mathbb{R}^n</m> then <m>B</m> is Lebesgue measurable.
+	(HINT: First show that open subsets of <m>\mathbb{R}^n</m> are Lebesgue measurable.)</p>
+</exercise>
+</exercises>
+</chapter>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter explicit="no">
+<chapter>
 <title>Sets and cardinality</title>
 <introduction>
-<epigraph>
-<p><em>``To choose one sock from each of infinitely many pairs of socks requires the Axiom of Choice, but for shoes the Axiom is not needed."</em></p>
-<p><source>Bertrand Russell</source></p>
-</epigraph>
+<blockquote>
+<p><em><q>To choose one sock from each of infinitely many pairs of socks requires the Axiom of Choice, but for shoes the Axiom is not needed.</q></em></p>
+<attribution>
+<p>Bertrand Russell</p>
+</attribution>
+</blockquote>
 </introduction>
 <section>
 <title>Set Theory Notation</title>
@@ -15,12 +17,12 @@
 <md> A \cap B =\{x\in X \colon x\in A \text{ and }x\in B\}. </md>
 <p>We will usually call a set whose elements are sets a <em>collection</em>. Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The union and intersection of all sets in <m>\mathcal{F}</m> are written</p>
 <md>
-\bigcup_{F\in \mathcal{F}} F \text{ and } \bigcap_{F \in \mathcal{F}} F
+\bigcup_{F\in \mathcal{F}} F \AND \bigcap_{F \in \mathcal{F}} F
 </md>
 <p>respectively. A collection of sets <m>\mathcal{F}</m> is <em>disjoint</em>, or <em>pairwise disjoint</em>, if <m>F\cap G = \emptyset</m> for all <m>F, G \in \mathcal{F}</m>.</p>
 <p>The <em>complement of <m>A</m> in <m>B</m></em> is given by</p>
 <md> B \backslash A = \{b \in B \colon b\notin A\}. </md>
-<p>When it is clear what ambient set <m>X</m> we are working in we will often refer to <m>X\backslash A</m> as simply the complement of <m>A</m>. We will also  write <m>X\backslash A</m> as <m>A^c</m>. For example, we will often be implicitly be working with subsets of <m>\mathbb{R}</m>. Thus, by ``the complement of <m>[0,1]</m>" we will mean</p>
+<p>When it is clear what ambient set <m>X</m> we are working in we will often refer to <m>X\backslash A</m> as simply the complement of <m>A</m>. We will also  write <m>X\backslash A</m> as <m>A^c</m>. For example, we will often be implicitly be working with subsets of <m>\mathbb{R}</m>. Thus, by <q>the complement of <m>[0,1]</m></q> we will mean</p>
 <md> \mathbb{R}\backslash [0,1] = (-\infty, 0) \cup (1,\infty). </md>
 <p>The collection of all subsets of a set <m>X</m> is called the <em>the power set of <m>X</m></em><idx><h>power set</h></idx> and is denoted by <m>\mathcal{P}(X)</m>. The notation <m>2^X</m> is also sometimes used for the power-set of <m>X</m>. Note that if <m>X</m> has <m>n</m> elements, then <m>\mathcal{P}(X)</m> has <m>2^n</m> elements.</p>
 <p>Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The following two identities are called <em>De Morgan's Identities</em>.<idx><h>De Morgan's Identities</h></idx></p>

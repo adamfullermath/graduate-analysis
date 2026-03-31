@@ -2,13 +2,15 @@
 <chapter xml:id="chap-meas-fun">
 <title>Measurable functions</title>
 <introduction>
-<epigraph>
-<p><em>``Can we convince ourselves of the existence of a mathematical object without defining it? To define always means naming a characteristic property of what is being defined."</em></p>
-<p><source>Henri Lebesgue</source></p>
-</epigraph>
+<blockquote>
+<p><em><q>Can we convince ourselves of the existence of a mathematical object without defining it? To define always means naming a characteristic property of what is being defined.</q></em></p>
+<attribution>
+<p>Henri Lebesgue</p>
+</attribution>
+</blockquote>
 <p>Many fields of mathematics boil down to one central idea: we study some class of objects and a sensible class of maps between them. At its core, this is the premise of a field called Category Theory. For example, group theory is the study of groups and homomorphisms between them; linear algebra is the study of vector spaces and linear maps. The objects we have been studying are measure spaces. What is the correct set of functions to study between them?</p>
 <p>Less generally, our goal is to develop a theory of integration. We will thus be, primarily, interested into functions into the real line? But again, what types of functions? And how are we to view the real line? Should we view the real line as a measure space, with the Lebesgue measure on the Lebesgue measurable sets? Or should we view the real line as a measure space, with the Lebesgue measure restricted to the Borel sets?</p>
-<p>In this chapter we introduce the concept of measurable functions into the (extended) real line. These will be the functions of most interest to us. These will be the functions we can attempt to integrate. The more general question of what is the right class of functions between measure spaces is addressed in Remark <xref ref="rem-morphisms"/>, but does not play a central role in these notes.</p>
+<p>In this chapter we introduce the concept of measurable functions into the (extended) real line. These will be the functions of most interest to us. These will be the functions we can attempt to integrate. The more general question of what is the right class of functions between measure spaces is addressed in <xref ref="rem-morphisms" text="Remark"/>, but does not play a central role in these notes.</p>
 </introduction>
 <section>
 <title>Measurable functions</title>
@@ -51,14 +53,14 @@ Then the following are equivalent:</p>
 <definition xml:id="def-meas-func">
 <p><idx><h>measurable function</h></idx>
     Let <m>(X,\mathcal{F})</m> be a measurable space, <m>E \in \mathcal{M}</m>, and <m>f \colon E \rightarrow [-\infty,\infty]</m> be an extended real-valued function.
-    Then <m>f</m> is a <em>measurable function with respect to <m>\mu</m></em> if <m>f</m> satisfies any of the equivalent conditions from Theorem <xref ref="thm-measurable-function-equiv"/>.
+    Then <m>f</m> is a <em>measurable function with respect to <m>\mu</m></em> if <m>f</m> satisfies any of the equivalent conditions from <xref ref="thm-measurable-function-equiv" text="Theorem"/>.
     If there is no chance of confusion on what the <m>\sigma</m>-algebra is, we will simply say that <m>f</m> is a measurable function.</p>
 <p>If <m>(X,\mathcal{F},\mu)</m> is a measure space, and <m>f</m> is measurable with respect to <m>\mathcal{F}</m> we also say <m>f</m> is measurable with respect to <m>\mu</m>, or <m>\mu</m>-measurable.</p>
 <p>If <m>f</m> is a measurable function with domain <m>E</m>, and there is a measurable set <m>F \subseteq E</m> such that <m>\mu(F)&lt;\infty</m> and <m>f(x) = 0</m> for all <m>x \in E \backslash F</m>, then <m>f</m> is <em>finitely supported.</em><idx><h>measurable function</h><h>of finite support</h></idx></p>
 </definition>
 <p>Over the next several results we will examples of functions which are measurable. We begin with a simple example. Let <m>X</m> be a set and let <m>A \subseteq X</m>. We define the <em>characteristic function of <m>A</m></em>, <m>\chi_A</m>, by<idx><h>characteristic function</h></idx></p>
 <md> \chi_A(x) = \begin{cases}1 &amp;\text{if }x\in A\\0&amp; \text{if }x \notin A. \end{cases}</md>
-<p>Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, Exercise <xref ref="exer-char-measurable"/>.</p>
+<p>Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, <xref ref="exer-char-measurable" text="Exercise"/>.</p>
 <proposition xml:id="prop-char-measurable">
 <p>Let <m>(X,\mathcal{F})</m> be a measurable space, and take <m>A \subseteq X</m>.
     The characteristic function <m>\chi_A</m> is a measurable function if and only if <m>A</m> is a measurable set.</p>
@@ -85,7 +87,7 @@ Then the following are equivalent:</p>
 <p>is measurable.
     Hence <m>f</m> is a measurable function.</p>
 </proof>
-<p>Proposition <xref ref="prop-meas-fun-inverse-open"/> immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.</p>
+<p><xref ref="prop-meas-fun-inverse-open" text="Proposition"/> immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.</p>
 <corollary xml:id="cor-Cont-are-meas">
 <p>Let <m>X</m> be a topological space, let <m>\mathcal{B}(X)</m> be the <m>\sigma</m>-algebra of Borel sets in <m>X</m>, and let <m>\mathcal{F}</m> be a <m>\sigma</m>-algebra with <m>\mathcal{B}(X) \subseteq \mathcal{F}</m>.
     Let <m>f \colon X \rightarrow \mathbb{R}</m> be a continuous function.
@@ -93,7 +95,7 @@ Then the following are equivalent:</p>
 </corollary>
 <proof>
 <p>Since <m>f</m> is continuous, <m>f^{-1}(U)</m> is open in <m>X</m> for all open sets <m>U \subseteq \mathbb{R}</m>.
-    Hence, by Proposition <xref ref="prop-meas-fun-inverse-open"/>, if <m>U</m> is an open set in <m>\mathbb{R}</m>,</p>
+    Hence, by <xref ref="prop-meas-fun-inverse-open" text="Proposition"/>, if <m>U</m> is an open set in <m>\mathbb{R}</m>,</p>
 <md> f^{-1}(U) \in \mathcal{B}(X) \subseteq \mathcal{F}.</md>
 <p>Thus <m>f</m> is measurable with respect to <m>\mathcal{F}</m>.</p>
 </proof>
@@ -122,12 +124,12 @@ Then the following are equivalent:</p>
     Thus <m>\{x \in E \colon g(x) &gt; c \}</m> is the union of two measurable sets, and hence is measurable.</p>
 </proof>
 <remark>
-<p>The completeness of the measure space <m>(X,\mathcal{F},\mu)</m> is necessary in Proposition <xref ref="prop-f-g-a-e"/>, see Example <xref ref="exer-f-g-a-e"/>.</p>
+<p>The completeness of the measure space <m>(X,\mathcal{F},\mu)</m> is necessary in <xref ref="prop-f-g-a-e" text="Proposition"/>, see <xref ref="exer-f-g-a-e" text="Example"/>.</p>
 </remark>
 <p>The following theorem gives some simple ways of creating measurable functions from measurable functions: by linear combinations and products. Before we start we need to do some mild bookkeeping. If <m>f</m> and <m>g</m> are measurable functions, with the same measurable domain <m>F</m>, we want to consider their sum, <m>f+g</m>. However, if there is an <m>x \in F</m> such that <m>f(x) = \infty</m> and <m>g(x) = -\infty</m>, then <m>f(x) + g(x)</m> is undefined. One way to circumvent this issue would be to only consider real-valued measurable functions. However, there will be times when considering functions with infinite values is either unavoidable or desirable.</p>
 <p>Instead, we will focus on measurable that are <em>finite almost everywhere</em>. Let <m>(X,\mathcal{F},\mu)</m> be a measure space. A function <m>f</m> on <m>F \subseteq X</m> is <em>finite almost everywhere</em>,<idx><h>finite almost eveywhere</h></idx> if there is a <m>E\in \mathcal{F}</m> with <m>\mu(E) = 0</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E</m>. If <m>f</m> and <m>g</m> are two measurable functions with common domain <m>F</m>, and <m>f</m> and <m>g</m> are finite almost everywhere, then there is a measurable set <m>E_1</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E_1</m>, and there is a set <m>E_2</m> such that <m>|g(x)|&lt;\infty</m> for all <m>x \in F \backslash E_2</m>. Note that <m>\mu(E_1 \cup E_2) = 0</m>. We can thus, define <m>f+g</m> on <m>F \backslash (E_1 \cup E_2)</m> by</p>
 <md> (f+g)(x) = f(x) + g(x) \text{ for }x \in F \backslash(E_1 \cup E_2).</md>
-<p>For <m>x \in E_1 \cup E_2</m> we will assign arbitrary values to <m>(f+g)(x).</m> We thus are not uniquely defining the function <m>f+g</m>, we are instead defining <m>f+g</m> up the equivalence class of equality almost everywhere. That ``equal almost everywhere" forms an equivalence class in functions is covered by Exercise <xref ref="exer-meas-func-equiv"/>.</p>
+<p>For <m>x \in E_1 \cup E_2</m> we will assign arbitrary values to <m>(f+g)(x).</m> We thus are not uniquely defining the function <m>f+g</m>, we are instead defining <m>f+g</m> up the equivalence class of equality almost everywhere. That <q>equal almost everywhere</q> forms an equivalence class in functions is covered by <xref ref="exer-meas-func-equiv" text="Exercise"/>.</p>
 <theorem xml:id="thm-meas-fnc-vec-sp">
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
         Let <m>f</m> and <m>g</m> be measurable functions with the same domain <m>E \in \mathcal{F}</m> which are finite almost everywhere.
@@ -141,7 +143,7 @@ Then the following are equivalent:</p>
 <p>If <m>f</m> or <m>g</m> are real-valued, or if <m>(X,\mathcal{F},\mu)</m> is complete, then we can take <m>E_0 = E</m> in both (i) and (ii).</p>
 </theorem>
 <proof>
-<p>That <m>\alpha f</m> is a measurable function for <m>\alpha \in \mathbb{R}</m> when <m>f</m> is a measurable function is left to Example <xref ref="exer-scale-meas"/>.</p>
+<p>That <m>\alpha f</m> is a measurable function for <m>\alpha \in \mathbb{R}</m> when <m>f</m> is a measurable function is left to <xref ref="exer-scale-meas" text="Example"/>.</p>
 <p>Let <m>f</m> and <m>g</m> be measurable functions on a measurable set <m>E</m>, where both <m>f</m> and <m>g</m> are finite almost everywhere.
     Then there is a measurable set <m>E_0 \subseteq E</m> such that <m>\mu(E \backslash E_0) = 0</m> and <m>f</m> and <m>g</m> are finite on <m>E_0</m>.
     Fix <m>c \in \mathbb{R}</m>.
@@ -172,7 +174,7 @@ Then the following are equivalent:</p>
 <p>is a measurable set.
     If <m>c&lt;0</m> then <m>\{x \in E \colon f(x)^2 &gt; c \}= \emptyset</m> is also measurable.
     Thus <m>f^2</m> is a measurable function.</p>
-<p>If <m>(X,\mathcal{F},\mu)</m> is a complete measure space we can take <m>E_0 = E</m> in the above cases, by Proposition <xref ref="prop-f-g-a-e"/>.</p>
+<p>If <m>(X,\mathcal{F},\mu)</m> is a complete measure space we can take <m>E_0 = E</m> in the above cases, by <xref ref="prop-f-g-a-e" text="Proposition"/>.</p>
 </proof>
 <p>We now introduce an important class of measurable functions: simple functions.</p>
 <definition>
@@ -183,12 +185,12 @@ Then the following are equivalent:</p>
 <p>Let <m>\varphi</m> be a simple function on a measurable space <m>(X,\mathcal{F})</m> and let <m>\varphi(X) = \{a_1,a_2,\ldots,a_n\}</m>.
     For each <m>i = 1,\ldots,n</m> let</p>
 <md> E_i = \{x \in X \colon \varphi(x) = a_i\}.</md>
-<p>By Exercise <xref ref="exer-f-c-meas"/>, each set <m>E_i</m> is a measurable set.
+<p>By <xref ref="exer-f-c-meas" text="Exercise"/>, each set <m>E_i</m> is a measurable set.
     Thus</p>
 <md> \varphi = \sum_{i=1}^n a_i \chi_{E_i}.</md>
 <p>Conversely, if <m>F_1,F_2,\ldots, F_m</m> are measurable sets, and <m>b_1,\ldots,b_m</m> are real numbers then  if</p>
 <md> \psi = \sum_{k=1}^m b_k \chi_{F_k},</md>
-<p><m>\psi</m> is a measurable function by Theorem <xref ref="thm-meas-fnc-vec-sp"/>.
+<p><m>\psi</m> is a measurable function by <xref ref="thm-meas-fnc-vec-sp" text="Theorem"/>.
     Further, as <m>\psi</m> takes finitely many values<fn>Note the sets <m>\{F_k\}_{k=1}^m</m> are not necessarily disjoint, so <m>\psi</m> may take values other than the values <m>b_1,b_2,\ldots,b_m</m>.</fn>, <m>\psi</m> is a simple function.</p>
 </remark>
 <p>The following few results give further ways of constructing measurable functions from measurable functions.</p>
@@ -215,25 +217,25 @@ Then the following are equivalent:</p>
 <definition>
 <p>For a measurable function <m>f</m> on a measurable space <m>(X,\mathcal{F})</m>, <m>f_+ = \max\{f,0\}</m> is the <em>positive part</em> of <m>f</m><idx><h>positive part of a function</h></idx> and <m>f_-</m> is the <em>negative part</em> of <m>f</m>. <idx><h>negative part of a function</h></idx></p>
 </definition>
-<p>Note that, Proposition <xref ref="prop-max-min-meas"/> shows that if <m>f</m> is a measurable function, then <m>f_+</m> and <m>f_-</m> is a measurable function. Further, note that <m>f = f_+ - f_-</m>. That is, <m>f</m> is the difference of two non-negative measurable functions. This decomposition, <m>f = f_+ - f_-</m> will be used frequently when studying integration.</p>
+<p>Note that, <xref ref="prop-max-min-meas" text="Proposition"/> shows that if <m>f</m> is a measurable function, then <m>f_+</m> and <m>f_-</m> is a measurable function. Further, note that <m>f = f_+ - f_-</m>. That is, <m>f</m> is the difference of two non-negative measurable functions. This decomposition, <m>f = f_+ - f_-</m> will be used frequently when studying integration.</p>
 <corollary xml:id="cor-abs-val">
 <p>Let <m>f</m> be a measurable function on a measurable space <m>(X,\mathcal{F})</m>.
     The the function <m>|f|</m> is measurable.</p>
 </corollary>
 <proof>
 <p>Note that <m>|f| = f_+ + f_-.</m>
-    Both <m>f_+</m> and <m>f_-</m> are measurable, by Proposition <xref ref="prop-max-min-meas"/>.
+    Both <m>f_+</m> and <m>f_-</m> are measurable, by <xref ref="prop-max-min-meas" text="Proposition"/>.
     As <m>f_+</m> and <m>f_-</m> are both non-negative functions, <m>f_+(x) + f_-(x)</m> is defined (possibly infinite) for all <m>x \in X</m>.
-    It follows from the same argument as in Theorem <xref ref="thm-meas-fnc-vec-sp"/>, that <m>f_+ + f_-</m> is a measurable function.</p>
+    It follows from the same argument as in <xref ref="thm-meas-fnc-vec-sp" text="Theorem"/>, that <m>f_+ + f_-</m> is a measurable function.</p>
 </proof>
-<p>The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, Example <xref ref="ex-comp-not-meas"/> However, there are circumstances where measurability of a composition is guaranteed, Proposition <xref ref="prop-comp-meas"/>.</p>
+<p>The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, <xref ref="ex-comp-not-meas" text="Example"/> However, there are circumstances where measurability of a composition is guaranteed, <xref ref="prop-comp-meas" text="Proposition"/>.</p>
 <example xml:id="ex-comp-not-meas">
-<p>In the proof of Lemma <xref ref="lem-non-Borel"/>, we prove the existence of a non-Lebesgue measurable set <m>B \subseteq [0,2]</m> and a bijective continuous function <m>f\colon [0,2] \rightarrow [0,1]</m> such that <m>f(B)</m> is Lebesgue measurable.
+<p>In the proof of <xref ref="lem-non-Borel" text="Lemma"/>, we prove the existence of a non-Lebesgue measurable set <m>B \subseteq [0,2]</m> and a bijective continuous function <m>f\colon [0,2] \rightarrow [0,1]</m> such that <m>f(B)</m> is Lebesgue measurable.
     By a simple adjustment, we can assume that <m>f(B) \subseteq (0,1).</m>
     We extend <m>f</m> to a continuous function on all of <m>\mathbb{R}</m> by setting <m>f(x) = 1</m> for <m>x \geq 2</m> and <m>f(x) = 0</m> for <m>x \leq 0</m>.
     Let <m>A = f(B)</m>.</p>
 <p>Consider the measure space <m>(\mathbb{R},\mathcal{M})</m>, where <m>\mathcal{M}</m> is all Lebesgue measurable sets in <m>\mathbb{R}</m>.
-    The function <m>\chi_A</m> is a measurable function since <m>A</m> is measurable, Exercise <xref ref="exer-char-measurable"/>, and <m>f</m> is measurable since it is continuous, Proposition <xref ref="cor-Cont-are-meas"/>.
+    The function <m>\chi_A</m> is a measurable function since <m>A</m> is measurable, <xref ref="exer-char-measurable" text="Exercise"/>, and <m>f</m> is measurable since it is continuous, <xref ref="cor-Cont-are-meas" text="Proposition"/>.
     However the function <m>g = \chi_A \circ f</m> is not measurable.
     Indeed</p>
 <md>
@@ -252,26 +254,26 @@ Then the following are equivalent:</p>
 <proof>
 <p>Take any open set <m>U \subseteq \mathbb{R}</m>, and let <m>V = \varphi^{-1}(U)</m>.
     Then <m>V</m> is an open subset of <m>\mathbb{R}</m>, since <m>\varphi</m> is continuous.
-    By, Proposition <xref ref="prop-meas-fun-inverse-open"/>, <m>f^{-1}(V)</m> is a measurable set.
+    By, <xref ref="prop-meas-fun-inverse-open" text="Proposition"/>, <m>f^{-1}(V)</m> is a measurable set.
     Thus,</p>
 <md> (f\circ \varphi)^{-1}(U) = f^{-1}(V)</md>
 <p>is measurable for all open sets <m>U \subseteq \mathbb{R}</m>.
-    Hence <m>f \circ \varphi</m> is a measurable function, by Proposition <xref ref="prop-meas-fun-inverse-open"/>.</p>
+    Hence <m>f \circ \varphi</m> is a measurable function, by <xref ref="prop-meas-fun-inverse-open" text="Proposition"/>.</p>
 </proof>
 <remark xml:id="rem-morphisms">
 <p>We have only considered extended real-valued measurable functions.
     This is what we will be interested in for the majority of these notes.
     In more generality, if <m>(X,\mathcal{M})</m> and <m>(Y,\mathcal{N})</m> are two measurable spaces, a function <m>f \colon X \rightarrow Y</m> is <em>measurable with respect to <m>\mathcal{M}</m> and <m>\mathcal{N}</m></em><idx><h>measurable function</h><h>between two measure spaces</h></idx> if <m>f^{-1}(E) \in \mathcal{M}</m> for all <m>E \in \mathcal{N}</m>.
-    This definition is consistent with Definition <xref ref="def-meas-func"/> when <m>Y = \mathbb{R}\cup\{-\infty,\infty\}</m> and <m>\mathcal{N} = \mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>, the Borel sets in the extended real line. See Exercise <xref ref="exer-borel-on-extended"/> for more on <m>\mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>.
-    This fact <em>almost</em> follows from Proposition <xref ref="prop-meas-fun-inverse-open"/>. 
-    The full details are left to Exercise <xref ref="exer-Borel-meas-functions"/>.</p>
+    This definition is consistent with <xref ref="def-meas-func" text="Definition"/> when <m>Y = \mathbb{R}\cup\{-\infty,\infty\}</m> and <m>\mathcal{N} = \mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>, the Borel sets in the extended real line. See <xref ref="exer-borel-on-extended" text="Exercise"/> for more on <m>\mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>.
+    This fact <em>almost</em> follows from <xref ref="prop-meas-fun-inverse-open" text="Proposition"/>. 
+    The full details are left to <xref ref="exer-Borel-meas-functions" text="Exercise"/>.</p>
 <p>When we study measurable functions from <m>\mathbb{R}</m> to <m>\mathbb{R}</m>, we study measurable functions from with respect to <m>\mathcal{M}</m> and <m>\mathcal{B}</m>, <m>\mathcal{M}</m> is the Lebesgue measurable sets on <m>\mathbb{R}</m> and <m>\mathcal{B}</m> is the Borel sets on <m>\mathbb{R}</m>.
     I.e. we study measurable functions from the measure space <m>(\mathbb{R},\mathcal{M},m)</m> to the measure space <m>(\mathbb{R},\mathcal{B},m)</m>.
     The lopsidedness of this naturally raises questions.
     Firstly, the advantage of the domain being <m>(\mathbb{R},\mathcal{M},m)</m> is that <m>(\mathbb{R},\mathcal{M},m)</m> is a complete measure space.
-    See, e.g., Proposition <xref ref="prop-f-g-a-e"/> for an advantage of having a complete measure space in the domain.</p>
+    See, e.g., <xref ref="prop-f-g-a-e" text="Proposition"/> for an advantage of having a complete measure space in the domain.</p>
 <p>One reason for taking the Borel sets in the range, instead of all Lebesgue measurable sets, is the following.
-    As described in the proof of Lemma <xref ref="lem-non-Borel"/> and Example <xref ref="ex-comp-not-meas"/>, there is a continuous function <m>f \colon \mathbb{R} \rightarrow \mathbb{R}</m> and a set <m>B \subseteq \mathbb{R}</m> which is not Lebesgue measurable, such that <m>A=f(B)</m> is Lebesgue measurable but <m>A</m> is not a Borel set, and <m>f^{-1}(A) = B</m>.
+    As described in the proof of <xref ref="lem-non-Borel" text="Lemma"/> and <xref ref="ex-comp-not-meas" text="Example"/>, there is a continuous function <m>f \colon \mathbb{R} \rightarrow \mathbb{R}</m> and a set <m>B \subseteq \mathbb{R}</m> which is not Lebesgue measurable, such that <m>A=f(B)</m> is Lebesgue measurable but <m>A</m> is not a Borel set, and <m>f^{-1}(A) = B</m>.
     I.e. there is a continuous function <m>f</m> and a Lebesgue measurable set <m>A</m> such that <m>f^{-1}(A)</m> is not Lebesgue measurable.
     In conclusion, the measurable functions from <m>(\mathbb{R},\mathcal{M})</m> to <m>(\mathbb{R},\mathcal{M})</m> do not include all continuous functions.
     We do, however, want to study the continuous functions.
@@ -310,7 +312,7 @@ Define functions</p>
 <p>Then <m>f_n</m> converges pointwise a.e. to the zero function <m>0</m>,
 whilst <m>f_n</m> does not converge pointwise to any function.</p>
 </remark>
-<p>Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, Theorem <xref ref="thm-simple-approx"/>, which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, Theorem <xref ref="thm-ergoroff"/>, which says that if <m>(f_n)_n</m> converge pointwise to <m>f</m>, then there is a large set on which the convergence is uniform.</p>
+<p>Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, <xref ref="thm-simple-approx" text="Theorem"/>, which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, <xref ref="thm-ergoroff" text="Theorem"/>, which says that if <m>(f_n)_n</m> converge pointwise to <m>f</m>, then there is a large set on which the convergence is uniform.</p>
 <p>We first establish that a pointwise limit of measurable functions is measurable.</p>
 <proposition xml:id="prop-pw-lim">
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space. 
@@ -326,7 +328,7 @@ whilst <m>f_n</m> does not converge pointwise to any function.</p>
 </proposition>
 <proof>
 <p>Let <m>E</m> be a measurable set with <m>\mu(E) = 0</m> such that <m>(f_n(x))_n</m> converges to <m>f(x)</m> for all <m>x \in X \backslash E</m>.
-    If <m>(X,\mathcal{F},\mu)</m> is complete, then <m>f</m> is measurable if and only if <m>f|_{X \backslash E}</m> is measurable, by Proposition <xref ref="prop-f-g-a-e"/>.
+    If <m>(X,\mathcal{F},\mu)</m> is complete, then <m>f</m> is measurable if and only if <m>f|_{X \backslash E}</m> is measurable, by <xref ref="prop-f-g-a-e" text="Proposition"/>.
     Thus, by excising <m>E</m> if necessary, we can assume that <m>(f_n)_n</m> converges pointwise to <m>f</m>.</p>
 <p>Fix <m>c \in \mathbb{R}</m> and let</p>
 <md> A = \{x \in X \colon f(x) &gt; c\}.</md>
@@ -351,7 +353,7 @@ Then <m>f</m> is measurable if and only <m>f</m> is the pointwise limit of a seq
 <p>If <m>(X,\mathcal{F},\mu)</m> is <m>\sigma</m>-finite, then the simple functions <m>(\phi_n)_n</m> can each be chosen to be of finite support.</p>
 </theorem>
 <proof>
-<p>If <m>f</m> is a pointwise limit of simple functions, then <m>f</m> is measurable by Proposition <xref ref="prop-pw-lim"/>.</p>
+<p>If <m>f</m> is a pointwise limit of simple functions, then <m>f</m> is measurable by <xref ref="prop-pw-lim" text="Proposition"/>.</p>
 <p>Suppose now that <m>f</m> is measurable.
     Assume first that <m>f\geq 0</m>.
     For each <m>n</m>, and <m>k = 1,\ldots, n^2</m>, let</p>
@@ -388,7 +390,7 @@ Then <m>f</m> is measurable if and only <m>f</m> is the pointwise limit of a seq
 <md> \psi_n = \phi_n \chi_{E_n}.</md>
 <p>Then <m>(\psi_n)_n</m> is a sequence of finitely supported simple functions which converge pointwise to <m>f</m>.</p>
 </proof>
-<p>As noted in Remark <xref ref="rem-types-of-convergence"/>, pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.</p>
+<p>As noted in <xref ref="rem-types-of-convergence" text="Remark"/>, pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.</p>
 <theorem xml:id="thm-ergoroff">
 <title>Ergoroff's Theorem</title>
 <p><idx><h>Ergoroff's Theorem</h></idx>
@@ -457,8 +459,8 @@ Let <m>(f_n)_n</m> be a sequence of measurable functions on <m>E</m> which conve
 </corollary>
 <proof>
 <p>Fix <m>\varepsilon &gt;0</m>.
-    By Theorem <xref ref="thm-ergoroff"/> there is a measurable set <m>A \subseteq E</m> such that <m>\mu(E \backslash A)&lt; \varepsilon/2</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
-    By Theorem <xref ref="thm-Leb-meas-sets-G-delta-F-sigma"/>, there is a closed set <m>F \subseteq A</m> such that <m>m(A\backslash F)&lt; \varepsilon /2</m>.</p>
+    By <xref ref="thm-ergoroff" text="Theorem"/> there is a measurable set <m>A \subseteq E</m> such that <m>\mu(E \backslash A)&lt; \varepsilon/2</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
+    By <xref ref="thm-Leb-meas-sets-G-delta-F-sigma" text="Theorem"/>, there is a closed set <m>F \subseteq A</m> such that <m>m(A\backslash F)&lt; \varepsilon /2</m>.</p>
 <p>As <m>F \subseteq A</m>, <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>F</m>.
     Also</p>
 <md> m(E\backslash F) = m(A\backslash F) + m(E\backslash A) &lt; \varepsilon, </md>
@@ -529,11 +531,11 @@ Show that, for all <m>\varepsilon &gt; 0</m> there exist simple functions <m>\va
 </exercise>
 <exercise xml:id="exer-uniform-convergence">
 <p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>f \colon X \rightarrow \mathbb{R}</m> be a bounded measurable function.
-	Show that there is a sequence <m>(\phi_n)_n</m>  of simple functions with <m>\phi_n\leq f</m> for all, such that <m>(\phi_n)</m> converges uniformly to <m>f</m>. (HINT: Use Exercise <xref ref="exer-simple-approx-lemma"/>)</p>
+	Show that there is a sequence <m>(\phi_n)_n</m>  of simple functions with <m>\phi_n\leq f</m> for all, such that <m>(\phi_n)</m> converges uniformly to <m>f</m>. (HINT: Use <xref ref="exer-simple-approx-lemma" text="Exercise"/>)</p>
 </exercise>
 <exercise xml:id="exer-Borel-meas-functions">
 <p>Let <m>(X,\mathcal{F})</m> be a measurable space.
-    Let <m>\overline{\mathbb{R}} =\mathbb{R}\cup \{-\infty,\infty\}</m> be the extended real-line and let <m>\mathcal{B}(\overline{\mathbb{R}})</m> be the Borel sets in <m>\overline{\mathbb{R}}</m>, with respect to the topology defined in Exercise <xref ref="exer-top-on-extended"/> (see also Exercise <xref ref="exer-borel-on-extended-2"/>).</p>
+    Let <m>\overline{\mathbb{R}} =\mathbb{R}\cup \{-\infty,\infty\}</m> be the extended real-line and let <m>\mathcal{B}(\overline{\mathbb{R}})</m> be the Borel sets in <m>\overline{\mathbb{R}}</m>, with respect to the topology defined in <xref ref="exer-top-on-extended" text="Exercise"/> (see also <xref ref="exer-borel-on-extended-2" text="Exercise"/>).</p>
 <p>Let <m>f \colon X \rightarrow \overline{\mathbb{R}}</m> be a function.
     Show that <m>f</m> is a measurable function if and only if <m>f^{-1}(B) \in \mathcal{F}</m> for all <m>B \in \mathcal{B}(\overline{\mathbb{R}})</m>.</p>
 </exercise>

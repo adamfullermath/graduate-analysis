@@ -2,15 +2,17 @@
 <chapter>
 <title>Signed Measures</title>
 <introduction>
-<epigraph>
-<p><em>``It is astonishing that the human intellect should ever have tolerated such an absurdity as the idea of a quantity less than nothing."</em></p>
-<p><source>Augustus De Morgan</source></p>
-</epigraph>
+<blockquote>
+<p><em><q>It is astonishing that the human intellect should ever have tolerated such an absurdity as the idea of a quantity less than nothing.</q></em></p>
+<attribution>
+<p>Augustus De Morgan</p>
+</attribution>
+</blockquote>
 </introduction>
 <section>
 <title>Signed measures</title>
-<p>We have defined measures to only take non-negative values. However, there are some points where it is beneficial to extend the definition of a measure to include negative values (and we will see more as we proceed). For example, Exercise <xref ref="exer-measures-vec-space"/> shows that the collection of measures on <m>(X,\mathcal{F})</m> is closed under addition and multiplying by non-negative scalars. The set of measures on <m>(X,\mathcal{F})</m> is <em>almost</em> a vector space; we just can't multiply be negative scalars. Allowing for measures which take positive and negative values would allow us to create a vector space (which may, or may not, be useful).</p>
-<p>Less abstractly, in Section <xref ref="sec-borel-on-R"/>, we showed that if <m>\mu</m> is a Borel measure on <m>[a,b]</m> then the cumulative distribution function for <m>\mu</m>, <m>g_\mu</m>, is an increasing, right-continuous function, Thereom <xref ref="thm-cdf"/>. Conversely, given an increasing, right-continuous function <m>g</m> on <m>[a,b]</m>, <m>g</m> uniquely determines a Borel measure on <m>[a,b]</m>, Theorem <xref ref="thm-lebesgue-stieltjes-measure"/>. Cumulative distribution functions are increasing precisely because measures take non-negative values. In Theorem <xref ref="thm-lebesgue-stieltjes-measure"/>, we need an increasing function in order to define a measure. If we want to use measure theory to study real functions, other than increasing functions, we will need to allow for measures which allow for possibly negative values. This leads us to the following definition.</p>
+<p>We have defined measures to only take non-negative values. However, there are some points where it is beneficial to extend the definition of a measure to include negative values (and we will see more as we proceed). For example, <xref ref="exer-measures-vec-space" text="Exercise"/> shows that the collection of measures on <m>(X,\mathcal{F})</m> is closed under addition and multiplying by non-negative scalars. The set of measures on <m>(X,\mathcal{F})</m> is <em>almost</em> a vector space; we just can't multiply be negative scalars. Allowing for measures which take positive and negative values would allow us to create a vector space (which may, or may not, be useful).</p>
+<p>Less abstractly, in Section~\ref{sec: borel on R}, we showed that if <m>\mu</m> is a Borel measure on <m>[a,b]</m> then the cumulative distribution function for <m>\mu</m>, <m>g_\mu</m>, is an increasing, right-continuous function, Thereom~\ref{thm: cdf}. Conversely, given an increasing, right-continuous function <m>g</m> on <m>[a,b]</m>, <m>g</m> uniquely determines a Borel measure on <m>[a,b]</m>, <xref ref="thm-lebesgue-stieltjes-measure" text="Theorem"/>. Cumulative distribution functions are increasing precisely because measures take non-negative values. In <xref ref="thm-lebesgue-stieltjes-measure" text="Theorem"/>, we need an increasing function in order to define a measure. If we want to use measure theory to study real functions, other than increasing functions, we will need to allow for measures which allow for possibly negative values. This leads us to the following definition.</p>
 <definition xml:id="def-signed-measure">
 <p><idx><h>signed measure</h></idx>
     Let <m>(X,\mathcal{F})</m> be a measurable space.
@@ -40,7 +42,7 @@
 <p>Secondly, there is room for some misunderstandings in condition (iii). Suppose <m>\{E_k\}_{k=1}^\infty</m> are disjoint measurable sets, and <m>E = \bigcup_k E_k</m>, and that <m>|\nu(E)|&lt;\infty</m>. Then</p>
 <md> \sum_{k=1}^\infty \nu(E_k) = \nu(E) &lt; \infty.</md>
 <p>\ That is, <m>\sum_{k=1}^\infty \nu(E_k)</m> is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set <m>E</m> is independent on the order of the sets <m>\{E_k\}_{k=1}^\infty</m>, and so <m>\nu(E)</m> is independent of the order of the sets <m>\{E_k\}_{k=1}^\infty</m>. As <m>\sum_k \nu(E_k) = \nu(E)</m>, it follows that the (finite) value of <m>\sum_k \nu(E_k)</m> is independent of the order of the terms <m>\nu(E_k)</m>. It follows that the series <m>\sum_k \nu(E_k)</m> converges <em>absolutely</em>.</p>
-<p>Exercise <xref ref="exer-diff-of-measures"/> says that the difference of two measures is a signed measure. In this section we will show that all signed measures are of this form. We need some preliminary definitions and results first.</p>
+<p><xref ref="exer-diff-of-measures" text="Exercise"/> says that the difference of two measures is a signed measure. In this section we will show that all signed measures are of this form. We need some preliminary definitions and results first.</p>
 <definition>
 <p>Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m> and let <m>A</m> be a measurable set.</p>
 <ol>
@@ -78,7 +80,7 @@
 <p>Since <m>\nu(E)&gt;0</m> and <m>\sum_{k=1}^n \nu(B_k)&lt;0</m>, it follows that <m>\nu(A)&gt;0</m>.</p>
 <p>If the process does not end, we get a sequence of sets <m>B_1,B_2,\ldots.</m>
     Let <m>B = \bigcup_{k=1}^\infty B_k</m> and let <m>A = E \backslash B.</m>
-    Since <m>\nu(E) &lt; \infty</m>, it follows from Exercise <xref ref="exer-finite-signed-measures"/> that <m>|\nu(B)|&lt;\infty</m>.
+    Since <m>\nu(E) &lt; \infty</m>, it follows from <xref ref="exer-finite-signed-measures" text="Exercise"/> that <m>|\nu(B)|&lt;\infty</m>.
     Thus</p>
 <md> -\infty &lt; \nu(B) = \sum_{k=1}^\infty \nu(B_k)\leq \sum_{k=1}^\infty \frac{-1}{m_k} &lt; 0.</md>
 <p>Thus <m>\lim_{k\rightarrow \infty} m_k = \infty</m>.</p>
@@ -114,7 +116,7 @@
     Choose a sequence <m>\{A_k\}_{k=1}^\infty</m> such that</p>
 <md> \lim_{k\rightarrow \infty} \nu(A_k) = \lambda.</md>
 <p>Let <m>A = \bigcup_{k=1}^\infty A_k</m>.
-    Note that <m>A</m> is positive by Exercise <xref ref="exer-positive-union"/>.
+    Note that <m>A</m> is positive by <xref ref="exer-positive-union" text="Exercise"/>.
     Thus <m>\nu(A) \leq \lambda</m>.
     Also, since <m>A</m> is positive, <m>\nu(A \backslash A_k) \geq 0</m>, and</p>
 <md>
@@ -130,7 +132,7 @@
     If <m>B</m> is not negative, then there is a measurable set <m>C \subseteq B</m> with <m>\nu(C)&gt;0</m>.
     Since, by assumption, <m>\nu</m> does not take the value <m>\infty</m>, we have</p>
 <md> 0 &lt; \nu(C) &lt; \infty.</md>
-<p>It follows from Lemma <xref ref="lem-hahn-lemma"/> that there is a positive set <m>C' \subseteq C</m> with <m>\nu(C') &gt;0</m>.
+<p>It follows from <xref ref="lem-hahn-lemma" text="Lemma"/> that there is a positive set <m>C' \subseteq C</m> with <m>\nu(C') &gt;0</m>.
     The set <m>A \cup C'</m> is positive with</p>
 <md> \nu(A \cup C') = \nu(A) + \nu(C') &gt; \lambda.</md>
 <p>This contradicts the definition of <m>\lambda</m>.
@@ -145,7 +147,7 @@
 <p>Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
 If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B</m> for disjoint sets <m>A</m> and <m>B</m>, with <m>A</m> positive and <m>B</m> negative, we call <m>A</m> and <m>B</m> a <em>Hahn decomposition</em> for <m>\nu</m>.<idx><h>Hahn decomposition</h></idx></p>
 </definition>
-<p>The Hahn Decomposition, Theorem <xref ref="thm-Hahn-decomp"/>, says that Hahn decompositions exist for all signed measures.</p>
+<p>The Hahn Decomposition, <xref ref="thm-Hahn-decomp" text="Theorem"/>, says that Hahn decompositions exist for all signed measures.</p>
 <p>We can now, as promised, decompose signed measures as the difference of two measures. Before we do this we introduce just one more definition.</p>
 <definition>
 <p>Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\mu</m> and <m>\nu</m> be two measures on <m>(X,\mathcal{F})</m>.
@@ -153,8 +155,8 @@ If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B
     <m>\mu(A) = \mu(X)</m>, <m>\mu(B) = 0</m>, <m>\nu(A) = 0</m>, and <m>\nu(B) = \nu(X)</m>.</p>
 </definition>
 <example>
-<p>Let <m>m</m> be the Lebesgue measure on the Borel sets of <m>[0,1]</m>, and let <m>\mu</m> be the Borel measure on the Borel sets of <m>[0,1]</m> whose cumulative distribution function is the Cantor-Lebesgue function (see Corollary <xref ref="cor-cdf-and-Borel"/>).
-    It follows from Exercise <xref ref="exer-cantor-leb-cdf"/> that <m>m</m> and <m>\mu</m> are mutually singular.</p>
+<p>Let <m>m</m> be the Lebesgue measure on the Borel sets of <m>[0,1]</m>, and let <m>\mu</m> be the Borel measure on the Borel sets of <m>[0,1]</m> whose cumulative distribution function is the Cantor-Lebesgue function (see <xref ref="cor-cdf-and-Borel" text="Corollary"/>).
+    It follows from <xref ref="exer-cantor-leb-cdf" text="Exercise"/> that <m>m</m> and <m>\mu</m> are mutually singular.</p>
 </example>
 <theorem xml:id="thm-jordan-decomp-measure">
 <title>The Jordan Decomposition Theorem</title>
@@ -174,7 +176,7 @@ If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B
         \nu_-(E) &amp;= -\nu(E \cap B).
 \end{aligned}
 </md>
-<p>That <m>\nu_+</m> is a measure follows from Exercise <xref ref="exer-signed-meas-to-meas"/>.
+<p>That <m>\nu_+</m> is a measure follows from <xref ref="exer-signed-meas-to-meas" text="Exercise"/>.
     That <m>\nu_-</m> is a measure can be proved similarly.
     That <m>\nu_+</m> and <m>\nu_-</m> are mutually orthogonal follows from the fact that <m>A</m> and <m>B</m> are disjoint.</p>
 <p>Suppose now that <m>\mu_1</m> and <m>\mu_2</m> are mutually orthogonal measures satisfying <m>\nu = \mu_1 - \mu_2</m>.
@@ -186,13 +188,13 @@ If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B
 <md> \nu(E) = \mu_1(E) - \mu_2(E) = \mu_1(E) \geq 0.</md>
 <p>Similarly, if <m>E \subseteq D</m>, then <m>\mu_1(E) =0</m> and so</p>
 <md> \nu(E) = \mu_1(E) - \mu_2(E) = 0 - \mu_2(E) \leq 0.</md>
-<p>Since <m>C</m> and <m>D</m> are a Hahn decompoistion for <m>\nu</m>, and <m>A</m> and <m>B</m> are a Hahn decompoistion for <m>\nu</m>, it follows from Theorem <xref ref="thm-Hahn-decomp"/> that <m>A\backslash C \cup C \backslash A</m> and <m>B \backslash D \cup D \backslash B</m> are null sets.
+<p>Since <m>C</m> and <m>D</m> are a Hahn decompoistion for <m>\nu</m>, and <m>A</m> and <m>B</m> are a Hahn decompoistion for <m>\nu</m>, it follows from <xref ref="thm-Hahn-decomp" text="Theorem"/> that <m>A\backslash C \cup C \backslash A</m> and <m>B \backslash D \cup D \backslash B</m> are null sets.
     Take any <m>E \in \mathcal{F}</m>, then</p>
 <md> E \cap C = ([E\cap C] \backslash A)  \cup ([E \cap C] \cap A)</md>
 <p>and</p>
 <md> E \cap A = ([E\cap A] \backslash C)  \cup ([E \cap A] \cap C)</md>
 <p>and so</p>
-<md numbered="true" xml:id="eq-jord-eq">
+<md number="yes" xml:id="eq-jord-eq">
 \nu(E\cap C) = \nu(E \cap A).
 </md>
 <p>Take any <m>E \in \mathcal{F}</m>.
@@ -227,7 +229,7 @@ If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B
 </definition>
 <remark>
 <p>Let <m>\nu</m> be a signed measure.
-    Then <m>|\nu|</m>, measure of total variation of <m>\nu</m>, is indeed a measure by Exercise <xref ref="exer-measures-vec-space"/>.</p>
+    Then <m>|\nu|</m>, measure of total variation of <m>\nu</m>, is indeed a measure by <xref ref="exer-measures-vec-space" text="Exercise"/>.</p>
 <p>It is worth noting that, when <m>\nu</m> is a signed measure, in general it is not true that</p>
 <md>|\nu|(E) = |\nu(E)|</md>
 <p>for a <m>\nu</m>-measurable set.
@@ -235,7 +237,7 @@ If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B
 <p>In general, there is no reason to expect the function <m>E \mapsto |\nu(E)|</m> to be a measure.
     Can you see why not?</p>
 </remark>
-<p>Note that <m>|\nu|(X)</m> is finite if and only if <m>\nu</m> is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to Exercise <xref ref="exer-total-variation"/></p>
+<p>Note that <m>|\nu|(X)</m> is finite if and only if <m>\nu</m> is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to <xref ref="exer-total-variation" text="Exercise"/></p>
 <proposition xml:id="prop-bv-signed-meas-as-sup">
 <p>Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
     Then the total variation <m>|\nu|(X)</m> is given by</p>
@@ -307,7 +309,7 @@ Then <m>|\nu|(X) \leq \mu_1(X) + \mu_2(X)</m>.</p>
 </section>
 <section xml:id="sec-signed-borel">
 <title>Signed Borel measures on <m>\mathbb{R}</m> and functions of bounded variation</title>
-<p>In Section <xref ref="sec-borel-on-R"/> we studied the Borel measures on closed intervals in <m>\mathbb{R}</m>. In particular, we showed that if <m>\mu</m> is a Borel measure on closed interval <m>[a,b]</m> then the cumulative distribution function for <m>\mu</m> is non-negative, increasing, and right-continuous, Theorem <xref ref="thm-cdf"/> Conversely, if <m>g</m> is a non-negative, increasing, right-continuous function on <m>[a,b]</m> then <m>g</m> uniquely determines a Borel measure on <m>[a,b]</m> whose cumulative distribution function is <m>g</m>, Corollary <xref ref="cor-cdf-and-Borel"/>. In this section we want to study the relationship between <em>signed</em> Borel measures on closed intervals and functionso on <m>[a,b]</m>.</p>
+<p>In Section~\ref{sec: borel on R} we studied the Borel measures on closed intervals in <m>\mathbb{R}</m>. In particular, we showed that if <m>\mu</m> is a Borel measure on closed interval <m>[a,b]</m> then the cumulative distribution function for <m>\mu</m> is non-negative, increasing, and right-continuous, <xref ref="thm-cdf" text="Theorem"/> Conversely, if <m>g</m> is a non-negative, increasing, right-continuous function on <m>[a,b]</m> then <m>g</m> uniquely determines a Borel measure on <m>[a,b]</m> whose cumulative distribution function is <m>g</m>, <xref ref="cor-cdf-and-Borel" text="Corollary"/>. In this section we want to study the relationship between <em>signed</em> Borel measures on closed intervals and functionso on <m>[a,b]</m>.</p>
 <p>We begin with a definition to formalize our language.</p>
 <definition>
 <p>Let <m>X</m> be a topological space and let <m>\mathcal{B}(X)</m> be the <m>\sigma</m>-algebra of Borel sets of <m>X</m>.
@@ -336,20 +338,20 @@ If <m>P = \{a= x_0 &lt; \ldots &lt; x_n =b\}</m> is a partition of <m>[a,b]</m> 
     If <m>f</m> is decreasing then we can show that</p>
 <md>TV(f) = f(a) - f(b).</md>
 </example>
-<p>Intuitively, the total variation of a function <m>f</m> can be seen as a measure of the oscillation of <m>f</m>: the more oscillation the higher the value of <m>TV(f)</m>. Monotone functions, as in Example <xref ref="ex-inc-has-bounded-variation"/> do not oscillate and so have bounded variation. To find examples of functions which are not of bounded variation we look at functions with a lot of oscillation.</p>
+<p>Intuitively, the total variation of a function <m>f</m> can be seen as a measure of the oscillation of <m>f</m>: the more oscillation the higher the value of <m>TV(f)</m>. Monotone functions, as in <xref ref="ex-inc-has-bounded-variation" text="Example"/> do not oscillate and so have bounded variation. To find examples of functions which are not of bounded variation we look at functions with a lot of oscillation.</p>
 <example xml:id="ex-not-tv-1">
 <p>Define <m>f</m> on <m>[0,1]</m> by</p>
 <md> f(x) = \begin{cases} \sin(\frac{1}{x}) &amp; x \neq 0 \\
     0 &amp; x = 0.\end{cases}</md>
-<p>Then <m>f</m> is not of bounded variation. See Exercise <xref ref="exer-not-tv-1"/>.</p>
+<p>Then <m>f</m> is not of bounded variation. See <xref ref="exer-not-tv-1" text="Exercise"/>.</p>
 </example>
 <example xml:id="ex-not-tv-2">
 <p>Define <m>g</m> on <m>[0,1]</m> by</p>
 <md> g(x) = \begin{cases} x\sin(\frac{1}{x}) &amp; x \neq 0 \\
     0 &amp; x = 0.\end{cases}</md>
-<p>Then <m>g</m> is not of bounded variation. See Exercise <xref ref="exer-not-tv-2"/>.</p>
+<p>Then <m>g</m> is not of bounded variation. See <xref ref="exer-not-tv-2" text="Exercise"/>.</p>
 </example>
-<p>Note that Example <xref ref="ex-not-tv-2"/> shows that there are continuous functions which are not of bounded variation, see Exercise <xref ref="exer-not-tv-2"/>. However the continuous functions which are of bounded variation are bountiful, as the next proposition shows.</p>
+<p>Note that <xref ref="ex-not-tv-2" text="Example"/> shows that there are continuous functions which are not of bounded variation, see <xref ref="exer-not-tv-2" text="Exercise"/>. However the continuous functions which are of bounded variation are bountiful, as the next proposition shows.</p>
 <proposition xml:id="prop-bv-vec-sp">
 <p>Let <m>[a,b]</m> be a closed interval in <m>\mathbb{R}</m>.
     If <m>f,g \colon [a,b] \rightarrow \mathbb{R}</m> are functions of bounded variation then</p>
@@ -378,7 +380,7 @@ V(\alpha f,P) = \sum_{k=1}^n|(\alpha f)(x_i) - (\alpha f)(x_{i-1})| &amp; = |\al
 <p>Thus <m>TV(\alpha f, P) = |\alpha|TV(f,P) &lt; \infty</m>.
     The result follows.</p>
 </proof>
-<p>Knowing that increasing functions have bounded variation (Example <xref ref="ex-inc-has-bounded-variation"/>) and that the functions of bounded variation form a vector space (Proposition <xref ref="prop-bv-vec-sp"/>), gives many functions which are of bounded variation. Examples include the sine function (Exercise <xref ref="exer-sin-bv"/>), the cosine function (Exercise <xref ref="exer-cos-bv"/>), and polynomials (Exercise <xref ref="exer-poly-bv"/>).</p>
+<p>Knowing that increasing functions have bounded variation (<xref ref="ex-inc-has-bounded-variation" text="Example"/>) and that the functions of bounded variation form a vector space (<xref ref="prop-bv-vec-sp" text="Proposition"/>), gives many functions which are of bounded variation. Examples include the sine function (<xref ref="exer-sin-bv" text="Exercise"/>), the cosine function (<xref ref="exer-cos-bv" text="Exercise"/>), and polynomials (<xref ref="exer-poly-bv" text="Exercise"/>).</p>
 <p>The following lemma gives a partial relationship between Borel signed measures and functions of bounded variation.</p>
 <lemma xml:id="lem-signed-meas-to-bv">
 <p>Let <m>\nu</m> be a Borel signed measure on the closed interval <m>[a,b]</m>.
@@ -398,11 +400,11 @@ f(x) &amp;= \nu([a,x]) \\
         &amp;= f_1(x) - f_2(x).
 \end{aligned}
 </md>
-<p>By Theorem <xref ref="thm-cdf"/>, <m>f_1</m> and <m>f_2</m> are increasing, right-continuous functions.
-    By Example <xref ref="ex-inc-has-bounded-variation"/> <m>f_1</m> and <m>f_2</m> are of bounded variation, and so <m>f</m> is of bounded variation by Proposition <xref ref="prop-bv-vec-sp"/>.</p>
+<p>By <xref ref="thm-cdf" text="Theorem"/>, <m>f_1</m> and <m>f_2</m> are increasing, right-continuous functions.
+    By <xref ref="ex-inc-has-bounded-variation" text="Example"/> <m>f_1</m> and <m>f_2</m> are of bounded variation, and so <m>f</m> is of bounded variation by <xref ref="prop-bv-vec-sp" text="Proposition"/>.</p>
 </proof>
 <remark>
-<p>An alternate way to prove <m>f(x) = \nu([a,x])</m> is of bounded variation in Lemma <xref ref="lem-signed-meas-to-bv"/> would be to invoke Proposition <xref ref="prop-bv-signed-meas-as-sup"/> directly.</p>
+<p>An alternate way to prove <m>f(x) = \nu([a,x])</m> is of bounded variation in <xref ref="lem-signed-meas-to-bv" text="Lemma"/> would be to invoke <xref ref="prop-bv-signed-meas-as-sup" text="Proposition"/> directly.</p>
 </remark>
 <p>To complete the picture of the relationship between functions of bounded variation and Borel measures of bounded variation, we need another description of functions of functions of bounded variation.</p>
 <p>Let <m>f</m> be a function of bounded variation on <m>[a,b]</m>. Then, for each <m>x \in [a,b]</m>, the restriction of <m>f</m> to <m>[a,x]</m> is also of bounded variation. Define the function <m>T_f</m> on <m>[a,b]</m> by</p>
@@ -536,24 +538,24 @@ TV(f) &amp;= T_f(b) = \frac{1}{2}(T_f + f)(b) +  \frac{1}{2}(T_f - f)(b) \\
 <p>Conversely, if <m>f</m> is a right-continuous function of bounded variation on <m>[a,b]</m>, then there is a unique Borel signed measure <m>\mu</m> on <m>[a,b]</m> such that <m>\mu([a,x]) = f(x)</m> for all <m>x \in [a,b]</m>.</p>
 </theorem>
 <proof>
-<p>The first part of the theorem is dealt with in Lemma <xref ref="lem-signed-meas-to-bv"/>.</p>
+<p>The first part of the theorem is dealt with in <xref ref="lem-signed-meas-to-bv" text="Lemma"/>.</p>
 <p>Let <m>f</m> be a right-continuous function  of bounded variation on <m>[a,b]</m>.
     Let <m>f = g - h</m> be the Jordan decomposition of <m>f</m>.
-    By Proposition <xref ref="prop-total-var-cont"/>, <m>g</m> and <m>h</m> are right-continuous.
-    By Corollary <xref ref="cor-cdf-and-Borel"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> on <m>[a,b]</m> so that <m>g</m> is the cumulative distribution function for <m>\nu_1</m> and <m>h</m> is the cumulative distribution function for <m>\nu_2</m>.
+    By <xref ref="prop-total-var-cont" text="Proposition"/>, <m>g</m> and <m>h</m> are right-continuous.
+    By <xref ref="cor-cdf-and-Borel" text="Corollary"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> on <m>[a,b]</m> so that <m>g</m> is the cumulative distribution function for <m>\nu_1</m> and <m>h</m> is the cumulative distribution function for <m>\nu_2</m>.
     Let <m>\nu = \nu_1 - \nu_2</m>.
     Then <m>\nu</m> is a signed Borel measure on <m>[a,b]</m>, and for any <m>x \in [a,b]</m></p>
 <md>
 \begin{aligned}
 \nu([a,x]) &amp;= \nu_1([a,x]) - \nu_2([a,x]) \\
         &amp;= g(x) - h(x) \\
-        &amp;= f(x).
+        &amp;= f(x).\qedhere
 \end{aligned}
 </md>
 </proof>
-<p>Theorem <xref ref="thm-signed-meas-1-1-bv"/> gives a correspondence between right-continuous functions of bounded variation, and signed Borel measures on <m>[a,b]</m>. We have a Jordan decomposition for functions of bounded variation, and we have a Jordan decomposition for signed measures. We will now show that the correspondence given in Theorem <xref ref="thm-signed-meas-1-1-bv"/> sends the Jordan decomposition for functions to the Jordan decomposition for the signed measures, and vice versa.</p>
+<p><xref ref="thm-signed-meas-1-1-bv" text="Theorem"/> gives a correspondence between right-continuous functions of bounded variation, and signed Borel measures on <m>[a,b]</m>. We have a Jordan decomposition for functions of bounded variation, and we have a Jordan decomposition for signed measures. We will now show that the correspondence given in <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/> sends the Jordan decomposition for functions to the Jordan decomposition for the signed measures, and vice versa.</p>
 <proposition xml:id="prop-jordan-decomp-measure-and-function">
-<p>Let <m>f</m> be a right-continuous function of bounded variation on the closed interval <m>[a,b]</m>, and let <m>\nu</m> be the signed Borel measure satisfying <m>\nu([a,x]) = f(x)</m> from Theorem <xref ref="thm-signed-meas-1-1-bv"/>.
+<p>Let <m>f</m> be a right-continuous function of bounded variation on the closed interval <m>[a,b]</m>, and let <m>\nu</m> be the signed Borel measure satisfying <m>\nu([a,x]) = f(x)</m> from <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/>.
     Let <m>f = f_1 - f_2</m> be the Jordan decomposition for <m>f</m> and <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition for <m>\nu</m>.
     Then <m>f_1</m> is the cumulative distribution function for <m>\nu_+</m> and <m>f_2</m> is the cumulative distribution function for <m>\nu_-</m>.</p>
 <p>Conversely, if <m>\nu</m> is a signed measure on <m>[a,b]</m> with Jordan decomposition <m>\nu = \nu_+- \nu_-</m>.
@@ -561,10 +563,10 @@ TV(f) &amp;= T_f(b) = \frac{1}{2}(T_f + f)(b) +  \frac{1}{2}(T_f - f)(b) \\
 <p>In both cases, we get that the total variation of <m>\nu</m> is equal to the total variation of <m>f</m>, i.e. <m>|\nu|([a,x]) = TV(f)</m>,</p>
 </proposition>
 <proof>
-<p>Let <m>f</m> be a right-continuous function of bounded variation and let <m>\nu</m> be the signed Borel measure satisfying <m>\nu([a,x]) = f(x)</m> (which exists by Theorem <xref ref="thm-signed-meas-1-1-bv"/>).
+<p>Let <m>f</m> be a right-continuous function of bounded variation and let <m>\nu</m> be the signed Borel measure satisfying <m>\nu([a,x]) = f(x)</m> (which exists by <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/>).
     Let <m>f = f_1 - f_2</m> be the Jordan decomposition of <m>f</m>, and <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>.
-    By Corollary <xref ref="cor-cdf-and-Borel"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> on <m>[a,b]</m> so that <m>\nu_1((c,d]) = f_1(d) -f_1(c)</m> and <m>\nu_2((c,d]) = f_2(d) -f_2(c)</m> for intervals <m>(c,d] \subseteq [a,b]</m>.</p>
-<p>Note that <m>\nu = \nu_1 - \nu_2</m> and so, by Proposition <xref ref="prop-total-variation"/>,</p>
+    By <xref ref="cor-cdf-and-Borel" text="Corollary"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> on <m>[a,b]</m> so that <m>\nu_1((c,d]) = f_1(d) -f_1(c)</m> and <m>\nu_2((c,d]) = f_2(d) -f_2(c)</m> for intervals <m>(c,d] \subseteq [a,b]</m>.</p>
+<p>Note that <m>\nu = \nu_1 - \nu_2</m> and so, by <xref ref="prop-total-variation" text="Proposition"/>,</p>
 <md>
 \begin{aligned}
 |\nu|([a,b]) &amp;\leq \nu_1([a,b]) + \nu_2([a,b]) \\
@@ -572,20 +574,20 @@ TV(f) &amp;= T_f(b) = \frac{1}{2}(T_f + f)(b) +  \frac{1}{2}(T_f - f)(b) \\
         &amp;= TV(f).
 \end{aligned}
 </md>
-<p>Let <m>P</m> be a partition of <m>[a,b]</m>, by Proposition <xref ref="prop-bv-signed-meas-as-sup"/>,</p>
+<p>Let <m>P</m> be a partition of <m>[a,b]</m>, by <xref ref="prop-bv-signed-meas-as-sup" text="Proposition"/>,</p>
 <md> V(f,P)\leq |\nu|([a,b]).</md>
 <p>Thus <m>TV(f) \leq |\nu([a,b])</m>.
     Hence <m>TV(f) = |\nu|([a,b])</m>.</p>
 <p>Let <m>\nu</m> be a signed Borel measure on <m>[a,b]</m>, and define <m>f(x) = \nu([a,x])</m> for <m>x \in [a,b]</m>.
-    Then <m>f</m> is right-continuous and of bounded variation by Theorem <xref ref="thm-signed-meas-1-1-bv"/>,
+    Then <m>f</m> is right-continuous and of bounded variation by <xref ref="thm-signed-meas-1-1-bv" text="Theorem"/>,
     Let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>.
     Define functions <m>f^+1</m> and <m>f^-</m> on <m>[a,b]</m> by <m>f^+(x) = \nu_+([a,x])</m> and <m>f^-(x) = \nu_-([a,x])</m>.
-    By Theorem <xref ref="thm-cdf"/>, <m>f^+</m> and <m>f^-</m> are increasing, right continuous functions.
+    By <xref ref="thm-cdf" text="Theorem"/>, <m>f^+</m> and <m>f^-</m> are increasing, right continuous functions.
     Since <m>\nu = \nu_+ - \nu_-</m>, it follows that <m>f = f^+ - f^-</m>.
     Let <m>f_1 = \frac{1}{2}(T_f + f)</m> and <m>f_2 = \frac{1}{2}(T_f - f)</m> be the Jordan decomposition of <m>f</m>.
-    By Corollary <xref ref="cor-cdf-and-Borel"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> whose cumulative distribution functions are <m>f_1</m> and <m>f_2</m>, respectively.</p>
+    By <xref ref="cor-cdf-and-Borel" text="Corollary"/>, there are Borel measures <m>\nu_1</m> and <m>\nu_2</m> whose cumulative distribution functions are <m>f_1</m> and <m>f_2</m>, respectively.</p>
 <p>Note that <m>\nu = \nu_1 - \nu_2</m>.
-    By Proposition <xref ref="prop-total-variation"/> for each <m>x \in [a,b]</m></p>
+    By <xref ref="prop-total-variation" text="Proposition"/> for each <m>x \in [a,b]</m></p>
 <md>
 \begin{aligned}
 |\nu|([a,x]) &amp;\leq \nu_1([a,x]) + \nu_2([a,x]) \\
@@ -594,7 +596,7 @@ TV(f) &amp;= T_f(b) = \frac{1}{2}(T_f + f)(b) +  \frac{1}{2}(T_f - f)(b) \\
         &amp;= T_f(x).
 \end{aligned}
 </md>
-<p>By Proposition <xref ref="prop-bv-signed-meas-as-sup"/>, <m>T_f(x) \leq |\nu|([a,x])</m> for all <m>x \in X</m>, and thus</p>
+<p>By <xref ref="prop-bv-signed-meas-as-sup" text="Proposition"/>, <m>T_f(x) \leq |\nu|([a,x])</m> for all <m>x \in X</m>, and thus</p>
 <md>T_f(x) = |\nu|([a,x]).</md>
 <p>We have now,</p>
 <md>
@@ -608,7 +610,7 @@ f(x) + T_f(x) &amp;= f^+(x) - f^-(x) + |\nu|([a,x]) \\
 <md> f^+ = \frac{1}{2}(T_f + f) + C,</md>
 <p>where <m>C = \frac{1}{2}(f^+(a) + f^-(a))</m>.
     It follows that</p>
-<md> f^- = \frac{1}{2}(T_f -f) + C.</md>
+<md> f^- = \frac{1}{2}(T_f -f) + C.\qedhere</md>
 </proof>
 </section>
 <exercises>
@@ -632,7 +634,7 @@ Define <m>\lambda</m> on <m>\mathcal{F}</m> by</p>
 <ol>
 <li><p>Show that <m>\lambda</m> is a measure on <m>(X,\mathcal{F})</m>.</p>
 </li>
-<li><p>Show that <m>\nu + \lambda = \mu</m> (where <m>\nu + \lambda</m> is defined by Exercise <xref ref="exer-measures-vec-space"/>).</p>
+<li><p>Show that <m>\nu + \lambda = \mu</m> (where <m>\nu + \lambda</m> is defined by <xref ref="exer-measures-vec-space" text="Exercise"/>).</p>
 </li>
 <li><p>Show that if <m>(X,\mathcal{F},\nu)</m> is <m>\sigma</m>-finite then the <m>\lambda</m> is the unique measure satisfying <m>\nu + \lambda = \mu</m>.
 (Hint: Assume there are two such measures <m>\lambda_1</m> and <m>\lambda_2</m> and show they have to be equal on sets with <m>\nu(E)&lt;\infty</m>. Then move to general measurable sets.)</p>
@@ -680,13 +682,13 @@ Show that <m>E = \bigcup_k E_k</m> is a positive set.</p>
     Show that <m>\nu_A</m> is a measure on <m>(X,\mathcal{F})</m>.</p>
 </exercise>
 <exercise xml:id="exer-total-variation">
-<p>Prove Proposition <xref ref="prop-total-variation"/>:
+<p>Prove <xref ref="prop-total-variation" text="Proposition"/>:
     Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
     Show that that the total variation of <m>\nu</m> can be calculated by</p>
 <md> |\nu|(X) = \sup \left\{ \sum_{k=1}^n |\nu(E_k)| \colon \{E_k\}_{k=1}^n \text{ disjoint sets in }\mathcal{F}\right\}. </md>
 </exercise>
 <exercise xml:id="exer-signed-measure-space-with-norm">
-<p>Let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mathcal{V}</m> the vector space of finite signed measures on <m>(X,\mathcal{F})</m>, see Exercise <xref ref="exer-signed-meas-vec-sp"/>.
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mathcal{V}</m> the vector space of finite signed measures on <m>(X,\mathcal{F})</m>, see <xref ref="exer-signed-meas-vec-sp" text="Exercise"/>.
     For <m>\nu \in \mathcal{V}</m>, define <m>\|\nu\|_{\textrm{var}}</m> by</p>
 <md> \|\nu\|_{\textrm{var}} = |\nu|(X).</md>
 <p>Show that <m>\|\cdot\|_{\mathrm{var}}</m> defines a norm on <m>\mathcal{V}</m>.<idx><h>norm</h></idx><idx><h>norm</h><h>on the space of finite signed measures</h></idx>
@@ -739,7 +741,7 @@ Show that</p>
 <md> TV(f) = (m(b) - m(a)) + (n(b) - n(a))</md>
 <p>if and only if there is a constant <m>c</m> such that 
 <m>m = \frac{1}{2}(T_f + f) + c</m> and <m>n =  \frac{1}{2}(T_f - f) +c</m>.
-(HINT: Compare this question to Proposition <xref ref="prop-bv-signed-meas-as-sup"/>).</p>
+(HINT: Compare this question to <xref ref="prop-bv-signed-meas-as-sup" text="Proposition"/>).</p>
 </exercise>
 </exercises>
 </chapter>

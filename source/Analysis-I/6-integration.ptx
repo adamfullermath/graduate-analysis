@@ -2,11 +2,12 @@
 <chapter xml:id="chap-integration">
 <title>Integration</title>
 <introduction>
-<epigraph>
-<p><em>``I take the bills and coins out of my pocket and give them to the creditor in the order I find them until I have reached the total sum. This is the Riemann integral. But I can proceed differently. After I have taken all the money out of my pocket I order the bills and coins according to identical values and then I pay the several heaps one after the other to the creditor. This is my integral."</em></p>
-<p><source>Henri Lebesgue</source></p>
-</epigraph>
-
+<blockquote>
+<p><em><q>I take the bills and coins out of my pocket and give them to the creditor in the order I find them until I have reached the total sum. This is the Riemann integral. But I can proceed differently. After I have taken all the money out of my pocket I order the bills and coins according to identical values and then I pay the several heaps one after the other to the creditor. This is my integral.</q></em></p>
+<attribution>
+<p>Henri Lebesgue</p>
+</attribution>
+</blockquote>
 <p>In this chapter we will define integrals of measurable functions and prove main key theorems on integration. We will play particular attention to integration of functions on the real line (with respect to Lebesgue measure) and integration of functions on closed intervals <m>[a,b] \subseteq \mathbb{R}</m> with respect to Borel measures.</p>
 <p>We will define integration in various settings: first for simple functions; then non-negative measurable functions; and finally for more general measurable functions.</p>
 </introduction>
@@ -62,7 +63,7 @@
         Let <m>\{a_1,\ldots,a_m\} = \varphi(X)</m>, <m>\{b_1,\ldots,b_n\} = \psi(X)</m>, <m>E_i = \varphi^{-1}(\{a_i\})</m> for <m>1 \leq i \leq m</m>, and <m>F_j = \psi^{-1}(\{b_j\})</m>.
         Then</p>
 <md> \varphi + \psi = \sum_{i=1}^m \sum_{j=1}^n(a_i + b_j) \chi_{E_i \cap F_j}.</md>
-<p>By Lemma <xref ref="lem-simp-int"/>,</p>
+<p>By <xref ref="lem-simp-int" text="Lemma"/>,</p>
 <md>
 \begin{aligned}
 \int_X(\varphi + \psi)\, d\mu &amp;= \sum_{i=1}^m \sum_{j=1}^n (a_i + b_j) \mu(E_i \cap F_j) \\
@@ -80,7 +81,7 @@
 </proof>
 <remark>
 <p>Let <m>E_1,\ldots,E_n</m> be a collection of measurable sets, let <m>a_1,\ldots,a_n</m> be non-negative real numbers, and let <m>\varphi = \sum_{k=1}^n a_k \chi_{E_k}.</m>
-        By Theorem <xref ref="thm-simple-int-linear"/>,</p>
+        By <xref ref="thm-simple-int-linear" text="Theorem"/>,</p>
 <md> \int_X \varphi \, d\mu = \sum_{k=1}^n a_k \int_X \chi_{E_k}\,d\mu = \sum_{k=1}^n a_k \mu(E_k).</md>
 <p>That is, if <m>\varphi = \sum_{k=1}^n a_k \chi_{E_k}</m> is a simple function we do not need the sets <m>\{E_k\}_{k=1}^n</m> to be disjoint in order to easily calculate <m>\int_X \varphi \,d\mu.</m></p>
 </remark>
@@ -110,7 +111,7 @@
 <p>When <m>X \subseteq \mathbb{R}</m> is a Lebesgue measurable set, <m>\mathcal{F}</m> is the Lebesgue measurable subsets of <m>X</m>, and <m>\mu = m</m> is the Lebesgue measure, we refer to the integral with respect to <m>m</m> as the <em>Lebesgue integral</em>.<idx><h>integral</h><h>Lebesgue integral</h></idx>
     If <m>f</m> is an integrable function with respect to <m>m</m> we say that <m>f</m> is <em>Lebesgue integrable.</em><idx><h>integrable</h><h>Lebesgue integrable</h></idx></p>
 </definition>
-<p>The proof of the following two propositions are left to Exercise <xref ref="exer-int-a-e"/> and Exercise <xref ref="exer-int-mono-non-neg"/>, respectively.</p>
+<p>The proof of the following two propositions are left to <xref ref="exer-int-a-e" text="Exercise"/> and <xref ref="exer-int-mono-non-neg" text="Exercise"/>, respectively.</p>
 <proposition xml:id="prop-int-remove-zero-set-non-neg">
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>f</m> be non-negative measurable function on <m>X</m>, and let <m>E \subseteq X</m> be a measurable set with <m>\mu(E) = 0</m>.
     Then</p>
@@ -140,9 +141,9 @@
 <p>where <m>\lceil\cdot\rceil</m> denotes the ceiling function (i.e. round to the nearest integer above).
     Then <m>\phi_n \leq f</m> for each <m>n</m>.
     <figure xml:id="fig-integral-1-x">
-<image source="images/integral.png" width="20%" />
+<image source="images/integral.png" width="30%" />
 <caption>
-  <p>The functions <m>f(x)</m> (red) and <m>\phi_{10}(x)</m> (blue) from Example <xref ref="exam-integral-1-x"/></p>
+  <p>The functions <m>f(x)</m> (red) and <m>\phi_{10}(x)</m> (blue) from <xref ref="exam-integral-1-x" text="Example"/></p>
 </caption>
 </figure>
 <p>For each <m>n</m> we have</p>
@@ -155,7 +156,7 @@
 <p>As the harmonic series <m>\sum_k \frac{1}{k}</m> is not convergent, it follows that</p>
 <md>\int_{(0,\infty)} f\,d\mu = \infty.</md>
 </example>
-<p>If <m>f</m> is integrable, then <m>f</m> will be, in some sense, well-behaved. We make this explicit in Theorem <xref ref="thm-f-integrable"/> after the following important lemma.</p>
+<p>If <m>f</m> is integrable, then <m>f</m> will be, in some sense, well-behaved. We make this explicit in <xref ref="thm-f-integrable" text="Theorem"/> after the following important lemma.</p>
 <lemma xml:id="lem-chenyshev">
 <title>Chebyshev's Inequality</title>
 <p><idx><h>Chebyshev's Inequality</h></idx>
@@ -199,8 +200,8 @@
 <md> \mu\left(\left\{x \in X \colon f(x) \geq \frac{1}{n}\right\}\right)\leq n \int_X f\,d\mu&lt;\infty.</md>
 <p>Thus <m>X_{&gt;0}</m> is a countable union of sets of finite measure. That is, <m>X_{&gt;0}</m> is <m>\sigma</m>-finite.</p>
 </proof>
-<p>In Section <xref ref="sec-int-lim-swap"/> we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if <m>(f_n)_n</m> is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function <m>f</m>, do we have</p>
-<md numbered="true" xml:id="eq-int-and-limit">
+<p>In Section~\ref{sec: int lim swap} we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if <m>(f_n)_n</m> is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function <m>f</m>, do we have</p>
+<md number="yes" xml:id="eq-int-and-limit">
 \lim_{n\rightarrow \infty} \int_X f_n \,d\mu = \int_X f \,d\mu?
 </md>
 <p>The answer is, of course: not necessarily. We give some counter examples here.</p>
@@ -237,7 +238,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
     The limit on the left-hand side can be finite, it may not exist, or it may be infinite.
     In each of these cases,  <xref ref="eq-int-and-limit" text="Equation"/> may not hold.</p>
 </example>
-<p>The obvious moral to take away from Example <xref ref="ex-pw-int-not-convergent"/> is that, in order for there to be a positive answer to  <xref ref="eq-int-and-limit" text="Equation"/> we need some additional conditions on the functions <m>(f_n)_n</m> and <m>f</m>. There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let <m>(x_n)_n</m> be a sequence of real numbers. The <em>limit superior</em><idx><h>limit inferior</h></idx><idx><h>liminf</h><see>limit inferior</see></idx> of <m>(x_n)_n</m> is defined as</p>
+<p>The obvious moral to take away from <xref ref="ex-pw-int-not-convergent" text="Example"/> is that, in order for there to be a positive answer to  <xref ref="eq-int-and-limit" text="Equation"/> we need some additional conditions on the functions <m>(f_n)_n</m> and <m>f</m>. There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let <m>(x_n)_n</m> be a sequence of real numbers. The <em>limit superior</em><idx><h>limit inferior</h></idx><idx><h>liminf</h><see>limit inferior</see></idx> of <m>(x_n)_n</m> is defined as</p>
 <md> \liminf_n x_n = \lim_n \inf\{x_k \colon k \geq n\} = \sup_n\{ \inf\{x_k \colon k \geq n\}\}</md>
 <p>and the <em>limit superior</em><idx><h>limit superior</h></idx><idx><h>limsup</h><see>limit superior</see></idx> is defined as</p>
 <md> \limsup_n x_n = \lim_n \sup\{x_k \colon k \geq n\} = \inf_n\{ \sup\{x_k \colon k \geq n\}\}.</md>
@@ -245,7 +246,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 <md> \liminf x_n \leq \limsup x_n.</md>
 <p>Further <m>\liminf x_n = \limsup x_n</m> if and only if <m>(x_n)</m> is a convergent sequence, in which case</p>
 <md> \liminf x_n = \lim x_n = \limsup x_n.</md>
-<p>Returning to Example <xref ref="ex-pw-int-not-convergent"/>. Whilst we do not have that <m>\int_{\mathbb{R}} f \,dm</m> is a limit of the integrals of the functions which converge pointwise to <m>f</m>, we do have the following inequalities:</p>
+<p>Returning to <xref ref="ex-pw-int-not-convergent" text="Example"/>. Whilst we do not have that <m>\int_{\mathbb{R}} f \,dm</m> is a limit of the integrals of the functions which converge pointwise to <m>f</m>, we do have the following inequalities:</p>
 <md>
 \begin{aligned}
 0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} f_n \,dm =1 \\
@@ -263,7 +264,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 </lemma>
 <proof>
 <p>Let <m>E \subseteq X</m> be a measure <m>0</m> set such that <m>(f_n)_n</m> converges to <m>f</m> pointwise on <m>X \backslash E</m>.
-    By Proposition <xref ref="prop-int-remove-zero-set-non-neg"/>, replacing <m>X</m> with <m>X \backslash E</m> does not change the value of any integrals.
+    By <xref ref="prop-int-remove-zero-set-non-neg" text="Proposition"/>, replacing <m>X</m> with <m>X \backslash E</m> does not change the value of any integrals.
     We can thus assume that <m>(f_n)_n</m> converges pointwise to <m>f</m> everywhere on <m>X</m>.</p>
 <p>Let <m>\varphi</m> be a simple function satisfying <m>0 \leq \varphi \leq f</m>.
     We will show that</p>
@@ -331,11 +332,11 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 <proof>
 <p>Note that <m>\lim_n f_n(x)</m> exists for all <m>x</m> since the sequence <m>(f_n)_n</m> is increasing.
     Thus <m>f</m> is a well-defined function on <m>X</m>.
-    Further <m>f</m> is measurable by Proposition <xref ref="prop-pw-lim"/> and <m>f</m> is non-negative since each <m>f_n</m> is non-negative.</p>
+    Further <m>f</m> is measurable by <xref ref="prop-pw-lim" text="Proposition"/> and <m>f</m> is non-negative since each <m>f_n</m> is non-negative.</p>
 <p>By the monotonicity of integration, we have that <m>(\int_X f_n\,d\mu)_n</m> is an increasing sequence, and hence convergent.
     Further, since <m>f_n \leq f</m> for each <m>n</m>,</p>
 <md> \lim_n \int_X f_n\,d\mu \leq \int_X f\,d\mu.</md>
-<p>By Fatou's Lemma, Lemma <xref ref="lem-fatou"/>,</p>
+<p>By Fatou's Lemma, <xref ref="lem-fatou" text="Lemma"/>,</p>
 <md> \int_X f\,d\mu \leq \liminf_n \int_X f_n \,d\mu = \lim_n \int_Xf_n\,d\mu.</md>
 <p>Thus</p>
 <md>\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu.</md>
@@ -351,7 +352,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 <p>and so</p>
 <md> \infty = \lim_n \int_\mathbb{R} f_n\,dm \neq \int_\mathbb{R} f\,dm = 0.</md>
 </example>
-<p>The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, Exercise <xref ref="exer-MCT-series"/>.</p>
+<p>The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, <xref ref="exer-MCT-series" text="Exercise"/>.</p>
 <corollary xml:id="cor-MCT-series">
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>(f_n)_n</m> be a sequence of non-negative measurable functions, and let <m>f = \sum_{n=1}^\infty f_n.</m>
     Then</p>
@@ -376,7 +377,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 <proof>
 <p>By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions <m>(\phi_n)_n</m> and <m>(\psi_n)_n</m> such that <m>(\phi_n)_n</m> converges to <m>f</m> pointwise and <m>(\psi_n)_n</m> converges to <m>g</m> pointwise.
     Thus <m>(\alpha\phi_n + \beta\psi_n)_n</m> is an increasing sequence of non-negative simple functions which converge pointwise to <m>\alpha f +\beta g</m>.
-    Using the Monotone Covergence Theorem and Theorem <xref ref="thm-simple-int-linear"/>  and the Monotone Convergence Theorem again we get</p>
+    Using the Monotone Covergence Theorem and <xref ref="thm-simple-int-linear" text="Theorem"/>  and the Monotone Convergence Theorem again we get</p>
 <md>
 \begin{aligned}
 \int_X (\alpha f + \beta g)\,d\mu &amp;= \lim_n \int_X(\alpha \phi_n + \beta \psi_n)\,d\mu \\
@@ -388,7 +389,7 @@ f_n &amp;= \chi_{[n,n+1]}; \\
 </section>
 <section>
 <title>Integration of measurable functions</title>
-<p>Recall that if <m>f</m> is a measurable function on a measure space <m>(X,\mathcal{F},\mu)</m> then <m>f = f_+ - f_-</m> where <m>f_+ = \max\{0,f\}</m> is the positive part of <m>f</m> and <m>f_- = \max\{0,-f\}</m> is the negative part of <m>f</m>. Further, <m>|f| = f_+ + f_-</m>. As <m>|f|</m>, <m>f_+</m> and <m>f_-</m> are non-negative measurable functions we can use Theorem <xref ref="thm-pos-int-linear"/> to get</p>
+<p>Recall that if <m>f</m> is a measurable function on a measure space <m>(X,\mathcal{F},\mu)</m> then <m>f = f_+ - f_-</m> where <m>f_+ = \max\{0,f\}</m> is the positive part of <m>f</m> and <m>f_- = \max\{0,-f\}</m> is the negative part of <m>f</m>. Further, <m>|f| = f_+ + f_-</m>. As <m>|f|</m>, <m>f_+</m> and <m>f_-</m> are non-negative measurable functions we can use <xref ref="thm-pos-int-linear" text="Theorem"/> to get</p>
 <md> \int_X |f| \,d\mu = \int_X f_+ \,d\mu + \int_X f_-\,d\mu.</md>
 <p>Thus <m>|f|</m> is integrable if and only if <m>f_+</m> and <m>f_-</m> are integrable.</p>
 <definition>
@@ -429,7 +430,7 @@ Then <m>\alpha f + \beta g</m> is integrable and</p>
 <proof>
 <p>It is straightforward to show that <m>\int_X \alpha f\,d\mu = \alpha \int_X f\,d\mu</m>.
     We will show <m>\int_X(f+g)\,d\mu = \int_X f\,d\mu + \int_X g\,d\mu</m>.
-    First note that by Theorem <xref ref="thm-f-integrable"/>, <m>f</m> and <m>g</m> being integrable implies <m>f</m> and <m>g</m> are finite a.e.
+    First note that by <xref ref="thm-f-integrable" text="Theorem"/>, <m>f</m> and <m>g</m> being integrable implies <m>f</m> and <m>g</m> are finite a.e.
     Thus <m>f + g</m> is defined.
     Note that <m>|f + g| \leq |f| + |g|</m>.
     By the monotonicity of integration of non-negative measurable functions, it follows that <m>f+g</m> is integrable.</p>
@@ -437,7 +438,7 @@ Then <m>\alpha f + \beta g</m> is integrable and</p>
 <md> (f+g)_+ - (f+g)_- = (f_+ - f_-) + (g_+ -g_-)</md>
 <p>and so</p>
 <md> (f+g)_+  +f_- + g_- =(f+g)_- +f_+ + g_+.</md>
-<p>By Theorem <xref ref="thm-pos-int-linear"/>, we have then that</p>
+<p>By <xref ref="thm-pos-int-linear" text="Theorem"/>, we have then that</p>
 <md>\int_X(f+g)_+\,d\mu  +\int_Xf_-\,d\mu + \int_Xg_-\,d\mu =\int_X(f+g)_-\,d\mu +\int_Xf_+\,d\mu + \int_Xg_+\,d\mu</md>
 <p>Thus</p>
 <md>\int_X(f+g)_+\,d\mu - \int_X(f+g)_-\,d\mu = \int_Xf_+\,d\mu -\int_Xf_-\,d\mu + \int_Xg_+\,d\mu - \int_Xg_-\,d\mu,</md>
@@ -447,7 +448,7 @@ Then <m>\alpha f + \beta g</m> is integrable and</p>
 <md> 0 \leq \int_X (g-f)\,d\mu = \int_X g\,d\mu - \int_X f\,d\mu.</md>
 <p>Thus <m>\int_X g\,d\mu \geq \int_X f\,d\mu</m>.</p>
 </proof>
-<p>Several results can now be stated which follow readily from Theorem <xref ref="thm-int-liner"/> and what we have already proved for integrals of non-negative linear functions.</p>
+<p>Several results can now be stated which follow readily from <xref ref="thm-int-liner" text="Theorem"/> and what we have already proved for integrals of non-negative linear functions.</p>
 <corollary>
 <p>If <m>A</m> and <m>B</m> are disjoint measurable subsets in a measure space <m>(X,\mathcal{F},\mu)</m> and <m>f</m> is integrable, then</p>
 <md> \int_{A\cup B} f\,d\mu = \int_A f\,d\mu + \int_Bf\,d\mu.</md>
@@ -457,9 +458,9 @@ Then <m>\alpha f + \beta g</m> is integrable and</p>
 <md> \int_X f \,d\mu = \sum_{k=1}^\infty \int_X f_k \,d\mu.</md>
 </proposition>
 <proof>
-<p>Apply Corollary <xref ref="cor-MCT-series"/> and the linearity of integration.</p>
+<p>Apply <xref ref="cor-MCT-series" text="Corollary"/> and the linearity of integration.</p>
 </proof>
-<p>In Exercise <xref ref="exer-integration-measure"/> it is shown that <m>\nu(E) = \int_E f\,d\mu</m> defines a measure when <m>f \geq 0</m>. The following proposition is a straightforward application of Exercise <xref ref="exer-integration-measure"/>, the linearity of integration, and the continuity of measure.</p>
+<p>In <xref ref="exer-integration-measure" text="Exercise"/> it is shown that <m>\nu(E) = \int_E f\,d\mu</m> defines a measure when <m>f \geq 0</m>. The following proposition is a straightforward application of <xref ref="exer-integration-measure" text="Exercise"/>, the linearity of integration, and the continuity of measure.</p>
 <proposition xml:id="prop-integral-cont">
 <title>Continuity of Integration</title>
 <p><idx><h>integral</h><h>continuity</h></idx>
@@ -491,7 +492,7 @@ If there is an integrable non-negative function <m>g</m> on <m>X</m> such that <
     Thus, by Fatou's Lemma,</p>
 <md> \int_X(f+g)\,d\mu \leq \liminf_n \int_X (f_n + g)\,d\mu.</md>
 <p>The linearity of integration thus gives that</p>
-<md numbered="true" xml:id="eq-fatou-1">
+<md number="yes" xml:id="eq-fatou-1">
 \int_X f \,d\mu \leq \liminf_n \int_X f_n\,d\mu.
 </md>
 <p>The sequence <m>(g - f_n)_n</m> is also a sequence of non-negative measurable functions. 
@@ -504,7 +505,7 @@ If there is an integrable non-negative function <m>g</m> on <m>X</m> such that <
 \end{aligned}
 </md>
 <p>Thus</p>
-<md numbered="true" xml:id="eq-fatou-2">
+<md number="yes" xml:id="eq-fatou-2">
 \int_X f \,d\mu \geq \limsup_n \int_X f\,d\mu.
 </md>
 <p>By  <xref ref="eq-fatou-1" text="Equation"/> and  <xref ref="eq-fatou-2" text="Equation"/> we have that</p>
@@ -527,8 +528,8 @@ If <m>f</m> is Riemann integrable, then <m>f</m> is measurable.</p>
 </lemma>
 <proof>
 <p>Let <m>D = \{x \in [a,b] \colon f \text{ not continuous at }x\}</m>, and let <m>E = [a,b]\backslash D</m>.
-    Since <m>f</m> is continuous on <m>E</m>, we have that <m>f|_E</m> is a measurable function by Corollary <xref ref="cor-Cont-are-meas"/>.
-    By Theorem <xref ref="thm-Riemann-int"/>, <m>m(D) = 0</m>.
+    Since <m>f</m> is continuous on <m>E</m>, we have that <m>f|_E</m> is a measurable function by <xref ref="cor-Cont-are-meas" text="Corollary"/>.
+    By <xref ref="thm-Riemann-int" text="Theorem"/>, <m>m(D) = 0</m>.
     Since <m>m</m> is a complete measure on <m>[a,b]</m>, <m>f|_D</m> is a measurable function.
     Thus <m>f</m> is measurable.</p>
 </proof>
@@ -554,7 +555,7 @@ If <m>f</m> is Riemann integrable, then <m>f</m> is measurable.</p>
 </theorem>
 <proof>
 <p>Assume <m>f</m> is Riemann integrable.
-By Lemma <xref ref="lem-riemann-meas"/>, <m>f</m> is measurable.
+By <xref ref="lem-riemann-meas" text="Lemma"/>, <m>f</m> is measurable.
 Let <m>M</m> be an upper bound for <m>|f|</m>.
 Then</p>
 <md> \int_{[a,b]}|f|\,dm \leq M m([a,b]) &lt; \infty.</md>
@@ -590,7 +591,7 @@ Then</p>
 <p>and let <m>f_n = \chi_{A_n}</m>.
     Then <m>(f_n)_n</m> is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to <m>\chi_A</m>.
     The Riemann integral of each <m>f_n</m> is <m>0</m>.
-    However, as noted in Example <xref ref="exam-char-Q"/>, <m>\chi_A</m> is not Riemann integrable.</p>
+    However, as noted in <xref ref="exam-char-Q" text="Example"/>, <m>\chi_A</m> is not Riemann integrable.</p>
 <p>We do not have</p>
 <md>\lim_n \mathrm{R}{\int}_0^1f_n = \mathrm{R}{\int}_0^1 \chi_A </md>
 <p>since <m>\mathrm{R}{\int}_0^1 \chi_A</m> is not defined.
@@ -615,7 +616,7 @@ Then</p>
     <figure xml:id="fig-not-lebesgue-int-1">
 <image source="images/not lebesgue int 1.png" width="20%" />
 <caption>
-  <p>The function <m>f(x)</m> from Example <xref ref="ex-not-lebesgue-int-1"/></p>
+  <p>The function <m>f(x)</m> from <xref ref="ex-not-lebesgue-int-1" text="Example"/></p>
 </caption>
 </figure>
 <p>Then<fn>The exact value this alternating series takes can be shown to be <m>\ln(2)</m>, but that is finite is enough for us here.</fn></p>
@@ -630,7 +631,7 @@ Then</p>
 <p><figure xml:id="fig-not-lebesgue-int-2">
 <image source="images/not lebesgue int 2.png" width="20%" />
 <caption>
-  <p>The function <m>g(x)=\frac{\sin(x)}{x}</m> from Example <xref ref="ex-not-lebesgue-int-2"/></p>
+  <p>The function <m>g(x)=\frac{\sin(x)}{x}</m> from <xref ref="ex-not-lebesgue-int-2" text="Example"/></p>
 </caption>
 </figure>
 </p>
@@ -650,7 +651,7 @@ Then</p>
 <p>and so <m>g</m> is not Lebesgue integrable.</p>
 </example>
 <remark>
-<p>Example <xref ref="ex-not-lebesgue-int-1"/> and Example <xref ref="ex-not-lebesgue-int-2"/> highlight an important difference between Lebesgue integrals and improper Riemann integrals.
+<p><xref ref="ex-not-lebesgue-int-1" text="Example"/> and <xref ref="ex-not-lebesgue-int-2" text="Example"/> highlight an important difference between Lebesgue integrals and improper Riemann integrals.
 Let <m>f</m> be a function on the non-negative real line <m>[0,\infty)</m>.
 Then <m>f</m> has a finite improper Riemann integral if and only if <m>f</m> is Riemann integrable on every each interval <m>[n-1,n]</m> and the series <m>\sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n f</m>.
 Then</p>
@@ -662,7 +663,7 @@ If <m>f</m> is Lebesgue integrable on <m>[0,\infty)</m> then</p>
 Thus, reordering the collection <m>\{E_n\}_n</m> does not affect the value of</p>
 <md> \int_{[0,\infty)}f\,dm = \sum_{n=1}^\infty \int_{E_n} f\,dm.</md>
 <p>Thus, the series <m>\sum_{n=1}^\infty \int_{E_n} f\,dm</m> is not only convergent, but absolutely convergent.
-In Example <xref ref="ex-not-lebesgue-int-1"/> and Example <xref ref="ex-not-lebesgue-int-2"/></p>
+In <xref ref="ex-not-lebesgue-int-1" text="Example"/> and <xref ref="ex-not-lebesgue-int-2" text="Example"/></p>
 <md> \sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n f \text { and } \sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n g</md>
 <p>are conditionally convergent, not absolutely convergent.</p>
 </remark>
@@ -696,7 +697,7 @@ In Example <xref ref="ex-not-lebesgue-int-1"/> and Example <xref ref="ex-not-leb
 <md> \int_E f\,d\mu &gt; 0.</md>
 </exercise>
 <exercise xml:id="exer-MCT-series">
-<p>Prove Corollary <xref ref="cor-MCT-series"/>:    Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>(f_n)_n</m> be a sequence of non-negative measurable functions, and let <m>f = \sum_{n=1}^\infty f_n.</m>
+<p>Prove <xref ref="cor-MCT-series" text="Corollary"/>:    Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>(f_n)_n</m> be a sequence of non-negative measurable functions, and let <m>f = \sum_{n=1}^\infty f_n.</m>
     Prove</p>
 <md> \int_X f \, d\mu = \sum_{k=1}^\infty \int_X f_n\, d\mu.</md>
 </exercise>
