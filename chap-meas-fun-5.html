@@ -78,7 +78,7 @@ window.MathJax = {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Graduate Real Analysis">
-<meta property="book:author" content="Adam Fuller">
+<meta property="book:author" content="Adam H. Fuller">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -116,7 +116,7 @@ eBookConfig.enable_chatcodes =  false;
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
-<p class="byline">Adam Fuller</p>
+<p class="byline">Adam H. Fuller</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -130,7 +130,234 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chap-meas-fun-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-meas-fun.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap-integration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\qedhere}{\blacksquare}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\qedhere}{\blacksquare}
+    
+\newcommand{\bA}{{\mathbb{A}}}
+\newcommand{\bB}{{\mathbb{B}}}
+\newcommand{\bC}{{\mathbb{C}}}
+\newcommand{\bD}{{\mathbb{D}}}
+\newcommand{\bE}{{\mathbb{E}}}
+\newcommand{\bF}{{\mathbb{F}}}
+\newcommand{\bG}{{\mathbb{G}}}
+\newcommand{\bH}{{\mathbb{H}}}
+\newcommand{\bI}{{\mathbb{I}}}
+\newcommand{\bJ}{{\mathbb{J}}}
+\newcommand{\bK}{{\mathbb{K}}}
+\newcommand{\bL}{{\mathbb{L}}}
+\newcommand{\bM}{{\mathbb{M}}}
+\newcommand{\bN}{{\mathbb{N}}}
+\newcommand{\bO}{{\mathbb{O}}}
+\newcommand{\bP}{{\mathbb{P}}}
+\newcommand{\bQ}{{\mathbb{Q}}}
+\newcommand{\bR}{{\mathbb{R}}}
+\newcommand{\bS}{{\mathbb{S}}}
+\newcommand{\bT}{{\mathbb{T}}}
+\newcommand{\bU}{{\mathbb{U}}}
+\newcommand{\bV}{{\mathbb{V}}}
+\newcommand{\bW}{{\mathbb{W}}}
+\newcommand{\bX}{{\mathbb{X}}}
+\newcommand{\bY}{{\mathbb{Y}}}
+\newcommand{\bZ}{{\mathbb{Z}}}
+
+\newcommand{\bm}{{\mathbf{m}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\bt}{{\mathbf{t}}}
+
+  \newcommand{\A}{{\mathcal{A}}}
+  \newcommand{\B}{{\mathcal{B}}}
+  \newcommand{\C}{{\mathcal{C}}}
+  \newcommand{\D}{{\mathcal{D}}}
+  \newcommand{\E}{{\mathcal{E}}}
+  \newcommand{\F}{{\mathcal{F}}}
+  \newcommand{\G}{{\mathcal{G}}}
+\renewcommand{\H}{{\mathcal{H}}}
+  \newcommand{\I}{{\mathcal{I}}}
+  \newcommand{\J}{{\mathcal{J}}}
+  \newcommand{\K}{{\mathcal{K}}}
+\renewcommand{\L}{{\mathcal{L}}}
+\newcommand{\M}{{\mathcal{M}}}
+  \newcommand{\N}{{\mathcal{N}}}
+\renewcommand{\O}{{\mathcal{O}}}
+\renewcommand{\P}{{\mathcal{P}}}
+  \newcommand{\Q}{{\mathcal{Q}}}
+  \newcommand{\R}{{\mathcal{R}}}
+\renewcommand{\S}{{\mathcal{S}}}
+  \newcommand{\T}{{\mathcal{T}}}
+  \newcommand{\U}{{\mathcal{U}}}
+  \newcommand{\V}{{\mathcal{V}}}
+  \newcommand{\W}{{\mathcal{W}}}
+  \newcommand{\X}{{\mathcal{X}}}
+  \newcommand{\Y}{{\mathcal{Y}}}
+  \newcommand{\Z}{{\mathcal{Z}}}
+
+\newcommand{\fA}{{\mathfrak{A}}}
+\newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}
+\newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fE}{{\mathfrak{E}}}
+\newcommand{\fF}{{\mathfrak{F}}}
+\newcommand{\fG}{{\mathfrak{G}}}
+\newcommand{\fH}{{\mathfrak{H}}}
+\newcommand{\fI}{{\mathfrak{I}}}
+\newcommand{\fJ}{{\mathfrak{J}}}
+\newcommand{\fK}{{\mathfrak{K}}}
+\newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}
+\newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}
+\newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}
+\newcommand{\fR}{{\mathfrak{R}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+\newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}
+\newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fW}{{\mathfrak{W}}}
+\newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}
+\newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fg}{{\mathfrak{g}}}
+\newcommand{\fh}{{\mathfrak{h}}}
+\newcommand{\fk}{{\mathfrak{k}}}
+\newcommand{\fs}{{\mathfrak{s}}}
+\newcommand{\ft}{{\mathfrak{t}}}
+\newcommand{\fu}{{\mathfrak{u}}}
+\newcommand{\fj}{{\mathfrak{j}}}
+
+\newcommand{\Ba}{{\mathbf{a}}}
+\newcommand{\Bb}{{\mathbf{b}}}
+\newcommand{\Bc}{{\mathbf{c}}}
+\newcommand{\Bd}{{\mathbf{d}}}
+\newcommand{\Be}{{\mathbf{e}}}
+\newcommand{\Bf}{{\mathbf{f}}}
+\newcommand{\Bg}{{\mathbf{g}}}
+\newcommand{\Bh}{{\mathbf{h}}}
+\newcommand{\Bi}{{\mathbf{i}}}
+\newcommand{\Bj}{{\mathbf{j}}}
+\newcommand{\Bk}{{\mathbf{k}}}
+\newcommand{\Bl}{{\mathbf{l}}}
+\newcommand{\Bm}{{\mathbf{m}}}
+\newcommand{\Bn}{{\mathbf{n}}}
+\newcommand{\Bo}{{\mathbf{o}}}
+\newcommand{\Bp}{{\mathbf{p}}}
+\newcommand{\Bq}{{\mathbf{q}}}
+\newcommand{\Br}{{\mathbf{r}}}
+\newcommand{\Bs}{{\mathbf{s}}}
+\newcommand{\Bt}{{\mathbf{t}}}
+\newcommand{\Bu}{{\mathbf{u}}}
+\newcommand{\Bv}{{\mathbf{v}}}
+\newcommand{\Bw}{{\mathbf{w}}}
+\newcommand{\Bx}{{\mathbf{x}}}
+\newcommand{\By}{{\mathbf{y}}}
+\newcommand{\Bz}{{\mathbf{z}}}
+
+\newcommand{\rA}{{\mathrm{A}}}
+\newcommand{\rB}{{\mathrm{B}}}
+\newcommand{\rC}{{\mathrm{C}}}
+\newcommand{\rD}{{\mathrm{D}}}
+\newcommand{\rE}{{\mathrm{E}}}
+\newcommand{\rF}{{\mathrm{F}}}
+\newcommand{\rG}{{\mathrm{G}}}
+\newcommand{\rH}{{\mathrm{H}}}
+\newcommand{\rI}{{\mathrm{I}}}
+\newcommand{\rJ}{{\mathrm{J}}}
+\newcommand{\rK}{{\mathrm{K}}}
+\newcommand{\rL}{{\mathrm{L}}}
+\newcommand{\rM}{{\mathrm{M}}}
+\newcommand{\rN}{{\mathrm{N}}}
+\newcommand{\rO}{{\mathrm{O}}}
+\newcommand{\rP}{{\mathrm{P}}}
+\newcommand{\rQ}{{\mathrm{Q}}}
+\newcommand{\rR}{{\mathrm{R}}}
+\newcommand{\rS}{{\mathrm{S}}}
+\newcommand{\rT}{{\mathrm{T}}}
+\newcommand{\rU}{{\mathrm{U}}}
+\newcommand{\rV}{{\mathrm{V}}}
+\newcommand{\rW}{{\mathrm{W}}}
+\newcommand{\rX}{{\mathrm{X}}}
+\newcommand{\rY}{{\mathrm{Y}}}
+\newcommand{\rZ}{{\mathrm{Z}}}
+
+\newcommand{\ep}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
+\newcommand{\om}{\omega}
+
+\newcommand{\foral}{\text{ for all }}
+\newcommand{\qand}{\quad\text{and}\quad}
+\newcommand{\qif}{\quad\text{if}\quad}
+\newcommand{\qor}{\quad\text{or}\quad}
+\newcommand{\qfor}{\quad\text{for}\quad}
+\newcommand{\qforal}{\quad\text{for all}\quad}
+\newcommand{\qforsome}{\quad\text{for some}\quad}
+\newcommand{\AND}{\text{ and }}
+\newcommand{\FOR}{\text{ for }}
+\newcommand{\FORAL}{\text{ for all }}
+\newcommand{\IF}{\text{ if }}
+\newcommand{\IFF}{\text{ if and only if }}
+\newcommand{\OR}{\text{ or }}
+
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\Alg}{\operatorname{Alg}}
+\newcommand{\alg}{\operatorname{alg}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Dim}{\operatorname{dim}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\Lat}{\operatorname{Lat}}
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\rep}{\operatorname{rep}}
+\newcommand{\spr}{\operatorname{spr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\newcommand{\Ath}{\A_\theta}
+\newcommand{\BH}{{\B(\H)}}
+\newcommand{\bsl}{\setminus}
+\newcommand{\ca}{\mathrm{C}^*}
+\newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dlim}{\displaystyle\lim\limits}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\Fn}{\mathbb{F}_n^+}
+\newcommand{\Fm}{\mathbb{F}_m^+}
+\newcommand{\Fmn}{\mathbb{F}_{mn}^+}
+\newcommand{\Fth}{\mathbb{F}_\theta^+}
+\newcommand{\Ftheta}{\mathbb{F}_\theta^+}
+\newcommand{\Fu}{\mathbb{F}_u^+}
+\newcommand{\Ftwo}{\mathbb{F}_2^+}
+\newcommand{\Fock}{\ell^2(\Fn)}
+\newcommand{\Fockm}{\ell^2(\Fm)}
+\newcommand{\Fockmn}{\ell^2(\Fmn)}
+\newcommand{\Fockth}{\ell^2(\Fth)}
+\newcommand{\lip}{\langle}
+\newcommand{\rip}{\rangle}
+\newcommand{\ip}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\newcommand{\mt}{\varnothing}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\ol}{\overline}
+\newcommand{\one}{{\boldsymbol{1}}}
+\newcommand{\td}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\sot}{\textsc{sot}}
+\newcommand{\wot}{\textsc{wot}}
+\newcommand{\ltwo}{\ell^2}
+\newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
+\newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
+\newcommand{\yp}{\varphi_{(1,0)}} 
+\newcommand{\ypp}{\varphi_{(0,1)}}
+\newcommand{\yppp}{\varphi_{(1,1)}}
+\newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+
+\newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -267,25 +494,25 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">1</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A</span> <span class="title">Interesting examples of real valued functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="title">The Weierstrass function</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="title">Takagi’s example</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="title">Schwarz’s example</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="title">Volterra’s function</span></a></div></li></ul>
 </li>
 </ul>

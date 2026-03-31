@@ -34,7 +34,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Cardinality",
-  "body": " Cardinality   Note that cardinality forms an equivalence relation on sets.  A set is called countable if is finite, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite .  If a set is not countable, we say it is uncountable . There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . However, we will primarily be concerned with whether a set is countable or not.  \\begin{egs}   , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).    \\end{egs}  "
+  "body": " Cardinality   Note that cardinality forms an equivalence relation on sets.  A set is called countable if is finite, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite .  If a set is not countable, we say it is uncountable . There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . However, we will primarily be concerned with whether a set is countable or not.    , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).     "
+},
+{
+  "id": "real-analysis-4-2-5-6",
+  "level": "2",
+  "url": "real-analysis-4-2-5.html#real-analysis-4-2-5-6",
+  "type": "Example",
+  "number": "1.3.1",
+  "title": "",
+  "body": "  , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).    "
 },
 {
   "id": "real-analysis-4-2-6",
@@ -5288,7 +5297,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-nowhere-diff.html",
   "type": "Section",
-  "number": "1.1",
+  "number": "A.1",
   "title": "Nowhere differentiable functions",
   "body": " Nowhere differentiable functions  In 1872, Karl Weierstrass Weierstrass, Karl gave an example of a real valued function which is nowhere differentiable. This put an end to several decades of attempts by mathematicians to determine to what extent continuity determined differentiability. Whilst nowhere differentiable functions were difficult to discover, they are, in fact, very common. If we put the norm on , then the nowhere differentiable functions form a dense subset in . Further, there is a natural probability measure on (the classical Wiener measure) with which the nowhere differentiable functions have measure .  Before we begin, we should discuss what it means for a function to be differentiable. Let be a function whose domain includes a point and an open interval containing . The derivative at the point is defined as   when the limit exists. If the limit does not exist, or if we say is not differentiable at .  Thus, there is some ambiguity in the literature on what it means for a function to be nowhere differentiable. The Weierstrass function in Section~\\ref{subsec: weierstrass} is nowhere differentiable in our sense. That is,   does not exist at any . The example in Section~\\ref{subsec: Tak} is nowhere differentiable in the sense of the more restrictive sense of the derivative:   is either , or the limit does not exist at each .   The Weierstrass function  In this section we study the Weierstrass function, introduced by Weierstrass in 1872. This is, perhaps, the most historically significant example of a nowhere differentiable function: whilst it was not the first example ever written down, it was the first widely known example. For our discussion we will closely follow Weierstrass's own description of the function, see e.g. . The rough idea is to create a function that oscillates wildly at every point.  Fix an odd integer and real value with such that   Define, for all , Weierstrass function   We call the Weierstrass function . A straightforward application of the Weierstrass -test shows that is uniformly convergent, and hence continuous.  Now fix any . For each positive integer , there is an integer such that   Let We define values, and by   Then   and   Thus Further,  Now,   Fix . Using the trigonometric identity   we have   It follows that   Since is an odd number, we have   Hence   For each ,   Further, since , . Hence   Putting all of this together, there is a and such that   By a similar analysis, there is a and such that   Since we have assumed ,   Thus, and have opposite signs for each . Now, since   it follows that is not differentiable at .    Takagi's example  We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section~\\ref{subsec: weierstrass}, this function does have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in , see also . A similar function was independently discovered by Van Der Waerden in 1930 . Riesz and Sz.-Nagy's text begins with a presentation of Van Der Waerden's example.  We present Takagi's example because it is more intuitive than the Weierstrass function. The simplest example of a function not differentiable at a point is . This function is not differentiable at ; there is a sharp point at . The idea behind Takagi's example is to create a function made from a series of increasingly many `sharp points'.  Let   where is the floor function (i.e. rounded down to the nearest integer) and is the ceiling function (i.e. rounded up to the nearest integer). The function is not differentiable at any point where . At all other points,      Define a function on the closed interval by   The series is uniformly convergent by the Weierstrass -test; and hence is continuous.     Takagi's example in \\ref{subsec: Tak}.    Fix . We can write as a series   where each Note that this series expression may not be unique, e.g.   In these circumstances, we choose the finite sum instead of the infinite. Note that, for each ,   For each let   That is, is the number of ones in the list , and is the number of zeros in the list .  Suppose . Let Then, for ,   Let   Then   For , if , , and , let Then, again   We these values for   we can find a subsequence of such that   either does not exist, or is Thus does not have a finite derivative at any point.  There is nothing special about the role of in this example. Van der Waerden used base 10 for his example:   Similarly analysis can be done for other bases.     Van der Waerden's example has the same basic idea as Takagi's example from \\ref{subsec: Tak}.     "
 },
@@ -5297,7 +5306,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nowhere-diff.html#fig-Tak1",
   "type": "Figure",
-  "number": "1.1.1",
+  "number": "A.1.1",
   "title": "",
   "body": "  "
 },
@@ -5306,7 +5315,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nowhere-diff.html#fig-Tak2",
   "type": "Figure",
-  "number": "1.1.2",
+  "number": "A.1.2",
   "title": "",
   "body": "   Takagi's example in \\ref{subsec: Tak}.   "
 },
@@ -5315,7 +5324,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-nowhere-diff.html#fig-Tak3",
   "type": "Figure",
-  "number": "1.1.3",
+  "number": "A.1.3",
   "title": "",
   "body": "   Van der Waerden's example has the same basic idea as Takagi's example from \\ref{subsec: Tak}.   "
 },
@@ -5324,16 +5333,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-diff-ae.html",
   "type": "Section",
-  "number": "1.2",
+  "number": "A.2",
   "title": "Differentiable almost everywhere functions",
-  "body": " Differentiable almost everywhere functions  The examples presented in this section illustrate further the stark difference between continuity and differentiability. Further, they show the strength of the Lebesgue integral over the Riemann integral. The examples below are all continuous functions with defined (almost) everywhere, but is not Riemann integrable. However, in these examples will be Lebesgue integrable.   Schwarz's example  Schwarz published the following example in 1873 .  Schwarz presented this function in order to show that it is possible for a continuous function to be differentiable on some points, but for to be undefined on a dense set. Thus, differentiability is not a local property. It was perhaps the first such example. This example served to dispute earlier conjectures on the nature of differentiability. Explicitly, Schwarz gives exhibits a continuous increasing function on which is not differentiable on any dyadic rational, i.e. is not differentiable on any rational of the form , where are integers.  Before we give the example, we first introduce a continuous function on . Define by   where is the floor function (i.e. rounded down to the nearest integer).     The function used to construct Schwarz's example in \\ref{subsec: Schwarz}    The function is continuous on all of , and is differentiable on all non-integer values. Indeed, it is not hard to show for a   If then , and so, if then   Thus, for ,   On the other hand, for and   and so, by an application of L'H\\^{o}pital's rule,   Thus is not differentiable on : the right-sided derivative is and the left-sided derivative is on .  We now define the function by   Note that is uniformly convergent on all compact subsets of , and so is continuous. This can be shown, e.g., using the inequality A better, indeed the best, linear upper bound for is , but there is no need for precision here. together with the Weierstrass -test.  We will now study . The basic idea is that, since is not differentiable on the integers, is not differentiable on dyadic rationals.  Suppose for some non-negative integers and . If , then   Hence   Taking still, we now consider the left sided derivative. Consider . For , is an integer. Note, for any integer and , if , then and so   Thus, for   By the Weierstrass -test we see that   is uniformly convergent for Take the limit as we get a left-sided derivative as   The above set shows that there is a dense set on which is not differentiable. Since is increasing and continuous, is defined almost everywhere, by . Alternatively, a similar analysis to the above can explicitly show that exists for when is not a dyadic rational.    A function that is not differentiable on a prescribed set  tells us that if is continuous of bounded variation then is defined almost everywhere. We will now show that given with , there is a continuous function of bounded variation which is not differentiable at any point in , but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book .  Let be a closed interval, and let be a set with Lebesgue measure . By , there is a countable family of open intervals in such that, for each there is an infinite subsequence of natural numbers such that for each and   Fix such a collection and define a function on by   where is the length function on intervals in .   "
+  "body": " Differentiable almost everywhere functions  The examples presented in this section illustrate further the stark difference between continuity and differentiability. Further, they show the strength of the Lebesgue integral over the Riemann integral. The examples below are all continuous functions with defined (almost) everywhere, but is not Riemann integrable. However, in these examples will be Lebesgue integrable.   Schwarz's example  Schwarz published the following example in 1873 .  Schwarz presented this function in order to show that it is possible for a continuous function to be differentiable on some points, but for to be undefined on a dense set. Thus, differentiability is not a local property. It was perhaps the first such example. This example served to dispute earlier conjectures on the nature of differentiability. Explicitly, Schwarz gives exhibits a continuous increasing function on which is not differentiable on any dyadic rational, i.e. is not differentiable on any rational of the form , where are integers.  Before we give the example, we first introduce a continuous function on . Define by   where is the floor function (i.e. rounded down to the nearest integer).     The function used to construct Schwarz's example in \\ref{subsec: Schwarz}    The function is continuous on all of , and is differentiable on all non-integer values. Indeed, it is not hard to show for a   If then , and so, if then   Thus, for ,   On the other hand, for and   and so, by an application of L'H\\^{o}pital's rule,   Thus is not differentiable on : the right-sided derivative is and the left-sided derivative is on .  We now define the function by   Note that is uniformly convergent on all compact subsets of , and so is continuous. This can be shown, e.g., using the inequality A better, indeed the best, linear upper bound for is , but there is no need for precision here. together with the Weierstrass -test.  We will now study . The basic idea is that, since is not differentiable on the integers, is not differentiable on dyadic rationals.  Suppose for some non-negative integers and . If , then   Hence   Taking still, we now consider the left sided derivative. Consider . For , is an integer. Note, for any integer and , if , then and so   Thus, for   By the Weierstrass -test we see that   is uniformly convergent for Take the limit as we get a left-sided derivative as   The above set shows that there is a dense set on which is not differentiable. Since is increasing and continuous, is defined almost everywhere, by . Alternatively, a similar analysis to the above can explicitly show that exists for when is not a dyadic rational.    A function that is not differentiable on a prescribed set  tells us that if is continuous of bounded variation then is defined almost everywhere. We will now show that given with , there is a continuous function of bounded variation which is not differentiable at any point in , but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book .  Let be a closed interval, and let be a set with Lebesgue measure . By EXERCISE, there is a countable family of open intervals in such that, for each there is an infinite subsequence of natural numbers such that for each and   Fix such a collection and define a function on by   where is the length function on intervals in .   "
 },
 {
   "id": "fig-Schwarz1",
   "level": "2",
   "url": "sec-diff-ae.html#fig-Schwarz1",
   "type": "Figure",
-  "number": "1.2.1",
+  "number": "A.2.1",
   "title": "",
   "body": "   The function used to construct Schwarz's example in \\ref{subsec: Schwarz}   "
 },
@@ -5342,7 +5351,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-diff-bounded.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "A.3",
   "title": "Differentiable functions with bounded derivative",
   "body": " Differentiable functions with bounded derivative  In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, , will apply.   Volterra's function  In this section we will present Volterra's function, introduced by Voltera in 1881 . This example was likely had an influence on Lebesgue; it is cited in Lebesgue's 1902 thesis . Volterra presented this example in answer to a question of Dini on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg's text .  Consider the function defined by   The function is differentiable everywhere, with derivative   Whilst is defined everywhere (and is bounded), is not continuous at .     The function used to construct Volterra's function in Section~\\ref{subsec: Volterra}.    The idea behind the Volterra function is to create a function which behaves on some suitably large set the way behaves at . Before defining , we must first introduce the desired set.  We will construct a set called the Smith-Volterra-Cantor set. Smith-Volterra-Cantor set This construction is very similar to the construction of the Cantor set in, . The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.  Let . Create be removing the middle quarter from . Thus   Create be reomving the middle quarter from each of the two intervals in . Thus   Continue in this manner to create a sequence of closed sets . The {Smith-Volterra-Cantor} set Smith-Volterra-Cantor set is defined as   Like the Cantor set , is nowhere dense. That is, does not contain any intervals as subsets. However, unlike the Cantor set, has positive Lebesgue measure. Indeed, if then   Thus  The Smith-Volterra-Cantor set is closed, hence is open. Let , where the intervals are disjoint. We define Volterra's function on as follows. Volterra's function For , let . For each , let For let   An illustration of Volterra's function is given in Figure~\\ref{fig: Volterra2}. Since is a continuous function, and , is a continuous function.     Volterra's function.    By construction, on each interval , is a bounded continuous function.  Take now and fix . If , then   Otherwise, , i.e. for some . Thus for some natural number and real . If , then   If , then   Finally, if , then for some , and . Thus   It follows that   One can similarly show that   and hence for .  Hence is defined on all of Further, since for   That is, is bounded.  Fix now . For each , Hence, there is an such that As converges to , and does not converge to , is not continuous at any point in .  Note that since is continuous and is bounded, is absolutely continuous by . Hence is Lebesgue integrable. However, since the set of discontinuities of has Lebesuge measure , it follows from that is not Riemann integrable.   "
 },
@@ -5351,7 +5360,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-diff-bounded.html#fig-Volterra1",
   "type": "Figure",
-  "number": "1.3.1",
+  "number": "A.3.1",
   "title": "",
   "body": "   The function used to construct Volterra's function in Section~\\ref{subsec: Volterra}.   "
 },
@@ -5360,7 +5369,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-diff-bounded.html#fig-Volterra2",
   "type": "Figure",
-  "number": "1.3.2",
+  "number": "A.3.2",
   "title": "",
   "body": "   Volterra's function.   "
 },
