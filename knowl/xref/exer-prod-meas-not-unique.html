@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: tacoma                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span>
+</h3>
+<div class="para">Let <span class="process-math">\(([0,1],\mathcal{M},m)\)</span> be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of <span class="process-math">\([0,1]\text{,}\)</span> and let <span class="process-math">\(([0,1],\mathcal{M},c)\)</span> be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of <span class="process-math">\([0,1]\text{.}\)</span> Let <span class="process-math">\(\mathcal{N}\)</span> denote the <span class="process-math">\(\sigma\)</span>-algebra of subsets of <span class="process-math">\([0,1]\times[0,1]\)</span> which are measurable with respect to the product measure <span class="process-math">\(m\times c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-prod-meas-not-unique-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For <span class="process-math">\(E \in \mathcal{N}\)</span> and <span class="process-math">\(y \in [0,1]\text{,}\)</span> let <span class="process-math">\(E^y\)</span> be the <span class="process-math">\(y\)</span>-section of <span class="process-math">\(E\text{.}\)</span> Define a map <span class="process-math">\(\sigma\)</span> on <span class="process-math">\(\mathcal{N}\)</span> by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-uncountable-series.html">
+\begin{equation*}
+\sigma(E) = \sum_{y\in[0,1]} m(E^y)
+\end{equation*}
+</div>
+<div class="para">(See <a href="chap-differentation-6.html#lem-uncountable-series" class="xref" data-knowl="./knowl/xref/lem-uncountable-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.4.9">Lemma II.7.4.9</a> and the preceding paragraphs for information on series of sets indexed by uncountable sets).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-prod-meas-not-unique-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="lower-alpha lower-alpha-level-1" id="exer-prod-meas-not-unique-3">
+<li>
+<div class="para">Show that <span class="process-math">\(\sigma\)</span> is a measure on <span class="process-math">\(([0,1]\times[0,1],\mathcal{N})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-prod-meas-not-unique-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1.4.2.a"><a href="#exer-prod-meas-not-unique-3-1" title="Copy heading and permalink for Item 1.4.2.a" aria-label="Copy heading and permalink for Item 1.4.2.a">🔗</a></div>
+</li>
+<li>
+<div class="para">Show that <span class="process-math">\(\sigma(A\times B)=m(A)c(B)\)</span> for all <span class="process-math">\(A,B \in \mathcal{M}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-prod-meas-not-unique-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1.4.2.b"><a href="#exer-prod-meas-not-unique-3-2" title="Copy heading and permalink for Item 1.4.2.b" aria-label="Copy heading and permalink for Item 1.4.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(D = \{(x,x) \colon x \in [0,1]\}\text{.}\)</span> Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = \bigcap_{n=1}^\infty \bigcup_{k=1}^n \left[\frac{k-1}{n},\frac{k}{n} \right] \times \left[\frac{k-1}{n},\frac{k}{n} \right],
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(D \in \mathcal{M}\text{.}\)</span>
+</div>
+<ol class="lower-alpha lower-alpha-level-1" id="exer-prod-meas-not-unique-4-4">
+<li>
+<div class="para">Show that <span class="process-math">\(\sigma(D) = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1.4.2.a"><a href="#exer-prod-meas-not-unique-4-4-1" title="Copy heading and permalink for Item 1.4.2.a" aria-label="Copy heading and permalink for Item 1.4.2.a">🔗</a></div>
+</li>
+<li>
+<div class="para">Show that <span class="process-math">\((m\times c)(D)=\infty\text{.}\)</span> (Hint: show that if <span class="process-math">\(\{A_k\times B_k\}_{k=1}^\infty\)</span> are measurable rectangles such that <span class="process-math">\(D \subseteq \bigcup_{k=1}^\infty A_k \times B_k\text{,}\)</span> then<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=1}^\infty m(A_k)c(B_k) = \infty.)
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item 1.4.2.b"><a href="#exer-prod-meas-not-unique-4-4-2" title="Copy heading and permalink for Item 1.4.2.b" aria-label="Copy heading and permalink for Item 1.4.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="para">We have thus given an example of a measure <span class="process-math">\(\sigma\)</span> on <span class="process-math">\([0,1]\times[0,1]\)</span> which agrees with the product measure <span class="process-math">\(m\times c\)</span> on measurable rectangles, but is not equal to the product measure.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-prod-meas-not-unique-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.4.2"><a href="#exer-prod-meas-not-unique" title="Copy heading and permalink for Exercise 1.4.2" aria-label="Copy heading and permalink for Exercise 1.4.2">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-7-2-6.html#exer-prod-meas-not-unique">in-context</a></span>
+</body>
+</html>

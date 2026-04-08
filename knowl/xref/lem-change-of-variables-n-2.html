@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: tacoma                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f \colon \bR^2 \rightarrow \bR\)</span> be a Lebesgue integrable function. Let <span class="process-math">\(c \in \bR\)</span> be non-zero. Define functions <span class="process-math">\(g,h,k\)</span> on <span class="process-math">\(\bR^2\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x,y) = f(y,x),\ h(x,y) = f(x,x+y),\text{ and } k(x,y) = f(cx,y).
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(g,h,\)</span> and <span class="process-math">\(k\)</span> are integrable, and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\bR^2} g \, dm_2 = \int_{\bR^2} h \, dm_2 = \int_{\bR^2} f \, dm_2,
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\bR^2} k \, dm_2 = \frac{1}{|c|} \int_{\bR^2} f \, dm_2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.8"><a href="#lem-change-of-variables-n-2" title="Copy heading and permalink for Lemma 1.3.8" aria-label="Copy heading and permalink for Lemma 1.3.8">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical">
+<div class="para">Note that <span class="process-math">\(h,g,\)</span> and <span class="process-math">\(k\)</span> are measurable by <a href="real-analysis-7-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a>. We will prove the result for <span class="process-math">\(h\text{.}\)</span> We will assume that <span class="process-math">\(f\)</span> is non-negative. Then general case follows from writing <span class="process-math">\(f\)</span> as the difference of its positive and negative parts. The proofs for <span class="process-math">\(g\)</span> and <span class="process-math">\(k\)</span> are similar, with an application of <a href="real-analysis-7-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a> in the case of <span class="process-math">\(k\text{.}\)</span> Note that, if <span class="process-math">\(l \colon \bR \rightarrow \bR\)</span> is Lebesgue integrable and <span class="process-math">\(\beta \in \bR\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html">
+\begin{equation*}
+\int_\bR l(x+\beta)\,dm(x) = \int_\bR l\,dm.
+\end{equation*}
+</div>
+<div class="para">By <a href="real-analysis-7-2-3.html#thm-tonelli" class="xref" data-knowl="./knowl/xref/thm-tonelli.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.12: Tonelli’s Theorem">Tonelli’s theorem</a>, we have that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html">
+\begin{align*}
+\int_{\bR^2}h\,dm_2 \amp = \int_\bR \int_\bR h(x,y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,x+y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,y)\, dm(y)dm(x). 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.8.1"><a href="#lem-change-of-variables-n-2-2" title="Copy heading and permalink for Proof 1.3.8.1" aria-label="Copy heading and permalink for Proof 1.3.8.1">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-7-2-5.html#lem-change-of-variables-n-2">in-context</a></span>
+</body>
+</html>

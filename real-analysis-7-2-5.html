@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: tacoma                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Change of variables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam H. Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam H. Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-lebesgue-measure-on-Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-7-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="real-analysis-7-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\qedhere}{\blacksquare}
+    
+\newcommand{\bA}{{\mathbb{A}}}
+\newcommand{\bB}{{\mathbb{B}}}
+\newcommand{\bC}{{\mathbb{C}}}
+\newcommand{\bD}{{\mathbb{D}}}
+\newcommand{\bE}{{\mathbb{E}}}
+\newcommand{\bF}{{\mathbb{F}}}
+\newcommand{\bG}{{\mathbb{G}}}
+\newcommand{\bH}{{\mathbb{H}}}
+\newcommand{\bI}{{\mathbb{I}}}
+\newcommand{\bJ}{{\mathbb{J}}}
+\newcommand{\bK}{{\mathbb{K}}}
+\newcommand{\bL}{{\mathbb{L}}}
+\newcommand{\bM}{{\mathbb{M}}}
+\newcommand{\bN}{{\mathbb{N}}}
+\newcommand{\bO}{{\mathbb{O}}}
+\newcommand{\bP}{{\mathbb{P}}}
+\newcommand{\bQ}{{\mathbb{Q}}}
+\newcommand{\bR}{{\mathbb{R}}}
+\newcommand{\bS}{{\mathbb{S}}}
+\newcommand{\bT}{{\mathbb{T}}}
+\newcommand{\bU}{{\mathbb{U}}}
+\newcommand{\bV}{{\mathbb{V}}}
+\newcommand{\bW}{{\mathbb{W}}}
+\newcommand{\bX}{{\mathbb{X}}}
+\newcommand{\bY}{{\mathbb{Y}}}
+\newcommand{\bZ}{{\mathbb{Z}}}
+
+\newcommand{\bm}{{\mathbf{m}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\bt}{{\mathbf{t}}}
+
+  \newcommand{\A}{{\mathcal{A}}}
+  \newcommand{\B}{{\mathcal{B}}}
+  \newcommand{\C}{{\mathcal{C}}}
+  \newcommand{\D}{{\mathcal{D}}}
+  \newcommand{\E}{{\mathcal{E}}}
+  \newcommand{\F}{{\mathcal{F}}}
+  \newcommand{\G}{{\mathcal{G}}}
+\renewcommand{\H}{{\mathcal{H}}}
+  \newcommand{\I}{{\mathcal{I}}}
+  \newcommand{\J}{{\mathcal{J}}}
+  \newcommand{\K}{{\mathcal{K}}}
+\renewcommand{\L}{{\mathcal{L}}}
+\newcommand{\M}{{\mathcal{M}}}
+  \newcommand{\N}{{\mathcal{N}}}
+\renewcommand{\O}{{\mathcal{O}}}
+\renewcommand{\P}{{\mathcal{P}}}
+  \newcommand{\Q}{{\mathcal{Q}}}
+  \newcommand{\R}{{\mathcal{R}}}
+\renewcommand{\S}{{\mathcal{S}}}
+  \newcommand{\T}{{\mathcal{T}}}
+  \newcommand{\U}{{\mathcal{U}}}
+  \newcommand{\V}{{\mathcal{V}}}
+  \newcommand{\W}{{\mathcal{W}}}
+  \newcommand{\X}{{\mathcal{X}}}
+  \newcommand{\Y}{{\mathcal{Y}}}
+  \newcommand{\Z}{{\mathcal{Z}}}
+
+\newcommand{\fA}{{\mathfrak{A}}}
+\newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}
+\newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fE}{{\mathfrak{E}}}
+\newcommand{\fF}{{\mathfrak{F}}}
+\newcommand{\fG}{{\mathfrak{G}}}
+\newcommand{\fH}{{\mathfrak{H}}}
+\newcommand{\fI}{{\mathfrak{I}}}
+\newcommand{\fJ}{{\mathfrak{J}}}
+\newcommand{\fK}{{\mathfrak{K}}}
+\newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}
+\newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}
+\newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}
+\newcommand{\fR}{{\mathfrak{R}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+\newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}
+\newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fW}{{\mathfrak{W}}}
+\newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}
+\newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fg}{{\mathfrak{g}}}
+\newcommand{\fh}{{\mathfrak{h}}}
+\newcommand{\fk}{{\mathfrak{k}}}
+\newcommand{\fs}{{\mathfrak{s}}}
+\newcommand{\ft}{{\mathfrak{t}}}
+\newcommand{\fu}{{\mathfrak{u}}}
+\newcommand{\fj}{{\mathfrak{j}}}
+
+\newcommand{\Ba}{{\mathbf{a}}}
+\newcommand{\Bb}{{\mathbf{b}}}
+\newcommand{\Bc}{{\mathbf{c}}}
+\newcommand{\Bd}{{\mathbf{d}}}
+\newcommand{\Be}{{\mathbf{e}}}
+\newcommand{\Bf}{{\mathbf{f}}}
+\newcommand{\Bg}{{\mathbf{g}}}
+\newcommand{\Bh}{{\mathbf{h}}}
+\newcommand{\Bi}{{\mathbf{i}}}
+\newcommand{\Bj}{{\mathbf{j}}}
+\newcommand{\Bk}{{\mathbf{k}}}
+\newcommand{\Bl}{{\mathbf{l}}}
+\newcommand{\Bm}{{\mathbf{m}}}
+\newcommand{\Bn}{{\mathbf{n}}}
+\newcommand{\Bo}{{\mathbf{o}}}
+\newcommand{\Bp}{{\mathbf{p}}}
+\newcommand{\Bq}{{\mathbf{q}}}
+\newcommand{\Br}{{\mathbf{r}}}
+\newcommand{\Bs}{{\mathbf{s}}}
+\newcommand{\Bt}{{\mathbf{t}}}
+\newcommand{\Bu}{{\mathbf{u}}}
+\newcommand{\Bv}{{\mathbf{v}}}
+\newcommand{\Bw}{{\mathbf{w}}}
+\newcommand{\Bx}{{\mathbf{x}}}
+\newcommand{\By}{{\mathbf{y}}}
+\newcommand{\Bz}{{\mathbf{z}}}
+
+\newcommand{\rA}{{\mathrm{A}}}
+\newcommand{\rB}{{\mathrm{B}}}
+\newcommand{\rC}{{\mathrm{C}}}
+\newcommand{\rD}{{\mathrm{D}}}
+\newcommand{\rE}{{\mathrm{E}}}
+\newcommand{\rF}{{\mathrm{F}}}
+\newcommand{\rG}{{\mathrm{G}}}
+\newcommand{\rH}{{\mathrm{H}}}
+\newcommand{\rI}{{\mathrm{I}}}
+\newcommand{\rJ}{{\mathrm{J}}}
+\newcommand{\rK}{{\mathrm{K}}}
+\newcommand{\rL}{{\mathrm{L}}}
+\newcommand{\rM}{{\mathrm{M}}}
+\newcommand{\rN}{{\mathrm{N}}}
+\newcommand{\rO}{{\mathrm{O}}}
+\newcommand{\rP}{{\mathrm{P}}}
+\newcommand{\rQ}{{\mathrm{Q}}}
+\newcommand{\rR}{{\mathrm{R}}}
+\newcommand{\rS}{{\mathrm{S}}}
+\newcommand{\rT}{{\mathrm{T}}}
+\newcommand{\rU}{{\mathrm{U}}}
+\newcommand{\rV}{{\mathrm{V}}}
+\newcommand{\rW}{{\mathrm{W}}}
+\newcommand{\rX}{{\mathrm{X}}}
+\newcommand{\rY}{{\mathrm{Y}}}
+\newcommand{\rZ}{{\mathrm{Z}}}
+
+\newcommand{\ep}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
+\newcommand{\om}{\omega}
+
+\newcommand{\foral}{\text{ for all }}
+\newcommand{\qand}{\quad\text{and}\quad}
+\newcommand{\qif}{\quad\text{if}\quad}
+\newcommand{\qor}{\quad\text{or}\quad}
+\newcommand{\qfor}{\quad\text{for}\quad}
+\newcommand{\qforal}{\quad\text{for all}\quad}
+\newcommand{\qforsome}{\quad\text{for some}\quad}
+\newcommand{\AND}{\text{ and }}
+\newcommand{\FOR}{\text{ for }}
+\newcommand{\FORAL}{\text{ for all }}
+\newcommand{\IF}{\text{ if }}
+\newcommand{\IFF}{\text{ if and only if }}
+\newcommand{\OR}{\text{ or }}
+
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\Alg}{\operatorname{Alg}}
+\newcommand{\alg}{\operatorname{alg}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Dim}{\operatorname{dim}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\Lat}{\operatorname{Lat}}
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\rep}{\operatorname{rep}}
+\newcommand{\spr}{\operatorname{spr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\newcommand{\Ath}{\A_\theta}
+\newcommand{\BH}{{\B(\H)}}
+\newcommand{\bsl}{\setminus}
+\newcommand{\ca}{\mathrm{C}^*}
+\newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dlim}{\displaystyle\lim\limits}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\Fn}{\mathbb{F}_n^+}
+\newcommand{\Fm}{\mathbb{F}_m^+}
+\newcommand{\Fmn}{\mathbb{F}_{mn}^+}
+\newcommand{\Fth}{\mathbb{F}_\theta^+}
+\newcommand{\Ftheta}{\mathbb{F}_\theta^+}
+\newcommand{\Fu}{\mathbb{F}_u^+}
+\newcommand{\Ftwo}{\mathbb{F}_2^+}
+\newcommand{\Fock}{\ell^2(\Fn)}
+\newcommand{\Fockm}{\ell^2(\Fm)}
+\newcommand{\Fockmn}{\ell^2(\Fmn)}
+\newcommand{\Fockth}{\ell^2(\Fth)}
+\newcommand{\lip}{\langle}
+\newcommand{\rip}{\rangle}
+\newcommand{\ip}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\newcommand{\mt}{\varnothing}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\ol}{\overline}
+\newcommand{\one}{{\boldsymbol{1}}}
+\newcommand{\td}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\sot}{\textsc{sot}}
+\newcommand{\wot}{\textsc{wot}}
+\newcommand{\ltwo}{\ell^2}
+\newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
+\newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
+\newcommand{\yp}{\varphi_{(1,0)}} 
+\newcommand{\ypp}{\varphi_{(0,1)}}
+\newcommand{\yppp}{\varphi_{(1,1)}}
+\newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+
+\newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">1.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">2</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">3</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">5</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">7.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">1</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">IV</span> <span class="title">Further examples of measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="real-analysis-7-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-7-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-7-2-3.html#sec-products-three-or-more" class="internal"><span class="title">Products of three or more measures</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lebesgue-measure-on-Rn.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-7-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Change of variables</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="title">Volterra’s function</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="real-analysis-7-2-5"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Change of variables</span>
+</h2>
+<div class="para" id="real-analysis-7-2-5-2">In this section we will study how changes of variables in <span class="process-math">\(\mathbb{R}^n\)</span> effect the integral. We begin by noting that all linear maps from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\)</span> are continuous.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-linear-cont"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-linear-cont-1-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be a linear map. Then <span class="process-math">\(T\)</span> is continuous.<div class="autopermalink" data-description="Paragraph"><a href="#lem-linear-cont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.1"><a href="#lem-linear-cont" title="Copy heading and permalink for Lemma 1.3.1" aria-label="Copy heading and permalink for Lemma 1.3.1">🔗</a></div></article><article class="proof" id="lem-linear-cont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-linear-cont-2-1">
+<div class="para">Let <span class="process-math">\(e_1,\ldots,e_n\)</span> be the canonical basis of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> That is, let <span class="process-math">\(e_1= (1,0,\ldots,0)\text{,}\)</span> <span class="process-math">\(e_2 = (0,1,0,\ldots,0)\text{,}\)</span> and so on. Take <span class="process-math">\(x = (x_1,\ldots,x_n) \in \mathbb{R}^n\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-Cauchy-Schwarz-Rn.html ./knowl/xref/prop-bounded-cont.html" id="lem-linear-cont-2-1-6">
+\begin{align*}
+\|T(x)\|_2 \amp= \| x_1 T(e_1) + \ldots + x_nT(e_n)\|_2 \\
+\amp\leq \sum_{k=1}^n |x_k| \|T(e_k)\|_2 \\
+\amp\leq \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2} \|x\|_2,
+\end{align*}
+</div>
+<div class="para">where the last inequality is an application of the <a href="real-analysis-6-2-6.html#exer-Cauchy-Schwarz-Rn" class="xref" data-knowl="./knowl/xref/exer-Cauchy-Schwarz-Rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.1">Cauchy-Schwarz inequality</a>. Letting <span class="process-math">\(M = \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2}\text{,}\)</span> we have shown that <span class="process-math">\(\|T(x)\|_2 \leq M \|x\|_2\)</span> for all <span class="process-math">\(x \in \mathbb{R}^n\text{.}\)</span> Hence, by <a href="real-analysis-6-3-3.html#prop-bounded-cont" class="xref" data-knowl="./knowl/xref/prop-bounded-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.1">Proposition III.2.1.1</a>, <span class="process-math">\(T\)</span> is continuous.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-linear-cont-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.1.1"><a href="#lem-linear-cont-2" title="Copy heading and permalink for Proof 1.3.1.1" aria-label="Copy heading and permalink for Proof 1.3.1.1">🔗</a></div></article><article class="remark remark-like" id="real-analysis-7-2-5-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="real-analysis-7-2-5-4-1">
+<div class="para">Recall that the norm of a linear functional <span class="process-math">\(\phi\)</span> on a normed vector space <span class="process-math">\(X\)</span> is defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-linear-cont.html" id="real-analysis-7-2-5-4-1-3">
+\begin{equation*}
+\|\phi\|_\mathrm{op} = \inf\{M \colon |\phi(x)|\leq M \|x\| \text{ for all } x \in X \}.
+\end{equation*}
+</div>
+<div class="para">We can use <a href="real-analysis-7-2-5.html#lem-linear-cont" class="xref" data-knowl="./knowl/xref/lem-linear-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.1">Lemma 1.3.1</a> to similarly define a norm on the space of linear maps from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> That is, if <span class="process-math">\(T\)</span> is a linear map from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\)</span> we can define <span class="process-math">\(\|T\|_\mathrm{op}\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-linear-cont.html" id="real-analysis-7-2-5-4-1-11">
+\begin{equation*}
+\|T\|_\mathrm{op} = \inf\{M \colon \|T(x)\|_2 \leq M \|x\|_2 \text{ for all } x \in \mathbb{R}^n\}.
+\end{equation*}
+</div>
+<div class="para">We will not not make too much use of the fact that this is a norm in these notes, but it plays an important role in functional analysis. </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.3.2"><a href="#real-analysis-7-2-5-4" title="Copy heading and permalink for Remark 1.3.2" aria-label="Copy heading and permalink for Remark 1.3.2">🔗</a></div></article><div class="para" id="real-analysis-7-2-5-5">If <span class="process-math">\(f\)</span> is a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> and <span class="process-math">\(T\)</span> is an invertible linear map on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> we want to compare the integrals <span class="process-math">\(\intd{\mathbb{R}^n}{f}{m_n}\)</span> and <span class="process-math">\(\intd{\mathbb{R}^n}{f\circ T}{m_n}\text{.}\)</span> It is not (yet) clear that the second integral is defined. In general, the composition of a measurable function and a continuous function need not be continuous. <details class="ptx-footnote" aria-live="polite" id="real-analysis-7-2-5-5-7"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-7-2-5-5-7">Note that we can not apply <a href="chap-meas-fun-3.html#prop-comp-meas" class="xref" data-knowl="./knowl/xref/prop-comp-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.15">Proposition II.5.1.15</a> here.</div></details> Thus, in order to proceed, we must first show that <span class="process-math">\(f \circ T\)</span> is measurable. As we are ultimately interested in the case when <span class="process-math">\(T\)</span> is an invertible linear map, we will restrict to this case (though conclusions of <a href="real-analysis-7-2-5.html#lem-meas-of-interval" class="xref" data-knowl="./knowl/xref/lem-meas-of-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.3">Lemma 1.3.3</a>, <a href="real-analysis-7-2-5.html#lem-lin-meas" class="xref" data-knowl="./knowl/xref/lem-lin-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.4">Lemma 1.3.4</a>, and <a href="real-analysis-7-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a> hold for all linear maps).<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="real-analysis-7-2-5-6">
+<div class="para">Let <span class="process-math">\(e_1,\ldots,e_n\)</span> be the standard orthonormal basis of <span class="process-math">\(\bR^n\text{.}\)</span> Recall that if <span class="process-math">\(T\)</span> is an invertible linear map in <span class="process-math">\(\bR^n\text{,}\)</span> then <span class="process-math">\(T\)</span> can be written as product of matrices of the form:<details class="ptx-footnote" aria-live="polite" id="real-analysis-7-2-5-6-6"><summary class="ptx-footnote__number" title="Footnote 1.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-7-2-5-6-6">We are just using the fact that any invertible matrix can be row-reduced to the identity matrix.</div></details>
+</div>
+<dl class="description-list">
+<dt id="li-type1">Type 1<div class="autopermalink" data-description="Item: Type 1"><a href="#li-type1" title="Copy heading and permalink for Item: Type 1" aria-label="Copy heading and permalink for Item: Type 1">🔗</a></div>
+</dt>
+<dd>there is an <span class="process-math">\(i\)</span> such that <span class="process-math">\(Te_i = ce_i\)</span> for some real <span class="process-math">\(c\neq 0\text{,}\)</span> and <span class="process-math">\(Te_j = e_j\)</span> for all <span class="process-math">\(j\neq i\text{;}\)</span>
+</dd>
+<dt id="li-type2">Type 2<div class="autopermalink" data-description="Item: Type 2"><a href="#li-type2" title="Copy heading and permalink for Item: Type 2" aria-label="Copy heading and permalink for Item: Type 2">🔗</a></div>
+</dt>
+<dd>there is an <span class="process-math">\(i &lt; n\)</span> such that <span class="process-math">\(Te_i = e_i + e_{i+1}\text{,}\)</span> and <span class="process-math">\(Te_k = e_k\)</span> for all <span class="process-math">\(k\neq i\text{;}\)</span>
+</dd>
+<dt id="li-type3">Type 3<div class="autopermalink" data-description="Item: Type 3"><a href="#li-type3" title="Copy heading and permalink for Item: Type 3" aria-label="Copy heading and permalink for Item: Type 3">🔗</a></div>
+</dt>
+<dd> there is an <span class="process-math">\(i &lt; n\)</span> such that <span class="process-math">\(Te_i = e_{i+1}\text{,}\)</span> <span class="process-math">\(Te_{i+1} = e_i\text{,}\)</span> and <span class="process-math">\(Te_k = e_k\)</span> for all <span class="process-math">\(k\neq i,i+1\text{.}\)</span>
+</dd>
+</dl>
+<div class="para">Note that, if <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, then <span class="process-math">\(\det(T) = c\text{,}\)</span> if <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, then <span class="process-math">\(\det(T) = 1\text{,}\)</span> and if <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>, then <span class="process-math">\(\det(T) = -1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-meas-of-interval"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-meas-of-interval-1-1">
+<div class="para">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map. Then</div>
+<div class="displaymath process-math" id="lem-meas-of-interval-1-1-2">
+\begin{equation*}
+m_n^*(T(E)) \leq |\det(T)| m_n^*(E)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \subseteq \mathbb{R}^n\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.3"><a href="#lem-meas-of-interval" title="Copy heading and permalink for Lemma 1.3.3" aria-label="Copy heading and permalink for Lemma 1.3.3">🔗</a></div></article><article class="proof" id="lem-meas-of-interval-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-meas-of-interval-2-1">Let <span class="process-math">\(I = I_1 \times \ldots \times I_n\)</span> be an interval in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> If <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a> for some non-zero constant <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = |c| m_n(I) = |\det(T)| m_n(I)\text{.}\)</span> Similarly, if <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 3</a>, then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-2">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a> and <span class="process-math">\(n=2\text{.}\)</span> As <span class="process-math">\(T\)</span> is linear, we can assume that <span class="process-math">\(I = [0,a]\times[0,b]\)</span> for some <span class="process-math">\(a,b\geq 0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html" id="lem-meas-of-interval-2-2-7">
+\begin{equation*}
+T(I) = \{ (x,y) \colon 0\leq x \leq a,\ ax \leq y \leq ax + b\}
+\end{equation*}
+</div>
+<div class="para">is a parallelogram in <span class="process-math">\(\bR^2\text{.}\)</span> By <a href="real-analysis-7-2-6.html#exer-triangle" class="xref" data-knowl="./knowl/xref/exer-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.8">Exercise 1.4.8</a>, <span class="process-math">\(T(I)\)</span> is measurable and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html" id="lem-meas-of-interval-2-2-11">
+\begin{equation*}
+m_2(T(I)) =ab = m_2(I).
+\end{equation*}
+</div>
+<div class="para">Note that, if <span class="process-math">\(n &gt; 2\)</span>  and <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, then <span class="process-math">\(T\)</span> only changes on the <span class="process-math">\(i\)</span> and <span class="process-math">\(i+1\)</span> coordinates of an <span class="process-math">\(x \in \bR^n\text{,}\)</span> and leaves all other coordinates fixed. Thus, by the <span class="process-math">\(n = 2\)</span> case, <span class="process-math">\(T(I)\)</span> is measurable and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-3">
+<div class="para">Suppose now, that <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, or <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. Take any <span class="process-math">\(E \subseteq \bR^n\)</span> with <span class="process-math">\(m_n^*(E)&lt;\infty\text{.}\)</span> Let <span class="process-math">\(\{I_k\}_{k=1}^\infty\)</span> be a countable collection of intervals in <span class="process-math">\(\bR^n\)</span> such that <span class="process-math">\(E \subseteq \bigcup_{k=1}^\infty I_k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html" id="lem-meas-of-interval-2-3-10">
+\begin{align*}
+m_n^*(T(E)) \amp \leq \sum_{k=1}^\infty m_n(T(I_k)) \\
+\amp = |\det(T)| \sum_{k=1}^\infty m_n(I_k). 
+\end{align*}
+</div>
+<div class="para">Taking an infimum over all such collections of intervals, we have that <span class="process-math">\(m_n^*(T(E)) \leq |\det(T)| m_n^*(E)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-4">
+<div class="para">Now suppose that <span class="process-math">\(T\)</span> is an arbitrary invertible linear map on <span class="process-math">\(\bR^n\text{.}\)</span> Then <span class="process-math">\(T = T_1\ldots T_k\)</span> where each <span class="process-math">\(T_i\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, or <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. Thus, for <span class="process-math">\(E \subseteq \bR^n\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html" id="lem-meas-of-interval-2-4-9">
+\begin{align*}
+m_n^*(T(E)) \amp \leq |\det(T_1)| m_n^*(T_2T_3\ldots T_k (E)) \\
+\amp \leq |\det(T_1)| \ldots|det(T_k)| m_n^*(E) \\
+\amp = |\det(T)| m_n^*(E), 
+\end{align*}
+</div>
+<div class="para">completing the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.3.1"><a href="#lem-meas-of-interval-2" title="Copy heading and permalink for Proof 1.3.3.1" aria-label="Copy heading and permalink for Proof 1.3.3.1">🔗</a></div></article><article class="lemma theorem-like" id="lem-lin-meas"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-lin-meas-1-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map. Then, if <span class="process-math">\(E \subseteq \bR^n\)</span> is Lebesgue measurable, <span class="process-math">\(T(E)\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.4"><a href="#lem-lin-meas" title="Copy heading and permalink for Lemma 1.3.4" aria-label="Copy heading and permalink for Lemma 1.3.4">🔗</a></div></article><article class="proof" id="lem-lin-meas-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-lin-meas-2-1">Let <span class="process-math">\(E \subseteq \mathbb{R}\)</span> be a bounded Lebesgue measurable set. By <a href="sec-lebesgue-measure-on-Rn.html#cor-Leb-meas-sets-G-delta-F-sigma" class="xref" data-knowl="./knowl/xref/cor-Leb-meas-sets-G-delta-F-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.2.9">Corollary 1.2.9</a> there is an <span class="process-math">\(F_\sigma\)</span>-set <span class="process-math">\(F \subseteq E\)</span> such that <span class="process-math">\(m_n(E) = m_n(F) = 0\text{.}\)</span> Let <span class="process-math">\(B = E\backslash F\text{.}\)</span> Then <span class="process-math">\(m_n(B) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-lin-meas-2-2">Note that, since <span class="process-math">\(T\)</span> is linear, <span class="process-math">\(T^{-1}\)</span> is linear, and therefore continuous. Hence <span class="process-math">\(T\)</span> sends closed sets to closed sets, and hence <span class="process-math">\(F_\sigma\)</span> sets to <span class="process-math">\(F_\sigma\)</span> sets. Further, since <span class="process-math">\(T\)</span> is continuous, there is an <span class="process-math">\(M \geq 0\text{,}\)</span> such that <span class="process-math">\(\|T(x)\|_2 \leq M \|x\|_2\text{.}\)</span> Hence, <span class="process-math">\(T\)</span> sends bounded sets to bounded sets. Hence <span class="process-math">\(T(F)\)</span> is a bounded <span class="process-math">\(F_\sigma\)</span> set. In particular, <span class="process-math">\(T(F)\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-lin-meas-2-3">
+<div class="para">By <a href="real-analysis-7-2-5.html#lem-meas-of-interval" class="xref" data-knowl="./knowl/xref/lem-meas-of-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.3">Lemma 1.3.3</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-meas-of-interval.html" id="lem-lin-meas-2-3-2">
+\begin{equation*}
+m_n^*(T(B))\leq |\det(T)|m_n(B) = 0.
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(m_n^*(T(B))=0\text{,}\)</span> and hence <span class="process-math">\(T(B)\)</span> is Lebesgue measurable. Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-meas-of-interval.html" id="lem-lin-meas-2-3-5">
+\begin{equation*}
+T(E) = T(F) \cup T(B)
+\end{equation*}
+</div>
+<div class="para">is Lebesgue measurable. As any measurable set is a countable union of bounded measurable sets, the result follows for all Lebesgue measurable sets.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.4.1"><a href="#lem-lin-meas-2" title="Copy heading and permalink for Proof 1.3.4.1" aria-label="Copy heading and permalink for Proof 1.3.4.1">🔗</a></div></article><article class="proposition theorem-like" id="prop-comp-meas-linear"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-comp-meas-linear-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map and let <span class="process-math">\(f\)</span> be a Lebesgue measurable function on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then <span class="process-math">\(f \circ T\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#prop-comp-meas-linear-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.3.5"><a href="#prop-comp-meas-linear" title="Copy heading and permalink for Proposition 1.3.5" aria-label="Copy heading and permalink for Proposition 1.3.5">🔗</a></div></article><article class="proof" id="real-analysis-7-2-5-10"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="real-analysis-7-2-5-10-1">Take, <span class="process-math">\(U \subseteq \bR\)</span> open. Since, <span class="process-math">\(f\)</span> is measurable, <span class="process-math">\(f^{-1}(U)\)</span> is a Lebesgue measurable set in <span class="process-math">\(\bR^n\text{.}\)</span> By <a href="real-analysis-7-2-5.html#lem-lin-meas" class="xref" data-knowl="./knowl/xref/lem-lin-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.4">Lemma 1.3.4</a>, <span class="process-math">\(T^{-1}(f^{-1}(U))\)</span> is a Lebesgue measurable set in <span class="process-math">\(\bR^n\text{.}\)</span> Thus, <span class="process-math">\((f\circ T)^{-1}\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.1"><a href="#real-analysis-7-2-5-10" title="Copy heading and permalink for Proof 1.3.1" aria-label="Copy heading and permalink for Proof 1.3.1">🔗</a></div></article><div class="para" id="real-analysis-7-2-5-11">We state now the main theorem of this section. We delay the proof for now, to deal with some special cases.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-change-of-variables"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-change-of-variables-1-1">
+<div class="para">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map and let <span class="process-math">\(f\)</span> be a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> Then <span class="process-math">\(f\circ T\)</span> is integrable and</div>
+<div class="displaymath process-math" id="thm-change-of-variables-1-1-5">
+\begin{equation*}
+\int_{\mathbb{R}^n} f\circ T \, d\mu = \frac{1}{\left|\det(T)\right|} \int_{\mathbb{R}^n} f \, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.3.6"><a href="#thm-change-of-variables" title="Copy heading and permalink for Theorem 1.3.6" aria-label="Copy heading and permalink for Theorem 1.3.6">🔗</a></div></article><div class="para" id="real-analysis-7-2-5-13">The proof of <a href="real-analysis-7-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a> will ultimately follow an inductive argument. It suffices to show that the result holds for linear maps of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, and <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. We will prove the <span class="process-math">\(n=1\)</span> and <span class="process-math">\(n=2\)</span> cases first, and then use these cases to prove the general case. We leave the <span class="process-math">\(n=1\)</span> case, <a href="real-analysis-7-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a>, as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-change-of-variables-n-1"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-change-of-variables-n-1-1-1">
+<div class="para">Let <span class="process-math">\(f \colon \bR \rightarrow \bR\)</span> be a Lebesgue integrable function. Then if <span class="process-math">\(\alpha \in \bR\)</span> is non-zero,</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-1-1-1-3">
+\begin{equation*}
+\int_\bR f\,dm = |\alpha| \int_\bR f(\alpha x) \, dm(x). 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.7"><a href="#lem-change-of-variables-n-1" title="Copy heading and permalink for Lemma 1.3.7" aria-label="Copy heading and permalink for Lemma 1.3.7">🔗</a></div></article><article class="lemma theorem-like" id="lem-change-of-variables-n-2"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-change-of-variables-n-2-1-1">
+<div class="para">Let <span class="process-math">\(f \colon \bR^2 \rightarrow \bR\)</span> be a Lebesgue integrable function. Let <span class="process-math">\(c \in \bR\)</span> be non-zero. Define functions <span class="process-math">\(g,h,k\)</span> on <span class="process-math">\(\bR^2\)</span> by</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-5">
+\begin{equation*}
+g(x,y) = f(y,x),\ h(x,y) = f(x,x+y),\text{ and } k(x,y) = f(cx,y).
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(g,h,\)</span> and <span class="process-math">\(k\)</span> are integrable, and</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-8">
+\begin{equation*}
+\int_{\bR^2} g \, dm_2 = \int_{\bR^2} h \, dm_2 = \int_{\bR^2} f \, dm_2,
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-9">
+\begin{equation*}
+\int_{\bR^2} k \, dm_2 = \frac{1}{|c|} \int_{\bR^2} f \, dm_2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.8"><a href="#lem-change-of-variables-n-2" title="Copy heading and permalink for Lemma 1.3.8" aria-label="Copy heading and permalink for Lemma 1.3.8">🔗</a></div></article><article class="proof" id="lem-change-of-variables-n-2-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-change-of-variables-n-2-2-1">
+<div class="para">Note that <span class="process-math">\(h,g,\)</span> and <span class="process-math">\(k\)</span> are measurable by <a href="real-analysis-7-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a>. We will prove the result for <span class="process-math">\(h\text{.}\)</span> We will assume that <span class="process-math">\(f\)</span> is non-negative. Then general case follows from writing <span class="process-math">\(f\)</span> as the difference of its positive and negative parts. The proofs for <span class="process-math">\(g\)</span> and <span class="process-math">\(k\)</span> are similar, with an application of <a href="real-analysis-7-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a> in the case of <span class="process-math">\(k\text{.}\)</span> Note that, if <span class="process-math">\(l \colon \bR \rightarrow \bR\)</span> is Lebesgue integrable and <span class="process-math">\(\beta \in \bR\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html" id="lem-change-of-variables-n-2-2-1-13">
+\begin{equation*}
+\int_\bR l(x+\beta)\,dm(x) = \int_\bR l\,dm.
+\end{equation*}
+</div>
+<div class="para">By <a href="real-analysis-7-2-3.html#thm-tonelli" class="xref" data-knowl="./knowl/xref/thm-tonelli.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.12: Tonelli’s Theorem">Tonelli’s theorem</a>, we have that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html" id="lem-change-of-variables-n-2-2-1-15">
+\begin{align*}
+\int_{\bR^2}h\,dm_2 \amp = \int_\bR \int_\bR h(x,y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,x+y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,y)\, dm(y)dm(x). 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.8.1"><a href="#lem-change-of-variables-n-2-2" title="Copy heading and permalink for Proof 1.3.8.1" aria-label="Copy heading and permalink for Proof 1.3.8.1">🔗</a></div></article><div class="para" id="real-analysis-7-2-5-16">We can now prove <a href="real-analysis-7-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proof" id="real-analysis-7-2-5-17"><h3 class="heading"><span class="title">Proof of Theorem 1.3.6.</span></h3>
+<div class="para logical" id="real-analysis-7-2-5-17-2">
+<div class="para">
+<a href="real-analysis-7-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a> and <a href="real-analysis-7-2-5.html#lem-change-of-variables-n-2" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.8">Lemma 1.3.8</a> show that the result holds for <span class="process-math">\(n=1,2\text{.}\)</span> Assume now that <span class="process-math">\(n\geq 3\)</span> and the result holds for <span class="process-math">\(\bR^k\)</span> when <span class="process-math">\(k&lt; n\text{.}\)</span> Assume that <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, and <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. Then, either <span class="process-math">\(Te_1 = e_1\)</span> and <span class="process-math">\(T \{(0,x_2,\ldots,x_n)\} \subseteq \{(0,x_2,\ldots,x_n)\}\text{,}\)</span> or <span class="process-math">\(Te_n = e_n\)</span> and <span class="process-math">\(T\{(x_1,x_2,\ldots,0)\} \subseteq \{(x_1,x_2,\ldots,0)\}\text{.}\)</span> Assume the former, the latter case is done similarly. Let <span class="process-math">\(T'\)</span> be the restriction to the <span class="process-math">\(n-1\)</span>-dimensional space <span class="process-math">\(\{(0,x_2,\ldots,x_n)\} \text{.}\)</span> Then, by <a href="real-analysis-7-2-3.html#thm-fubini" class="xref" data-knowl="./knowl/xref/thm-fubini.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.10: Fubini’s Theorem">Fubini’s Theorem</a> (and <a href="real-analysis-7-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/lem-change-of-variables-n-2.html ./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html ./knowl/xref/thm-fubini.html ./knowl/xref/prop-comp-meas-linear.html" id="real-analysis-7-2-5-17-2-20">
+\begin{align*}
+\int_\bR^n f\circ T \,dm_n \amp= \int_\bR \left( \int_{\bR^{n-1}} f(x_1, T'(x_2,\ldots,x_n)))\,dm_{n-1}\right)dm\\
+\amp = \frac{1}{|\det(T')|}\int_\bR \left( \int_{\bR^{n-1}} f(x_1, x_2,\ldots,x_n))\,dm_{n-1}\right)dm\\
+\amp = \frac{1}{|\det(T')|}\int_\bR^n f \,dm_n.
+\end{align*}
+</div>
+<div class="para">Noting that <span class="process-math">\(\det(T) = \det(T')\)</span> completes the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-2-5-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.2: Proof of Theorem 1.3.6"><a href="#real-analysis-7-2-5-17" title="Copy heading and permalink for Proof 1.3.2: Proof of Theorem 1.3.6" aria-label="Copy heading and permalink for Proof 1.3.2: Proof of Theorem 1.3.6">🔗</a></div></article><div class="autopermalink" data-description="Section 1.3: Change of variables"><a href="#real-analysis-7-2-5" title="Copy heading and permalink for Section 1.3: Change of variables" aria-label="Copy heading and permalink for Section 1.3: Change of variables">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-lebesgue-measure-on-Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="real-analysis-7-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -34,16 +34,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Cardinality",
-  "body": " Cardinality   Note that cardinality forms an equivalence relation on sets.  A set is called countable if is finite, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite .  If a set is not countable, we say it is uncountable . There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . However, we will primarily be concerned with whether a set is countable or not.    , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).     "
-},
-{
-  "id": "real-analysis-4-2-5-6",
-  "level": "2",
-  "url": "real-analysis-4-2-5.html#real-analysis-4-2-5-6",
-  "type": "Example",
-  "number": "1.3.1",
-  "title": "",
-  "body": "  , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).    "
+  "body": " Cardinality   Note that cardinality forms an equivalence relation on sets.  A set is called countable if is finite, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite .  If a set is not countable, we say it is uncountable . There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . However, we will primarily be concerned with whether a set is countable or not.  \\begin{egs}   , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).    \\end{egs}  "
 },
 {
   "id": "real-analysis-4-2-6",
@@ -5291,6 +5282,465 @@ var ptx_lunr_docs = [
   "number": "2.5.15",
   "title": "",
   "body": " Let be a locally compact Hausdorff space and let be all finite Radon signed measures on .   Show that is a vector space under the operations  for and .    Show that defines a norm on , where  for all . (Recall, that is the total variation of .)     "
+},
+{
+  "id": "real-analysis-7-2-3",
+  "level": "1",
+  "url": "real-analysis-7-2-3.html",
+  "type": "Section",
+  "number": "1.1",
+  "title": "Product measures",
+  "body": " Product measures  Given two measure spaces and , we want to construct a measure on from and . We will call this the product measure of and , and denote the product measure by . The basic road-map for this construction is simple: if and , we define . We then show that is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem ( ), extends to a measure on .    Let and be two measurable spaces. If and , we call the set a measurable rectangle in . measurable rectangle       Let and be measure spaces; let be the measurable rectangles in ; and let be the extended real-valued function on defined by for all and . Then is a semiring, and is a premeasure on .    Recall, from , that the collection of all measurable rectangles in forms a semiring of sets.  Note that , and . To show is a premeasure it remains to show that is finitely additive and countably monotone.  Suppose is a measurable rectangle such that where are disjoint measurable rectangles. For a fixed , we have Note that, if and , then since and are disjoint, and are disjoint. Thus, the collection are a disjoint collection of measurable sets is in , and hence Hence, for any , Now, by the series version of the Monotone Convergence Theorem, , Hence, is countably additive, and therefore finitely additive.  Note that, for measurable rectangles and , if and only if Thus, if , then Thus, is monotonic.  Let be a measurable rectangle and be measurable rectangles, such that Since the measurable rectangles are a semiring, and is finitely additive, we can assume that the sets are disjoint. Thus Hence is countably monotone, and therefore is a premeasure on the measurable rectangles.    Let and be two measure spaces, and let for and . By , is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem ( ), extends to a measure on -measurable sets in (where is the outer measure induced by the premeasure ). We denote this extension by . The measure is called the product measure measure product measure of and .   Recall that the Carathéodory-Hahn Theorem does not guarantee uniqueness of the Carathéodory extension. In particular, if is the collection of -measurable sets, we are not guaranteed that is the only measure on satisfying for all and .  We do have uniqueness when is -finite on . In particular, if and are -finite then will be -finite ( ), and therefore the product measure is the unique measure satisfying .  An example where the product measure is not the unique measure satisfying is given in    A word of warning: Some texts define the -algebra that is defined on to be the -algebra generated by the measurable rectangles. Our definition has as a function on the -algebra of -measurable sets. This may be a larger -algebra. gives sufficient conditions for when the -algebra generated by measurable rectangles is smaller than -measurable sets.  We discuss some differences between these different definitions of product measure further in     Let and be non-empty sets and let . For the -section section of a set  of is defined as For the -section section of a set  of is defined as If is a function on , and then the -section  of is a function on defined by If then the -section  of is a function on defined by section of a function    We will prove two theorems relating an integral with respect to a product measure and nested integrals with respect to and separately: Fubini's Theorem and Tonelli's Theorem.  We begin with some lemmas. The goal of the following lemmas is to describe as an integral with respect to . This allows us to (nearly immediately) describe the integrals of simple functions on . Then, using simple approximations of measurable functions, we will get the general results needed.  Recall that if is a collection of subsets of a set , then is the collection of all countable unions of sets from , and is the countable intersection of sets from .    Let and be measure spaces and let be the collection of all measurable rectangles in . If satisfying , then the -section is -measurable for all , and     Take By , is -measurable for all . Alternatively, this can be proved directly by first considering , then , and then .  If for some and , then Thus  Now suppose . Thus, there are measurable rectangles such that . Since is a semiring, we can assume that the sets are disjoint. Then, for each , the -sections are disjoint and . Thus, applying the series version of the Monotone Convergence Theorem (Corollar~\\ref{cor: MCT series}), we have  Now suppose that and . There are sets such that . Since is a semiring, we can assume that the sets are descending. As is defined as the outer measure induced by on , we can further assume that . Thus, by the continuity of measure, For each and , the -section is -measurable. Hence is -measurable. Further, since  for almost all . Hence, for almost all , Thus, by the Lebesgue Dominated Convergence Theorem,    If and are -finite, then conclusion of holds for any in the -algebra generated by the measurable rectangles, not just the -sets of finite measure. This is explored in .     Let and be measure spaces with a complete measure. If is -measurable with , then the -section is -measurable for almost all and .    Take -measurable with . By , there is a set an -set such that , and . Since , we can apply , to get Since the map is non-negative, it follows that for all most all . Since for all , it follows from the completeness of that if then is -measurable and .      Let and be measure spaces with a complete measure. If is -measurable with , then the -sections are -meaurable for almost all , and the function is a -measurable function. Further,    Since , by there is an -set such that and . Thus by the excision property.  By , is measurable for all , and is measurable for almost all . For each , Thus, for almost all , is -measurable and Applying again, we have     Fubini's Theorem   Fubini's Theorem Let be a measure space, let be a complete measure space and let be a measurable function which is integrable with respect to .  Then for almost all , the -section of is integrable with respect to and    First suppose that where is a measurable set with . Note that, for each , the -section is given by By , is measurable for almost all , hence is measurable for almost all . Further, again by , Hence for almost all . Thus, for almost all , Thus is integrable for almost all . We have now that By the linearity of integration, the result holds when is an integrable simple function on .  Now suppose that is a non-negative integrable function on . Let be an increasing sequence of simple functions which converge pointwise to . By the above arguments, and the Monotone Convergence Theorem, it follows that  To complete the proof we will show that By removing a set of measure zero if necessary, we can assume that the -sections are integrable for all for all . Thus, for each , is an increasing sequence of measurable functions, converging pointwise to . Thus is measurable for each . For each , let define a function on by and define a function on by Since each is simple, it follows that is integrable for all . Thus sequence is an increasing sequence of non-negative measurable functions. By the Monotone Covergenece Theorem applied to , converges pointwise to . Applying the Monotone Convergence Theorem to the sequence , we get i.e.  If is an arbitrary integrable function on , then where is the positive part of , and is the negative part of . Since the result holds for and , the result holds for by the linearity of integration.     Let be a measurable function on a product space . Note that, in order to apply Fubini's theorem, we must first know that is integrable with repsect to the product measure . It is possible that the iterated integral exists and is finite, but itself is not integral with resepct to . An example is given in .   The shortcoming of Fubini's Theorem discussed in does not arise when when we deal exclusively with -finite measure spaces. This is the famed theorem of Tonelli.   Tonelli's Theorem    Tonelli's Theorem Let and be -finite measure spaces, with a complete measure, and let be a non-negative -measurable function on . Then, for almost all , the -section of is -measurable, and the (almost everywhere defined) function on  is -measurable. Further,     Since, and are -finite, the product measure is -finite on , by . Thus, by the Simple Approximation Theorem, , there is an increasing sequence of simple functions which converge pointwise to and each is supported in a set of finite measure. For each , since is a supported in a set of finite measure, is integrable with respect to . Hence, we can apply Fubini's Theorem to each function , to get The rest of the proof proceeds in a similar vein to that of Fubini's Theorem.    With obvious modifications, replacing -sections with -sections, we can prove the analogous results of Fubini's Theorem and Tonelli's Theorem on , for measure space and when is complete. Fubini's Theorem and Tonelli's Theorem are often combined into one result, the Fubini-Tonelli Theorem, which combines the two results.   The Fubini-Tonelli Theorem    Fubini's Theorem The Fubini-Tonelli Theorem Tonelli's Theorem Fubini's Theorem Let and be -finite complete measure spaces, and let be a -measurable function on . Then Further, if any of the three integrals above are finite, then is integrable and      We note in , that some people only define the product measure to act on the -algebra generated by the measurable rectangles. Let and be -finite measure spaces, let be the product measure on , and let be the restriction of be the restriction of to the -algebra generated by the measurable rectangles. The analogue of Fubini's Theorem We will not prove this version of Fubini's Theorem. If you wish you can prove it using and similar arguments to how we proved . for states: if is integrable with respect to , then the -sections are integrable with respect to for all , and The key differences between Fubini's Theorem for ( our version) and for are  we do not need to assume that or is a complete measure to prove Fubini's Theorem for ;  we have that is -integrable for all , not just for almost all , in Fubini's Theorem for ; and  we are assuming that the measure spaces are -finite in Fubini's Theorem for .  In practice, concerns over these differences rarely matter. For nice functions and nice  -algebras one usually has that    Products of three or more measures  If are a collection of $n$ measure spaces, we define the measurable rectangles measurable rectangles in as the sets We can similarly define a product measure on . We leave the details of the next proposition to the exercises, and .    Let be measure spaces, let be the measurable rectangles in ; and let be the extended real-valued function on defined by for for . Then is a semiring, and is a premeasure on .    By , we can thus extend to a measure on by the Carathéodory-Hahn Theorem. This measure is also called the product measure . product measure Just as in the case, it is not guaranteed that the measure is the unique extension of the its restriction to the measurable rectangles. However, when each measure space is a -finite measure space, for , then we do have uniqueness. The uniqueness results also gives the following associativity result.    Let , , and be -finite measure spaces. Then      "
+},
+{
+  "id": "real-analysis-7-2-3-3",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-3",
+  "type": "Definition",
+  "number": "1.1.1",
+  "title": "",
+  "body": "  Let and be two measurable spaces. If and , we call the set a measurable rectangle in . measurable rectangle    "
+},
+{
+  "id": "prop-product-premeas",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#prop-product-premeas",
+  "type": "Proposition",
+  "number": "1.1.2",
+  "title": "",
+  "body": "  Let and be measure spaces; let be the measurable rectangles in ; and let be the extended real-valued function on defined by for all and . Then is a semiring, and is a premeasure on .    Recall, from , that the collection of all measurable rectangles in forms a semiring of sets.  Note that , and . To show is a premeasure it remains to show that is finitely additive and countably monotone.  Suppose is a measurable rectangle such that where are disjoint measurable rectangles. For a fixed , we have Note that, if and , then since and are disjoint, and are disjoint. Thus, the collection are a disjoint collection of measurable sets is in , and hence Hence, for any , Now, by the series version of the Monotone Convergence Theorem, , Hence, is countably additive, and therefore finitely additive.  Note that, for measurable rectangles and , if and only if Thus, if , then Thus, is monotonic.  Let be a measurable rectangle and be measurable rectangles, such that Since the measurable rectangles are a semiring, and is finitely additive, we can assume that the sets are disjoint. Thus Hence is countably monotone, and therefore is a premeasure on the measurable rectangles.   "
+},
+{
+  "id": "real-analysis-7-2-3-6",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-6",
+  "type": "Remark",
+  "number": "1.1.3",
+  "title": "",
+  "body": " Recall that the Carathéodory-Hahn Theorem does not guarantee uniqueness of the Carathéodory extension. In particular, if is the collection of -measurable sets, we are not guaranteed that is the only measure on satisfying for all and .  We do have uniqueness when is -finite on . In particular, if and are -finite then will be -finite ( ), and therefore the product measure is the unique measure satisfying .  An example where the product measure is not the unique measure satisfying is given in  "
+},
+{
+  "id": "rem-alt-prod-meas",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#rem-alt-prod-meas",
+  "type": "Remark",
+  "number": "1.1.4",
+  "title": "",
+  "body": " A word of warning: Some texts define the -algebra that is defined on to be the -algebra generated by the measurable rectangles. Our definition has as a function on the -algebra of -measurable sets. This may be a larger -algebra. gives sufficient conditions for when the -algebra generated by measurable rectangles is smaller than -measurable sets.  We discuss some differences between these different definitions of product measure further in  "
+},
+{
+  "id": "real-analysis-7-2-3-8",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-8",
+  "type": "Definition",
+  "number": "1.1.5",
+  "title": "",
+  "body": "  Let and be non-empty sets and let . For the -section section of a set  of is defined as For the -section section of a set  of is defined as If is a function on , and then the -section  of is a function on defined by If then the -section  of is a function on defined by section of a function   "
+},
+{
+  "id": "lem-prod-meas-as-integral",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral",
+  "type": "Lemma",
+  "number": "1.1.6",
+  "title": "",
+  "body": "  Let and be measure spaces and let be the collection of all measurable rectangles in . If satisfying , then the -section is -measurable for all , and   "
+},
+{
+  "id": "real-analysis-7-2-3-13",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-13",
+  "type": "Proof",
+  "number": "1.1.1",
+  "title": "",
+  "body": " Take By , is -measurable for all . Alternatively, this can be proved directly by first considering , then , and then .  If for some and , then Thus  Now suppose . Thus, there are measurable rectangles such that . Since is a semiring, we can assume that the sets are disjoint. Then, for each , the -sections are disjoint and . Thus, applying the series version of the Monotone Convergence Theorem (Corollar~\\ref{cor: MCT series}), we have  Now suppose that and . There are sets such that . Since is a semiring, we can assume that the sets are descending. As is defined as the outer measure induced by on , we can further assume that . Thus, by the continuity of measure, For each and , the -section is -measurable. Hence is -measurable. Further, since  for almost all . Hence, for almost all , Thus, by the Lebesgue Dominated Convergence Theorem,  "
+},
+{
+  "id": "real-analysis-7-2-3-14",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-14",
+  "type": "Remark",
+  "number": "1.1.7",
+  "title": "",
+  "body": " If and are -finite, then conclusion of holds for any in the -algebra generated by the measurable rectangles, not just the -sets of finite measure. This is explored in .  "
+},
+{
+  "id": "lem-prod-meas-as-integral-0",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral-0",
+  "type": "Lemma",
+  "number": "1.1.8",
+  "title": "",
+  "body": "  Let and be measure spaces with a complete measure. If is -measurable with , then the -section is -measurable for almost all and .    Take -measurable with . By , there is a set an -set such that , and . Since , we can apply , to get Since the map is non-negative, it follows that for all most all . Since for all , it follows from the completeness of that if then is -measurable and .   "
+},
+{
+  "id": "lem-prod-meas-as-integral-general",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral-general",
+  "type": "Lemma",
+  "number": "1.1.9",
+  "title": "",
+  "body": "  Let and be measure spaces with a complete measure. If is -measurable with , then the -sections are -meaurable for almost all , and the function is a -measurable function. Further,    Since , by there is an -set such that and . Thus by the excision property.  By , is measurable for all , and is measurable for almost all . For each , Thus, for almost all , is -measurable and Applying again, we have   "
+},
+{
+  "id": "thm-fubini",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#thm-fubini",
+  "type": "Theorem",
+  "number": "1.1.10",
+  "title": "Fubini’s Theorem.",
+  "body": " Fubini's Theorem   Fubini's Theorem Let be a measure space, let be a complete measure space and let be a measurable function which is integrable with respect to .  Then for almost all , the -section of is integrable with respect to and    First suppose that where is a measurable set with . Note that, for each , the -section is given by By , is measurable for almost all , hence is measurable for almost all . Further, again by , Hence for almost all . Thus, for almost all , Thus is integrable for almost all . We have now that By the linearity of integration, the result holds when is an integrable simple function on .  Now suppose that is a non-negative integrable function on . Let be an increasing sequence of simple functions which converge pointwise to . By the above arguments, and the Monotone Convergence Theorem, it follows that  To complete the proof we will show that By removing a set of measure zero if necessary, we can assume that the -sections are integrable for all for all . Thus, for each , is an increasing sequence of measurable functions, converging pointwise to . Thus is measurable for each . For each , let define a function on by and define a function on by Since each is simple, it follows that is integrable for all . Thus sequence is an increasing sequence of non-negative measurable functions. By the Monotone Covergenece Theorem applied to , converges pointwise to . Applying the Monotone Convergence Theorem to the sequence , we get i.e.  If is an arbitrary integrable function on , then where is the positive part of , and is the negative part of . Since the result holds for and , the result holds for by the linearity of integration.   "
+},
+{
+  "id": "rem-fubini",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#rem-fubini",
+  "type": "Remark",
+  "number": "1.1.11",
+  "title": "",
+  "body": " Let be a measurable function on a product space . Note that, in order to apply Fubini's theorem, we must first know that is integrable with repsect to the product measure . It is possible that the iterated integral exists and is finite, but itself is not integral with resepct to . An example is given in .  "
+},
+{
+  "id": "thm-tonelli",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#thm-tonelli",
+  "type": "Theorem",
+  "number": "1.1.12",
+  "title": "Tonelli’s Theorem.",
+  "body": " Tonelli's Theorem    Tonelli's Theorem Let and be -finite measure spaces, with a complete measure, and let be a non-negative -measurable function on . Then, for almost all , the -section of is -measurable, and the (almost everywhere defined) function on  is -measurable. Further,     Since, and are -finite, the product measure is -finite on , by . Thus, by the Simple Approximation Theorem, , there is an increasing sequence of simple functions which converge pointwise to and each is supported in a set of finite measure. For each , since is a supported in a set of finite measure, is integrable with respect to . Hence, we can apply Fubini's Theorem to each function , to get The rest of the proof proceeds in a similar vein to that of Fubini's Theorem.   "
+},
+{
+  "id": "thm-fubini-tonelli",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#thm-fubini-tonelli",
+  "type": "Theorem",
+  "number": "1.1.13",
+  "title": "The Fubini-Tonelli Theorem.",
+  "body": " The Fubini-Tonelli Theorem    Fubini's Theorem The Fubini-Tonelli Theorem Tonelli's Theorem Fubini's Theorem Let and be -finite complete measure spaces, and let be a -measurable function on . Then Further, if any of the three integrals above are finite, then is integrable and    "
+},
+{
+  "id": "rem-alt-prod-meas-2",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#rem-alt-prod-meas-2",
+  "type": "Remark",
+  "number": "1.1.14",
+  "title": "",
+  "body": " We note in , that some people only define the product measure to act on the -algebra generated by the measurable rectangles. Let and be -finite measure spaces, let be the product measure on , and let be the restriction of be the restriction of to the -algebra generated by the measurable rectangles. The analogue of Fubini's Theorem We will not prove this version of Fubini's Theorem. If you wish you can prove it using and similar arguments to how we proved . for states: if is integrable with respect to , then the -sections are integrable with respect to for all , and The key differences between Fubini's Theorem for ( our version) and for are  we do not need to assume that or is a complete measure to prove Fubini's Theorem for ;  we have that is -integrable for all , not just for almost all , in Fubini's Theorem for ; and  we are assuming that the measure spaces are -finite in Fubini's Theorem for .  In practice, concerns over these differences rarely matter. For nice functions and nice  -algebras one usually has that  "
+},
+{
+  "id": "prop-n-dim-prod-measure",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#prop-n-dim-prod-measure",
+  "type": "Proposition",
+  "number": "1.1.15",
+  "title": "",
+  "body": "  Let be measure spaces, let be the measurable rectangles in ; and let be the extended real-valued function on defined by for for . Then is a semiring, and is a premeasure on .   "
+},
+{
+  "id": "prop-n-dim-prod-measure-associative",
+  "level": "2",
+  "url": "real-analysis-7-2-3.html#prop-n-dim-prod-measure-associative",
+  "type": "Proposition",
+  "number": "1.1.16",
+  "title": "",
+  "body": "  Let , , and be -finite measure spaces. Then    "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn",
+  "level": "1",
+  "url": "sec-lebesgue-measure-on-Rn.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Lebesgue measure on <span class=\"process-math\">\\(\\mathbb{R}^n\\)<\/span>",
+  "body": " Lebesgue measure on    Let be the Lebesgue measure on the Lebesgue measurable subsets of and let . Let be the product measure on . We call the Lebesgue measure on . Lebesgue measure on The -algebra of subsets which are measurable with respect to are the Lebesgue measurable subsets of . measurable set Lebesgue measurable set  Denote by the outer measure induced by on the measurable rectangles. We call the Lebesgue outer measure on . outer measure Lebesgue outer measure on      Note that, since the Lebesgue measure on is -finite on , is -finite on . Further, by inductive application of , if and are positive integers such that , then . Thus the following version of the Fubini-Tonelli Theorem follows from .   The Fubini-Tonelli Theorem on  Fubini's Theorem The Fubini-Tonelli Theorem Tonelli's Theorem Fubini's Theorem Let be non-negative integers with and let be a Lebesgue measurable function on . Then If any of these values are finite, then is integrable with respect to and   One can define the Lebesgue measure on directly, without using products of the Lebesgue measure on . We can, instead define the Lebesgue measure on akin to how the Lebesgue measure was defined on . That is, we can define a premeasure on a nice semiring of subsets of that extends to a measure on . This nice semiring will be smaller than the measureable rectangles, and defining it does not require direct knowledge of the Lebesgue measure on . We will not give the full details of this construction; we do not need the full details as we have already defined the Lebesgue measure on , but one can deduce from the next proposition what is needed. We will first define the sets in the nice semiring: intervals . We will not need to know that it is a semiring, so will not prove that.    Fix . interval of A set is an interval of if there are intervals such that  An interval is called an open interval if each is open for .     Note that if is an interval, then is a measurable rectangle. In fact when , will actually look like a rectangle. It could thus be argued that what we are calling intervals should be called measurable rectangles , and measurable rectangles should be called something else. We will, however, stick with the terminology established, even if it makes us a little uncomfortable.   We will now show that we can work with intervals in place of measurable intervals, thus Lebesgue measure on could be defined in terms of intervals instead of measurable rectangles.    For each      By definition of the Lebesgue outer measure Thus, The result, therefore, holds if . We can thus assume that .  Suppose now that where each is a Lebesgue measurable set of finte measure. That is, assume that is a measurable rectangle with finite measure. Fix . By repeated applications of we can find open subsets with for such that Let . Since each open subset of is a countable union of disjoint intervals, is a countable union of disjoint intervals in . Further, .  We will bound . Note that we can write as the (disjoint) union Note that this calculation is most of what is needed to show that the intervals in form a semiring.  Thus, . Hence, by the excision property , Since was arbitrary, and is a countable union of disjoint intervals in , the result now follows for measurable rectangles.  Finally, if and , then there is a countable collection of measurable rectangles with and By the above argument, for each there is a countable collection of intervals in such that Thus Hence as desired.    allows us to work with intervals in in place of measurable rectangles. Intervals have the advantage that we understand them. We know a lot about Lebesgue measurable sets in , but we also know enough to know that they are sometimes quite strange, e.g. .  We will see that the Lebesgue measure on has similar properties to the Lebesgue measure on . We first note that all Borel sets in are Lebesgue measurable.  We will recall what the Borel subsets of are. A subset is open if given , there is a such that We are using the Euclidean\/ -norm on here; this is the usual and more intuitive way to define open subsets of . However, the choice of the -norm is immaterial. It follows from that the following statements are equivalent for a subset :  is an open subset of ;  given , there is a such that for some with ;  given , for each , , there is an such that .  That is, to see if a set is open, it does not matter which -norm we use. The Borel sets in are the members of the smallest -algebra of subsets of which contains all open subsets of . We denote the Borel sets in by . Borel sets in We leave the details of the following proposition as an exercise, . The result should be compared to .   Let be a Borel subset of , then is Lebesgue measurable.   Another important property that the Lebesgue measure shares with the Lebesgue measure on is translation invariance. The proof of this follows (almost) immediately from the case.   Let be a non-negative integer, let be a Lebesgue measurable set, let be a vector in , and let Then .   The Lebesgue measure on also has regularity properties analogous to those of the Lebesgue measure on . The following two results should be compared to and . We omit the proofs. Arguments similar to the -dimensional cases can be used, with the aide of .   Regularity of Lebesgue measure on   Let be a Lebesgue measurable set. Then and  regularity of a measure regularity of Lebesgue measure on       Let . The following are equivalent.  is Lebesgue measurable;  for every there exists an open set containing such that ;  there is a -set contraing such that ;  for every there exists a closed set contained in such that ;  there is an -set contained in such that .      "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn-2",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#sec-lebesgue-measure-on-Rn-2",
+  "type": "Definition",
+  "number": "1.2.1",
+  "title": "",
+  "body": "  Let be the Lebesgue measure on the Lebesgue measurable subsets of and let . Let be the product measure on . We call the Lebesgue measure on . Lebesgue measure on The -algebra of subsets which are measurable with respect to are the Lebesgue measurable subsets of . measurable set Lebesgue measurable set  Denote by the outer measure induced by on the measurable rectangles. We call the Lebesgue outer measure on . outer measure Lebesgue outer measure on     "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn-4",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#sec-lebesgue-measure-on-Rn-4",
+  "type": "Theorem",
+  "number": "1.2.2",
+  "title": "The Fubini-Tonelli Theorem on <span class=\"process-math\">\\(\\mathbb{R}^n\\)<\/span>.",
+  "body": " The Fubini-Tonelli Theorem on  Fubini's Theorem The Fubini-Tonelli Theorem Tonelli's Theorem Fubini's Theorem Let be non-negative integers with and let be a Lebesgue measurable function on . Then If any of these values are finite, then is integrable with respect to and  "
+},
+{
+  "id": "def-intervals",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#def-intervals",
+  "type": "Definition",
+  "number": "1.2.3",
+  "title": "",
+  "body": "  Fix . interval of A set is an interval of if there are intervals such that  An interval is called an open interval if each is open for .   "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn-7",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#sec-lebesgue-measure-on-Rn-7",
+  "type": "Remark",
+  "number": "1.2.4",
+  "title": "",
+  "body": " Note that if is an interval, then is a measurable rectangle. In fact when , will actually look like a rectangle. It could thus be argued that what we are calling intervals should be called measurable rectangles , and measurable rectangles should be called something else. We will, however, stick with the terminology established, even if it makes us a little uncomfortable.  "
+},
+{
+  "id": "prop-intervals",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#prop-intervals",
+  "type": "Proposition",
+  "number": "1.2.5",
+  "title": "",
+  "body": "  For each    "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn-10",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#sec-lebesgue-measure-on-Rn-10",
+  "type": "Proof",
+  "number": "1.2.1",
+  "title": "",
+  "body": " By definition of the Lebesgue outer measure Thus, The result, therefore, holds if . We can thus assume that .  Suppose now that where each is a Lebesgue measurable set of finte measure. That is, assume that is a measurable rectangle with finite measure. Fix . By repeated applications of we can find open subsets with for such that Let . Since each open subset of is a countable union of disjoint intervals, is a countable union of disjoint intervals in . Further, .  We will bound . Note that we can write as the (disjoint) union Note that this calculation is most of what is needed to show that the intervals in form a semiring.  Thus, . Hence, by the excision property , Since was arbitrary, and is a countable union of disjoint intervals in , the result now follows for measurable rectangles.  Finally, if and , then there is a countable collection of measurable rectangles with and By the above argument, for each there is a countable collection of intervals in such that Thus Hence as desired.  "
+},
+{
+  "id": "prop-borel-in-Rn",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#prop-borel-in-Rn",
+  "type": "Proposition",
+  "number": "1.2.6",
+  "title": "",
+  "body": " Let be a Borel subset of , then is Lebesgue measurable.  "
+},
+{
+  "id": "sec-lebesgue-measure-on-Rn-16",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#sec-lebesgue-measure-on-Rn-16",
+  "type": "Proposition",
+  "number": "1.2.7",
+  "title": "",
+  "body": " Let be a non-negative integer, let be a Lebesgue measurable set, let be a vector in , and let Then .  "
+},
+{
+  "id": "thm-Lebesgue-regular-n",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#thm-Lebesgue-regular-n",
+  "type": "Theorem",
+  "number": "1.2.8",
+  "title": "Regularity of Lebesgue measure on <span class=\"process-math\">\\(\\bR^n\\)<\/span>.",
+  "body": " Regularity of Lebesgue measure on   Let be a Lebesgue measurable set. Then and  regularity of a measure regularity of Lebesgue measure on    "
+},
+{
+  "id": "cor-Leb-meas-sets-G-delta-F-sigma",
+  "level": "2",
+  "url": "sec-lebesgue-measure-on-Rn.html#cor-Leb-meas-sets-G-delta-F-sigma",
+  "type": "Corollary",
+  "number": "1.2.9",
+  "title": "",
+  "body": "  Let . The following are equivalent.  is Lebesgue measurable;  for every there exists an open set containing such that ;  there is a -set contraing such that ;  for every there exists a closed set contained in such that ;  there is an -set contained in such that .     "
+},
+{
+  "id": "real-analysis-7-2-5",
+  "level": "1",
+  "url": "real-analysis-7-2-5.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "Change of variables",
+  "body": " Change of variables  In this section we will study how changes of variables in effect the integral. We begin by noting that all linear maps from to are continuous.    Let be a linear map. Then is continuous.    Let be the canonical basis of . That is, let , , and so on. Take . Then where the last inequality is an application of the Cauchy-Schwarz inequality . Letting , we have shown that for all . Hence, by , is continuous.     Recall that the norm of a linear functional on a normed vector space is defined as We can use to similarly define a norm on the space of linear maps from to . That is, if is a linear map from to we can define as We will not not make too much use of the fact that this is a norm in these notes, but it plays an important role in functional analysis. norm on linear maps    If is a Lebesgue integrable function on , and is an invertible linear map on , we want to compare the integrals and . It is not (yet) clear that the second integral is defined. In general, the composition of a measurable function and a continuous function need not be continuous. Note that we can not apply here. Thus, in order to proceed, we must first show that is measurable. As we are ultimately interested in the case when is an invertible linear map, we will restrict to this case (though conclusions of , , and hold for all linear maps).  Let be the standard orthonormal basis of . Recall that if is an invertible linear map in , then can be written as product of matrices of the form: We are just using the fact that any invertible matrix can be row-reduced to the identity matrix.   Type 1 there is an such that for some real , and for all ;  Type 2 there is an such that , and for all ;  Type 3 there is an such that , , and for all .  Note that, if is of Type 1 , then , if is of Type 2 , then , and if is of Type 3 , then .    Let be an invertible linear map. Then for all .    Let be an interval in . If is of Type 1 for some non-zero constant , then is an interval and . Similarly, if is of Type 3 , then is an interval and .  Suppose is of Type 2 and . As is linear, we can assume that for some . Then is a parallelogram in . By , is measurable and Note that, if and is of Type 2 , then only changes on the and coordinates of an , and leaves all other coordinates fixed. Thus, by the case, is measurable and .  Suppose now, that is of Type 1 , Type 2 , or Type 3 . Take any with . Let be a countable collection of intervals in such that . Then Taking an infimum over all such collections of intervals, we have that .  Now suppose that is an arbitrary invertible linear map on . Then where each is of Type 1 , Type 2 , or Type 3 . Thus, for  completing the proof.      Let be an invertible linear map. Then, if is Lebesgue measurable, is Lebesgue measurable.    Let be a bounded Lebesgue measurable set. By there is an -set such that . Let . Then .  Note that, since is linear, is linear, and therefore continuous. Hence sends closed sets to closed sets, and hence sets to sets. Further, since is continuous, there is an , such that . Hence, sends bounded sets to bounded sets. Hence is a bounded set. In particular, is Lebesgue measurable.  By , Hence, , and hence is Lebesgue measurable. Thus, is Lebesgue measurable. As any measurable set is a countable union of bounded measurable sets, the result follows for all Lebesgue measurable sets.     Let be an invertible linear map and let be a Lebesgue measurable function on , then is Lebesgue measurable.    Take, open. Since, is measurable, is a Lebesgue measurable set in . By , is a Lebesgue measurable set in . Thus, is Lebesgue measurable.   We state now the main theorem of this section. We delay the proof for now, to deal with some special cases.    Let be an invertible linear map and let be a Lebesgue integrable function on . Then is integrable and     The proof of will ultimately follow an inductive argument. It suffices to show that the result holds for linear maps of Type 1 , Type 2 , and Type 3 . We will prove the and cases first, and then use these cases to prove the general case. We leave the case, , as an exercise.    Let be a Lebesgue integrable function. Then if is non-zero,       Let be a Lebesgue integrable function. Let be non-zero. Define functions on by Then and are integrable, and and     Note that and are measurable by . We will prove the result for . We will assume that is non-negative. Then general case follows from writing as the difference of its positive and negative parts. The proofs for and are similar, with an application of in the case of . Note that, if is Lebesgue integrable and then By Tonelli's theorem , we have that     We can now prove .  Proof of   and show that the result holds for . Assume now that and the result holds for when . Assume that is of Type 1 , Type 2 , and Type 3 . Then, either and , or and . Assume the former, the latter case is done similarly. Let be the restriction to the -dimensional space . Then, by Fubini's Theorem (and ) Noting that completes the proof.   "
+},
+{
+  "id": "lem-linear-cont",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#lem-linear-cont",
+  "type": "Lemma",
+  "number": "1.3.1",
+  "title": "",
+  "body": "  Let be a linear map. Then is continuous.    Let be the canonical basis of . That is, let , , and so on. Take . Then where the last inequality is an application of the Cauchy-Schwarz inequality . Letting , we have shown that for all . Hence, by , is continuous.   "
+},
+{
+  "id": "real-analysis-7-2-5-4",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#real-analysis-7-2-5-4",
+  "type": "Remark",
+  "number": "1.3.2",
+  "title": "",
+  "body": " Recall that the norm of a linear functional on a normed vector space is defined as We can use to similarly define a norm on the space of linear maps from to . That is, if is a linear map from to we can define as We will not not make too much use of the fact that this is a norm in these notes, but it plays an important role in functional analysis. norm on linear maps   "
+},
+{
+  "id": "lem-meas-of-interval",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#lem-meas-of-interval",
+  "type": "Lemma",
+  "number": "1.3.3",
+  "title": "",
+  "body": "  Let be an invertible linear map. Then for all .    Let be an interval in . If is of Type 1 for some non-zero constant , then is an interval and . Similarly, if is of Type 3 , then is an interval and .  Suppose is of Type 2 and . As is linear, we can assume that for some . Then is a parallelogram in . By , is measurable and Note that, if and is of Type 2 , then only changes on the and coordinates of an , and leaves all other coordinates fixed. Thus, by the case, is measurable and .  Suppose now, that is of Type 1 , Type 2 , or Type 3 . Take any with . Let be a countable collection of intervals in such that . Then Taking an infimum over all such collections of intervals, we have that .  Now suppose that is an arbitrary invertible linear map on . Then where each is of Type 1 , Type 2 , or Type 3 . Thus, for  completing the proof.   "
+},
+{
+  "id": "lem-lin-meas",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#lem-lin-meas",
+  "type": "Lemma",
+  "number": "1.3.4",
+  "title": "",
+  "body": "  Let be an invertible linear map. Then, if is Lebesgue measurable, is Lebesgue measurable.    Let be a bounded Lebesgue measurable set. By there is an -set such that . Let . Then .  Note that, since is linear, is linear, and therefore continuous. Hence sends closed sets to closed sets, and hence sets to sets. Further, since is continuous, there is an , such that . Hence, sends bounded sets to bounded sets. Hence is a bounded set. In particular, is Lebesgue measurable.  By , Hence, , and hence is Lebesgue measurable. Thus, is Lebesgue measurable. As any measurable set is a countable union of bounded measurable sets, the result follows for all Lebesgue measurable sets.   "
+},
+{
+  "id": "prop-comp-meas-linear",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#prop-comp-meas-linear",
+  "type": "Proposition",
+  "number": "1.3.5",
+  "title": "",
+  "body": " Let be an invertible linear map and let be a Lebesgue measurable function on , then is Lebesgue measurable.  "
+},
+{
+  "id": "real-analysis-7-2-5-10",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#real-analysis-7-2-5-10",
+  "type": "Proof",
+  "number": "1.3.1",
+  "title": "",
+  "body": " Take, open. Since, is measurable, is a Lebesgue measurable set in . By , is a Lebesgue measurable set in . Thus, is Lebesgue measurable.  "
+},
+{
+  "id": "thm-change-of-variables",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#thm-change-of-variables",
+  "type": "Theorem",
+  "number": "1.3.6",
+  "title": "",
+  "body": "  Let be an invertible linear map and let be a Lebesgue integrable function on . Then is integrable and    "
+},
+{
+  "id": "lem-change-of-variables-n-1",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#lem-change-of-variables-n-1",
+  "type": "Lemma",
+  "number": "1.3.7",
+  "title": "",
+  "body": "  Let be a Lebesgue integrable function. Then if is non-zero,    "
+},
+{
+  "id": "lem-change-of-variables-n-2",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#lem-change-of-variables-n-2",
+  "type": "Lemma",
+  "number": "1.3.8",
+  "title": "",
+  "body": "  Let be a Lebesgue integrable function. Let be non-zero. Define functions on by Then and are integrable, and and     Note that and are measurable by . We will prove the result for . We will assume that is non-negative. Then general case follows from writing as the difference of its positive and negative parts. The proofs for and are similar, with an application of in the case of . Note that, if is Lebesgue integrable and then By Tonelli's theorem , we have that    "
+},
+{
+  "id": "real-analysis-7-2-5-17",
+  "level": "2",
+  "url": "real-analysis-7-2-5.html#real-analysis-7-2-5-17",
+  "type": "Proof",
+  "number": "1.3.2",
+  "title": "Proof of Theorem 1.3.6.",
+  "body": "Proof of   and show that the result holds for . Assume now that and the result holds for when . Assume that is of Type 1 , Type 2 , and Type 3 . Then, either and , or and . Assume the former, the latter case is done similarly. Let be the restriction to the -dimensional space . Then, by Fubini's Theorem (and ) Noting that completes the proof.  "
+},
+{
+  "id": "real-analysis-7-2-6",
+  "level": "1",
+  "url": "real-analysis-7-2-6.html",
+  "type": "Exercises",
+  "number": "1.4",
+  "title": "Exercises",
+  "body": "  x Let and be -finite measure spaces. Show that the product measure is -finite on .    Let be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of , and let be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of . Let denote the -algebra of subsets of which are measurable with respect to the product measure .  For and , let be the -section of . Define a map on by (See and the preceding paragraphs for information on series of sets indexed by uncountable sets).   Show that is a measure on .   Show that for all .    Let . Note that and hence .  Show that .  Show that . (Hint: show that if are measurable rectangles such that , then   We have thus given an example of a measure on which agrees with the product measure on measurable rectangles, but is not equal to the product measure.    Let and be measure spaces.   Let be the collection of sets such that the -section for all . Show that is a -algebra.   Show that if is in the -algebra generated by the measurable rectangles, then the -section for all . (HINT: Show that the measurable rectangles are in the -algebra .)   Take non-empty such that ; and take which is not measurable, i.e. . Show that is measurable with respect to the product measure . Show that is not in .      Let and be -finite measure spaces and let be the -algebra of subsets of generated by the measurable rectangles. In this exercise we will prove, for all , that the map is measurable and We will do this over several parts.  For , define a map on , by . Let be all the measurable rectangles in ; let be all finite unions of disjoint sets in ; let be the smallest collection of subsets containing which is closed under countable unions and countable intersections; and let be the collection of sets for which is measurable and holds.  Note that if , then the -section is measurable for all . Hence is defined on all . (HINT: This is already done in ).  Show that . (HINT: This is already done in when . What needs to change in the argument if ?).  Show that is closed under countable unions.  Until we state otherwise, we will now assume that and are finite measure spaces.    Show that is closed under countable intersections.  Conclude that .  For let   Show that .  Show that for each , is closed under countable unions and countable intersections.  Show that if , then (HINT: Recall ). Conclude that .  Show that if , then . (Consider the symmetry in definition of and part~\\ref{part: meas rect sigma-alg}.)   Show that is closed under complements, finite unions, and finite intersections.   Show that is closed under countable unions. Conclude that is a -algebra.   Conclude that , and hence .   Assume now that and are -finite measure spaces. Show that .      Let be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of ; let be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of ; and let .  Show that Why does this not contradict Fubini's Theorem? Why does this not contradict Tonelli's Theorem? (HINT: The first part of this question is essentially a rephrasing of .)    Let be measure spaces, let be the measurable rectangles in . Show that is a semiring.  Note that this exercise completes part of the proof of . The remainder is proved in .    Let be measure spaces, let be the measurable rectangles in ; and let be the extended real-valued function on defined by for for . Show that is a premeasure on .  Note that this exercise completes part of the proof of . The first part is proved in .     Let be real numbers. Let Show that . (HINT: Cover with rectangles, and use the continuity of measure).     Let be a triangular region in with one side parallel to the -axis or -axis. Show that , where is the length of a side parallel to an axis, and is the perpendicular distance to the opposite vertex. (HINT: Part (a) deals with right-angle triangles. Other right-angle triangles can be dealt with similarly. For arbitrary , write as the union or difference of two right-angle triangles.)      Let be a parallelogram in with one (and hence two) sides parallel to the -axis. Show that if the length of the sides parallel to the -axis is and the perpendicular distance between these sides is , then .      Prove . That is, show that is is a Borel subset of then is Lebesgue measurable. (HINT: First show that open subsets of are Lebesgue measurable.)   "
+},
+{
+  "id": "exer-sigma-finite-product",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-sigma-finite-product",
+  "type": "Exercise",
+  "number": "1.4.1",
+  "title": "",
+  "body": " x Let and be -finite measure spaces. Show that the product measure is -finite on .  "
+},
+{
+  "id": "exer-prod-meas-not-unique",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-prod-meas-not-unique",
+  "type": "Exercise",
+  "number": "1.4.2",
+  "title": "",
+  "body": " Let be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of , and let be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of . Let denote the -algebra of subsets of which are measurable with respect to the product measure .  For and , let be the -section of . Define a map on by (See and the preceding paragraphs for information on series of sets indexed by uncountable sets).   Show that is a measure on .   Show that for all .    Let . Note that and hence .  Show that .  Show that . (Hint: show that if are measurable rectangles such that , then   We have thus given an example of a measure on which agrees with the product measure on measurable rectangles, but is not equal to the product measure.  "
+},
+{
+  "id": "exer-product-measurable-sets",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-product-measurable-sets",
+  "type": "Exercise",
+  "number": "1.4.3",
+  "title": "",
+  "body": " Let and be measure spaces.   Let be the collection of sets such that the -section for all . Show that is a -algebra.   Show that if is in the -algebra generated by the measurable rectangles, then the -section for all . (HINT: Show that the measurable rectangles are in the -algebra .)   Take non-empty such that ; and take which is not measurable, i.e. . Show that is measurable with respect to the product measure . Show that is not in .    "
+},
+{
+  "id": "exer-meas-rect-sigma-alg",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-meas-rect-sigma-alg",
+  "type": "Exercise",
+  "number": "1.4.4",
+  "title": "",
+  "body": " Let and be -finite measure spaces and let be the -algebra of subsets of generated by the measurable rectangles. In this exercise we will prove, for all , that the map is measurable and We will do this over several parts.  For , define a map on , by . Let be all the measurable rectangles in ; let be all finite unions of disjoint sets in ; let be the smallest collection of subsets containing which is closed under countable unions and countable intersections; and let be the collection of sets for which is measurable and holds.  Note that if , then the -section is measurable for all . Hence is defined on all . (HINT: This is already done in ).  Show that . (HINT: This is already done in when . What needs to change in the argument if ?).  Show that is closed under countable unions.  Until we state otherwise, we will now assume that and are finite measure spaces.    Show that is closed under countable intersections.  Conclude that .  For let   Show that .  Show that for each , is closed under countable unions and countable intersections.  Show that if , then (HINT: Recall ). Conclude that .  Show that if , then . (Consider the symmetry in definition of and part~\\ref{part: meas rect sigma-alg}.)   Show that is closed under complements, finite unions, and finite intersections.   Show that is closed under countable unions. Conclude that is a -algebra.   Conclude that , and hence .   Assume now that and are -finite measure spaces. Show that .    "
+},
+{
+  "id": "exer-failure-of-fubini",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-failure-of-fubini",
+  "type": "Exercise",
+  "number": "1.4.5",
+  "title": "",
+  "body": " Let be the measure space consisting of the Lebesgue measure on the Lebesgue measurable subsets of ; let be the measure space of consisting of the counting measure on the Lebesgue measurable subsets of ; and let .  Show that Why does this not contradict Fubini's Theorem? Why does this not contradict Tonelli's Theorem? (HINT: The first part of this question is essentially a rephrasing of .)  "
+},
+{
+  "id": "exer-measurable-rectangles-2",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-measurable-rectangles-2",
+  "type": "Exercise",
+  "number": "1.4.6",
+  "title": "",
+  "body": " Let be measure spaces, let be the measurable rectangles in . Show that is a semiring.  Note that this exercise completes part of the proof of . The remainder is proved in .  "
+},
+{
+  "id": "exer-n-dim-prod-measure",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-n-dim-prod-measure",
+  "type": "Exercise",
+  "number": "1.4.7",
+  "title": "",
+  "body": " Let be measure spaces, let be the measurable rectangles in ; and let be the extended real-valued function on defined by for for . Show that is a premeasure on .  Note that this exercise completes part of the proof of . The first part is proved in .  "
+},
+{
+  "id": "exer-triangle",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-triangle",
+  "type": "Exercise",
+  "number": "1.4.8",
+  "title": "",
+  "body": "  Let be real numbers. Let Show that . (HINT: Cover with rectangles, and use the continuity of measure).     Let be a triangular region in with one side parallel to the -axis or -axis. Show that , where is the length of a side parallel to an axis, and is the perpendicular distance to the opposite vertex. (HINT: Part (a) deals with right-angle triangles. Other right-angle triangles can be dealt with similarly. For arbitrary , write as the union or difference of two right-angle triangles.)      Let be a parallelogram in with one (and hence two) sides parallel to the -axis. Show that if the length of the sides parallel to the -axis is and the perpendicular distance between these sides is , then .    "
+},
+{
+  "id": "exer-borel-in-Rn",
+  "level": "2",
+  "url": "real-analysis-7-2-6.html#exer-borel-in-Rn",
+  "type": "Exercise",
+  "number": "1.4.9",
+  "title": "",
+  "body": " Prove . That is, show that is is a Borel subset of then is Lebesgue measurable. (HINT: First show that open subsets of are Lebesgue measurable.)  "
+},
+{
+  "id": "real-analysis-7-3",
+  "level": "1",
+  "url": "real-analysis-7-3.html",
+  "type": "Chapter",
+  "number": "2",
+  "title": "Locally compact groups and Haar measures",
+  "body": " Locally compact groups and Haar measures    "
 },
 {
   "id": "sec-nowhere-diff",

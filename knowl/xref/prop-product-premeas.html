@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: tacoma                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\((X,\mathcal{M},\mu)\)</span> and <span class="process-math">\((Y,\mathcal{N},\nu)\)</span> be measure spaces; let <span class="process-math">\(\mathcal{S}\)</span> be the measurable rectangles in <span class="process-math">\(X\times Y\text{;}\)</span> and let <span class="process-math">\(\mu \times \nu\)</span> be the extended real-valued function on <span class="process-math">\(\mathcal{S}\)</span> defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mu\times\nu)(A\times B) = \mu(A)\nu(B)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(A \in \mathcal{M}\)</span> and <span class="process-math">\(B \in \mathcal{N}\text{.}\)</span> Then <span class="process-math">\(\mathcal{S}\)</span> is a semiring, and <span class="process-math">\(\mu \times \nu\)</span> is a premeasure on <span class="process-math">\(\mathcal{S}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 1.1.2"><a href="#prop-product-premeas" title="Copy heading and permalink for Proposition 1.1.2" aria-label="Copy heading and permalink for Proposition 1.1.2">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para">Recall, from <a href="chap-measure-space-6.html#exer-product-semiring" class="xref" data-knowl="./knowl/xref/exer-product-semiring.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.4.14">Exercise II.2.4.14</a>, that the collection <span class="process-math">\(\mathcal{S}\)</span> of all measurable rectangles in <span class="process-math">\(X \times Y\)</span> forms a semiring of sets.<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Note that <span class="process-math">\(\emptyset \in \mathcal{S}\text{,}\)</span> and <span class="process-math">\((\mu\times\nu)(\emptyset)=\mu(\emptyset)\nu(\emptyset)=0\text{.}\)</span> To show <span class="process-math">\(\mu\times \nu\)</span> is a premeasure it remains to show that <span class="process-math">\(\mu\times\nu\)</span> is finitely additive and countably monotone.<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(A \times B\)</span> is a measurable rectangle such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html">
+\begin{equation*}
+A\times B = \bigcup_{k=1}^\infty A_k \times B_k, 
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\{A_k \times B_k\}_{k=1}^\infty\)</span> are disjoint measurable rectangles. For a fixed <span class="process-math">\(x \in A\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html">
+\begin{equation*}
+B = \bigcup_{k \colon x \in A_k} B_k. 
+\end{equation*}
+</div>
+<div class="para">Note that, if <span class="process-math">\(x \in A_{k_1}\)</span> and <span class="process-math">\(x \in A_{k_2}\text{,}\)</span> then since <span class="process-math">\(A_{k_1}\times B_{k_1}\)</span> and <span class="process-math">\(A_{k_2}\times B_{k_2}\)</span> are disjoint, <span class="process-math">\(B_{k_1}\)</span> and <span class="process-math">\(B_{k_2}\)</span> are disjoint. Thus, the collection <span class="process-math">\(\{B_k\}_{\{k \colon x \in A_k\}}\)</span> are a disjoint collection of measurable sets is in <span class="process-math">\(Y\text{,}\)</span> and hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html">
+\begin{equation*}
+\nu(B) = \sum_{k \colon x \in A_k} \nu(B_k) = \sum_{k=1}^\infty \nu(B_k)\chi_{A_k}(x).
+\end{equation*}
+</div>
+<div class="para">Hence, for any <span class="process-math">\(x \in X\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html">
+\begin{equation*}
+\nu(B) \chi_A(x) = \sum_{k=1}^\infty \nu(B_k)\chi_{A_k}(x).
+\end{equation*}
+</div>
+<div class="para">Now, by the series version of the Monotone Convergence Theorem, <a href="chap-integration-3.html#cor-MCT-series" class="xref" data-knowl="./knowl/xref/cor-MCT-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.1.18">Corollary II.6.1.18</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html">
+\begin{equation*}
+\mu(A)\nu(B) = \int_X \nu(B) \chi_A \,d\mu= \sum_{k=1}^\infty \int_X\nu(B_k)\chi_{A_k}\,d\mu = \sum_{k=1}^\infty \mu(A_k)\nu(B_k).
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(\mu\times \nu\)</span> is countably additive, and therefore finitely additive.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Note that, for measurable rectangles <span class="process-math">\(A\times B\)</span> and <span class="process-math">\(C \times D\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \times B \subseteq C \times D 
+\end{equation*}
+</div>
+<div class="para">if and only if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A \subseteq C \text{ and } B \subseteq D.
+\end{equation*}
+</div>
+<div class="para">Thus, if <span class="process-math">\(A \times B \subseteq C \times D\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mu\times \nu)(A\times B) \leq (\mu\times \nu)(C\times D).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(\mu\times \nu\)</span> is monotonic.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\times B\)</span> be a measurable rectangle and <span class="process-math">\(\{A_k\times B_k\}_{k=1}^\infty\)</span> be measurable rectangles, such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\times B \subseteq \bigcup_{k=1}^\infty A_k \times B_k.
+\end{equation*}
+</div>
+<div class="para">Since the measurable rectangles <span class="process-math">\(\mathcal{S}\)</span> are a semiring, and <span class="process-math">\(\mu\times \nu\)</span> is finitely additive, we can assume that the sets <span class="process-math">\(\{A_k \times B_k\}_{k=1}^\infty\)</span> are disjoint. Thus</div>
+<div class="displaymath process-math">
+\begin{align*}
+(\mu\times\nu)(A\times B)\amp= (\mu\times\nu)\left(\bigcup_{k=1}^\infty (A\times B)\cap (A_k \times B_k) \right) \\
+\amp= \sum_{k=1}^\infty (\mu\times\nu)\left((A\times B)\cap (A_k \times B_k )\right)\\
+\amp\leq \sum_{k=1}^\infty (\mu\times\nu)(A_k \times B_k).
+\end{align*}
+</div>
+<div class="para">Hence <span class="process-math">\(\mu\times \nu\)</span> is countably monotone, and therefore <span class="process-math">\(\mu\times \nu\)</span> is a premeasure on the measurable rectangles.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-product-premeas-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.1.2.1"><a href="#prop-product-premeas-2" title="Copy heading and permalink for Proof 1.1.2.1" aria-label="Copy heading and permalink for Proof 1.1.2.1">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-7-2-3.html#prop-product-premeas">in-context</a></span>
+</body>
+</html>

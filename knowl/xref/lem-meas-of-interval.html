@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: tacoma                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m_n^*(T(E)) \leq |\det(T)| m_n^*(E)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \subseteq \mathbb{R}^n\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.3"><a href="#lem-meas-of-interval" title="Copy heading and permalink for Lemma 1.3.3" aria-label="Copy heading and permalink for Lemma 1.3.3">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para">Let <span class="process-math">\(I = I_1 \times \ldots \times I_n\)</span> be an interval in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> If <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a> for some non-zero constant <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = |c| m_n(I) = |\det(T)| m_n(I)\text{.}\)</span> Similarly, if <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 3</a>, then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a> and <span class="process-math">\(n=2\text{.}\)</span> As <span class="process-math">\(T\)</span> is linear, we can assume that <span class="process-math">\(I = [0,a]\times[0,b]\)</span> for some <span class="process-math">\(a,b\geq 0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html">
+\begin{equation*}
+T(I) = \{ (x,y) \colon 0\leq x \leq a,\ ax \leq y \leq ax + b\}
+\end{equation*}
+</div>
+<div class="para">is a parallelogram in <span class="process-math">\(\bR^2\text{.}\)</span> By <a href="real-analysis-7-2-6.html#exer-triangle" class="xref" data-knowl="./knowl/xref/exer-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.8">Exercise 1.4.8</a>, <span class="process-math">\(T(I)\)</span> is measurable and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html">
+\begin{equation*}
+m_2(T(I)) =ab = m_2(I).
+\end{equation*}
+</div>
+<div class="para">Note that, if <span class="process-math">\(n &gt; 2\)</span>  and <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, then <span class="process-math">\(T\)</span> only changes on the <span class="process-math">\(i\)</span> and <span class="process-math">\(i+1\)</span> coordinates of an <span class="process-math">\(x \in \bR^n\text{,}\)</span> and leaves all other coordinates fixed. Thus, by the <span class="process-math">\(n = 2\)</span> case, <span class="process-math">\(T(I)\)</span> is measurable and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Suppose now, that <span class="process-math">\(T\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, or <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. Take any <span class="process-math">\(E \subseteq \bR^n\)</span> with <span class="process-math">\(m_n^*(E)&lt;\infty\text{.}\)</span> Let <span class="process-math">\(\{I_k\}_{k=1}^\infty\)</span> be a countable collection of intervals in <span class="process-math">\(\bR^n\)</span> such that <span class="process-math">\(E \subseteq \bigcup_{k=1}^\infty I_k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html">
+\begin{align*}
+m_n^*(T(E)) \amp \leq \sum_{k=1}^\infty m_n(T(I_k)) \\
+\amp = |\det(T)| \sum_{k=1}^\infty m_n(I_k). 
+\end{align*}
+</div>
+<div class="para">Taking an infimum over all such collections of intervals, we have that <span class="process-math">\(m_n^*(T(E)) \leq |\det(T)| m_n^*(E)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now suppose that <span class="process-math">\(T\)</span> is an arbitrary invertible linear map on <span class="process-math">\(\bR^n\text{.}\)</span> Then <span class="process-math">\(T = T_1\ldots T_k\)</span> where each <span class="process-math">\(T_i\)</span> is of <a href="real-analysis-7-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 1">Type 1</a>, <a href="real-analysis-7-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 2">Type 2</a>, or <a href="real-analysis-7-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Type 3">Type 3</a>. Thus, for <span class="process-math">\(E \subseteq \bR^n\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html">
+\begin{align*}
+m_n^*(T(E)) \amp \leq |\det(T_1)| m_n^*(T_2T_3\ldots T_k (E)) \\
+\amp \leq |\det(T_1)| \ldots|det(T_k)| m_n^*(E) \\
+\amp = |\det(T)| m_n^*(E), 
+\end{align*}
+</div>
+<div class="para">completing the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.3.1"><a href="#lem-meas-of-interval-2" title="Copy heading and permalink for Proof 1.3.3.1" aria-label="Copy heading and permalink for Proof 1.3.3.1">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-7-2-5.html#lem-meas-of-interval">in-context</a></span>
+</body>
+</html>
