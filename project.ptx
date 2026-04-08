@@ -8,7 +8,7 @@
     <target name="web" format="html" />
     <target name="print" format="pdf" />
     <target name="latex" format="latex" />
-    <target name="epub" format="epub" />
+    <target name="ebook" format="epub"/>
   </targets>
 </project>
 

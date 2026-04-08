@@ -33,6 +33,10 @@
     <xi:include href="./Analysis-II/2-dual-spaces.ptx" />
     </part>
 
+    <part><title>Further examples of measures</title>
+      <xi:include href="./Analysis-II/3-product.ptx" />
+      <xi:include href="./Analysis-II/4-Haar.ptx" />
+    </part>
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
