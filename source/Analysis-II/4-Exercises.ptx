@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises>
+    <exercise xml:id="exer-R-top-group">
+        <statement>
+            <p>
+                Show that <m>\bR^n</m> with the group operation of addition is a topological group.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="exer-T-top-group">
+        <statement>
+            <p>
+                Show that <m>\bT</m>, as described in <xref ref="ex-T-top-group"/>, is a topological group.
+            </p>
+        </statement>
+        <hint>
+            <p>    
+                This can be shown directly.
+                Alternatively, consider <m>X = [0,2\pi)</m> with the operation of addition, modulo <m>2\pi</m>.
+                That is, <m>X</m> is the group <m>\bR/2\pi\bZ.</m>
+                Show that <m>X</m> is a topological group.
+                Then show that there is a bijection <m>f \colon X \rightarrow \bT</m>
+                such that <m>f</m> is a homeomorphism and <m>f</m> is a (group) isomorphism, to conclude that <m>\bT</m> is a topological group.
+            </p> 
+        </hint>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Show that <m>\bR\backslash \{0\}</m> with the operation of multiplication is a topological group.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="exer-GLn-top-group">
+        <statement>
+            <p>
+                Show that the general linear group <m>GL_n(\bR)</m> is a topological group with the topology induced by the norm <m>\|\cdot\|_\mathrm{op}</m> define in <xref ref="rem-operator-norm-matrix"/>.
+            </p>
+        </statement>
+        <hint>
+            <p>
+                You will need <xref ref="exer-operator-norm-matrix"/>.
+            </p>
+        </hint>
+        
+    </exercise>
+
+    <exercise xml:id="exer-R-prod-Haar">
+        <statement>
+            <p>
+                Let <m>\mu</m> be the measure on <m>\bR\backslash\{0\}</m> defined in <xref ref="ex-R-prod-Haar"/>.
+                Show that <m>\mu</m> is a Haar measure on <m>\bR\backslash\{0\}</m>.
+            </p>
+        </statement>
+    
+    <hint>
+        <p>
+            This can be done directly, by first proving the <m>\mu(c(a,b]) = \mu((a,b])</m> for intervals <m>(a,b]\subseteq \bR</m> and extending the result to general Borel sets.
+            Alternatively, it can be shown as an application of <xref ref="thm-change-of-variables"/>.
+        </p>
+    </hint>
+    </exercise>
+
+
+<exercise xml:id="exer-T-Haar">
+    <introduction>
+        <p>
+            Let <m>\bT</m> be the unit circle in <m>\bC</m> as in <xref ref="ex-T-top-group"/>.
+            Let
+            <md>
+                <mrow>f \colon \amp [0,2\pi) \rightarrow \bT  </mrow>
+                <mrow> \amp \theta \mapsto e^{i\theta}. </mrow>
+            </md>
+            and let <m>\mu(B) = m(f^{-1}(B))</m> for Borel sets <m>B\subseteq \bT</m> be as described in <xref ref="ex-T-Haar"/>.
+            We will show that <m>\mu</m> is a Haar measure on <m>\bT</m>.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\mu</m> is a Borel measure on <m>\bT</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\mu</m> is a Haar measure.
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise xml:id="exer-Haar-left-not-right">
+<introduction>
+    <p>
+        Let <m>G</m> be the locally compact Hausdorff group from <xref ref="ex-Haar-left-not-right"/>, and let <m>\mu_L</m> and <m>\mu_R</m> defined on <m>G</m> in <xref ref="ex-Haar-left-not-right"/>.
+    
+    </p>
+</introduction>
+<task>
+    <statement>
+        <p>
+            Show that <m>\mu_R</m> is a right Haar measure.
+        </p>
+    </statement>
+</task>
+<task>
+    <statement>
+        <p>
+            Show that <m>\mu_L</m> is not a right Haar measure.
+        </p>
+    </statement>
+</task>
+<task>
+    <statement>
+        <p>
+            Show that <m>\mu_R</m> is not a left Haar measure.
+        </p>
+    </statement>
+</task>
+</exercise>
+</exercises>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section><title>Radon measures on locally compact groups</title>
+
+    <p>
+        Let <m>G</m> be a locally compact Hausdorff group. 
+        In this section we will study, and prove the existence of, Radon measures which are invariant under the action of <m>G</m> on its Borel subsets.
+        These are what we call Haar measures.
+    </p>
+
+    <definition>
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group.
+                A non-zero Radon measure <m>\mu</m> on <m>G</m> is a <term>left Haar measure</term> if for all Borel sets <m>E\subseteq G</m> and <m>x \in G</m>
+                <md>
+                    \mu(xE) = \mu(E).
+                </md>
+                Similarly, a Radon measure <m>\mu</m> on <m>G</m> is a <term>right Haar measure</term> if <m>\mu(Ex)=\mu(E)</m> for all Borel sets <m>E \subseteq G</m> and <m>x \in G</m>.<idx><h>measure</h><h>Haar measure</h></idx>
+                If a measure <m>\mu</m> is both a left and a right Haar measure we will call <m>\mu</m> a <term>Haar measure</term>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        We have seen some examples of Haar measures and several others are readily available.
+    </p>
+
+    <example>
+        <p>
+            Let <m>G</m> be a discrete group (see <xref ref="ex-discrete-top-group"/>).
+            The counting measure on <m>G</m> is both a Haar measure.
+        </p>
+    </example>
+
+    <example>
+        <p>
+            The Lebesgue measure <m>m_n</m> on the topological group <m>\bR^n</m> is a Haar measure by <xref ref="prop-lebesgue-invariant-Rn"/>.
+        </p>
+    </example>
+
+    <example xml:id="ex-R-prod-Haar">
+        <p>
+            Let <m>G</m> be the group <m>\bR\backslash \{0\}</m> as in <xref ref="ex-R-mult-top-group"/>.
+            Define a measure <m>\mu</m> on the Borel sets in <m>G</m> by
+            <md>
+                \mu(B) = \int_B \frac{1}{|x|}dm(x)
+            </md>
+            for each Borel set <m>B \subseteq \bR\backslash\{0\}</m>, where <m>m</m> is the Lebesgue measure.
+            The measure <m>\mu</m> is a Haar measure, see <xref ref="exer-R-prod-Haar"/>.
+        </p>
+    </example>
+
+    <example xml:id="ex-T-Haar">
+        <p>
+            Let <m>\bT</m> be the topological group described in <xref ref="ex-T-top-group"/>.
+            Note that if <m>z\in \bT</m> then there is a unique <m>\theta \in [0,2\pi)</m> such that <m>z= e^{i\theta}</m>.
+            Define a function
+            <md>
+                <mrow>f \colon  [0,2\pi) \amp\rightarrow \bT  </mrow>
+                <mrow>  \theta \amp \mapsto e^{i\theta}. </mrow>
+            </md>
+            Let <m>m</m> be the Lebesgue measure on <m>[0,2\pi)</m> and define a measure <m>\mu</m> on <m>\bT</m> by
+            <md>
+                \mu(B)= m(f^{-1}(B)).
+            </md>
+            Then <m>\mu</m> is a Haar measure on <m>\bT</m>, <xref ref="exer-T-Haar"/>
+        </p>
+    </example>
+
+    <example>
+        <statement>
+            <p>
+                Recall the general linear group <m>GL_n(\bR)</m> from <xref ref="ex-GLn-top-group"/>.
+                Identify the <m>n\times n</m> matrices <m>M_{n\times n}(\bR)</m> with <m>\bR^{n^2}</m>, and let <m>m_{n^2}</m> be the Lebesgue measure on <m>M_{n\times n}(\bR) = \bR^{n^2}.</m>
+                Define a measure on the Borel sets of <m>GL_m(\bR)</m> by
+                <md>
+                    \mu(B) = \int_{B} \frac{1}{|det(X)|^n}\,dm_{n^2}.
+                </md>
+                Note that if <m>A \in GL_n(\bR)</m> then <m>A</m> defines an invertible linear map
+                <md>
+                    <mrow>L_A \colon  M_{n\times n}(\bR) \amp \rightarrow M_{n\times n}(\bR) </mrow>
+                    <mrow>  X  \amp \mapsto AX.</mrow>
+                </md>
+                We can thus view <m>L_A</m> as an <m>n^2 \times n^2</m> matrix. 
+                One can show that <m>\det(L_A) = \det(A)^n</m>.
+                <fn>For small <m>n</m> you can show this by hand, and perhaps use those calculations to construct a general argument. Alternatively, you can show that there is a symmetric orthogonal <m>n^2\times n^2</m> matrix <m>U</m> such that <m>U L_A U = A \otimes I_n</m>, where <m>I_n</m> is the identity matrix on <m>\bR^n</m>. The result follows immediately from this. </fn>
+                Thus, that <m>\mu</m> is a left Haar measure follows from <xref ref="thm-change-of-variables"/>.
+                That <m>\mu</m> is a right Haar measure follows from  the a similar argument, by considering multiplication on the right.
+            </p>
+        </statement>
+    </example>
+
+    <p>
+        In all the examples above, we have exhibited Haar measures, i.e. measures that are simultaneously both left and right Haar measures.
+        It is possible for a measure to be a left Haar measure and note a right Haar measure, or a right Haar measure and not a left Haar measure, as the next example shows.
+    </p>
+
+    <example xml:id="ex-Haar-left-not-right">
+        <statement>
+            <p>
+                Let <m>G</m> be the semidirect product <m>\bR\rtimes (0,\infty)</m> with product defined as
+                <md>
+                    (x,s)(y,t) = (x+sy,st),
+                </md>
+                for <m>x,y \in \bR</m> and <m>s,t \gt 0</m>.
+                Then <m>G</m> is a locally compact Hausdorff group (with the product topology on <m>\bR \times (0,\infty)</m>).
+                As a group, <m>G</m> is isomorphic to the group of affine linear transformations on <m>\bR</m>.
+            </p>
+
+            <p>
+                Define functions <m>f_L</m> and <m>f_R</m> on <m>G (= \bR\times (0,\infty)\subseteq \bR^2)</m> by <m>f_L(x,s)=\frac{1}{s^2}</m> and <m>f_R(x,s)=\frac{1}{s}.</m>
+                Define measures <m>\mu_L</m> and <m>\mu_R</m> on <m>G</m> by
+                <md>
+                    \mu(B) = \int_B f_L\,dm_2 \text{ and } \mu_R(B) = \int_B f_R \,dm_2
+                </md>
+                for each Borel <m>B \subseteq G</m>, where <m>m_2</m> is the Lebesgue measure on <m>\bR^2</m> (restricted to <m>G</m>).
+            </p>
+
+            <p>
+                Take any Borel <m>B \subseteq G</m> and <m>(y,t)\in G</m>.
+                Then, with the aide of <xref ref="thm-tonelli" text="custom">Tonelli's Theorem</xref> and <xref ref="thm-change-of-variables"/>, we have
+                <md>
+                    <mrow>\mu_L((y,t)B) \amp= \int_{(y,t)B} f_L\,dm_2 </mrow>
+                    <mrow> \amp= t^2 \int_{\bR^2} f_L(tx,ts) \chi_{(y,t)B}(tx,ts)\,dm_2(x,s) </mrow>
+                    <mrow> \amp= t^2 \int_{\bR}\int_{\bR} f_L(tx,ts) \chi_{(y,t)B}(tx,ts)\,dm(x)\,dm(s) </mrow>
+                    <mrow> \amp= t^2 \int_{\bR}\int_{\bR} f_L(tx,ts) \chi_{B}((y,t)^{-1}(tx,ts))\,dm(x)\,dm(s) </mrow>
+                    <mrow> \amp= t^2 \int_{\bR}\int_{\bR} f_L(tx,ts) \chi_{B}((t^{-1}y+x,s))\,dm(x)\,dm(s) </mrow>
+                    <mrow> \amp= t^2 \int_{\bR}\int_{\bR} f_L(tx,ts) \chi_{B}((x,s))\,dm(x)\,dm(s) </mrow>
+                    <mrow> \amp= t^2\int_{B} \frac{1}{(ts)^2}\,dm_2 = \mu_L(B),</mrow>
+                </md>
+                where the third last equality apples <xref ref="eq-change-of-variables-n-2"/> (from <xref ref="lem-change-of-variables-n-2"/>).
+                Hence <m>\mu_L</m> is a left Haar measure. 
+                However, <m>\mu_L</m> is not a right Haar measure.
+                Similarly, one can show that <m>\mu_R</m> is a right Haar measure, but not a left Haar measure. Details are left to <xref ref="exer-Haar-left-not-right"/>.
+            </p>
+        </statement>
+    </example>
+
+    <p>
+        Whilst left and right Haar measures may be different, they will always come in pairs.
+        The next lemma shows that a group with a left Haar measure will always have a right Haar measure, and a group with a right Haar measure will always have a left Haar measure.
+        The prove is straightforward, and omitted.
+    </p>
+
+    <lemma xml:id="lem-left-to-right-Haar">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group and let <m>\mu</m> be a Radon measure on <m>G</m>.
+                Define a Radon measure <m>\tilde{\mu}</m> by
+                <md>
+                    \tilde{\mu}(A) = \mu(A^{-1}).
+                </md>
+                If <m>\mu</m> is a left Haar measure, then <m>\tilde{\mu}</m> is a right Haar measure; if <m>\mu</m> is a right Haar measure, then <m>\tilde{\mu}</m> is a left Haar measure.
+            </p>
+        </statement>
+    </lemma>
+
+    <p>
+        We turn our attention now to proving the existence of Haar measures.
+        We will prove the existence of left Haar measures, the existence of right Haar measures will follow by <xref ref="lem-left-to-right-Haar"/>.
+        From <xref ref="thm-RMK-positive"/> we know that there is a one-to-one correspondence between Radon measures on <m>G</m> and positive linear functionals on <m>C_c(G)</m>.
+        We first address the question of which linear functionals give rise to left Haar measures.
+        We will then prove the existence of such linear functionals.
+    </p>
+
+    <definition xml:id="def-functional-invariant">
+        <statement>
+            <p>
+                Let <m>G</m>  be a locally compact Hausdorff group.
+                A functional <m>\phi</m> on <m>C_c(G)</m> is <term>left invariant</term> if
+                <md>
+                    \phi(L_xf)=\phi(f)
+                </md>
+                for all <m>x\in G</m> and <m>f \in C_c(G)</m>.<idx><h>linear functional</h><h>left invariant</h></idx>
+            </p>
+        </statement>
+    </definition>
+
+    <lemma xml:id="lem-haar-inv">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group.
+                Let <m>\mu</m> be a Radon measure on <m>G</m> and let <m>\phi</m> be the positive linear functional on <m>C_c(G)</m> defined by
+                <md>
+                    \phi(f) = \int_G f \,d\mu
+                </md>
+                for all <m>f \in C_c(G).</m>
+                The measure <m>\mu</m> is a left Haar measure, if and only if <m>\phi</m> is left invariant.
+            </p>
+        </statement>
+    </lemma>
+
+    <proof>
+        <p>
+            First assume that <m>\mu</m> is a left Haar measure.
+            Then, if <m>B \subseteq G</m> is a Borel set, and <m>x \in G</m>, then
+            <md>
+                \int_X L_x \chi_B\,d\mu = \int_X \chi_{xB}\,d\mu = \mu (xB) = \mu(B) = \int_X \chi_B\,d\mu.
+            </md>
+            By the <xref ref="thm-int-liner" text="custom">linearity of integration</xref>, it follows that
+            <md>
+                \int_G L_x f\,d\mu = \int_G f\,d\mu
+            </md>
+            for all positive simple functions <m>f</m> on <m>G</m>.
+            That <m>\phi</m> is left invariant follows by the <xref ref="thm-simple-approx" text="custom">Simple Approximation Theorem</xref> and the <xref ref="thm-MCT" text="custom">Monotone Convergence Theorem</xref>.
+        </p>
+
+        <p>
+            Assume now that <m>\phi</m> is left invariant.
+            Fix <m>U \subseteq G</m> open and take any compact subset <m>K \subseteq U</m>.
+            By <xref ref="prop-urysohn" text="custom">Urysohn's Lemma</xref>, there is an <m>f \in C_c(G)</m> such that <m>0\leq f \leq 1</m>, <m>f(x) = 1</m> for <m>x\in K</m> and <m>f(x)=0</m> for <m>x \in G \backslash U</m>.
+            Take any <m>x \in G</m>.
+            Then,
+            <md>
+                <mrow>\mu(xK) \amp = \int_{xK}1\,d\mu </mrow>
+                <mrow> \amp = \int_G L_x \chi_{K}\,d\mu </mrow>
+                <mrow> \amp \leq \int_G L_x f\,d\mu </mrow>
+                <mrow> \amp = \int_G f\,d\mu</mrow>
+                <mrow> \amp \leq \mu(U). </mrow>
+            </md>
+            By the inner regularity of open sets (since <m>\mu</m> is a Radon measure)
+            <md>
+                <mrow>\mu(xU) \amp = \sup\{\mu(K) \colon K \subseteq xU \text{ compact}\} </mrow>
+                <mrow> \amp = \sup\{\mu(K) \colon x^{-1}K \subseteq U \text{ compact}\} </mrow>
+                <mrow> \amp = \sup\{\mu(xK) \colon K \subseteq U \text{ compact}\}</mrow>
+                <mrow> \amp \leq \mu(U).</mrow>
+            </md>
+            A similar argument shows that <m>\mu(U) \leq \mu(xU).</m>
+            We have thus shown that <m>\mu(U) = \mu(xU)</m> for all <m>x \in G</m> and <m>U \subseteq G</m>.
+            It follows that <m>\mu(B) = \mu(xB)</m> for all <m>x \in G</m> and all <m>B \subseteq G</m> Borel.
+            Thus, <m>\mu</m> is a left Haar measure.
+        </p>
+    </proof>
+
+    <p>
+        <xref ref="lem-haar-inv"/> (with <xref ref="thm-RMK-positive"/>) says that finding a left Haar measure on a locally compact Hausdorff group <m>G</m> is equivalent to finding a left invariant positive linear functional on <m>C_c(G)</m>.
+        We will concentrate on finding such a linear functional.
+        This will be a non-trivial process.
+        We will first introduce a class of left invariant functions from <m>G</m> to <m>\bR</m>. 
+        These functions will not, unfortunately, be linear.
+        However, we can use these functions to prove the existence of a left invariant linear functional.
+    </p>
+
+    <lemma xml:id="lem-haar-func-1">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group and let <m>f,g\in C_c(G)</m> be non-zero positive functions.
+                Then there exists scalars <m>c_1,c_2,\ldots,c_n \gt 0</m> and <m>x_1,\ldots, x_n\in G</m> such that
+                <md>
+                    f \leq \sum_{i=1}^n c_i L_{x_i}g.
+                </md>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>K</m> be the compact support of <m>f</m>, and let <m>U = \{x \in G\colon g(x) \gt \|g\|_\infty/2\}.</m>
+                The set <m>U</m> is a non-empty open set. 
+                Note that <m>\{xU\}_{x\in G}</m> is an open cover of <m>G</m>, and hence <m>K</m>.
+                Since <m>K</m> is compact, there are <m>x_1,\ldots,x_n\in G</m> such that <m>\{x_iU\}_{i=1}^n</m> is an open cover of <m>K</m>.
+                If <m>x \in K</m>, there exists <m>y\in U</m> and <m>x_j</m> such that <m>x=x_jy</m>.
+                Since, <m>\frac{2g(y)}{\|g\|_\infty}\gt 1</m>, it follows that
+                <md>
+                    <mrow>f(x) \amp \leq \|f\|_\infty</mrow>
+                    <mrow> \amp \leq \frac{2\|f\|_\infty g(y)}{\|g\|_\infty} </mrow>
+                    <mrow> \amp =  \frac{2\|f\|_\infty}{\|g\|_\infty}L_{x_j}g(x)</mrow>
+                    <mrow> \amp \leq \frac{2\|f\|_\infty}{\|g\|_\infty} \sum_{i=1}^n L_{x_i}g(x). </mrow>
+                </md>
+                If <m>x \notin K</m>, then <m>f(x) =0</m> and so the inequality also holds there.
+            </p>
+        </proof>
+    </lemma>
+
+    <p>
+        For positive, non-zero functions <m>f,g \in C_c(G)</m> we define
+        <md>
+            [f\colon g] = \inf \left\{\sum_{i=1}^n c_i \colon c_1,\ldots,c_n\gt 0,\ \exists x_1,\ldots,x_n\in G,\ f \leq \sum_{i=1}^n c_i L_{x_i}g  \right\}
+        </md>
+        Note that <m>[f \colon g] \lt \infty</m>, by <xref ref="lem-haar-func-1"/>.
+        If <m>f \leq \sum_{i=1}^n c_i L_{x_i}g</m>, then
+        <md>
+            \|f\|_\infty \leq \sum_{i=1}^n c_i \|g\|_\infty.
+        </md>
+        Thus,
+        <md>
+            \sum_{i=1}^n c_i \geq \frac{\|f\|_\infty}{\|g\|_\infty}.
+        </md>
+        It follows that <m>[f\colon g] \geq \|f\|_\infty/\|g\|_\infty \gt 0.</m>
+    </p>
+
+    <p>
+        Fix now a non-zero, positive <m>f_0 \in C_c(G)</m>. 
+        For each non-zero, positive <m>g \in C_c(G)</m> define a function <m>I_g</m> on the non-zero positive functions <m>f \in C_c(G)</m> by
+        <md number="yes" xml:id="eq-Ig">
+            I_g(f) = \frac{[f:g]}{[f_0:g]}.
+        </md>
+        The functions <m>I_g</m> share a number of properties with left invariant linear functionals. 
+        They are, however, not necessarily linear.
+    </p>
+
+    <lemma xml:id="lem-haar-func-2">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group, <m>f_1,f_2,g \in C_c(G)</m> be non-zero positive functions.
+                Then
+                <ol>
+                    <li xml:id = "lem-haar-func-2-1">
+                        <m>I_g(L_xf_1) = I_g(f_1) </m> for all <m>x\in G</m>;
+                    </li>
+                    <li xml:id = "lem-haar-func-2-2">
+                        <m>I_g(cf_1) = cI_g(f_1)</m> for all scalars <m>c \gt 0</m>;
+                    </li>
+                    <li xml:id = "lem-haar-func-2-3">
+                        <m>I_g(f_1 + f_2) \leq I_g(f_1) + I_g(f_2)</m>;
+                    </li>
+                    <li xml:id = "lem-haar-func-2-4">
+                        <m>[f_0:f_1]^{-1} \leq I_g(f_1) \leq [f_1\colon f_0]</m>.
+                    </li>
+                    <li xml:id = "lem-haar-func-2-5">
+                        if <m>\varepsilon \gt 0</m>, there exists an open neighborhood <m>U</m> of the identity such that
+                        <md> I_g(f_1) + I_g(f_2) \leq I_g(f_1 + f_2) + \varepsilon </md>
+                        if the compact support of <m>g</m> is in <m>U</m>;
+                    </li>
+                    
+                </ol>
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                Note that, for all <m>x \in G</m>
+                <md>
+                    f_1 \leq \sum_{i=1}^n c_i L_{x_i}g
+                </md>
+                if and only if 
+                <md>
+                    L_xf_1 \leq \sum_{i=1}^n c_i L_{xx_i}g.
+                </md>
+                It follows that <m>[L_xf_1 \colon g] = [f_1 \colon g]</m>, and hence <m>I_g(L_xf_1) = I_g(f_1).</m>
+            </p>
+            <p>
+                <xref ref="lem-haar-func-2-2"/> and <xref ref="lem-haar-func-2-3"/> are (near) immediate, so we will turn our attention to <xref ref="lem-haar-func-2-4"/>.
+                If there are positive scalars <m>c_1,\ldots,c_n,d_1,\ldots,d_m \lt 0</m>, and <m>x_1,\ldots,x_n,y_1,\ldots,y_m \in G</m> such that
+                <md>
+                    f_1 \leq \sum_{i=1}^n c_i L_{x_i}f_0 \text{ and }f_0 \leq \sum_{j=1}^m d_j L_{y_j}g,
+                </md>
+                then
+                <md>
+                    f_1 \leq \sum_{i=1}^n \sum_{j=1}^m c_id_j L_{x_iy_j}g.
+                </md>
+                Thus <m>[f_1 \colon g] \leq [f_1 \colon f_0] [f_0\colon g],</m> and so <m>I_g(f) \leq [f_1\colon f_0].</m>
+                Similarly, <m>[f_0\colon g] \leq [f_0\colon f_1][f_1 \colon g],</m> and so <m>I_g(f_1) \geq [f_0\colon f_1]^{-1}</m>, completing <xref ref="lem-haar-func-2-4"/>.
+            </p>
+
+
+            <p>
+                We will now prove <xref ref="lem-haar-func-2-5"/>
+                Let <m>K</m> be the compact support of <m>f_1 + f_2</m>, and let <m>k\in C_c(G)</m> be a positive function such that <m>k(x) =1 </m> for all <m>x \in K.</m>
+                Note that such a <m>k</m> exists by <xref ref="prop-urysohn" text="custom">Urysohn's Lemma</xref>.
+                Take <m>\delta \gt 0</m> and let <m>h = f_1 + f_2 + \delta k.</m>
+                For <m>i = 1,2</m>, let <m>h_i = f_i/h</m>.
+                By <xref ref="prop-left-uniform-cont"/> <m>h_1</m> and <m>h_2</m> are right uniformly continuous.
+                Thus, there is an open neighborhood <m>U</m> of the identity such that
+                <m> \|R_x h_i - h_i\|_\infty \lt \delta</m>
+                for all <m>x \in U.</m>
+                Thus, if <m>y^{-1}x \in U</m> then <m>|h_i(x) - h(y)|\lt\delta.</m>
+            </p>
+
+            <p>
+                Assume the the compact support of <m>g</m> is in <m>U</m>.
+                Take scalars <m>c_1,\ldots,c_n \gt 0</m> and <m>x_1,\ldots,x_n \in G</m> such that 
+                <m>h \leq \sum_{j=1}^n c_j L_{x_j}g.</m>
+                Then, for <m>i = 1,2</m>, for <m>x \in G</m>   
+                <md>
+                    f_i(x) = h(x)h_i(x) \leq \sum_{j=1}^n c_j g(x_j^{-1}x) h_i(x).
+                </md>
+                Note that, if <m>g(x_j^{-1}x)\neq 0 </m>, then <m>x_j^{-1}x \in U</m>, and hence <m>|h_i(x_j)-h_i(x)|\lt \delta</m>, for <m>i = 1,2.</m>
+                Thus,
+                <md>
+                    <mrow> f_i(x) \amp \leq \sum_{j=1}^n c_j g(x_j^{-1}x) h_i(x) </mrow>
+                    <mrow> \amp \sum_{j=1}^n c_j g(x_j^{-1}x)(h_i(x_j) + \delta).</mrow>
+                </md>
+                Hence <m>[f_i\colon g] \leq \sum_{j=1}^n c_j(h_i(x_j)+\delta)</m>, for <m>i=1,2</m>.
+                Since, <m>h_1 + h_2 \leq 1</m> it follows that
+                <md>
+                    [f_1\colon g] + [f_2\colon g] \leq \sum_{j=1}^n c_j(1 + 2 \delta).
+                </md>
+                It follows now that
+                <md>
+                    I_g(f_1) + I_g(f_2)\leq I_g(h)(1+2\delta) \leq (I_g(f_1+f_2) +  \delta I_g(k))(1+2\delta),
+                </md>
+                where the last inequality is an application of <xref ref="lem-haar-func-2-2"/> and <xref ref="lem-haar-func-2-3"/>.
+                By <xref ref="lem-haar-func-2-4"/>, the result follows if
+                <md>
+                    2\delta[f_1+f_2\colon f_0] + \delta(1+\delta)[k\colon f_0]\lt\varepsilon 
+                </md>
+            </p>
+        </proof>
+    </lemma>
+
+    <p>
+        By <xref ref="lem-haar-func-2"/>, as the support of <m>g</m> becomes a smaller and smaller neighborhood of the identity, <m>I_g</m> gets closer and closer to a left-invariant linear map on the positive functions in <m>C_c(G)</m>.
+        It is possible to take a limit of  <m>I_g</m> as the support of <m>g</m> gets smaller, this is what Cartan <xref ref="Cartan-Haar"/> does in his proof of the existence (and uniqueness) of the Haar measure.
+        The details of this limit are rather complicated, and so we take another route to the proof.
+    </p>
+
+    <p>
+        Let <m>\{X_\lambda\}_{\lambda \in \Lambda}</m> a collection of subsets of <m>\bR</m>.
+        Let <m>X = \prod_{\lambda \in \Lambda}X_\lambda</m> be the Cartesian product.
+        Let <m>f \colon \Lambda \rightarrow \bR</m> be a function satisfying <m>f(\lambda) \in X_\lambda</m> for all <m>\lambda \in \Lambda</m>.
+        Then <m>f</m> defines a unique element of <m>X</m>: <m>(f(\lambda))_\lambda</m>.
+        Conversely, if <m>x=(x_\lambda)_\lambda \in X</m>, then <m>x</m> determines a function <m>f \colon \Lambda \rightarrow \bR</m> by <m>f(\lambda)= x_\lambda.</m>
+        Thus, the set <m>X</m> can be viewed as the collection of all function <m>f \colon \Lambda \rightarrow \bR</m> such that <m>f(\lambda) \in X_\lambda</m> for each <m>\lambda \in \Lambda</m>.
+        This viewpoint of cartesian products will be necessary in the following proof.
+    </p>
+
+    <theorem xml:id="thm-Haar">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group.
+                Then there is a left Haar measure on <m>G</m>.
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                Let <m>C_c^+(G)</m> be the collection of all non-zero, positive functions in <m>C_c(G)</m>.
+                Let <m>f_0</m> be a fixed function in <m>C_c^+(G)</m> and let <m>I_g</m> be defined for each <m>g \in C_c^+(G)</m> as in <xref ref="eq-Ig"/>.
+                For each <m>f \in C_c^+(G)</m> let <m>X_f \subseteq \bR</m>  be the closed interval
+                <md>
+                    X_f = \left[[f_0\colon f]^{-1}, [f\colon f_0] \right],
+                </md>
+                and let <m>X = \prod_{f \in C_c^+(G)}X_f</m> be the Cartesian product, endowed with the product topology.
+                By <xref ref="thm-tychonoff" text="custom">Tychonoff's Theorem</xref>, <m>X</m> is a compact space, and by <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-4"/>, <m>I_g \in X</m> for all <m>g \in C_c^+(G).</m>
+            </p>
+
+            <p>
+                For each open neighborhood <m>U</m> of the identity in <m>G</m> let <m>K_U</m> be the closure of the set <m>\{I_g \colon \mathop{\mathrm{supp}}(g) \subseteq U\}</m> in <m>X</m>.
+                If <m>U_1,\ldots,U_n</m> are open neighborhoods of the identity, then
+                <md>
+                    \bigcap_{i=1}^n K_{U_i} \subseteq K_{\bigcap_{i=1}^n U_i}\neq \emptyset.
+                </md>
+                Hence, by <xref ref="prop-compact-finite-intersection"/>, <m>\bigcap_{U} K_U \neq \emptyset</m>.
+                Take <m>I \in \bigcap_{U} K_U \neq \emptyset.</m>
+                We will show that <m>I</m> can be extended to a left invariant linear functional on <m>C_c(G).</m>
+            </p>
+
+            <p>
+                Note that <m>I \in K_U</m> for each neighborhood <m>U</m> of the identity.
+                Thus, given <m>\varepsilon \gt 0</m> and <m>f_1,\ldots,f_n \in C_c^+(G)</m>, there is an open neighborhood <m>U</m> of the identity and a <m>g \in C_c^+(G)</m> with <m>\mathrm{supp}(g) \subseteq G</m>, such that
+                <md>
+                    |I(f_i) - I_g(f_i)| \lt \varepsilon
+                </md>
+                for <m>i = 1,\ldots,n.</m>
+                This is, essentially, all we need to complete the proof.
+            </p>
+
+            <p>
+                Take <m>f \in C_c(G)</m> and <m>c \gt 0</m>.
+                For <m>\varepsilon\gt 0</m>, there is an <m>I_g</m> such that
+                <md>
+                    |I(cf) - I_g(cf)|\lt \varepsilon \text{ and }|I(f) - I_g(f)|\lt \varepsilon.
+                </md>
+                Hence, by part <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-2"/>, 
+                <md>
+                    <mrow>|I(cf)-cI(f)| \amp\leq |I(cf) - I_g(cf)| + |cI_g(f) - cI_g(f)| </mrow>
+                    <mrow> \amp \lt \varepsilon + c \varepsilon. </mrow>
+                </md>
+                As this holds for all <m>\varepsilon \gt 0</m>, it follows that <m>I(cf) = cI(f).</m>
+                Similarly, if <m>f \in C_c(G)</m> and <m>x \in G</m>, for <m>\varepsilon \gt 0</m> there is an <m>I_g</m> such that
+                <md>
+                    |I(L_xf) - I_g(L_xf)|\lt \varepsilon \text{ and }|I(f) - I_g(f)|\lt \varepsilon,
+                </md>
+                and so, by <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-1"/>, 
+                <md>
+                    |I(L_x f) - I(f)| \leq |I(L_x f) - I(L_x g)| + |I(f) - I(L_x g)| \lt 2 \varepsilon.
+                </md>
+                Hence, <m>I(L_x f) = I(f).</m>
+            </p>
+
+            <p>
+                Now take <m>f_1,f_2 \in C_c^+(G)</m> and <m>\varepsilon \gt 0</m>.
+                By <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-5"/>, there is a neighborhood <m>U</m> of the identity such that if <m>\mathrm{supp}(g) \subseteq U</m> then 
+                <m>I_g(f_1) + I_g(f_2) \leq I_g(f_1 + f_2) + \varepsilon.</m>
+                Choose <m>g</m> with <m>\mathrm{supp}(g)\subseteq U</m> such that
+                <md>
+                    <mrow>\amp|I(f_1) - I_g(f_1)|\lt\varepsilon,\ |I(f_2) - I_g(f_2)|\lt\varepsilon, \text{ and} </mrow>
+                    <mrow> \amp |I(f_1+f_2) - I_g(f_1+f_2)|\lt\varepsilon. </mrow>
+                </md>
+                Note that, by <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-3"/>, and the choice of <m>g</m>,
+                <md>
+                    I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + varepsilon.
+                </md>
+                Hence
+                <md>
+                    |I_g(f_1)+I_g(f_2)-I(f_1+f_2)|\leq \varepsilon.
+                </md>
+                Hence,
+                <md>
+                    <mrow>|I(f_1) +I(f_2) - I(f_1 + f_2)| \leq \amp |I(f_1)-I_g(f_1)| + |I(f_2)-I_g(f_2)| </mrow>
+                    <mrow> \amp +|I_g(f_1) + I_g(f_2) - I(f_1+f_2)|</mrow>
+                    <mrow> \leq \amp |I(f_1)-I_g(f_1)| + |I(f_2)-I_g(f_2)| </mrow>
+                    <mrow> \amp +|I_g(f_1) + I_g(f_2) - I_g(f_1+f_2)| </mrow>
+                    <mrow> \amp+ |I_g(f_1+f_2)- I(f_1+f_2)| </mrow>
+                    <mrow> \lt\amp 4 \varepsilon. </mrow>
+                </md>
+                It follows that <m>I(f_1 + f_2) = I(f_1) + I(f_2).</m>
+            </p>
+            <p>
+                We extend <m>I</m> to all of <m>C_c(G)</m> by setting
+                <m>I(f) = I(f_+)-I(f_-)</m>
+                where <m>f = f_+ - f_-</m> is the decomposition of <m>f</m> into its positive and negative parts.
+                That this extension is linear follows by the same reasoning as we saw in the proof of <xref ref="thm-jordan-decomp-functional"/>.
+                We have just shown that there is a positive left invariant linear functional on <m>C_c(G)</m>.
+                By <xref ref="lem-haar-inv"/> and <xref ref="thm-RMK-positive"/> it follows that there is a left Haar measure on <m>G</m>.
+            </p>
+        </proof> 
+    </theorem>
+    
+</section>

@@ -550,11 +550,15 @@ That is, to see if a set <m>U \subseteq \mathbb{R}^n</m> is open, it does not ma
 <p>Another important property that the Lebesgue measure <m>m_n</m> shares with the Lebesgue measure <m>m</m> on <m>\mathbb{R}</m> is translation invariance.
 The proof of this follows (almost) immediately from the <m>n = 1</m> case.
 </p>
-<proposition>
-<p>Let <m>n</m> be a non-negative integer, let <m>A \subseteq \mathbb{R}^n</m> be a Lebesgue measurable set,  let <m>v</m> be a vector in <m>\mathbb{R}^n</m>, and
+<proposition xml:id="prop-lebesgue-invariant-Rn">
+	<statement>
+		<p>
+			Let <m>n</m> be a non-negative integer, let <m>A \subseteq \mathbb{R}^n</m> be a Lebesgue measurable set,  let <m>v</m> be a vector in <m>\mathbb{R}^n</m>, and
 	let
 <md> A + v = \{x+ y \colon x \in A \}.</md>
-Then <m>m_n(A) = m_n(A+v)</m>.</p>
+Then <m>m_n(A) = m_n(A+v)</m>.
+		</p>
+	</statement>
 </proposition>
 
 <p>
@@ -633,7 +637,7 @@ where the last inequality is an application of the <xref ref="exer-Cauchy-Schwar
 </proof>
 </lemma>
 
-<remark>
+<remark xml:id="rem-operator-norm-matrix">
 	<p>
 		Recall that the norm of a linear functional <m>\phi</m> on a normed vector space <m>X</m> is defined as
 		<md>
@@ -834,7 +838,7 @@ We delay the proof for now, to deal with some special cases.</p>
 			The proofs for <m>g</m> and <m>k</m> are similar, with an application of <xref ref="lem-change-of-variables-n-1"/> in the case of <m>k</m>.
 			
 			Note that, if <m>l \colon \bR \rightarrow \bR</m> is Lebesgue integrable and <m>\beta \in \bR</m> then
-			<md>
+			<md number="yes" xml:id="eq-change-of-variables-n-2">
 				\int_\bR l(x+\beta)\,dm(x) = \int_\bR l\,dm.
 			</md>
 			By <xref ref="thm-tonelli" text="custom">Tonelli's theorem</xref>, we have that
@@ -866,6 +870,31 @@ We delay the proof for now, to deal with some special cases.</p>
 	Noting that <m>\det(T) = \det(T')</m> completes the proof.
 </p>
 </proof>
+
+<corollary xml:id="cor-change-of-variables">
+	<statement>
+		<p>
+			Let <m>T \colon \bR^n\rightarrow \bR^n</m> be an invertible linear map and let <m>E \subseteq \bR^n</m> be a Lebesgue measurable set with <m>m_n(E) &lt; \infty</m>.
+			Then, <m>|\det(T)|m_n(T(E))=m_n(E).</m>
+		</p>
+	</statement>
+
+	<proof>
+		<p>
+			Let <m>f = \chi_E</m>. 
+			Note that 
+			<md>
+				\chi_E \circ T = \chi_{T(E)}.
+			</md>
+			Thus, by <xref ref="thm-change-of-variables"/>,
+			<md>
+				m_n(T(E)) = \int_\bR^n \chi_{T(E)}\,dm_n = \frac{1}{|\det(T)|}\int_\bR^n \chi_E\,dm_n = \frac{1}{|\det(T)|}m_n(E),
+			</md>
+			and so <m>|\det(T)|\det(T(E)) = m_n(E).</m>
+			
+		</p>
+	</proof>
+</corollary>
 
 </section>
 
@@ -1009,6 +1038,41 @@ for <m>A_k \in \mathcal{M}_k</m> for <m>1\leq k \leq n</m>.
 			</p>
 		</statement>
 	</task>
+</exercise>
+
+<exercise xml:id="exer-operator-norm-matrix">
+	<introduction>
+		<p>
+			Let <m>\|\cdot\|_\mathrm{op}</m> be the norm defined on <m>M_{n\times n}(\bR)</m>, the <m>n\times n</m> matrices, defined in <xref ref="rem-operator-norm-matrix"/>.
+		</p>
+	</introduction>
+	
+	<task>
+		<statement>
+			<p>
+				Show that <m>\|\cdot\|_\mathrm{op}</m> defines a norm on <m>M_{n\times n}(\bR).</m>
+			</p>
+		</statement>
+	</task>
+
+	<task>
+		<statement>
+			<p>
+				Show that if <m>A,B \in M_{n\times n}(\bR)</m> then 
+				<md>
+					\|AB\|_\mathrm{op}\leq \|A\|_\mathrm{op}\|B\|_\mathrm{op}.
+				</md>
+			</p>
+		</statement>
+	</task>
+</exercise>
+
+<exercise xml:id="exer-equiv-matrix-norms">
+	<p>
+		Let <m>\|\cdot\|_\mathrm{op}</m> be the norm defined on <m>M_{n\times n}(\bR)</m>, the <m>n\times n</m> matrices, defined in <xref ref="rem-operator-norm-matrix"/>.
+		For each <m>1 \leq p \leq \infty</m>, define the <m>p</m>-norm on <m>M_{n\times n}(\bR)</m> by identifying <m>M_{n\times n}(\bR)</m> with <m>\bR^{n\times n}</m>.
+		Show that <m>\|\cdot\|_\mathrm{op}</m> is equivalent to <m>\|\cdot\|_p</m> for <m>1 \leq p \leq \infty.</m>
+	</p>
 </exercise>
 
 <exercise xml:id="exer-borel-in-Rn">

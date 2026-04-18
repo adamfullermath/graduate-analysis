@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section><title>Locally compact groups</title>
+<p>
+Recall that a <em>group</em> <m>G</m> is a non-empty set with an associative binary operation which has a (necessarily unique) identity and every element has an inverse.<idx><h>group</h></idx>
+We call the binary operation the <em>group operation for <m>G</m></em>.
+A group <m>G</m> is called <em>abelian</em> <idx><h>group</h><h>abelian group</h></idx> if its binary operation is commutative.
+</p>
+
+<p>
+For an arbitrary group <m>G</m>, we will often call the group operation the <em>product</em>, and use concatenation to denote the product of two elements; and we will denote the inverse by <m>^{-1}</m>
+That is, if <m>x,y\in G</m> then the product of <m>x</m> and <m>y</m> will be denoted by <m>xy</m>; and the inverse of <m>x</m> is <m>x^{-1}</m>.
+Notable exceptions to this rule are groups where the binary operation is usually called <em>addition</em> denoted by <sq><m>+</m></sq> and inverses are denoted by <sq><m>-</m></sq>, e.g. the group of real numbers with the operation of addition.
+For an arbitrary group <m>G</m>, we will denote the identity element of <m>G</m> by <m>e</m>.
+</p>
+
+<definition xml:id="def-top-group">
+    <statement>
+        <p>
+            Let <m>G</m> be a group. 
+            If there is a topology on the set <m>G</m> such that the maps
+            <dl>
+                <li><title>product</title> 
+                    <m>G \times G \rightarrow G,\ (x,y) \mapsto xy;</m> and
+                </li>
+                <li><title>inverse</title> 
+                    <m>G  \rightarrow G</m>, <m>x \mapsto x^{-1}</m>
+
+                </li>
+            </dl>
+            are continuous,<fn><m>G\times G</m> is endowed with the product topology here</fn> then we <m>G</m> is a <term>topological group</term>. <idx><h>group</h><h>topological group</h></idx>
+        </p>
+
+        <p>
+            If <m>G</m> is a topological group whose topology is locally compact and Hausdorff we call <m>G</m> a <term>locally compact Hausdorff group</term>.<idx><h>group</h><h>locally compact Hausdorff</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>
+    Whilst the terminology may be new, you are probably familiar with several topological groups.
+</p>
+
+<example xml:id="ex-discrete-top-group">
+    <p>
+        Let <m>G</m> be any group.
+        If we give <m>G</m> the discrete topology, i.e. the topology in which every subset of <m>G</m> is open, then <m>G</m> is a locally compact Hausdorff space.
+        A group endowed with the discrete topology is called a <term>discrete group</term>.<idx><h>group</h><h>discrete group</h></idx>
+    </p>
+</example>
+
+<example xml:id="ex-R-top-group">
+    <p>
+        The real line <m>\bR</m> with the operation of addition is a locally compact Hausdorff group.
+        More generally, <m>\bR^n</m> is a locally compact Hausdorff group under addition.
+        See <xref ref="exer-R-top-group"/>.
+    </p>
+</example>
+
+<example>
+    <p>
+        More generally, if <m>X</m> is a normed vector space, then <m>X</m> (the operation of vector addition) is a Hausdorff topological group with the topology induced by the norm.
+        Note that, in general, <m>X</m> is <em>not</em> locally compact.<fn>In fact, <m>X</m> is locally compact if and only if <m>X</m> is finite dimensional.</fn>
+    </p>
+</example>
+
+<example xml:id="ex-R-mult-top-group">
+    <p>
+        The non-zero reals, <m>\bR\backslash\{0\}</m> are a topological group with the operation of multiplication.
+    </p>
+</example>
+
+<example xml:id="ex-T-top-group">
+    <p>
+        Let
+        <md>
+            \bT = \{z \in \bC \colon |z| = 1 \}.
+        </md>
+        Then <m>\bT</m>, with the operation of multiplication, is a locally compact Hausdorff group.
+    </p>
+</example>
+
+<example xml:id="ex-GLn-top-group">
+    <p>
+        The <em>general linear group (of degree <m>n</m>)</em> <m>GL_n(\bR)</m>, is the set of all <m>n\times n</m> invertible matrices. <idx><h>general linear group</h></idx>
+        The general linear group is a group with the operation of matrix multiplication.
+        The general linear group <m>GL_m(\bR)</m> is a subset of the finite dimensional vector space <m>M_{n\times n}(\bR)</m> of all <m>n\times n</m> matrices.
+        Endowing <m>M_{n\times n}(\bR) \simeq \bR^{n^2}</m> with its usual topology, induces a topology on <m>GL_n(\bR)</m> which makes <m>GL_n(\bR)</m> a locally compact Hausdorff group.
+    </p>
+
+    <p>
+        There are several ways we can describe the topology on <m>M_{n\times n}(\bR)</m>.
+        The easiest way is in terms of a norm.
+        We can put a <m>p</m>-norm on <m>M_{n\times n}(\bR)</m> for <m>1 \leq p \leq \infty</m> by identifying <m>M_{n\times n}(\bR)</m> with <m>\bR^{n\times n}.</m>
+        We can also put the operator norm on <m>M_{n \times n}(\bR)</m> as described in <xref ref="rem-operator-norm-matrix"/>.
+        All these norms are equivalent, and so give the same topology on <m>M_{n\times n}(\bR)</m>; it doesn't matter what norm you use (see <xref ref="exer-equiv-matrix-norms"/>).
+        <xref ref="exer-GLn-top-group"/> asks you to show <m>GL_n(\bR)</m> is a topological group using the operator norm.
+    </p>
+</example>
+
+
+<p>
+    Let <m>G</m> be a topological group, and let <m>A,B \subseteq G</m>, and <m>x \in G</m>.
+    We define the following pieces of notation:
+    <md>
+        <mrow>x A \amp = \{xa \colon a \in A \} </mrow>
+        <mrow> Ax \amp = \{ax \colon a \in A \} </mrow>
+        <mrow> AB \amp = \{ab \colon a \in A,\ b \in B \} \text{ and }</mrow>
+        <mrow>A^{-1} \amp = \{a^{-1} \colon a \in A \}. </mrow>
+    </md>
+    If <m>A = A^{-1}</m>, then we say that <m>A</m> is <term>symmetric</term>.<idx><h>symmetric set</h></idx>
+</p>
+
+<remark>
+    <p>
+        If <m>G</m> is a topological group, then the map <m>x \mapsto x^{-1}</m> is continuous. 
+    This map is injective and surjective, and is its own inverse. 
+    That is, the map <m>x \mapsto x^{-1}</m> is a continuous bijection with a continuous inverse, i.e. a homeomorphism.
+    In particular, this means that if <m>A \subseteq G</m> is open/closed/compact, then <m>A^{-1}</m> is open/closed/compact, respectively.
+    </p>
+
+    <p> Similarly, if we fix <m>x \in G</m>, then the map <m>y \mapsto xy</m> is a homeomorphism, as is the map <m>y \mapsto yx</m>.
+    Thus these two maps also preserve open sets, closed sets, and compact sets.
+    </p>
+</remark>
+    
+
+<lemma xml:id="lem-open-in-top-group">
+    <statement>
+        <p>
+            Let <m>G</m> be a topological group.
+            Let <m>A \subseteq G</m> be a neighborhood of the identity <m>e</m>.
+            Then
+            <ol>
+                <li xml:id="lem-open-in-top-group-i">
+                    there is a symmetric neighborhood <m>B</m> of the identity, such that <m>A \subseteq B</m>; and 
+                </li>
+                <li>
+                    there is a neighborhood <m>C</m> of the identity, such that <m>CC\subseteq A</m>.
+                </li>
+            </ol>
+            In particular, there is a symmetric neighborhood <m>D</m> of the identity such that <m>DD \subseteq A.</m>
+        </p>
+    </statement>
+
+    <proof>
+        <p>
+           For the first point, let <m>B = A \cap A^{-1}</m>. 
+        </p>
+
+        <p>
+            Let <m>\Pi \colon G\times G \rightarrow G</m> denote the product map, <m>(x,y)\mapsto xy.</m>
+            By the continuity of <m>\Pi</m>, and since <m>ee=e</m>, <m>\Pi^{-1}(A)</m> is a neighborhood of <m>(e,e)</m> in <m>G \times G.</m>
+            By the definition of the product topology, there is an open set <m>C \subseteq G</m>, such that
+            <md>
+                (e,e) \in C \times C \subseteq \Pi^{-1}(A).
+            </md>
+            Thus, <m>C</m> is an open neighborhood of the identity, satisfying <m>CC\subseteq A.</m>
+        </p>
+
+        <p>
+            Finally, if we let <m>D = C \cap C^{-1}</m>, then <m>D</m> is a symmetric neighborhood such that <m>DD \subseteq A</m>.
+        </p>
+    </proof>
+</lemma>
+
+
+<definition xml:id="def-left-uniform-cont">
+    <statement>
+        <p>
+            Let <m>G</m> be a topological group, let  <m>x \in G</m>, and let<m>f</m> be a bounded real-valued function on <m>G</m>. 
+            Define the
+            <term>left translation of <m>f</m> by <m>x</m></term> as the function
+            <md>
+                (L_xf)(y) = f(x^{-1}y)
+            </md>
+            and define the <term>right translation of <m>f</m> by <m>x</m></term> as the function
+            <md>
+                (R_xf)(y) = f(yx).
+            </md><idx><h>translation of a function by a group element</h></idx>
+        </p>
+
+        <p>
+            The function <m>f</m> is <term>left uniformly continuous</term> if, for all <m>\varepsilon>0</m> there is a neighborhood <m>U</m> of the identity such that
+            <md>
+                \|L_xf -f \|_\infty \lt\varepsilon
+            </md>
+            for all <m>x \in U.</m><idx><h>continuous</h><h>left uniformly continuous</h></idx>
+        </p>
+
+        <p>
+            The function <m>f</m> is <term>right uniformly continuous</term> if, for all <m>\varepsilon>0</m> there is a neighborhood <m>U</m> of the identity such that
+            <md>
+                \|R_xf -f \|_\infty \lt\varepsilon
+            </md>
+            for all <m>x \in U.</m> <idx><h>continuous</h><h>right uniformly continuous</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+    <p>
+        The inverse in the definition of <m>L_x</m> raise some eyebrows.
+        Why introduce the inverse at all?
+        There are two clear justifications for this.
+        Firstly, our definitions of <m>L_x</m> and <m>R_x</m> preserve the group operations under composition.
+        That is, for <m>x,y \in G</m>
+        <md>
+            <mrow> L_x\circ L_y\amp= L_{xy},\ R_x \circ R_y = R_{xy}, </mrow>
+            <mrow> L_x^{-1} \amp = L_{x^-1},\text{ and }R_x^{-1}=R_{x^{-1}}.  </mrow>
+        </md>
+    </p>
+
+    <p>
+        The second point in favour of our notation, is that <m>L_x</m> and <m>R_x</m> on characteristic functions are consistent with left and right translations of sets.
+        That is, if <m>x \in G</m> and <m>E \subseteq G</m> then
+        <md>
+            L_x \chi_E = \chi_{xE} \text{ and } R_x \chi_E = \chi_{Ex}.
+        </md>
+    </p>
+</remark>
+
+<proposition xml:id="prop-left-uniform-cont">
+    <statement>
+        <p>
+            Let <m>G</m> be a locally compact group.
+            Every function in <m>C_c(G)</m> is left and right uniformly continuous.
+        </p>
+    </statement>
+
+    <proof>
+        <p>
+            Fix <m>f \in C_c(G)</m>, and let <m>K</m> be the (necessarily compact) closure of the support of <m>f</m>.
+            Take <m>\varepsilon\gt 0</m>.
+            For each <m>x \in K</m>, let <m>U_x \subseteq G</m> be the open set
+            <md>
+                V_x = f^{-1}\left((f(x) - \varepsilon/2, f(x)+\varepsilon/2) \right),
+            </md>
+            and let <m>U_x = x^{-1}V_x</m>.
+            Then, for each <m>y\in U_x</m>,
+            <md>
+                |f(xy)-f(x)| \lt \varepsilon/2.
+            </md>
+        </p>
+        <p>        
+            By <xref ref="lem-open-in-top-group"/>, there is a symmetric open open neighborhood <m>W_x</m> of <m>e</m>, such that <m>W_xW_x\subseteq U_x</m>.
+            
+            Since <m>K</m> is compact, there are <m>x_1,\ldots,x_n \in K</m> such that
+            <md>
+                K = \bigcup_{i=1}^n x_i W_{x_i}.
+            </md>
+            Let <m>W = \bigcap_{i=1}^n W_{x_i}</m> and fix <m>y \in W.</m>
+        </p>
+        <p>
+            Take <m>x \in K</m>. There is a <m>i</m> such that, <m>x \in x_i W_{x_i}</m>.
+            Since <m>W_{x_i}\subseteq U_{x_i}</m> it follows that
+            <md>
+                |f(x) - f(x_i)| \lt \varepsilon/2. 
+            </md>
+            Note that
+            <md>
+                xy = x_i (x_i^{-1} x)y \in x_i W_{x_i}W \subseteq x_i U_{x_i},
+            </md>
+            and hence
+            <md>
+                |f(xy)-f(x_i)|\lt \varepsilon/2.
+            </md>
+            Thus,
+            <md>
+                <mrow>|f(xy)-f(x)|\leq |f(xy)-f(x_i)| + |f(x_i)-f(x)|\lt \varepsilon. </mrow>
+            </md>
+        </p>
+
+        <p>
+            Take <m>x \notin K</m>. Then <m>f(x) = 0</m>.
+            If <m>xy \in K</m>, then <m>xy \in x_i W_{x_i}</m> for some <m>i</m>.
+            Thus,
+            <md>
+                x_i^{-1}x = x_i^{-1}xy y^{-1} \in U_{x_i},
+            </md>
+            since <m>x_i^{-1}xy \in W_{x_i}</m> and <m>y^{-1} \in W \subseteq W_{x_i}</m> (recall that each <m>W_{x_j}</m> is symmetric).
+            Hence,
+            <md>
+                |f(x_i)| = |f(x_i) - f(x)|\lt \varepsilon/2.
+            </md>
+            Thus,
+            <md>
+                |f(xy) - f(x)| \leq |f(xy)-f(x_i)| + |f(x_i)|\lt \varepsilon.
+            </md>
+            If <m>xy\notin K</m>, then <m>f(xy) = 0</m> and so, <m>|f(xy) - f(x)|=0.</m>
+        </p>
+
+        <p>
+            We have shown that there is a neighborhood <m>W</m> of <m>e</m>, such that if <m>y \in W</m> and <m>x \in G</m> then
+            <md>
+                |f(xy) - f(x)|\lt \varepsilon.
+            </md>
+            Thus, 
+            <md>
+                \|R_y f -f\|_\infty \lt \varepsilon
+            </md>
+            for all <m>y \in W</m>, and hence <m>f</m> is right uniformly continuous.
+            That <m>f</m> is left uniformly continuous can be shown similarly.
+        </p>
+    </proof>
+</proposition>
+
+</section>

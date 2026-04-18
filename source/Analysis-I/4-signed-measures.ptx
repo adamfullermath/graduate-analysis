@@ -103,8 +103,8 @@
     Then there are disjoint measurable subsets <m>A,B \subseteq X</m> such
     that <m>X = A \cup B</m>, <m>A</m> is positive, and <m>B</m> is negative.</p>
 <p>If <m>A',B'</m> are also disjoint measurable sets with <m>A'</m> positive, <m>B'</m> negative, and <m>X = A' \cup B'</m>, then the sets</p>
-<md> (A\backslash A') \cup (A'\backslash A)&lt;fn&gt;The set <m>(A\backslash A') \cup (A'\backslash A)</m> is called the &lt;em&gt;symmetric difference&lt;/em&gt; of <m>A</m> and <m>A'</m>.&lt;/fn&gt; \text{ and }(B\backslash B') \cup (B'\backslash B)</md>
-<p>are null sets.</p>
+<md> (A\backslash A') \cup (A'\backslash A) \text{ and }(B\backslash B') \cup (B'\backslash B)</md>
+<p><fn>The set <m>(A\backslash A') \cup (A'\backslash A)</m> is called the <em>symmetric difference</em> of <m>A</m> and <m>A'</m>.</fn>are null sets.</p>
 </theorem>
 <proof>
 <p>Assume that <m>\nu</m> does not take the value <m>+\infty</m> (replace <m>\nu</m> with <m>-\nu</m> if it does).

@@ -11,7 +11,7 @@
 </introduction>
 <section>
 <title>Measure spaces</title>
-<p>There will be a scarcity of examples in this section. In Section~\ref{sec: construction} we will develop tools to construct measures. After that, we will have access to a plethora of examples. Let <m>X</m> be a non-empty set. A measure will assign a non-negative value to subsets of <m>X</m>, but not necessarily all subsets. We need the following definition(s) to describe the domain of a measure.</p>
+<p>There will be a scarcity of examples in this section. In <xref ref="sec-construction"/> we will develop tools to construct measures. After that, we will have access to a plethora of examples. Let <m>X</m> be a non-empty set. A measure will assign a non-negative value to subsets of <m>X</m>, but not necessarily all subsets. We need the following definition(s) to describe the domain of a measure.</p>
 <definition xml:id="def-sigma-alg">
 <p>Let <m>X</m> be a non-empty set, and let <m>\mathcal{P}(X)</m> be the power set of <m>X</m>.
 A collection of sets <m>\mathcal{M} \subseteq \mathcal{P}(X)</m> is a <em><m>\sigma</m>-algebra</em><fn>The suffix `<m>\sigma</m>-' is usually used to denote a countably infinite version of whatever word comes after the `<m>\sigma</m>-'. 
@@ -52,7 +52,7 @@ Then, it follows from conditions (ii) and (iii) of <xref ref="def-sigma-alg" tex
 Using De Morgan's Identity, and condition (ii) again, we have</p>
 <md> \bigcap_{n=1}^\infty A_n = X \left[\backslash \bigcup_{n=1}^\infty A_n^c\right] \in \mathcal{M}.</md>
 <p>Suppose <m>A_1, \ldots, A_k</m> is a finite collection of sets in <m>\mathcal{M}</m>. For <m>n &gt;k</m>, let <m>A_n = \emptyset</m>.
-Then, by condition (i) of Defintion~\ref{def: sigma-alg}, <m>\{A_n\}_{n=1}^\infty</m> is a countable collection of subsets in <m>\mathcal{M}</m>.
+Then, by condition (i) of <xref ref="def-sigma-alg"/>, <m>\{A_n\}_{n=1}^\infty</m> is a countable collection of subsets in <m>\mathcal{M}</m>.
 By condition (iii),</p>
 <md> \bigcup_{n=1}^k A_n = \bigcup_{n=1}^\infty A_n \in \mathcal{M}.</md>
 <p>Thus <m>\mathcal{M}</m> is also closed under finite unions.
@@ -151,7 +151,7 @@ A measure space <m>(X,\mathcal{M},\mu)</m> is <m>\sigma</m>-finite if there is a
 </definition>
 <remark>
 <p>We will pause here to assess where we are going. 
-    One of our main motivations for developing measure theory, as discussed in Sections~\ref{sec: intro ftoc}~and~\ref{sec: int lim swap}, is to develop a theory of integration on the real line that is more robust than Riemann integration.</p>
+    One of our main motivations for developing measure theory, as discussed in <xref ref="sec-intro-ftoc"/> and <xref ref="sec-int-lim-swap"/>, is to develop a theory of integration on the real line that is more robust than Riemann integration.</p>
 <p>For an interval <m>I \subseteq \mathbb{R}</m> let <m>\ell(I)</m> denote the length of <m>I</m>.
     To form a Riemann sum for a function <m>f</m>, we partition an interval <m>[a,b]</m> into subintervals</p>
 <md> [a,b] = I_1 \cup \ldots\cup I_n </md>
@@ -229,9 +229,9 @@ Note we can write <m>A</m> as a disjoint union</p>
 </md>
 <p>Thus, <m>\mu(B) \leq \mu(A)</m>.
 If <m>\mu(A)&lt;\infty</m>, then it follows that <m>\mu(B) &lt; \infty</m> and <m>\mu(A\backslash B) &lt; \infty</m>.
-Hence, it follows from  <xref ref="eq-excision" text="Equation"/> that</p>
-<md> \mu(A\backslash B) = \mu(A) - \mu(B).&lt;fn&gt;That <m>\mu(A)</m> is finite is imporant here. Otherwise we could be looking at <m>\infty - \infty</m>, which is undefined.&lt;/fn&gt;</md>
-<p>Now let <m>\{E_k\}_{k=1}^\infty</m> be a countable collection of sets in <m>\mathcal{M}</m>.
+Hence, it follows from  <xref ref="eq-excision" text="Equation"/> that<fn>That <m>\mu(A)</m> is finite is imporant here. Otherwise we could be looking at <m>\infty - \infty</m>, which is undefined.</fn>
+<md> \mu(A\backslash B) = \mu(A) - \mu(B).</md>
+Now let <m>\{E_k\}_{k=1}^\infty</m> be a countable collection of sets in <m>\mathcal{M}</m>.
 Let <m>A_1 = E_1</m>. 
 Let <m>A_2 = E_2 \backslash A_1</m>.
 Continuing in this way, we let</p>
@@ -401,7 +401,7 @@ Then <m>(X,\mathcal{M}_0,\mu_0)</m> is the <em>completion</em> of <m>(X,\mathcal
 <p>Let <m>\mathcal{S}</m> be the collection of all open intervals in the real line.
     Let <m>\mu</m> be the length function on <m>\mathcal{S}</m>, i.e. <m>\mu(I) = \ell(I)</m> for all <m>I \in \mathcal{S}</m>.
     Let <m>\mu^*</m> be the outer measure induced by <m>\mu</m>. 
-    Then <m>\mu^*(I) = \ell(I)</m> for all intervals in <m>\mathbb{R}</m> (Exercised~\ref{exer: induced length outer measure}).
+    Then <m>\mu^*(I) = \ell(I)</m> for all intervals in <m>\mathbb{R}</m> (<xref ref="exer-induced-length-outer-measure"/>).
     The outer measure <m>\mu^*</m> is called the <em>Lebesgue outer measure on <m>\mathbb{R}</m></em>. <idx><h>outer measure</h><h>Lebesgue outer measure</h></idx> 
     We will see (much!) more on this later.</p>
 </example>

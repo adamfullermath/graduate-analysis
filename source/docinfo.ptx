@@ -269,6 +269,8 @@
 
   <!-- It is possible to rename elements: -->
   <!-- <rename element="assemblage" xml:lang="en-US">Summary</rename> -->
+   <rename element="algorithm">Porism</rename>
+   <rename element="li">Part</rename>
 
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->

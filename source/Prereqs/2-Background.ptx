@@ -3,10 +3,11 @@
 <title>Topology</title>
 <introduction>
 
-We briefly cover some key ideas about topology. 
-In particular, we will focus on the topology on <m>\mathbb{R}</m>.
-Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
-
+<p>
+	We briefly cover some key ideas about topology. 
+	In particular, we will focus on the topology on <m>\mathbb{R}</m>.
+	Much of this material can be found in Chapter 1 of <xref ref="Roy"/>.
+</p>
 </introduction>
 <subsection>
 <title>Open and closed sets in <m>\mathbb{R}</m></title>

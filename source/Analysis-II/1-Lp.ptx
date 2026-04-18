@@ -256,7 +256,6 @@ n &amp;= \sum_{k=0}^n k\binom{k}{n}\left[kx^{k-1}(1-x)^{n-k} -(n-k)x^k(1-x)^{n-k
 <md> \frac{(k-nx)^2}{\delta^2n^2}\geq 1.</md>
 <p>Thus,</p>
 <md number="yes" xml:id="eq-weierstrass-5">
-&lt;md&gt;
 \begin{aligned}
 \sum_{k \in C_x}p_{n,k}(x) &amp;\leq \sum_{k \in C_x}p_{n,k}(x) \frac{(k-nx)^2}{\delta^2n^2}\\
         &amp;\leq \sum_{k=0}^n p_{n,k}(x) \frac{(k-nx)^2}{\delta^2n^2} \\
@@ -264,22 +263,19 @@ n &amp;= \sum_{k=0}^n k\binom{k}{n}\left[kx^{k-1}(1-x)^{n-k} -(n-k)x^k(1-x)^{n-k
         &amp;= \frac{x(1-x)}{n\delta^2}\\
         &amp;\leq \frac{1}{4n\delta^2},
 \end{aligned}
-&lt;/md&gt;
 </md>
 <p>where the last equality comes from  <xref ref="eq-weierstrass-4" text="Equation"/> and the last inequality follows since <m>x(1-x)\leq 1/4</m>, for <m>x\in[0,1]</m>.</p>
 <p>Now, for <m>n\geq N</m> and <m>x \in [0,1]</m> we have</p>
 <md>
-\begin{aligned}
-|B_n(x) - f(x)| =&amp; \left| B_n(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right| &amp;\text{ by  <xref ref="eq-weierstrass-1" text="Equation"/>}\\
-        =&amp;\left| \sum_{k=0}^n f\left(\frac{k}{n}\right)p_{n,k}(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right|\\
-        \leq&amp; \sum_{k=0}^n\left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) \\
-        =&amp; \sum_{k\in C_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)\\
-        &amp;+ \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)\\
-        \leq&amp; \frac{2\|f\|_\infty}{4n\delta^2} + \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) &amp; \text{by  <xref ref="eq-weierstrass-5" text="Equation"/>}\\
-        &lt;&amp;  \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} \sum_{k\in D_x}p_{n,k} \\
-        \leq&amp; \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} &amp;\text{by  <xref ref="eq-weierstrass-1" text="Equation"/>}\\
-        &lt;&amp; \frac{\varepsilon}{2} + \frac{\varepsilon}{2}  = \varepsilon,
-\end{aligned}
+<mrow>  |B_n(x) - f(x)| =\amp \left| B_n(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right| \amp\text{ by  }<xref ref="eq-weierstrass-1"/></mrow>
+<mrow>        =\amp\left| \sum_{k=0}^n f\left(\frac{k}{n}\right)p_{n,k}(x) - f(x)\sum_{k=0}^n p_{n,k}(x)\right|</mrow>
+<mrow>        \leq\amp \sum_{k=0}^n\left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) </mrow>
+    <mrow>    =\amp \sum_{k\in C_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)</mrow>
+    <mrow>    \amp+ \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x)</mrow>
+    <mrow>    \leq\amp \frac{2\|f\|_\infty}{4n\delta^2} + \sum_{k\in D_x} \left|f\left(\frac{k}{n}\right) - f(x)\right|p_{n,k}(x) \amp \text{by  }<xref ref="eq-weierstrass-5"/></mrow>
+    <mrow>    &lt;\amp  \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} \sum_{k\in D_x}p_{n,k} </mrow>
+    <mrow>    \leq\amp \frac{\|f\|_\infty}{2n\delta^2} + \frac{\varepsilon}{2} \amp\text{by  }<xref ref="eq-weierstrass-1"/></mrow>
+    <mrow>    &lt;\amp \frac{\varepsilon}{2} + \frac{\varepsilon}{2}  = \varepsilon,</mrow>
 </md>
 <p>where the last inequality comes from the choice of <m>n \geq N &gt; \|f\|_\infty/\varepsilon\delta^2</m></p>
 <p>We have proved the result when <m>[a,b] = [0,1]</m>.
@@ -564,7 +560,7 @@ ab &amp;= e^{\ln(ab)} = e^{\ln(a) + \ln(b)} \\
 <p>A special case of Hölder's inequality is when <m>p = q =2.</m> When <m>p = q = 2</m>, we call Hölder's inequality the <em>Cauchy-Schwarz inequality</em><idx><h>Cauchy-Schwarz inequality</h></idx>. For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in <xref ref="exer-Cauchy-Schwarz-Rn" text="Exercise"/>. An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in <xref ref="exer-Cauchy-Schwarz" text="Exercise"/>.</p>
 <theorem xml:id="thm-CS-ineq">
 <title>Cauchy-Schwarz Inequality</title>
-<p><idx><h>Cauchy-Schwarz inequality</h></idx>\label{thm: Cauchy-Schwarz}
+<p><idx><h>Cauchy-Schwarz inequality</h></idx>
 Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
 If <m>f,g \in L^2(X,\mu)</m>, then <m>fg</m> is integrable and</p>
 <md> \left| \int_X fg \,d\mu \right| \leq \|f\|_2 \|g\|_2.</md>
@@ -854,21 +850,24 @@ E.g., if <m>a_n = 1</m> for all <m>n</m>, then <m>(a_n)_n \in \ell^{\infty}</m> 
 </md>
 <p>Hence <m>f</m> is the limit of <m>(f_n)_n</m> in the <m>\infty</m>-norm, and hence <m>L^\infty(X,\mu)</m> is complete.</p>
 </proof>
-<p>For the <m>p&lt;\infty</m> our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for <m>p&lt;\infty</m> we showed that, if <m>(f_n)_n</m> is a Cauchy sequence in <m>L^p(X,\mu)</m> then <m>(f_n)_n</m> converges to some  <m>f \in L^p(X,\mu)</m> in <m>p</m>-norm <em>and</em> there is a subsequence of <m>(f_n)_n</m> that converges pointwise a.e. to <m>f</m>. We record this statement in the following corollary.<fn>Corollary is not the correct word; the result is a corollary of the proof not a corollary of the statement of the Riesz-Fischer theorem itself. The word `Porism' has been used for such results, <xref ref="AglerMcCarthy"/>.</fn></p>
-<corollary xml:id="cor-subseq-pw-ae-conver">
+<p>For the <m>p&lt;\infty</m> our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for <m>p&lt;\infty</m> we showed that, if <m>(f_n)_n</m> is a Cauchy sequence in <m>L^p(X,\mu)</m> then <m>(f_n)_n</m> converges to some  <m>f \in L^p(X,\mu)</m> in <m>p</m>-norm <em>and</em> there is a subsequence of <m>(f_n)_n</m> that converges pointwise a.e. to <m>f</m>. We record this statement in the following porism
+    <fn>We are using the term <sq>porism</sq> to refer to a result that is a consequence of a preceding proof, but not a corollary of the statement of the result the proof accompanies. This terminology was coined by Agler and McCarthy <xref ref="AglerMcCarthy"/>.</fn>.</p>
+<algorithm xml:id="cor-subseq-pw-ae-conver">
 <p>Let <m>(X,\mathcal{M},\mu)</m>  be a measure space and let <m>1\leq p&lt;\infty.</m>
     If <m>(f_n)_n</m> is a sequence in <m>L^p(X,\mu)</m> which converges to some <m>f \in L^p(X,\mu)</m> in <m>p</m>-norm, then there is a subsequence of <m>(f_n)_n</m> which converges pointwise a.e. to <m>f</m>.</p>
-</corollary>
+</algorithm>
 <p>In general, pointwise a.e. convergence does not imply convergence in the <m>p</m>-norm for <m>1\leq p &lt; \infty</m>; and convergence in the <m>p</m>-norm does not imply pointwise a.e. convergence. We can see this in the following examples.</p>
 <example xml:id="ex-pw-not-L1">
 <p>For <m>n\geq 2</m>, let <m>f_n</m> be the function on <m>[0,1]</m> given by</p>
 <md>f(x) = \begin{cases}n^2 x &amp;x \in[0,\frac{1}{n}],\\
     -n^2x+2n &amp;x\in[\frac{1}{n},\frac{2}{n}], \\
     0 &amp; x\in[\frac{2}{n},1].\end{cases}</md>
-<p><figure xml:id="fig-pw-not-L1">
-<image source="images/pw not L1.png" width="20%" />
+<p>
+<figure xml:id="fig-pw-not-L1">
+<interactive iframe="https://www.desmos.com/calculator/a9kqqumxih?embed" preview="images/pw not L1.png"/>
+<!-- <image source="images/pw not L1.png" width="20%" /> -->
 <caption>
-  <p>The functions <m>f_2,f_3</m> and <m>f_4</m> in <xref ref="ex-pw-not-L1" text="Example"/>.</p>
+  <p>The functions <m>f_n</m> in <xref ref="ex-pw-not-L1" text="Example"/>.</p>
 </caption>
 </figure>
 </p>
@@ -889,12 +888,19 @@ E.g., if <m>a_n = 1</m> for all <m>n</m>, then <m>(a_n)_n \in \ell^{\infty}</m> 
 <p>These functions are sometimes called the <em>typewriter functions</em> or <em>dancing functions</em><idx><h>typewriter functions</h></idx><idx><h>dancing functions</h><see>typewriter functions</see></idx>.
     Explicitly, we have</p>
 <md> f_1 = \chi_{[0,1]},\ f_2 = \chi_{[0,1/2]},\ f_3=\chi_{[1/2,1]}, f_4 = \chi_{[0,1/4]}, f_5 =\chi_{[1/4,1/2]},\ldots</md>
-<p><figure xml:id="fig-typewriter">
-<image source="images/typewriter.png" width="20%" />
+<p>
+    
+<figure xml:id="fig-typewriter">
+<!-- <image source="images/typewriter.png" width="20%" /> -->
+
+<interactive iframe="https://www.desmos.com/calculator/b5e527684d?embed" preview="images/typewriter.png"/>
 <caption>
-  <p>The eleventh typewriter function, from <xref ref="ex-typewriter" text="Example"/>.</p>
+  <p>The typewriter functions, from <xref ref="ex-typewriter" text="Example"/>.</p>
 </caption>
 </figure>
+
+
+
 <p>If <m>n = 2^m +k</m> as above,</p>
 </p>
 <md> \int_{[0,1]}f_n\,dm = \frac{1}{2^m}.</md>

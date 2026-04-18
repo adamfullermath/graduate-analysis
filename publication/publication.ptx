@@ -148,7 +148,7 @@
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <css theme="tacoma"/>
+      <css theme="default-modern" palette="greens"/>
 
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search
     feature (but then variant should be set to none to avoid conflict) -->
@@ -156,7 +156,7 @@
 
     <!-- Table of Contents: focused="yes" enables expand/collapse functionality. -->
     <!-- @preexpanded-levels controls how deep to expend toc initially.          -->
-      <!--<toc focused="yes" preexpanded-levels="1" />-->
+      <toc focused="yes" preexpanded-levels="3" />
 
     <!-- Navigation options: linear or tree, and whether there is an "up" button -->
       <!--<navigation logic="tree" upbutton="no" />-->

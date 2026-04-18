@@ -3,10 +3,8 @@
 <title>Lebesgue Measure</title>
 <introduction>
 
-
-
 <blockquote>
-<p><em><q>It may well be suspected that, had it not been for its prestigious name, [Riemann integration] would have been dropped long ago, for (with due reverence to Riemann’s genius) it is certainly quite clear to any working mathematician that nowadays such a ``theory” has at best the importance of a mildly interesting exercise in the general theory of measure and integration.</q></em></p>
+<p><em><q>It may well be suspected that, had it not been for its prestigious name, [Riemann integration] would have been dropped long ago, for (with due reverence to Riemann’s genius) it is certainly quite clear to any working mathematician that nowadays such a <q>theory</q> has at best the importance of a mildly interesting exercise in the general theory of measure and integration.</q></em></p>
 <attribution>
 <p>Jean Dieudonné</p>
 </attribution>
@@ -18,39 +16,39 @@
 <proposition xml:id="prop-Lebesgue-outer-measure">
 <p>Let <m>\mathcal{I}</m> be the semiring of all intervals in <m>\mathbb{R}</m>; let <m>\mathcal{I}_f</m> be the semiring of all finite length intervals; and let <m>\mathcal{I}_h</m> be the semiring of intervals of the form <m>(a,b]</m>, where <m>a,b \in \mathbb{R}</m> with <m>a \leq b</m>.
     Let <m>m^*</m> be the outer measure induced by <m>\ell</m> on <m>\mathcal{I}</m>; let <m>m_f^*</m> be the outer measure induced by <m>\ell</m> restricted to <m>\mathcal{I}_f</m>; and let <m>m_h^*</m> be the outer measure induced by <m>\ell</m> restricted to <m>\mathcal{I}_h</m>.
-    Then for each <m>A \subseteq \mathbb{R}</m></p>
-<md> m^*(A) = m^*_f(A) = m^*_h(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md>
+    Then for each <m>A \subseteq \mathbb{R}</m>
+<md> m^*(A) = m^*_f(A) = m^*_h(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md></p>
 </proposition>
 <proof>
-<p>Since <m>\mathcal{I}_h \subseteq \mathcal{I}_f \subseteq \mathcal{I}</m> it follows that</p>
+<p>Since <m>\mathcal{I}_h \subseteq \mathcal{I}_f \subseteq \mathcal{I}</m> it follows that
 <md> m^*(A) \leq m_f^*(A) \leq m_h^*(A)</md>
-<p>for all <m>A \subseteq \mathbb{R}</m>.
+for all <m>A \subseteq \mathbb{R}</m>.
     Take any <m>A \subseteq \mathbb{R}</m>.
     If <m>m^*(A) = \infty</m>, then by the above inequalities, <m>m_f^*(A) = \infty</m> and <m>m_h^*(A) = \infty</m>.
     Suppose <m>m^*(A) &lt; \infty</m>.
     Fix <m>\varepsilon &gt;0</m>.
-    There  exist intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>A \subseteq \bigcup_{k=1}^\infty I_k</m> and</p>
+    There  exist intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>A \subseteq \bigcup_{k=1}^\infty I_k</m> and
 <md> m^*(A) + \varepsilon &gt; \sum_{k=1}^\infty \ell(I_k).</md>
-<p>As <m>m^*(A)&lt;\infty</m> it follows that <m>\sum_{k=1}^\infty \ell(I_k)&lt;\infty</m>, and so  <m>I_k</m> is of finite length for each <m>k</m>.
-    Thus</p>
+As <m>m^*(A)&lt;\infty</m> it follows that <m>\sum_{k=1}^\infty \ell(I_k)&lt;\infty</m>, and so  <m>I_k</m> is of finite length for each <m>k</m>.
+    Thus
 <md>m^*(A)+\varepsilon &gt; \sum_{k=1}^\infty \ell(I_k) \geq m_f^*(A).</md>
-<p>As this holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m^*(A) \geq m_f^*(A)</m>.
+As this holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m^*(A) \geq m_f^*(A)</m>.
     Hence <m>m^* = m_f^*</m>.</p>
-<p>We will now show that</p>
+<p>We will now show that
 <md>m^*(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md>
-<p>Let <m>m_0^*</m> denote the function</p>
+Let <m>m_0^*</m> denote the function
 <md>m_0^*(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md>
-<p>Since <m>m^*=m_f^*</m> is an infimum over all covers by intervals of finite length, and <m>m_0^*</m> is an infimum over all covers by <em>open</em> intervals of finite length, it follows that <m>m^*(A) \leq m_0^*(A)</m> for all <m>A \subseteq \mathbb{R}</m>.</p>
+Since <m>m^*=m_f^*</m> is an infimum over all covers by intervals of finite length, and <m>m_0^*</m> is an infimum over all covers by <em>open</em> intervals of finite length, it follows that <m>m^*(A) \leq m_0^*(A)</m> for all <m>A \subseteq \mathbb{R}</m>.</p>
 <p>Now take any <m>A \subseteq \mathbb{R}</m>. If <m>m^*(A) = \infty</m>, then <m>m_0^*(A)= \infty</m>.
     Suppose that <m>m^*(A) &lt;\infty</m>.
     Fix <m>\varepsilon &gt; 0</m>.
     Let <m>\{I_k\}_{k=1}^\infty</m> be a countable collection of finite length intervals such that <m>A \subseteq \bigcup_{k=1}^\infty I_k</m> and</p>
 <md> m^*(A) + \varepsilon &gt; \sum_{k=1}^\infty \ell(I_k).</md>
 <p>For each <m>k</m>, let <m>a_k = \inf I_k</m> and let <m>b_k = \sup I_k</m>.
-    Then</p>
+    Then
 <md>A \subseteq \bigcup_{k=1}^\infty I_k \subseteq \bigcup_{k=1}^\infty (a_i - \frac{\varepsilon}{4^k}, b_i + \frac{\varepsilon}{4^k}). </md>
-<p>That is, <m>\{ (a_i - \frac{\varepsilon}{2^{k+1}}, b_i + \frac{\varepsilon}{2^{k+1}})\}_{k=1}^\infty</m> is a cover of <m>A</m> by open intervals of finite length.
-    Thus</p>
+That is, <m>\{ (a_i - \frac{\varepsilon}{2^{k+1}}, b_i + \frac{\varepsilon}{2^{k+1}})\}_{k=1}^\infty</m> is a cover of <m>A</m> by open intervals of finite length.
+    Thus
 <md>
 \begin{aligned}
 m_0^*(A) &amp;\leq \sum_{k=1}^\infty \ell((a_i - \frac{\varepsilon}{2^{k+1}}, b_i + \frac{\varepsilon}{2^{k+1}})) \\
@@ -58,7 +56,7 @@ m_0^*(A) &amp;\leq \sum_{k=1}^\infty \ell((a_i - \frac{\varepsilon}{2^{k+1}}, b_
         &amp; &lt; m^*(A)+ 2 \varepsilon.
 \end{aligned}
 </md>
-<p>As the above inequality holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m_0*(A) \leq m^*(A)</m>.
+As the above inequality holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m_0*(A) \leq m^*(A)</m>.
     Hence <m>m^* = m_0^*</m>.
     A similar argument shows that <m>m_h^* = m_0^*</m>.</p>
 </proof>
@@ -105,7 +103,7 @@ m_0^*(A) &amp;\leq \sum_{k=1}^\infty \ell((a_i - \frac{\varepsilon}{2^{k+1}}, b_
     That is, we have</p>
 <md> \mathcal{B} \subseteq \mathcal{M} \subseteq \mathcal{P}(\mathbb{R})</md>
 <p>but it is not clear if these inclusions are strict.
-    We will see in Section~\ref{sec: nonmeasurable} that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.</p>
+    We will see in <xref ref="sec-nonmeasurable"/> that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.</p>
 </remark>
 <p>We will now look at some approximation and regularity properties of the Lebesgue measure. By <xref ref="prop-Lebesgue-outer-measure" text="Proposition"/> the Lebesgue outer measure <m>m^*</m> is an induced outer measure: <m>m^*</m> is the outer measure induced by the length function <m>\ell</m> on the collection of all intervals in the real line. We can thus apply <xref ref="prop-sigma-delta-sets" text="Proposition"/> to <m>m^*</m>. That is, letting <m>\mathcal{I}_{\sigma\delta}</m> be the countable intersections of countable unions of intervals, if <m>E \subseteq \mathbb{R}</m> then there is a set <m>A \in \mathcal{I}_{\sigma\delta}</m> such that <m>E \subseteq A</m> and <m>m^*(A) = m^*(E)</m>. Further, if <m>E</m> is Lebesgue measurable then <m>m(A\backslash E) = 0</m> (noting here that all the sets in <m>\mathcal{I}_{\sigma\delta}</m> are Lebesgue measurable since every interval is Lebesgue measurable). The following result is a strengthening of <xref ref="prop-sigma-delta-sets" text="Proposition"/> for the Lebesgue measure.</p>
 <theorem xml:id="thm-Leb-meas-sets-G-delta-F-sigma">
@@ -286,7 +284,7 @@ O(f,P)  =&amp; \sum_{j=1}^m \sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j
 <p>Let <m>\mathcal{B}</m> be the Borel sets of <m>\mathbb{R}</m>, and let <m>\mathcal{M}</m> be the Lebesgue measurable sets of <m>\mathbb{R}</m>. We have seen that the following inclusions hold:</p>
 <md> \mathcal{B} \subseteq \mathcal{M} \subseteq \mathcal{P}(\mathbb{R}). </md>
 <p>In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.</p>
-<p>Another question arising from Section~\ref{sec: Lebesgue} is the following: are there any uncountable Lebesgue measurable sets with <m>0</m> Lebesgue measure? We know that countable sets have measure <m>0</m>, but are the countable sets all of the Lebesgue measure <m>0</m> sets? We will see presently, that there are uncountable sets with Lebesgue measure <m>0</m>.</p>
+<p>Another question arising from <xref ref="sec-Lebesgue"/> is the following: are there any uncountable Lebesgue measurable sets with <m>0</m> Lebesgue measure? We know that countable sets have measure <m>0</m>, but are the countable sets all of the Lebesgue measure <m>0</m> sets? We will see presently, that there are uncountable sets with Lebesgue measure <m>0</m>.</p>
 <p>We will begin with proving the existence of subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) <idx><h>Vitali, Giuseppe</h></idx> in 1905.</p>
 <theorem xml:id="thm-Vitali-non-meas">
 <title>Vitali</title>

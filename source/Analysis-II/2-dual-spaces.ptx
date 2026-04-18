@@ -2,12 +2,24 @@
 <chapter>
 <title>Dual spaces</title>
 <introduction>
-<blockquote>
+<!-- <blockquote>
 <p><em><q>Duality is an important general theme that has manifestations in almost every area of mathematic.</q></em></p>
 <attribution>
 <p>Timothy Gowers</p>
 </attribution>
+</blockquote> -->
+
+<blockquote>
+	<p>
+		<em><q>
+			I’ll tell you all my ideas about Looking-glass House. First, there’s the room you can see through the glass—that’s just the same as our drawing room, only the things go the other way.
+		</q></em>
+	</p>
+	<attribution>
+		<p> Lewis Carroll (from <em>Through The Looking-glass and what Alice found there</em>).</p>
+	</attribution>
 </blockquote>
+
 <p>Let <m>V</m> be a normed vector space. Let <m>V^*</m> be all continuous linear maps from <m>V</m> to <m>\mathbb{R}</m>. The space <m>V^*</m> is a key tool in studying <m>V</m>. In this chapter we will study the duals of <m>L^p</m>-spaces; the dual of the space of continuous functions on a closed interval; and the dual of the space of continuous functions on a compact Hausdorff space.</p>
 </introduction>
 <section>
@@ -442,7 +454,7 @@ As <m>L^1([0,1],m)</m> is separable, by <xref ref="thm-Lp-separable" text="Theor
 <md> C_c(X) \subseteq C_0(X) \subseteq C_c(X).</md>
 <p>Both <m>C_b(X)</m> and <m>C_0(X)</m> are Banach spaces with the <m>\sup</m>-norm. In general, <m>C_c(X)</m> is not a Banach space. The smallest Banach subspace of <m>C_b(X)</m> containing <m>C_c(X)</m> is <m>C_0(X)</m>. That is, <m>C_0(X)</m> is the closure of <m>C_c(X)</m>.</p>
 <p>When we work with the real line, we can often find continuous functions that take desired values on certain sets. We have, for example, does this with piecewise linear functions many times throughout these notes. When working with a more general topological space, it is not clear that we can always find these nice continuous functions. The following proposition shows that for locally compact Hausdorff spaces, we can, at times, find continuous functions to do what we want.</p>
-<proposition>
+<proposition xml:id="prop-urysohn">
 <title>Urysohn's Lemma</title>
 <p><idx><h>Urysohn's Lemma</h></idx>
 	Let <m>X</m> be a locally compact Hausdorff space. Let <m>K \subseteq X</m> be compact and <m>U \subseteq X</m> be open such that <m>K \subseteq U \subseteq X</m>.

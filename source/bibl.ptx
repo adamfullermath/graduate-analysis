@@ -30,6 +30,16 @@
   <pages start="31" end="33"/>
 </biblio>
 
+<biblio type="bibtex" xml:id="Cartan-Haar">
+  <author>Cartan, Henri</author>
+  <title>Sur la mesure de {H}aar</title>
+  <journal>C. R. Acad. Sci. Paris</journal>
+  <volume> 211</volume>
+  <year>1940</year>
+  <pages>759--762</pages>
+  <issn>0001-4036</issn>
+</biblio>
+
 <biblio type="bibtex" xml:id="dini2018fondamenti">
   <author>Dini, U.</author>
   <title>Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali</title>
