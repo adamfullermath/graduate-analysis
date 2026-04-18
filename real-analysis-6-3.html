@@ -9,8 +9,8 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: tacoma                         *-->
-<!--*  Palette:                              *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.2';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -506,7 +506,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -546,9 +553,9 @@ eBookConfig.enable_chatcodes =  false;
 </h2>
 <section class="introduction" id="real-analysis-6-3-2"><blockquote class="blockquote" id="real-analysis-6-3-2-1">
 <div class="para" id="real-analysis-6-3-2-1-1">
-<em class="emphasis">“Duality is an important general theme that has manifestations in almost every area of mathematic.”</em><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="emphasis">“I’ll tell you all my ideas about Looking-glass House. First, there’s the room you can see through the glass—that’s just the same as our drawing room, only the things go the other way.”</em><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<cite class="attribution">―<div class="para" id="real-analysis-6-3-2-1-2-1">Timothy Gowers<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<cite class="attribution">―<div class="para" id="real-analysis-6-3-2-1-2-1">Lewis Carroll (from <em class="emphasis">Through The Looking-glass and what Alice found there</em>).<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></cite><div class="autopermalink" data-description="Quotation"><a href="#real-analysis-6-3-2-1" title="Copy heading and permalink for Quotation" aria-label="Copy heading and permalink for Quotation">🔗</a></div>
 </blockquote>
 <div class="para" id="real-analysis-6-3-2-2">Let <span class="process-math">\(V\)</span> be a normed vector space. Let <span class="process-math">\(V^*\)</span> be all continuous linear maps from <span class="process-math">\(V\)</span> to <span class="process-math">\(\mathbb{R}\text{.}\)</span> The space <span class="process-math">\(V^*\)</span> is a key tool in studying <span class="process-math">\(V\text{.}\)</span> In this chapter we will study the duals of <span class="process-math">\(L^p\)</span>-spaces; the dual of the space of continuous functions on a closed interval; and the dual of the space of continuous functions on a compact Hausdorff space.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Locally compact groups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam H. Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam H. Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="real-analysis-7-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-7-3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="real-analysis-7-3-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\qedhere}{\blacksquare}
+    
+\newcommand{\bA}{{\mathbb{A}}}
+\newcommand{\bB}{{\mathbb{B}}}
+\newcommand{\bC}{{\mathbb{C}}}
+\newcommand{\bD}{{\mathbb{D}}}
+\newcommand{\bE}{{\mathbb{E}}}
+\newcommand{\bF}{{\mathbb{F}}}
+\newcommand{\bG}{{\mathbb{G}}}
+\newcommand{\bH}{{\mathbb{H}}}
+\newcommand{\bI}{{\mathbb{I}}}
+\newcommand{\bJ}{{\mathbb{J}}}
+\newcommand{\bK}{{\mathbb{K}}}
+\newcommand{\bL}{{\mathbb{L}}}
+\newcommand{\bM}{{\mathbb{M}}}
+\newcommand{\bN}{{\mathbb{N}}}
+\newcommand{\bO}{{\mathbb{O}}}
+\newcommand{\bP}{{\mathbb{P}}}
+\newcommand{\bQ}{{\mathbb{Q}}}
+\newcommand{\bR}{{\mathbb{R}}}
+\newcommand{\bS}{{\mathbb{S}}}
+\newcommand{\bT}{{\mathbb{T}}}
+\newcommand{\bU}{{\mathbb{U}}}
+\newcommand{\bV}{{\mathbb{V}}}
+\newcommand{\bW}{{\mathbb{W}}}
+\newcommand{\bX}{{\mathbb{X}}}
+\newcommand{\bY}{{\mathbb{Y}}}
+\newcommand{\bZ}{{\mathbb{Z}}}
+
+\newcommand{\bm}{{\mathbf{m}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\bt}{{\mathbf{t}}}
+
+  \newcommand{\A}{{\mathcal{A}}}
+  \newcommand{\B}{{\mathcal{B}}}
+  \newcommand{\C}{{\mathcal{C}}}
+  \newcommand{\D}{{\mathcal{D}}}
+  \newcommand{\E}{{\mathcal{E}}}
+  \newcommand{\F}{{\mathcal{F}}}
+  \newcommand{\G}{{\mathcal{G}}}
+\renewcommand{\H}{{\mathcal{H}}}
+  \newcommand{\I}{{\mathcal{I}}}
+  \newcommand{\J}{{\mathcal{J}}}
+  \newcommand{\K}{{\mathcal{K}}}
+\renewcommand{\L}{{\mathcal{L}}}
+\newcommand{\M}{{\mathcal{M}}}
+  \newcommand{\N}{{\mathcal{N}}}
+\renewcommand{\O}{{\mathcal{O}}}
+\renewcommand{\P}{{\mathcal{P}}}
+  \newcommand{\Q}{{\mathcal{Q}}}
+  \newcommand{\R}{{\mathcal{R}}}
+\renewcommand{\S}{{\mathcal{S}}}
+  \newcommand{\T}{{\mathcal{T}}}
+  \newcommand{\U}{{\mathcal{U}}}
+  \newcommand{\V}{{\mathcal{V}}}
+  \newcommand{\W}{{\mathcal{W}}}
+  \newcommand{\X}{{\mathcal{X}}}
+  \newcommand{\Y}{{\mathcal{Y}}}
+  \newcommand{\Z}{{\mathcal{Z}}}
+
+\newcommand{\fA}{{\mathfrak{A}}}
+\newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}
+\newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fE}{{\mathfrak{E}}}
+\newcommand{\fF}{{\mathfrak{F}}}
+\newcommand{\fG}{{\mathfrak{G}}}
+\newcommand{\fH}{{\mathfrak{H}}}
+\newcommand{\fI}{{\mathfrak{I}}}
+\newcommand{\fJ}{{\mathfrak{J}}}
+\newcommand{\fK}{{\mathfrak{K}}}
+\newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}
+\newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}
+\newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}
+\newcommand{\fR}{{\mathfrak{R}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+\newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}
+\newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fW}{{\mathfrak{W}}}
+\newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}
+\newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fg}{{\mathfrak{g}}}
+\newcommand{\fh}{{\mathfrak{h}}}
+\newcommand{\fk}{{\mathfrak{k}}}
+\newcommand{\fs}{{\mathfrak{s}}}
+\newcommand{\ft}{{\mathfrak{t}}}
+\newcommand{\fu}{{\mathfrak{u}}}
+\newcommand{\fj}{{\mathfrak{j}}}
+
+\newcommand{\Ba}{{\mathbf{a}}}
+\newcommand{\Bb}{{\mathbf{b}}}
+\newcommand{\Bc}{{\mathbf{c}}}
+\newcommand{\Bd}{{\mathbf{d}}}
+\newcommand{\Be}{{\mathbf{e}}}
+\newcommand{\Bf}{{\mathbf{f}}}
+\newcommand{\Bg}{{\mathbf{g}}}
+\newcommand{\Bh}{{\mathbf{h}}}
+\newcommand{\Bi}{{\mathbf{i}}}
+\newcommand{\Bj}{{\mathbf{j}}}
+\newcommand{\Bk}{{\mathbf{k}}}
+\newcommand{\Bl}{{\mathbf{l}}}
+\newcommand{\Bm}{{\mathbf{m}}}
+\newcommand{\Bn}{{\mathbf{n}}}
+\newcommand{\Bo}{{\mathbf{o}}}
+\newcommand{\Bp}{{\mathbf{p}}}
+\newcommand{\Bq}{{\mathbf{q}}}
+\newcommand{\Br}{{\mathbf{r}}}
+\newcommand{\Bs}{{\mathbf{s}}}
+\newcommand{\Bt}{{\mathbf{t}}}
+\newcommand{\Bu}{{\mathbf{u}}}
+\newcommand{\Bv}{{\mathbf{v}}}
+\newcommand{\Bw}{{\mathbf{w}}}
+\newcommand{\Bx}{{\mathbf{x}}}
+\newcommand{\By}{{\mathbf{y}}}
+\newcommand{\Bz}{{\mathbf{z}}}
+
+\newcommand{\rA}{{\mathrm{A}}}
+\newcommand{\rB}{{\mathrm{B}}}
+\newcommand{\rC}{{\mathrm{C}}}
+\newcommand{\rD}{{\mathrm{D}}}
+\newcommand{\rE}{{\mathrm{E}}}
+\newcommand{\rF}{{\mathrm{F}}}
+\newcommand{\rG}{{\mathrm{G}}}
+\newcommand{\rH}{{\mathrm{H}}}
+\newcommand{\rI}{{\mathrm{I}}}
+\newcommand{\rJ}{{\mathrm{J}}}
+\newcommand{\rK}{{\mathrm{K}}}
+\newcommand{\rL}{{\mathrm{L}}}
+\newcommand{\rM}{{\mathrm{M}}}
+\newcommand{\rN}{{\mathrm{N}}}
+\newcommand{\rO}{{\mathrm{O}}}
+\newcommand{\rP}{{\mathrm{P}}}
+\newcommand{\rQ}{{\mathrm{Q}}}
+\newcommand{\rR}{{\mathrm{R}}}
+\newcommand{\rS}{{\mathrm{S}}}
+\newcommand{\rT}{{\mathrm{T}}}
+\newcommand{\rU}{{\mathrm{U}}}
+\newcommand{\rV}{{\mathrm{V}}}
+\newcommand{\rW}{{\mathrm{W}}}
+\newcommand{\rX}{{\mathrm{X}}}
+\newcommand{\rY}{{\mathrm{Y}}}
+\newcommand{\rZ}{{\mathrm{Z}}}
+
+\newcommand{\ep}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
+\newcommand{\om}{\omega}
+
+\newcommand{\foral}{\text{ for all }}
+\newcommand{\qand}{\quad\text{and}\quad}
+\newcommand{\qif}{\quad\text{if}\quad}
+\newcommand{\qor}{\quad\text{or}\quad}
+\newcommand{\qfor}{\quad\text{for}\quad}
+\newcommand{\qforal}{\quad\text{for all}\quad}
+\newcommand{\qforsome}{\quad\text{for some}\quad}
+\newcommand{\AND}{\text{ and }}
+\newcommand{\FOR}{\text{ for }}
+\newcommand{\FORAL}{\text{ for all }}
+\newcommand{\IF}{\text{ if }}
+\newcommand{\IFF}{\text{ if and only if }}
+\newcommand{\OR}{\text{ or }}
+
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\Alg}{\operatorname{Alg}}
+\newcommand{\alg}{\operatorname{alg}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Dim}{\operatorname{dim}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\Lat}{\operatorname{Lat}}
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\rep}{\operatorname{rep}}
+\newcommand{\spr}{\operatorname{spr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\newcommand{\Ath}{\A_\theta}
+\newcommand{\BH}{{\B(\H)}}
+\newcommand{\bsl}{\setminus}
+\newcommand{\ca}{\mathrm{C}^*}
+\newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dlim}{\displaystyle\lim\limits}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\Fn}{\mathbb{F}_n^+}
+\newcommand{\Fm}{\mathbb{F}_m^+}
+\newcommand{\Fmn}{\mathbb{F}_{mn}^+}
+\newcommand{\Fth}{\mathbb{F}_\theta^+}
+\newcommand{\Ftheta}{\mathbb{F}_\theta^+}
+\newcommand{\Fu}{\mathbb{F}_u^+}
+\newcommand{\Ftwo}{\mathbb{F}_2^+}
+\newcommand{\Fock}{\ell^2(\Fn)}
+\newcommand{\Fockm}{\ell^2(\Fm)}
+\newcommand{\Fockmn}{\ell^2(\Fmn)}
+\newcommand{\Fockth}{\ell^2(\Fth)}
+\newcommand{\lip}{\langle}
+\newcommand{\rip}{\rangle}
+\newcommand{\ip}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\newcommand{\mt}{\varnothing}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\ol}{\overline}
+\newcommand{\one}{{\boldsymbol{1}}}
+\newcommand{\td}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\sot}{\textsc{sot}}
+\newcommand{\wot}{\textsc{wot}}
+\newcommand{\ltwo}{\ell^2}
+\newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
+\newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
+\newcommand{\yp}{\varphi_{(1,0)}} 
+\newcommand{\ypp}{\varphi_{(0,1)}}
+\newcommand{\yppp}{\varphi_{(1,1)}}
+\newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+
+\newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="title">Mappings</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">1.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">2</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">3</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">5</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">7.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">1</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">IV</span> <span class="title">Further examples of measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-7-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-7-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-7-2-3.html#sec-products-three-or-more" class="internal"><span class="title">Products of three or more measures</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lebesgue-measure-on-Rn.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Change of variables</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="title">Volterra’s function</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="real-analysis-7-3-3"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Locally compact groups</span>
+</h2>
+<div class="para" id="real-analysis-7-3-3-2">Recall that a <em class="emphasis">group</em> <span class="process-math">\(G\)</span> is a non-empty set with an associative binary operation which has a (necessarily unique) identity and every element has an inverse. We call the binary operation the <em class="emphasis">group operation for <span class="process-math">\(G\)</span></em>. A group <span class="process-math">\(G\)</span> is called <em class="emphasis">abelian</em>  if its binary operation is commutative.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-7-3-3-3">For an arbitrary group <span class="process-math">\(G\text{,}\)</span> we will often call the group operation the <em class="emphasis">product</em>, and use concatenation to denote the product of two elements; and we will denote the inverse by <span class="process-math">\(^{-1}\)</span> That is, if <span class="process-math">\(x,y\in G\)</span> then the product of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> will be denoted by <span class="process-math">\(xy\text{;}\)</span> and the inverse of <span class="process-math">\(x\)</span> is <span class="process-math">\(x^{-1}\text{.}\)</span> Notable exceptions to this rule are groups where the binary operation is usually called <em class="emphasis">addition</em> denoted by ‘<span class="process-math">\(+\)</span>’ and inverses are denoted by ‘<span class="process-math">\(-\)</span>’, e.g. the group of real numbers with the operation of addition. For an arbitrary group <span class="process-math">\(G\text{,}\)</span> we will denote the identity element of <span class="process-math">\(G\)</span> by <span class="process-math">\(e\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-top-group"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-top-group-1-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group. If there is a topology on the set <span class="process-math">\(G\)</span> such that the maps</div>
+<dl class="description-list">
+<dt id="def-top-group-1-1-3-1">product<div class="autopermalink" data-description="Part: product"><a href="#def-top-group-1-1-3-1" title="Copy heading and permalink for Part: product" aria-label="Copy heading and permalink for Part: product">🔗</a></div>
+</dt>
+<dd> <span class="process-math">\(G \times G \rightarrow G,\ (x,y) \mapsto xy;\)</span> and</dd>
+<dt id="def-top-group-1-1-3-2">inverse<div class="autopermalink" data-description="Part: inverse"><a href="#def-top-group-1-1-3-2" title="Copy heading and permalink for Part: inverse" aria-label="Copy heading and permalink for Part: inverse">🔗</a></div>
+</dt>
+<dd> <span class="process-math">\(G  \rightarrow G\text{,}\)</span> <span class="process-math">\(x \mapsto x^{-1}\)</span>
+</dd>
+</dl>
+<div class="para">are continuous,<details class="ptx-footnote" aria-live="polite" id="def-top-group-1-1-4"><summary class="ptx-footnote__number" title="Footnote 2.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="def-top-group-1-1-4">
+<span class="process-math">\(G\times G\)</span> is endowed with the product topology here</div></details> then we <span class="process-math">\(G\)</span> is a <dfn class="terminology">topological group</dfn>. </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-top-group-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-top-group-1-2">If <span class="process-math">\(G\)</span> is a topological group whose topology is locally compact and Hausdorff we call <span class="process-math">\(G\)</span> a <dfn class="terminology">locally compact Hausdorff group</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-top-group-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.1"><a href="#def-top-group" title="Copy heading and permalink for Definition 2.1.1" aria-label="Copy heading and permalink for Definition 2.1.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-3-5">Whilst the terminology may be new, you are probably familiar with several topological groups.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-discrete-top-group"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ex-discrete-top-group-1">Let <span class="process-math">\(G\)</span> be any group. If we give <span class="process-math">\(G\)</span> the discrete topology, i.e. the topology in which every subset of <span class="process-math">\(G\)</span> is open, then <span class="process-math">\(G\)</span> is a locally compact Hausdorff space. A group endowed with the discrete topology is called a <dfn class="terminology">discrete group</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-discrete-top-group-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.2"><a href="#ex-discrete-top-group" title="Copy heading and permalink for Example 2.1.2" aria-label="Copy heading and permalink for Example 2.1.2">🔗</a></div></article><article class="example example-like" id="ex-R-top-group"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ex-R-top-group-1">The real line <span class="process-math">\(\bR\)</span> with the operation of addition is a locally compact Hausdorff group. More generally, <span class="process-math">\(\bR^n\)</span> is a locally compact Hausdorff group under addition. See <a href="real-analysis-7-3-5.html#exer-R-top-group" class="xref" data-knowl="./knowl/xref/exer-R-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.3.1">Exercise 2.3.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-R-top-group-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.3"><a href="#ex-R-top-group" title="Copy heading and permalink for Example 2.1.3" aria-label="Copy heading and permalink for Example 2.1.3">🔗</a></div></article><article class="example example-like" id="real-analysis-7-3-3-8"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="real-analysis-7-3-3-8-1">More generally, if <span class="process-math">\(X\)</span> is a normed vector space, then <span class="process-math">\(X\)</span> (the operation of vector addition) is a Hausdorff topological group with the topology induced by the norm. Note that, in general, <span class="process-math">\(X\)</span> is <em class="emphasis">not</em> locally compact.<details class="ptx-footnote" aria-live="polite" id="real-analysis-7-3-3-8-1-5"><summary class="ptx-footnote__number" title="Footnote 2.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-7-3-3-8-1-5">In fact, <span class="process-math">\(X\)</span> is locally compact if and only if <span class="process-math">\(X\)</span> is finite dimensional.</div></details><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.4"><a href="#real-analysis-7-3-3-8" title="Copy heading and permalink for Example 2.1.4" aria-label="Copy heading and permalink for Example 2.1.4">🔗</a></div></article><article class="example example-like" id="ex-R-mult-top-group"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ex-R-mult-top-group-1">The non-zero reals, <span class="process-math">\(\bR\backslash\{0\}\)</span> are a topological group with the operation of multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#ex-R-mult-top-group-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.5"><a href="#ex-R-mult-top-group" title="Copy heading and permalink for Example 2.1.5" aria-label="Copy heading and permalink for Example 2.1.5">🔗</a></div></article><article class="example example-like" id="ex-T-top-group"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="ex-T-top-group-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="ex-T-top-group-1-1">
+\begin{equation*}
+\bT = \{z \in \bC \colon |z| = 1 \}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\bT\text{,}\)</span> with the operation of multiplication, is a locally compact Hausdorff group.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-T-top-group-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.6"><a href="#ex-T-top-group" title="Copy heading and permalink for Example 2.1.6" aria-label="Copy heading and permalink for Example 2.1.6">🔗</a></div></article><article class="example example-like" id="ex-GLn-top-group"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="ex-GLn-top-group-1">The <em class="emphasis">general linear group (of degree <span class="process-math">\(n\)</span>)</em> <span class="process-math">\(GL_n(\bR)\text{,}\)</span> is the set of all <span class="process-math">\(n\times n\)</span> invertible matrices.  The general linear group is a group with the operation of matrix multiplication. The general linear group <span class="process-math">\(GL_m(\bR)\)</span> is a subset of the finite dimensional vector space <span class="process-math">\(M_{n\times n}(\bR)\)</span> of all <span class="process-math">\(n\times n\)</span> matrices. Endowing <span class="process-math">\(M_{n\times n}(\bR) \simeq \bR^{n^2}\)</span> with its usual topology, induces a topology on <span class="process-math">\(GL_n(\bR)\)</span> which makes <span class="process-math">\(GL_n(\bR)\)</span> a locally compact Hausdorff group.<div class="autopermalink" data-description="Paragraph"><a href="#ex-GLn-top-group-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-GLn-top-group-2">There are several ways we can describe the topology on <span class="process-math">\(M_{n\times n}(\bR)\text{.}\)</span> The easiest way is in terms of a norm. We can put a <span class="process-math">\(p\)</span>-norm on <span class="process-math">\(M_{n\times n}(\bR)\)</span> for <span class="process-math">\(1 \leq p \leq \infty\)</span> by identifying <span class="process-math">\(M_{n\times n}(\bR)\)</span> with <span class="process-math">\(\bR^{n\times n}.\)</span> We can also put the operator norm on <span class="process-math">\(M_{n \times n}(\bR)\)</span> as described in <a href="real-analysis-7-2-5.html#rem-operator-norm-matrix" class="xref" data-knowl="./knowl/xref/rem-operator-norm-matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.3.2">Remark 1.3.2</a>. All these norms are equivalent, and so give the same topology on <span class="process-math">\(M_{n\times n}(\bR)\text{;}\)</span> it doesn’t matter what norm you use (see <a href="real-analysis-7-2-6.html#exer-equiv-matrix-norms" class="xref" data-knowl="./knowl/xref/exer-equiv-matrix-norms.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.10">Exercise 1.4.10</a>). <a href="real-analysis-7-3-5.html#exer-GLn-top-group" class="xref" data-knowl="./knowl/xref/exer-GLn-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.3.4">Exercise 2.3.4</a> asks you to show <span class="process-math">\(GL_n(\bR)\)</span> is a topological group using the operator norm.<div class="autopermalink" data-description="Paragraph"><a href="#ex-GLn-top-group-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.7"><a href="#ex-GLn-top-group" title="Copy heading and permalink for Example 2.1.7" aria-label="Copy heading and permalink for Example 2.1.7">🔗</a></div></article><div class="para logical" id="real-analysis-7-3-3-12">
+<div class="para">Let <span class="process-math">\(G\)</span> be a topological group, and let <span class="process-math">\(A,B \subseteq G\text{,}\)</span> and <span class="process-math">\(x \in G\text{.}\)</span> We define the following pieces of notation:</div>
+<div class="displaymath process-math" id="real-analysis-7-3-3-12-4">
+\begin{align*}
+x A \amp = \{xa \colon a \in A \} \\
+Ax \amp = \{ax \colon a \in A \} \\
+AB \amp = \{ab \colon a \in A,\ b \in B \} \text{ and }\\
+A^{-1} \amp = \{a^{-1} \colon a \in A \}. 
+\end{align*}
+</div>
+<div class="para">If <span class="process-math">\(A = A^{-1}\text{,}\)</span> then we say that <span class="process-math">\(A\)</span> is <dfn class="terminology">symmetric</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="real-analysis-7-3-3-13"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="real-analysis-7-3-3-13-1">If <span class="process-math">\(G\)</span> is a topological group, then the map <span class="process-math">\(x \mapsto x^{-1}\)</span> is continuous. This map is injective and surjective, and is its own inverse. That is, the map <span class="process-math">\(x \mapsto x^{-1}\)</span> is a continuous bijection with a continuous inverse, i.e. a homeomorphism. In particular, this means that if <span class="process-math">\(A \subseteq G\)</span> is open/closed/compact, then <span class="process-math">\(A^{-1}\)</span> is open/closed/compact, respectively.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="real-analysis-7-3-3-13-2">Similarly, if we fix <span class="process-math">\(x \in G\text{,}\)</span> then the map <span class="process-math">\(y \mapsto xy\)</span> is a homeomorphism, as is the map <span class="process-math">\(y \mapsto yx\text{.}\)</span> Thus these two maps also preserve open sets, closed sets, and compact sets.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.8"><a href="#real-analysis-7-3-3-13" title="Copy heading and permalink for Remark 2.1.8" aria-label="Copy heading and permalink for Remark 2.1.8">🔗</a></div></article><article class="lemma theorem-like" id="lem-open-in-top-group"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-open-in-top-group-1-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a topological group. Let <span class="process-math">\(A \subseteq G\)</span> be a neighborhood of the identity <span class="process-math">\(e\text{.}\)</span> Then</div>
+<ol class="decimal" id="lem-open-in-top-group-1-1-4">
+<li id="lem-open-in-top-group-i">
+<div class="para" id="p-derived-lem-open-in-top-group-i">there is a symmetric neighborhood <span class="process-math">\(B\)</span> of the identity, such that <span class="process-math">\(A \subseteq B\text{;}\)</span> and</div>
+<div class="autopermalink" data-description="Part 1"><a href="#lem-open-in-top-group-i" title="Copy heading and permalink for Part 1" aria-label="Copy heading and permalink for Part 1">🔗</a></div>
+</li>
+<li id="lem-open-in-top-group-1-1-4-2">
+<div class="para" id="p-derived-lem-open-in-top-group-1-1-4-2">there is a neighborhood <span class="process-math">\(C\)</span> of the identity, such that <span class="process-math">\(CC\subseteq A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Part 2"><a href="#lem-open-in-top-group-1-1-4-2" title="Copy heading and permalink for Part 2" aria-label="Copy heading and permalink for Part 2">🔗</a></div>
+</li>
+</ol>
+<div class="para">In particular, there is a symmetric neighborhood <span class="process-math">\(D\)</span> of the identity such that <span class="process-math">\(DD \subseteq A.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-open-in-top-group-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 2.1.9"><a href="#lem-open-in-top-group" title="Copy heading and permalink for Lemma 2.1.9" aria-label="Copy heading and permalink for Lemma 2.1.9">🔗</a></div></article><article class="proof" id="lem-open-in-top-group-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-open-in-top-group-2-1">For the first point, let <span class="process-math">\(B = A \cap A^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-open-in-top-group-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-open-in-top-group-2-2">
+<div class="para">Let <span class="process-math">\(\Pi \colon G\times G \rightarrow G\)</span> denote the product map, <span class="process-math">\((x,y)\mapsto xy.\)</span> By the continuity of <span class="process-math">\(\Pi\text{,}\)</span> and since <span class="process-math">\(ee=e\text{,}\)</span> <span class="process-math">\(\Pi^{-1}(A)\)</span> is a neighborhood of <span class="process-math">\((e,e)\)</span> in <span class="process-math">\(G \times G.\)</span> By the definition of the product topology, there is an open set <span class="process-math">\(C \subseteq G\text{,}\)</span> such that</div>
+<div class="displaymath process-math" id="lem-open-in-top-group-2-2-9">
+\begin{equation*}
+(e,e) \in C \times C \subseteq \Pi^{-1}(A).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(C\)</span> is an open neighborhood of the identity, satisfying <span class="process-math">\(CC\subseteq A.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-open-in-top-group-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-open-in-top-group-2-3">Finally, if we let <span class="process-math">\(D = C \cap C^{-1}\text{,}\)</span> then <span class="process-math">\(D\)</span> is a symmetric neighborhood such that <span class="process-math">\(DD \subseteq A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-open-in-top-group-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.9.1"><a href="#lem-open-in-top-group-2" title="Copy heading and permalink for Proof 2.1.9.1" aria-label="Copy heading and permalink for Proof 2.1.9.1">🔗</a></div></article><article class="definition definition-like" id="def-left-uniform-cont"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="def-left-uniform-cont-1-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a topological group, let  <span class="process-math">\(x \in G\text{,}\)</span> and let<span class="process-math">\(f\)</span> be a bounded real-valued function on <span class="process-math">\(G\text{.}\)</span> Define the <dfn class="terminology">left translation of <span class="process-math">\(f\)</span> by <span class="process-math">\(x\)</span></dfn> as the function</div>
+<div class="displaymath process-math" id="def-left-uniform-cont-1-1-6">
+\begin{equation*}
+(L_xf)(y) = f(x^{-1}y)
+\end{equation*}
+</div>
+<div class="para">and define the <dfn class="terminology">right translation of <span class="process-math">\(f\)</span> by <span class="process-math">\(x\)</span></dfn> as the function</div>
+<div class="displaymath process-math" id="def-left-uniform-cont-1-1-8">
+\begin{equation*}
+(R_xf)(y) = f(yx).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-left-uniform-cont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="def-left-uniform-cont-1-2">
+<div class="para">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">left uniformly continuous</dfn> if, for all <span class="process-math">\(\varepsilon&gt;0\)</span> there is a neighborhood <span class="process-math">\(U\)</span> of the identity such that</div>
+<div class="displaymath process-math" id="def-left-uniform-cont-1-2-5">
+\begin{equation*}
+\|L_xf -f \|_\infty \lt\varepsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x \in U.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-left-uniform-cont-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="def-left-uniform-cont-1-3">
+<div class="para">The function <span class="process-math">\(f\)</span> is <dfn class="terminology">right uniformly continuous</dfn> if, for all <span class="process-math">\(\varepsilon&gt;0\)</span> there is a neighborhood <span class="process-math">\(U\)</span> of the identity such that</div>
+<div class="displaymath process-math" id="def-left-uniform-cont-1-3-5">
+\begin{equation*}
+\|R_xf -f \|_\infty \lt\varepsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(x \in U.\)</span> </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-left-uniform-cont-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.10"><a href="#def-left-uniform-cont" title="Copy heading and permalink for Definition 2.1.10" aria-label="Copy heading and permalink for Definition 2.1.10">🔗</a></div></article><article class="remark remark-like" id="real-analysis-7-3-3-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="real-analysis-7-3-3-16-1">
+<div class="para">The inverse in the definition of <span class="process-math">\(L_x\)</span> raise some eyebrows. Why introduce the inverse at all? There are two clear justifications for this. Firstly, our definitions of <span class="process-math">\(L_x\)</span> and <span class="process-math">\(R_x\)</span> preserve the group operations under composition. That is, for <span class="process-math">\(x,y \in G\)</span>
+</div>
+<div class="displaymath process-math" id="real-analysis-7-3-3-16-1-5">
+\begin{align*}
+L_x\circ L_y\amp= L_{xy},\ R_x \circ R_y = R_{xy}, \\
+L_x^{-1} \amp = L_{x^-1},\text{ and }R_x^{-1}=R_{x^{-1}}.  
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="real-analysis-7-3-3-16-2">
+<div class="para">The second point in favour of our notation, is that <span class="process-math">\(L_x\)</span> and <span class="process-math">\(R_x\)</span> on characteristic functions are consistent with left and right translations of sets. That is, if <span class="process-math">\(x \in G\)</span> and <span class="process-math">\(E \subseteq G\)</span> then</div>
+<div class="displaymath process-math" id="real-analysis-7-3-3-16-2-5">
+\begin{equation*}
+L_x \chi_E = \chi_{xE} \text{ and } R_x \chi_E = \chi_{Ex}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-3-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.11"><a href="#real-analysis-7-3-3-16" title="Copy heading and permalink for Remark 2.1.11" aria-label="Copy heading and permalink for Remark 2.1.11">🔗</a></div></article><article class="proposition theorem-like" id="prop-left-uniform-cont"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-left-uniform-cont-1-1">Let <span class="process-math">\(G\)</span> be a locally compact group. Every function in <span class="process-math">\(C_c(G)\)</span> is left and right uniformly continuous.<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.1.12"><a href="#prop-left-uniform-cont" title="Copy heading and permalink for Proposition 2.1.12" aria-label="Copy heading and permalink for Proposition 2.1.12">🔗</a></div></article><article class="proof" id="prop-left-uniform-cont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="prop-left-uniform-cont-2-1">
+<div class="para">Fix <span class="process-math">\(f \in C_c(G)\text{,}\)</span> and let <span class="process-math">\(K\)</span> be the (necessarily compact) closure of the support of <span class="process-math">\(f\text{.}\)</span> Take <span class="process-math">\(\varepsilon\gt 0\text{.}\)</span> For each <span class="process-math">\(x \in K\text{,}\)</span> let <span class="process-math">\(U_x \subseteq G\)</span> be the open set</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-1-7">
+\begin{equation*}
+V_x = f^{-1}\left((f(x) - \varepsilon/2, f(x)+\varepsilon/2) \right),
+\end{equation*}
+</div>
+<div class="para">and let <span class="process-math">\(U_x = x^{-1}V_x\text{.}\)</span> Then, for each <span class="process-math">\(y\in U_x\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-1-10">
+\begin{equation*}
+|f(xy)-f(x)| \lt \varepsilon/2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-left-uniform-cont-2-2">
+<div class="para">By <a href="real-analysis-7-3-3.html#lem-open-in-top-group" class="xref" data-knowl="./knowl/xref/lem-open-in-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.1.9">Lemma 2.1.9</a>, there is a symmetric open open neighborhood <span class="process-math">\(W_x\)</span> of <span class="process-math">\(e\text{,}\)</span> such that <span class="process-math">\(W_xW_x\subseteq U_x\text{.}\)</span> Since <span class="process-math">\(K\)</span> is compact, there are <span class="process-math">\(x_1,\ldots,x_n \in K\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-open-in-top-group.html" id="prop-left-uniform-cont-2-2-7">
+\begin{equation*}
+K = \bigcup_{i=1}^n x_i W_{x_i}.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(W = \bigcap_{i=1}^n W_{x_i}\)</span> and fix <span class="process-math">\(y \in W.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-left-uniform-cont-2-3">
+<div class="para">Take <span class="process-math">\(x \in K\text{.}\)</span> There is a <span class="process-math">\(i\)</span> such that, <span class="process-math">\(x \in x_i W_{x_i}\text{.}\)</span> Since <span class="process-math">\(W_{x_i}\subseteq U_{x_i}\)</span> it follows that</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-3-5">
+\begin{equation*}
+|f(x) - f(x_i)| \lt \varepsilon/2. 
+\end{equation*}
+</div>
+<div class="para">Note that</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-3-6">
+\begin{equation*}
+xy = x_i (x_i^{-1} x)y \in x_i W_{x_i}W \subseteq x_i U_{x_i},
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-3-7">
+\begin{equation*}
+|f(xy)-f(x_i)|\lt \varepsilon/2.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-3-8">
+\begin{gather*}
+|f(xy)-f(x)|\leq |f(xy)-f(x_i)| + |f(x_i)-f(x)|\lt \varepsilon. 
+\end{gather*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-left-uniform-cont-2-4">
+<div class="para">Take <span class="process-math">\(x \notin K\text{.}\)</span> Then <span class="process-math">\(f(x) = 0\text{.}\)</span> If <span class="process-math">\(xy \in K\text{,}\)</span> then <span class="process-math">\(xy \in x_i W_{x_i}\)</span> for some <span class="process-math">\(i\text{.}\)</span> Thus,</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-4-6">
+\begin{equation*}
+x_i^{-1}x = x_i^{-1}xy y^{-1} \in U_{x_i},
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(x_i^{-1}xy \in W_{x_i}\)</span> and <span class="process-math">\(y^{-1} \in W \subseteq W_{x_i}\)</span> (recall that each <span class="process-math">\(W_{x_j}\)</span> is symmetric). Hence,</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-4-10">
+\begin{equation*}
+|f(x_i)| = |f(x_i) - f(x)|\lt \varepsilon/2.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-4-11">
+\begin{equation*}
+|f(xy) - f(x)| \leq |f(xy)-f(x_i)| + |f(x_i)|\lt \varepsilon.
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(xy\notin K\text{,}\)</span> then <span class="process-math">\(f(xy) = 0\)</span> and so, <span class="process-math">\(|f(xy) - f(x)|=0.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-left-uniform-cont-2-5">
+<div class="para">We have shown that there is a neighborhood <span class="process-math">\(W\)</span> of <span class="process-math">\(e\text{,}\)</span> such that if <span class="process-math">\(y \in W\)</span> and <span class="process-math">\(x \in G\)</span> then</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-5-5">
+\begin{equation*}
+|f(xy) - f(x)|\lt \varepsilon.
+\end{equation*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math" id="prop-left-uniform-cont-2-5-6">
+\begin{equation*}
+\|R_y f -f\|_\infty \lt \varepsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(y \in W\text{,}\)</span> and hence <span class="process-math">\(f\)</span> is right uniformly continuous. That <span class="process-math">\(f\)</span> is left uniformly continuous can be shown similarly.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-left-uniform-cont-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.12.1"><a href="#prop-left-uniform-cont-2" title="Copy heading and permalink for Proof 2.1.12.1" aria-label="Copy heading and permalink for Proof 2.1.12.1">🔗</a></div></article><div class="autopermalink" data-description="Section 2.1: Locally compact groups"><a href="#real-analysis-7-3-3" title="Copy heading and permalink for Section 2.1: Locally compact groups" aria-label="Copy heading and permalink for Section 2.1: Locally compact groups">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="real-analysis-7-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="real-analysis-7-3-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

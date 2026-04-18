@@ -9,8 +9,8 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: tacoma                         *-->
-<!--*  Palette:                              *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.2';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -506,7 +506,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -546,14 +553,14 @@ eBookConfig.enable_chatcodes =  false;
 </h2>
 <div class="para" id="sec-nonmeasurable-2">Let <span class="process-math">\(\mathcal{B}\)</span> be the Borel sets of <span class="process-math">\(\mathbb{R}\text{,}\)</span> and let <span class="process-math">\(\mathcal{M}\)</span> be the Lebesgue measurable sets of <span class="process-math">\(\mathbb{R}\text{.}\)</span> We have seen that the following inclusions hold:<div class="autopermalink" data-description="Paragraph"><a href="#sec-nonmeasurable-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-Q-equiv-rel.html ./knowl/xref/exer-Lebesgue-translation-inv.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/thm-countable-L-measurable.html ./knowl/xref/thm-countable-L-measurable.html ./knowl/xref/ex-Cantor.html ./knowl/xref/ex-cantor-lebesgue.html ./knowl/xref/ex-Cantor.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/exer-cont-inverse.html ./knowl/xref/exer-Borel-inv-img.html ./knowl/xref/thm-Borel-Lebesgue-meas.html ./knowl/xref/lem-non-Borel.html ./knowl/xref/lem-non-Borel.html" id="sec-nonmeasurable-3">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-Lebesgue.html ./knowl/xref/exer-Q-equiv-rel.html ./knowl/xref/exer-Lebesgue-translation-inv.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/thm-countable-L-measurable.html ./knowl/xref/thm-countable-L-measurable.html ./knowl/xref/ex-Cantor.html ./knowl/xref/ex-cantor-lebesgue.html ./knowl/xref/ex-Cantor.html ./knowl/xref/thm-Vitali-non-meas.html ./knowl/xref/exer-cont-inverse.html ./knowl/xref/exer-Borel-inv-img.html ./knowl/xref/thm-Borel-Lebesgue-meas.html ./knowl/xref/lem-non-Borel.html ./knowl/xref/lem-non-Borel.html" id="sec-nonmeasurable-3">
 \begin{equation*}
 \mathcal{B} \subseteq \mathcal{M} \subseteq \mathcal{P}(\mathbb{R}). 
 \end{equation*}
 </div>
 <div class="para" id="sec-nonmeasurable-4">In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of <span class="process-math">\(\mathbb{R}\)</span> which are not Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-nonmeasurable-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-nonmeasurable-5">Another question arising from Section~\ref{sec: Lebesgue} is the following: are there any uncountable Lebesgue measurable sets with <span class="process-math">\(0\)</span> Lebesgue measure? We know that countable sets have measure <span class="process-math">\(0\text{,}\)</span> but are the countable sets all of the Lebesgue measure <span class="process-math">\(0\)</span> sets? We will see presently, that there are uncountable sets with Lebesgue measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-nonmeasurable-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-nonmeasurable-5">Another question arising from <a href="sec-Lebesgue.html" class="internal" title="Section 3.1: Lebesgue measure on \mathbb{R}">Section 3.1</a> is the following: are there any uncountable Lebesgue measurable sets with <span class="process-math">\(0\)</span> Lebesgue measure? We know that countable sets have measure <span class="process-math">\(0\text{,}\)</span> but are the countable sets all of the Lebesgue measure <span class="process-math">\(0\)</span> sets? We will see presently, that there are uncountable sets with Lebesgue measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-nonmeasurable-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-nonmeasurable-6">We will begin with proving the existence of subsets of <span class="process-math">\(\mathbb{R}\)</span> which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932)  in 1905.<div class="autopermalink" data-description="Paragraph"><a href="#sec-nonmeasurable-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>

@@ -9,8 +9,8 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: tacoma                         *-->
-<!--*  Palette:                              *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.2';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.56158f4758afd49f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.46363294e9238f09.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -506,7 +506,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">
@@ -549,7 +556,7 @@ eBookConfig.enable_chatcodes =  false;
 <section class="subsection" id="subsec-Volterra"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volterra’s function</span>
 </h3>
-<div class="para" id="subsec-Volterra-2">In this section we will present Volterra’s function, introduced by Voltera in 1881 <a href="backmatter-3.html#volterra1881sui" class="xref" data-knowl="./knowl/xref/volterra1881sui.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 19: Sui principi del calcolo integrale">[19]</a>. This example was likely had an influence on Lebesgue; it is cited in Lebesgue’s 1902 thesis<a href="backmatter-3.html#lebesgue1902integrale" class="xref" data-knowl="./knowl/xref/lebesgue1902integrale.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 9: Int{\’e">[9]</a>. Volterra presented this example in answer to a question of Dini <a href="backmatter-3.html#dini2018fondamenti" class="xref" data-knowl="./knowl/xref/dini2018fondamenti.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 4: Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali">[4]</a> on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg’s text <a href="backmatter-3.html#Strom" class="xref" data-knowl="./knowl/xref/Strom.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 14: Introduction to classical real analysis">[14]</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Volterra-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-Volterra-2">In this section we will present Volterra’s function, introduced by Voltera in 1881 <a href="backmatter-3.html#volterra1881sui" class="xref" data-knowl="./knowl/xref/volterra1881sui.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 20: Sui principi del calcolo integrale">[20]</a>. This example was likely had an influence on Lebesgue; it is cited in Lebesgue’s 1902 thesis<a href="backmatter-3.html#lebesgue1902integrale" class="xref" data-knowl="./knowl/xref/lebesgue1902integrale.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 10: Int{\’e">[10]</a>. Volterra presented this example in answer to a question of Dini <a href="backmatter-3.html#dini2018fondamenti" class="xref" data-knowl="./knowl/xref/dini2018fondamenti.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 5: Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali">[5]</a> on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg’s text <a href="backmatter-3.html#Strom" class="xref" data-knowl="./knowl/xref/Strom.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 15: Introduction to classical real analysis">[15]</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Volterra-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-Volterra-3">Consider the function <span class="process-math">\(f\)</span> defined by<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Volterra-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
