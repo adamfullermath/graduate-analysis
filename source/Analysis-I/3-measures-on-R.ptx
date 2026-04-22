@@ -340,8 +340,10 @@ That is</p>
 <md>C_2 = \left[0,\frac{1}{9}\right] \cup \left[\frac{2}{9},\frac{1}{3}\right]\cup\left[\frac{2}{3},\frac{7}{9}\right]\cup\left[\frac{8}{9},1\right].</md>
 <p>We construct <m>C_3</m> by removing the open middle thirds from each of the 4 intervals in <m>C_2</m>.
 We continue in this way: <m>C_n</m> is constructed from <m>C_{n-1}</m> by removing the open middle thirds from each of the <m>2^{n-1}</m> closed intervals in <m>C_{n-1}</m>.</p>
-<p><figure xml:id="fig-cantor-set">
-<image source="images/Cantor.jpg" width="25%" />
+<p>
+    <figure xml:id="fig-cantor-set">
+<!-- <image source="images/Cantor.jpg" width="25%" /> -->
+ <interactive iframe="https://www.desmos.com/calculator/lbtubzvv3f?embed" preview="images/Cantor.png"/>
 <caption>
   <p>Illustration of the sets <m>C_0</m> (top), <m>C_1, \ldots</m> used to construct the Cantor set <m>C</m>.</p>
 </caption>
@@ -385,9 +387,11 @@ As <m>[0,1]</m> is uncountable<fn>This is traditionally proved using the famed d
 </md>
 <p>Continue in this way, so that for <m>x \in U_k</m></p>
 <md> \varphi(x) = \frac{2m-1}{2^k}</md>
-<p>when <m>x</m> is in the <m>m</m>th interval in <m>U_k</m> (See Figure~\ref{fig: cantor lebesgue}).</p>
-<p><figure xml:id="fig-cantor-lebesgue">
-<image source="images/Cantor-Lebesgue.png" width="25%" />
+<p>when <m>x</m> is in the <m>m</m>th interval in <m>U_k</m> (See <xref ref="fig-cantor-lebesgue"/>).</p>
+<p>
+<figure xml:id="fig-cantor-lebesgue">
+    <interactive iframe="https://www.desmos.com/calculator/2h0j2wjh7c?embed" preview="images/Cantor-Lebesgue.png"/>
+<!-- <image source="images/Cantor-Lebesgue.png" width="25%" /> -->
 <caption>
   <p>The Cantor-Lebesgue function on the set <m>U</m>.</p>
 </caption>
@@ -412,9 +416,14 @@ As <m>[0,1]</m> is uncountable<fn>This is traditionally proved using the famed d
 <p>Let <m>\varphi</m> be the Cantor-Lebesgue function from <xref ref="ex-cantor-lebesgue" text="Example"/>.<idx><h>Cantor-Lebesgue function</h></idx>
     The function <m>\varphi</m> is an increasing, continuous function with <m>\varphi(0) = 0</m> and <m>\varphi(1) = 1</m>.
     It follows from the Intermediate Value Theorem that <m>\varphi</m> maps <m>[0,1]</m> surjectively onto <m>[0,1]</m>.
-    Define a function <m>\psi \colon [0,1] \rightarrow [0,2]</m> by</p>
+    Define a function <m>\psi \colon [0,1] \rightarrow [0,2]</m> by
 <md> \psi(x) = \varphi(x) + x.</md>
-<p>Then <m>\psi</m> is a continuous, strictly increasing function with <m>\psi([0,1]) = [0,2]</m>.</p>
+Then <m>\psi</m> is a continuous, strictly increasing function with <m>\psi([0,1]) = [0,2]</m>.</p>
+<figure xml:id="fig-Cantor-Lebesgue-x">
+    <image source ="images/Cantor-Lebesgue+x.png" width="50%"/>
+    <caption>The function <m>\psi(x)=\phi(x)+x</m> used in the proof of <xref ref="lem-non-Borel"/>.</caption>
+</figure>
+
 <p>Let <m>C \subseteq [0,1]</m> be the Cantor set, and let <m>U = [0,1] \backslash U</m>.
     By <xref ref="ex-Cantor" text="Example"/>, <m>m(C) = 0</m>, and hence <m>m(U) = 1</m>.
     Applying <m>\psi</m> to <m>C</m> and <m>U</m> we get disjoint sets <m>\psi(C)</m> and <m>\psi(U)</m> satisfying</p>
@@ -471,8 +480,10 @@ By definition <m>\Phi</m> is given by</p>
 <p>Note that <m>\Phi</m> is continuous on every closed interval <m>[a,b]</m> in <m>\mathbb{R}</m>.
 Further,</p>
 <md> \Phi'(x) = \frac{1}{\sqrt{2\pi}} e^{\frac{-x^2}{2}}.</md>
-<p><figure xml:id="fig-gaussian-cdf">
-<image source="images/Gaussian cdf.png" width="25%" />
+<p>
+<figure xml:id="fig-gaussian-cdf">
+<image source="images/Gaussian cdf.png" width="50%" />
+<caption>Bell jar curve <m>\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}</m> and its cumulative distribution function <m>\Phi(x).</m></caption>
 </figure>
 </p>
 </example>
