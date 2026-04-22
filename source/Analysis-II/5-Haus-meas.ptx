@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-haus-meas">
+    <title>Hausdorff measures</title>
+
+    <p>
+        For most of what we have done so far, we have worked with a measurable space, and finite number of measures on the space.
+        That finite measure has usually been one, but occasionally we have looked at two or three measures simultaneously.
+        Things will be different in this chapter.
+        We will define a family of measures <m>\{H_p\}_{p\geq 0}</m> on a fixed <m>\bR^n</m>.
+        Give a bounded <m>E \subseteq \bR^n</m>, we are not so much interested in <m>H_p(E)</m> for fixed <m>p</m>; we are interested in finding which <m>p</m> satisfies <m>0\lt H_p(E) \lt\infty.</m>
+        We will not, usually, be interested in the exact value of <m>H_p(E)</m>.
+    </p>
+        
+    <p>
+        For a set <m>B \subseteq \bR^n</m>, we define the <term>diameter</term> of <m>B</m> to be
+        <md>
+            <mrow> \diam(B) = \sup\{\|x-y\|_2 \colon x,y \in B\}.</mrow>
+        </md> <idx><h>diameter</h></idx>
+        For <m>p\geq 0</m> and <m>\delta \gt 0</m>, define a map on the subsets <m>B</m> of <m>\bR^n</m> with <m>\diam(B)\lt \delta</m> by
+        <md>
+            B \mapsto \diam(B)^p.
+        </md>
+        Let <m>H_{p,\delta}</m> be the outer measure induced by this map.
+        Thus, for <m>E \subseteq \bR^n</m>,
+        <md>
+            H_{p,\delta} = \inf\left\{\sum_{k=1}^\infty\diam(B_k)^p \colon E \subseteq \bigcup_{k=1}^\infty B_k,\ \diam(B_k)\lt \delta \right\}.
+        </md>
+        Note that if <m>\delta_1\lt \delta_2</m> and <m>E \subseteq \bR^n</m>, then <m>H_{p,\delta_2}(E) \leq H_{p,\delta_1}(E)</m>.
+        This <m>H_{p,\delta}(E)</m> increases as <m>\delta</m> decreases.
+        Define, for all <m>E \subseteq \bR^n</m>
+        <md>
+            H_p(E) = \lim_{\delta\rightarrow 0^+}H_{p,\delta}(E).
+        </md>
+    </p>
+
+    <proposition xml:id="prop-Hp-outer-meas">
+        <statement>
+            <p>
+                For each <m>p\geq 0</m>, <m>H_p</m> is an outer measure on <m>\bR^n</m>.
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                Fix <m>p \geq 0.</m>
+                Clearly <m>H_p(\emptyset)=0</m>, so we only need to show that <m>H_p</m> is countably monotone.
+                Take <m>E\subseteq \bR^n</m> and sets <m>\{E_k\}_{k=1}^\infty</m> such that <m>E \subseteq \bigcup_{k=1}^\infty E_k.</m>
+                Then, since <m>H_{p,\frac{1}{n}}</m> is an outer measure for each <m>n</m>,
+                <md>
+                    <mrow> H_p(E)=\amp \lim_{n\rightarrow\infty} H_{p,\frac{1}{n}}(E)</mrow>
+                    <mrow> \leq\amp  \lim_{n\rightarrow\infty} \sum_{k=1}^\infty H_{p,\frac{1}{n}}(E_k)</mrow>
+                    <mrow> = \amp \sum_{k=1}^\infty  \lim_{n\rightarrow\infty}  H_{p,\frac{1}{n}}(E_k)</mrow>
+                    <mrow> = \amp \sum_{k=1}^\infty H_p(E_k),</mrow>
+                </md>
+                where the penultimate equality (the interchanging of the sum and the limit) comes from the <xref ref="thm-MCT" text="custom">Monotone Convergence Theorem</xref>.
+                Thus <m>H_p</m> is countably monotone, and therefore <m>H_p</m> is an outer measure on <m>\bR^n</m>.
+            </p>
+        </proof>
+    </proposition>
+    
+</section>

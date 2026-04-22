@@ -23,7 +23,7 @@
 <biblio type="bibtex" xml:id="Blass">
   <author>Blass, Andreas</author>
   <title>Existence of bases implies the axiom of choice</title>
-  <booktitle>Axiomatic set theory ({B</booktitle>
+  <booktitle>Axiomatic set theory</booktitle>
   <year>1984</year>
   <volume>31</volume>
   <publisher>Amer. Math. Soc., Providence, RI</publisher>
@@ -68,6 +68,12 @@
   <title>Measure Theory</title>
   <volume>II</volume>
   <publisher>https://www1.essex.ac.uk/maths/people/fremlin/mt.htm</publisher>
+</biblio>
+
+<biblio type="bibtex" xml:id="Pedersen-Haar">
+  <author>Pedersen, Gert K.</author>
+  <title>The Existence and Uniqueness of the Haar integral on a locally compact topological group</title>
+  <year>2000</year>
 </biblio>
 
 <biblio type="bibtex" xml:id="RieszNagyFA">

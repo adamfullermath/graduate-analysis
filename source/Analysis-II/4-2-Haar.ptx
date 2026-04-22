@@ -188,7 +188,7 @@
                 The measure <m>\mu</m> is a left Haar measure, if and only if <m>\phi</m> is left invariant.
             </p>
         </statement>
-    </lemma>
+    
 
     <proof>
         <p>
@@ -231,7 +231,7 @@
             Thus, <m>\mu</m> is a left Haar measure.
         </p>
     </proof>
-
+    </lemma>
     <p>
         <xref ref="lem-haar-inv"/> (with <xref ref="thm-RMK-positive"/>) says that finding a left Haar measure on a locally compact Hausdorff group <m>G</m> is equivalent to finding a left invariant positive linear functional on <m>C_c(G)</m>.
         We will concentrate on finding such a linear functional.
@@ -488,7 +488,7 @@
                 </md>
                 Note that, by <xref ref="lem-haar-func-2"/> <xref ref="lem-haar-func-2-3"/>, and the choice of <m>g</m>,
                 <md>
-                    I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + varepsilon.
+                    I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + \varepsilon.
                 </md>
                 Hence
                 <md>
@@ -514,6 +514,82 @@
                 By <xref ref="lem-haar-inv"/> and <xref ref="thm-RMK-positive"/> it follows that there is a left Haar measure on <m>G</m>.
             </p>
         </proof> 
+    </theorem>
+    
+    <p>
+        We present a proof  of the uniqueness of the Haar measure in the special case when <m>G</m> is <m>\sigma</m>-compact, i.e. when <m>G</m> is a countable union of compact sets.
+        This proof follows the ideas of <xref ref="Pedersen-Haar"/>.
+        For a general proof see, e.g., Chapter 11 of <xref ref="Folland"/>.
+        Note that, <xref ref="ex-R-top-group"/>, <xref ref="ex-R-mult-top-group"/>, <xref ref="ex-T-top-group"/>, and <xref ref="ex-GLn-top-group"/> are all <m>\sigma</m>-compact groups; the discrete groups in <xref ref="ex-discrete-top-group"/> are <m>\sigma</m>-compact when countable.
+    </p>
+s
+    <theorem xml:id="thm-Haar-unique">
+        <statement>
+            <p>
+                Let <m>G</m> be a locally compact Hausdorff group.
+                If <m>\mu</m> and <m>\nu</m> are two left Haar measures on <m>G</m>, then there is a constant <m>c \gt 0</m> such that <m>\mu = c \nu.</m>
+            </p>
+        </statement>
+
+        <proof>
+            <title>Proof (of <m>\sigma</m>-compact case)</title>
+            <p>
+                Let <m>G</m> be a <m>\sigma</m>-compact locally compact Hausdorff group, and let <m>\mu</m> and <m>\nu</m> be two Haar measures on <m>G</m>.
+                Since <m>G</m>   is <m>\sigma</m>-compact and <m>\mu</m> and <m>\nu</m> are Radon measures, both <m>\mu</m> and <m>\nu</m> are <m>\sigma</m>-finite.
+            </p>
+
+            <p>
+                Assume that <m>\mu \leq \nu</m>.
+                Then <m>\mu \ll \nu</m>.
+                Hence, by the <xref ref="thm-Radon-Nikodym" text="custom">Radon-Nikodym Theorem</xref>, there is a non-negative Borel measurable function <m>h</m> such that
+                <md>\mu(E) = \int_E h\,d\nu</md>
+                for all Borel sets <m>E \subseteq G</m>.
+                Note that, since <m>\mu\leq \nu</m>, <m>0\leq h \leq 1.</m>
+                Further, by <xref ref="exer-abs-cont-integration"/>, if <m>f</m> is <m>\mu</m>-integrable, then
+                <md>
+                    \int_X f\,d\mu = \int_X fh\,d\nu.
+                </md>
+                Thus, for <m>f \in C_c(G)</m> and <m>y \in G</m>, since <m>\mu</m> and <m>\nu</m> are left Haar measures,
+                <md>
+                    <mrow>\int_G fh\,d\nu \amp = \int_G f \,d\mu = \int_G f(y^{-1}x)\,d\mu(x)</mrow>
+                    <mrow> \amp = \int_G f(y^{-1}x)h(x)\,d\nu(x)=\int_G f(x)h(y^{-1}x)\,d\nu(x). </mrow>
+                </md>
+                Thus, for all <m>f \in C_x(G)</m> and <m>y\in G</m>, <m>\int_G f(x)[h(x)-h(z^{-1}x)]\,d\nu(x) = 0</m>,
+                and hence
+                <m>h-L_z h = 0</m>
+                almost everywhere.
+            </p>
+
+            <p>
+                Consider, now the function
+                <md>
+                    <mrow>H \colon G \times G  \amp \rightarrow \bR  </mrow>
+                    <mrow> (x,y) \amp \mapsto |h(y^{-1}x)-h(x)|. </mrow>
+                </md>
+                Let <m>\tilde{\mu}</m> be the completion of <m>\mu</m>, as in <xref ref="thm-completion-of-meas-space"/>.
+                By <xref ref="thm-tonelli" text="custom">Tonelli's Theorem</xref>
+                <md>
+                    <mrow>0=\int_{G\times G} H \,d(\tilde{\mu}\times \tilde{\mu}) \amp= \int_G \int_G |h(y^{-1}x)-h(x)|\,d\tilde{\mu}(x)\,d\tilde{\mu}(y) </mrow>
+                    <mrow>  \amp= \int_G \int_G |h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)\,d\tilde{\mu}(x). </mrow>
+                </md>
+                Hence, for almost all <m>x\in G</m>, <m>\int_G|h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)=0</m>.
+                Using again, that <m>\mu</m> is a left Haar measure, we have for almost all <m>x \in G</m>,
+                <md>0=\int_G|h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)=\int_G|h(y^{-1})-h(x)|\,d\tilde{\mu}(y). </md>
+                Hence, <m>h</m> is constant almost everywhere, and thus <m>\mu = c \nu</m> for a constant <m>0 \lt c \leq 1</m>.
+            </p>
+
+            <p>
+                Now consider the general case, when we do not necessarily have <m>\mu \leq \nu</m>.
+                Assume that <m>\mu \neq \nu</m>. 
+                Note that <m>\mu + \nu</m> is also a left Haar measure, and <m>\mu \leq \mu + \nu.</m>
+                By the above argument, there is a constant <m>0 \lt c \lt 1</m>, such that <m>\mu = c(\mu + \nu)</m>.
+                Hence,
+                <md>
+                    \mu = \frac{c}{1-c}\nu,
+                </md>
+                completing the proof.
+            </p>
+        </proof>
     </theorem>
     
 </section>

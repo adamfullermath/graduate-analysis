@@ -501,7 +501,7 @@ f((1-\lambda)u + \lambda v) \leq (1-\lambda)f(u) + \lambda f(v).
     Intuitively, this can be understood since <m>f''(x) = e^x &gt; 0</m> for all <m>x</m>.
     A formal proof of the inequality  <xref ref="eq-exp-convex" text="Equation"/> is eked out in <xref ref="exer-exp-convex" text="Exercise"/>.</p>
 <p><figure xml:id="fig-exp-convex">
-<image source="images/exp convex.png" width="20%" />
+<image source="images/exp convex.png" width="50%"/>
 <caption>
   <p>The function <m>f(x)=e^x</m> is convex</p>
 </caption>
@@ -748,7 +748,8 @@ E.g., if <m>a_n = 1</m> for all <m>n</m>, then <m>(a_n)_n \in \ell^{\infty}</m> 
 <md> \|(v_1,\ldots,v_n)\|_\infty = \max_{1\leq i \leq n}|v_i|.</md>
 <p><idx><h>norm</h><h sortby="p-norm"><m>p</m>-norm</h><h>on <m>\mathbb{R}^n</m></h></idx> When <m>n&gt;1</m> these norms are all different, as illustrated in Figure~\ref{fig: p-norm}. However, the norms are all equivalent.</p>
 <figure xml:id="fig-p-norm">
-<image source="images/p-norms.png" width="20%" />
+<!-- <image source="images/p-norms.png" width="20%" /> -->
+<interactive iframe="https://www.desmos.com/calculator/5nqimw0cpw?embed" preview="images/p-norms.png"/>
 <caption>
 <p>The sets <m>\|v\|_p = 1</m> for different values of <m>p</m> in <m>\mathbb{R}^2</m></p>
 </caption>

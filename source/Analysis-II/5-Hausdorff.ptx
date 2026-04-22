@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Hausdorff Dimension</title>
+
+<introduction>
+    <blockquote>
+        <p>
+            <em><q>Clouds are not spheres, mountains are not cones, coastlines are not circles, and bark is not smooth, nor does lightning travel in a straight line.</q></em>
+        </p>
+        <attribution>Benoit Mandelbrot</attribution>
+    </blockquote>
+</introduction>
+
+<xi:include href="./5-Haus-meas.ptx"/>
+<xi:include href="./5-Haus-Examples.ptx"/>
+
+<xi:include href="./5-Exercises.ptx"/>
+
+
+</chapter>
+

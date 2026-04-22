@@ -214,6 +214,7 @@
     \newcommand{\rad}{\operatorname{rad}}
     \newcommand{\rep}{\operatorname{rep}}
     \newcommand{\spr}{\operatorname{spr}}
+    \newcommand{\supp}{\operatorname{supp}}
     \newcommand{\Tr}{\operatorname{Tr}}
 
     %      Useful shortforms
@@ -225,6 +226,7 @@
     \newcommand{\dint}{\displaystyle\int}
     \newcommand{\dlim}{\displaystyle\lim\limits}
     \newcommand{\dsum}{\displaystyle\sum}
+  
     \newcommand{\Fn}{\mathbb{F}_n^+}
     \newcommand{\Fm}{\mathbb{F}_m^+}
     \newcommand{\Fmn}{\mathbb{F}_{mn}^+}

@@ -36,6 +36,7 @@
     <part><title>Further examples of measures</title>
       <xi:include href="./Analysis-II/3-product.ptx" />
       <xi:include href="./Analysis-II/4-Haar.ptx" />
+      <xi:include href="./Analysis-II/5-Hausdorff.ptx" />
     </part>
 
     <!-- Include backmatter -->

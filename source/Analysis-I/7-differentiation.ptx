@@ -75,7 +75,7 @@
 <p>As <m>\nu(E) &lt; \varepsilon</m> for all <m>\varepsilon &gt;0</m>, it follows that <m>\nu(E) =0</m>.
     Thus <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
 </example>
-<theorem>
+<theorem xml:id="thm-Radon-Nikodym">
 <title>Radon-Nikodym Theorem</title>
 <p><idx><h>Radon-Nikodym Theorem</h></idx>
     Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space, and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m>.
@@ -1099,12 +1099,17 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </ol>
 </exercise>
 <exercise xml:id="exer-abs-cont-integration">
+    <statement>
 <p>Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m> with <m>\nu \ll \mu</m>.
     Let <m>f = \frac{d\nu}{d\mu}</m> be the Radon-Nikodym derivative of <m>\nu</m> with respect to <m>\mu</m>.
     Let <m>E \subseteq \mathcal{F}</m> be a measurable set, and let <m>g</m> be a measurable function on <m>X</m> which is integrable with respect to <m>\nu</m>.
-    Show that</p>
+    Show that
 <md> \int_X g\,d\nu = \int_X gf\,d\mu.</md>
-<p>(HINT: First show the result holds for simple functions)</p>
+</p>
+</statement>
+<hint>
+<p>First show the result holds for simple functions.</p>
+</hint>
 </exercise>
 <exercise xml:id="exer-abs-cont-preorder">
 <p>Let <m>(X,\mathcal{F})</m> be a measurable set.
