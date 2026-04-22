@@ -9,6 +9,7 @@
     <target name="print" format="pdf" />
     <target name="latex" format="latex" />
     <target name="ebook" format="epub"/>
+    <target name="MTpdf" format="pdf" output-filename="MeasureTheory.pdf"/>
   </targets>
 </project>
 

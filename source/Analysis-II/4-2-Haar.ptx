@@ -516,7 +516,7 @@
         </proof> 
     </theorem>
     
-    <p>
+    <!-- <p>
         We present a proof  of the uniqueness of the Haar measure in the special case when <m>G</m> is <m>\sigma</m>-compact, i.e. when <m>G</m> is a countable union of compact sets.
         This proof follows the ideas of <xref ref="Pedersen-Haar"/>.
         For a general proof see, e.g., Chapter 11 of <xref ref="Folland"/>.
@@ -591,5 +591,5 @@ s
             </p>
         </proof>
     </theorem>
-    
+     -->
 </section>
