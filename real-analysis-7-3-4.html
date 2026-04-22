@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.4';
+eBookConfig.runestone_version = '7.13.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -130,234 +130,246 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="real-analysis-7-3-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-7-3.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="real-analysis-7-3-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(    \newcommand{\qedhere}{\blacksquare}
-    
-\newcommand{\bA}{{\mathbb{A}}}
-\newcommand{\bB}{{\mathbb{B}}}
-\newcommand{\bC}{{\mathbb{C}}}
-\newcommand{\bD}{{\mathbb{D}}}
-\newcommand{\bE}{{\mathbb{E}}}
-\newcommand{\bF}{{\mathbb{F}}}
-\newcommand{\bG}{{\mathbb{G}}}
-\newcommand{\bH}{{\mathbb{H}}}
-\newcommand{\bI}{{\mathbb{I}}}
-\newcommand{\bJ}{{\mathbb{J}}}
-\newcommand{\bK}{{\mathbb{K}}}
-\newcommand{\bL}{{\mathbb{L}}}
-\newcommand{\bM}{{\mathbb{M}}}
-\newcommand{\bN}{{\mathbb{N}}}
-\newcommand{\bO}{{\mathbb{O}}}
-\newcommand{\bP}{{\mathbb{P}}}
-\newcommand{\bQ}{{\mathbb{Q}}}
-\newcommand{\bR}{{\mathbb{R}}}
-\newcommand{\bS}{{\mathbb{S}}}
-\newcommand{\bT}{{\mathbb{T}}}
-\newcommand{\bU}{{\mathbb{U}}}
-\newcommand{\bV}{{\mathbb{V}}}
-\newcommand{\bW}{{\mathbb{W}}}
-\newcommand{\bX}{{\mathbb{X}}}
-\newcommand{\bY}{{\mathbb{Y}}}
-\newcommand{\bZ}{{\mathbb{Z}}}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(      \newcommand{\qedhere}{\blacksquare}
+      
+  \newcommand{\bA}{{\mathbb{A}}}
+  \newcommand{\bB}{{\mathbb{B}}}
+  \newcommand{\bC}{{\mathbb{C}}}
+  \newcommand{\bD}{{\mathbb{D}}}
+  \newcommand{\bE}{{\mathbb{E}}}
+  \newcommand{\bF}{{\mathbb{F}}}
+  \newcommand{\bG}{{\mathbb{G}}}
+  \newcommand{\bH}{{\mathbb{H}}}
+  \newcommand{\bI}{{\mathbb{I}}}
+  \newcommand{\bJ}{{\mathbb{J}}}
+  \newcommand{\bK}{{\mathbb{K}}}
+  \newcommand{\bL}{{\mathbb{L}}}
+  \newcommand{\bM}{{\mathbb{M}}}
+  \newcommand{\bN}{{\mathbb{N}}}
+  \newcommand{\bO}{{\mathbb{O}}}
+  \newcommand{\bP}{{\mathbb{P}}}
+  \newcommand{\bQ}{{\mathbb{Q}}}
+  \newcommand{\bR}{{\mathbb{R}}}
+  \newcommand{\bS}{{\mathbb{S}}}
+  \newcommand{\bT}{{\mathbb{T}}}
+  \newcommand{\bU}{{\mathbb{U}}}
+  \newcommand{\bV}{{\mathbb{V}}}
+  \newcommand{\bW}{{\mathbb{W}}}
+  \newcommand{\bX}{{\mathbb{X}}}
+  \newcommand{\bY}{{\mathbb{Y}}}
+  \newcommand{\bZ}{{\mathbb{Z}}}
 
-\newcommand{\bm}{{\mathbf{m}}}
-\newcommand{\bn}{{\mathbf{n}}}
-\newcommand{\bt}{{\mathbf{t}}}
+  
+  \newcommand{\bm}{{\mathbf{m}}}
+  \newcommand{\bn}{{\mathbf{n}}}
+  \newcommand{\bt}{{\mathbf{t}}}
 
-  \newcommand{\A}{{\mathcal{A}}}
-  \newcommand{\B}{{\mathcal{B}}}
-  \newcommand{\C}{{\mathcal{C}}}
-  \newcommand{\D}{{\mathcal{D}}}
-  \newcommand{\E}{{\mathcal{E}}}
-  \newcommand{\F}{{\mathcal{F}}}
-  \newcommand{\G}{{\mathcal{G}}}
-\renewcommand{\H}{{\mathcal{H}}}
-  \newcommand{\I}{{\mathcal{I}}}
-  \newcommand{\J}{{\mathcal{J}}}
-  \newcommand{\K}{{\mathcal{K}}}
-\renewcommand{\L}{{\mathcal{L}}}
-\newcommand{\M}{{\mathcal{M}}}
-  \newcommand{\N}{{\mathcal{N}}}
-\renewcommand{\O}{{\mathcal{O}}}
-\renewcommand{\P}{{\mathcal{P}}}
-  \newcommand{\Q}{{\mathcal{Q}}}
-  \newcommand{\R}{{\mathcal{R}}}
-\renewcommand{\S}{{\mathcal{S}}}
-  \newcommand{\T}{{\mathcal{T}}}
-  \newcommand{\U}{{\mathcal{U}}}
-  \newcommand{\V}{{\mathcal{V}}}
-  \newcommand{\W}{{\mathcal{W}}}
-  \newcommand{\X}{{\mathcal{X}}}
-  \newcommand{\Y}{{\mathcal{Y}}}
-  \newcommand{\Z}{{\mathcal{Z}}}
+  
+    \newcommand{\A}{{\mathcal{A}}}
+    \newcommand{\B}{{\mathcal{B}}}
+    \newcommand{\C}{{\mathcal{C}}}
+    \newcommand{\D}{{\mathcal{D}}}
+    \newcommand{\E}{{\mathcal{E}}}
+    \newcommand{\F}{{\mathcal{F}}}
+    \newcommand{\G}{{\mathcal{G}}}
+  \renewcommand{\H}{{\mathcal{H}}}
+    \newcommand{\I}{{\mathcal{I}}}
+    \newcommand{\J}{{\mathcal{J}}}
+    \newcommand{\K}{{\mathcal{K}}}
+  \renewcommand{\L}{{\mathcal{L}}}
+  \newcommand{\M}{{\mathcal{M}}}
+    \newcommand{\N}{{\mathcal{N}}}
+  \renewcommand{\O}{{\mathcal{O}}}
+  \renewcommand{\P}{{\mathcal{P}}}
+    \newcommand{\Q}{{\mathcal{Q}}}
+    \newcommand{\R}{{\mathcal{R}}}
+  \renewcommand{\S}{{\mathcal{S}}}
+    \newcommand{\T}{{\mathcal{T}}}
+    \newcommand{\U}{{\mathcal{U}}}
+    \newcommand{\V}{{\mathcal{V}}}
+    \newcommand{\W}{{\mathcal{W}}}
+    \newcommand{\X}{{\mathcal{X}}}
+    \newcommand{\Y}{{\mathcal{Y}}}
+    \newcommand{\Z}{{\mathcal{Z}}}
 
-\newcommand{\fA}{{\mathfrak{A}}}
-\newcommand{\fB}{{\mathfrak{B}}}
-\newcommand{\fC}{{\mathfrak{C}}}
-\newcommand{\fD}{{\mathfrak{D}}}
-\newcommand{\fE}{{\mathfrak{E}}}
-\newcommand{\fF}{{\mathfrak{F}}}
-\newcommand{\fG}{{\mathfrak{G}}}
-\newcommand{\fH}{{\mathfrak{H}}}
-\newcommand{\fI}{{\mathfrak{I}}}
-\newcommand{\fJ}{{\mathfrak{J}}}
-\newcommand{\fK}{{\mathfrak{K}}}
-\newcommand{\fL}{{\mathfrak{L}}}
-\newcommand{\fM}{{\mathfrak{M}}}
-\newcommand{\fN}{{\mathfrak{N}}}
-\newcommand{\fO}{{\mathfrak{O}}}
-\newcommand{\fP}{{\mathfrak{P}}}
-\newcommand{\fQ}{{\mathfrak{Q}}}
-\newcommand{\fR}{{\mathfrak{R}}}
-\newcommand{\fS}{{\mathfrak{S}}}
-\newcommand{\fT}{{\mathfrak{T}}}
-\newcommand{\fU}{{\mathfrak{U}}}
-\newcommand{\fV}{{\mathfrak{V}}}
-\newcommand{\fW}{{\mathfrak{W}}}
-\newcommand{\fX}{{\mathfrak{X}}}
-\newcommand{\fY}{{\mathfrak{Y}}}
-\newcommand{\fZ}{{\mathfrak{Z}}}
+  
+  \newcommand{\fA}{{\mathfrak{A}}}
+  \newcommand{\fB}{{\mathfrak{B}}}
+  \newcommand{\fC}{{\mathfrak{C}}}
+  \newcommand{\fD}{{\mathfrak{D}}}
+  \newcommand{\fE}{{\mathfrak{E}}}
+  \newcommand{\fF}{{\mathfrak{F}}}
+  \newcommand{\fG}{{\mathfrak{G}}}
+  \newcommand{\fH}{{\mathfrak{H}}}
+  \newcommand{\fI}{{\mathfrak{I}}}
+  \newcommand{\fJ}{{\mathfrak{J}}}
+  \newcommand{\fK}{{\mathfrak{K}}}
+  \newcommand{\fL}{{\mathfrak{L}}}
+  \newcommand{\fM}{{\mathfrak{M}}}
+  \newcommand{\fN}{{\mathfrak{N}}}
+  \newcommand{\fO}{{\mathfrak{O}}}
+  \newcommand{\fP}{{\mathfrak{P}}}
+  \newcommand{\fQ}{{\mathfrak{Q}}}
+  \newcommand{\fR}{{\mathfrak{R}}}
+  \newcommand{\fS}{{\mathfrak{S}}}
+  \newcommand{\fT}{{\mathfrak{T}}}
+  \newcommand{\fU}{{\mathfrak{U}}}
+  \newcommand{\fV}{{\mathfrak{V}}}
+  \newcommand{\fW}{{\mathfrak{W}}}
+  \newcommand{\fX}{{\mathfrak{X}}}
+  \newcommand{\fY}{{\mathfrak{Y}}}
+  \newcommand{\fZ}{{\mathfrak{Z}}}
 
-\newcommand{\fc}{{\mathfrak{c}}}
-\newcommand{\fg}{{\mathfrak{g}}}
-\newcommand{\fh}{{\mathfrak{h}}}
-\newcommand{\fk}{{\mathfrak{k}}}
-\newcommand{\fs}{{\mathfrak{s}}}
-\newcommand{\ft}{{\mathfrak{t}}}
-\newcommand{\fu}{{\mathfrak{u}}}
-\newcommand{\fj}{{\mathfrak{j}}}
+  \newcommand{\fc}{{\mathfrak{c}}}
+  \newcommand{\fg}{{\mathfrak{g}}}
+  \newcommand{\fh}{{\mathfrak{h}}}
+  \newcommand{\fk}{{\mathfrak{k}}}
+  \newcommand{\fs}{{\mathfrak{s}}}
+  \newcommand{\ft}{{\mathfrak{t}}}
+  \newcommand{\fu}{{\mathfrak{u}}}
+  \newcommand{\fj}{{\mathfrak{j}}}
 
-\newcommand{\Ba}{{\mathbf{a}}}
-\newcommand{\Bb}{{\mathbf{b}}}
-\newcommand{\Bc}{{\mathbf{c}}}
-\newcommand{\Bd}{{\mathbf{d}}}
-\newcommand{\Be}{{\mathbf{e}}}
-\newcommand{\Bf}{{\mathbf{f}}}
-\newcommand{\Bg}{{\mathbf{g}}}
-\newcommand{\Bh}{{\mathbf{h}}}
-\newcommand{\Bi}{{\mathbf{i}}}
-\newcommand{\Bj}{{\mathbf{j}}}
-\newcommand{\Bk}{{\mathbf{k}}}
-\newcommand{\Bl}{{\mathbf{l}}}
-\newcommand{\Bm}{{\mathbf{m}}}
-\newcommand{\Bn}{{\mathbf{n}}}
-\newcommand{\Bo}{{\mathbf{o}}}
-\newcommand{\Bp}{{\mathbf{p}}}
-\newcommand{\Bq}{{\mathbf{q}}}
-\newcommand{\Br}{{\mathbf{r}}}
-\newcommand{\Bs}{{\mathbf{s}}}
-\newcommand{\Bt}{{\mathbf{t}}}
-\newcommand{\Bu}{{\mathbf{u}}}
-\newcommand{\Bv}{{\mathbf{v}}}
-\newcommand{\Bw}{{\mathbf{w}}}
-\newcommand{\Bx}{{\mathbf{x}}}
-\newcommand{\By}{{\mathbf{y}}}
-\newcommand{\Bz}{{\mathbf{z}}}
+  
+  \newcommand{\Ba}{{\mathbf{a}}}
+  \newcommand{\Bb}{{\mathbf{b}}}
+  \newcommand{\Bc}{{\mathbf{c}}}
+  \newcommand{\Bd}{{\mathbf{d}}}
+  \newcommand{\Be}{{\mathbf{e}}}
+  \newcommand{\Bf}{{\mathbf{f}}}
+  \newcommand{\Bg}{{\mathbf{g}}}
+  \newcommand{\Bh}{{\mathbf{h}}}
+  \newcommand{\Bi}{{\mathbf{i}}}
+  \newcommand{\Bj}{{\mathbf{j}}}
+  \newcommand{\Bk}{{\mathbf{k}}}
+  \newcommand{\Bl}{{\mathbf{l}}}
+  \newcommand{\Bm}{{\mathbf{m}}}
+  \newcommand{\Bn}{{\mathbf{n}}}
+  \newcommand{\Bo}{{\mathbf{o}}}
+  \newcommand{\Bp}{{\mathbf{p}}}
+  \newcommand{\Bq}{{\mathbf{q}}}
+  \newcommand{\Br}{{\mathbf{r}}}
+  \newcommand{\Bs}{{\mathbf{s}}}
+  \newcommand{\Bt}{{\mathbf{t}}}
+  \newcommand{\Bu}{{\mathbf{u}}}
+  \newcommand{\Bv}{{\mathbf{v}}}
+  \newcommand{\Bw}{{\mathbf{w}}}
+  \newcommand{\Bx}{{\mathbf{x}}}
+  \newcommand{\By}{{\mathbf{y}}}
+  \newcommand{\Bz}{{\mathbf{z}}}
 
-\newcommand{\rA}{{\mathrm{A}}}
-\newcommand{\rB}{{\mathrm{B}}}
-\newcommand{\rC}{{\mathrm{C}}}
-\newcommand{\rD}{{\mathrm{D}}}
-\newcommand{\rE}{{\mathrm{E}}}
-\newcommand{\rF}{{\mathrm{F}}}
-\newcommand{\rG}{{\mathrm{G}}}
-\newcommand{\rH}{{\mathrm{H}}}
-\newcommand{\rI}{{\mathrm{I}}}
-\newcommand{\rJ}{{\mathrm{J}}}
-\newcommand{\rK}{{\mathrm{K}}}
-\newcommand{\rL}{{\mathrm{L}}}
-\newcommand{\rM}{{\mathrm{M}}}
-\newcommand{\rN}{{\mathrm{N}}}
-\newcommand{\rO}{{\mathrm{O}}}
-\newcommand{\rP}{{\mathrm{P}}}
-\newcommand{\rQ}{{\mathrm{Q}}}
-\newcommand{\rR}{{\mathrm{R}}}
-\newcommand{\rS}{{\mathrm{S}}}
-\newcommand{\rT}{{\mathrm{T}}}
-\newcommand{\rU}{{\mathrm{U}}}
-\newcommand{\rV}{{\mathrm{V}}}
-\newcommand{\rW}{{\mathrm{W}}}
-\newcommand{\rX}{{\mathrm{X}}}
-\newcommand{\rY}{{\mathrm{Y}}}
-\newcommand{\rZ}{{\mathrm{Z}}}
+  
+  \newcommand{\rA}{{\mathrm{A}}}
+  \newcommand{\rB}{{\mathrm{B}}}
+  \newcommand{\rC}{{\mathrm{C}}}
+  \newcommand{\rD}{{\mathrm{D}}}
+  \newcommand{\rE}{{\mathrm{E}}}
+  \newcommand{\rF}{{\mathrm{F}}}
+  \newcommand{\rG}{{\mathrm{G}}}
+  \newcommand{\rH}{{\mathrm{H}}}
+  \newcommand{\rI}{{\mathrm{I}}}
+  \newcommand{\rJ}{{\mathrm{J}}}
+  \newcommand{\rK}{{\mathrm{K}}}
+  \newcommand{\rL}{{\mathrm{L}}}
+  \newcommand{\rM}{{\mathrm{M}}}
+  \newcommand{\rN}{{\mathrm{N}}}
+  \newcommand{\rO}{{\mathrm{O}}}
+  \newcommand{\rP}{{\mathrm{P}}}
+  \newcommand{\rQ}{{\mathrm{Q}}}
+  \newcommand{\rR}{{\mathrm{R}}}
+  \newcommand{\rS}{{\mathrm{S}}}
+  \newcommand{\rT}{{\mathrm{T}}}
+  \newcommand{\rU}{{\mathrm{U}}}
+  \newcommand{\rV}{{\mathrm{V}}}
+  \newcommand{\rW}{{\mathrm{W}}}
+  \newcommand{\rX}{{\mathrm{X}}}
+  \newcommand{\rY}{{\mathrm{Y}}}
+  \newcommand{\rZ}{{\mathrm{Z}}}
 
-\newcommand{\ep}{\varepsilon}
-\renewcommand{\phi}{\varphi}
-\newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
-\newcommand{\om}{\omega}
+  
+  \newcommand{\ep}{\varepsilon}
+  \renewcommand{\phi}{\varphi}
+  \newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
+  \newcommand{\om}{\omega}
 
-\newcommand{\foral}{\text{ for all }}
-\newcommand{\qand}{\quad\text{and}\quad}
-\newcommand{\qif}{\quad\text{if}\quad}
-\newcommand{\qor}{\quad\text{or}\quad}
-\newcommand{\qfor}{\quad\text{for}\quad}
-\newcommand{\qforal}{\quad\text{for all}\quad}
-\newcommand{\qforsome}{\quad\text{for some}\quad}
-\newcommand{\AND}{\text{ and }}
-\newcommand{\FOR}{\text{ for }}
-\newcommand{\FORAL}{\text{ for all }}
-\newcommand{\IF}{\text{ if }}
-\newcommand{\IFF}{\text{ if and only if }}
-\newcommand{\OR}{\text{ or }}
+  
+  \newcommand{\foral}{\text{ for all }}
+  \newcommand{\qand}{\quad\text{and}\quad}
+  \newcommand{\qif}{\quad\text{if}\quad}
+  \newcommand{\qor}{\quad\text{or}\quad}
+  \newcommand{\qfor}{\quad\text{for}\quad}
+  \newcommand{\qforal}{\quad\text{for all}\quad}
+  \newcommand{\qforsome}{\quad\text{for some}\quad}
+  \newcommand{\AND}{\text{ and }}
+  \newcommand{\FOR}{\text{ for }}
+  \newcommand{\FORAL}{\text{ for all }}
+  \newcommand{\IF}{\text{ if }}
+  \newcommand{\IFF}{\text{ if and only if }}
+  \newcommand{\OR}{\text{ or }}
 
-\newcommand{\Ad}{\operatorname{Ad}}
-\newcommand{\Alg}{\operatorname{Alg}}
-\newcommand{\alg}{\operatorname{alg}}
-\newcommand{\Aut}{\operatorname{Aut}}
-\newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
-\newcommand{\diag}{\operatorname{diag}}
-\newcommand{\diam}{\operatorname{diam}}
-\newcommand{\Dim}{\operatorname{dim}}
-\newcommand{\dist}{\operatorname{dist}}
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\id}{{\operatorname{id}}}
-\newcommand{\Lat}{\operatorname{Lat}}
-\newcommand{\ran}{\operatorname{Ran}}
-\newcommand{\spn}{\operatorname{span}}
-\newcommand{\rad}{\operatorname{rad}}
-\newcommand{\rep}{\operatorname{rep}}
-\newcommand{\spr}{\operatorname{spr}}
-\newcommand{\Tr}{\operatorname{Tr}}
+  
+  \newcommand{\Ad}{\operatorname{Ad}}
+  \newcommand{\Alg}{\operatorname{Alg}}
+  \newcommand{\alg}{\operatorname{alg}}
+  \newcommand{\Aut}{\operatorname{Aut}}
+  \newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
+  \newcommand{\diag}{\operatorname{diag}}
+  \newcommand{\diam}{\operatorname{diam}}
+  \newcommand{\Dim}{\operatorname{dim}}
+  \newcommand{\dist}{\operatorname{dist}}
+  \newcommand{\End}{\operatorname{End}}
+  \newcommand{\id}{{\operatorname{id}}}
+  \newcommand{\Lat}{\operatorname{Lat}}
+  \newcommand{\ran}{\operatorname{Ran}}
+  \newcommand{\spn}{\operatorname{span}}
+  \newcommand{\rad}{\operatorname{rad}}
+  \newcommand{\rep}{\operatorname{rep}}
+  \newcommand{\spr}{\operatorname{spr}}
+  \newcommand{\supp}{\operatorname{supp}}
+  \newcommand{\Tr}{\operatorname{Tr}}
 
-\newcommand{\Ath}{\A_\theta}
-\newcommand{\BH}{{\B(\H)}}
-\newcommand{\bsl}{\setminus}
-\newcommand{\ca}{\mathrm{C}^*}
-\newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
-\newcommand{\dint}{\displaystyle\int}
-\newcommand{\dlim}{\displaystyle\lim\limits}
-\newcommand{\dsum}{\displaystyle\sum}
-\newcommand{\Fn}{\mathbb{F}_n^+}
-\newcommand{\Fm}{\mathbb{F}_m^+}
-\newcommand{\Fmn}{\mathbb{F}_{mn}^+}
-\newcommand{\Fth}{\mathbb{F}_\theta^+}
-\newcommand{\Ftheta}{\mathbb{F}_\theta^+}
-\newcommand{\Fu}{\mathbb{F}_u^+}
-\newcommand{\Ftwo}{\mathbb{F}_2^+}
-\newcommand{\Fock}{\ell^2(\Fn)}
-\newcommand{\Fockm}{\ell^2(\Fm)}
-\newcommand{\Fockmn}{\ell^2(\Fmn)}
-\newcommand{\Fockth}{\ell^2(\Fth)}
-\newcommand{\lip}{\langle}
-\newcommand{\rip}{\rangle}
-\newcommand{\ip}[1]{\langle #1 \rangle}
-\DeclareMathOperator{\sgn}{\mathrm{sgn}}
-\newcommand{\mt}{\varnothing}
-\newcommand{\norm}[1]{\left\| #1 \right\|}
-\newcommand{\ol}{\overline}
-\newcommand{\one}{{\boldsymbol{1}}}
-\newcommand{\td}{\widetilde}
-\newcommand{\wh}{\widehat}
-\newcommand{\sot}{\textsc{sot}}
-\newcommand{\wot}{\textsc{wot}}
-\newcommand{\ltwo}{\ell^2}
-\newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
-\newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
-\newcommand{\yp}{\varphi_{(1,0)}} 
-\newcommand{\ypp}{\varphi_{(0,1)}}
-\newcommand{\yppp}{\varphi_{(1,1)}}
-\newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+  
+  \newcommand{\Ath}{\A_\theta}
+  \newcommand{\BH}{{\B(\H)}}
+  \newcommand{\bsl}{\setminus}
+  \newcommand{\ca}{\mathrm{C}^*}
+  \newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
+  \newcommand{\dint}{\displaystyle\int}
+  \newcommand{\dlim}{\displaystyle\lim\limits}
+  \newcommand{\dsum}{\displaystyle\sum}
 
-\newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
+  \newcommand{\Fn}{\mathbb{F}_n^+}
+  \newcommand{\Fm}{\mathbb{F}_m^+}
+  \newcommand{\Fmn}{\mathbb{F}_{mn}^+}
+  \newcommand{\Fth}{\mathbb{F}_\theta^+}
+  \newcommand{\Ftheta}{\mathbb{F}_\theta^+}
+  \newcommand{\Fu}{\mathbb{F}_u^+}
+  \newcommand{\Ftwo}{\mathbb{F}_2^+}
+  \newcommand{\Fock}{\ell^2(\Fn)}
+  \newcommand{\Fockm}{\ell^2(\Fm)}
+  \newcommand{\Fockmn}{\ell^2(\Fmn)}
+  \newcommand{\Fockth}{\ell^2(\Fth)}
+  \newcommand{\lip}{\langle}
+  \newcommand{\rip}{\rangle}
+  \newcommand{\ip}[1]{\langle #1 \rangle}
+  \DeclareMathOperator{\sgn}{\mathrm{sgn}}
+  \newcommand{\mt}{\varnothing}
+  \newcommand{\norm}[1]{\left\| #1 \right\|}
+  \newcommand{\ol}{\overline}
+  \newcommand{\one}{{\boldsymbol{1}}}
+  \newcommand{\td}{\widetilde}
+  \newcommand{\wh}{\widehat}
+  \newcommand{\sot}{\textsc{sot}}
+  \newcommand{\wot}{\textsc{wot}}
+  \newcommand{\ltwo}{\ell^2}
+  
+  \newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
+  \newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
+  \newcommand{\yp}{\varphi_{(1,0)}} 
+  \newcommand{\ypp}{\varphi_{(0,1)}}
+  \newcommand{\yppp}{\varphi_{(1,1)}}
+  \newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+
+  \newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -512,6 +524,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-7-4.html" class="internal"><span class="codenumber">3</span> <span class="title">Hausdorff Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-meas.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Hausdorff measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-examp.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Calculating Hausdorff Dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-4-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -717,26 +737,26 @@ X  \amp \mapsto AX.
 <div class="para">for all <span class="process-math">\(f \in C_c(G).\)</span> The measure <span class="process-math">\(\mu\)</span> is a left Haar measure, if and only if <span class="process-math">\(\phi\)</span> is left invariant.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-haar-inv-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 2.2.10"><a href="#lem-haar-inv" title="Copy heading and permalink for Lemma 2.2.10" aria-label="Copy heading and permalink for Lemma 2.2.10">🔗</a></div></article><article class="proof" id="real-analysis-7-3-4-17"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para logical" id="real-analysis-7-3-4-17-1">
+<div class="autopermalink" data-description="Lemma 2.2.10"><a href="#lem-haar-inv" title="Copy heading and permalink for Lemma 2.2.10" aria-label="Copy heading and permalink for Lemma 2.2.10">🔗</a></div></article><article class="proof" id="lem-haar-inv-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-haar-inv-2-1">
 <div class="para">First assume that <span class="process-math">\(\mu\)</span> is a left Haar measure. Then, if <span class="process-math">\(B \subseteq G\)</span> is a Borel set, and <span class="process-math">\(x \in G\text{,}\)</span> then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-int-liner.html ./knowl/xref/thm-simple-approx.html ./knowl/xref/thm-MCT.html" id="real-analysis-7-3-4-17-1-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-int-liner.html ./knowl/xref/thm-simple-approx.html ./knowl/xref/thm-MCT.html" id="lem-haar-inv-2-1-4">
 \begin{equation*}
 \int_X L_x \chi_B\,d\mu = \int_X \chi_{xB}\,d\mu = \mu (xB) = \mu(B) = \int_X \chi_B\,d\mu.
 \end{equation*}
 </div>
 <div class="para">By the <a href="chap-integration-4.html#thm-int-liner" class="xref" data-knowl="./knowl/xref/thm-int-liner.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.3: Linearity and Monotonicity of Integration">linearity of integration</a>, it follows that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-int-liner.html ./knowl/xref/thm-simple-approx.html ./knowl/xref/thm-MCT.html" id="real-analysis-7-3-4-17-1-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-int-liner.html ./knowl/xref/thm-simple-approx.html ./knowl/xref/thm-MCT.html" id="lem-haar-inv-2-1-6">
 \begin{equation*}
 \int_G L_x f\,d\mu = \int_G f\,d\mu
 \end{equation*}
 </div>
 <div class="para">for all positive simple functions <span class="process-math">\(f\)</span> on <span class="process-math">\(G\text{.}\)</span> That <span class="process-math">\(\phi\)</span> is left invariant follows by the <a href="chap-meas-fun-4.html#thm-simple-approx" class="xref" data-knowl="./knowl/xref/thm-simple-approx.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.4: The Simple Approximation Theorem">Simple Approximation Theorem</a> and the <a href="chap-integration-3.html#thm-MCT" class="xref" data-knowl="./knowl/xref/thm-MCT.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.16: Monotone Convergence Theorem">Monotone Convergence Theorem</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-haar-inv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="real-analysis-7-3-4-17-2">
+<div class="para logical" id="lem-haar-inv-2-2">
 <div class="para">Assume now that <span class="process-math">\(\phi\)</span> is left invariant. Fix <span class="process-math">\(U \subseteq G\)</span> open and take any compact subset <span class="process-math">\(K \subseteq U\text{.}\)</span> By <a href="real-analysis-6-3-5.html#prop-urysohn" class="xref" data-knowl="./knowl/xref/prop-urysohn.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.3.8: Urysohn’s Lemma">Urysohn’s Lemma</a>, there is an <span class="process-math">\(f \in C_c(G)\)</span> such that <span class="process-math">\(0\leq f \leq 1\text{,}\)</span> <span class="process-math">\(f(x) = 1\)</span> for <span class="process-math">\(x\in K\)</span> and <span class="process-math">\(f(x)=0\)</span> for <span class="process-math">\(x \in G \backslash U\text{.}\)</span> Take any <span class="process-math">\(x \in G\text{.}\)</span> Then,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-urysohn.html" id="real-analysis-7-3-4-17-2-12">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-urysohn.html" id="lem-haar-inv-2-2-12">
 \begin{align*}
 \mu(xK) \amp = \int_{xK}1\,d\mu \\
 \amp = \int_G L_x \chi_{K}\,d\mu \\
@@ -746,7 +766,7 @@ X  \amp \mapsto AX.
 \end{align*}
 </div>
 <div class="para">By the inner regularity of open sets (since <span class="process-math">\(\mu\)</span> is a Radon measure)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-urysohn.html" id="real-analysis-7-3-4-17-2-14">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-urysohn.html" id="lem-haar-inv-2-2-14">
 \begin{align*}
 \mu(xU) \amp = \sup\{\mu(K) \colon K \subseteq xU \text{ compact}\} \\
 \amp = \sup\{\mu(K) \colon x^{-1}K \subseteq U \text{ compact}\} \\
@@ -755,10 +775,10 @@ X  \amp \mapsto AX.
 \end{align*}
 </div>
 <div class="para">A similar argument shows that <span class="process-math">\(\mu(U) \leq \mu(xU).\)</span> We have thus shown that <span class="process-math">\(\mu(U) = \mu(xU)\)</span> for all <span class="process-math">\(x \in G\)</span> and <span class="process-math">\(U \subseteq G\text{.}\)</span> It follows that <span class="process-math">\(\mu(B) = \mu(xB)\)</span> for all <span class="process-math">\(x \in G\)</span> and all <span class="process-math">\(B \subseteq G\)</span> Borel. Thus, <span class="process-math">\(\mu\)</span> is a left Haar measure.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-haar-inv-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.2.1"><a href="#real-analysis-7-3-4-17" title="Copy heading and permalink for Proof 2.2.1" aria-label="Copy heading and permalink for Proof 2.2.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-4-18">
-<a href="real-analysis-7-3-4.html#lem-haar-inv" class="xref" data-knowl="./knowl/xref/lem-haar-inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.10">Lemma 2.2.10</a> (with <a href="sec-RMK.html#thm-RMK-positive" class="xref" data-knowl="./knowl/xref/thm-RMK-positive.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.11">Theorem III.2.4.11</a>) says that finding a left Haar measure on a locally compact Hausdorff group <span class="process-math">\(G\)</span> is equivalent to finding a left invariant positive linear functional on <span class="process-math">\(C_c(G)\text{.}\)</span> We will concentrate on finding such a linear functional. This will be a non-trivial process. We will first introduce a class of left invariant functions from <span class="process-math">\(G\)</span> to <span class="process-math">\(\bR\text{.}\)</span> These functions will not, unfortunately, be linear. However, we can use these functions to prove the existence of a left invariant linear functional.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 2.2.10.1"><a href="#lem-haar-inv-2" title="Copy heading and permalink for Proof 2.2.10.1" aria-label="Copy heading and permalink for Proof 2.2.10.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-4-17">
+<a href="real-analysis-7-3-4.html#lem-haar-inv" class="xref" data-knowl="./knowl/xref/lem-haar-inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.10">Lemma 2.2.10</a> (with <a href="sec-RMK.html#thm-RMK-positive" class="xref" data-knowl="./knowl/xref/thm-RMK-positive.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.11">Theorem III.2.4.11</a>) says that finding a left Haar measure on a locally compact Hausdorff group <span class="process-math">\(G\)</span> is equivalent to finding a left invariant positive linear functional on <span class="process-math">\(C_c(G)\text{.}\)</span> We will concentrate on finding such a linear functional. This will be a non-trivial process. We will first introduce a class of left invariant functions from <span class="process-math">\(G\)</span> to <span class="process-math">\(\bR\text{.}\)</span> These functions will not, unfortunately, be linear. However, we can use these functions to prove the existence of a left invariant linear functional.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-haar-func-1"><h3 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -786,30 +806,30 @@ f(x) \amp \leq \|f\|_\infty\\
 <div class="para">If <span class="process-math">\(x \notin K\text{,}\)</span> then <span class="process-math">\(f(x) =0\)</span> and so the inequality also holds there.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-haar-func-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.2.11.1"><a href="#lem-haar-func-1-2" title="Copy heading and permalink for Proof 2.2.11.1" aria-label="Copy heading and permalink for Proof 2.2.11.1">🔗</a></div></article><div class="para logical" id="real-analysis-7-3-4-20">
+<div class="autopermalink" data-description="Proof 2.2.11.1"><a href="#lem-haar-func-1-2" title="Copy heading and permalink for Proof 2.2.11.1" aria-label="Copy heading and permalink for Proof 2.2.11.1">🔗</a></div></article><div class="para logical" id="real-analysis-7-3-4-19">
 <div class="para">For positive, non-zero functions <span class="process-math">\(f,g \in C_c(G)\)</span> we define</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-20-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-19-2">
 \begin{equation*}
 [f\colon g] = \inf \left\{\sum_{i=1}^n c_i \colon c_1,\ldots,c_n\gt 0,\ \exists x_1,\ldots,x_n\in G,\ f \leq \sum_{i=1}^n c_i L_{x_i}g  \right\}
 \end{equation*}
 </div>
 <div class="para">Note that <span class="process-math">\([f \colon g] \lt \infty\text{,}\)</span> by <a href="real-analysis-7-3-4.html#lem-haar-func-1" class="xref" data-knowl="./knowl/xref/lem-haar-func-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.11">Lemma 2.2.11</a>. If <span class="process-math">\(f \leq \sum_{i=1}^n c_i L_{x_i}g\text{,}\)</span> then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-20-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-19-6">
 \begin{equation*}
 \|f\|_\infty \leq \sum_{i=1}^n c_i \|g\|_\infty.
 \end{equation*}
 </div>
 <div class="para">Thus,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-20-7">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-1.html" id="real-analysis-7-3-4-19-7">
 \begin{equation*}
 \sum_{i=1}^n c_i \geq \frac{\|f\|_\infty}{\|g\|_\infty}.
 \end{equation*}
 </div>
 <div class="para">It follows that <span class="process-math">\([f\colon g] \geq \|f\|_\infty/\|g\|_\infty \gt 0.\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="real-analysis-7-3-4-21">
+<div class="para logical" id="real-analysis-7-3-4-20">
 <div class="para">Fix now a non-zero, positive <span class="process-math">\(f_0 \in C_c(G)\text{.}\)</span> For each non-zero, positive <span class="process-math">\(g \in C_c(G)\)</span> define a function <span class="process-math">\(I_g\)</span> on the non-zero positive functions <span class="process-math">\(f \in C_c(G)\)</span> by</div>
 <div class="displaymath process-math" id="eq-Ig">
 \begin{equation}
@@ -817,7 +837,7 @@ I_g(f) = \frac{[f:g]}{[f_0:g]}.\tag{2.1}
 \end{equation}
 </div>
 <div class="para">The functions <span class="process-math">\(I_g\)</span> share a number of properties with left invariant linear functionals. They are, however, not necessarily linear.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-haar-func-2"><h3 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -930,9 +950,9 @@ I_g(f_1) + I_g(f_2)\leq I_g(h)(1+2\delta) \leq (I_g(f_1+f_2) +  \delta I_g(k))(1
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-haar-func-2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.2.12.1"><a href="#lem-haar-func-2-2" title="Copy heading and permalink for Proof 2.2.12.1" aria-label="Copy heading and permalink for Proof 2.2.12.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-4-23">By <a href="real-analysis-7-3-4.html#lem-haar-func-2" class="xref" data-knowl="./knowl/xref/lem-haar-func-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.12">Lemma 2.2.12</a>, as the support of <span class="process-math">\(g\)</span> becomes a smaller and smaller neighborhood of the identity, <span class="process-math">\(I_g\)</span> gets closer and closer to a left-invariant linear map on the positive functions in <span class="process-math">\(C_c(G)\text{.}\)</span> It is possible to take a limit of  <span class="process-math">\(I_g\)</span> as the support of <span class="process-math">\(g\)</span> gets smaller, this is what Cartan <a href="backmatter-3.html#Cartan-Haar" class="xref" data-knowl="./knowl/xref/Cartan-Haar.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 4: Sur la mesure de {H}aar">[4]</a> does in his proof of the existence (and uniqueness) of the Haar measure. The details of this limit are rather complicated, and so we take another route to the proof.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 2.2.12.1"><a href="#lem-haar-func-2-2" title="Copy heading and permalink for Proof 2.2.12.1" aria-label="Copy heading and permalink for Proof 2.2.12.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-4-22">By <a href="real-analysis-7-3-4.html#lem-haar-func-2" class="xref" data-knowl="./knowl/xref/lem-haar-func-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.12">Lemma 2.2.12</a>, as the support of <span class="process-math">\(g\)</span> becomes a smaller and smaller neighborhood of the identity, <span class="process-math">\(I_g\)</span> gets closer and closer to a left-invariant linear map on the positive functions in <span class="process-math">\(C_c(G)\text{.}\)</span> It is possible to take a limit of  <span class="process-math">\(I_g\)</span> as the support of <span class="process-math">\(g\)</span> gets smaller, this is what Cartan <a href="backmatter-3.html#Cartan-Haar" class="xref" data-knowl="./knowl/xref/Cartan-Haar.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 4: Sur la mesure de {H}aar">[4]</a> does in his proof of the existence (and uniqueness) of the Haar measure. The details of this limit are rather complicated, and so we take another route to the proof.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="real-analysis-7-3-4-24">Let <span class="process-math">\(\{X_\lambda\}_{\lambda \in \Lambda}\)</span> a collection of subsets of <span class="process-math">\(\bR\text{.}\)</span> Let <span class="process-math">\(X = \prod_{\lambda \in \Lambda}X_\lambda\)</span> be the Cartesian product. Let <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> be a function satisfying <span class="process-math">\(f(\lambda) \in X_\lambda\)</span> for all <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span> Then <span class="process-math">\(f\)</span> defines a unique element of <span class="process-math">\(X\text{:}\)</span> <span class="process-math">\((f(\lambda))_\lambda\text{.}\)</span> Conversely, if <span class="process-math">\(x=(x_\lambda)_\lambda \in X\text{,}\)</span> then <span class="process-math">\(x\)</span> determines a function <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> by <span class="process-math">\(f(\lambda)= x_\lambda.\)</span> Thus, the set <span class="process-math">\(X\)</span> can be viewed as the collection of all function <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> such that <span class="process-math">\(f(\lambda) \in X_\lambda\)</span> for each <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span> This viewpoint of cartesian products will be necessary in the following proof.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="real-analysis-7-3-4-23">Let <span class="process-math">\(\{X_\lambda\}_{\lambda \in \Lambda}\)</span> a collection of subsets of <span class="process-math">\(\bR\text{.}\)</span> Let <span class="process-math">\(X = \prod_{\lambda \in \Lambda}X_\lambda\)</span> be the Cartesian product. Let <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> be a function satisfying <span class="process-math">\(f(\lambda) \in X_\lambda\)</span> for all <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span> Then <span class="process-math">\(f\)</span> defines a unique element of <span class="process-math">\(X\text{:}\)</span> <span class="process-math">\((f(\lambda))_\lambda\text{.}\)</span> Conversely, if <span class="process-math">\(x=(x_\lambda)_\lambda \in X\text{,}\)</span> then <span class="process-math">\(x\)</span> determines a function <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> by <span class="process-math">\(f(\lambda)= x_\lambda.\)</span> Thus, the set <span class="process-math">\(X\)</span> can be viewed as the collection of all function <span class="process-math">\(f \colon \Lambda \rightarrow \bR\)</span> such that <span class="process-math">\(f(\lambda) \in X_\lambda\)</span> for each <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span> This viewpoint of cartesian products will be necessary in the following proof.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-Haar"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -1014,7 +1034,7 @@ X_f = \left[[f_0\colon f]^{-1}, [f\colon f_0] \right],
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-haar-func-2.html ./knowl/xref/lem-haar-func-2-5.html ./knowl/xref/lem-haar-func-2.html ./knowl/xref/lem-haar-func-2-3.html" id="thm-Haar-2-5-14">
 \begin{equation*}
-I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + varepsilon.
+I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + \varepsilon.
 \end{equation*}
 </div>
 <div class="para">Hence</div>
@@ -1040,7 +1060,77 @@ I_g(f_1 + f_2) \leq I_g(f_1)+I_g(f_2) \leq I_g(f_1+f_2) + varepsilon.
 </div>
 <div class="para" id="thm-Haar-2-6">We extend <span class="process-math">\(I\)</span> to all of <span class="process-math">\(C_c(G)\)</span> by setting <span class="process-math">\(I(f) = I(f_+)-I(f_-)\)</span> where <span class="process-math">\(f = f_+ - f_-\)</span> is the decomposition of <span class="process-math">\(f\)</span> into its positive and negative parts. That this extension is linear follows by the same reasoning as we saw in the proof of <a href="sec-RMK.html#thm-jordan-decomp-functional" class="xref" data-knowl="./knowl/xref/thm-jordan-decomp-functional.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.8: Jordan Decomposition Theorem">Theorem III.2.4.8</a>. We have just shown that there is a positive left invariant linear functional on <span class="process-math">\(C_c(G)\text{.}\)</span> By <a href="real-analysis-7-3-4.html#lem-haar-inv" class="xref" data-knowl="./knowl/xref/lem-haar-inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.10">Lemma 2.2.10</a> and <a href="sec-RMK.html#thm-RMK-positive" class="xref" data-knowl="./knowl/xref/thm-RMK-positive.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.4.11">Theorem III.2.4.11</a> it follows that there is a left Haar measure on <span class="process-math">\(G\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.2.13.1"><a href="#thm-Haar-2" title="Copy heading and permalink for Proof 2.2.13.1" aria-label="Copy heading and permalink for Proof 2.2.13.1">🔗</a></div></article><div class="autopermalink" data-description="Section 2.2: Radon measures on locally compact groups"><a href="#real-analysis-7-3-4" title="Copy heading and permalink for Section 2.2: Radon measures on locally compact groups" aria-label="Copy heading and permalink for Section 2.2: Radon measures on locally compact groups">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 2.2.13.1"><a href="#thm-Haar-2" title="Copy heading and permalink for Proof 2.2.13.1" aria-label="Copy heading and permalink for Proof 2.2.13.1">🔗</a></div></article><div class="para" id="real-analysis-7-3-4-25">We present a proof  of the uniqueness of the Haar measure in the special case when <span class="process-math">\(G\)</span> is <span class="process-math">\(\sigma\)</span>-compact, i.e. when <span class="process-math">\(G\)</span> is a countable union of compact sets. This proof follows the ideas of <a href="backmatter-3.html#Pedersen-Haar" class="xref" data-knowl="./knowl/xref/Pedersen-Haar.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 9: The Existence and Uniqueness of the Haar integral on a locally compact topological group">[9]</a>. For a general proof see, e.g., Chapter 11 of <a href="backmatter-3.html#Folland" class="xref" data-knowl="./knowl/xref/Folland.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 7: Real analysis">[7]</a>. Note that, <a href="real-analysis-7-3-3.html#ex-R-top-group" class="xref" data-knowl="./knowl/xref/ex-R-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.3">Example 2.1.3</a>, <a href="real-analysis-7-3-3.html#ex-R-mult-top-group" class="xref" data-knowl="./knowl/xref/ex-R-mult-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.5">Example 2.1.5</a>, <a href="real-analysis-7-3-3.html#ex-T-top-group" class="xref" data-knowl="./knowl/xref/ex-T-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.6">Example 2.1.6</a>, and <a href="real-analysis-7-3-3.html#ex-GLn-top-group" class="xref" data-knowl="./knowl/xref/ex-GLn-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.7">Example 2.1.7</a> are all <span class="process-math">\(\sigma\)</span>-compact groups; the discrete groups in <a href="real-analysis-7-3-3.html#ex-discrete-top-group" class="xref" data-knowl="./knowl/xref/ex-discrete-top-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.2">Example 2.1.2</a> are <span class="process-math">\(\sigma\)</span>-compact when countable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-7-3-4-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Haar-unique"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="thm-Haar-unique-1-1">Let <span class="process-math">\(G\)</span> be a locally compact Hausdorff group. If <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are two left Haar measures on <span class="process-math">\(G\text{,}\)</span> then there is a constant <span class="process-math">\(c \gt 0\)</span> such that <span class="process-math">\(\mu = c \nu.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-unique-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.2.14"><a href="#thm-Haar-unique" title="Copy heading and permalink for Theorem 2.2.14" aria-label="Copy heading and permalink for Theorem 2.2.14">🔗</a></div></article><article class="proof" id="thm-Haar-unique-2"><h3 class="heading"><span class="title">Proof (of <span class="process-math">\(\sigma\)</span>-compact case).</span></h3>
+<div class="para" id="thm-Haar-unique-2-2">Let <span class="process-math">\(G\)</span> be a <span class="process-math">\(\sigma\)</span>-compact locally compact Hausdorff group, and let <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> be two Haar measures on <span class="process-math">\(G\text{.}\)</span> Since <span class="process-math">\(G\)</span>   is <span class="process-math">\(\sigma\)</span>-compact and <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are Radon measures, both <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are <span class="process-math">\(\sigma\)</span>-finite.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-unique-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-Haar-unique-2-3">
+<div class="para">Assume that <span class="process-math">\(\mu \leq \nu\text{.}\)</span> Then <span class="process-math">\(\mu \ll \nu\text{.}\)</span> Hence, by the <a href="chap-differentation-3.html#thm-Radon-Nikodym" class="xref" data-knowl="./knowl/xref/thm-Radon-Nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.6: Radon-Nikodym Theorem">Radon-Nikodym Theorem</a>, there is a non-negative Borel measurable function <span class="process-math">\(h\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Radon-Nikodym.html ./knowl/xref/exer-abs-cont-integration.html" id="thm-Haar-unique-2-3-5">
+\begin{equation*}
+\mu(E) = \int_E h\,d\nu
+\end{equation*}
+</div>
+<div class="para">for all Borel sets <span class="process-math">\(E \subseteq G\text{.}\)</span> Note that, since <span class="process-math">\(\mu\leq \nu\text{,}\)</span> <span class="process-math">\(0\leq h \leq 1.\)</span> Further, by <a href="chap-differentation-7.html#exer-abs-cont-integration" class="xref" data-knowl="./knowl/xref/exer-abs-cont-integration.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.3">Exercise II.7.5.3</a>, if <span class="process-math">\(f\)</span> is <span class="process-math">\(\mu\)</span>-integrable, then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Radon-Nikodym.html ./knowl/xref/exer-abs-cont-integration.html" id="thm-Haar-unique-2-3-12">
+\begin{equation*}
+\int_X f\,d\mu = \int_X fh\,d\nu.
+\end{equation*}
+</div>
+<div class="para">Thus, for <span class="process-math">\(f \in C_c(G)\)</span> and <span class="process-math">\(y \in G\text{,}\)</span> since <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are left Haar measures,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Radon-Nikodym.html ./knowl/xref/exer-abs-cont-integration.html" id="thm-Haar-unique-2-3-17">
+\begin{align*}
+\int_G fh\,d\nu \amp = \int_G f \,d\mu = \int_G f(y^{-1}x)\,d\mu(x)\\
+\amp = \int_G f(y^{-1}x)h(x)\,d\nu(x)=\int_G f(x)h(y^{-1}x)\,d\nu(x). 
+\end{align*}
+</div>
+<div class="para">Thus, for all <span class="process-math">\(f \in C_x(G)\)</span> and <span class="process-math">\(y\in G\text{,}\)</span> <span class="process-math">\(\int_G f(x)[h(x)-h(z^{-1}x)]\,d\nu(x) = 0\text{,}\)</span> and hence <span class="process-math">\(h-L_z h = 0\)</span> almost everywhere.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-unique-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-Haar-unique-2-4">
+<div class="para">Consider, now the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-completion-of-meas-space.html ./knowl/xref/thm-tonelli.html" id="thm-Haar-unique-2-4-1">
+\begin{align*}
+H \colon G \times G  \amp \rightarrow \bR  \\
+(x,y) \amp \mapsto |h(y^{-1}x)-h(x)|. 
+\end{align*}
+</div>
+<div class="para">Let <span class="process-math">\(\tilde{\mu}\)</span> be the completion of <span class="process-math">\(\mu\text{,}\)</span> as in <a href="chap-measure-space-4.html#thm-completion-of-meas-space" class="xref" data-knowl="./knowl/xref/thm-completion-of-meas-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.3">Theorem II.2.2.3</a>. By <a href="real-analysis-7-2-3.html#thm-tonelli" class="xref" data-knowl="./knowl/xref/thm-tonelli.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.12: Tonelli’s Theorem">Tonelli’s Theorem</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-completion-of-meas-space.html ./knowl/xref/thm-tonelli.html" id="thm-Haar-unique-2-4-6">
+\begin{align*}
+0=\int_{G\times G} H \,d(\tilde{\mu}\times \tilde{\mu}) \amp= \int_G \int_G |h(y^{-1}x)-h(x)|\,d\tilde{\mu}(x)\,d\tilde{\mu}(y) \\
+\amp= \int_G \int_G |h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)\,d\tilde{\mu}(x). 
+\end{align*}
+</div>
+<div class="para">Hence, for almost all <span class="process-math">\(x\in G\text{,}\)</span> <span class="process-math">\(\int_G|h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)=0\text{.}\)</span> Using again, that <span class="process-math">\(\mu\)</span> is a left Haar measure, we have for almost all <span class="process-math">\(x \in G\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-completion-of-meas-space.html ./knowl/xref/thm-tonelli.html" id="thm-Haar-unique-2-4-11">
+\begin{equation*}
+0=\int_G|h(y^{-1}x)-h(x)|\,d\tilde{\mu}(y)=\int_G|h(y^{-1})-h(x)|\,d\tilde{\mu}(y). 
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(h\)</span> is constant almost everywhere, and thus <span class="process-math">\(\mu = c \nu\)</span> for a constant <span class="process-math">\(0 \lt c \leq 1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-unique-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-Haar-unique-2-5">
+<div class="para">Now consider the general case, when we do not necessarily have <span class="process-math">\(\mu \leq \nu\text{.}\)</span> Assume that <span class="process-math">\(\mu \neq \nu\text{.}\)</span> Note that <span class="process-math">\(\mu + \nu\)</span> is also a left Haar measure, and <span class="process-math">\(\mu \leq \mu + \nu.\)</span> By the above argument, there is a constant <span class="process-math">\(0 \lt c \lt 1\text{,}\)</span> such that <span class="process-math">\(\mu = c(\mu + \nu)\text{.}\)</span> Hence,</div>
+<div class="displaymath process-math" id="thm-Haar-unique-2-5-7">
+\begin{equation*}
+\mu = \frac{c}{1-c}\nu,
+\end{equation*}
+</div>
+<div class="para">completing the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Haar-unique-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.2.14.1: Proof (of \sigma-compact case)"><a href="#thm-Haar-unique-2" title="Copy heading and permalink for Proof 2.2.14.1: Proof (of \sigma-compact case)" aria-label="Copy heading and permalink for Proof 2.2.14.1: Proof (of \sigma-compact case)">🔗</a></div></article><div class="autopermalink" data-description="Section 2.2: Radon measures on locally compact groups"><a href="#real-analysis-7-3-4" title="Copy heading and permalink for Section 2.2: Radon measures on locally compact groups" aria-label="Copy heading and permalink for Section 2.2: Radon measures on locally compact groups">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="real-analysis-7-3-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="real-analysis-7-3-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
