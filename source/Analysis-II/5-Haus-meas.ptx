@@ -23,7 +23,7 @@
         Let <m>H_{p,\delta}</m> be the outer measure induced by this map.
         Thus, for <m>E \subseteq \bR^n</m>,
         <md>
-            H_{p,\delta} = \inf\left\{\sum_{k=1}^\infty\diam(B_k)^p \colon E \subseteq \bigcup_{k=1}^\infty B_k,\ \diam(B_k)\lt \delta \right\}.
+            H_{p,\delta}(E) = \inf\left\{\sum_{k=1}^\infty\diam(B_k)^p \colon E \subseteq \bigcup_{k=1}^\infty B_k,\ \diam(B_k)\lt \delta \right\}.
         </md>
         Note that if <m>\delta_1\lt \delta_2</m> and <m>E \subseteq \bR^n</m>, then <m>H_{p,\delta_2}(E) \leq H_{p,\delta_1}(E)</m>.
         This <m>H_{p,\delta}(E)</m> increases as <m>\delta</m> decreases.
@@ -58,4 +58,205 @@
         </proof>
     </proposition>
     
+    <definition xml:id="def-Hausdorff-dim">
+        <statement>
+            <p>
+                For <m>p \geq 0</m> the outer measure <m>H_p</m> on subsets of <m>\bR^n </m>is called the <term>Hausdorff outer measure of dimension <m>p</m></term> on <m>\bR^n</m>.<idx><h>Hausdorff measure</h><h>Hausdorff outer measure</h></idx>
+            </p>
+        </statement>
+    </definition>
+    
+    <p>
+        We now have a family of outer measures <m>\{H_p\}_{p\geq 0}</m> on <m>\bR^n</m>.
+        By restricting <m>H_p</m> to the <m>H_p</m>-measurable sets, we have a family of measures on <m>\bR^n</m>.
+        It is not clear if these measures act on the same <m>\sigma</m>-algebra of measurable sets.
+        That is, if <m>p \neq q</m>, it is not clear that the <m>H_p</m>-measurable sets coincide with the <m>H_q</m>-measurable sets.
+        However, we will see that Borel sets in <m>\bR^n</m> are <m>H_p</m>-measurable for all <m>p\geq 0</m>.
+        Thus, the measures <m>\{H_p\}_{p\geq 0}</m> define a family of measures, called the <term>Hausdorff measures of dimension <m>p</m></term>, on the <m>\sigma</m>-algebra of Borel sets in <m>\bR^n</m>.<idx><h>Hausdorff measure</h></idx>
+    </p>
+
+    <lemma xml:id="lem-metric-outer-measures">
+        <statement>
+            <p>
+                Let <m>X,Y \subseteq \bR^n</m> and fix <m>p\geq 0</m>.
+                If 
+                <md>
+                    \dist(X,Y):=\sup\{\|x-y\| \colon x\in X,\ y\in Y\} \gt 0
+                </md>
+                then <m>H_p(X\cup Y) = H_p(X) + H_p(Y).</m>
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                Take <m>\delta \gt 0</m> with <m>\delta \lt \dist(X,Y).</m>
+                Let <m>\{C_k\}_{k=1}^\infty</m> be a countable collection of subsets of <m>\bR^n</m> with <m>\diam(C)\lt \delta</m> such that
+                <md>
+                    X \cup Y \subseteq \bigcup_{k=1}^\infty C_k.
+                </md>
+                Assume that <m>C_k \cap (X \cup Y) \neq \emptyset</m> for all <m>k</m> (we can remove any <m>C_k</m> with empty intersection with <m>X \cup Y</m> and not increase the estimate of <m>H_p(X\cup Y)</m> that the <m>\{C_k\}_{k=1}^\infty</m> define).
+                Note, since <m>\delta \lt \dist(X,Y),</m> if <m>C_k \cap X \neq \emptyset</m> then <m>C_k \cap Y = \emptyset</m>; and if <m>C_k \cap Y \neq \emptyset</m> then <m>C_k \cap X = \emptyset</m>.
+                Thus, the collection <m>\{C_k\}_{k=1}^\infty</m> splits into two disjoint collections <m>\{C_k\}_{C_k \cap X \neq \emptyset}</m> and <m>\{C_k\}_{C_k \cap Y \neq \emptyset},</m> with
+                <md>
+                    X \subseteq \bigcup_{C_k \cap X \neq \emptyset}C_k \text{ and } Y \subseteq \bigcup_{C_k \cap Y \neq \emptyset}C_k.
+                </md>
+                Hence
+                <md>
+                    \sum_{k=1}^\infty \diam(C_k)^p \geq H_{p,\delta}(X) + H_{p,\delta}(Y).
+                </md>
+                Taking the infimum over all such families <m>\{C_k\}_{k=1}^\infty</m>, gives <m>H_{p,\delta}(X\cap Y) \geq H_{p,\delta}(X) + H_{p,\delta}(Y).</m>
+                Since <m>H_p</m> is an outer measure, it follows that <m>H_{p,\delta}(X\cap Y) = H_{p,\delta}(X) + H_{p,\delta}(Y).</m>
+                This equation holds for all <m>\delta \lt \dist(X,Y)</m> thus, taking the limit as <m>\delta \rightarrow 0</m>, we get <m>H_{p}(X\cap Y) = H_{p}(X) + H_{p}(Y).</m>
+            </p>
+        </proof>
+    </lemma>
+
+    <lemma xml:id="lem-Hausdorff-Borel">
+        <statement>
+            <p>
+                Let <m>H_p</m> be a Hausdorff outer measure on <m>\bR^n</m> for some <m>p \geq 0</m>, and let <m>E \subseteq \bR^n</m> be a Borel set.
+                Then <m>E</m> is measurable with respect to <m>H_p</m>.
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                It suffices to show the closed sets are measurable, since the Borel sets are generated as a <m>\sigma</m>-algebra by the closed sets of <m>\bR^n</m>.
+                Further, since any closed set in <m>\bR^n</m> is a countable union of closed sets, it suffices to prove the result for closed bounded sets.
+                Let <m>F \subseteq \bR^n</m>  be a closed bounded set. We will show that <m>F</m> is measurable with respect to the outer measure <m>H_p</m>.
+            </p>
+            <p>
+                Let <m>E \subseteq \bR^n</m> be a set <m>H_p(E)\lt \infty</m>.
+                Note that, if <m>x \in E \backslash F</m> then, since <m>F</m> is closed, <m>\dist(x,F)\gt 0</m>.
+                For each positive integer <m>n</m> let 
+                <md>
+                    B_n = \{x \in E\backslash F \colon \dist(x,F)\geq 1/n.\}
+                </md>
+                By <xref ref="lem-metric-outer-measures"/>, since <m>\dist(F,B_n)\geq \frac{1}{n}</m>,
+                <m>H_p(F\cup B_n)=H_p(F)+H_p(B_n).</m>
+                Thus,
+                <md number="yes" xml:id="eq-Hausdorff-Borel">
+                    H_p(E)\geq H_p(B_k \cup (F\cap E)) = H_p(B_k)+H_p(F\cap E)
+                </md>
+                for all <m>k</m>.
+                The result will be proved once we show that <m>\lim_k H_p(B_k)=H_p(E\backslash F)</m><fn>This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets <m>\{B_k\}_{k=1}^\infty</m> are measurable with respect to <m>H_p</m>. </fn>.
+                For each <m>k</m>, let <m>C_k = B_{k}\backslash B_{k-1}.</m>
+                Note, if <m>x \in C_{k+2}</m> and <m>y \in B_k</m> then
+                <md>
+                    <mrow>\frac{1}{k+2} \amp\leq \dist(x,F)\lt \frac{1}{k+1}, \text{ and}</mrow>
+                    <mrow> \frac{1}{k}\amp\leq \dist(y,F)</mrow>
+                </md>
+                and so
+                <md>
+                    \|y-x\|_2 \geq \dist(y,F) - \dist(x,F) \geq \frac{1}{k}-\frac{1}{k+1}=\frac{1}{k(k+1)}.
+                </md>
+                Thus, when <m>k\neq m</m>, <m>\dist(C_{2k},C_{2m})\gt 0</m> and <m>\dist(C_{2k+1},C_{2m+1})\gt 0</m>.
+                Hence, by <xref ref="lem-metric-outer-measures"/>, for all <m>m</m>
+                <md>
+                    <mrow>\sum_{k=1}^m H_p(C_{2k}) \amp= H_p\left( \bigcup_{k=1}^m C_{2k}\right) \leq H_p(E\backslash F)\lt \infty \text{ and}</mrow>
+                    <mrow>\sum_{k=1}^m H_p(C_{2k+1}) \amp= H_p\left( \bigcup_{k=1}^m C_{2k+1}\right) \leq H_p(E\backslash F)\lt \infty.  </mrow>
+                </md>
+                Thus the series <m>\sum_{k=1}^\infty H_p(C_{2k})</m> and <m>\sum_{k=1}^\infty H_p(C_{2k+1})</m> are both convergent.
+                Take <m>\varepsilon\gt 0</m> and choose <m>K</m> so that <m>\sum_{k\geq K+1}^\infty H_p(C_k)\lt \varepsilon.</m>
+                As, for each <m>m</m>
+                <md>
+                    E\backslash F = \bigcup_{k=1}^\infty B_k = B_m \cup \bigcup_{k\geq m+1}C_k
+                </md>
+                it follows that if <m>m \geq K</m>, then
+                <md>
+                    H_p(B_m)\leq H_p(E\backslash F)\leq H_p(B_m) + \sum_{k\geq K+1}^\infty H_p(C_k) \lt H_p(B_m) + \varepsilon.
+                </md>
+                Hence, <m>\lim_k H_p(B_k) = H_p(E\backslash F)</m>, and so by <xref ref="eq-Hausdorff-Borel"/>
+                <md>
+                    H_p(E)\geq H_p(E\cap F) + H_p(E\backslash F).
+                </md>
+                Hence <m>F</m> is <m>H_p</m>-measurable, completing the proof.
+                
+            </p>
+        </proof>
+    </lemma>
+
+    <remark>
+        <p>
+            For each <m>p\gt 0</m>, we have shown that <m>H_p</m> defines a measure on the Borel sets of <m>\bR^n</m>.
+            This does not mean that <m>H_p</m> is a Borel measure.
+            Recall, that a measure <m>\mu</m> on Borel sets is a <term>Borel measurse</term> if <m>\mu(K)\lt \infty</m> for all compact sets <m>K</m>.
+            We will see that for a compact set <m>K\subseteq \bR^n</m> it is possible to have <m>H_p(K)=\infty.</m>
+            <fn>Some authors do not have the <q>finite on compact sets</q> stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.</fn>
+        </p>
+    </remark>
+
+    <p>
+        As stated earlier, we are not (usually) interested in a single one of the measures <m>H_p</m>.
+        For a <em>fixed</em> <m>E\subseteq \bR^n</m> we are interested in  for which <m>p</m> is <m>H_p(E)\lt \infty,</m> and for which <m>p</m> is <m>H_p(E)\gt E</m>.
+        The next proposition sheds significant light on these problems.
+    </p>
+    
+    <proposition xml:id="prop-Hausdorff-dim">
+        <statement>
+            <p>
+                Let <m>E \subseteq \bR^n</m> be a Borel set.
+                <ol>
+                    <li> If <m>q\gt p</m> and <m>H_p(E)\lt \infty </m>, then <m>H_q(E)=0</m>.
+                    </li>
+                    <li>If <m>q\lt p</m> and <m>H_p(E)\gt 0</m>, then <m>H_q(E) = \infty.</m>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                Suppose <m>H_p(E)\lt \infty</m> and <m>q \gt p</m>.
+                Take <m>\varepsilon \gt 0</m> and <m>\delta \gt 0</m>.
+                Now choose sets <m>\{C_k\}_{k=1}^\infty</m> with <m>\diam(C_k)\lt \delta</m> for each <m>k</m> such that
+                <m>E \subseteq \bigcup_{k=1}^\infty C_k</m> and
+                <md>
+                    H_{p,\delta}(E) \gt \sum_{k=1}^\infty \diam(C_k)^p - \varepsilon.
+                </md>
+                We have now that
+                <md>
+                    <mrow> H_{q,\delta}(E)\leq\sum_{k=1}^\infty \diam(C_k)^q \amp= \sum_{k=1}^\infty\diam(C_k)^{q-p} \diam(C_k)^p</mrow>
+                    <mrow> \amp \leq \delta^{q-p}\sum_{k=1}^\infty\diam(C_k)^p </mrow>
+                    <mrow> \amp \lt\delta^{q-p}(H_{p,\delta}(E) + \varepsilon) </mrow>
+                    <mrow> \amp  \leq \delta^{q-p}(H_{p}(E) + \varepsilon) </mrow>
+                </md>
+                Since <m>H_p(E)\lt \infty</m>, it follows that
+                <md>
+                    H_q(E) = \lim_{\delta\rightarrow0^+} H_{q,\delta}(E) \leq \lim_{\delta\rightarrow0^+}\delta^{q-p}(H_{p}(E) + \varepsilon) = 0.
+                </md>
+            </p>
+            <p>
+                The second statement is the contrapositive of the first, and thus the result is proved.
+            </p>
+        </proof>
+    </proposition>
+
+    <p>
+        Fix<m>E \subseteq \bR</m>.
+        From <xref ref="prop-Hausdorff-dim"/>, we see that there is a <m>q\gt 0</m> such <m>H_p(E)=\infty</m> for <m>p\lt q</m>, and <m>H_p(E)=0</m> for <m>p \gt q.</m> This is illustrated in <xref ref="fig-Hausdorff-dim"/>.
+        Thus the following definition is well defined.
+        </p>
+    <figure xml:id="fig-Hausdorff-dim">
+        <image source="images/Hausdorff-dim.png" width="50%"/>
+        <caption><p>Graph of <m>H_p(E)</m> against <m>p</m>.</p> </caption>
+    </figure>
+
+    <definition>
+        <statement>
+            <p>
+                Let <m>E \subseteq \bR^n</m> be a Borel set.
+                If <m>p \geq 0</m> satisfies
+                <md>
+                    p = \inf\{ q \colon H_q(E)=0\} (= \sup \{q \colon H_q(E)=\infty\})
+                </md>
+                we say that <m>E</m> has <term>Hausdorff dimension <m>p</m>.</term>
+                We write this as <idx><h>Hausdorff dimension</h></idx>
+                <md>
+                    \dim_H(E) = p.
+                </md>
+            
+            </p>
+        </statement>
+    </definition>
 </section>

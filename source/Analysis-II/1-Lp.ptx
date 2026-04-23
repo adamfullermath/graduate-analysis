@@ -330,14 +330,12 @@ n &amp;= \sum_{k=0}^n k\binom{k}{n}\left[kx^{k-1}(1-x)^{n-k} -(n-k)x^k(1-x)^{n-k
 </section>
 <section>
 <title><m>L^p</m>-norms</title>
-<p>Denote by <m>\mathcal{F}</m> be the collection of all extended real-valued measurable functions on <m>X</m> which are finite almost everywhere. By <xref ref="thm-meas-fnc-vec-sp" text="Theorem"/>, <m>\mathcal{F}</m> is a vector space. Let <m>\sim</m> be the equivalence relation: <m>f\sim g</m> if and only if <m>f = g</m> almost everywhere, for <m>f,g \in \mathcal{F}</m>. By <xref ref="exer-meas-func-equiv" text="Exercise"/>, <m>\sim</m> is an equivalence relation on <m>\mathcal{F}</m>. Let <m>\mathcal{F}/\sim</m> be the equivalence classes of <m>\sim</m> in <m>\mathcal{F}</m>. For each <m>f \in \mathcal{F}</m> denote by <m>[f]</m> the equivalence class of <m>f</m> under the equivalence relation <m>\sim</m>. The set <m>\mathcal{F}/\sim</m> inherits a vector space structure from <m>\mathcal{F}</m> by the operations</p>
+<p>Denote by <m>\mathcal{F}</m> be the collection of all extended real-valued measurable functions on <m>X</m> which are finite almost everywhere. By <xref ref="thm-meas-fnc-vec-sp" text="Theorem"/>, <m>\mathcal{F}</m> is a vector space. Let <m>\sim</m> be the equivalence relation: <m>f\sim g</m> if and only if <m>f = g</m> almost everywhere, for <m>f,g \in \mathcal{F}</m>. By <xref ref="exer-meas-func-equiv" text="Exercise"/>, <m>\sim</m> is an equivalence relation on <m>\mathcal{F}</m>. Let <m>\mathcal{F}/\sim</m> be the equivalence classes of <m>\sim</m> in <m>\mathcal{F}</m>. For each <m>f \in \mathcal{F}</m> denote by <m>[f]</m> the equivalence class of <m>f</m> under the equivalence relation <m>\sim</m>. The set <m>\mathcal{F}/\sim</m> inherits a vector space structure from <m>\mathcal{F}</m> by the operations
 <md>
-\begin{aligned}
-[f] + [g] &amp;= [f+g],\ \text{and}\\
-    \alpha[f] &amp;= [\alpha f]
-\end{aligned}
+<mrow>[f] + [g] \amp= [f+g],\ \text{and}</mrow>
+<mrow>    \alpha[f] \amp= [\alpha f] </mrow>
 </md>
-<p>for <m>f,g \in \mathcal{F}</m> and <m>\alpha \in \mathbb{R}</m> (see <xref ref="exer-ae-vec-space" text="Exercise"/>).</p>
+for <m>f,g \in \mathcal{F}</m> and <m>\alpha \in \mathbb{R}</m> (see <xref ref="exer-ae-vec-space" text="Exercise"/>).</p>
 <definition>
 <p>Let <m>(X,\mathcal{M},\mu)</m> be a measure space, let <m>\mathcal{F}</m> be all finite almost everywhere measurable functions on <m>\mathcal{F}</m>, and let <m>\sim</m> be the equivalence relation of equivalence almost everywhere on <m>\mathcal{F}</m>.</p>
 <p>For <m>1&lt;p&lt;\infty</m>, define</p>

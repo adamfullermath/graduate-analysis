@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sage>
+def S1(L):
+    return [1/3 * n for n in L]
+
+def S2(L):
+    return [1/3 * n + 2/3 for n in L]
+
+def S(L):
+    return S1(L) + S2(L)
+
+def line_segment(a,b,n=0):
+    T = [[a,n],[b,n]]
+    return line(T)
+
+@interact
+def _(iteration=slider([0 .. 6])):
+    C = [0,1]
+    L = line_segment(0,1,3/4)
+    
+    n = iteration
+    for k in range(n):
+        C = S(C)
+        for i in range(0,len(C),2):
+            L = L + line_segment(C[i],C[i+1],1/(k+2))
+            
+    pretty_print(html(r'Plots of $C_n$ for $n$ up to $%s$' % latex(n)))
+    show(L, axes=false)
+</sage>
