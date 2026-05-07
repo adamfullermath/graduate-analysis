@@ -2,4 +2,305 @@
 <section xml:id="sec-haus-examp">
     <title>Calculating Hausdorff Dimension</title>
     
+    <p>
+        In this section we will give some examples of calculating the Hausdorff dimension. 
+        We begin with a simple, but important example: a unit interval in <m>\bR^n</m>
+    </p>
+
+    <example xml:id="ex-square-Hausdorff-dim">
+        <p>
+            Let <m>E</m> be a unit interval in <m>\bR^n</m>.
+            That is, let
+            <md>
+                E = \underbrace{[0,1]\times \ldots \times [0,1]}_{n \text{ times}}.
+            </md>
+            For <m>k \gt 0</m>, subdivide each interval <m>[0,1]</m> in <m>E</m> into <m>k</m> equal length pieces, so that <m>E</m> is divided into <m>k^n</m> smaller intervals.
+            That is, 
+            <md>
+                E = \bigcup_{i_1=0}^{k-1}\ldots\bigcup_{i_n=0}^{k-1} \left[\frac{i_1}{k},\frac{i_1 + 1}{k}\right]\times \ldots \times \left[\frac{i_n}{k},\frac{i_n + 1}{k}\right].
+            </md>
+            Each of these subintervals has diameter <m>\frac{\sqrt{n}}{k}</m>.
+            Take <m>0 \lt \delta \lt 1</m> and choose <m>K \gt 0</m> such that <m>\frac{\sqrt{n}}{k} \lt \delta</m> when <m>k \geq K</m>.
+            If <m> k \geq K</m>, then
+            <md>
+                H_{n,\delta}(E) \leq \sum_{j=1}^{k^n}\left(\frac{\sqrt{n}}{k}\right)^n = n^{n/2}.
+            </md>
+            Hence <m>H_n(E)\leq n^{n/2}\lt \infty.</m> Thus, by <xref ref="prop-Hausdorff-dim"/>, <m>\dim_H(E)\leq n.</m>
+        </p>
+
+        <p>
+            Let <m>C_n</m> be the volume of the unit ball in <m>\bR^n</m>.
+            That is, if <m>D_n = \{ x \in \bR^n\colon \|x\|_2 \leq 1\},</m>
+            <md>
+                C_n = m_n(D_n),
+            </md>
+            where <m>m_n</m> is the Lebesgue measure on <m>\bR^n.</m>
+            Now, if <m>D</m> is a ball anywhere in <m>\bR^n</m> with diameter <m>\delta\gt 0</m>, then
+            <m>
+                m_n(D) = C_n\delta^n
+            </m>
+            by <xref ref="prop-lebesgue-invariant-Rn"/> and <xref ref="thm-change-of-variables"/>.
+            Thus, if <m>B \subseteq \bR^n</m> is bounded,
+            there is a ball <m>D\subseteq \bR^n</m> with <m>B \subseteq D</m> with <m>m_n(D) = C_n \diam(B)^n.</m>
+        </p>
+
+        <p>
+            Let <m>\delta \gt 0</m> and let <m>\{B_j\}_{j=1}^\infty</m> be sets with <m>E \subseteq \bigcup_{j=1}^\infty B_j</m> and <m>\diam(B_j)=\lt \delta.</m>
+            By the above argument, there are balls <m>D_j \subseteq \bR^n</m>, with <m>B_j \subseteq D_j</m> and <m>\diam(D_j)= \diam(B_j)</m> for each <m>j.</m>
+            Thus,
+            <md>
+                <mrow>1 = m_n(E) \amp \leq \sum_{j=1}^\infty m_n(D_j)  </mrow>
+                <mrow> \amp = C_n \sum_{j=1}^\infty  \diam(B_j)^n. </mrow>
+            </md>
+            As this holds for any such choice <m>\{B_j\}_{j=1}^\infty</m> of cover of <m>E</m>, it follows that
+            <m> 0\lt m_n(E) \leq C_n H_n(E).</m>
+            Thus, by <xref ref="prop-Hausdorff-dim"/>, <m>\dim_H(E)\geq n</m>.
+            It follows that <m>\dim_H(E) = n.</m>
+        </p>
+    </example>
+
+    <p>
+        <xref ref="ex-square-Hausdorff-dim"/> has wider reaching consequences than just the interval <m>E</m>.
+    </p>
+
+    <theorem xml:id="thm-Hausdorff-is-Lebesgue">
+        <statement>
+            <p>
+                There is a constant <m>0 \lt \alpha_n \lt \infty</m>, such that the Hausdorff measure <m>H_n</m> on <m>\bR^n</m> satisfies,
+                <m>m_n = \alpha H_n.</m>
+            </p>
+        </statement>
+
+        <proof>
+            <p>
+                The Hausdorff measure <m>H_n</m> on <m>\bR^n</m> is a non-zero Borel measure by <xref ref="ex-square-Hausdorff-dim"/>.
+                Each Hausdorff measure is clearly invariant under addition, i.e. <m>H_p(E) = H_p(E+x)</m> for all <m>E \subseteq \bR^n</m> and <m>x \in \bR^n.</m>
+                Thus, <m>H_n</m> is a Haar measure on <m>\bR^n</m>. 
+                By <xref ref="thm-Haar-unique"/>, there is a non-zero scalar such that <m>m_n = \alpha H_n.</m> 
+            </p>
+        </proof>
+    </theorem>
+
+    <corollary xml:id="cor-Hausdorff-is-Lebesgue">
+        <statement>
+            <p>
+                If <m>E \subseteq \bR^n</m> is a Borel set and <m>m_n(E)\lt \infty</m>, then <m>\dim_H(E)\leq n</m>.
+                In particular, if <m>0\lt m_n(E) \lt \infty</m>, then <m>\dim_H(E)=n</m>.
+            </p>
+        </statement>
+    </corollary>
+
+    <p>
+        In the next example we give the Hausdorff measure of a curve in <m>\bR^2</m> defined by a continuously differentiable function.
+        Such a curve will have Lebesgue measure <m>0</m>.
+    </p>    
+
+    <example xml:id="ex-curve-Hausdorff-dim">
+        <p>
+            Let <m>f \colon [0,1] \rightarrow \bR</m> be a continuous, non-constant function with <m>f'</m> defined and bounded on <m>(0,1)</m> by <m>\lambda \gt 0.</m>
+            Let <m>C = \{(t,f(t)) \colon 0 \leq t \leq 1\}</m>. We want to calculate the Huasdorff dimension of the curve <m>C</m>.
+            Since <m>C\subseteq \bR^2</m>, <xref ref="cor-Hausdorff-is-Lebesgue"/> shows that <m>2</m> is an upper bound for <m>\dim_H C.</m>
+        </p>
+        <p>
+            Note that <m>f</m> is absolutely continuous, and hence of bounded variation, by <xref ref="exer-bounded-derivative-abs-cont"/>.
+            Take <m>0\leq a \lt b \leq 1</m> and let <m>a=x_0\lt x_2 \lt \ldots \lt x_n =b</m> be a partition of <m>[a,b].</m>
+            Then,
+            <md>
+                <mrow>\sum_{k=1}^n |f(x_i)-f(x_{i-1})| \amp = \sum_{k=1}^n \frac{|f(x_i)-f(x_{i-1})|}{|x_i - x_{i-1}|}|x_i - x_{i-1}| </mrow>
+                <mrow> \amp \leq \lambda \sum_{i=1}^n |x_i - x_{i-1}| </mrow>
+                <mrow> \amp = \lambda(a-b) </mrow>
+                <mrow> \amp \leq \lambda \|(a,f(a)) - (b,f(b))\|_2, </mrow>
+            </md>
+            where the first inequality follow from the Mean Value Theorem.
+            Thus, if <m>B = \{(t,f(t)) \colon a \leq t \leq b\}</m>, then
+            <md>
+                TV(f|_{[a,b]}) \leq \lambda \diam(B),
+            </md>
+            where <m>TV(f|_{[a,b]})</m> is the total variation of <m>f</m> restricted to <m>[a,b]</m>.
+            Let <m>|\nu|</m> be the Borel measure on <m>[0,1]</m> induced by <m>x \mapsto TV(f|_{[0,x]})</m>.
+            That is, if <m>\nu</m> is the Borel signed-measure induced by <m>f</m>, then <m>|\nu|</m> is the measure of total variation of <m>\nu</m>.
+            Define a Borel measure <m>\mu</m> on <m>C</m> by
+            <m>\mu(B) = |\nu|(\{t \colon (t,f(t))\in B\})</m>.
+            Extend <m>\mu</m> to a Borel measure on <m>\bR^2</m> by setting <m>\mu(B) = \mu(B \cap C)</m> for Borel sets <m>B \cap C.</m>
+            It follows from the above inequality that for Borel sets <m>B \subseteq \bR^2</m>,
+            <md>
+                \mu(B) \leq \lambda \diam(B).
+            </md>
+            Let <m>\{B_k\}_{k=1}^\infty</m> be a cover of <m>C</m> where each <m>\diam(B_k)\lt \delta</m> for some <m>\delta</m>.
+            We can take the closure of each <m>B_k</m> without changing the diameter of <m>B_k</m>.
+            Thus, we can assume each <m>B_k</m> is a Borel set.
+            Hence
+            <md>
+                0\lt TV(f) = \mu(C) \leq \sum_{k=1}^\infty \mu(B_k) \leq \lambda \sum_{k=1}^\infty \diam(B_k).
+            </md>
+            Hence <m>0\lt H_{1,\delta}(C)</m> for each <m>\delta\gt 0</m>. Therefore <m>\dim_H C\geq 1.</m>
+        </p>
+
+        <p>
+            Let <m>L</m> be the arc length of <m>C</m>.
+            Since <m>f</m> is of bounded variation, <m>L</m> is finite by <xref ref="exer-bv-arc-length"/>.
+            For each <m>n</m>, we can choose <m>0=x_0\lt \dots \lt x_n=1</m> such that the arc length of <m>f</m> over <m>[x_{i-1},x_i]</m> is <m>L/n.</m>
+            Let <m>B_i = \{(t,f(t)) \colon x_{i-1}\leq t \leq x_i\}</m> for <m>i=1,\ldots,n.</m>
+            Then
+            <md>
+                \sum_{i=1}^n \diam(B_i) \leq n \frac{L}{n} = L.
+            </md>
+            It follows that <m>H_1(C) \leq L</m>, and hence <m>\dim_H C \leq 1.</m>
+            Therefore <m>\dim_H C =1.</m>
+        </p>
+    </example>
+
+    <p>
+        <xref ref="thm-Hausdorff-is-Lebesgue"/> justifies, somewhat, the use of the word <em>dimension</em> in Hausdorff dimension.
+        Lebesgue measure on <m>\bR</m> generalizes length; Lebesgue measure on <m>\bR^2</m> generalizes area; Lebesgue measure on <m>\bR^3</m> generalizes volume; et cetera.
+        Thus, if a set <m>E \subseteq \bR^n</m> can be said to have length/area/volume in <m>\bR^n</m>, then <m>E</m> has (Hausdorff) dimension <m>n</m>.
+        Further evidence that Hausdorff dimension is consistent with intuition on what dimension should mean is given in <xref ref="ex-curve-Hausdorff-dim"/>, <xref ref="exer-subspace-Hausdorff-dim"/>, and <xref ref="exer-circle-Hausdorff-dim"/>.
+        If these were the only application of Hausdorff measure, then Hausdorff measure would not be of much interest.
+        The interesting examples are when a set <m>E \subseteq \bR^n</m> has Lebesgue measure <m>0</m>, and <m>E \not\subseteq V</m> for any proper subspace <m>V \subseteq \bR^n</m>, but is still sufficiently complex to have non-zero Hausdorff dimension.
+        The first example of a complicated, Lebesgue measure <m>0</m> set we saw was the Cantor set, <xref ref="ex-Cantor"/>.
+    </p>
+
+    <example xml:id="ex-Cantor-Hausdorff-dim">
+        <p>
+            Let <m>C \subseteq [0,1]</m> be the Cantor set, and let <m>\{C_n\}_{n=0}^\infty</m> be the closed sets used to construct the Cantor set, as described in <xref ref="ex-Cantor"/>.
+            That is, <m>C_0 = [0,1]</m>. <m>C_1 = [0,1/3] \cup [1/3,1]</m>, and so on (see <xref ref="fig-cantor"/>), and <m>C = \bigcap_{n=0}^\infty C_n.</m>
+            For each <m>n</m>, <m>C \subseteq C_n</m> and <m>C_n</m> is a disjoint union of <m>2^n</m> intervals of diameter <m>\frac{1}{3^n}</m>.
+            Take <m>\delta \gt 0</m>, and <m>N \geq 0</m> such that <m>\frac{1}{3^n}</m> for all <m>n \geq N</m>.
+            For <m>p \gt 0</m>, we thus have,
+            <md>
+                H_{p,\delta}(C) \leq 2^n \left(\frac{1}{3^n}\right)^p
+            </md>
+            for all <m>n \geq N</m>.
+            Let <m>p = \log_3(2)</m>.
+            Then, for all <m>n</m>,
+            <md>
+                \left(\frac{1}{3^n}\right)^p = \frac{1}{2^n}.    
+            </md>
+            Hence, if <m>p = \log_3(2)</m>, <m>H_{p,\delta}(C) \leq 1,</m> and therefore <m>H_p(C)\leq 1.</m>
+            Hence, <m>\dim_H(C) \leq p.</m>
+        </p>
+
+        <p>
+            Let <m>\phi</m> be the Cantor-Lebesgue function on <m>[0,1]</m>, as described in <xref ref="ex-cantor-lebesgue"/>.
+            Extend <m>\phi</m> to all of <m>\bR</m> by setting <m>\phi(x) = 1</m> if <m>x \geq 1</m>, and <m>\phi(x) = 0</m> if <m>x \leq 0</m>.
+            Let <m>\mu</m> be the Borel measure on <m>\bR</m> induced by <m>\phi</m>.
+            That is, <m>\mu</m> is the Borel measure induced by the premeasure
+            <m> \mu((c,d]) = \phi(d) - \phi(c). </m>
+            By <xref ref="exer-cant-len-func-singular"/>, <m>\mu</m> is singular with respect to Lebesgue measure <m>m</m>, and <m>\mu(C) = \mu(\bR) = 1.</m>
+            Take <m>\delta \lt \frac{1}{3}</m>.
+            If <m>B \subseteq \bR</m> and <m>\diam(B)\lt \delta</m>, then there is an <m>n \geq 1</m> such that
+            <md>
+                \frac{1}{3^{n+1}} \leq \diam(B) \lt \frac{1}{3^n}.
+            </md>
+            Since <m>\diam(B) \lt \frac{1}{3^n}</m>, <m>B</m> intersects at most <m>1</m>  interval in <m>[0,1]\backslash C_n</m>.
+            Thus,
+            <m>\mu(B) \leq \frac{1}{2^n}.</m>
+            Hence, with <m>p = \log_3(2)</m>, 
+            <md>
+                <mrow>(\diam(B))^p \amp\geq \left(\frac{1}{3^{n+1}}\right)^p = \frac{1}{2^{n+1}} </mrow>
+                <mrow> \amp = \frac{1}{2}\cdot \frac{1}{2^n}\geq \frac{1}{2}\mu(B) </mrow>
+            </md>
+            Now, suppose <m>C \subseteq \bigcup_{k=1}^\infty B_k</m> where each <m>B_k \subseteq \bR</m> and <m>\diam(B_k)\lt \delta</m>.
+            Then, by the above calculation,
+            <md>
+                1 = \mu(C) \leq \sum_{k=1}^\infty \mu(B_k) \leq 2 \sum_{k=1}^\infty \diam(B_k)^p.
+            </md>
+            Taking an infimum over all such families <m>\{B_k\}_{k=1}^\infty</m> and taking the limit as <m>\delta \rightarrow 0</m>, we see that
+            <md>
+                1 \leq H_{p}(C)
+            </md>
+            and so <m>\dim_H(C)\geq p. </m>
+            We have thus shown that
+            <md>
+                \dim_H(C) = \log_3(2) = \frac{\ln(2)}{\ln(3)}\approx 0.631.
+            </md>
+        </p>
+    </example>
+
+    <p>
+        It should be noted that the line of argument used in <xref ref="ex-square-Hausdorff-dim"/>, <xref ref="ex-curve-Hausdorff-dim"/>, and <xref ref="ex-Cantor-Hausdorff-dim"/> is the same: we get an upper bound for <m>\dim_H(E)</m> by finding suitable covers of <m>E</m>, and we get a lower bound for <m>\dim_H(E)</m> by comparing <m>H_p</m> to a measure on <m>E</m>.
+        In <xref ref="ex-square-Hausdorff-dim"/> we used the Lebesgue measure <m>m_n</m>; in <xref ref="ex-curve-Hausdorff-dim"/> we used the measure induced by the function of total variation; in <xref ref="ex-Cantor-Hausdorff-dim"/> we used the Borel measure induced by the Cantor-Lebesgue function.
+        If we want to apply this method to calculate the Hausdorff dimension of other sets, we will need to find a suitable measure for each set.
+        If and how we can do this is not at all clear.
+        However, we will see in <xref ref="thm-similtude-measure"/>, that if a set <m>E</m> is suitably symmetric we can always find a suitable measure.
+    </p>
+
+    <definition xml:id="def-similitude">
+        <statement>
+            <p>
+                A map <m>S \colon \bR^n \rightarrow \bR^n</m> is a <term>similitude with scaling factor <m>r</m></term> if there is a orthogonal map <m>U</m> on <m>\bR^n</m>, a vector <m>b \in \bR^n</m>, and a scalar <m>r \gt 0</m> such that
+                <md>
+                    S(x) = rU(x) + b
+                </md>
+                for all <m>x \in \bR^n</m>. <idx><h>similitude</h></idx> <idx><h>similitude</h><h>scaling factor</h></idx>
+            </p>
+            <p>
+                Let <m>S=(S_1,\ldots,S_m)</m> be a <m>m</m>-tuple of similitudes on <m>\bR^n</m>.
+                For <m>E \subseteq \bR^n</m>, let <m>S(E) = \bigcup_{k=1}^m S_k(E).</m>
+                We say that <m>E \subseteq \bR^n</m> is <term>invariant under the similtudes <m>S</m></term> if <m>E=S(E).</m><idx><h>similitude</h><h>invariant set</h></idx>
+            </p>
+        </statement>
+    </definition>
+
+    <definition xml:id="def-separating-set">
+        <statement>
+            <p>
+                Let <m>S = (S_1,\ldots,S_m)</m> be a family of similitudes on <m>\bR^n</m>.
+                A non-empty open set <m>U \subseteq \bR^n</m> is a <term>separating set for <m>S</m></term> if
+                <md>
+                    S(U) \subseteq U,\ \text{ and } \{S_k(U)\}_{k=1}^m \text{ are pairwise disjoint}.
+                </md>
+                <idx><h>separating set</h></idx>
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        When <m>S=(S_1,\ldots,S_m)</m> is a tuple of similitudes and <m>k \geq 0</m> we define <m>S^k(E)</m> for <m>E \subseteq \bR^n</m> by
+        <md>
+            S^{0}(E) = E,\ S^1(E)=S(E),\ \text{ and } S^k(E) = S(S^{k-1}(E)).
+        </md>
+        
+    </p>
+
+    <example xml:id="ex-Cantor-set-2">
+        <p>
+            Define similitudes <m>S_1</m> and <m>S_2</m> on <m>\bR</m> (both with scaling factor <m>\frac{1}{3}</m>) by
+            <md>
+                S_1(x) = \frac{1}{3}x \text{ and } S_2(x) = \frac{1}{3}x + \frac{2}{3}.
+            </md>
+            Let <m>C \subseteq [0,1]</m> be the Cantor set, as in <xref ref="ex-Cantor"/>. 
+            Then <m>S_1(C) = C \cap [0,\frac{1}{3}]</m> and <m>S_2(C) = C\cap [\frac{2}{3},1].</m>
+            Thus, <m>C</m>   is invariant under <m>S =(S_1,S_2).</m>
+            Further, if <m>V</m> is the open inverval <m>(0,1)</m>,
+            then <m>V</m> is a separating set for <m>S</m>.
+        </p>
+
+        <p>
+            Note that we can construct <m>C</m> using <m>V</m> and <m>S</m>.
+            Indeed, if <m>\overline{V}</m> is the closure on <m>V</m> (i.e. <m>\overline{V} = [0,1]</m>) then
+            <md>
+                <mrow> S(\overline{V}) \amp= \left[0,\frac{1}{3}\right] \cup \left[\frac{2}{3},1\right] = C_1, </mrow>
+                <mrow> S^2(\overline{V}) \amp= C_2,</mrow>
+                <mrow> \amp\vdots </mrow>
+                <mrow> S^k(\overline{V}) \amp= C_k </mrow>
+            </md>
+            where <m>C_1,\ldots,C_k</m> are defined as in <xref ref="ex-Cantor"/>.
+            Thus,
+            <md>
+                C = \bigcap_{k=1}^\infty S^k(\overline{V}).
+            </md>
+            
+        </p>
+    </example>
+    
+    <theorem xml:id="thm-similtude-measure">
+        <statement>
+            <p>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+
 </section>

@@ -2,4 +2,75 @@
 
 <exercises>
 
+    <exercise xml:id="exer-subspace-Hausdorff-dim">
+        <statement>
+            <p>
+                Let <m>n \geq 2</m>, and let <m>V \subseteq \bR^n</m> be a subspace with <m>\dim V = m</m>
+                Show that, if <m>E \subseteq V</m> is a bounded Borel set, then <m>\dim_H E\leq m</m>.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="exer-circle-Hausdorff-dim">
+        <introduction>
+            <p>
+                Let <m>\bT = \{ z \in \bC \colon |z|=1\}</m> be the unit circle in <m>\bC</m>.
+                Let <m>\mu</m> be the Haar measure on <m>\bT</m> as given in <xref ref="ex-T-Haar"/>.
+                Extend <m>\mu</m> to a Borel measure on <m>\bC</m> by setting <m>\mu(E) = \mu(E\cap \bT)</m> for all Borel <m>E \subseteq \bC</m>.
+            </p>
+        </introduction>
+
+        <task xml:id="exer-circle-Hausdorff-dim-1">
+            <statement>
+                <p>
+                    Let <m>A</m> be a closed arc on <m>\bT</m>.
+                    That is, <m>A = \{ e^{i\theta} \colon a \leq \theta \leq a + \alpha\}</m> for some <m>a\in \bR</m> and <m>\alpha \gt 0</m>.
+                    Show that 
+                    <md>
+                        \diam(A) \leq \mu(A) \leq 4\diam(A).
+                    </md>                    
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Note that <m>\mu(A) = \alpha</m> is the arc length of <m>A</m>, and <m>\diam(A) = 2 \sin(\alpha/2)</m> is the length of the chord from <m>e^{ia}</m> to <m>e^{i(a+\alpha)}</m> when <m>\alpha \leq \pi.</m>.
+                </p>
+            </hint>
+        </task>
+
+        <task xml:id="exer-circle-Hausdorff-dim-2">
+            <statement>
+                <p>
+                    Show that 
+                    <md>
+                        H_1(\bT) \geq \frac{\pi}{2}.
+                    </md>
+                </p>
+            </statement>
+
+            <hint>
+                <p>
+                    Show that if <m>E \subseteq \bC</m> Borel with <m>\diam(E)\lt 1</m> then there is an arc <m>A \subseteq \bC</m> such that
+                    <m>E\cap \bT \subseteq A</m>, and apply <xref ref="exer-circle-Hausdorff-dim-1"/>. Use this to get a lower bound on <m>H_{1,\delta}(\bT)</m> when <m>\delta\lt 1.</m>
+                </p>
+            </hint>
+        </task>
+
+        <task>
+            <statement>
+                <p>
+                    Show that <m>\dim_H(\bT) =1</m>.
+                </p>
+            </statement>
+
+            <hint>
+                <p>
+                    That <m>\dim_H(\bT)\geq 1</m> follows from <xref ref="exer-circle-Hausdorff-dim-2"/>. For the reverse inequality, divide <m>\bT</m> into <n>n</n> equal length arcs (for large enough <m>n</m>), and see what this says about <m>H_{1,\delta}(\bT)</m>
+                </p>
+            </hint>
+        </task>
+    </exercise>
+
+
+
 </exercises>

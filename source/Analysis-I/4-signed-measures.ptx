@@ -613,6 +613,7 @@ f(x) + T_f(x) &amp;= f^+(x) - f^-(x) + |\nu|([a,x]) \\
 <md> f^- = \frac{1}{2}(T_f -f) + C.\qedhere</md>
 </proof>
 </section>
+
 <exercises>
 <exercise xml:id="exer-measures-vec-space">
 <p>Let <m>\mu</m> and <m>\nu</m> be measures on a measurable space <m>(X,\mathcal{F})</m>.</p>
@@ -702,6 +703,26 @@ Show that <m>E = \bigcup_k E_k</m> is a positive set.</p>
 </li>
 </ol>
 </exercise>
+
+<exercise xml:id="exer-bv-arc-length">
+    <statement>
+        <p>
+            Let <m>f</m> be a continuous function on a closed interval <m>[a,b]</m>.
+            For a partition <m>P = \{a=x_0\lt \ldots \lt x_n = b\}</m> of <m>[a,b]</m> define
+            <m>L(f,P)</m> as
+            <md>
+                L(f,P) = \sum_{i=1}^n \sqrt{(x_i - x_{i-1})^2 - (f(x_i)-f(x_{i-1})^2)},
+            </md>
+            and define the <term>arc length</term> <m>L</m> of <m>f</m> on <m>[a,b]</m> as
+            <md>
+                L = sup_P L(f,P).
+            </md><idx><h>arc length</h></idx>
+
+            Show that <m>f</m> is of bounded variation if and only if <m>L\lt \infty</m>.
+        </p>
+    </statement>
+</exercise>
+
 <exercise xml:id="exer-not-tv-1">
 <p>Define <m>f</m> on <m>[0,1]</m> by</p>
 <md> f(x) = \begin{cases} \sin(\frac{1}{x}) &amp; x \neq 0 \\

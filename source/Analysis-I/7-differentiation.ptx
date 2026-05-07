@@ -1136,8 +1136,16 @@ Then <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
 </ol>
 </exercise>
 <exercise xml:id="exer-bounded-derivative-abs-cont">
-<p>Let <m>f</m> be a continuous function on a closed interval <m>[a,b]\subseteq\mathbb{R}</m>.
-Show that if <m>f'(x)</m> exists for all <m>x</m> and <m>f'</m> is bounded, then <m>f</m> is absolutely continuous. (HINT: Recall the Mean Value Theorem).</p>
+    <statement>
+        <p>
+            Let <m>f</m> be a continuous function on a closed interval <m>[a,b]\subseteq\mathbb{R}</m>.
+            Show that if <m>f'(x)</m> exists for all <m>x</m> and <m>f'</m> is bounded, then <m>f</m> is absolutely continuous.         
+        </p>
+    </statement>
+
+    <hint>
+        <p>HINT: Recall the Mean Value Theorem.</p>
+    </hint>
 </exercise>
 <exercise xml:id="exer-countable-discont">
 <p>Complete the proof of <xref ref="prop-countable-discont" text="Proposition"/>.

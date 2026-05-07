@@ -239,7 +239,7 @@
         </p>
     <figure xml:id="fig-Hausdorff-dim">
         <image source="images/Hausdorff-dim.png" width="50%"/>
-        <caption><p>Graph of <m>H_p(E)</m> against <m>p</m>.</p> </caption>
+        <caption><p>Graph of <m>H_q(E)</m> against <m>q</m>.</p> </caption>
     </figure>
 
     <definition>
