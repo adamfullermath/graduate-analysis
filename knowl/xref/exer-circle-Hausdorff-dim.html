@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h3 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span>
+</h3>
+<div class="introduction"><div class="para">Let <span class="process-math">\(\bT = \{ z \in \bC \colon |z|=1\}\)</span> be the unit circle in <span class="process-math">\(\bC\text{.}\)</span> Let <span class="process-math">\(\mu\)</span> be the Haar measure on <span class="process-math">\(\bT\)</span> as given in <a href="real-analysis-7-3-4.html#ex-T-Haar" class="xref" data-knowl="./knowl/xref/ex-T-Haar.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.5">Example 2.2.5</a>. Extend <span class="process-math">\(\mu\)</span> to a Borel measure on <span class="process-math">\(\bC\)</span> by setting <span class="process-math">\(\mu(E) = \mu(E\cap \bT)\)</span> for all Borel <span class="process-math">\(E \subseteq \bC\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be a closed arc on <span class="process-math">\(\bT\text{.}\)</span> That is, <span class="process-math">\(A = \{ e^{i\theta} \colon a \leq \theta \leq a + \alpha\}\)</span> for some <span class="process-math">\(a\in \bR\)</span> and <span class="process-math">\(\alpha \gt 0\text{.}\)</span> Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\diam(A) \leq \mu(A) \leq 4\diam(A).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para">Note that <span class="process-math">\(\mu(A) = \alpha\)</span> is the arc length of <span class="process-math">\(A\text{,}\)</span> and <span class="process-math">\(\diam(A) = 2 \sin(\alpha/2)\)</span> is the length of the chord from <span class="process-math">\(e^{ia}\)</span> to <span class="process-math">\(e^{i(a+\alpha)}\)</span> when <span class="process-math">\(\alpha \leq \pi.\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 3.3.2.a.1"><a href="#exer-circle-Hausdorff-dim-1-2" title="Copy heading and permalink for Hint 3.3.2.a.1" aria-label="Copy heading and permalink for Hint 3.3.2.a.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3.3.2.a"><a href="#exer-circle-Hausdorff-dim-1" title="Copy heading and permalink for Exercise 3.3.2.a" aria-label="Copy heading and permalink for Exercise 3.3.2.a">🔗</a></div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical">
+<div class="para">Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+H_1(\bT) \geq \frac{\pi}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para">Show that if <span class="process-math">\(E \subseteq \bC\)</span> Borel with <span class="process-math">\(\diam(E)\lt 1\)</span> then there is an arc <span class="process-math">\(A \subseteq \bC\)</span> such that <span class="process-math">\(E\cap \bT \subseteq A\text{,}\)</span> and apply <a href="real-analysis-7-4-5.html#exer-circle-Hausdorff-dim-1" class="xref" data-knowl="./knowl/xref/exer-circle-Hausdorff-dim-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.2.a">Exercise 3.3.2.a</a>. Use this to get a lower bound on <span class="process-math">\(H_{1,\delta}(\bT)\)</span> when <span class="process-math">\(\delta\lt 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 3.3.2.b.1"><a href="#exer-circle-Hausdorff-dim-2-2" title="Copy heading and permalink for Hint 3.3.2.b.1" aria-label="Copy heading and permalink for Hint 3.3.2.b.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3.3.2.b"><a href="#exer-circle-Hausdorff-dim-2" title="Copy heading and permalink for Exercise 3.3.2.b" aria-label="Copy heading and permalink for Exercise 3.3.2.b">🔗</a></div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para">Show that <span class="process-math">\(\dim_H(\bT) =1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para">That <span class="process-math">\(\dim_H(\bT)\geq 1\)</span> follows from <a href="real-analysis-7-4-5.html#exer-circle-Hausdorff-dim-2" class="xref" data-knowl="./knowl/xref/exer-circle-Hausdorff-dim-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.2.b">Exercise 3.3.2.b</a>. For the reverse inequality, divide <span class="process-math">\(\bT\)</span> into <span class="process-math">\(\text{}\)</span> equal length arcs (for large enough <span class="process-math">\(n\)</span>), and see what this says about <span class="process-math">\(H_{1,\delta}(\bT)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-circle-Hausdorff-dim-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 3.3.2.c.1"><a href="#exer-circle-Hausdorff-dim-4-2" title="Copy heading and permalink for Hint 3.3.2.c.1" aria-label="Copy heading and permalink for Hint 3.3.2.c.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 3.3.2.c"><a href="#exer-circle-Hausdorff-dim-4" title="Copy heading and permalink for Exercise 3.3.2.c" aria-label="Copy heading and permalink for Exercise 3.3.2.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.3.2"><a href="#exer-circle-Hausdorff-dim" title="Copy heading and permalink for Exercise 3.3.2" aria-label="Copy heading and permalink for Exercise 3.3.2">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-7-4-5.html#exer-circle-Hausdorff-dim">in-context</a></span>
+</body>
+</html>

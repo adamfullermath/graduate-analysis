@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(E\)</span> be a unit interval in <span class="process-math">\(\bR^n\text{.}\)</span> That is, let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-Hausdorff-dim.html">
+\begin{equation*}
+E = \underbrace{[0,1]\times \ldots \times [0,1]}_{n \text{ times}}.
+\end{equation*}
+</div>
+<div class="para">For <span class="process-math">\(k \gt 0\text{,}\)</span> subdivide each interval <span class="process-math">\([0,1]\)</span> in <span class="process-math">\(E\)</span> into <span class="process-math">\(k\)</span> equal length pieces, so that <span class="process-math">\(E\)</span> is divided into <span class="process-math">\(k^n\)</span> smaller intervals. That is,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-Hausdorff-dim.html">
+\begin{equation*}
+E = \bigcup_{i_1=0}^{k-1}\ldots\bigcup_{i_n=0}^{k-1} \left[\frac{i_1}{k},\frac{i_1 + 1}{k}\right]\times \ldots \times \left[\frac{i_n}{k},\frac{i_n + 1}{k}\right].
+\end{equation*}
+</div>
+<div class="para">Each of these subintervals has diameter <span class="process-math">\(\frac{\sqrt{n}}{k}\text{.}\)</span> Take <span class="process-math">\(0 \lt \delta \lt 1\)</span> and choose <span class="process-math">\(K \gt 0\)</span> such that <span class="process-math">\(\frac{\sqrt{n}}{k} \lt \delta\)</span> when <span class="process-math">\(k \geq K\text{.}\)</span> If <span class="process-math">\(k \geq K\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-Hausdorff-dim.html">
+\begin{equation*}
+H_{n,\delta}(E) \leq \sum_{j=1}^{k^n}\left(\frac{\sqrt{n}}{k}\right)^n = n^{n/2}.
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(H_n(E)\leq n^{n/2}\lt \infty.\)</span> Thus, by <a href="sec-haus-meas.html#prop-Hausdorff-dim" class="xref" data-knowl="./knowl/xref/prop-Hausdorff-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.6">Proposition 3.1.6</a>, <span class="process-math">\(\dim_H(E)\leq n.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-square-Hausdorff-dim-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C_n\)</span> be the volume of the unit ball in <span class="process-math">\(\bR^n\text{.}\)</span> That is, if <span class="process-math">\(D_n = \{ x \in \bR^n\colon \|x\|_2 \leq 1\},\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-lebesgue-invariant-Rn.html ./knowl/xref/thm-change-of-variables.html">
+\begin{equation*}
+C_n = m_n(D_n),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(m_n\)</span> is the Lebesgue measure on <span class="process-math">\(\bR^n.\)</span> Now, if <span class="process-math">\(D\)</span> is a ball anywhere in <span class="process-math">\(\bR^n\)</span> with diameter <span class="process-math">\(\delta\gt 0\text{,}\)</span> then <span class="process-math">\(m_n(D) = C_n\delta^n\)</span> by <a href="sec-lebesgue-measure-on-Rn.html#prop-lebesgue-invariant-Rn" class="xref" data-knowl="./knowl/xref/prop-lebesgue-invariant-Rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.2.7">Proposition 1.2.7</a> and <a href="real-analysis-7-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a>. Thus, if <span class="process-math">\(B \subseteq \bR^n\)</span> is bounded, there is a ball <span class="process-math">\(D\subseteq \bR^n\)</span> with <span class="process-math">\(B \subseteq D\)</span> with <span class="process-math">\(m_n(D) = C_n \diam(B)^n.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-square-Hausdorff-dim-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\delta \gt 0\)</span> and let <span class="process-math">\(\{B_j\}_{j=1}^\infty\)</span> be sets with <span class="process-math">\(E \subseteq \bigcup_{j=1}^\infty B_j\)</span> and <span class="process-math">\(\diam(B_j)=\lt \delta.\)</span> By the above argument, there are balls <span class="process-math">\(D_j \subseteq \bR^n\text{,}\)</span> with <span class="process-math">\(B_j \subseteq D_j\)</span> and <span class="process-math">\(\diam(D_j)= \diam(B_j)\)</span> for each <span class="process-math">\(j.\)</span> Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-Hausdorff-dim.html">
+\begin{align*}
+1 = m_n(E) \amp \leq \sum_{j=1}^\infty m_n(D_j)  \\
+\amp = C_n \sum_{j=1}^\infty  \diam(B_j)^n. 
+\end{align*}
+</div>
+<div class="para">As this holds for any such choice <span class="process-math">\(\{B_j\}_{j=1}^\infty\)</span> of cover of <span class="process-math">\(E\text{,}\)</span> it follows that <span class="process-math">\(0\lt m_n(E) \leq C_n H_n(E).\)</span> Thus, by <a href="sec-haus-meas.html#prop-Hausdorff-dim" class="xref" data-knowl="./knowl/xref/prop-Hausdorff-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.6">Proposition 3.1.6</a>, <span class="process-math">\(\dim_H(E)\geq n\text{.}\)</span> It follows that <span class="process-math">\(\dim_H(E) = n.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-square-Hausdorff-dim-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.2.1"><a href="#ex-square-Hausdorff-dim" title="Copy heading and permalink for Example 3.2.1" aria-label="Copy heading and permalink for Example 3.2.1">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-haus-examp.html#ex-square-Hausdorff-dim">in-context</a></span>
+</body>
+</html>

@@ -479,7 +479,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-51" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-49" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
@@ -590,7 +590,7 @@ B \mapsto \diam(B)^p.
 </div>
 <div class="displaymath process-math" id="sec-haus-meas-3-14">
 \begin{equation*}
-H_{p,\delta} = \inf\left\{\sum_{k=1}^\infty\diam(B_k)^p \colon E \subseteq \bigcup_{k=1}^\infty B_k,\ \diam(B_k)\lt \delta \right\}.
+H_{p,\delta}(E) = \inf\left\{\sum_{k=1}^\infty\diam(B_k)^p \colon E \subseteq \bigcup_{k=1}^\infty B_k,\ \diam(B_k)\lt \delta \right\}.
 \end{equation*}
 </div>
 <div class="para">Note that if <span class="process-math">\(\delta_1\lt \delta_2\)</span> and <span class="process-math">\(E \subseteq \bR^n\text{,}\)</span> then <span class="process-math">\(H_{p,\delta_2}(E) \leq H_{p,\delta_1}(E)\text{.}\)</span> This <span class="process-math">\(H_{p,\delta}(E)\)</span> increases as <span class="process-math">\(\delta\)</span> decreases. Define, for all <span class="process-math">\(E \subseteq \bR^n\)</span>
@@ -623,7 +623,194 @@ H_p(E)=\amp \lim_{n\rightarrow\infty} H_{p,\frac{1}{n}}(E)\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#prop-Hp-outer-meas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.1.1.1"><a href="#prop-Hp-outer-meas-2" title="Copy heading and permalink for Proof 3.1.1.1" aria-label="Copy heading and permalink for Proof 3.1.1.1">🔗</a></div></article><div class="autopermalink" data-description="Section 3.1: Hausdorff measures"><a href="#sec-haus-meas" title="Copy heading and permalink for Section 3.1: Hausdorff measures" aria-label="Copy heading and permalink for Section 3.1: Hausdorff measures">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 3.1.1.1"><a href="#prop-Hp-outer-meas-2" title="Copy heading and permalink for Proof 3.1.1.1" aria-label="Copy heading and permalink for Proof 3.1.1.1">🔗</a></div></article><article class="definition definition-like" id="def-Hausdorff-dim"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-Hausdorff-dim-1-1">For <span class="process-math">\(p \geq 0\)</span> the outer measure <span class="process-math">\(H_p\)</span> on subsets of <span class="process-math">\(\bR^n \)</span>is called the <dfn class="terminology">Hausdorff outer measure of dimension <span class="process-math">\(p\)</span></dfn> on <span class="process-math">\(\bR^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-Hausdorff-dim-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.1.2"><a href="#def-Hausdorff-dim" title="Copy heading and permalink for Definition 3.1.2" aria-label="Copy heading and permalink for Definition 3.1.2">🔗</a></div></article><div class="para" id="sec-haus-meas-6">We now have a family of outer measures <span class="process-math">\(\{H_p\}_{p\geq 0}\)</span> on <span class="process-math">\(\bR^n\text{.}\)</span> By restricting <span class="process-math">\(H_p\)</span> to the <span class="process-math">\(H_p\)</span>-measurable sets, we have a family of measures on <span class="process-math">\(\bR^n\text{.}\)</span> It is not clear if these measures act on the same <span class="process-math">\(\sigma\)</span>-algebra of measurable sets. That is, if <span class="process-math">\(p \neq q\text{,}\)</span> it is not clear that the <span class="process-math">\(H_p\)</span>-measurable sets coincide with the <span class="process-math">\(H_q\)</span>-measurable sets. However, we will see that Borel sets in <span class="process-math">\(\bR^n\)</span> are <span class="process-math">\(H_p\)</span>-measurable for all <span class="process-math">\(p\geq 0\text{.}\)</span> Thus, the measures <span class="process-math">\(\{H_p\}_{p\geq 0}\)</span> define a family of measures, called the <dfn class="terminology">Hausdorff measures of dimension <span class="process-math">\(p\)</span></dfn>, on the <span class="process-math">\(\sigma\)</span>-algebra of Borel sets in <span class="process-math">\(\bR^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-haus-meas-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-metric-outer-measures"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-metric-outer-measures-1-1">
+<div class="para">Let <span class="process-math">\(X,Y \subseteq \bR^n\)</span> and fix <span class="process-math">\(p\geq 0\text{.}\)</span> If</div>
+<div class="displaymath process-math" id="lem-metric-outer-measures-1-1-3">
+\begin{equation*}
+\dist(X,Y):=\sup\{\|x-y\| \colon x\in X,\ y\in Y\} \gt 0
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(H_p(X\cup Y) = H_p(X) + H_p(Y).\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-metric-outer-measures-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 3.1.3"><a href="#lem-metric-outer-measures" title="Copy heading and permalink for Lemma 3.1.3" aria-label="Copy heading and permalink for Lemma 3.1.3">🔗</a></div></article><article class="proof" id="lem-metric-outer-measures-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-metric-outer-measures-2-1">
+<div class="para">Take <span class="process-math">\(\delta \gt 0\)</span> with <span class="process-math">\(\delta \lt \dist(X,Y).\)</span> Let <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> be a countable collection of subsets of <span class="process-math">\(\bR^n\)</span> with <span class="process-math">\(\diam(C)\lt \delta\)</span> such that</div>
+<div class="displaymath process-math" id="lem-metric-outer-measures-2-1-6">
+\begin{equation*}
+X \cup Y \subseteq \bigcup_{k=1}^\infty C_k.
+\end{equation*}
+</div>
+<div class="para">Assume that <span class="process-math">\(C_k \cap (X \cup Y) \neq \emptyset\)</span> for all <span class="process-math">\(k\)</span> (we can remove any <span class="process-math">\(C_k\)</span> with empty intersection with <span class="process-math">\(X \cup Y\)</span> and not increase the estimate of <span class="process-math">\(H_p(X\cup Y)\)</span> that the <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> define). Note, since <span class="process-math">\(\delta \lt \dist(X,Y),\)</span> if <span class="process-math">\(C_k \cap X \neq \emptyset\)</span> then <span class="process-math">\(C_k \cap Y = \emptyset\text{;}\)</span> and if <span class="process-math">\(C_k \cap Y \neq \emptyset\)</span> then <span class="process-math">\(C_k \cap X = \emptyset\text{.}\)</span> Thus, the collection <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> splits into two disjoint collections <span class="process-math">\(\{C_k\}_{C_k \cap X \neq \emptyset}\)</span> and <span class="process-math">\(\{C_k\}_{C_k \cap Y \neq \emptyset},\)</span> with</div>
+<div class="displaymath process-math" id="lem-metric-outer-measures-2-1-21">
+\begin{equation*}
+X \subseteq \bigcup_{C_k \cap X \neq \emptyset}C_k \text{ and } Y \subseteq \bigcup_{C_k \cap Y \neq \emptyset}C_k.
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="lem-metric-outer-measures-2-1-22">
+\begin{equation*}
+\sum_{k=1}^\infty \diam(C_k)^p \geq H_{p,\delta}(X) + H_{p,\delta}(Y).
+\end{equation*}
+</div>
+<div class="para">Taking the infimum over all such families <span class="process-math">\(\{C_k\}_{k=1}^\infty\text{,}\)</span> gives <span class="process-math">\(H_{p,\delta}(X\cap Y) \geq H_{p,\delta}(X) + H_{p,\delta}(Y).\)</span> Since <span class="process-math">\(H_p\)</span> is an outer measure, it follows that <span class="process-math">\(H_{p,\delta}(X\cap Y) = H_{p,\delta}(X) + H_{p,\delta}(Y).\)</span> This equation holds for all <span class="process-math">\(\delta \lt \dist(X,Y)\)</span> thus, taking the limit as <span class="process-math">\(\delta \rightarrow 0\text{,}\)</span> we get <span class="process-math">\(H_{p}(X\cap Y) = H_{p}(X) + H_{p}(Y).\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-metric-outer-measures-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.3.1"><a href="#lem-metric-outer-measures-2" title="Copy heading and permalink for Proof 3.1.3.1" aria-label="Copy heading and permalink for Proof 3.1.3.1">🔗</a></div></article><article class="lemma theorem-like" id="lem-Hausdorff-Borel"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="lem-Hausdorff-Borel-1-1">Let <span class="process-math">\(H_p\)</span> be a Hausdorff outer measure on <span class="process-math">\(\bR^n\)</span> for some <span class="process-math">\(p \geq 0\text{,}\)</span> and let <span class="process-math">\(E \subseteq \bR^n\)</span> be a Borel set. Then <span class="process-math">\(E\)</span> is measurable with respect to <span class="process-math">\(H_p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-Hausdorff-Borel-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 3.1.4"><a href="#lem-Hausdorff-Borel" title="Copy heading and permalink for Lemma 3.1.4" aria-label="Copy heading and permalink for Lemma 3.1.4">🔗</a></div></article><article class="proof" id="lem-Hausdorff-Borel-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-Hausdorff-Borel-2-1">It suffices to show the closed sets are measurable, since the Borel sets are generated as a <span class="process-math">\(\sigma\)</span>-algebra by the closed sets of <span class="process-math">\(\bR^n\text{.}\)</span> Further, since any closed set in <span class="process-math">\(\bR^n\)</span> is a countable union of closed sets, it suffices to prove the result for closed bounded sets. Let <span class="process-math">\(F \subseteq \bR^n\)</span>  be a closed bounded set. We will show that <span class="process-math">\(F\)</span> is measurable with respect to the outer measure <span class="process-math">\(H_p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-Hausdorff-Borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-Hausdorff-Borel-2-2">
+<div class="para">Let <span class="process-math">\(E \subseteq \bR^n\)</span> be a set <span class="process-math">\(H_p(E)\lt \infty\text{.}\)</span> Note that, if <span class="process-math">\(x \in E \backslash F\)</span> then, since <span class="process-math">\(F\)</span> is closed, <span class="process-math">\(\dist(x,F)\gt 0\text{.}\)</span> For each positive integer <span class="process-math">\(n\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-7">
+\begin{equation*}
+B_n = \{x \in E\backslash F \colon \dist(x,F)\geq 1/n.\}
+\end{equation*}
+</div>
+<div class="para">By <a href="sec-haus-meas.html#lem-metric-outer-measures" class="xref" data-knowl="./knowl/xref/lem-metric-outer-measures.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.1.3">Lemma 3.1.3</a>, since <span class="process-math">\(\dist(F,B_n)\geq \frac{1}{n}\text{,}\)</span> <span class="process-math">\(H_p(F\cup B_n)=H_p(F)+H_p(B_n).\)</span> Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="eq-Hausdorff-Borel">
+\begin{equation}
+H_p(E)\geq H_p(B_k \cup (F\cap E)) = H_p(B_k)+H_p(F\cap E)\tag{3.1}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(k\text{.}\)</span> The result will be proved once we show that <span class="process-math">\(\lim_k H_p(B_k)=H_p(E\backslash F)\)</span><details class="ptx-footnote" aria-live="polite" id="lem-Hausdorff-Borel-2-2-14"><summary class="ptx-footnote__number" title="Footnote 3.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="lem-Hausdorff-Borel-2-2-14">This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets <span class="process-math">\(\{B_k\}_{k=1}^\infty\)</span> are measurable with respect to <span class="process-math">\(H_p\text{.}\)</span>
+</div></details>. For each <span class="process-math">\(k\text{,}\)</span> let <span class="process-math">\(C_k = B_{k}\backslash B_{k-1}.\)</span> Note, if <span class="process-math">\(x \in C_{k+2}\)</span> and <span class="process-math">\(y \in B_k\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-19">
+\begin{align*}
+\frac{1}{k+2} \amp\leq \dist(x,F)\lt \frac{1}{k+1}, \text{ and}\\
+\frac{1}{k}\amp\leq \dist(y,F)
+\end{align*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-20">
+\begin{equation*}
+\|y-x\|_2 \geq \dist(y,F) - \dist(x,F) \geq \frac{1}{k}-\frac{1}{k+1}=\frac{1}{k(k+1)}.
+\end{equation*}
+</div>
+<div class="para">Thus, when <span class="process-math">\(k\neq m\text{,}\)</span> <span class="process-math">\(\dist(C_{2k},C_{2m})\gt 0\)</span> and <span class="process-math">\(\dist(C_{2k+1},C_{2m+1})\gt 0\text{.}\)</span> Hence, by <a href="sec-haus-meas.html#lem-metric-outer-measures" class="xref" data-knowl="./knowl/xref/lem-metric-outer-measures.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.1.3">Lemma 3.1.3</a>, for all <span class="process-math">\(m\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-26">
+\begin{align*}
+\sum_{k=1}^m H_p(C_{2k}) \amp= H_p\left( \bigcup_{k=1}^m C_{2k}\right) \leq H_p(E\backslash F)\lt \infty \text{ and}\\
+\sum_{k=1}^m H_p(C_{2k+1}) \amp= H_p\left( \bigcup_{k=1}^m C_{2k+1}\right) \leq H_p(E\backslash F)\lt \infty.  
+\end{align*}
+</div>
+<div class="para">Thus the series <span class="process-math">\(\sum_{k=1}^\infty H_p(C_{2k})\)</span> and <span class="process-math">\(\sum_{k=1}^\infty H_p(C_{2k+1})\)</span> are both convergent. Take <span class="process-math">\(\varepsilon\gt 0\)</span> and choose <span class="process-math">\(K\)</span> so that <span class="process-math">\(\sum_{k\geq K+1}^\infty H_p(C_k)\lt \varepsilon.\)</span> As, for each <span class="process-math">\(m\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-33">
+\begin{equation*}
+E\backslash F = \bigcup_{k=1}^\infty B_k = B_m \cup \bigcup_{k\geq m+1}C_k
+\end{equation*}
+</div>
+<div class="para">it follows that if <span class="process-math">\(m \geq K\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-35">
+\begin{equation*}
+H_p(B_m)\leq H_p(E\backslash F)\leq H_p(B_m) + \sum_{k\geq K+1}^\infty H_p(C_k) \lt H_p(B_m) + \varepsilon.
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(\lim_k H_p(B_k) = H_p(E\backslash F)\text{,}\)</span> and so by <a href="sec-haus-meas.html#eq-Hausdorff-Borel" class="xref" data-knowl="./knowl/xref/eq-Hausdorff-Borel.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">(3.1)</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/lem-metric-outer-measures.html ./knowl/xref/eq-Hausdorff-Borel.html" id="lem-Hausdorff-Borel-2-2-38">
+\begin{equation*}
+H_p(E)\geq H_p(E\cap F) + H_p(E\backslash F).
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(F\)</span> is <span class="process-math">\(H_p\)</span>-measurable, completing the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-Hausdorff-Borel-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.4.1"><a href="#lem-Hausdorff-Borel-2" title="Copy heading and permalink for Proof 3.1.4.1" aria-label="Copy heading and permalink for Proof 3.1.4.1">🔗</a></div></article><article class="remark remark-like" id="sec-haus-meas-9"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec-haus-meas-9-1">For each <span class="process-math">\(p\gt 0\text{,}\)</span> we have shown that <span class="process-math">\(H_p\)</span> defines a measure on the Borel sets of <span class="process-math">\(\bR^n\text{.}\)</span> This does not mean that <span class="process-math">\(H_p\)</span> is a Borel measure. Recall, that a measure <span class="process-math">\(\mu\)</span> on Borel sets is a <dfn class="terminology">Borel measurse</dfn> if <span class="process-math">\(\mu(K)\lt \infty\)</span> for all compact sets <span class="process-math">\(K\text{.}\)</span> We will see that for a compact set <span class="process-math">\(K\subseteq \bR^n\)</span> it is possible to have <span class="process-math">\(H_p(K)=\infty.\)</span> <details class="ptx-footnote" aria-live="polite" id="sec-haus-meas-9-1-11"><summary class="ptx-footnote__number" title="Footnote 3.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="sec-haus-meas-9-1-11">Some authors do not have the “finite on compact sets” stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.</div></details><div class="autopermalink" data-description="Paragraph"><a href="#sec-haus-meas-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.1.5"><a href="#sec-haus-meas-9" title="Copy heading and permalink for Remark 3.1.5" aria-label="Copy heading and permalink for Remark 3.1.5">🔗</a></div></article><div class="para" id="sec-haus-meas-10">As stated earlier, we are not (usually) interested in a single one of the measures <span class="process-math">\(H_p\text{.}\)</span> For a <em class="emphasis">fixed</em> <span class="process-math">\(E\subseteq \bR^n\)</span> we are interested in  for which <span class="process-math">\(p\)</span> is <span class="process-math">\(H_p(E)\lt \infty,\)</span> and for which <span class="process-math">\(p\)</span> is <span class="process-math">\(H_p(E)\gt E\text{.}\)</span> The next proposition sheds significant light on these problems.<div class="autopermalink" data-description="Paragraph"><a href="#sec-haus-meas-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-Hausdorff-dim"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="prop-Hausdorff-dim-1-1">
+<div class="para">Let <span class="process-math">\(E \subseteq \bR^n\)</span> be a Borel set.</div>
+<ol class="decimal" id="prop-Hausdorff-dim-1-1-2">
+<li id="prop-Hausdorff-dim-1-1-2-1">
+<div class="para" id="p-derived-prop-Hausdorff-dim-1-1-2-1">If <span class="process-math">\(q\gt p\)</span> and <span class="process-math">\(H_p(E)\lt \infty \text{,}\)</span> then <span class="process-math">\(H_q(E)=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Part 1"><a href="#prop-Hausdorff-dim-1-1-2-1" title="Copy heading and permalink for Part 1" aria-label="Copy heading and permalink for Part 1">🔗</a></div>
+</li>
+<li id="prop-Hausdorff-dim-1-1-2-2">
+<div class="para" id="p-derived-prop-Hausdorff-dim-1-1-2-2">If <span class="process-math">\(q\lt p\)</span> and <span class="process-math">\(H_p(E)\gt 0\text{,}\)</span> then <span class="process-math">\(H_q(E) = \infty.\)</span>
+</div>
+<div class="autopermalink" data-description="Part 2"><a href="#prop-Hausdorff-dim-1-1-2-2" title="Copy heading and permalink for Part 2" aria-label="Copy heading and permalink for Part 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-Hausdorff-dim-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 3.1.6"><a href="#prop-Hausdorff-dim" title="Copy heading and permalink for Proposition 3.1.6" aria-label="Copy heading and permalink for Proposition 3.1.6">🔗</a></div></article><article class="proof" id="prop-Hausdorff-dim-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="prop-Hausdorff-dim-2-1">
+<div class="para">Suppose <span class="process-math">\(H_p(E)\lt \infty\)</span> and <span class="process-math">\(q \gt p\text{.}\)</span> Take <span class="process-math">\(\varepsilon \gt 0\)</span> and <span class="process-math">\(\delta \gt 0\text{.}\)</span> Now choose sets <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> with <span class="process-math">\(\diam(C_k)\lt \delta\)</span> for each <span class="process-math">\(k\)</span> such that <span class="process-math">\(E \subseteq \bigcup_{k=1}^\infty C_k\)</span> and</div>
+<div class="displaymath process-math" id="prop-Hausdorff-dim-2-1-9">
+\begin{equation*}
+H_{p,\delta}(E) \gt \sum_{k=1}^\infty \diam(C_k)^p - \varepsilon.
+\end{equation*}
+</div>
+<div class="para">We have now that</div>
+<div class="displaymath process-math" id="prop-Hausdorff-dim-2-1-10">
+\begin{align*}
+H_{q,\delta}(E)\leq\sum_{k=1}^\infty \diam(C_k)^q \amp= \sum_{k=1}^\infty\diam(C_k)^{q-p} \diam(C_k)^p\\
+\amp \leq \delta^{q-p}\sum_{k=1}^\infty\diam(C_k)^p \\
+\amp \lt\delta^{q-p}(H_{p,\delta}(E) + \varepsilon) \\
+\amp  \leq \delta^{q-p}(H_{p}(E) + \varepsilon) 
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(H_p(E)\lt \infty\text{,}\)</span> it follows that</div>
+<div class="displaymath process-math" id="prop-Hausdorff-dim-2-1-12">
+\begin{equation*}
+H_q(E) = \lim_{\delta\rightarrow0^+} H_{q,\delta}(E) \leq \lim_{\delta\rightarrow0^+}\delta^{q-p}(H_{p}(E) + \varepsilon) = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-Hausdorff-dim-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-Hausdorff-dim-2-2">The second statement is the contrapositive of the first, and thus the result is proved.<div class="autopermalink" data-description="Paragraph"><a href="#prop-Hausdorff-dim-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.6.1"><a href="#prop-Hausdorff-dim-2" title="Copy heading and permalink for Proof 3.1.6.1" aria-label="Copy heading and permalink for Proof 3.1.6.1">🔗</a></div></article><div class="para" id="sec-haus-meas-12">Fix<span class="process-math">\(E \subseteq \bR\text{.}\)</span> From <a href="sec-haus-meas.html#prop-Hausdorff-dim" class="xref" data-knowl="./knowl/xref/prop-Hausdorff-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.6">Proposition 3.1.6</a>, we see that there is a <span class="process-math">\(q\gt 0\)</span> such <span class="process-math">\(H_p(E)=\infty\)</span> for <span class="process-math">\(p\lt q\text{,}\)</span> and <span class="process-math">\(H_p(E)=0\)</span> for <span class="process-math">\(p \gt q.\)</span> This is illustrated in <a href="sec-haus-meas.html#fig-Hausdorff-dim" class="xref" data-knowl="./knowl/xref/fig-Hausdorff-dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.1.7">Figure 3.1.7</a>. Thus the following definition is well defined.<div class="autopermalink" data-description="Paragraph"><a href="#sec-haus-meas-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-Hausdorff-dim"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/Hausdorff-dim.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="para" id="fig-Hausdorff-dim-2-1">Graph of <span class="process-math">\(H_q(E)\)</span> against <span class="process-math">\(q\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#fig-Hausdorff-dim-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Figure 3.1.7"><a href="#fig-Hausdorff-dim" title="Copy heading and permalink for Figure 3.1.7" aria-label="Copy heading and permalink for Figure 3.1.7">🔗</a></div></figcaption></figure><article class="definition definition-like" id="sec-haus-meas-14"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-haus-meas-14-1-1">
+<div class="para">Let <span class="process-math">\(E \subseteq \bR^n\)</span> be a Borel set. If <span class="process-math">\(p \geq 0\)</span> satisfies</div>
+<div class="displaymath process-math" id="sec-haus-meas-14-1-1-3">
+\begin{equation*}
+p = \inf\{ q \colon H_q(E)=0\} (= \sup \{q \colon H_q(E)=\infty\})
+\end{equation*}
+</div>
+<div class="para">we say that <span class="process-math">\(E\)</span> has <dfn class="terminology">Hausdorff dimension <span class="process-math">\(p\text{.}\)</span></dfn> We write this as </div>
+<div class="displaymath process-math" id="sec-haus-meas-14-1-1-7">
+\begin{equation*}
+\dim_H(E) = p.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-haus-meas-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.1.8"><a href="#sec-haus-meas-14" title="Copy heading and permalink for Definition 3.1.8" aria-label="Copy heading and permalink for Definition 3.1.8">🔗</a></div></article><div class="autopermalink" data-description="Section 3.1: Hausdorff measures"><a href="#sec-haus-meas" title="Copy heading and permalink for Section 3.1: Hausdorff measures" aria-label="Copy heading and permalink for Section 3.1: Hausdorff measures">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="real-analysis-7-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-haus-examp.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

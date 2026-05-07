@@ -1159,7 +1159,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Borel sets, Lebesgue measurable sets, and subsets of <span class=\"process-math\">\\(\\mathbb{R}\\text{.}\\)<\/span>",
-  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold:   In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.    tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .       Illustration of the sets (top), used to construct the Cantor set .     Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).       The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .    Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.    The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.    The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
+  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold:   In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.    tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .     Illustration of the first several steps in the construction of the Cantor set.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .    Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.    The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.    The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
 },
 {
   "id": "thm-Vitali-non-meas",
@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.3",
   "title": "",
-  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .       Illustration of the sets (top), used to construct the Cantor set .     Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
+  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .     Illustration of the first several steps in the construction of the Cantor set.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
 },
 {
   "id": "ex-cantor-lebesgue",
@@ -1204,7 +1204,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.5",
   "title": "",
-  "body": " Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).       The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .  "
+  "body": " Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .  "
 },
 {
   "id": "lem-non-Borel",
@@ -1384,7 +1384,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "3.4",
   "title": "Exercises",
-  "body": "  Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that   and for each .    Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .    Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).    Complete the proof of . That is, show that if is Lebesgue measurable then   (The case when is given in the proof of ).    Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.    Let be a strictly increasing continuous bijection. Show that has a continuous inverse.    Let be a continuous function. Show that for any Borel set .    Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .    Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.    Let be the Cantor Lebesgue function on , let be the Cantor set, and let . Show that for all .    Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .   "
+  "body": "  Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that   and for each .    Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .    Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).    Complete the proof of . That is, show that if is Lebesgue measurable then   (The case when is given in the proof of ).    Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.    Let be a strictly increasing continuous bijection. Show that has a continuous inverse.    Let be a continuous function. Show that for any Borel set .    Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .    Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.    Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .    Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .   "
 },
 {
   "id": "chap-lebesgue-measure-6-1",
@@ -1474,7 +1474,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.10",
   "title": "",
-  "body": " Let be the Cantor Lebesgue function on , let be the Cantor set, and let . Show that for all .  "
+  "body": " Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .  "
 },
 {
   "id": "exer-cantor-leb-cdf",
@@ -1861,7 +1861,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "4.3",
   "title": "Exercises",
-  "body": "  Let and be measures on a measurable space .   For a real number , define on by for all . Show that is a measure on .   Define on by  Show that is a measure on . We denote by .       Suppose and are measures on a measurable space and (i.e. for all ). Define on by    Show that is a measure on .   Show that (where is defined by ).   Show that if is -finite then the is the unique measure satisfying . (Hint: Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.)      Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .    Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by   for all and all ; and define scalar multiplication on by   for all , , and   Show that for all .   Show that for all and .   Show that is a vector space under the given operations of addition and scalar multiplication.      Let be a signed measure on a measurable space . Suppose with . Show that if , then .    Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.    Let be a signed measure on a measurable space . and let be a positive set. Define a function on by for all . Show that is a measure on .    Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by     Let be a measurable space and let the vector space of finite signed measures on , see . For , define by   Show that defines a norm on . norm norm on the space of finite signed measures That is, show that   if and only if , the zero measure in ;   for all ; and   for all . I.e. show that satisfies the triangle inequality . triangle inequality for norms      Define on by   Show that is not of bounded variation.    Define on by   Show that is continuous. Show that is not of bounded variation.    Let for . Write as the difference of two increasing, continuous functions.    Let for . Write as the difference of two increasing, continuous functions.    Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.    Let be a function of bounded variation on an interval . Show that, if , then     Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that   Show that   if and only if there is a constant such that and . (HINT: Compare this question to ).   "
+  "body": "  Let and be measures on a measurable space .   For a real number , define on by for all . Show that is a measure on .   Define on by  Show that is a measure on . We denote by .       Suppose and are measures on a measurable space and (i.e. for all ). Define on by    Show that is a measure on .   Show that (where is defined by ).   Show that if is -finite then the is the unique measure satisfying . (Hint: Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.)      Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .    Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by   for all and all ; and define scalar multiplication on by   for all , , and   Show that for all .   Show that for all and .   Show that is a vector space under the given operations of addition and scalar multiplication.      Let be a signed measure on a measurable space . Suppose with . Show that if , then .    Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.    Let be a signed measure on a measurable space . and let be a positive set. Define a function on by for all . Show that is a measure on .    Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by     Let be a measurable space and let the vector space of finite signed measures on , see . For , define by   Show that defines a norm on . norm norm on the space of finite signed measures That is, show that   if and only if , the zero measure in ;   for all ; and   for all . I.e. show that satisfies the triangle inequality . triangle inequality for norms       Let be a continuous function on a closed interval . For a partition of define as and define the arc length  of on as arc length Show that is of bounded variation if and only if .     Define on by   Show that is not of bounded variation.    Define on by   Show that is continuous. Show that is not of bounded variation.    Let for . Write as the difference of two increasing, continuous functions.    Let for . Write as the difference of two increasing, continuous functions.    Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.    Let be a function of bounded variation on an interval . Show that, if , then     Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that   Show that   if and only if there is a constant such that and . (HINT: Compare this question to ).   "
 },
 {
   "id": "exer-measures-vec-space",
@@ -1945,11 +1945,20 @@ var ptx_lunr_docs = [
   "body": " Let be a measurable space and let the vector space of finite signed measures on , see . For , define by   Show that defines a norm on . norm norm on the space of finite signed measures That is, show that   if and only if , the zero measure in ;   for all ; and   for all . I.e. show that satisfies the triangle inequality . triangle inequality for norms    "
 },
 {
+  "id": "exer-bv-arc-length",
+  "level": "2",
+  "url": "real-analysis-5-5-5.html#exer-bv-arc-length",
+  "type": "Exercise",
+  "number": "4.3.10",
+  "title": "",
+  "body": "  Let be a continuous function on a closed interval . For a partition of define as and define the arc length  of on as arc length Show that is of bounded variation if and only if .   "
+},
+{
   "id": "exer-not-tv-1",
   "level": "2",
   "url": "real-analysis-5-5-5.html#exer-not-tv-1",
   "type": "Exercise",
-  "number": "4.3.10",
+  "number": "4.3.11",
   "title": "",
   "body": " Define on by   Show that is not of bounded variation.  "
 },
@@ -1958,7 +1967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "real-analysis-5-5-5.html#exer-not-tv-2",
   "type": "Exercise",
-  "number": "4.3.11",
+  "number": "4.3.12",
   "title": "",
   "body": " Define on by   Show that is continuous. Show that is not of bounded variation.  "
 },
@@ -1967,7 +1976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "real-analysis-5-5-5.html#exer-sin-bv",
   "type": "Exercise",
-  "number": "4.3.12",
+  "number": "4.3.13",
   "title": "",
   "body": " Let for . Write as the difference of two increasing, continuous functions.  "
 },
@@ -1976,7 +1985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "real-analysis-5-5-5.html#exer-cos-bv",
   "type": "Exercise",
-  "number": "4.3.13",
+  "number": "4.3.14",
   "title": "",
   "body": " Let for . Write as the difference of two increasing, continuous functions.  "
 },
@@ -1985,18 +1994,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "real-analysis-5-5-5.html#exer-poly-bv",
   "type": "Exercise",
-  "number": "4.3.14",
-  "title": "",
-  "body": " Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.  "
-},
-{
-  "id": "real-analysis-5-5-5-15",
-  "level": "2",
-  "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-15",
-  "type": "Exercise",
   "number": "4.3.15",
   "title": "",
-  "body": " Let be a function of bounded variation on an interval . Show that, if , then   "
+  "body": " Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.  "
 },
 {
   "id": "real-analysis-5-5-5-16",
@@ -2004,6 +2004,15 @@ var ptx_lunr_docs = [
   "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-16",
   "type": "Exercise",
   "number": "4.3.16",
+  "title": "",
+  "body": " Let be a function of bounded variation on an interval . Show that, if , then   "
+},
+{
+  "id": "real-analysis-5-5-5-17",
+  "level": "2",
+  "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-17",
+  "type": "Exercise",
+  "number": "4.3.17",
   "title": "",
   "body": " Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that   Show that   if and only if there is a constant such that and . (HINT: Compare this question to ).  "
 },
@@ -3652,7 +3661,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "7.5",
   "title": "Exercises",
-  "body": "  Let be a measurable space and let and be two measures on . Take any non-negative measurable function on . Show that, for all     Let be the measurable space of Lebesgue measurable subsets of , let be the Lebesgue measure on , and let be the counting measure on .   Show that .   Show that there does not exist a measurable function on so that    Why does this not contradict the Radon-Nikodym Theorem?       Let be a -finite measure space and let be a -finite measure on with . Let be the Radon-Nikodym derivative of with respect to . Let be a measurable set, and let be a measurable function on which is integrable with respect to . Show that     First show the result holds for simple functions.     Let be a measurable set. Show that absolute continuity defines a preorder preorder on the set of all measures on . That is, show   for all measures ( is symmetric); and   if and , then ( is transitive).      In it is shown that is a preorder.   Show that is not a partial order . I.e. show that is not antisymmetric. That is, show that we can have and but .   For -finite measures, show that if and then there is a scalar such that . That is, let be a measurable space and let and be non-zero -finite measures on such that and . Show that the Radon-Nikodym derivatives and are constant and (multiplicative) inverses of eachother. (HINT: Recall and ).      Let be a continuous function on a closed interval . Show that if exists for all and is bounded, then is absolutely continuous. (HINT: Recall the Mean Value Theorem).    Complete the proof of . That is, if is a countable set, is a convergent series of positive numbers, and is the function on   then is continuous for all .    Let be a closed interval, and let be a countable subset of . Show that, for real numbers ,   is a Borel signed-measure on if and only if converges absolutely.   "
+  "body": "  Let be a measurable space and let and be two measures on . Take any non-negative measurable function on . Show that, for all     Let be the measurable space of Lebesgue measurable subsets of , let be the Lebesgue measure on , and let be the counting measure on .   Show that .   Show that there does not exist a measurable function on so that    Why does this not contradict the Radon-Nikodym Theorem?       Let be a -finite measure space and let be a -finite measure on with . Let be the Radon-Nikodym derivative of with respect to . Let be a measurable set, and let be a measurable function on which is integrable with respect to . Show that     First show the result holds for simple functions.     Let be a measurable set. Show that absolute continuity defines a preorder preorder on the set of all measures on . That is, show   for all measures ( is symmetric); and   if and , then ( is transitive).      In it is shown that is a preorder.   Show that is not a partial order . I.e. show that is not antisymmetric. That is, show that we can have and but .   For -finite measures, show that if and then there is a scalar such that . That is, let be a measurable space and let and be non-zero -finite measures on such that and . Show that the Radon-Nikodym derivatives and are constant and (multiplicative) inverses of eachother. (HINT: Recall and ).       Let be a continuous function on a closed interval . Show that if exists for all and is bounded, then is absolutely continuous.    HINT: Recall the Mean Value Theorem.     Complete the proof of . That is, if is a countable set, is a convergent series of positive numbers, and is the function on   then is continuous for all .    Let be a closed interval, and let be a countable subset of . Show that, for real numbers ,   is a Borel signed-measure on if and only if converges absolutely.   "
 },
 {
   "id": "ex-integration-sum-measures",
@@ -3706,7 +3715,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.5.6",
   "title": "",
-  "body": " Let be a continuous function on a closed interval . Show that if exists for all and is bounded, then is absolutely continuous. (HINT: Recall the Mean Value Theorem).  "
+  "body": "  Let be a continuous function on a closed interval . Show that if exists for all and is bounded, then is absolutely continuous.    HINT: Recall the Mean Value Theorem.   "
 },
 {
   "id": "exer-countable-discont",
@@ -3976,66 +3985,66 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "<span class=\"process-math\">\\(L^p\\)<\/span>-norms",
-  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations   for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.      The sets for different values of in     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
+  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.      The sets for different values of in     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
 },
 {
-  "id": "real-analysis-6-2-4-5",
+  "id": "real-analysis-6-2-4-3",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-5",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-3",
   "type": "Definition",
   "number": "1.2.1",
   "title": "",
   "body": " Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .  "
 },
 {
-  "id": "real-analysis-6-2-4-6",
+  "id": "real-analysis-6-2-4-4",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-6",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-4",
   "type": "Remark",
   "number": "1.2.2",
   "title": "",
   "body": " Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.  "
 },
 {
-  "id": "real-analysis-6-2-4-8",
+  "id": "real-analysis-6-2-4-6",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-8",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-6",
   "type": "Definition",
   "number": "1.2.3",
   "title": "",
   "body": " Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for  "
 },
 {
-  "id": "real-analysis-6-2-4-9",
+  "id": "real-analysis-6-2-4-7",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-9",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-7",
   "type": "Remark",
   "number": "1.2.4",
   "title": "",
   "body": " Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.  "
 },
 {
-  "id": "real-analysis-6-2-4-10",
+  "id": "real-analysis-6-2-4-8",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-10",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-8",
   "type": "Remark",
   "number": "1.2.5",
   "title": "",
   "body": " Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .  "
 },
 {
-  "id": "real-analysis-6-2-4-12",
+  "id": "real-analysis-6-2-4-10",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-12",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-10",
   "type": "Proposition",
   "number": "1.2.6",
   "title": "",
   "body": " Let be a measure space, and let . Then is a vector subspace of  "
 },
 {
-  "id": "real-analysis-6-2-4-13",
+  "id": "real-analysis-6-2-4-11",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-13",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-11",
   "type": "Proof",
   "number": "1.2.1",
   "title": "",
@@ -4069,27 +4078,27 @@ var ptx_lunr_docs = [
   "body": " Let be a measure space. Then is a norm on and is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-24",
+  "id": "real-analysis-6-2-4-22",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-24",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-22",
   "type": "Proof",
   "number": "1.2.2",
   "title": "",
   "body": " It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-26",
+  "id": "real-analysis-6-2-4-24",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-26",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-24",
   "type": "Definition",
   "number": "1.2.10",
   "title": "",
   "body": " For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .  "
 },
 {
-  "id": "real-analysis-6-2-4-27",
+  "id": "real-analysis-6-2-4-25",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-27",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-25",
   "type": "Remark",
   "number": "1.2.11",
   "title": "",
@@ -4105,9 +4114,9 @@ var ptx_lunr_docs = [
   "body": " Young's Inequality  Young's Inequality Let and be conjugate to . If then   "
 },
 {
-  "id": "real-analysis-6-2-4-29",
+  "id": "real-analysis-6-2-4-27",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-29",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-27",
   "type": "Proof",
   "number": "1.2.3",
   "title": "",
@@ -4123,9 +4132,9 @@ var ptx_lunr_docs = [
   "body": " Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and   "
 },
 {
-  "id": "real-analysis-6-2-4-31",
+  "id": "real-analysis-6-2-4-29",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-31",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-29",
   "type": "Proof",
   "number": "1.2.4",
   "title": "",
@@ -4150,9 +4159,9 @@ var ptx_lunr_docs = [
   "body": " Let and let be conjugate to . If , then there exists with such that   "
 },
 {
-  "id": "real-analysis-6-2-4-36",
+  "id": "real-analysis-6-2-4-34",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-36",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-34",
   "type": "Proof",
   "number": "1.2.5",
   "title": "",
@@ -4168,27 +4177,27 @@ var ptx_lunr_docs = [
   "body": " Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then   "
 },
 {
-  "id": "real-analysis-6-2-4-39",
+  "id": "real-analysis-6-2-4-37",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-39",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-37",
   "type": "Proof",
   "number": "1.2.6",
   "title": "",
   "body": " Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .  "
 },
 {
-  "id": "real-analysis-6-2-4-41",
+  "id": "real-analysis-6-2-4-39",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-41",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-39",
   "type": "Theorem",
   "number": "1.2.18",
   "title": "",
   "body": " Let be a measure space. For each , , is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-42",
+  "id": "real-analysis-6-2-4-40",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-42",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-40",
   "type": "Proof",
   "number": "1.2.7",
   "title": "",
@@ -4213,9 +4222,9 @@ var ptx_lunr_docs = [
   "body": " Let be a finite measure space. If , then .  "
 },
 {
-  "id": "real-analysis-6-2-4-46",
+  "id": "real-analysis-6-2-4-44",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-46",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-44",
   "type": "Proof",
   "number": "1.2.8",
   "title": "",
@@ -4249,18 +4258,18 @@ var ptx_lunr_docs = [
   "body": " Let , then and for all  "
 },
 {
-  "id": "real-analysis-6-2-4-51-7",
+  "id": "real-analysis-6-2-4-49-7",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-51-7",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-7",
   "type": "Proof",
   "number": "1",
   "title": "",
   "body": " Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and  "
 },
 {
-  "id": "real-analysis-6-2-4-51-9",
+  "id": "real-analysis-6-2-4-49-9",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-51-9",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-9",
   "type": "Example",
   "number": "1.2.24",
   "title": "",
@@ -4285,9 +4294,9 @@ var ptx_lunr_docs = [
   "body": " The norms on are all equivalent.  "
 },
 {
-  "id": "real-analysis-6-2-4-51-19",
+  "id": "real-analysis-6-2-4-49-19",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-51-19",
+  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-19",
   "type": "Proof",
   "number": "2",
   "title": "",
@@ -5893,7 +5902,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Radon measures on locally compact groups",
-  "body": "Radon measures on locally compact groups  Let be a locally compact Hausdorff group. In this section we will study, and prove the existence of, Radon measures which are invariant under the action of on its Borel subsets. These are what we call Haar measures.    Let be a locally compact Hausdorff group. A non-zero Radon measure on is a left Haar measure if for all Borel sets and  Similarly, a Radon measure on is a right Haar measure if for all Borel sets and . measure Haar measure If a measure is both a left and a right Haar measure we will call a Haar measure .    We have seen some examples of Haar measures and several others are readily available.   Let be a discrete group (see ). The counting measure on is both a Haar measure.    The Lebesgue measure on the topological group is a Haar measure by .    Let be the group as in . Define a measure on the Borel sets in by for each Borel set , where is the Lebesgue measure. The measure is a Haar measure, see .    Let be the topological group described in . Note that if then there is a unique such that . Define a function Let be the Lebesgue measure on and define a measure on by Then is a Haar measure on ,      Recall the general linear group from . Identify the matrices with , and let be the Lebesgue measure on Define a measure on the Borel sets of by Note that if then defines an invertible linear map We can thus view as an matrix. One can show that . For small you can show this by hand, and perhaps use those calculations to construct a general argument. Alternatively, you can show that there is a symmetric orthogonal matrix such that , where is the identity matrix on . The result follows immediately from this. Thus, that is a left Haar measure follows from . That is a right Haar measure follows from the a similar argument, by considering multiplication on the right.    In all the examples above, we have exhibited Haar measures, i.e. measures that are simultaneously both left and right Haar measures. It is possible for a measure to be a left Haar measure and note a right Haar measure, or a right Haar measure and not a left Haar measure, as the next example shows.    Let be the semidirect product with product defined as for and . Then is a locally compact Hausdorff group (with the product topology on ). As a group, is isomorphic to the group of affine linear transformations on .  Define functions and on by and Define measures and on by for each Borel , where is the Lebesgue measure on (restricted to ).  Take any Borel and . Then, with the aide of Tonelli's Theorem and , we have where the third last equality apples (from ). Hence is a left Haar measure. However, is not a right Haar measure. Similarly, one can show that is a right Haar measure, but not a left Haar measure. Details are left to .    Whilst left and right Haar measures may be different, they will always come in pairs. The next lemma shows that a group with a left Haar measure will always have a right Haar measure, and a group with a right Haar measure will always have a left Haar measure. The prove is straightforward, and omitted.    Let be a locally compact Hausdorff group and let be a Radon measure on . Define a Radon measure by If is a left Haar measure, then is a right Haar measure; if is a right Haar measure, then is a left Haar measure.    We turn our attention now to proving the existence of Haar measures. We will prove the existence of left Haar measures, the existence of right Haar measures will follow by . From we know that there is a one-to-one correspondence between Radon measures on and positive linear functionals on . We first address the question of which linear functionals give rise to left Haar measures. We will then prove the existence of such linear functionals.    Let be a locally compact Hausdorff group. A functional on is left invariant if for all and . linear functional left invariant       Let be a locally compact Hausdorff group. Let be a Radon measure on and let be the positive linear functional on defined by for all The measure is a left Haar measure, if and only if is left invariant.    First assume that is a left Haar measure. Then, if is a Borel set, and , then By the linearity of integration , it follows that for all positive simple functions on . That is left invariant follows by the Simple Approximation Theorem and the Monotone Convergence Theorem .  Assume now that is left invariant. Fix open and take any compact subset . By Urysohn's Lemma , there is an such that , for and for . Take any . Then, By the inner regularity of open sets (since is a Radon measure) A similar argument shows that We have thus shown that for all and . It follows that for all and all Borel. Thus, is a left Haar measure.     (with ) says that finding a left Haar measure on a locally compact Hausdorff group is equivalent to finding a left invariant positive linear functional on . We will concentrate on finding such a linear functional. This will be a non-trivial process. We will first introduce a class of left invariant functions from to . These functions will not, unfortunately, be linear. However, we can use these functions to prove the existence of a left invariant linear functional.    Let be a locally compact Hausdorff group and let be non-zero positive functions. Then there exists scalars and such that     Let be the compact support of , and let The set is a non-empty open set. Note that is an open cover of , and hence . Since is compact, there are such that is an open cover of . If , there exists and such that . Since, , it follows that If , then and so the inequality also holds there.    For positive, non-zero functions we define Note that , by . If , then Thus, It follows that   Fix now a non-zero, positive . For each non-zero, positive define a function on the non-zero positive functions by The functions share a number of properties with left invariant linear functionals. They are, however, not necessarily linear.    Let be a locally compact Hausdorff group, be non-zero positive functions. Then   for all ;   for all scalars ;   ;   .  if , there exists an open neighborhood of the identity such that if the compact support of is in ;      Note that, for all  if and only if It follows that , and hence    and are (near) immediate, so we will turn our attention to . If there are positive scalars , and such that then Thus and so Similarly, and so , completing .  We will now prove Let be the compact support of , and let be a positive function such that for all Note that such a exists by Urysohn's Lemma . Take and let For , let . By  and are right uniformly continuous. Thus, there is an open neighborhood of the identity such that for all Thus, if then   Assume the the compact support of is in . Take scalars and such that Then, for , for  Note that, if , then , and hence , for Thus, Hence , for . Since, it follows that It follows now that where the last inequality is an application of and . By , the result follows if     By , as the support of becomes a smaller and smaller neighborhood of the identity, gets closer and closer to a left-invariant linear map on the positive functions in . It is possible to take a limit of as the support of gets smaller, this is what Cartan does in his proof of the existence (and uniqueness) of the Haar measure. The details of this limit are rather complicated, and so we take another route to the proof.  Let a collection of subsets of . Let be the Cartesian product. Let be a function satisfying for all . Then defines a unique element of : . Conversely, if , then determines a function by Thus, the set can be viewed as the collection of all function such that for each . This viewpoint of cartesian products will be necessary in the following proof.    Let be a locally compact Hausdorff group. Then there is a left Haar measure on .    Let be the collection of all non-zero, positive functions in . Let be a fixed function in and let be defined for each as in . For each let be the closed interval and let be the Cartesian product, endowed with the product topology. By Tychonoff's Theorem , is a compact space, and by  , for all   For each open neighborhood of the identity in let be the closure of the set in . If are open neighborhoods of the identity, then Hence, by , . Take We will show that can be extended to a left invariant linear functional on   Note that for each neighborhood of the identity. Thus, given and , there is an open neighborhood of the identity and a with , such that for This is, essentially, all we need to complete the proof.  Take and . For , there is an such that Hence, by part  , As this holds for all , it follows that Similarly, if and , for there is an such that and so, by  , Hence,   Now take and . By  , there is a neighborhood of the identity such that if then Choose with such that Note that, by  , and the choice of , Hence Hence, It follows that   We extend to all of by setting where is the decomposition of into its positive and negative parts. That this extension is linear follows by the same reasoning as we saw in the proof of . We have just shown that there is a positive left invariant linear functional on . By and it follows that there is a left Haar measure on .     "
+  "body": "Radon measures on locally compact groups  Let be a locally compact Hausdorff group. In this section we will study, and prove the existence of, Radon measures which are invariant under the action of on its Borel subsets. These are what we call Haar measures.    Let be a locally compact Hausdorff group. A non-zero Radon measure on is a left Haar measure if for all Borel sets and  Similarly, a Radon measure on is a right Haar measure if for all Borel sets and . measure Haar measure If a measure is both a left and a right Haar measure we will call a Haar measure .    We have seen some examples of Haar measures and several others are readily available.   Let be a discrete group (see ). The counting measure on is both a Haar measure.    The Lebesgue measure on the topological group is a Haar measure by .    Let be the group as in . Define a measure on the Borel sets in by for each Borel set , where is the Lebesgue measure. The measure is a Haar measure, see .    Let be the topological group described in . Note that if then there is a unique such that . Define a function Let be the Lebesgue measure on and define a measure on by Then is a Haar measure on ,      Recall the general linear group from . Identify the matrices with , and let be the Lebesgue measure on Define a measure on the Borel sets of by Note that if then defines an invertible linear map We can thus view as an matrix. One can show that . For small you can show this by hand, and perhaps use those calculations to construct a general argument. Alternatively, you can show that there is a symmetric orthogonal matrix such that , where is the identity matrix on . The result follows immediately from this. Thus, that is a left Haar measure follows from . That is a right Haar measure follows from the a similar argument, by considering multiplication on the right.    In all the examples above, we have exhibited Haar measures, i.e. measures that are simultaneously both left and right Haar measures. It is possible for a measure to be a left Haar measure and note a right Haar measure, or a right Haar measure and not a left Haar measure, as the next example shows.    Let be the semidirect product with product defined as for and . Then is a locally compact Hausdorff group (with the product topology on ). As a group, is isomorphic to the group of affine linear transformations on .  Define functions and on by and Define measures and on by for each Borel , where is the Lebesgue measure on (restricted to ).  Take any Borel and . Then, with the aide of Tonelli's Theorem and , we have where the third last equality apples (from ). Hence is a left Haar measure. However, is not a right Haar measure. Similarly, one can show that is a right Haar measure, but not a left Haar measure. Details are left to .    Whilst left and right Haar measures may be different, they will always come in pairs. The next lemma shows that a group with a left Haar measure will always have a right Haar measure, and a group with a right Haar measure will always have a left Haar measure. The prove is straightforward, and omitted.    Let be a locally compact Hausdorff group and let be a Radon measure on . Define a Radon measure by If is a left Haar measure, then is a right Haar measure; if is a right Haar measure, then is a left Haar measure.    We turn our attention now to proving the existence of Haar measures. We will prove the existence of left Haar measures, the existence of right Haar measures will follow by . From we know that there is a one-to-one correspondence between Radon measures on and positive linear functionals on . We first address the question of which linear functionals give rise to left Haar measures. We will then prove the existence of such linear functionals.    Let be a locally compact Hausdorff group. A functional on is left invariant if for all and . linear functional left invariant       Let be a locally compact Hausdorff group. Let be a Radon measure on and let be the positive linear functional on defined by for all The measure is a left Haar measure, if and only if is left invariant.    First assume that is a left Haar measure. Then, if is a Borel set, and , then By the linearity of integration , it follows that for all positive simple functions on . That is left invariant follows by the Simple Approximation Theorem and the Monotone Convergence Theorem .  Assume now that is left invariant. Fix open and take any compact subset . By Urysohn's Lemma , there is an such that , for and for . Take any . Then, By the inner regularity of open sets (since is a Radon measure) A similar argument shows that We have thus shown that for all and . It follows that for all and all Borel. Thus, is a left Haar measure.     (with ) says that finding a left Haar measure on a locally compact Hausdorff group is equivalent to finding a left invariant positive linear functional on . We will concentrate on finding such a linear functional. This will be a non-trivial process. We will first introduce a class of left invariant functions from to . These functions will not, unfortunately, be linear. However, we can use these functions to prove the existence of a left invariant linear functional.    Let be a locally compact Hausdorff group and let be non-zero positive functions. Then there exists scalars and such that     Let be the compact support of , and let The set is a non-empty open set. Note that is an open cover of , and hence . Since is compact, there are such that is an open cover of . If , there exists and such that . Since, , it follows that If , then and so the inequality also holds there.    For positive, non-zero functions we define Note that , by . If , then Thus, It follows that   Fix now a non-zero, positive . For each non-zero, positive define a function on the non-zero positive functions by The functions share a number of properties with left invariant linear functionals. They are, however, not necessarily linear.    Let be a locally compact Hausdorff group, be non-zero positive functions. Then   for all ;   for all scalars ;   ;   .  if , there exists an open neighborhood of the identity such that if the compact support of is in ;      Note that, for all  if and only if It follows that , and hence    and are (near) immediate, so we will turn our attention to . If there are positive scalars , and such that then Thus and so Similarly, and so , completing .  We will now prove Let be the compact support of , and let be a positive function such that for all Note that such a exists by Urysohn's Lemma . Take and let For , let . By  and are right uniformly continuous. Thus, there is an open neighborhood of the identity such that for all Thus, if then   Assume the the compact support of is in . Take scalars and such that Then, for , for  Note that, if , then , and hence , for Thus, Hence , for . Since, it follows that It follows now that where the last inequality is an application of and . By , the result follows if     By , as the support of becomes a smaller and smaller neighborhood of the identity, gets closer and closer to a left-invariant linear map on the positive functions in . It is possible to take a limit of as the support of gets smaller, this is what Cartan does in his proof of the existence (and uniqueness) of the Haar measure. The details of this limit are rather complicated, and so we take another route to the proof.  Let a collection of subsets of . Let be the Cartesian product. Let be a function satisfying for all . Then defines a unique element of : . Conversely, if , then determines a function by Thus, the set can be viewed as the collection of all function such that for each . This viewpoint of cartesian products will be necessary in the following proof.    Let be a locally compact Hausdorff group. Then there is a left Haar measure on .    Let be the collection of all non-zero, positive functions in . Let be a fixed function in and let be defined for each as in . For each let be the closed interval and let be the Cartesian product, endowed with the product topology. By Tychonoff's Theorem , is a compact space, and by  , for all   For each open neighborhood of the identity in let be the closure of the set in . If are open neighborhoods of the identity, then Hence, by , . Take We will show that can be extended to a left invariant linear functional on   Note that for each neighborhood of the identity. Thus, given and , there is an open neighborhood of the identity and a with , such that for This is, essentially, all we need to complete the proof.  Take and . For , there is an such that Hence, by part  , As this holds for all , it follows that Similarly, if and , for there is an such that and so, by  , Hence,   Now take and . By  , there is a neighborhood of the identity such that if then Choose with such that Note that, by  , and the choice of , Hence Hence, It follows that   We extend to all of by setting where is the decomposition of into its positive and negative parts. That this extension is linear follows by the same reasoning as we saw in the proof of . We have just shown that there is a positive left invariant linear functional on . By and it follows that there is a left Haar measure on .    We present a proof of the uniqueness of the Haar measure in the special case when is -compact, i.e. when is a countable union of compact sets. This proof follows the ideas of . For a general proof see, e.g., Chapter 11 of . Note that, , , , and are all -compact groups; the discrete groups in are -compact when countable. s   Let be a locally compact Hausdorff group. If and are two left Haar measures on , then there is a constant such that     Proof (of -compact case)  Let be a -compact locally compact Hausdorff group, and let and be two Haar measures on . Since is -compact and and are Radon measures, both and are -finite.  Assume that . Then . Hence, by the Radon-Nikodym Theorem , there is a non-negative Borel measurable function such that for all Borel sets . Note that, since , Further, by , if is -integrable, then Thus, for and , since and are left Haar measures, Thus, for all and , , and hence almost everywhere.  Consider, now the function Let be the completion of , as in . By Tonelli's Theorem  Hence, for almost all , . Using again, that is a left Haar measure, we have for almost all , Hence, is constant almost everywhere, and thus for a constant .  Now consider the general case, when we do not necessarily have . Assume that . Note that is also a left Haar measure, and By the above argument, there is a constant , such that . Hence, completing the proof.    "
 },
 {
   "id": "real-analysis-7-3-4-3",
@@ -6013,6 +6022,15 @@ var ptx_lunr_docs = [
   "body": "  Let be a locally compact Hausdorff group. Then there is a left Haar measure on .    Let be the collection of all non-zero, positive functions in . Let be a fixed function in and let be defined for each as in . For each let be the closed interval and let be the Cartesian product, endowed with the product topology. By Tychonoff's Theorem , is a compact space, and by  , for all   For each open neighborhood of the identity in let be the closure of the set in . If are open neighborhoods of the identity, then Hence, by , . Take We will show that can be extended to a left invariant linear functional on   Note that for each neighborhood of the identity. Thus, given and , there is an open neighborhood of the identity and a with , such that for This is, essentially, all we need to complete the proof.  Take and . For , there is an such that Hence, by part  , As this holds for all , it follows that Similarly, if and , for there is an such that and so, by  , Hence,   Now take and . By  , there is a neighborhood of the identity such that if then Choose with such that Note that, by  , and the choice of , Hence Hence, It follows that   We extend to all of by setting where is the decomposition of into its positive and negative parts. That this extension is linear follows by the same reasoning as we saw in the proof of . We have just shown that there is a positive left invariant linear functional on . By and it follows that there is a left Haar measure on .   "
 },
 {
+  "id": "thm-Haar-unique",
+  "level": "2",
+  "url": "real-analysis-7-3-4.html#thm-Haar-unique",
+  "type": "Theorem",
+  "number": "2.2.14",
+  "title": "",
+  "body": "  Let be a locally compact Hausdorff group. If and are two left Haar measures on , then there is a constant such that     Proof (of -compact case)  Let be a -compact locally compact Hausdorff group, and let and be two Haar measures on . Since is -compact and and are Radon measures, both and are -finite.  Assume that . Then . Hence, by the Radon-Nikodym Theorem , there is a non-negative Borel measurable function such that for all Borel sets . Note that, since , Further, by , if is -integrable, then Thus, for and , since and are left Haar measures, Thus, for all and , , and hence almost everywhere.  Consider, now the function Let be the completion of , as in . By Tonelli's Theorem  Hence, for almost all , . Using again, that is a left Haar measure, we have for almost all , Hence, is constant almost everywhere, and thus for a constant .  Now consider the general case, when we do not necessarily have . Assume that . Note that is also a left Haar measure, and By the above argument, there is a constant , such that . Hence, completing the proof.   "
+},
+{
   "id": "real-analysis-7-3-5",
   "level": "1",
   "url": "real-analysis-7-3-5.html",
@@ -6091,7 +6109,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Hausdorff measures",
-  "body": " Hausdorff measures  For most of what we have done so far, we have worked with a measurable space, and finite number of measures on the space. That finite measure has usually been one, but occasionally we have looked at two or three measures simultaneously. Things will be different in this chapter. We will define a family of measures on a fixed . Give a bounded , we are not so much interested in for fixed ; we are interested in finding which satisfies We will not, usually, be interested in the exact value of .  For a set , we define the diameter of to be  diameter For and , define a map on the subsets of with by Let be the outer measure induced by this map. Thus, for , Note that if and , then . This increases as decreases. Define, for all      For each , is an outer measure on .    Fix Clearly , so we only need to show that is countably monotone. Take and sets such that Then, since is an outer measure for each , where the penultimate equality (the interchanging of the sum and the limit) comes from the Monotone Convergence Theorem . Thus is countably monotone, and therefore is an outer measure on .    "
+  "body": " Hausdorff measures  For most of what we have done so far, we have worked with a measurable space, and finite number of measures on the space. That finite measure has usually been one, but occasionally we have looked at two or three measures simultaneously. Things will be different in this chapter. We will define a family of measures on a fixed . Give a bounded , we are not so much interested in for fixed ; we are interested in finding which satisfies We will not, usually, be interested in the exact value of .  For a set , we define the diameter of to be  diameter For and , define a map on the subsets of with by Let be the outer measure induced by this map. Thus, for , Note that if and , then . This increases as decreases. Define, for all      For each , is an outer measure on .    Fix Clearly , so we only need to show that is countably monotone. Take and sets such that Then, since is an outer measure for each , where the penultimate equality (the interchanging of the sum and the limit) comes from the Monotone Convergence Theorem . Thus is countably monotone, and therefore is an outer measure on .      For the outer measure on subsets of is called the Hausdorff outer measure of dimension on . Hausdorff measure Hausdorff outer measure     We now have a family of outer measures on . By restricting to the -measurable sets, we have a family of measures on . It is not clear if these measures act on the same -algebra of measurable sets. That is, if , it is not clear that the -measurable sets coincide with the -measurable sets. However, we will see that Borel sets in are -measurable for all . Thus, the measures define a family of measures, called the Hausdorff measures of dimension , on the -algebra of Borel sets in . Hausdorff measure     Let and fix . If then     Take with Let be a countable collection of subsets of with such that Assume that for all (we can remove any with empty intersection with and not increase the estimate of that the define). Note, since if then ; and if then . Thus, the collection splits into two disjoint collections and with Hence Taking the infimum over all such families , gives Since is an outer measure, it follows that This equation holds for all thus, taking the limit as , we get       Let be a Hausdorff outer measure on for some , and let be a Borel set. Then is measurable with respect to .    It suffices to show the closed sets are measurable, since the Borel sets are generated as a -algebra by the closed sets of . Further, since any closed set in is a countable union of closed sets, it suffices to prove the result for closed bounded sets. Let be a closed bounded set. We will show that is measurable with respect to the outer measure .  Let be a set . Note that, if then, since is closed, . For each positive integer let By , since , Thus, for all . The result will be proved once we show that This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets are measurable with respect to . . For each , let Note, if and then and so Thus, when , and . Hence, by , for all  Thus the series and are both convergent. Take and choose so that As, for each  it follows that if , then Hence, , and so by  Hence is -measurable, completing the proof.     For each , we have shown that defines a measure on the Borel sets of . This does not mean that is a Borel measure. Recall, that a measure on Borel sets is a Borel measurse if for all compact sets . We will see that for a compact set it is possible to have  Some authors do not have the finite on compact sets stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.    As stated earlier, we are not (usually) interested in a single one of the measures . For a fixed  we are interested in for which is and for which is . The next proposition sheds significant light on these problems.    Let be a Borel set.  If and , then .  If and , then       Suppose and . Take and . Now choose sets with for each such that and We have now that Since , it follows that   The second statement is the contrapositive of the first, and thus the result is proved.    Fix . From , we see that there is a such for , and for This is illustrated in . Thus the following definition is well defined.    Graph of against .      Let be a Borel set. If satisfies we say that has Hausdorff dimension . We write this as Hausdorff dimension      "
 },
 {
   "id": "sec-haus-meas-3",
@@ -6112,13 +6130,166 @@ var ptx_lunr_docs = [
   "body": "  For each , is an outer measure on .    Fix Clearly , so we only need to show that is countably monotone. Take and sets such that Then, since is an outer measure for each , where the penultimate equality (the interchanging of the sum and the limit) comes from the Monotone Convergence Theorem . Thus is countably monotone, and therefore is an outer measure on .   "
 },
 {
+  "id": "def-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-meas.html#def-Hausdorff-dim",
+  "type": "Definition",
+  "number": "3.1.2",
+  "title": "",
+  "body": "  For the outer measure on subsets of is called the Hausdorff outer measure of dimension on . Hausdorff measure Hausdorff outer measure    "
+},
+{
+  "id": "sec-haus-meas-6",
+  "level": "2",
+  "url": "sec-haus-meas.html#sec-haus-meas-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Hausdorff measures of dimension "
+},
+{
+  "id": "lem-metric-outer-measures",
+  "level": "2",
+  "url": "sec-haus-meas.html#lem-metric-outer-measures",
+  "type": "Lemma",
+  "number": "3.1.3",
+  "title": "",
+  "body": "  Let and fix . If then     Take with Let be a countable collection of subsets of with such that Assume that for all (we can remove any with empty intersection with and not increase the estimate of that the define). Note, since if then ; and if then . Thus, the collection splits into two disjoint collections and with Hence Taking the infimum over all such families , gives Since is an outer measure, it follows that This equation holds for all thus, taking the limit as , we get    "
+},
+{
+  "id": "lem-Hausdorff-Borel",
+  "level": "2",
+  "url": "sec-haus-meas.html#lem-Hausdorff-Borel",
+  "type": "Lemma",
+  "number": "3.1.4",
+  "title": "",
+  "body": "  Let be a Hausdorff outer measure on for some , and let be a Borel set. Then is measurable with respect to .    It suffices to show the closed sets are measurable, since the Borel sets are generated as a -algebra by the closed sets of . Further, since any closed set in is a countable union of closed sets, it suffices to prove the result for closed bounded sets. Let be a closed bounded set. We will show that is measurable with respect to the outer measure .  Let be a set . Note that, if then, since is closed, . For each positive integer let By , since , Thus, for all . The result will be proved once we show that This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets are measurable with respect to . . For each , let Note, if and then and so Thus, when , and . Hence, by , for all  Thus the series and are both convergent. Take and choose so that As, for each  it follows that if , then Hence, , and so by  Hence is -measurable, completing the proof.   "
+},
+{
+  "id": "sec-haus-meas-9",
+  "level": "2",
+  "url": "sec-haus-meas.html#sec-haus-meas-9",
+  "type": "Remark",
+  "number": "3.1.5",
+  "title": "",
+  "body": " For each , we have shown that defines a measure on the Borel sets of . This does not mean that is a Borel measure. Recall, that a measure on Borel sets is a Borel measurse if for all compact sets . We will see that for a compact set it is possible to have  Some authors do not have the finite on compact sets stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.   "
+},
+{
+  "id": "prop-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-meas.html#prop-Hausdorff-dim",
+  "type": "Proposition",
+  "number": "3.1.6",
+  "title": "",
+  "body": "  Let be a Borel set.  If and , then .  If and , then       Suppose and . Take and . Now choose sets with for each such that and We have now that Since , it follows that   The second statement is the contrapositive of the first, and thus the result is proved.   "
+},
+{
+  "id": "fig-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-meas.html#fig-Hausdorff-dim",
+  "type": "Figure",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Graph of against .   "
+},
+{
+  "id": "sec-haus-meas-14",
+  "level": "2",
+  "url": "sec-haus-meas.html#sec-haus-meas-14",
+  "type": "Definition",
+  "number": "3.1.8",
+  "title": "",
+  "body": "  Let be a Borel set. If satisfies we say that has Hausdorff dimension . We write this as Hausdorff dimension     "
+},
+{
   "id": "sec-haus-examp",
   "level": "1",
   "url": "sec-haus-examp.html",
   "type": "Section",
   "number": "3.2",
   "title": "Calculating Hausdorff Dimension",
-  "body": " Calculating Hausdorff Dimension  "
+  "body": " Calculating Hausdorff Dimension  In this section we will give some examples of calculating the Hausdorff dimension. We begin with a simple, but important example: a unit interval in    Let be a unit interval in . That is, let For , subdivide each interval in into equal length pieces, so that is divided into smaller intervals. That is, Each of these subintervals has diameter . Take and choose such that when . If , then Hence Thus, by ,   Let be the volume of the unit ball in . That is, if  where is the Lebesgue measure on Now, if is a ball anywhere in with diameter , then by and . Thus, if is bounded, there is a ball with with   Let and let be sets with and By the above argument, there are balls , with and for each Thus, As this holds for any such choice of cover of , it follows that Thus, by , . It follows that     has wider reaching consequences than just the interval .    There is a constant , such that the Hausdorff measure on satisfies,     The Hausdorff measure on is a non-zero Borel measure by . Each Hausdorff measure is clearly invariant under addition, i.e. for all and Thus, is a Haar measure on . By , there is a non-zero scalar such that       If is a Borel set and , then . In particular, if , then .    In the next example we give the Hausdorff measure of a curve in defined by a continuously differentiable function. Such a curve will have Lebesgue measure .   Let be a continuous, non-constant function with defined and bounded on by Let . We want to calculate the Huasdorff dimension of the curve . Since , shows that is an upper bound for   Note that is absolutely continuous, and hence of bounded variation, by . Take and let be a partition of Then, where the first inequality follow from the Mean Value Theorem. Thus, if , then where is the total variation of restricted to . Let be the Borel measure on induced by . That is, if is the Borel signed-measure induced by , then is the measure of total variation of . Define a Borel measure on by . Extend to a Borel measure on by setting for Borel sets It follows from the above inequality that for Borel sets , Let be a cover of where each for some . We can take the closure of each without changing the diameter of . Thus, we can assume each is a Borel set. Hence Hence for each . Therefore   Let be the arc length of . Since is of bounded variation, is finite by . For each , we can choose such that the arc length of over is Let for Then It follows that , and hence Therefore     justifies, somewhat, the use of the word dimension in Hausdorff dimension. Lebesgue measure on generalizes length; Lebesgue measure on generalizes area; Lebesgue measure on generalizes volume; et cetera. Thus, if a set can be said to have length\/area\/volume in , then has (Hausdorff) dimension . Further evidence that Hausdorff dimension is consistent with intuition on what dimension should mean is given in , , and . If these were the only application of Hausdorff measure, then Hausdorff measure would not be of much interest. The interesting examples are when a set has Lebesgue measure , and for any proper subspace , but is still sufficiently complex to have non-zero Hausdorff dimension. The first example of a complicated, Lebesgue measure set we saw was the Cantor set, .   Let be the Cantor set, and let be the closed sets used to construct the Cantor set, as described in . That is, . , and so on (see ), and For each , and is a disjoint union of intervals of diameter . Take , and such that for all . For , we thus have, for all . Let . Then, for all , Hence, if , and therefore Hence,   Let be the Cantor-Lebesgue function on , as described in . Extend to all of by setting if , and if . Let be the Borel measure on induced by . That is, is the Borel measure induced by the premeasure By , is singular with respect to Lebesgue measure , and Take . If and , then there is an such that Since , intersects at most interval in . Thus, Hence, with , Now, suppose where each and . Then, by the above calculation, Taking an infimum over all such families and taking the limit as , we see that and so We have thus shown that    It should be noted that the line of argument used in , , and is the same: we get an upper bound for by finding suitable covers of , and we get a lower bound for by comparing to a measure on . In we used the Lebesgue measure ; in we used the measure induced by the function of total variation; in we used the Borel measure induced by the Cantor-Lebesgue function. If we want to apply this method to calculate the Hausdorff dimension of other sets, we will need to find a suitable measure for each set. If and how we can do this is not at all clear. However, we will see in , that if a set is suitably symmetric we can always find a suitable measure.    A map is a similitude with scaling factor if there is a orthogonal map on , a vector , and a scalar such that for all . similitude  similitude scaling factor   Let be a -tuple of similitudes on . For , let We say that is invariant under the similtudes if similitude invariant set       Let be a family of similitudes on . A non-empty open set is a separating set for if  separating set     When is a tuple of similitudes and we define for by    Define similitudes and on (both with scaling factor ) by Let be the Cantor set, as in . Then and Thus, is invariant under Further, if is the open inverval , then is a separating set for .  Note that we can construct using and . Indeed, if is the closure on (i.e. ) then where are defined as in . Thus,          "
+},
+{
+  "id": "ex-square-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-examp.html#ex-square-Hausdorff-dim",
+  "type": "Example",
+  "number": "3.2.1",
+  "title": "",
+  "body": " Let be a unit interval in . That is, let For , subdivide each interval in into equal length pieces, so that is divided into smaller intervals. That is, Each of these subintervals has diameter . Take and choose such that when . If , then Hence Thus, by ,   Let be the volume of the unit ball in . That is, if  where is the Lebesgue measure on Now, if is a ball anywhere in with diameter , then by and . Thus, if is bounded, there is a ball with with   Let and let be sets with and By the above argument, there are balls , with and for each Thus, As this holds for any such choice of cover of , it follows that Thus, by , . It follows that   "
+},
+{
+  "id": "thm-Hausdorff-is-Lebesgue",
+  "level": "2",
+  "url": "sec-haus-examp.html#thm-Hausdorff-is-Lebesgue",
+  "type": "Theorem",
+  "number": "3.2.2",
+  "title": "",
+  "body": "  There is a constant , such that the Hausdorff measure on satisfies,     The Hausdorff measure on is a non-zero Borel measure by . Each Hausdorff measure is clearly invariant under addition, i.e. for all and Thus, is a Haar measure on . By , there is a non-zero scalar such that    "
+},
+{
+  "id": "cor-Hausdorff-is-Lebesgue",
+  "level": "2",
+  "url": "sec-haus-examp.html#cor-Hausdorff-is-Lebesgue",
+  "type": "Corollary",
+  "number": "3.2.3",
+  "title": "",
+  "body": "  If is a Borel set and , then . In particular, if , then .   "
+},
+{
+  "id": "ex-curve-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-examp.html#ex-curve-Hausdorff-dim",
+  "type": "Example",
+  "number": "3.2.4",
+  "title": "",
+  "body": " Let be a continuous, non-constant function with defined and bounded on by Let . We want to calculate the Huasdorff dimension of the curve . Since , shows that is an upper bound for   Note that is absolutely continuous, and hence of bounded variation, by . Take and let be a partition of Then, where the first inequality follow from the Mean Value Theorem. Thus, if , then where is the total variation of restricted to . Let be the Borel measure on induced by . That is, if is the Borel signed-measure induced by , then is the measure of total variation of . Define a Borel measure on by . Extend to a Borel measure on by setting for Borel sets It follows from the above inequality that for Borel sets , Let be a cover of where each for some . We can take the closure of each without changing the diameter of . Thus, we can assume each is a Borel set. Hence Hence for each . Therefore   Let be the arc length of . Since is of bounded variation, is finite by . For each , we can choose such that the arc length of over is Let for Then It follows that , and hence Therefore   "
+},
+{
+  "id": "ex-Cantor-Hausdorff-dim",
+  "level": "2",
+  "url": "sec-haus-examp.html#ex-Cantor-Hausdorff-dim",
+  "type": "Example",
+  "number": "3.2.5",
+  "title": "",
+  "body": " Let be the Cantor set, and let be the closed sets used to construct the Cantor set, as described in . That is, . , and so on (see ), and For each , and is a disjoint union of intervals of diameter . Take , and such that for all . For , we thus have, for all . Let . Then, for all , Hence, if , and therefore Hence,   Let be the Cantor-Lebesgue function on , as described in . Extend to all of by setting if , and if . Let be the Borel measure on induced by . That is, is the Borel measure induced by the premeasure By , is singular with respect to Lebesgue measure , and Take . If and , then there is an such that Since , intersects at most interval in . Thus, Hence, with , Now, suppose where each and . Then, by the above calculation, Taking an infimum over all such families and taking the limit as , we see that and so We have thus shown that   "
+},
+{
+  "id": "def-similitude",
+  "level": "2",
+  "url": "sec-haus-examp.html#def-similitude",
+  "type": "Definition",
+  "number": "3.2.6",
+  "title": "",
+  "body": "  A map is a similitude with scaling factor if there is a orthogonal map on , a vector , and a scalar such that for all . similitude  similitude scaling factor   Let be a -tuple of similitudes on . For , let We say that is invariant under the similtudes if similitude invariant set    "
+},
+{
+  "id": "def-separating-set",
+  "level": "2",
+  "url": "sec-haus-examp.html#def-separating-set",
+  "type": "Definition",
+  "number": "3.2.7",
+  "title": "",
+  "body": "  Let be a family of similitudes on . A non-empty open set is a separating set for if  separating set    "
+},
+{
+  "id": "ex-Cantor-set-2",
+  "level": "2",
+  "url": "sec-haus-examp.html#ex-Cantor-set-2",
+  "type": "Example",
+  "number": "3.2.8",
+  "title": "",
+  "body": " Define similitudes and on (both with scaling factor ) by Let be the Cantor set, as in . Then and Thus, is invariant under Further, if is the open inverval , then is a separating set for .  Note that we can construct using and . Indeed, if is the closure on (i.e. ) then where are defined as in . Thus,   "
+},
+{
+  "id": "thm-similtude-measure",
+  "level": "2",
+  "url": "sec-haus-examp.html#thm-similtude-measure",
+  "type": "Theorem",
+  "number": "3.2.9",
+  "title": "",
+  "body": "     "
 },
 {
   "id": "real-analysis-7-4-5",
@@ -6127,7 +6298,25 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "3.3",
   "title": "Exercises",
-  "body": " "
+  "body": "   Let , and let be a subspace with Show that, if is a bounded Borel set, then .      Let be the unit circle in . Let be the Haar measure on as given in . Extend to a Borel measure on by setting for all Borel .     Let be a closed arc on . That is, for some and . Show that     Note that is the arc length of , and is the length of the chord from to when .      Show that     Show that if Borel with then there is an arc such that , and apply . Use this to get a lower bound on when       Show that .    That follows from . For the reverse inequality, divide into n equal length arcs (for large enough ), and see what this says about      "
+},
+{
+  "id": "exer-subspace-Hausdorff-dim",
+  "level": "2",
+  "url": "real-analysis-7-4-5.html#exer-subspace-Hausdorff-dim",
+  "type": "Exercise",
+  "number": "3.3.1",
+  "title": "",
+  "body": "  Let , and let be a subspace with Show that, if is a bounded Borel set, then .   "
+},
+{
+  "id": "exer-circle-Hausdorff-dim",
+  "level": "2",
+  "url": "real-analysis-7-4-5.html#exer-circle-Hausdorff-dim",
+  "type": "Exercise",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  Let be the unit circle in . Let be the Haar measure on as given in . Extend to a Borel measure on by setting for all Borel .     Let be a closed arc on . That is, for some and . Show that     Note that is the arc length of , and is the length of the chord from to when .      Show that     Show that if Borel with then there is an arc such that , and apply . Use this to get a lower bound on when       Show that .    That follows from . For the reverse inequality, divide into n equal length arcs (for large enough ), and see what this says about     "
 },
 {
   "id": "sec-nowhere-diff",
