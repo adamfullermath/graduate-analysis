@@ -482,22 +482,32 @@ Define a function <m>g_\mu \colon I \rightarrow \mathbb{R}</m> by</p>
 <remark xml:id="rem-cumulative-dist-in-probability">
 <p>The term <em>cumulative distribution function</em> is borrowed from probability theory.</p>
 </remark>
+
 <example xml:id="exam-cdf-of-gaussian">
 <p><idx><h>distribution</h><h>Gaussian distribution</h></idx>
-Let <m>\gamma</m> be the Gaussian distribution.
-The cumulative distribution function of <m>\gamma</m> is usually denoted by <m>\Phi</m>.
-By definition <m>\Phi</m> is given by</p>
+Let <m>f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}</m>.
+Define a function <m>\gamma</m> on intervals <m>(a,b]\subseteq \bR</m> by taking the Riemann integral of <m>f</m> over <m>(a,b].</m>
+That is,
+<md number="no">
+    \gamma((a,b]) = \int_a^b f(x)\,dx.
+</md>
+One can show that <m>\gamma</m> is a premeasure on the semiring of intervals of the form <m>(a,b]</m>.
+Thus, by the <xref ref="thm-Car-ext-2" label="custom">Carathéodory-Hahn Theorem</xref>, <m>\gamma</m> extends to a Borel measure on <m>\bR.</m>
+In statistics and probabilty theoery, the measure <m>\gamma</m> is called the <term>Gaussian distribution</term>, or the <term>normal distribution</term>.
+The cumulative distribution function of the Gaussian distribution is usually denoted by <m>\Phi</m>.
+By definition <m>\Phi</m> is given by
 <md>\Phi(x) = \gamma((-\infty,x]) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^\frac{-x^2}{2}.</md>
-<p>Note that <m>\Phi</m> is continuous on every closed interval <m>[a,b]</m> in <m>\mathbb{R}</m>.
-Further,</p>
+Note that <m>\Phi</m> is continuous on every closed interval <m>[a,b]</m> in <m>\mathbb{R}</m>.
+Further,
 <md> \Phi'(x) = \frac{1}{\sqrt{2\pi}} e^{\frac{-x^2}{2}}.</md>
-<p>
+
 <figure xml:id="fig-gaussian-cdf">
 <image source="images/Gaussian cdf.png" width="50%" />
 <caption>Bell jar curve <m>\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}</m> and its cumulative distribution function <m>\Phi(x).</m></caption>
 </figure>
 </p>
 </example>
+
 <p>A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in <xref ref="thm-cdf" text="Theorem"/>.</p>
 <definition>
 <p>Let <m>I \subseteq \mathbb{R}</m> be a closed interval. 
