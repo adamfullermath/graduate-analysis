@@ -37,6 +37,7 @@
       <xi:include href="./Analysis-II/3-product.ptx" />
       <xi:include href="./Analysis-II/4-Haar.ptx" />
       <xi:include href="./Analysis-II/5-Hausdorff.ptx" />
+      <xi:include href="./Analysis-II/6-propability.ptx" />
     </part>
 
     <!-- Include backmatter -->

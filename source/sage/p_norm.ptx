@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figure xml:id="p-norm">
+<caption>The sets <m>\|v\|_p = 1</m> for different values of <m>p</m> in <m>\mathbb{R}^2</m>.</caption>
+
+<interactive dark-mode-enabled="yes" xml:id="p-norm-interactive" platform="sage" width="100%"  preview="images/p-norms.png">
+    <shortdescription>
+        An interactive look p-norms in 2 dimensions.
+    </shortdescription>
+    <description>
+        <p>
+            An interactive element with a slider allowing a value of <m>p</m> to show the closed curve <m>\|(x,y)\|_p = 1</m> for values of <m>p</m> between <m>1</m> and <m>8</m>.
+            The square <m>\|x\|_\infty = 1</m> is also shown.
+            The curves are calculated in SageMath.
+        </p>
+    </description>
+        <slate surface = "sage">
+            x = var('x')
+
+            @interact
+            def _(norm=slider([(1 + k*(0.1)).numerical_approx(digits=2) for k in range(71)])):
+                p=norm
+                
+                plt = polygon([(-1,-1),(-1,1),(1,1),(1,-1)], fill=False, linestyle="--",color="orange",legend_label=r'$p=\infty$')
+                
+                plt += parametric_plot((x,(1-abs(x)^p)^(1/p)),(x,-1,1),legend_label=r'$p =%s$' % latex(p))
+                plt += parametric_plot((x,-(1-abs(x)^p)^(1/p)),(x,-1,1))    
+                
+                pretty_print(html(r'$\|(x,y)\|_p =1$'))
+                plt.set_legend_options(loc='upper right')
+                plt.show()
+        </slate>
+</interactive>
+</figure>
