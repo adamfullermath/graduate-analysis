@@ -322,7 +322,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "The integral of a derivative",
-  "body": " The integral of a derivative  In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named The Fundamental Theorem of Calculus . Fundamental Theorem of Calculus We will focus on the first of these here (though both will be addressed later in the course).   The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus Suppose   is a continuous function which is differentiable on and has continuous bounded derivative on . Then    This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions so that the differentiability of is automatic? Do we need to be continuous everywhere in for the theorem to hold? Do we need to be defined everywhere in for the theorem to hold?  The following simple example shows that there are functions where the conclusion of the first fundamental theorem holds, but is not defined on all of the interval .   Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed,   We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that    shows that we can get away with not being defined everywhere, and still satisfy the conclusion of the first fundamental theorem, . Similar to , we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.   Define a function on by   By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).    A continuous function which is not differentiable at each .    One can further show that    for each Thus    shows that the conclusion of the Fundamental Theorem of Calculus holds for some functions where the derivative is undefined at infinitely many points. Can we classify\/describe the functions where the Fundamental Theorem of Calculus applies?  These questions are closely related to another question which many 19th century mathematicians struggled with. What is the relationship between continuity and differentiability? If is a continuous function, how non-differentiable can it be? Is a continuous function necessarily differentiable at some points? On some intervals? Is a continuous function differentiable `enough' to apply the first fundamental theorem of calculus?  In , the function is not differentiable at each . Whilst this gives (countably) infinite points where is not differentiable, each point where is not differentiable is isolated (meaning if is not differentiable at then there is an interval around in which is differentiable at all ). In the early 1800s, it was widely believed (or suspected, at least) that all examples would satisfy this. That is, it was conjectured that if was continuous on a closed interval then each point where is not differentiable is isolated). André-Marie Ampère (1775–1836) Ampère, André-Marie went so far as to present a `proof' of this statement. All mathematicians make mistakes. Most mathematicians go as far to publish mistakes. If you are to remember Ampère Ampère, André-Marie for anything it should not be for this. Augustin-Louis Cauchy (1789 - 1857) Cauchy, Augustin-Louis credits Ampère in influencing his work on the formalization of calculus.  The question of the relationship between continuity and differentiability was settled by Karl Weierstrass (1815–1897) Weierstrass, Karl and Hermann Schwarz (1843–1921) Schwarz, Hermann Schwarz's example in the 1870s. Weierstrass published the first example of a continuous function which is differentiable nowhere.  Schwarz gave an example of a continuous function which is differentiable at all but countably many points; but the points where is not differentiable are not isolated. Schwarz's example has an unbounded derivative which is not Riemann integrable. Schwarz's example  The history is more complicated than alluded to here. As earlier as the 1830s Bernard Bolzano (1781-1848) gave an example of a nowhere differentiable function. This work was not published at the time. In Bolzano's work he exhibited the continuity of the function and that it was not differentiable on a dense set. That Bolzano's function is nowhere differentiable was not proved until after Bolzano's manuscript was published in the 1920s. Charles Cellérier (1818-1889) gave an example of a nowhere differentiable continuous function in the 1860s. This was not published until after Cellérier's death, and after Weierstrass's work, in 1890.  The existence of nowhere differentiable functions means that there are continuous functions for which the first fundamental theorem does not apply. But for which functions does it apply? Which continuous functions are differentiable `enough' to apply the fundamental theorem?  Here is where we run into some shortcomings of the Riemann integral. Consider the following two examples.   Thomae's function Riemann's function popcorn function Riemann's function Riemann's function Let . Define a function on by   This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .    Riemann's function, which is Riemann integrable and has a dense set of discontinuities.    Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and      Let . Consider the characteristic function . That is   As is dense in , it follows that the lower integral   and the upper integral   Hence is not Riemann integral.   Examples~\\ref{exam: popcorn}~and~\\ref{exam: char Q} show that Riemann integration can sometimes work well with countable dense subsets, but not always. Hence Riemann integration may not work well when dealing with the derivative of Schwarz's example. Vito Volterra (1860 - 1940) Volterra, Vito gave an example in 1881 which gives a further complication to the theory. Volterra's function Volterra's function is continuous, with bounded and defined for all . However, is not Riemann integrable. Hence, we can not apply to .  These failures of the Riemann integral necessitate defining a new type of integral: the Lebesgue integral . Henri Lebesgue (1875 - 1941) Lebesgue, Henri introduced this more robust way integrating functions. For Riemann integrable functions, the Lebesgue integral and the Riemann integral coincide. However, the Lebesgue integral allows us to integrate many functions which are not Riemann integrable, including from and the derivative of Volterra's function .  Lebesgue also worked on the theory of differentiation, and its relationship to (both Riemann and Lebesgue) integration. Lebesgue showed that every increasing function is differentiable almost everywhere. This, in turn, can be used to show that a class of continuous functions called absolutely continuous functions absolutely continuous function , are differentiable almost everywhere. The term `almost everywhere' is not a vague colloquialism; it has an exact technical definition that we will see later in this course. In Chapter~\\ref{chap: measure space} we will study measure spaces. In Chapter~\\ref{chap: lebesgue measure} we will introduce the Lebesgue measure on subsets the real line, a generalization of the length function on intervals in . In Chapter~\\ref{chap: integration} we use these ideas to introduce Lebesgue integration (and generalizations thereof). In Chapter~\\ref{chap: differentation} we will study absolutely continuous functions and complete our story on the relationship between (Lebesgue) integration and differentiation. In we give Lebesgue's version of the fundamental theorem of calculus:   for all absolutely continuous functions (where we use the Lebesgue integral to integrate ).  "
+  "body": " The integral of a derivative  In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named The Fundamental Theorem of Calculus . Fundamental Theorem of Calculus We will focus on the first of these here.   The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus  Suppose is a continuous function which is differentiable on and has continuous bounded derivative on . Then    This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions so that the differentiability of is automatic? Do we need to be continuous everywhere in for the theorem to hold? Do we need to be defined everywhere in for the theorem to hold?  The following simple example shows that there are functions where the conclusion of the first fundamental theorem holds, but is not defined on all of the interval .   Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed, We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that    shows that we can get away with not being defined everywhere, and still satisfy the conclusion of the fundamental theorem of calculus . Similar to , we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.   Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).   A continuous function which is not differentiable at each .     One can further show that for each Thus    shows that the conclusion of the fundamental theorem of calculus holds for some functions where the derivative is undefined at infinitely many points. Can we classify\/describe the functions where the fundamental theorem of calculus applies?  These questions are closely related to another question which many 19th century mathematicians struggled with. What is the relationship between continuity and differentiability? If is a continuous function, how non-differentiable can it be? Is a continuous function necessarily differentiable at some points? On some intervals? Is a continuous function differentiable enough to apply the first fundamental theorem of calculus?  In , the function is not differentiable at each . Whilst this gives (countably) infinite points where is not differentiable, each point where is not differentiable is isolated (meaning if is not differentiable at then there is an interval around in which is differentiable at all ). In the early 1800s, it was widely believed (or suspected, at least) that all examples would satisfy this. That is, it was conjectured that if was continuous on a closed interval then each point where is not differentiable is isolated). André-Marie Ampère (1775–1836) Ampère, André-Marie went so far as to present a proof of this statement. All mathematicians make mistakes. Most mathematicians go as far to publish mistakes. If you are to remember Ampère Ampère, André-Marie for anything it should not be for this. Augustin-Louis Cauchy (1789 - 1857) Cauchy, Augustin-Louis credits Ampère in influencing his work on the formalization of calculus.  The question of the relationship between continuity and differentiability was settled by Karl Weierstrass (1815–1897) Weierstrass, Karl and Hermann Schwarz (1843–1921) Schwarz, Hermann Schwarz's example in the 1870s. Weierstrass published the first example of a continuous function which is differentiable nowhere. The history is more complicated than alluded to here. As early as the 1830s Bernard Bolzano (1781-1848) gave an example of a nowhere differentiable function. This work was not published at the time. In Bolzano's work he exhibited the continuity of the function and that it was not differentiable on a dense set. That Bolzano's function is nowhere differentiable was not proved until after Bolzano's manuscript was published in the 1920s. Charles Cellérier (1818-1889) gave an example of a nowhere differentiable continuous function in the 1860s. This was not published until after Cellérier's death, and after Weierstrass's work, in 1890. Schwarz gave an example of a continuous function which is differentiable at all but countably many points; but the points where is not differentiable are not isolated. Schwarz's example has an unbounded derivative which is not Riemann integrable. Schwarz's example Weierstrass's example and Schwarz's example are presented in and , respectively.  The existence of nowhere differentiable functions means that there are continuous functions for which the first fundamental theorem does not apply. But for which functions does it apply? Which continuous functions are differentiable enough to apply the fundamental theorem?  Here is where we run into some shortcomings of the Riemann integral. Consider the following two examples.   Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .   Riemann's function, which is Riemann integrable and has a dense set of discontinuities.     Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and     Let . Consider the characteristic function . That is As is dense in , it follows that any lower Darboux sum of is 0, and any upper Darboux sum is 1. Hence is not Riemann integrable.   and show that Riemann integration can sometimes work well with countable dense subsets, but not always. Vito Volterra (1860 - 1940) Volterra, Vito gave an example in 1881 which gives a further complication to the theory. Volterra's function Volterra's function is continuous, with bounded and defined for all . However, is not Riemann integrable. Hence, the conclusion of the fundamental theorem of calculus does not hold for . Volterra's function is presented in .  These failures of the Riemann integral necessitate defining a new type of integral: the Lebesgue integral . Henri Lebesgue (1875 - 1941) Lebesgue, Henri introduced this more robust way integrating functions. For Riemann integrable functions, the Lebesgue integral and the Riemann integral coincide. However, the Lebesgue integral allows us to integrate many functions which are not Riemann integrable, including from and the derivative of Volterra's function .  Lebesgue also worked on the theory of differentiation, and its relationship to (both Riemann and Lebesgue) integration. Lebesgue showed that every increasing function is differentiable almost everywhere. This, in turn, can be used to show that a class of continuous functions called absolutely continuous functions absolutely continuous function , are differentiable almost everywhere. The term almost everywhere is not a vague colloquialism; it has an exact technical definition that we will see later in this chapter. In we will introduce the Lebesgue measure on subsets the real line, a generalization of the length function on intervals in . In we use these ideas to introduce Lebesgue integration (and generalizations thereof). In we will study absolutely continuous functions and complete our story on the relationship between (Lebesgue) integration and differentiation. In we give Lebesgue's version of the fundamental theorem of calculus: for all absolutely continuous functions (where we use the Lebesgue integral to integrate ).  "
 },
 {
   "id": "thm-FTOCI",
@@ -331,7 +331,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.1.1",
   "title": "The Fundamental Theorem of Calculus I.",
-  "body": " The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus Suppose   is a continuous function which is differentiable on and has continuous bounded derivative on . Then   "
+  "body": " The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus  Suppose is a continuous function which is differentiable on and has continuous bounded derivative on . Then   "
 },
 {
   "id": "exam-ftoc",
@@ -340,7 +340,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.2",
   "title": "",
-  "body": " Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed,   We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that   "
+  "body": " Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed, We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that   "
 },
 {
   "id": "exam-ftoc2",
@@ -349,7 +349,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.3",
   "title": "",
-  "body": " Define a function on by   By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).    A continuous function which is not differentiable at each .    One can further show that    for each Thus   "
+  "body": " Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).   A continuous function which is not differentiable at each .     One can further show that for each Thus   "
 },
 {
   "id": "exam-popcorn",
@@ -358,7 +358,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.5",
   "title": "",
-  "body": " Thomae's function Riemann's function popcorn function Riemann's function Riemann's function Let . Define a function on by   This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .    Riemann's function, which is Riemann integrable and has a dense set of discontinuities.    Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and    "
+  "body": " Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .   Riemann's function, which is Riemann integrable and has a dense set of discontinuities.     Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and   "
 },
 {
   "id": "exam-char-Q",
@@ -367,34 +367,25 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.7",
   "title": "",
-  "body": " Let . Consider the characteristic function . That is   As is dense in , it follows that the lower integral   and the upper integral   Hence is not Riemann integral.  "
+  "body": " Let . Consider the characteristic function . That is As is dense in , it follows that any lower Darboux sum of is 0, and any upper Darboux sum is 1. Hence is not Riemann integrable.  "
 },
 {
-  "id": "sec-int-lim-swap",
+  "id": "sec-why-else",
   "level": "1",
-  "url": "sec-int-lim-swap.html",
+  "url": "sec-why-else.html",
   "type": "Section",
   "number": "1.2",
-  "title": "More shortcomings of Riemann integration",
-  "body": " More shortcomings of Riemann integration  The following theorem should be familiar.   Let be a sequence of continuous functions on a closed interval which converge uniformly to a (necessarily continuous) function . Then    Put another way, says that   That is, when converges to uniformly, the limit passes under the integral sign.  A short-coming of this theorem is in the need for uniform convergence. Uniform convergence is a strong condition, that is not always easy to check. A much easier condition to check is pointwise convergence. However, does not necessarily hold when uniform convergence is replaced by pointwise convergence. We will see an example of this in .  Enter, again, Lebesgue integration. We will see that pointwise limits of Lebesgue integral functions are again Lebesgue integrable. Further, we will show that, with some reasonable conditions (less than those implicitly in ), pointwise limits will pass under the (Lebesgue) integral sign. Several theorems of this type will be proved. The most famous of these is the Lebesgue Dominated Convergence Theorem, . As the name suggests, this was originally proved by Lebesgue.  "
+  "title": "Yeah, but why else?",
+  "body": " Yeah, but why else?  The fundamental theorem of calculus can't be the only reason to study measure theory. We are not going to spend a semester or two studying measure theory just to prove one theorem.   More shortcomings of Riemann integration  There are other ways in which Riemann integration does not work in ways that we might want integration to work. We highlight one such example here.  The following theorem should be familiar.   Let be a sequence of continuous functions on a closed interval which converge uniformly to a (necessarily continuous) function . Then    Put another way, says that That is, when converges to uniformly, the limit passes under the integral sign.  A short-coming of this theorem is in the need for uniform convergence. Uniform convergence is a strong condition, that is not always easy to check. A much easier condition to check is pointwise convergence. However, does not necessarily hold when uniform convergence is replaced by pointwise convergence. We will see an example of this in .  Enter, again, Lebesgue integration. We will see that pointwise limits of Lebesgue integral functions are often Lebesgue integrable. Further, we will show that, with some reasonable conditions (less than those implicitly in ), pointwise limits will pass under the (Lebesgue) integral sign. Several theorems of this type will be proved. The most famous of these is the Lebesgue Dominated Convergence Theorem . As the name suggests, this was originally proved by Lebesgue.    On beyond  The mathematical apologetics set forth in paints Lebesgue integration and measure theory in a historical light: important, but of the past. The applications of measure theory are, however, vast. Measure theory has proven itself to be a fundamental tool in many areas of mathematics. The reason to study measure theory is not (just) to understand the development of analysis; measure theory is a vital component of modern mathematics. With the framework set forth by Lebesgue, mathematicians found that they could define measures (and thus integrals) in a wide array of settings. Thus, rather than develop Lebesgue measure on and then generalize, we will develop both theories in tandem, beginning in . This saves a considerable amount of repetition.  The following, non-exhaustive, list of applications of measure theory gives some idea as to its value in mathematics, beyond the study of functions on the real line: series; probability theory; functional analysis; ergodic theory; abstract harmonic analysis; and Hausdorff dimension. We will touch on some of these topics. Applications to the theory of series are sprinkled throughout the exercises. Fundamental examples and results in functional analysis relating to measure theory are given in and . Measures on topological groups are studied in , given a taste of abstract harmonic analysis. Hausdorff dimension is studied in . Finally, a cursory introduction to probability theory is given in .   "
 },
 {
   "id": "thm-lim-int",
   "level": "2",
-  "url": "sec-int-lim-swap.html#thm-lim-int",
+  "url": "sec-why-else.html#thm-lim-int",
   "type": "Theorem",
   "number": "1.2.1",
   "title": "",
   "body": " Let be a sequence of continuous functions on a closed interval which converge uniformly to a (necessarily continuous) function . Then   "
-},
-{
-  "id": "chap-intro-5",
-  "level": "1",
-  "url": "chap-intro-5.html",
-  "type": "Section",
-  "number": "1.3",
-  "title": "On beyond",
-  "body": " On beyond  With the framework set forth by Lebesgue, mathematicians found that they could define measures (and integrals) in a wide array of settings. Rather than develop Lebesgue measure on and then generalize, we will develop both theories in tandem. This saves a considerable amount of repetition.  The following, non-exhaustive, list of applications of measure theory gives some idea as to its value in mathematics, beyond the study of functions on the real line:   series;   probability theory;   formal definitions of the Dirac delta function ;   topological groups (i.e. abstract harmonic analysis);   Hausdorff dimension (e.g. to study fractals).    "
 },
 {
   "id": "chap-measure-space-3",
@@ -1159,7 +1150,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Borel sets, Lebesgue measurable sets, and subsets of <span class=\"process-math\">\\(\\mathbb{R}\\text{.}\\)<\/span>",
-  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold:   In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.    tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .     Illustration of the first several steps in the construction of the Cantor set.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .    Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.    The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.    The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
+  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold:   In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.    tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   Illustration of the first several steps in the construction of the Cantor set.    Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .    Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.    The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.    The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
 },
 {
   "id": "thm-Vitali-non-meas",
@@ -1195,7 +1186,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.3",
   "title": "",
-  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .     Illustration of the first several steps in the construction of the Cantor set.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
+  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   Illustration of the first several steps in the construction of the Cantor set.    Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
 },
 {
   "id": "ex-cantor-lebesgue",
@@ -3736,18 +3727,18 @@ var ptx_lunr_docs = [
   "body": " Let be a closed interval, and let be a countable subset of . Show that, for real numbers ,   is a Borel signed-measure on if and only if converges absolutely.  "
 },
 {
-  "id": "real-analysis-6-2-3",
+  "id": "chap-Lp-3",
   "level": "1",
-  "url": "real-analysis-6-2-3.html",
+  "url": "chap-Lp-3.html",
   "type": "Section",
   "number": "1.1",
   "title": "Banach spaces",
   "body": " Banach spaces  Almost everything we cover can just as easily be proved over the field of complex numbers . Whilst vector spaces can, of course, be defined over other fields, the analysis we are doing is rarely done on fields other than and . We will thus stick to using the field without comment; suitable adjustments for the field can be done, but won't be done here.   Let be a (real) vector space. A norm norm on is a function satisfying   for all , and if and only if ;   for all and ; and   for all (the triangle inequality ). triangle inequality for norms    If is a vector space with a norm, we call a normed vector space vector space normed .    The field itself is a real vector space. The absolute value defines a norm on .  More generally, let . We can define a norm on by   for . This is called the Euclidean norm or the -norm on . norm Euclidean norm norm -norm on That is a norm is left as an exercise, .    Denote by all continuous, bounded functions on . Then is a vector space. Define on by   Then defines a norm on called the infinity norm or the -norm . norm -norm  More generally, if is a topological space, the , the space of all continuous bounded functions on , is a vector space and   defines a norm on .  Denote by all continuous functions on a topological space . In general, will not define a norm on (since we could hace for some ). If is compact then all continuous functions on are bounded. In this case .   If is a normed vector space, then we can define a metric, or distance, on . The distance between two vectors is given by With this metric, we can then study convergence of sequences, just as we do in the real line.   Let be a normed vector space, and let be a vector in , and let be a sequence of vectors in . The sequence is convergent with limit with respect to , or convergent to if convergence in a normed vector space   That is, the sequence converges to if for all there is an such that if , then    We can similarly define Cauchy sequences in normed vector spaces.   Let be a normed vector space, and let be a sequence of vectors in . The sequence is a Cauchy sequence in Cauchy sequence in a normed vector space with respect to if for all there is an such that if , then    Roughly speaking, a sequence of vectors is convergent if they get closer and closer to some vector; and a sequence of vectors is Cauchy if the vectors get closer and closer to each other. The following proposition should thus not come as a surprise. The proof is analogous to the real-line case.   Let be a normed vector space, and let be a sequence of vectors in which converge to some . Then is a Cauchy sequence.   Whilst all convergent sequences are Cauchy, a Cauchy sequence is not necessarily convergent.   Let and let be the -norm (restricted from the -norm on .) Take a sequence of rationals which converge to . E.g. let   For each , let   Then is a Cauchy sequence in , but does not converge in . If we view as a sequence in , then converges to .   Recall that all Cauchy sequences in converge. That is, is complete. The completeness of is a fundamental property on which a lot of analysis relies. We are similarly, primarily interested in normed vector spaces in which Cauchy sequences are convergent.   If is a normed vector space in which every Cauchy sequence is convergent, then we call a Banach space . That is, a Banach space a normed vector space which is complete with respect to the metric induced by the norm.    The vector space with the -norm is a Banach space, see .    Let be an interval. The normed vector space with norm (see ) is a Banach space, see    Let be an interval. A continuous function  vanishes at infinity vanishes at infinity if for all there is a closed interval such that for . We denote the collection of all continuous functions on that vanish at infinity by .  The space is a vector subspace of , thus is a normed vector space with the -norm . With this norm is a Banach space, see .    Let be an interval. Let denote all continuous real-valued functions on which are compactly supported compactly supported . That is, a continuous function on is in if there is a compact set such that for . Then a vector space of functions with   However, in general, is not a Banach space, see and .   In many cases, a natural norm on a vector space arises from an inner-product. We will now recall the definition of an inner-product here and explain how we can get a norm from an inner-product.   Let be a real-inner product. An inner-product inner-product on is a bilinear, real-valued map   such that for all , and if and only if .  If is a vector space with an inner-product, then is called an inner-product space . inner-product space   If is an inner-product space, then we can make into a normed vector space. Indeed, if we define   then it can be shown that this defines a norm on . We call this norm the inner-product norm norm inner-product norm . We will leave proving the general case that an inner-product norm is always a norm to the Exercises. When they arise in the examples we are interested in, it will be clear that an inner-product norm is a norm.   Let be an inner-product space. If is complete, i.e. is a Banach space, with respect to the inner-product norm, then is Hilbert space .    The dot-product on is an inner-product and the Euclidean-norm\/ -norm on is the inner-product norm induced by the dot-product. As is a Banach space with the -norm ( ), is a Hilbert space.   A vector space can have more than one norm. It is possible that two different norms may behave the same when it comes to topological concerns: e.g. convergence of sequences. We introduce the idea of equivalent norms now to deal with this instance.   Let be a real vector space, and let and be two norms on . The norm is equivalent to  norm equivalent norms if there are scalars such that   for all .   The relation of one norm being equivalent to another does, as the name suggests, form an equivalence relation on the family of all norms on a vector space .   Let be a real vector space, and let and be two norms on . The norm is equivalent to if and only if the norm is equivalent to .    The proof is left as an exercise,   Let be a vector space with norms and . If is equivalent to then the norm is equivalent to by . In this case we will simply say that and are equivalent . norm equivalent norms  Properties like convergence do not rely on the exact value of the norms; analytic definitions usually use inequalities, not equalities. Thus, when a vector space has two equivalent norms, it does not usually matter which one we work with. We formalize this in the following theorem.   Let be a real vector space and let and be equivalent norms on . Let be a sequence of vectors in . Then   is a Cauchy sequence with respect to the norm if and only if is a Cauchy sequence with respect to the norm ; and   is convergent with respect to with respect to if and only if is convergent with respect to with respect to .    In particular, is a Banach space under the norm if and only if is a Banach space under the norm .    We will prove (i). Part (ii) is proved similarly. Let be constants such that . Suppose is a Cauchy sequence with respect to the norm .  Take . There exists such that, if then   Thus, if then   Thus is Cauchy with respect to .  As is also equivalent to , a similar argument gives that if is Cauchy with respect to then is Cauchy with respect to    Let be a normed vector space, and let be a non-empty subset. A set is dense in dense if for all and there exists such that   A Banach space is called separable Banach space separable if there is countable set which is dense in .   Many Banach spaces that we study will be separable. Heuristically, a Banach space being separable means that it is not too big. Non-separable spaces tend to be harder to understand.   The rationals are dense in and the rationals are countable, and so is separable. More generally, is a countable dense subset of (with the -norm), and so is separable.   The following results show that infinite dimensional Banach spaces can be separable. We first show that the polynomials are dense in the Banach space of continuous functions on a closed interval . This result is known as the Weierstrass Approximation Theorem Weierstrass theorem . We then show that there is a countable subset of polynomials which is dense in , and so is a separable Banach space, with the -norm.   Weierstrass Approximation Theorem  Weierstrass Approximation theorem Let be a closed interval, let be a continuous function , and let . There exists a polynomial such that   where is the -norm on .    First assume that is a continuous function on . I.e., assume . We can further assume that , since if then is already a polynomial and we can take .  For each and , let   where is the binomial coefficient choose .  We will need several identities involving . Firstly, by the Binomial Theorem,   Thus   Taking the derivative of with respect to we find   Hence   Taking the derivative of with respect to we find   where was used in the last equality. It follows that   Hence, using , and , we have that   Thus   Consider the polynomials   We will show that, for large , approximates .  Since is continuous on the closed interval , is uniformly continuous. Take and choose such that if then Choose so that , and fix . For , let   and let   Note that, if for some , then   Thus,   where the last equality comes from and the last inequality follows since , for .  Now, for and we have   where the last inequality comes from the choice of  We have proved the result when . Consider an arbitrary closed interval and take . The polynomial   is a homeomorphism from to with inverse   By the above argument, given there is a polynomial on such that   Letting be the polynomial on defined by . Then   Hence the polynomials are dense in .   That is a separable space is a straightfoward corollary to the Weierstrass Approximation Theorem.   Let a closed bounded interval in . Then the continuous functions on with the -norm is a separable Banach space.    That is a Banach space is discussed in . If , then , which is separable.  Assume . Take any and By the Weierstrass Approximation Theorem, there is a polynomial on such that   Suppose has degree . Then there are scalars , with , such that   Choose rationals such that   Let be the polynomial   Then   Thus   We have shown that the polynomials with rational coefficients are dense in . The cardinality of the polynomials with rational coefficients is   which is countable. Thus is separable.   "
 },
 {
-  "id": "real-analysis-6-2-3-3",
+  "id": "chap-Lp-3-3",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-3",
+  "url": "chap-Lp-3.html#chap-Lp-3-3",
   "type": "Definition",
   "number": "1.1.1",
   "title": "",
@@ -3756,7 +3747,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-2-norm-on-Rn",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-2-norm-on-Rn",
+  "url": "chap-Lp-3.html#ex-2-norm-on-Rn",
   "type": "Example",
   "number": "1.1.2",
   "title": "",
@@ -3765,52 +3756,52 @@ var ptx_lunr_docs = [
 {
   "id": "ex-C_b-X-norm",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-C_b-X-norm",
+  "url": "chap-Lp-3.html#ex-C_b-X-norm",
   "type": "Example",
   "number": "1.1.3",
   "title": "",
   "body": " Denote by all continuous, bounded functions on . Then is a vector space. Define on by   Then defines a norm on called the infinity norm or the -norm . norm -norm  More generally, if is a topological space, the , the space of all continuous bounded functions on , is a vector space and   defines a norm on .  Denote by all continuous functions on a topological space . In general, will not define a norm on (since we could hace for some ). If is compact then all continuous functions on are bounded. In this case .  "
 },
 {
-  "id": "real-analysis-6-2-3-7",
+  "id": "chap-Lp-3-7",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-7",
+  "url": "chap-Lp-3.html#chap-Lp-3-7",
   "type": "Definition",
   "number": "1.1.4",
   "title": "",
   "body": " Let be a normed vector space, and let be a vector in , and let be a sequence of vectors in . The sequence is convergent with limit with respect to , or convergent to if convergence in a normed vector space   That is, the sequence converges to if for all there is an such that if , then   "
 },
 {
-  "id": "real-analysis-6-2-3-9",
+  "id": "chap-Lp-3-9",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-9",
+  "url": "chap-Lp-3.html#chap-Lp-3-9",
   "type": "Definition",
   "number": "1.1.5",
   "title": "",
   "body": " Let be a normed vector space, and let be a sequence of vectors in . The sequence is a Cauchy sequence in Cauchy sequence in a normed vector space with respect to if for all there is an such that if , then   "
 },
 {
-  "id": "real-analysis-6-2-3-11",
+  "id": "chap-Lp-3-11",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-11",
+  "url": "chap-Lp-3.html#chap-Lp-3-11",
   "type": "Proposition",
   "number": "1.1.6",
   "title": "",
   "body": " Let be a normed vector space, and let be a sequence of vectors in which converge to some . Then is a Cauchy sequence.  "
 },
 {
-  "id": "real-analysis-6-2-3-13",
+  "id": "chap-Lp-3-13",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-13",
+  "url": "chap-Lp-3.html#chap-Lp-3-13",
   "type": "Example",
   "number": "1.1.7",
   "title": "",
   "body": " Let and let be the -norm (restricted from the -norm on .) Take a sequence of rationals which converge to . E.g. let   For each , let   Then is a Cauchy sequence in , but does not converge in . If we view as a sequence in , then converges to .  "
 },
 {
-  "id": "real-analysis-6-2-3-15",
+  "id": "chap-Lp-3-15",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-15",
+  "url": "chap-Lp-3.html#chap-Lp-3-15",
   "type": "Definition",
   "number": "1.1.8",
   "title": "",
@@ -3819,7 +3810,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Rn-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-Rn-Banach",
+  "url": "chap-Lp-3.html#ex-Rn-Banach",
   "type": "Example",
   "number": "1.1.9",
   "title": "",
@@ -3828,7 +3819,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Cb-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-Cb-Banach",
+  "url": "chap-Lp-3.html#ex-Cb-Banach",
   "type": "Example",
   "number": "1.1.10",
   "title": "",
@@ -3837,7 +3828,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-C0-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-C0-Banach",
+  "url": "chap-Lp-3.html#ex-C0-Banach",
   "type": "Example",
   "number": "1.1.11",
   "title": "",
@@ -3846,25 +3837,25 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Cc-not-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-Cc-not-Banach",
+  "url": "chap-Lp-3.html#ex-Cc-not-Banach",
   "type": "Example",
   "number": "1.1.12",
   "title": "",
   "body": " Let be an interval. Let denote all continuous real-valued functions on which are compactly supported compactly supported . That is, a continuous function on is in if there is a compact set such that for . Then a vector space of functions with   However, in general, is not a Banach space, see and .  "
 },
 {
-  "id": "real-analysis-6-2-3-21",
+  "id": "chap-Lp-3-21",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-21",
+  "url": "chap-Lp-3.html#chap-Lp-3-21",
   "type": "Definition",
   "number": "1.1.13",
   "title": "",
   "body": " Let be a real-inner product. An inner-product inner-product on is a bilinear, real-valued map   such that for all , and if and only if .  If is a vector space with an inner-product, then is called an inner-product space . inner-product space  "
 },
 {
-  "id": "real-analysis-6-2-3-25",
+  "id": "chap-Lp-3-25",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-25",
+  "url": "chap-Lp-3.html#chap-Lp-3-25",
   "type": "Definition",
   "number": "1.1.14",
   "title": "",
@@ -3873,16 +3864,16 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Rn-Hilbert",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-Rn-Hilbert",
+  "url": "chap-Lp-3.html#ex-Rn-Hilbert",
   "type": "Example",
   "number": "1.1.15",
   "title": "",
   "body": " The dot-product on is an inner-product and the Euclidean-norm\/ -norm on is the inner-product norm induced by the dot-product. As is a Banach space with the -norm ( ), is a Hilbert space.  "
 },
 {
-  "id": "real-analysis-6-2-3-28",
+  "id": "chap-Lp-3-28",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-28",
+  "url": "chap-Lp-3.html#chap-Lp-3-28",
   "type": "Definition",
   "number": "1.1.16",
   "title": "",
@@ -3891,16 +3882,16 @@ var ptx_lunr_docs = [
 {
   "id": "prop-norm-equiv",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#prop-norm-equiv",
+  "url": "chap-Lp-3.html#prop-norm-equiv",
   "type": "Proposition",
   "number": "1.1.17",
   "title": "",
   "body": " Let be a real vector space, and let and be two norms on . The norm is equivalent to if and only if the norm is equivalent to .  "
 },
 {
-  "id": "real-analysis-6-2-3-31",
+  "id": "chap-Lp-3-31",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-31",
+  "url": "chap-Lp-3.html#chap-Lp-3-31",
   "type": "Proof",
   "number": "1.1.1",
   "title": "",
@@ -3909,25 +3900,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-equiv-norms-convergence",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#thm-equiv-norms-convergence",
+  "url": "chap-Lp-3.html#thm-equiv-norms-convergence",
   "type": "Theorem",
   "number": "1.1.18",
   "title": "",
   "body": " Let be a real vector space and let and be equivalent norms on . Let be a sequence of vectors in . Then   is a Cauchy sequence with respect to the norm if and only if is a Cauchy sequence with respect to the norm ; and   is convergent with respect to with respect to if and only if is convergent with respect to with respect to .    In particular, is a Banach space under the norm if and only if is a Banach space under the norm .  "
 },
 {
-  "id": "real-analysis-6-2-3-35",
+  "id": "chap-Lp-3-35",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-35",
+  "url": "chap-Lp-3.html#chap-Lp-3-35",
   "type": "Proof",
   "number": "1.1.2",
   "title": "",
   "body": " We will prove (i). Part (ii) is proved similarly. Let be constants such that . Suppose is a Cauchy sequence with respect to the norm .  Take . There exists such that, if then   Thus, if then   Thus is Cauchy with respect to .  As is also equivalent to , a similar argument gives that if is Cauchy with respect to then is Cauchy with respect to  "
 },
 {
-  "id": "real-analysis-6-2-3-36",
+  "id": "chap-Lp-3-36",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-36",
+  "url": "chap-Lp-3.html#chap-Lp-3-36",
   "type": "Definition",
   "number": "1.1.19",
   "title": "",
@@ -3936,7 +3927,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Rn-separable",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#ex-Rn-separable",
+  "url": "chap-Lp-3.html#ex-Rn-separable",
   "type": "Example",
   "number": "1.1.20",
   "title": "",
@@ -3945,16 +3936,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-weierstrass",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#thm-weierstrass",
+  "url": "chap-Lp-3.html#thm-weierstrass",
   "type": "Theorem",
   "number": "1.1.21",
   "title": "Weierstrass Approximation Theorem.",
   "body": " Weierstrass Approximation Theorem  Weierstrass Approximation theorem Let be a closed interval, let be a continuous function , and let . There exists a polynomial such that   where is the -norm on .  "
 },
 {
-  "id": "real-analysis-6-2-3-41",
+  "id": "chap-Lp-3-41",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-41",
+  "url": "chap-Lp-3.html#chap-Lp-3-41",
   "type": "Proof",
   "number": "1.1.3",
   "title": "",
@@ -3963,88 +3954,88 @@ var ptx_lunr_docs = [
 {
   "id": "cor-C-a-b-sep",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#cor-C-a-b-sep",
+  "url": "chap-Lp-3.html#cor-C-a-b-sep",
   "type": "Corollary",
   "number": "1.1.22",
   "title": "",
   "body": " Let a closed bounded interval in . Then the continuous functions on with the -norm is a separable Banach space.  "
 },
 {
-  "id": "real-analysis-6-2-3-44",
+  "id": "chap-Lp-3-44",
   "level": "2",
-  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-44",
+  "url": "chap-Lp-3.html#chap-Lp-3-44",
   "type": "Proof",
   "number": "1.1.4",
   "title": "",
   "body": " That is a Banach space is discussed in . If , then , which is separable.  Assume . Take any and By the Weierstrass Approximation Theorem, there is a polynomial on such that   Suppose has degree . Then there are scalars , with , such that   Choose rationals such that   Let be the polynomial   Then   Thus   We have shown that the polynomials with rational coefficients are dense in . The cardinality of the polynomials with rational coefficients is   which is countable. Thus is separable.  "
 },
 {
-  "id": "real-analysis-6-2-4",
+  "id": "chap-Lp-4",
   "level": "1",
-  "url": "real-analysis-6-2-4.html",
+  "url": "chap-Lp-4.html",
   "type": "Section",
   "number": "1.2",
   "title": "<span class=\"process-math\">\\(L^p\\)<\/span>-norms",
-  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.      The sets for different values of in     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
+  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.    The sets for different values of in .     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
 },
 {
-  "id": "real-analysis-6-2-4-3",
+  "id": "chap-Lp-4-3",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-3",
+  "url": "chap-Lp-4.html#chap-Lp-4-3",
   "type": "Definition",
   "number": "1.2.1",
   "title": "",
   "body": " Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .  "
 },
 {
-  "id": "real-analysis-6-2-4-4",
+  "id": "chap-Lp-4-4",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-4",
+  "url": "chap-Lp-4.html#chap-Lp-4-4",
   "type": "Remark",
   "number": "1.2.2",
   "title": "",
   "body": " Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.  "
 },
 {
-  "id": "real-analysis-6-2-4-6",
+  "id": "chap-Lp-4-6",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-6",
+  "url": "chap-Lp-4.html#chap-Lp-4-6",
   "type": "Definition",
   "number": "1.2.3",
   "title": "",
   "body": " Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for  "
 },
 {
-  "id": "real-analysis-6-2-4-7",
+  "id": "chap-Lp-4-7",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-7",
+  "url": "chap-Lp-4.html#chap-Lp-4-7",
   "type": "Remark",
   "number": "1.2.4",
   "title": "",
   "body": " Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.  "
 },
 {
-  "id": "real-analysis-6-2-4-8",
+  "id": "chap-Lp-4-8",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-8",
+  "url": "chap-Lp-4.html#chap-Lp-4-8",
   "type": "Remark",
   "number": "1.2.5",
   "title": "",
   "body": " Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .  "
 },
 {
-  "id": "real-analysis-6-2-4-10",
+  "id": "chap-Lp-4-10",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-10",
+  "url": "chap-Lp-4.html#chap-Lp-4-10",
   "type": "Proposition",
   "number": "1.2.6",
   "title": "",
   "body": " Let be a measure space, and let . Then is a vector subspace of  "
 },
 {
-  "id": "real-analysis-6-2-4-11",
+  "id": "chap-Lp-4-11",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-11",
+  "url": "chap-Lp-4.html#chap-Lp-4-11",
   "type": "Proof",
   "number": "1.2.1",
   "title": "",
@@ -4053,7 +4044,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-inf-norms",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#rem-inf-norms",
+  "url": "chap-Lp-4.html#rem-inf-norms",
   "type": "Remark",
   "number": "1.2.7",
   "title": "",
@@ -4062,7 +4053,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-2-norms",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#rem-2-norms",
+  "url": "chap-Lp-4.html#rem-2-norms",
   "type": "Remark",
   "number": "1.2.8",
   "title": "",
@@ -4071,34 +4062,34 @@ var ptx_lunr_docs = [
 {
   "id": "prop-1-and-inf-norms",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#prop-1-and-inf-norms",
+  "url": "chap-Lp-4.html#prop-1-and-inf-norms",
   "type": "Proposition",
   "number": "1.2.9",
   "title": "",
   "body": " Let be a measure space. Then is a norm on and is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-22",
+  "id": "chap-Lp-4-22",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-22",
+  "url": "chap-Lp-4.html#chap-Lp-4-22",
   "type": "Proof",
   "number": "1.2.2",
   "title": "",
   "body": " It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-24",
+  "id": "chap-Lp-4-24",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-24",
+  "url": "chap-Lp-4.html#chap-Lp-4-24",
   "type": "Definition",
   "number": "1.2.10",
   "title": "",
   "body": " For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .  "
 },
 {
-  "id": "real-analysis-6-2-4-25",
+  "id": "chap-Lp-4-25",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-25",
+  "url": "chap-Lp-4.html#chap-Lp-4-25",
   "type": "Remark",
   "number": "1.2.11",
   "title": "",
@@ -4107,16 +4098,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-youngs",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#lem-youngs",
+  "url": "chap-Lp-4.html#lem-youngs",
   "type": "Lemma",
   "number": "1.2.12",
   "title": "Young’s Inequality.",
   "body": " Young's Inequality  Young's Inequality Let and be conjugate to . If then   "
 },
 {
-  "id": "real-analysis-6-2-4-27",
+  "id": "chap-Lp-4-27",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-27",
+  "url": "chap-Lp-4.html#chap-Lp-4-27",
   "type": "Proof",
   "number": "1.2.3",
   "title": "",
@@ -4125,16 +4116,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-holder",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-holder",
+  "url": "chap-Lp-4.html#thm-holder",
   "type": "Theorem",
   "number": "1.2.14",
   "title": "Hölder’s Inequality.",
   "body": " Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and   "
 },
 {
-  "id": "real-analysis-6-2-4-29",
+  "id": "chap-Lp-4-29",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-29",
+  "url": "chap-Lp-4.html#chap-Lp-4-29",
   "type": "Proof",
   "number": "1.2.4",
   "title": "",
@@ -4143,7 +4134,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-CS-ineq",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-CS-ineq",
+  "url": "chap-Lp-4.html#thm-CS-ineq",
   "type": "Theorem",
   "number": "1.2.15",
   "title": "Cauchy-Schwarz Inequality.",
@@ -4152,16 +4143,16 @@ var ptx_lunr_docs = [
 {
   "id": "cor-holder-cor",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#cor-holder-cor",
+  "url": "chap-Lp-4.html#cor-holder-cor",
   "type": "Corollary",
   "number": "1.2.16",
   "title": "",
   "body": " Let and let be conjugate to . If , then there exists with such that   "
 },
 {
-  "id": "real-analysis-6-2-4-34",
+  "id": "chap-Lp-4-34",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-34",
+  "url": "chap-Lp-4.html#chap-Lp-4-34",
   "type": "Proof",
   "number": "1.2.5",
   "title": "",
@@ -4170,34 +4161,34 @@ var ptx_lunr_docs = [
 {
   "id": "thm-minkowski",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-minkowski",
+  "url": "chap-Lp-4.html#thm-minkowski",
   "type": "Theorem",
   "number": "1.2.17",
   "title": "Minkowski’s Inequality.",
   "body": " Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then   "
 },
 {
-  "id": "real-analysis-6-2-4-37",
+  "id": "chap-Lp-4-37",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-37",
+  "url": "chap-Lp-4.html#chap-Lp-4-37",
   "type": "Proof",
   "number": "1.2.6",
   "title": "",
   "body": " Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .  "
 },
 {
-  "id": "real-analysis-6-2-4-39",
+  "id": "chap-Lp-4-39",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-39",
+  "url": "chap-Lp-4.html#chap-Lp-4-39",
   "type": "Theorem",
   "number": "1.2.18",
   "title": "",
   "body": " Let be a measure space. For each , , is a norm on .  "
 },
 {
-  "id": "real-analysis-6-2-4-40",
+  "id": "chap-Lp-4-40",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-40",
+  "url": "chap-Lp-4.html#chap-Lp-4-40",
   "type": "Proof",
   "number": "1.2.7",
   "title": "",
@@ -4206,7 +4197,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-L2-inner-prod",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#rem-L2-inner-prod",
+  "url": "chap-Lp-4.html#rem-L2-inner-prod",
   "type": "Remark",
   "number": "1.2.19",
   "title": "",
@@ -4215,16 +4206,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-Lq-in-Lp",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-Lq-in-Lp",
+  "url": "chap-Lp-4.html#thm-Lq-in-Lp",
   "type": "Theorem",
   "number": "1.2.20",
   "title": "",
   "body": " Let be a finite measure space. If , then .  "
 },
 {
-  "id": "real-analysis-6-2-4-44",
+  "id": "chap-Lp-4-44",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-44",
+  "url": "chap-Lp-4.html#chap-Lp-4-44",
   "type": "Proof",
   "number": "1.2.8",
   "title": "",
@@ -4233,7 +4224,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Lq-in-Lp",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#ex-Lq-in-Lp",
+  "url": "chap-Lp-4.html#ex-Lq-in-Lp",
   "type": "Example",
   "number": "1.2.21",
   "title": "",
@@ -4242,7 +4233,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Lq-not-in-Lp",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#ex-Lq-not-in-Lp",
+  "url": "chap-Lp-4.html#ex-Lq-not-in-Lp",
   "type": "Example",
   "number": "1.2.22",
   "title": "",
@@ -4251,79 +4242,79 @@ var ptx_lunr_docs = [
 {
   "id": "thm-lq-in-lp",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-lq-in-lp",
+  "url": "chap-Lp-4.html#thm-lq-in-lp",
   "type": "Theorem",
   "number": "1.2.23",
   "title": "",
   "body": " Let , then and for all  "
 },
 {
-  "id": "real-analysis-6-2-4-49-7",
+  "id": "chap-Lp-4-49-7",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-7",
+  "url": "chap-Lp-4.html#chap-Lp-4-49-7",
   "type": "Proof",
   "number": "1",
   "title": "",
   "body": " Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and  "
 },
 {
-  "id": "real-analysis-6-2-4-49-9",
+  "id": "chap-Lp-4-49-9",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-9",
+  "url": "chap-Lp-4.html#chap-Lp-4-49-9",
   "type": "Example",
   "number": "1.2.24",
   "title": "",
   "body": " Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .  "
 },
 {
-  "id": "fig-p-norm",
+  "id": "p-norm",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#fig-p-norm",
+  "url": "chap-Lp-4.html#p-norm",
   "type": "Figure",
   "number": "1.2.25",
   "title": "",
-  "body": "    The sets for different values of in   "
+  "body": " The sets for different values of in .   "
 },
 {
   "id": "thm-equiv-norms-on-Rn",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#thm-equiv-norms-on-Rn",
+  "url": "chap-Lp-4.html#thm-equiv-norms-on-Rn",
   "type": "Theorem",
   "number": "1.2.26",
   "title": "",
   "body": " The norms on are all equivalent.  "
 },
 {
-  "id": "real-analysis-6-2-4-49-19",
+  "id": "chap-Lp-4-49-19",
   "level": "2",
-  "url": "real-analysis-6-2-4.html#real-analysis-6-2-4-49-19",
+  "url": "chap-Lp-4.html#chap-Lp-4-49-19",
   "type": "Proof",
   "number": "2",
   "title": "",
   "body": " Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .  "
 },
 {
-  "id": "real-analysis-6-2-5",
+  "id": "chap-Lp-5",
   "level": "1",
-  "url": "real-analysis-6-2-5.html",
+  "url": "chap-Lp-5.html",
   "type": "Section",
   "number": "1.3",
   "title": "<span class=\"process-math\">\\(L^p\\)<\/span>-approximations and the Riesz-Fischer Theorem",
-  "body": " -approximations and the Riesz-Fischer Theorem  In the proof, we will incidentally end up considering different types of convergence we now have for measurable functions.   Riesz-Fischer Theorem  Riesz-Fischer Theorem Let be a measure space. Then is a Banach space for all .    First take . Let be a Cauchy sequence in . Choose such that   for . Let and for . Then,   Let .  Let and Note that   for all . Since is an increasing sequence converging pointwise to ,   by the Monotone Convergence Theorem. Thus . In particular, is finite a.e. and so the series converges absolutely a.e. Let be the pointwise a.e. limit. Then , and hence . Further,   Hence, by the Lebesgue Dominated Convergence Theorem,   Hence the sequence of partial sums converges to in -norm. Note that   Thus the subsequence converges to in -norm. It follows that converges to , and hence is complete.  Now let and let be a Cauchy sequence in . By excising a set of measure if necessary, assume that each is bounded. Take any . There is an such that for all   Take any , and , then   Thus, is a Cauchy sequence of real numbers. Since is complete, is convergent. Define a function by   for each .  There is an such that if then   Thus, if , then   Letting   we have for all . Thus, for ,   Hence .  Take . Choose , such that if then Then, for , if ,    Hence is the limit of in the -norm, and hence is complete.   For the our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for we showed that, if is a Cauchy sequence in then converges to some in -norm and there is a subsequence of that converges pointwise a.e. to . We record this statement in the following porism We are using the term porism to refer to a result that is a consequence of a preceding proof, but not a corollary of the statement of the result the proof accompanies. This terminology was coined by Agler and McCarthy . .   Let be a measure space and let If is a sequence in which converges to some in -norm, then there is a subsequence of which converges pointwise a.e. to .   In general, pointwise a.e. convergence does not imply convergence in the -norm for ; and convergence in the -norm does not imply pointwise a.e. convergence. We can see this in the following examples.   For , let be the function on given by        The functions in .     The sequence converges pointwise to . Also   and so each with . Hence does not converge to in -norm.  Note that, the sequence can not converge to anything in -norm. Indeed, if converges in -norm to some , then by , a subsequence would converge pointwise a.e. to . Since converges pointwise to , any subsequence converges pointwise to , and so we must have .    For each , let   where and satisfy   These functions are sometimes called the typewriter functions or dancing functions typewriter functions dancing functions typewriter functions . Explicitly, we have        The typewriter functions, from .    If as above,    Thus and converges to in -norm. However, does not converge pointwise (nor pointwise a.e.) to any function. Indeed, for any there are infinitely many such that and infinitely many such that .   The -norm plays wholly more nicely with our earlier modes of convergence.   Let be a measure space and let be a sequence in . Then converges to some if and only if there is a measure zero set such that converges uniformly to on .  In particular, if converges to in the -norm, then converges pointwise a.e. to .   We turn our attention now to the question of separability of -spaces. We first establish that simple functions are dense in , .   Let be a measure space, and let . The collection of simple functions of the form where with is dense in .    Let be a simple function on . There are unique scalars and disjoint measurable sets such that If , then   and hence for . Conversely, it for , then   and hence .  Take any . By the simple approximation theorem there are simple functions converging pointwise to such that for all . Since and , it follows that for all . Further   As is integrable and is an upper bound for , the Lebesgue Dominated Convergence theorem says   Hence . I.e., converges to in the -norm.   When we are working with the Lebesgue measure on subsets of the real line we go further: replacing simple functions with step functions. We will then use this to show that is separable when is Lebesgue measurable, and .   Let be a bounded closed interval, and let . The step functions on are dense in    Let be a Lebesgue measurable set. We will show that we can approximate with a step function in the -norm. Fix . By the outer regularity of the Lebesgue measure, there is an open set such that Since is open, is a disjoint union of countably many open intervals . Choose , so that   and let . Then   and   Note that, since is a finite union of disjoint intervals, is a set function. By the above calculations we have   As simple functions are linear combinations of characteristic functions, it follows now that step functions are dense in the simple functions in . Hence, by , the step functions are dense in .    Let be a bounded closed interval, and let . The Banach space is separable.    Take an arbitrary step function   where is a partition of , let . Choose rationals such that, for ,   and let and . Choose such that for ,   and let be the step function   Then   Hence  We have shown that the collection of all step functions taking rational values on partitions of with rational interior endpoints is dense in the collection of all step functions. It follows from , that is dense in . It is not hard to see that is countable, and hence is separable.   Having shown that is separable, we can now show that is separable for all and all Lebesgue measurable .   Let be a Lebesgue measurable set, and let . The Banach space is separable.    For a closed bounded interval , let be defined as in the proof of . That is, is all rational-valued step functions on defined using partitions of using rational values.  First assume that is bounded. Let be a closed bounded interval such that . Since is dense in the set of simple functions on , the set   is dense in the collection of simple functions on . Hence, is separable, by .  Assume now that is unbounded. For each , let . By the above argument, since is bounded, there is a countable set which is dense in Extend each to by setting for .  Take and fix By the continuity of integration, ,   Thus, we can choose such that   Since is dense in , there exists such that Thus   Thus . Hence, the countable set is dense in , and so is separable.   The -spaces for Lebesgue measure are not the only separable nice class of separable -spaces: -spaces are also separable.   Let be a non-empty set and take . Then is separable if and only if is countable.    If is finite, then , where is the cardinality of . Hence is separable.  If is countably infinite, then there is a bijection from to . This bijection defines an isometric isomorphism from to . We will thus assume that .  The simple functions in are the sequences which are finitely non-zero. Take simple and . For , choose such that   and let Then   and so Hence the finitely non-zero rational sequences are dense in the finitely non-zero sequences. As the finitely non-zero sequences are dense in by , it follows that the rational-valued simple functions are dense in . There are countably many finitely non-zero rational sequences, and hence is simple.  That is not separable when is uncountable is left as an exercise, . I recommend looking at the proof of before attempting .   Take . We have shown that is separable for all Lebesgue measurable , and that is separable. What happens when ? In this case, we are not guaranteed separability.   The Banach spaces and are not separable.    Consider first . For each , let   Each is bounded and measurable, and hence . Note that, if then   Suppose is a dense subset of . For each ,fix such that   Note that, if ,   Thus, when , In, particular, if then Hence, the collection is uncountable. Therefore, is uncountable, and hence is not separable.  The proof that is not separable is similar. We will outline the details. Let be the collection of all sequences in of zeros and ones. Note that this is an uncountable collection. Indeed, if we can identify the binary expansion of any with a sequence in , and hence and have the same cardinality. Further, if and , then is a sequence of and with at least one non-zero term. Thus, . Using in the role that played in , we can show that any dense set in has to be uncountable. Hence is not separable.   "
+  "body": " -approximations and the Riesz-Fischer Theorem  In the proof, we will incidentally end up considering different types of convergence we now have for measurable functions.   Riesz-Fischer Theorem  Riesz-Fischer Theorem Let be a measure space. Then is a Banach space for all .    First take . Let be a Cauchy sequence in . Choose such that   for . Let and for . Then,   Let .  Let and Note that   for all . Since is an increasing sequence converging pointwise to ,   by the Monotone Convergence Theorem. Thus . In particular, is finite a.e. and so the series converges absolutely a.e. Let be the pointwise a.e. limit. Then , and hence . Further,   Hence, by the Lebesgue Dominated Convergence Theorem,   Hence the sequence of partial sums converges to in -norm. Note that   Thus the subsequence converges to in -norm. It follows that converges to , and hence is complete.  Now let and let be a Cauchy sequence in . By excising a set of measure if necessary, assume that each is bounded. Take any . There is an such that for all   Take any , and , then   Thus, is a Cauchy sequence of real numbers. Since is complete, is convergent. Define a function by   for each .  There is an such that if then   Thus, if , then   Letting   we have for all . Thus, for ,   Hence .  Take . Choose , such that if then Then, for , if ,    Hence is the limit of in the -norm, and hence is complete.   For the our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for we showed that, if is a Cauchy sequence in then converges to some in -norm and there is a subsequence of that converges pointwise a.e. to . We record this statement in the following porism We are using the term porism to refer to a result that is a consequence of a preceding proof, but not a corollary of the statement of the result the proof accompanies. This terminology was coined by Agler and McCarthy . .   Let be a measure space and let If is a sequence in which converges to some in -norm, then there is a subsequence of which converges pointwise a.e. to .   In general, pointwise a.e. convergence does not imply convergence in the -norm for ; and convergence in the -norm does not imply pointwise a.e. convergence. We can see this in the following examples.   For , let be the function on given by    The sequence converges pointwise to . Also   and so each with . Hence does not converge to in -norm.  Note that, the sequence can not converge to anything in -norm. Indeed, if converges in -norm to some , then by , a subsequence would converge pointwise a.e. to . Since converges pointwise to , any subsequence converges pointwise to , and so we must have .    For each , let   where and satisfy   These functions are sometimes called the typewriter functions or dancing functions typewriter functions dancing functions typewriter functions . Explicitly, we have       The typewriter functions, from .    If as above,    Thus and converges to in -norm. However, does not converge pointwise (nor pointwise a.e.) to any function. Indeed, for any there are infinitely many such that and infinitely many such that .   The -norm plays wholly more nicely with our earlier modes of convergence.   Let be a measure space and let be a sequence in . Then converges to some if and only if there is a measure zero set such that converges uniformly to on .  In particular, if converges to in the -norm, then converges pointwise a.e. to .   We turn our attention now to the question of separability of -spaces. We first establish that simple functions are dense in , .   Let be a measure space, and let . The collection of simple functions of the form where with is dense in .    Let be a simple function on . There are unique scalars and disjoint measurable sets such that If , then   and hence for . Conversely, it for , then   and hence .  Take any . By the simple approximation theorem there are simple functions converging pointwise to such that for all . Since and , it follows that for all . Further   As is integrable and is an upper bound for , the Lebesgue Dominated Convergence theorem says   Hence . I.e., converges to in the -norm.   When we are working with the Lebesgue measure on subsets of the real line we go further: replacing simple functions with step functions. We will then use this to show that is separable when is Lebesgue measurable, and .   Let be a bounded closed interval, and let . The step functions on are dense in    Let be a Lebesgue measurable set. We will show that we can approximate with a step function in the -norm. Fix . By the outer regularity of the Lebesgue measure, there is an open set such that Since is open, is a disjoint union of countably many open intervals . Choose , so that   and let . Then   and   Note that, since is a finite union of disjoint intervals, is a set function. By the above calculations we have   As simple functions are linear combinations of characteristic functions, it follows now that step functions are dense in the simple functions in . Hence, by , the step functions are dense in .    Let be a bounded closed interval, and let . The Banach space is separable.    Take an arbitrary step function   where is a partition of , let . Choose rationals such that, for ,   and let and . Choose such that for ,   and let be the step function   Then   Hence  We have shown that the collection of all step functions taking rational values on partitions of with rational interior endpoints is dense in the collection of all step functions. It follows from , that is dense in . It is not hard to see that is countable, and hence is separable.   Having shown that is separable, we can now show that is separable for all and all Lebesgue measurable .   Let be a Lebesgue measurable set, and let . The Banach space is separable.    For a closed bounded interval , let be defined as in the proof of . That is, is all rational-valued step functions on defined using partitions of using rational values.  First assume that is bounded. Let be a closed bounded interval such that . Since is dense in the set of simple functions on , the set   is dense in the collection of simple functions on . Hence, is separable, by .  Assume now that is unbounded. For each , let . By the above argument, since is bounded, there is a countable set which is dense in Extend each to by setting for .  Take and fix By the continuity of integration, ,   Thus, we can choose such that   Since is dense in , there exists such that Thus   Thus . Hence, the countable set is dense in , and so is separable.   The -spaces for Lebesgue measure are not the only separable nice class of separable -spaces: -spaces are also separable.   Let be a non-empty set and take . Then is separable if and only if is countable.    If is finite, then , where is the cardinality of . Hence is separable.  If is countably infinite, then there is a bijection from to . This bijection defines an isometric isomorphism from to . We will thus assume that .  The simple functions in are the sequences which are finitely non-zero. Take simple and . For , choose such that   and let Then   and so Hence the finitely non-zero rational sequences are dense in the finitely non-zero sequences. As the finitely non-zero sequences are dense in by , it follows that the rational-valued simple functions are dense in . There are countably many finitely non-zero rational sequences, and hence is simple.  That is not separable when is uncountable is left as an exercise, . I recommend looking at the proof of before attempting .   Take . We have shown that is separable for all Lebesgue measurable , and that is separable. What happens when ? In this case, we are not guaranteed separability.   The Banach spaces and are not separable.    Consider first . For each , let   Each is bounded and measurable, and hence . Note that, if then   Suppose is a dense subset of . For each ,fix such that   Note that, if ,   Thus, when , In, particular, if then Hence, the collection is uncountable. Therefore, is uncountable, and hence is not separable.  The proof that is not separable is similar. We will outline the details. Let be the collection of all sequences in of zeros and ones. Note that this is an uncountable collection. Indeed, if we can identify the binary expansion of any with a sequence in , and hence and have the same cardinality. Further, if and , then is a sequence of and with at least one non-zero term. Thus, . Using in the role that played in , we can show that any dense set in has to be uncountable. Hence is not separable.   "
 },
 {
   "id": "thm-Riesz-Fischer",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#thm-Riesz-Fischer",
+  "url": "chap-Lp-5.html#thm-Riesz-Fischer",
   "type": "Theorem",
   "number": "1.3.1",
   "title": "Riesz-Fischer Theorem.",
   "body": " Riesz-Fischer Theorem  Riesz-Fischer Theorem Let be a measure space. Then is a Banach space for all .  "
 },
 {
-  "id": "real-analysis-6-2-5-4",
+  "id": "chap-Lp-5-4",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-4",
+  "url": "chap-Lp-5.html#chap-Lp-5-4",
   "type": "Proof",
   "number": "1.3.1",
   "title": "",
@@ -4332,7 +4323,7 @@ var ptx_lunr_docs = [
 {
   "id": "cor-subseq-pw-ae-conver",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#cor-subseq-pw-ae-conver",
+  "url": "chap-Lp-5.html#cor-subseq-pw-ae-conver",
   "type": "Porism",
   "number": "1.3.2",
   "title": "",
@@ -4341,43 +4332,43 @@ var ptx_lunr_docs = [
 {
   "id": "ex-pw-not-L1",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#ex-pw-not-L1",
+  "url": "chap-Lp-5.html#ex-pw-not-L1",
   "type": "Example",
   "number": "1.3.3",
   "title": "",
-  "body": " For , let be the function on given by        The functions in .     The sequence converges pointwise to . Also   and so each with . Hence does not converge to in -norm.  Note that, the sequence can not converge to anything in -norm. Indeed, if converges in -norm to some , then by , a subsequence would converge pointwise a.e. to . Since converges pointwise to , any subsequence converges pointwise to , and so we must have .  "
+  "body": " For , let be the function on given by    The sequence converges pointwise to . Also   and so each with . Hence does not converge to in -norm.  Note that, the sequence can not converge to anything in -norm. Indeed, if converges in -norm to some , then by , a subsequence would converge pointwise a.e. to . Since converges pointwise to , any subsequence converges pointwise to , and so we must have .  "
 },
 {
   "id": "ex-typewriter",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#ex-typewriter",
+  "url": "chap-Lp-5.html#ex-typewriter",
   "type": "Example",
-  "number": "1.3.5",
+  "number": "1.3.4",
   "title": "",
-  "body": " For each , let   where and satisfy   These functions are sometimes called the typewriter functions or dancing functions typewriter functions dancing functions typewriter functions . Explicitly, we have        The typewriter functions, from .    If as above,    Thus and converges to in -norm. However, does not converge pointwise (nor pointwise a.e.) to any function. Indeed, for any there are infinitely many such that and infinitely many such that .  "
+  "body": " For each , let   where and satisfy   These functions are sometimes called the typewriter functions or dancing functions typewriter functions dancing functions typewriter functions . Explicitly, we have       The typewriter functions, from .    If as above,    Thus and converges to in -norm. However, does not converge pointwise (nor pointwise a.e.) to any function. Indeed, for any there are infinitely many such that and infinitely many such that .  "
 },
 {
-  "id": "real-analysis-6-2-5-11",
+  "id": "chap-Lp-5-11",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-11",
+  "url": "chap-Lp-5.html#chap-Lp-5-11",
   "type": "Proposition",
-  "number": "1.3.7",
+  "number": "1.3.6",
   "title": "",
   "body": " Let be a measure space and let be a sequence in . Then converges to some if and only if there is a measure zero set such that converges uniformly to on .  In particular, if converges to in the -norm, then converges pointwise a.e. to .  "
 },
 {
   "id": "prop-simple-dense",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#prop-simple-dense",
+  "url": "chap-Lp-5.html#prop-simple-dense",
   "type": "Proposition",
-  "number": "1.3.8",
+  "number": "1.3.7",
   "title": "",
   "body": " Let be a measure space, and let . The collection of simple functions of the form where with is dense in .  "
 },
 {
-  "id": "real-analysis-6-2-5-14",
+  "id": "chap-Lp-5-14",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-14",
+  "url": "chap-Lp-5.html#chap-Lp-5-14",
   "type": "Proof",
   "number": "1.3.2",
   "title": "",
@@ -4386,16 +4377,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-step-dense",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#lem-step-dense",
+  "url": "chap-Lp-5.html#lem-step-dense",
   "type": "Lemma",
-  "number": "1.3.9",
+  "number": "1.3.8",
   "title": "",
   "body": " Let be a bounded closed interval, and let . The step functions on are dense in  "
 },
 {
-  "id": "real-analysis-6-2-5-17",
+  "id": "chap-Lp-5-17",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-17",
+  "url": "chap-Lp-5.html#chap-Lp-5-17",
   "type": "Proof",
   "number": "1.3.3",
   "title": "",
@@ -4404,16 +4395,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-Lp-separable",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#lem-Lp-separable",
+  "url": "chap-Lp-5.html#lem-Lp-separable",
   "type": "Lemma",
-  "number": "1.3.10",
+  "number": "1.3.9",
   "title": "",
   "body": " Let be a bounded closed interval, and let . The Banach space is separable.  "
 },
 {
-  "id": "real-analysis-6-2-5-19",
+  "id": "chap-Lp-5-19",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-19",
+  "url": "chap-Lp-5.html#chap-Lp-5-19",
   "type": "Proof",
   "number": "1.3.4",
   "title": "",
@@ -4422,16 +4413,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-Lp-separable",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#thm-Lp-separable",
+  "url": "chap-Lp-5.html#thm-Lp-separable",
   "type": "Theorem",
-  "number": "1.3.11",
+  "number": "1.3.10",
   "title": "",
   "body": " Let be a Lebesgue measurable set, and let . The Banach space is separable.  "
 },
 {
-  "id": "real-analysis-6-2-5-22",
+  "id": "chap-Lp-5-22",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-22",
+  "url": "chap-Lp-5.html#chap-Lp-5-22",
   "type": "Proof",
   "number": "1.3.5",
   "title": "",
@@ -4440,16 +4431,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-lp-separable",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#thm-lp-separable",
+  "url": "chap-Lp-5.html#thm-lp-separable",
   "type": "Theorem",
-  "number": "1.3.12",
+  "number": "1.3.11",
   "title": "",
   "body": " Let be a non-empty set and take . Then is separable if and only if is countable.  "
 },
 {
-  "id": "real-analysis-6-2-5-25",
+  "id": "chap-Lp-5-25",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-25",
+  "url": "chap-Lp-5.html#chap-Lp-5-25",
   "type": "Proof",
   "number": "1.3.6",
   "title": "",
@@ -4458,25 +4449,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-linf-not-separable",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#thm-linf-not-separable",
+  "url": "chap-Lp-5.html#thm-linf-not-separable",
   "type": "Theorem",
-  "number": "1.3.13",
+  "number": "1.3.12",
   "title": "",
   "body": " The Banach spaces and are not separable.  "
 },
 {
-  "id": "real-analysis-6-2-5-28",
+  "id": "chap-Lp-5-28",
   "level": "2",
-  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-28",
+  "url": "chap-Lp-5.html#chap-Lp-5-28",
   "type": "Proof",
   "number": "1.3.7",
   "title": "",
   "body": " Consider first . For each , let   Each is bounded and measurable, and hence . Note that, if then   Suppose is a dense subset of . For each ,fix such that   Note that, if ,   Thus, when , In, particular, if then Hence, the collection is uncountable. Therefore, is uncountable, and hence is not separable.  The proof that is not separable is similar. We will outline the details. Let be the collection of all sequences in of zeros and ones. Note that this is an uncountable collection. Indeed, if we can identify the binary expansion of any with a sequence in , and hence and have the same cardinality. Further, if and , then is a sequence of and with at least one non-zero term. Thus, . Using in the role that played in , we can show that any dense set in has to be uncountable. Hence is not separable.  "
 },
 {
-  "id": "real-analysis-6-2-6",
+  "id": "chap-Lp-6",
   "level": "1",
-  "url": "real-analysis-6-2-6.html",
+  "url": "chap-Lp-6.html",
   "type": "Exercises",
   "number": "1.4",
   "title": "Exercises",
@@ -4485,7 +4476,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cauchy-Schwarz-Rn",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cauchy-Schwarz-Rn",
+  "url": "chap-Lp-6.html#exer-Cauchy-Schwarz-Rn",
   "type": "Exercise",
   "number": "1.4.1",
   "title": "",
@@ -4494,7 +4485,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-2-norm",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-2-norm",
+  "url": "chap-Lp-6.html#exer-2-norm",
   "type": "Exercise",
   "number": "1.4.2",
   "title": "",
@@ -4503,7 +4494,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cauchy-in-Rn",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cauchy-in-Rn",
+  "url": "chap-Lp-6.html#exer-Cauchy-in-Rn",
   "type": "Exercise",
   "number": "1.4.3",
   "title": "",
@@ -4512,7 +4503,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Rn-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Rn-Banach",
+  "url": "chap-Lp-6.html#exer-Rn-Banach",
   "type": "Exercise",
   "number": "1.4.4",
   "title": "",
@@ -4521,7 +4512,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cb-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cb-Banach",
+  "url": "chap-Lp-6.html#exer-Cb-Banach",
   "type": "Exercise",
   "number": "1.4.5",
   "title": "",
@@ -4530,16 +4521,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-C0-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-C0-Banach",
+  "url": "chap-Lp-6.html#exer-C0-Banach",
   "type": "Exercise",
   "number": "1.4.6",
   "title": "",
   "body": " Let be an interval and let be the collection of all continuous real-valued functions on which vanish at infinity.   Show that is a vector subspace of .   Show that is a Banach space with the -norm.    "
 },
 {
-  "id": "real-analysis-6-2-6-7",
+  "id": "chap-Lp-6-7",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#real-analysis-6-2-6-7",
+  "url": "chap-Lp-6.html#chap-Lp-6-7",
   "type": "Exercise",
   "number": "1.4.7",
   "title": "",
@@ -4548,7 +4539,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-norm-equiv",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-norm-equiv",
+  "url": "chap-Lp-6.html#exer-norm-equiv",
   "type": "Exercise",
   "number": "1.4.8",
   "title": "",
@@ -4557,7 +4548,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cc-not-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cc-not-Banach",
+  "url": "chap-Lp-6.html#exer-Cc-not-Banach",
   "type": "Exercise",
   "number": "1.4.9",
   "title": "",
@@ -4566,7 +4557,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cc-Banach",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cc-Banach",
+  "url": "chap-Lp-6.html#exer-Cc-Banach",
   "type": "Exercise",
   "number": "1.4.10",
   "title": "",
@@ -4575,7 +4566,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-ae-vec-space",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-ae-vec-space",
+  "url": "chap-Lp-6.html#exer-ae-vec-space",
   "type": "Exercise",
   "number": "1.4.11",
   "title": "",
@@ -4584,7 +4575,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Linf-vector-space",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Linf-vector-space",
+  "url": "chap-Lp-6.html#exer-Linf-vector-space",
   "type": "Exercise",
   "number": "1.4.12",
   "title": "",
@@ -4593,7 +4584,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-exp-convex",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-exp-convex",
+  "url": "chap-Lp-6.html#exer-exp-convex",
   "type": "Exercise",
   "number": "1.4.13",
   "title": "",
@@ -4602,7 +4593,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Cauchy-Schwarz",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-Cauchy-Schwarz",
+  "url": "chap-Lp-6.html#exer-Cauchy-Schwarz",
   "type": "Exercise",
   "number": "1.4.14",
   "title": "",
@@ -4611,16 +4602,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-lp-not-separable",
   "level": "2",
-  "url": "real-analysis-6-2-6.html#exer-lp-not-separable",
+  "url": "chap-Lp-6.html#exer-lp-not-separable",
   "type": "Exercise",
   "number": "1.4.15",
   "title": "",
   "body": " Let be an uncountable set, and let . Show that is not separable.  "
 },
 {
-  "id": "real-analysis-6-3-3",
+  "id": "chap-dual-spaces-3",
   "level": "1",
-  "url": "real-analysis-6-3-3.html",
+  "url": "chap-dual-spaces-3.html",
   "type": "Section",
   "number": "2.1",
   "title": "Linear functionals",
@@ -4629,34 +4620,34 @@ var ptx_lunr_docs = [
 {
   "id": "prop-bounded-cont",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#prop-bounded-cont",
+  "url": "chap-dual-spaces-3.html#prop-bounded-cont",
   "type": "Proposition",
   "number": "2.1.1",
   "title": "",
   "body": " Let and be two normed vector spaces. Let be a linear map. Then is continuous if and only if there exists such that   for all .  "
 },
 {
-  "id": "real-analysis-6-3-3-5",
+  "id": "chap-dual-spaces-3-5",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#real-analysis-6-3-3-5",
+  "url": "chap-dual-spaces-3.html#chap-dual-spaces-3-5",
   "type": "Proof",
   "number": "2.1.1",
   "title": "",
   "body": " First suppose that is continuous. There exists such that then . In particular, since is linear, if then . Take any non-zero . Fix with   Thus   and so   Conversely, suppose there is an such that for all . Take , and let . Suppose satisfy Then   Thus is continuous.  "
 },
 {
-  "id": "real-analysis-6-3-3-6",
+  "id": "chap-dual-spaces-3-6",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#real-analysis-6-3-3-6",
+  "url": "chap-dual-spaces-3.html#chap-dual-spaces-3-6",
   "type": "Definition",
   "number": "2.1.2",
   "title": "",
   "body": " Let be a normed vector space. A linear functional is a continuous linear map from to .  Denote by the collection of all linear functionals on . linear functional The space is called the dual space of . dual space  "
 },
 {
-  "id": "real-analysis-6-3-3-10",
+  "id": "chap-dual-spaces-3-10",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#real-analysis-6-3-3-10",
+  "url": "chap-dual-spaces-3.html#chap-dual-spaces-3-10",
   "type": "Definition",
   "number": "2.1.3",
   "title": "",
@@ -4665,25 +4656,25 @@ var ptx_lunr_docs = [
 {
   "id": "prop-operator-norm",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#prop-operator-norm",
+  "url": "chap-dual-spaces-3.html#prop-operator-norm",
   "type": "Proposition",
   "number": "2.1.4",
   "title": "",
   "body": " Let be a normed vector space and let be the operator norm on the dual . Then is a norm on .  Further   for all  "
 },
 {
-  "id": "real-analysis-6-3-3-14",
+  "id": "chap-dual-spaces-3-14",
   "level": "2",
-  "url": "real-analysis-6-3-3.html#real-analysis-6-3-3-14",
+  "url": "chap-dual-spaces-3.html#chap-dual-spaces-3-14",
   "type": "Theorem",
   "number": "2.1.5",
   "title": "",
   "body": " Let be a normed vector space and let be the operator norm on the dual . Then is a norm on . Further is a Banach space with the operator norm.  "
 },
 {
-  "id": "real-analysis-6-3-4",
+  "id": "chap-dual-spaces-4",
   "level": "1",
-  "url": "real-analysis-6-3-4.html",
+  "url": "chap-dual-spaces-4.html",
   "type": "Section",
   "number": "2.2",
   "title": "The dual of <span class=\"process-math\">\\(L^p\\)<\/span>-spaces",
@@ -4692,16 +4683,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-holder-for-dual",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#lem-holder-for-dual",
+  "url": "chap-dual-spaces-4.html#lem-holder-for-dual",
   "type": "Lemma",
   "number": "2.2.1",
   "title": "",
   "body": " Let be a measure space, fix with and let be conjugate to . The map   is a linear isometric map (i.e. for all ).  "
 },
 {
-  "id": "real-analysis-6-3-4-9",
+  "id": "chap-dual-spaces-4-9",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-9",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-9",
   "type": "Proof",
   "number": "2.2.1",
   "title": "",
@@ -4710,16 +4701,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-holder-for-dual-p-1",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#lem-holder-for-dual-p-1",
+  "url": "chap-dual-spaces-4.html#lem-holder-for-dual-p-1",
   "type": "Lemma",
   "number": "2.2.2",
   "title": "",
   "body": " Let be a -finite measure space. The map   is a linear isometric map.  "
 },
 {
-  "id": "real-analysis-6-3-4-12",
+  "id": "chap-dual-spaces-4-12",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-12",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-12",
   "type": "Proof",
   "number": "2.2.2",
   "title": "",
@@ -4728,16 +4719,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-functional-in-Lq",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#lem-functional-in-Lq",
+  "url": "chap-dual-spaces-4.html#lem-functional-in-Lq",
   "type": "Lemma",
   "number": "2.2.3",
   "title": "",
   "body": " Let be a measure space, let and let be conjugate to . Suppose is a measurable function on such that is -finite. Let   If , then and  "
 },
 {
-  "id": "real-analysis-6-3-4-15",
+  "id": "chap-dual-spaces-4-15",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-15",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-15",
   "type": "Proof",
   "number": "2.2.3",
   "title": "",
@@ -4746,25 +4737,25 @@ var ptx_lunr_docs = [
 {
   "id": "thm-riesz-rep-Lp",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#thm-riesz-rep-Lp",
+  "url": "chap-dual-spaces-4.html#thm-riesz-rep-Lp",
   "type": "Theorem",
   "number": "2.2.4",
   "title": "Riesz Representation Theorem for <span class=\"process-math\">\\(L^p\\)<\/span>-spaces.",
   "body": " Riesz Representation Theorem for -spaces  Riesz Representation Theorem for -spaces Let be a measure space, let and let be conjugate to . The map   is an isometric, linear bijection.  If is -finite, then the map   is an isometric, linear bijection.  "
 },
 {
-  "id": "real-analysis-6-3-4-17",
+  "id": "chap-dual-spaces-4-17",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-17",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-17",
   "type": "Proof",
   "number": "2.2.4",
   "title": "",
   "body": " Let and be conjugate with . That is a linear isometric map is shown in . It remains to show that is a surjective. In the proof we will first assume is a finite measure space; then a -finite measure space; finally we will just assume that is a measure space.  Assume is a finite measure space, and take Since is finite, for all Define a map on by   Note that if almost everywhere, then , and so In particular, Let be a countable collection of disjoint measurable sets, and let For each , let The sequence converges pointwise to . Thus, by the Lebesgue Dominated Convergence theorem, converges to with respect to the -norm. Thus, by the continuity of ,   We have shown that is a signed-measure on Clearly . By the Radon-Nikodym Theorem for signed-measures, , there is a integrable function on such that   for all . By the linearity of integration, if is a simple function, then   Thus   Hence, by , As for all simple functions , it follows from , that Thus is surjective.  Assume now that is -finite. Let be an increasing sequence of finite measure sets, such that We embed in be setting for for each . Note that this embedding preserves the -norm. Since , the above arguments shows that for each there is a such that   Thus, for all .  By the uniqueness of the Radon-Nikodym derivative in , if then almost everywhere. Thus, as elements of we have when We can thus define a function almost everywhere by   Thus, the sequence is an increasing sequence, converging pointwise a.e. to . Hence, by the Monotone Convergence Theorem,   Hence, .  Take any . The sequence converges pointwise to . By Hölders inequality, is integrable for all , and is integrable. It follows from the Lebesgue Dominated Convergence Theorem, that   Also, again by the Lebesgue Dominated Convergence Theorem,   Hence, by the continuity of ,   Therefore , completing the proof for the -finite case.  Now let be an arbitrary measure space. Again, if is measurable we embed into by setting functions to be on . By the above argument, if is -finite, then there is a such that   for all Note that, by the uniqueness of , if and are -finite with then almost everywhere. Thus Let   Take a sequence of -finite sets, such that converges to , and let Then is -finite, and for all .\\ Thus Suppose now that is -finite, with . Then   Thus and so almost everywhere. If , then by , the set   is -finite. Thus, the set is -finite, and   Hence , completing the proof for  When and the proof follows a similar vein of reasoning (when we assume is -finite). The details are left as an exercise, Exericse~\\ref{exer: riesz rep p=1}.  "
 },
 {
-  "id": "real-analysis-6-3-4-18",
+  "id": "chap-dual-spaces-4-18",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-18",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-18",
   "type": "Remark",
   "number": "2.2.5",
   "title": "",
@@ -4773,34 +4764,34 @@ var ptx_lunr_docs = [
 {
   "id": "ex-dual-of-linf",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#ex-dual-of-linf",
+  "url": "chap-dual-spaces-4.html#ex-dual-of-linf",
   "type": "Example",
   "number": "2.2.6",
   "title": "",
   "body": " Let be the collection of all sequences of real numbers that converge to . { } In we establish that is a separable Banach subspace for . For , we define a linear functional on by   shows that the map   is an isometric bijection. That is, .  In we show that if then there is an and a with for all such that   It is reasonable to believe that there are non-zero elements with . After all, is a not separable by , and is a separable by . That is larger than suggests that should be larger than . Exhibiting with this property is between difficult and impossible. However, with the Hahn-Banach theorem, a significant theorem in the field of Functional Analysis, one can show that such exist. Thus is not the same as under the standard isomorphism .  "
 },
 {
-  "id": "real-analysis-6-3-4-19-5",
+  "id": "chap-dual-spaces-4-19-5",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-19-5",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-19-5",
   "type": "Remark",
   "number": "2.2.7",
   "title": "",
   "body": " Consider the natural numbers with the discrete topology, i.e. the topology where every subsets of is open. Using the Stone-\\u{C}ech compactification from topology, it can be shown that there is a compact Hausdorff space containing a homeomorphic copy of , such that every bounded function on extends uniquely to a continuous bounded function on . The bounded functions on are simply . Thus, the Stone-\\u{C}ech compactification shows that . For each we can define a linear functional on by   One can show that, if , then The construction of guarantees that is uncountable. Using an argument similar to the proof of , we can use the uncountable collection to show that is not separable.  In we give a full description of the dual of using a class of signed measures on .  "
 },
 {
-  "id": "real-analysis-6-3-4-19-6",
+  "id": "chap-dual-spaces-4-19-6",
   "level": "2",
-  "url": "real-analysis-6-3-4.html#real-analysis-6-3-4-19-6",
+  "url": "chap-dual-spaces-4.html#chap-dual-spaces-4-19-6",
   "type": "Remark",
   "number": "2.2.8",
   "title": "",
   "body": " With functional analysis tools, we can say more. One can show that if is a Banach space which is not separable, then the dual space is also not separable. Proving that the dual of a non-separable space is non-separable relies on the Hahn-Banach theorem. Hahn-Banach theorem  Thus, since is not separable, we cannot have that is isomorphic to . We also know that is not separable by , and thus is not separable. As is separable, by , we must have that  "
 },
 {
-  "id": "real-analysis-6-3-5",
+  "id": "chap-dual-spaces-5",
   "level": "1",
-  "url": "real-analysis-6-3-5.html",
+  "url": "chap-dual-spaces-5.html",
   "type": "Section",
   "number": "2.3",
   "title": "Locally compact Hausdorff spaces",
@@ -4809,7 +4800,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-compact-finite-intersection",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#prop-compact-finite-intersection",
+  "url": "chap-dual-spaces-5.html#prop-compact-finite-intersection",
   "type": "Proposition",
   "number": "2.3.1",
   "title": "",
@@ -4818,52 +4809,52 @@ var ptx_lunr_docs = [
 {
   "id": "thm-tychonoff",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#thm-tychonoff",
+  "url": "chap-dual-spaces-5.html#thm-tychonoff",
   "type": "Theorem",
   "number": "2.3.2",
   "title": "Tychonoff’s Theorem.",
   "body": " Tychonoff's Theorem  Tychonoff's Theorem Let be a collection of topological spaces, let with the product topology. If is compact for all , then is compact.  "
 },
 {
-  "id": "real-analysis-6-3-5-15",
+  "id": "chap-dual-spaces-5-15",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-15",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-15",
   "type": "Definition",
   "number": "2.3.3",
   "title": "",
   "body": " Let be a topological space. The space is locally compact if every point has a compact neighborhood.  "
 },
 {
-  "id": "real-analysis-6-3-5-16",
+  "id": "chap-dual-spaces-5-16",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-16",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-16",
   "type": "Example",
   "number": "2.3.4",
   "title": "",
   "body": " Every compact space is locally compact.  "
 },
 {
-  "id": "real-analysis-6-3-5-17",
+  "id": "chap-dual-spaces-5-17",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-17",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-17",
   "type": "Example",
   "number": "2.3.5",
   "title": "",
   "body": " The real line is locally compact and Hausdorff. Indeed, for any , the set is a compact neighborhood of . More generally, is locally compact and Hausdorff. Indeed, if , then the neighborhood is compact by the Heine-Borel theorem.  "
 },
 {
-  "id": "real-analysis-6-3-5-18",
+  "id": "chap-dual-spaces-5-18",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-18",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-18",
   "type": "Example",
   "number": "2.3.6",
   "title": "",
   "body": " Every metric space is Hausdorff. However, not every metric space is locally compact. In particular, a Banach space is locally compact if and only if is finite dimensional.  "
 },
 {
-  "id": "real-analysis-6-3-5-19",
+  "id": "chap-dual-spaces-5-19",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-19",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-19",
   "type": "Example",
   "number": "2.3.7",
   "title": "",
@@ -4872,25 +4863,25 @@ var ptx_lunr_docs = [
 {
   "id": "prop-urysohn",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#prop-urysohn",
+  "url": "chap-dual-spaces-5.html#prop-urysohn",
   "type": "Proposition",
   "number": "2.3.8",
   "title": "Urysohn’s Lemma.",
   "body": " Urysohn's Lemma  Urysohn's Lemma Let be a locally compact Hausdorff space. Let be compact and be open such that . There exists a continuous, compactly supported function such that for all and for all .  "
 },
 {
-  "id": "real-analysis-6-3-5-32",
+  "id": "chap-dual-spaces-5-32",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-32",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-32",
   "type": "Example",
   "number": "2.3.9",
   "title": "",
   "body": " Suppose is a metric space with metric (not necessarily locally compact), and that with closed and open. For any closed set , let be the function on defined by For each closed , it can be shown that is a continuous function. Now, define a function on by   Then is a continuous function from to satisfying for , and for .  "
 },
 {
-  "id": "real-analysis-6-3-5-33",
+  "id": "chap-dual-spaces-5-33",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-33",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-33",
   "type": "Definition",
   "number": "2.3.10",
   "title": "",
@@ -4899,43 +4890,43 @@ var ptx_lunr_docs = [
 {
   "id": "prop-decomp-of-unity",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#prop-decomp-of-unity",
+  "url": "chap-dual-spaces-5.html#prop-decomp-of-unity",
   "type": "Proposition",
   "number": "2.3.11",
   "title": "",
   "body": " Let be a locally compact Hausdorff space, be compact, and be an open cover of . There is a partition of unity for subordinate to .  "
 },
 {
-  "id": "real-analysis-6-3-5-37",
+  "id": "chap-dual-spaces-5-37",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-37",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-37",
   "type": "Definition",
   "number": "2.3.12",
   "title": "",
   "body": " Let be a locally compact Hausdorff space and let be a Borel measure on . Take . The measure is outer regular measure outer regular on if   and inner regular measure inner regular on if   The measure is a Radon measure Radon measure if is outer regular on all Borel sets, and inner regular on all open sets.  A signed Borel measure on is a Radon signed measure Radon measure Radon signed measure if the measure of total variation is a Radon measure.  "
 },
 {
-  "id": "real-analysis-6-3-5-38",
+  "id": "chap-dual-spaces-5-38",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-38",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-38",
   "type": "Example",
   "number": "2.3.13",
   "title": "",
   "body": " Let be the Lebesgue measure on the Borel subsets of . By , is a Radon measure.  "
 },
 {
-  "id": "real-analysis-6-3-5-39",
+  "id": "chap-dual-spaces-5-39",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-39",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-39",
   "type": "Example",
   "number": "2.3.14",
   "title": "",
   "body": " Let be a Borel measure on . By , is outer regular on all Borel sets. By , is inner regular on open subsets , and hence is a Radon measure.  "
 },
 {
-  "id": "real-analysis-6-3-5-40",
+  "id": "chap-dual-spaces-5-40",
   "level": "2",
-  "url": "real-analysis-6-3-5.html#real-analysis-6-3-5-40",
+  "url": "chap-dual-spaces-5.html#chap-dual-spaces-5-40",
   "type": "Example",
   "number": "2.3.15",
   "title": "",
@@ -5149,9 +5140,9 @@ var ptx_lunr_docs = [
   "body": " Let be a closed bounded interval on , and let be a right-continuous function of bounded variation on . By there is a unique Borel signed measure on such that . Let be the linear functional on defined by .  Now let , , and be the Jordan decompositions of , , and respectively. Then, by ,   and, as discussed in ,   Thus, the Jordan decomposition for linear functionals on recovers the Jordan decomposition for right-continuous functions of bounded variation on .  "
 },
 {
-  "id": "real-analysis-6-3-7",
+  "id": "chap-dual-spaces-7",
   "level": "1",
-  "url": "real-analysis-6-3-7.html",
+  "url": "chap-dual-spaces-7.html",
   "type": "Exercises",
   "number": "2.5",
   "title": "Exercises",
@@ -5160,7 +5151,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-operator-norm",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-operator-norm",
+  "url": "chap-dual-spaces-7.html#exer-operator-norm",
   "type": "Exercise",
   "number": "2.5.1",
   "title": "",
@@ -5169,7 +5160,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-riesz-rep-p-1",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-riesz-rep-p-1",
+  "url": "chap-dual-spaces-7.html#exer-riesz-rep-p-1",
   "type": "Exercise",
   "number": "2.5.2",
   "title": "",
@@ -5178,7 +5169,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-yes-dual",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-yes-dual",
+  "url": "chap-dual-spaces-7.html#exer-yes-dual",
   "type": "Exercise",
   "number": "2.5.3",
   "title": "",
@@ -5187,7 +5178,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-not-dual",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-not-dual",
+  "url": "chap-dual-spaces-7.html#exer-not-dual",
   "type": "Exercise",
   "number": "2.5.4",
   "title": "",
@@ -5196,7 +5187,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-c0",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-c0",
+  "url": "chap-dual-spaces-7.html#exer-c0",
   "type": "Exercise",
   "number": "2.5.5",
   "title": "",
@@ -5205,7 +5196,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-dual-of-c0",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-dual-of-c0",
+  "url": "chap-dual-spaces-7.html#exer-dual-of-c0",
   "type": "Exercise",
   "number": "2.5.6",
   "title": "",
@@ -5214,7 +5205,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-dual-of-linf",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-dual-of-linf",
+  "url": "chap-dual-spaces-7.html#exer-dual-of-linf",
   "type": "Exercise",
   "number": "2.5.7",
   "title": "",
@@ -5223,7 +5214,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-norm-on-bfa",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-norm-on-bfa",
+  "url": "chap-dual-spaces-7.html#exer-norm-on-bfa",
   "type": "Exercise",
   "number": "2.5.8",
   "title": "",
@@ -5232,7 +5223,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-bfa-integral",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-bfa-integral",
+  "url": "chap-dual-spaces-7.html#exer-bfa-integral",
   "type": "Exercise",
   "number": "2.5.9",
   "title": "",
@@ -5241,16 +5232,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-kantor",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-kantor",
+  "url": "chap-dual-spaces-7.html#exer-kantor",
   "type": "Exercise",
   "number": "2.5.10",
   "title": "",
   "body": " Let be a measure space and let be the normed vector space of all bounded finitely additive signed measures on which are absolutely continuous with respect to . That is, is the collection of all bounded finitely additive signed measures such that whenever .   Show that  for all and .    For , define by  Show that is a bounded linear functional on such that    Let be a bounded linear functional on . Define by for all . Show that and that   Show that the map defined by is a bijective linear map with That is, conclude    The above result is known as the Kantorovitch Representation Theorem. Kantorovitch Representation Theorem  "
 },
 {
-  "id": "real-analysis-6-3-7-11",
+  "id": "chap-dual-spaces-7-11",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#real-analysis-6-3-7-11",
+  "url": "chap-dual-spaces-7.html#chap-dual-spaces-7-11",
   "type": "Exercise",
   "number": "2.5.11",
   "title": "",
@@ -5259,16 +5250,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Borel-on-R-Radon",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-Borel-on-R-Radon",
+  "url": "chap-dual-spaces-7.html#exer-Borel-on-R-Radon",
   "type": "Exercise",
   "number": "2.5.12",
   "title": "",
   "body": " Let be a Borel measure on . Show that is inner regular on all open subsets . (HINT: consider the three cases, (i) ; (ii) and is a disjoint union of finitely many open intervals; and (iii) and is a disjoint union of infinitely many open intervals.)  "
 },
 {
-  "id": "real-analysis-6-3-7-13",
+  "id": "chap-dual-spaces-7-13",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#real-analysis-6-3-7-13",
+  "url": "chap-dual-spaces-7.html#chap-dual-spaces-7-13",
   "type": "Exercise",
   "number": "2.5.13",
   "title": "",
@@ -5277,7 +5268,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-norm-of-positive",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-norm-of-positive",
+  "url": "chap-dual-spaces-7.html#exer-norm-of-positive",
   "type": "Exercise",
   "number": "2.5.14",
   "title": "",
@@ -5286,7 +5277,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-radon-vec-space",
   "level": "2",
-  "url": "real-analysis-6-3-7.html#exer-radon-vec-space",
+  "url": "chap-dual-spaces-7.html#exer-radon-vec-space",
   "type": "Exercise",
   "number": "2.5.15",
   "title": "",
@@ -5770,9 +5761,9 @@ var ptx_lunr_docs = [
   "body": " Prove . That is, show that is is a Borel subset of then is Lebesgue measurable. (HINT: First show that open subsets of are Lebesgue measurable.)  "
 },
 {
-  "id": "real-analysis-7-3-3",
+  "id": "chap-Haar-3",
   "level": "1",
-  "url": "real-analysis-7-3-3.html",
+  "url": "chap-Haar-3.html",
   "type": "Section",
   "number": "2.1",
   "title": "Locally compact groups",
@@ -5781,7 +5772,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#def-top-group",
+  "url": "chap-Haar-3.html#def-top-group",
   "type": "Definition",
   "number": "2.1.1",
   "title": "",
@@ -5790,7 +5781,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-discrete-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#ex-discrete-top-group",
+  "url": "chap-Haar-3.html#ex-discrete-top-group",
   "type": "Example",
   "number": "2.1.2",
   "title": "",
@@ -5799,16 +5790,16 @@ var ptx_lunr_docs = [
 {
   "id": "ex-R-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#ex-R-top-group",
+  "url": "chap-Haar-3.html#ex-R-top-group",
   "type": "Example",
   "number": "2.1.3",
   "title": "",
   "body": " The real line with the operation of addition is a locally compact Hausdorff group. More generally, is a locally compact Hausdorff group under addition. See .  "
 },
 {
-  "id": "real-analysis-7-3-3-8",
+  "id": "chap-Haar-3-8",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#real-analysis-7-3-3-8",
+  "url": "chap-Haar-3.html#chap-Haar-3-8",
   "type": "Example",
   "number": "2.1.4",
   "title": "",
@@ -5817,7 +5808,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-R-mult-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#ex-R-mult-top-group",
+  "url": "chap-Haar-3.html#ex-R-mult-top-group",
   "type": "Example",
   "number": "2.1.5",
   "title": "",
@@ -5826,7 +5817,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-T-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#ex-T-top-group",
+  "url": "chap-Haar-3.html#ex-T-top-group",
   "type": "Example",
   "number": "2.1.6",
   "title": "",
@@ -5835,25 +5826,25 @@ var ptx_lunr_docs = [
 {
   "id": "ex-GLn-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#ex-GLn-top-group",
+  "url": "chap-Haar-3.html#ex-GLn-top-group",
   "type": "Example",
   "number": "2.1.7",
   "title": "",
   "body": " The general linear group (of degree )  , is the set of all invertible matrices. general linear group The general linear group is a group with the operation of matrix multiplication. The general linear group is a subset of the finite dimensional vector space of all matrices. Endowing with its usual topology, induces a topology on which makes a locally compact Hausdorff group.  There are several ways we can describe the topology on . The easiest way is in terms of a norm. We can put a -norm on for by identifying with We can also put the operator norm on as described in . All these norms are equivalent, and so give the same topology on ; it doesn't matter what norm you use (see ). asks you to show is a topological group using the operator norm.  "
 },
 {
-  "id": "real-analysis-7-3-3-12",
+  "id": "chap-Haar-3-12",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#real-analysis-7-3-3-12",
+  "url": "chap-Haar-3.html#chap-Haar-3-12",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "symmetric "
 },
 {
-  "id": "real-analysis-7-3-3-13",
+  "id": "chap-Haar-3-13",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#real-analysis-7-3-3-13",
+  "url": "chap-Haar-3.html#chap-Haar-3-13",
   "type": "Remark",
   "number": "2.1.8",
   "title": "",
@@ -5862,7 +5853,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-open-in-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#lem-open-in-top-group",
+  "url": "chap-Haar-3.html#lem-open-in-top-group",
   "type": "Lemma",
   "number": "2.1.9",
   "title": "",
@@ -5871,16 +5862,16 @@ var ptx_lunr_docs = [
 {
   "id": "def-left-uniform-cont",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#def-left-uniform-cont",
+  "url": "chap-Haar-3.html#def-left-uniform-cont",
   "type": "Definition",
   "number": "2.1.10",
   "title": "",
   "body": "  Let be a topological group, let , and let be a bounded real-valued function on . Define the left translation of by as the function and define the right translation of by as the function translation of a function by a group element   The function is left uniformly continuous if, for all there is a neighborhood of the identity such that for all continuous left uniformly continuous   The function is right uniformly continuous if, for all there is a neighborhood of the identity such that for all  continuous right uniformly continuous    "
 },
 {
-  "id": "real-analysis-7-3-3-16",
+  "id": "chap-Haar-3-16",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#real-analysis-7-3-3-16",
+  "url": "chap-Haar-3.html#chap-Haar-3-16",
   "type": "Remark",
   "number": "2.1.11",
   "title": "",
@@ -5889,43 +5880,43 @@ var ptx_lunr_docs = [
 {
   "id": "prop-left-uniform-cont",
   "level": "2",
-  "url": "real-analysis-7-3-3.html#prop-left-uniform-cont",
+  "url": "chap-Haar-3.html#prop-left-uniform-cont",
   "type": "Proposition",
   "number": "2.1.12",
   "title": "",
   "body": "  Let be a locally compact group. Every function in is left and right uniformly continuous.    Fix , and let be the (necessarily compact) closure of the support of . Take . For each , let be the open set and let . Then, for each ,   By , there is a symmetric open open neighborhood of , such that . Since is compact, there are such that Let and fix   Take . There is a such that, . Since it follows that Note that and hence Thus,   Take . Then . If , then for some . Thus, since and (recall that each is symmetric). Hence, Thus, If , then and so,   We have shown that there is a neighborhood of , such that if and then Thus, for all , and hence is right uniformly continuous. That is left uniformly continuous can be shown similarly.   "
 },
 {
-  "id": "real-analysis-7-3-4",
+  "id": "chap-Haar-4",
   "level": "1",
-  "url": "real-analysis-7-3-4.html",
+  "url": "chap-Haar-4.html",
   "type": "Section",
   "number": "2.2",
   "title": "Radon measures on locally compact groups",
   "body": "Radon measures on locally compact groups  Let be a locally compact Hausdorff group. In this section we will study, and prove the existence of, Radon measures which are invariant under the action of on its Borel subsets. These are what we call Haar measures.    Let be a locally compact Hausdorff group. A non-zero Radon measure on is a left Haar measure if for all Borel sets and  Similarly, a Radon measure on is a right Haar measure if for all Borel sets and . measure Haar measure If a measure is both a left and a right Haar measure we will call a Haar measure .    We have seen some examples of Haar measures and several others are readily available.   Let be a discrete group (see ). The counting measure on is both a Haar measure.    The Lebesgue measure on the topological group is a Haar measure by .    Let be the group as in . Define a measure on the Borel sets in by for each Borel set , where is the Lebesgue measure. The measure is a Haar measure, see .    Let be the topological group described in . Note that if then there is a unique such that . Define a function Let be the Lebesgue measure on and define a measure on by Then is a Haar measure on ,      Recall the general linear group from . Identify the matrices with , and let be the Lebesgue measure on Define a measure on the Borel sets of by Note that if then defines an invertible linear map We can thus view as an matrix. One can show that . For small you can show this by hand, and perhaps use those calculations to construct a general argument. Alternatively, you can show that there is a symmetric orthogonal matrix such that , where is the identity matrix on . The result follows immediately from this. Thus, that is a left Haar measure follows from . That is a right Haar measure follows from the a similar argument, by considering multiplication on the right.    In all the examples above, we have exhibited Haar measures, i.e. measures that are simultaneously both left and right Haar measures. It is possible for a measure to be a left Haar measure and note a right Haar measure, or a right Haar measure and not a left Haar measure, as the next example shows.    Let be the semidirect product with product defined as for and . Then is a locally compact Hausdorff group (with the product topology on ). As a group, is isomorphic to the group of affine linear transformations on .  Define functions and on by and Define measures and on by for each Borel , where is the Lebesgue measure on (restricted to ).  Take any Borel and . Then, with the aide of Tonelli's Theorem and , we have where the third last equality apples (from ). Hence is a left Haar measure. However, is not a right Haar measure. Similarly, one can show that is a right Haar measure, but not a left Haar measure. Details are left to .    Whilst left and right Haar measures may be different, they will always come in pairs. The next lemma shows that a group with a left Haar measure will always have a right Haar measure, and a group with a right Haar measure will always have a left Haar measure. The prove is straightforward, and omitted.    Let be a locally compact Hausdorff group and let be a Radon measure on . Define a Radon measure by If is a left Haar measure, then is a right Haar measure; if is a right Haar measure, then is a left Haar measure.    We turn our attention now to proving the existence of Haar measures. We will prove the existence of left Haar measures, the existence of right Haar measures will follow by . From we know that there is a one-to-one correspondence between Radon measures on and positive linear functionals on . We first address the question of which linear functionals give rise to left Haar measures. We will then prove the existence of such linear functionals.    Let be a locally compact Hausdorff group. A functional on is left invariant if for all and . linear functional left invariant       Let be a locally compact Hausdorff group. Let be a Radon measure on and let be the positive linear functional on defined by for all The measure is a left Haar measure, if and only if is left invariant.    First assume that is a left Haar measure. Then, if is a Borel set, and , then By the linearity of integration , it follows that for all positive simple functions on . That is left invariant follows by the Simple Approximation Theorem and the Monotone Convergence Theorem .  Assume now that is left invariant. Fix open and take any compact subset . By Urysohn's Lemma , there is an such that , for and for . Take any . Then, By the inner regularity of open sets (since is a Radon measure) A similar argument shows that We have thus shown that for all and . It follows that for all and all Borel. Thus, is a left Haar measure.     (with ) says that finding a left Haar measure on a locally compact Hausdorff group is equivalent to finding a left invariant positive linear functional on . We will concentrate on finding such a linear functional. This will be a non-trivial process. We will first introduce a class of left invariant functions from to . These functions will not, unfortunately, be linear. However, we can use these functions to prove the existence of a left invariant linear functional.    Let be a locally compact Hausdorff group and let be non-zero positive functions. Then there exists scalars and such that     Let be the compact support of , and let The set is a non-empty open set. Note that is an open cover of , and hence . Since is compact, there are such that is an open cover of . If , there exists and such that . Since, , it follows that If , then and so the inequality also holds there.    For positive, non-zero functions we define Note that , by . If , then Thus, It follows that   Fix now a non-zero, positive . For each non-zero, positive define a function on the non-zero positive functions by The functions share a number of properties with left invariant linear functionals. They are, however, not necessarily linear.    Let be a locally compact Hausdorff group, be non-zero positive functions. Then   for all ;   for all scalars ;   ;   .  if , there exists an open neighborhood of the identity such that if the compact support of is in ;      Note that, for all  if and only if It follows that , and hence    and are (near) immediate, so we will turn our attention to . If there are positive scalars , and such that then Thus and so Similarly, and so , completing .  We will now prove Let be the compact support of , and let be a positive function such that for all Note that such a exists by Urysohn's Lemma . Take and let For , let . By  and are right uniformly continuous. Thus, there is an open neighborhood of the identity such that for all Thus, if then   Assume the the compact support of is in . Take scalars and such that Then, for , for  Note that, if , then , and hence , for Thus, Hence , for . Since, it follows that It follows now that where the last inequality is an application of and . By , the result follows if     By , as the support of becomes a smaller and smaller neighborhood of the identity, gets closer and closer to a left-invariant linear map on the positive functions in . It is possible to take a limit of as the support of gets smaller, this is what Cartan does in his proof of the existence (and uniqueness) of the Haar measure. The details of this limit are rather complicated, and so we take another route to the proof.  Let a collection of subsets of . Let be the Cartesian product. Let be a function satisfying for all . Then defines a unique element of : . Conversely, if , then determines a function by Thus, the set can be viewed as the collection of all function such that for each . This viewpoint of cartesian products will be necessary in the following proof.    Let be a locally compact Hausdorff group. Then there is a left Haar measure on .    Let be the collection of all non-zero, positive functions in . Let be a fixed function in and let be defined for each as in . For each let be the closed interval and let be the Cartesian product, endowed with the product topology. By Tychonoff's Theorem , is a compact space, and by  , for all   For each open neighborhood of the identity in let be the closure of the set in . If are open neighborhoods of the identity, then Hence, by , . Take We will show that can be extended to a left invariant linear functional on   Note that for each neighborhood of the identity. Thus, given and , there is an open neighborhood of the identity and a with , such that for This is, essentially, all we need to complete the proof.  Take and . For , there is an such that Hence, by part  , As this holds for all , it follows that Similarly, if and , for there is an such that and so, by  , Hence,   Now take and . By  , there is a neighborhood of the identity such that if then Choose with such that Note that, by  , and the choice of , Hence Hence, It follows that   We extend to all of by setting where is the decomposition of into its positive and negative parts. That this extension is linear follows by the same reasoning as we saw in the proof of . We have just shown that there is a positive left invariant linear functional on . By and it follows that there is a left Haar measure on .    We present a proof of the uniqueness of the Haar measure in the special case when is -compact, i.e. when is a countable union of compact sets. This proof follows the ideas of . For a general proof see, e.g., Chapter 11 of . Note that, , , , and are all -compact groups; the discrete groups in are -compact when countable. s   Let be a locally compact Hausdorff group. If and are two left Haar measures on , then there is a constant such that     Proof (of -compact case)  Let be a -compact locally compact Hausdorff group, and let and be two Haar measures on . Since is -compact and and are Radon measures, both and are -finite.  Assume that . Then . Hence, by the Radon-Nikodym Theorem , there is a non-negative Borel measurable function such that for all Borel sets . Note that, since , Further, by , if is -integrable, then Thus, for and , since and are left Haar measures, Thus, for all and , , and hence almost everywhere.  Consider, now the function Let be the completion of , as in . By Tonelli's Theorem  Hence, for almost all , . Using again, that is a left Haar measure, we have for almost all , Hence, is constant almost everywhere, and thus for a constant .  Now consider the general case, when we do not necessarily have . Assume that . Note that is also a left Haar measure, and By the above argument, there is a constant , such that . Hence, completing the proof.    "
 },
 {
-  "id": "real-analysis-7-3-4-3",
+  "id": "chap-Haar-4-3",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#real-analysis-7-3-4-3",
+  "url": "chap-Haar-4.html#chap-Haar-4-3",
   "type": "Definition",
   "number": "2.2.1",
   "title": "",
   "body": "  Let be a locally compact Hausdorff group. A non-zero Radon measure on is a left Haar measure if for all Borel sets and  Similarly, a Radon measure on is a right Haar measure if for all Borel sets and . measure Haar measure If a measure is both a left and a right Haar measure we will call a Haar measure .   "
 },
 {
-  "id": "real-analysis-7-3-4-5",
+  "id": "chap-Haar-4-5",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#real-analysis-7-3-4-5",
+  "url": "chap-Haar-4.html#chap-Haar-4-5",
   "type": "Example",
   "number": "2.2.2",
   "title": "",
   "body": " Let be a discrete group (see ). The counting measure on is both a Haar measure.  "
 },
 {
-  "id": "real-analysis-7-3-4-6",
+  "id": "chap-Haar-4-6",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#real-analysis-7-3-4-6",
+  "url": "chap-Haar-4.html#chap-Haar-4-6",
   "type": "Example",
   "number": "2.2.3",
   "title": "",
@@ -5934,7 +5925,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-R-prod-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#ex-R-prod-Haar",
+  "url": "chap-Haar-4.html#ex-R-prod-Haar",
   "type": "Example",
   "number": "2.2.4",
   "title": "",
@@ -5943,16 +5934,16 @@ var ptx_lunr_docs = [
 {
   "id": "ex-T-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#ex-T-Haar",
+  "url": "chap-Haar-4.html#ex-T-Haar",
   "type": "Example",
   "number": "2.2.5",
   "title": "",
   "body": " Let be the topological group described in . Note that if then there is a unique such that . Define a function Let be the Lebesgue measure on and define a measure on by Then is a Haar measure on ,   "
 },
 {
-  "id": "real-analysis-7-3-4-9",
+  "id": "chap-Haar-4-9",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#real-analysis-7-3-4-9",
+  "url": "chap-Haar-4.html#chap-Haar-4-9",
   "type": "Example",
   "number": "2.2.6",
   "title": "",
@@ -5961,7 +5952,7 @@ var ptx_lunr_docs = [
 {
   "id": "ex-Haar-left-not-right",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#ex-Haar-left-not-right",
+  "url": "chap-Haar-4.html#ex-Haar-left-not-right",
   "type": "Example",
   "number": "2.2.7",
   "title": "",
@@ -5970,7 +5961,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-left-to-right-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#lem-left-to-right-Haar",
+  "url": "chap-Haar-4.html#lem-left-to-right-Haar",
   "type": "Lemma",
   "number": "2.2.8",
   "title": "",
@@ -5979,7 +5970,7 @@ var ptx_lunr_docs = [
 {
   "id": "def-functional-invariant",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#def-functional-invariant",
+  "url": "chap-Haar-4.html#def-functional-invariant",
   "type": "Definition",
   "number": "2.2.9",
   "title": "",
@@ -5988,7 +5979,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-haar-inv",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#lem-haar-inv",
+  "url": "chap-Haar-4.html#lem-haar-inv",
   "type": "Lemma",
   "number": "2.2.10",
   "title": "",
@@ -5997,7 +5988,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-haar-func-1",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#lem-haar-func-1",
+  "url": "chap-Haar-4.html#lem-haar-func-1",
   "type": "Lemma",
   "number": "2.2.11",
   "title": "",
@@ -6006,7 +5997,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-haar-func-2",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#lem-haar-func-2",
+  "url": "chap-Haar-4.html#lem-haar-func-2",
   "type": "Lemma",
   "number": "2.2.12",
   "title": "",
@@ -6015,7 +6006,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#thm-Haar",
+  "url": "chap-Haar-4.html#thm-Haar",
   "type": "Theorem",
   "number": "2.2.13",
   "title": "",
@@ -6024,16 +6015,16 @@ var ptx_lunr_docs = [
 {
   "id": "thm-Haar-unique",
   "level": "2",
-  "url": "real-analysis-7-3-4.html#thm-Haar-unique",
+  "url": "chap-Haar-4.html#thm-Haar-unique",
   "type": "Theorem",
   "number": "2.2.14",
   "title": "",
   "body": "  Let be a locally compact Hausdorff group. If and are two left Haar measures on , then there is a constant such that     Proof (of -compact case)  Let be a -compact locally compact Hausdorff group, and let and be two Haar measures on . Since is -compact and and are Radon measures, both and are -finite.  Assume that . Then . Hence, by the Radon-Nikodym Theorem , there is a non-negative Borel measurable function such that for all Borel sets . Note that, since , Further, by , if is -integrable, then Thus, for and , since and are left Haar measures, Thus, for all and , , and hence almost everywhere.  Consider, now the function Let be the completion of , as in . By Tonelli's Theorem  Hence, for almost all , . Using again, that is a left Haar measure, we have for almost all , Hence, is constant almost everywhere, and thus for a constant .  Now consider the general case, when we do not necessarily have . Assume that . Note that is also a left Haar measure, and By the above argument, there is a constant , such that . Hence, completing the proof.   "
 },
 {
-  "id": "real-analysis-7-3-5",
+  "id": "chap-Haar-5",
   "level": "1",
-  "url": "real-analysis-7-3-5.html",
+  "url": "chap-Haar-5.html",
   "type": "Exercises",
   "number": "2.3",
   "title": "Exercises",
@@ -6042,7 +6033,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-R-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-R-top-group",
+  "url": "chap-Haar-5.html#exer-R-top-group",
   "type": "Exercise",
   "number": "2.3.1",
   "title": "",
@@ -6051,16 +6042,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-T-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-T-top-group",
+  "url": "chap-Haar-5.html#exer-T-top-group",
   "type": "Exercise",
   "number": "2.3.2",
   "title": "",
   "body": "  Show that , as described in , is a topological group.    This can be shown directly. Alternatively, consider with the operation of addition, modulo . That is, is the group Show that is a topological group. Then show that there is a bijection such that is a homeomorphism and is a (group) isomorphism, to conclude that is a topological group.   "
 },
 {
-  "id": "real-analysis-7-3-5-3",
+  "id": "chap-Haar-5-3",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#real-analysis-7-3-5-3",
+  "url": "chap-Haar-5.html#chap-Haar-5-3",
   "type": "Exercise",
   "number": "2.3.3",
   "title": "",
@@ -6069,7 +6060,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-GLn-top-group",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-GLn-top-group",
+  "url": "chap-Haar-5.html#exer-GLn-top-group",
   "type": "Exercise",
   "number": "2.3.4",
   "title": "",
@@ -6078,7 +6069,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-R-prod-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-R-prod-Haar",
+  "url": "chap-Haar-5.html#exer-R-prod-Haar",
   "type": "Exercise",
   "number": "2.3.5",
   "title": "",
@@ -6087,7 +6078,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-T-Haar",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-T-Haar",
+  "url": "chap-Haar-5.html#exer-T-Haar",
   "type": "Exercise",
   "number": "2.3.6",
   "title": "",
@@ -6096,7 +6087,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-Haar-left-not-right",
   "level": "2",
-  "url": "real-analysis-7-3-5.html#exer-Haar-left-not-right",
+  "url": "chap-Haar-5.html#exer-Haar-left-not-right",
   "type": "Exercise",
   "number": "2.3.7",
   "title": "",
@@ -6292,9 +6283,9 @@ var ptx_lunr_docs = [
   "body": "     "
 },
 {
-  "id": "real-analysis-7-4-5",
+  "id": "chap-Hausdorff-5",
   "level": "1",
-  "url": "real-analysis-7-4-5.html",
+  "url": "chap-Hausdorff-5.html",
   "type": "Exercises",
   "number": "3.3",
   "title": "Exercises",
@@ -6303,7 +6294,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-subspace-Hausdorff-dim",
   "level": "2",
-  "url": "real-analysis-7-4-5.html#exer-subspace-Hausdorff-dim",
+  "url": "chap-Hausdorff-5.html#exer-subspace-Hausdorff-dim",
   "type": "Exercise",
   "number": "3.3.1",
   "title": "",
@@ -6312,11 +6303,20 @@ var ptx_lunr_docs = [
 {
   "id": "exer-circle-Hausdorff-dim",
   "level": "2",
-  "url": "real-analysis-7-4-5.html#exer-circle-Hausdorff-dim",
+  "url": "chap-Hausdorff-5.html#exer-circle-Hausdorff-dim",
   "type": "Exercise",
   "number": "3.3.2",
   "title": "",
   "body": "  Let be the unit circle in . Let be the Haar measure on as given in . Extend to a Borel measure on by setting for all Borel .     Let be a closed arc on . That is, for some and . Show that     Note that is the arc length of , and is the length of the chord from to when .      Show that     Show that if Borel with then there is an arc such that , and apply . Use this to get a lower bound on when       Show that .    That follows from . For the reverse inequality, divide into n equal length arcs (for large enough ), and see what this says about     "
+},
+{
+  "id": "chap-probability",
+  "level": "1",
+  "url": "chap-probability.html",
+  "type": "Chapter",
+  "number": "4",
+  "title": "Probability Theory",
+  "body": " Probability Theory  "
 },
 {
   "id": "sec-nowhere-diff",
