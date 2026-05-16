@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section>
+<title>Properties of measures</title>
+
+<p>
+    There are a handful of properties of measures that follow readily from the definitions. We record some of these now.
+    Both <xref ref="prop-measure-properties"/> and <xref ref="thm-continuity-of-measure"/> will be used frequently; they will become second nature to us.
+    <xref ref="thm-completion-of-meas-space"/> will be used less frequently, but will be used on occasion.
+</p>
+
+<proposition xml:id="prop-measure-properties">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+            Then the following hold
+            <ol>
+            <li>(Monotonicity) If <m>A, B \in \mathcal{M}</m> with <m>B \subseteq A</m>, then <m>\mu(B)\leq \mu(A)</m>;<idx><h>measure</h><h>monotonicity</h></idx>
+            </li>
+            <li>(Excision) If <m>A,B \in \mathcal{M}</m> with <m>B\subseteq A</m> and <m>\mu(A)&lt;\infty</m>, then <m>\mu(A \backslash B) = \mu(A) - \mu(B)</m>;<idx><h>measure</h><h>excision property</h></idx>
+            </li>
+            <li>(Countable monotonicity) If <m>\{E_k\}_{k=1}^\infty</m> is a countable collection of measurable sets, and <m>E</m> is a measurable set such that <m>E \subseteq \bigcup_{k=1}^\infty E_k</m>, then <m>\mu(E) \leq \sum_{k=1}^\infty \mu(E_k).</m><idx><h>measure</h><h>countable monotonicity</h></idx>
+            </li>
+            </ol>
+        </p>
+    </statement>
+
+<proof>
+<p>Take <m>A, B \in \mathcal{M}</m> with <m>B \subseteq A</m>.
+Note we can write <m>A</m> as a disjoint union
+<md> A = B \cup (A \backslash B).</md>
+Thus
+<md number="yes" xml:id="eq-excision">
+\mu(A) = \mu(B) + \mu(A \backslash B).
+</md>
+Thus, <m>\mu(B) \leq \mu(A)</m>.
+If <m>\mu(A)&lt;\infty</m>, then it follows that <m>\mu(B) &lt; \infty</m> and <m>\mu(A\backslash B) &lt; \infty</m>.
+Hence, it follows from  <xref ref="eq-excision"/> that<fn>That <m>\mu(A)</m> is finite is imporant here. Otherwise we could be looking at <m>\infty - \infty</m>, which is undefined.</fn>
+<md> \mu(A\backslash B) = \mu(A) - \mu(B).</md>
+Now let <m>\{E_k\}_{k=1}^\infty</m> be a countable collection of sets in <m>\mathcal{M}</m>.
+Let <m>A_1 = E_1</m>. 
+Let <m>A_2 = E_2 \backslash A_1</m>.
+Continuing in this way, we let
+<md> A_k = E_k \backslash \bigcup_{n=1}^{k-1} A_n.</md>
+In this way, we get a countable family <m>\{A_k\}_{k=1}^\infty</m> of disjoint measurable sets, which satisfies
+<md> \bigcup_{k=1}^\infty A_k = \bigcup_{k=1}^\infty E_k,</md>
+and <m>\mu(A_k) \leq \mu(E_k)</m> for each <m>k</m>.
+Thus, if <m>E \subseteq \bigcup_k E_k</m> we have
+<md>
+\begin{aligned}
+\mu(E) &amp;\leq \mu\left( \bigcup_{k=1}^n E_k \right) \\
+    &amp;= \mu\left( \bigcup_{k=1}^n A_k \right) \\
+    &amp;= \sum_{k=1}^\infty \mu(A_k) \\
+    &amp;\leq \sum_{k=1}^\infty \mu(E_k).
+\end{aligned}
+</md></p>
+</proof>
+</proposition>
+
+<p>The next theorem is called <term>the continuity of measure</term>.<idx><h>measure</h><h>continuity</h></idx></p>
+<theorem xml:id="thm-continuity-of-measure">
+<title>Continuity of measure</title>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+        <ol>
+        <li>If <m>\{A_k\}_{k=1}^\infty</m> is a countable collection of measurable sets satisfying <m>A_k \subseteq A_{k+1}</m> (i.e. <m>\{A_k\}_k</m> ascending measurable sets), then
+        <md> \mu\left(\bigcup_{k=1}^\infty A_k \right) = \lim_{k\rightarrow \infty} \mu(A_k).</md>
+        </li>
+        <li>If <m>\{B_k\}_{k=1}^\infty</m> is a countable collection of measurable sets satisfying <m>B_{k+1} \subseteq B_{k}</m> (i.e. <m>\{B_k\}_k</m> descending measurable sets) and <m>\mu(B_1)&lt;\infty</m>, then
+        <md> \mu\left(\bigcap_{k=1}^\infty B_k \right) = \lim_{k\rightarrow \infty} \mu(B_k).</md>
+        </li>
+        </ol>        
+    </p>
+</statement>
+
+
+
+<proof>
+<p>Let <m>\{A_k\}_{k=1}^\infty</m> be an countable collection of ascending measurable sets, and let <m>A = \bigcup_k A_k</m>.
+    If <m>\mu(A_{k_0}) = \infty</m> for some index <m>k_0</m>, then <m>\mu(A) = \infty</m> since <m>A_{k_0} \subseteq A</m> (by the monotonicity of <m>\mu</m>).
+    Hence
+<md> \infty = \mu(A) = \mu(A_{k_0}) = \lim_k \mu(A_k).</md>
+Assume now that <m>\mu(A_k) &lt; \infty</m> for all <m>k</m>.
+    Let <m>B_1 = A_1</m>  and let
+<md>B_k = A_k \backslash A_{k-1}.</md>
+Then <m>\{B_k\}_{k=1}^\infty</m> is a countable collection of disjoint measurable sets satisfying
+<md>
+\begin{aligned}
+A_k = \bigcup_{m=1}^k B_m.
+\end{aligned}
+</md>
+Hence <m>A</m> is the disjoint union <m>A = \bigcup_k B_k</m>.
+    Thus
+<md>
+\begin{aligned}
+\lim_{k} \mu(A_k) &amp;= \lim_k \mu\left(\bigcup_{m=1}^k B_k\right) \\
+        &amp;= \lim_k \sum_{m=1}^k \mu(B_m) \\
+        &amp;= \sum_{m=1}^\infty \mu(B_m)\\
+        &amp;= \mu(A).
+\end{aligned}
+</md>
+Thus (i) holds.</p>
+<p>Now assume <m>\{B_k\}_{k=1}^\infty</m> is a descending collection of measurable sets, with <m>\mu(B_1)&lt;\infty</m>.
+    For each <m>k</m>, let <m>D_k = B_1 \backslash B_k</m>.
+    Then <m>\{D_k\}_{k=1}^\infty</m> is an ascending sequence of measurable sets.
+    By part (i), we have that
+<md number="yes" xml:id="eq-cont-meas-1">
+    \begin{aligned}
+        \mu\left( \bigcup_k D_k \right) \amp = \lim_k \mu(D_k)  \\
+        \amp  = \lim_k [\mu(B_1) - \mu(B_k)] = \mu(B_1) - \lim_k \mu(B_k).
+    \end{aligned}
+</md>
+Note that we have used the fact that <m>\mu(B_1)&lt;\infty</m> in order to use the excision property in  <xref ref="eq-cont-meas-1"/>.
+    By De Morgan's identities
+<md> \bigcup_k D_k = \bigcup_k (B_1 \backslash B_k) = B_1 \backslash \bigcap_k B_k. </md>
+Hence
+<md number="yes" xml:id="eq-cont-meas-2">
+\mu\left(\bigcup_k D_k\right) = \mu(B_1) - \mu\left(\bigcap_k B_k \right).
+</md>
+Combining  <xref ref="eq-cont-meas-1"/> and  <xref ref="eq-cont-meas-2"/> we get
+<md> \mu \left(\bigcap_k B_k \right) = \lim_k \mu(B_k).</md></p>
+</proof>
+</theorem>
+
+<p>Not all measure spaces that we encounter will be complete. Indeed, we will see that Borel measures need not be complete. We will see an important example of this in the real line later.</p>
+<p>However, the next theorem shows that a measure space that is not complete can always be extended to be complete.</p>
+
+<theorem xml:id="thm-completion-of-meas-space">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M},\mu)</m> be a measure space.
+            Define <m>\mathcal{M}_0</m> to be the collection of subset of <m>X</m>
+            <md> \mathcal{M}_0 = \{A \cup B \colon A \in \mathcal{M},\ B \subseteq C\text{ for some }C \in \mathcal{M} \text{ with }\mu(C) = 0\}.</md>
+            For <m>E = A \cup B</m> in <m>\mathcal{M}_0</m> where <m>A \in \mathcal{M}</m> and <m>B \subseteq C\in \mathcal{M}</m> with <m>\mu(C)=0</m>, define <m>\mu_0(A\cup B) = \mu(A)</m>.
+            Then <m>\mathcal{M}_0</m> is a <m>\sigma</m>-algebra and <m>(X,\mathcal{M}_0,\mu_0)</m> is a complete measure space.<idx><h>measure space</h><h>completion</h></idx>
+        </p>
+    </statement>
+</theorem>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M},\mu)</m> be a measure space, and let <m>(X,\mathcal{M}_0,\mu_0)</m> be the complete measure space constructed from <m>(X,\mathcal{M},\mu)</m> in <xref ref="thm-completion-of-meas-space"/>.
+            Then <m>(X,\mathcal{M}_0,\mu_0)</m> is the <term>completion</term> of <m>(X,\mathcal{M},\mu)</m>.<idx><h>measure space</h><h>completion</h></idx>         
+        </p>
+    </statement>
+</definition>
+</section>

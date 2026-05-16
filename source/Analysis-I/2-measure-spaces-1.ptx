@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section>
+<title>Measure spaces</title>
+<p>There will be a scarcity of examples in this section. In <xref ref="sec-construction"/> we will develop tools to construct measures. After that, we will have access to a plethora of examples. Let <m>X</m> be a non-empty set. A measure will assign a non-negative value to subsets of <m>X</m>, but not necessarily all subsets. We need the following definition(s) to describe the domain of a measure.</p>
+<definition xml:id="def-sigma-alg">
+    <notation>
+        <usage><m>\M,\N,\F,\ldots</m></usage>
+      <description><m>\sigma</m>-algebra</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set, and let <m>\mathcal{P}(X)</m> be the power set of <m>X</m>.
+            A collection of sets <m>\mathcal{M} \subseteq \mathcal{P}(X)</m> is a <term><m>\sigma</m>-algebra</term><fn>The suffix <sq><m>\sigma</m>-</sq> is usually used to denote a countably infinite version of whatever word comes after the <sq><m>\sigma</m>-</sq>. 
+            With that information you can probably infer what an <em>algebra of sets</em> is.</fn> if
+            <ol>
+            <li><m>\emptyset \in \mathcal{M}</m>;
+            </li>
+            <li>if <m>A \in \mathcal{M}</m> then <m>A^c = X\backslash A \in \mathcal{M}</m>;
+            </li>
+            <li>if <m>\{A_n\}_{n=1}^\infty</m> is a countable collection of sets in <m>\mathcal{M}</m>, then <m>\bigcup_{n=1}^\infty A_n \in \mathcal{M}</m>.
+            </li>
+            </ol> <idx><h sortby="sigma-algebra"><m>\sigma</m>-algebra</h></idx>
+        </p>
+    </statement>
+
+</definition>
+
+<definition xml:id="def-measurable-space">
+    <notation>
+        <usage><m>(X,\M),\ (X,\F),\ldots</m></usage>
+      <description>measurable space</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set, and let <m>\mathcal{M}</m> be a <m>\sigma</m>-algebra of subsets of <m>X</m>.
+            The pair <m>(X, \mathcal{M})</m> is called a <term>measurable space</term>.<idx><h>measurable space</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>We record some basic properties of <m>\sigma</m>-algebras which we will need frequently.</p>
+
+<proposition xml:id="prop-sigma-alg-props">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M})</m> be a measurable space. Then
+            <ol>
+            <li><m>X \in \mathcal{M}</m>;
+            </li>
+            <li><m>\mathcal{M}</m> is closed under countable intersections, i.e. if <m>\{A_n\}_{n=1}^\infty</m> then
+                    <md>\bigcap_{n=1}^\infty A_n \in \mathcal{M};</md>
+
+            </li>
+            <li><m>\mathcal{M}</m> is closed under finite unions and finite intersections;
+            </li>
+            <li>if <m>A,B \in \mathcal{M}</m> then <m>A\backslash B \in M</m>.
+            </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+<p>Since <m>\emptyset^c = X</m>, it follows from conditions (i) and (ii) of <xref ref="def-sigma-alg"/>, that <m>X \in \mathcal{M}</m>.</p>
+<p>Let <m>\{A_n\}_{n=1}^\infty</m> is a countable collection sets in <m>\mathcal{M}</m>.
+Then, it follows from conditions (ii) and (iii) of <xref ref="def-sigma-alg"/>  the <m>\bigcup_n A_n^c \in \mathcal{M}</m>.
+Using De Morgan's Identity, and condition (ii) again, we have
+<md> \bigcap_{n=1}^\infty A_n = X \left[\backslash \bigcup_{n=1}^\infty A_n^c\right] \in \mathcal{M}.</md>
+Suppose <m>A_1, \ldots, A_k</m> is a finite collection of sets in <m>\mathcal{M}</m>. For <m>n &gt;k</m>, let <m>A_n = \emptyset</m>.
+Then, by condition (i) of <xref ref="def-sigma-alg"/>, <m>\{A_n\}_{n=1}^\infty</m> is a countable collection of subsets in <m>\mathcal{M}</m>.
+By condition (iii),
+<md> \bigcup_{n=1}^k A_n = \bigcup_{n=1}^\infty A_n \in \mathcal{M}.</md>
+Thus <m>\mathcal{M}</m> is also closed under finite unions.
+Similarly, we can show that <m>\bigcap_{n=1}^k A_n \in \mathcal{M}</m>.</p>
+<p>Finally, take <m>A, B \in \mathcal{M}</m>.
+Note
+<md> A\backslash B = A \cap B^c.</md>
+As <m>\mathcal{M}</m> is closed under complements and finite intersections, it follows that <m>A \backslash B</m>.</p>
+</proof>
+</proposition>
+
+<example xml:id="exam-P-X-measurable-space">
+<p>Let <m>X</m> be a non-empty set, and let <m>\mathcal{P}(X)</m> be the power-set of subsets of <m>X</m>.
+Then <m>\mathcal{P}(X)</m> is a <m>\sigma</m>-algebra, and thus <m>(X, \mathcal{P}(X))</m> is a measurable space.</p>
+</example>
+
+<p>There are occasions when we will consider measurable spaces of the form <m>(X,\mathcal{P}(X))</m>, (particularly if <m>X</m> is countable). However, in most cases we will consider <m>\sigma</m>-algebras which are strictly contained in <m>\mathcal{P}(X)</m>.</p>
+
+<proposition xml:id="prop-gen-sig-alg">
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set. 
+            Let <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> be a non-empty collection of sets. Then there is a unique <m>\sigma</m>-algebra <m>\mathcal{M}</m> such that <m>\mathcal{S} \subseteq \mathcal{M}</m>, and if <m>\mathcal{N}</m> is a <m>\sigma</m>-algebra containing <m>\mathcal{S}</m>, then <m>\mathcal{M} \subseteq \mathcal{N}</m>.</p>
+            <p>That is, there is a unique smallest <m>\sigma</m>-algebra containing <m>\mathcal{S}</m>.
+        </p>
+    </statement>
+    <proof>
+    <p>Let <m>Z</m> be the collection of all <m>\sigma</m>-algebras of <m>X</m> that contain <m>\mathcal{S}</m>.
+    Note that <m>Z</m> is non-empty, as <m>\mathcal{P}(X) \in Z</m>. 
+    Let
+    <md> \mathcal{M} = \bigcap_{\mathcal{N} \in Z} \mathcal{N}. </md>
+    That <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra with the desired properties follows readily.</p>
+    </proof>
+</proposition>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set, and let <m>\mathcal{S} \subseteq \mathcal{P}</m> be a non-empty collection of subsets of <m>X</m>.
+            Let <m>\mathcal{M}</m> be the unique, smallest <m>\sigma</m>-algebra containing <m>\mathcal{S}</m> (in the sense of <xref ref="prop-gen-sig-alg"/>).
+            We call <m>\mathcal{M}</m> the <term><m>\sigma</m>-algebra generated by <m>\mathcal{S}</m>.</term><idx><h sortby="sigma-algebra"><m>\sigma</m>-algebra</h><h>generated by a set</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<definition xml:id="exam-Borel-sets">
+    <notation>
+        <usage><m>\B(X)</m></usage>
+      <description>Borel sets in <m>X</m></description>
+    </notation>
+    <notation>
+        <usage><m>\B</m></usage>
+      <description>Borel sets in <m>\bR</m></description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space.
+            Denote by <m>\mathcal{B}(X)</m> the <m>\sigma</m>-algebra generated by the open sets in <m>X</m>.
+            We call <m>\mathcal{B}(X)</m> the <term>Borel sets of <m>X</m></term>.<idx><h>Borel sets</h></idx>
+            If <m>A \in \mathcal{B}(X)</m> we say that <m>A</m> is a <term>Borel set in X</term>.</p>
+            <p>When <m>X = \mathbb{R}</m>, we will denote the Borel sets <m>\mathcal{B}(\mathbb{R})</m> by <m>\mathcal{B}</m>.
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>Recall that every open set <m>\mathcal{U} \subseteq \mathbb{R}</m> is a countable union of open intervals.
+Thus, the open sets in <m>\mathbb{R}</m> are in the <m>\sigma</m>-algebra generated by the open intervals.
+Hence, the Borel sets <m>\mathcal{B}</m> is the <m>\sigma</m>-algebra generated by the open intervals in <m>\mathbb{R}</m>.</p>
+</remark>
+
+<p>We will now (finally) give the definition of a measure and a measure space.</p>
+
+<definition xml:id="def-measure">
+    <notation>
+        <usage><m>\mu,\ \nu,\ldots</m></usage>
+      <description>measures</description>
+    </notation>
+    <notation>
+        <usage><m>(X,\M,\mu)</m></usage>
+      <description>measure space</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M})</m> be a measurable space.
+            A function <m>\mu \colon \mathcal{M} \rightarrow [0,\infty]</m> is a <term>measure</term><idx><h>measure</h></idx> on <m>(X,\mathcal{M})</m> if
+            <ol>
+            <li><m>\mu(\emptyset) = 0</m>; and
+            </li>
+            <li>if <m>\{A_n\}_{n=1}^\infty</m> is a countable collection of disjoint sets in <m>\mathcal{M}</m> then
+            <md> \mu\left( \bigcup_{n=1}^\infty A_n \right) = \sum_{n=1}^\infty \mu(A_n).</md>
+            </li>
+            </ol>
+            If <m>\mu</m> is a measure on a measurable space <m>(X,\mathcal{M})</m>, we call the triple <m>(X,\mathcal{M},\mu)</m> a <term>measure space</term>.
+            <idx><h>measure space</h></idx>
+            The sets <m>A \in \mathcal{M}</m> are called <term>measurable sets</term><idx><h>measurable set</h></idx> in the measure space <m>(X,\mathcal{M},\mu)</m>.
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>A function which satisfies condition (ii) in <xref ref="def-measure"/> is said to be <term>countable additive on disjoint sets</term><idx><h>countable additivity</h></idx>.
+This property is frequently abbreviated to simply <term>countably additive</term>.
+We must be careful to remember that countable additivity only applies to <em>disjoint</em> sets.</p>
+</remark>
+
+<p>The condition of countable additivity implies finite additivity. If <m>\{A_k\}_{k=1}^n</m> is a finite collection of disjoint sets in a <m>\sigma</m>-algebra <m>\mathcal{M}</m>, we can extend <m>\{A_k\}_{k=1}^n</m> to a countably infinite collection <m>\{A_k\}_{k=1}^\infty</m> by letting <m>A_k = \emptyset</m> for <m>k&gt;n</m>, as we did in <xref ref="prop-sigma-alg-props"/>. Then, we have
+<md>
+\begin{aligned}
+\mu\left(\bigcup_{k=1}^n\right) &amp;= \mu\left(\bigcup_{k=1}^\infty\right) \\
+    &amp;= \sum_{k=1}^\infty \mu(A_k) \\
+    &amp;= \sum_{k=1}^n \mu(A_k).
+\end{aligned}
+</md>
+Note that the definition of a measure does not assume that <m>\mu</m> only takes finite values, i.e. <m>\mu(A) = \infty</m> is an allowed value, and there is no assumption that the series in condition (ii) of <xref ref="def-measure"/> are convergent. We use the usual rules of addition with <m>\infty</m> and <m>- \infty</m>:
+<md>
+\begin{aligned}
+\infty + x &amp;= \infty, \text{ for all }x \in \mathbb{R};\\
+    -\infty + x &amp;= -\infty, \text{ for all }x \in \mathbb{R};\\
+    \infty + \infty &amp;= \infty; \text{ and}\\
+    -\infty + (-\infty) &amp;= -\infty.
+\end{aligned}
+</md>
+However, we must be careful to avoid <m>-\infty + \infty</m>, as <m>-\infty + \infty</m> is undefined.
+We will also, on occasion need to use multiplication of real numbers and infinity.
+In these cases the rules are
+<md number="no">
+    <mrow>a\cdot \infty \amp = \infty, \text{ for all }a \in \bR \text{ with }a &gt; 0;</mrow>
+    <mrow> a\cdot (-\infty) \amp = -\infty, \text{ for all }a \in \bR \text{ with }a &gt; 0;</mrow>
+    <mrow> 0\cdot \infty \amp = 0, \text{ and } 0\cdot (-\infty) = 0; </mrow>
+    <mrow> a\cdot \infty \amp = -\infty, \text{ for all }a \in \bR \text{ with }a &lt; 0; \text{ and}</mrow>
+    <mrow> a\cdot (-\infty) \amp = \infty, \text{ for all }a \in \bR \text{ with }a &lt; 0.</mrow>
+</md>
+</p>
+
+<definition>
+    <statement>
+        <p>
+            <idx><h>measure space</h><h sortby="sigma-finite"><m>\sigma</m>-finite</h></idx>
+            A measure space <m>(X,\mathcal{M},\mu)</m> is <term><m>\sigma</m>-finite</term> if there is a countable collection of sets <m>\{A_n\}_{n=1}^\infty</m> in <m>\mathcal{M}</m> such that
+            <ol>
+            <li><m>\mu(A_n)&lt; \infty</m> for each <m>n</m>;
+            </li>
+            <li><m>X = \bigcup_n^\infty A_n.</m>
+            </li>
+            </ol>
+            If <m>\mu(X) &lt; \infty</m> then <m>(X,\mathcal{M},\mu)</m> is a <term>finite measure space</term>.<idx><h>measure space</h><h>finite</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<definition>
+    <statement>
+        <p>
+            A measure space <m>(X,\mathcal{M},\mu)</m> is <term>complete</term> if, for each <m>A \in \mathcal{M}</m> with <m>\mu(A) = \emptyset</m>, if <m>B \subseteq A</m> then <m>B \in \mathcal{M}</m>.<idx><h>measure space</h><h>complete</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>We will pause here to assess where we are going. 
+    One of our main motivations for developing measure theory, as discussed in <xref ref="sec-intro-ftoc"/> and <xref ref="sec-int-lim-swap"/>, is to develop a theory of integration on the real line that is more robust than Riemann integration.</p>
+<p>For an interval <m>I \subseteq \mathbb{R}</m> let <m>\ell(I)</m> denote the length of <m>I</m>.
+    To form a Riemann sum for a function <m>f</m>, we partition an interval <m>[a,b]</m> into subintervals
+<md> [a,b] = I_1 \cup \ldots\cup I_n </md>
+and the Riemann sum is given by
+<md> \sum_{i=1}^n f(x_i^*) \ell(I_i)</md>
+where <m>x_i^*</m> is some element of <m>I_i</m>.</p>
+<p>The main idea of Lebesgue integration is to define a measure <m>m</m> on (a <m>\sigma</m>-algebra of) subsets of <m>\mathbb{R}</m>, so that <m>m(I) = \ell(I)</m> for intervals <m>I</m>.
+    With <m>m</m> in hand, we can then decompose <m>[a,b]</m> using sets other than intervals.
+    I.e., the idea is to use, instead of just Riemann sums, sums of the form
+<md> \sum_{i=1}^n f(x_i^*) m(E_i)</md>
+where <m>x_i^* \in E_i</m>, and <m>\{E_i\}_{i=1}^n</m> is a disjoint collection of measurable sets such that <m>\bigcup_{i=1}^n E_i = [a,b]</m>.
+    Broadening the scope of the sets we can <sq>measure</sq>, i.e. using <m>m</m> to measure sets that are not necessarily intervals, we will develop a theory of integration stronger than Riemann integration.</p>
+<p>The exact definition of <m>m</m>, and the <m>\sigma</m>-algebra <m>\mathcal{M}</m> it acts on, will have to wait until we have some more tools in our belt.
+    We can see now, however, that if <m>m</m> is to do what we want it to do, then <m>\mathcal{M}</m> will have to contain all intervals in <m>\mathbb{R}</m> (and hence <m>\mathcal{M}</m> will have to contain all the Borel sets <m>\mathcal{B}</m>).</p>
+</remark>
+
+<example xml:id="exam-counting">
+<p>Let <m>X</m> be any non-empty set and let <m>\mathcal{P}(X)</m> be the <m>\sigma</m>-algebra of all subsets of <m>X</m>.
+Define <m>c \colon \mathcal{P}(X) \rightarrow [0,\infty]</m> by
+<md> c(A) = \infty</md>
+if <m>A</m> contains infinitely many elements, and <m>c(A) = n</m> if <m>A</m> has <m>n</m> elements, for <m>n</m> finite.
+Then <m>(X,\mathcal{P}(X),c)</m> is a measure space. 
+We call <m>c</m> the <term>counting measure</term> on <m>X</m>.<idx><h>measure</h><h>counting measure</h></idx></p>
+<p>The measure space <m>(X,\mathcal{P}(X),c)</m> is always complete; it is <m>\sigma</m>-finite if and only if <m>X</m> is countable; it is finite if and only if <m>X</m> is finite.</p>
+</example>
+
+<example xml:id="exam-dirac-measure">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space.
+Fix <m>x \in X</m>.
+Define <m>\delta_x</m> on <m>\mathcal{F}</m> by <idx><h>measure</h><h>Dirac measure</h></idx>
+<md>
+\delta_x(A) = \begin{cases} 1 &amp;\text{if }x \in A\\ 0 &amp;\text{if }x \notin A\end{cases}.
+</md>
+Then <m>\delta_x</m> is a measure on <m>(X,\mathcal{F})</m> called the <term>Dirac measure at <m>x</m></term>.<idx><h>measure</h><h>Dirac measure</h></idx></p>
+</example>
+
+<definition xml:id="def-borel-meas">
+    <statement>
+        <p>
+            Let <m>X</m> be a topological space.
+            A measure <m>\mu</m> on the Borel sets <m>\mathcal{B}(X)</m> is a <term>Borel measure</term><idx><h>Borel measure</h></idx> if <m>\mu(K) &lt; \infty</m> for all compact subsets <m>K \subseteq X</m>.
+        </p>
+    </statement>
+</definition>
+
+<p>We will rarely want to define a measure on a set which does not have some natural topology on it. Indeed, most examples of measures that we will see will be Borel measures. The Dirac measure of <xref ref="exam-dirac-measure"/> is Borel measure when <m>X</m> is a topological space and <m>\mathcal{F} = \mathcal{B}(X)</m> is the Borel sets (see <xref ref="exer-dirac-meas"/>). Even the counting measure of <xref ref="exam-counting"/> is a Borel measure if we endow <m>X</m> with the discrete topology (see <xref ref="exer-counting-Borel"/>).</p>
+<p>Probability theory can be naturally described in terms of measure theory. Probability theory is a subject in its own right and has led to some differences in naming and notation conventions.</p>
+
+<definition>
+    <statement>
+        <p>
+            A <term>probability space</term><idx><h>probability space</h></idx><idx><h>sample space</h><see>probability space</see></idx> is a finite measure space <m>(\Omega, \mathcal{F}, P)</m> where <m>P(\Omega) = 1</m>.
+            The measure <m>P</m> is called a <term>probability measure</term>. <idx><h>measure</h><h>probability measure</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>We will forgo any further direct mention of probabilty theory until later (see <xref ref="chap-probability"/>), although probability theory has had an influence on some of the theory we will see along the way.</p>
+
+<p>We end this section with an important piece of verbiage.</p>
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+            A property <m>P</m> is said to hold for <term>almost all <m>x\in X</m></term><idx><h>almost all</h></idx> (abbreviated as <em>a.a.</em> <m>x \in X</m>)<idx><h>a.a.</h><see>almost all</see></idx> or <term>almost everywhere</term><idx><h>almost everywhere</h></idx> (abbreviate <em>a.e.</em>)<idx><h>a.e.</h><see>almost everywhere</see></idx> if there is a measurable set <m>E \subseteq X</m> with <m>\mu(E) = 0</m> such that <m>P</m> holds on <m>X \backslash E</m>.
+        </p>
+    </statement>
+</definition>
+</section>

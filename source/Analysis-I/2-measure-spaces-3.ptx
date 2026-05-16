@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-construction">
+<title>Constructing measures</title>
+<p>The reason for the dearth of examples of measures thus far is simple: measures are complicated. Let <m>(X,\mathcal{M}, \mu)</m> be a measure space. Given <m>A \subseteq X</m> one may ask
+<ol>
+<li>Is <m>A</m> measurable? That is, is <m>A \in \mathcal{M}</m>?
+</li>
+<li>If <m>A</m> is measurable, what is the value of <m>\mu(A)</m>?
+</li>
+</ol>
+In general, neither of these questions are easy to answer. However, as we will see, we can make do without having a full answer to these questions. More commonly, we will want <m>\mu</m> to take some prescribed values on a subset <m>\mathcal{S}</m> of <m>\mathcal{P}(X)</m>, where <m>\mathcal{S}</m> is not necessarily a <m>\sigma</m>-algebra. In this section we will see how to construct a measure by defining <m>\mu</m> on <m>\mathcal{S}</m> (when <m>\mu</m> and <m>\mathcal{S}</m> are sufficiently well behaved).</p>
+<p>The process for constructing measures will involve several steps. Starting with a function <m>\mu</m> on a set of sets <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> we will construct a function <m>\mu^*</m>, called an <em>outer measure</em>, on all of <m>\mathcal{P}(X)</m>. We will then restrict <m>\mu^*</m> two a smaller <m>\sigma</m>-algebra on which it is a measure.</p>
+<p>We begin with the definition of an outer measure.</p>
+
+<definition>
+    <notation>
+        <usage><m>\mu^*</m></usage>
+      <description>outer measure</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set.
+            A function
+            <md> \mu^* \colon \mathcal{P}(X) \rightarrow [0,\infty]</md>
+            is an <term>outer measure</term><idx><h>outer measure</h></idx> on <m>X</m> if
+            <ol>
+            <li><m>\mu^*(\emptyset) = 0</m>;
+            </li>
+            <li>if <m>\{E_k\}_{k=1}^\infty</m> is a countable collection of subsets of <m>X</m>, and <m>E \subseteq \bigcup_k E_k</m> then
+                    <md> \mu^*(E) \leq \sum_{k=1}^\infty \mu^*(E_k).</md>
+            I.e. <m>\mu^*</m> is <term>countably monotone.</term><idx><h>countably monotone</h></idx>
+            </li>
+            </ol>
+        </p>
+    </statement>
+</definition>
+<p>Outer measures are not as well behaved as measures. However, they have two significant advantages: they are defined on all subsets of <m>X</m>, and they are easy to construct.</p>
+
+<theorem xml:id="thm-outer-measure">
+    <statement>
+        <p>          
+            Let <m>X</m> be a nonempty set, let <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> be a non-empty collection of subsets of <m>X</m>, and let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> be any function.
+            Define a function <m>\mu^* \colon \mathcal{P}(X) \rightarrow [0,\infty]</m> by
+            <ol>
+            <li><m>\mu^*(\emptyset) = 0</m>;
+            </li>
+            <li>if <m>\emptyset\neq A</m>, and there exists a countable collection <m>\{E_k\}_{k=1}^\infty</m> of sets in <m>\mathcal{S}</m> such that <m>A \subseteq \bigcup_k E_k</m>, then
+                <md> \mu^*(A) = \inf \left\{ \sum_{k=1}^\infty \mu(E_k) \colon \{E_k\}_{k=1}^\infty \subseteq \mathcal{S},\ A \subseteq \bigcup_{k=1}^\infty E_k \right\}; </md>
+            </li>
+            <li>if <m>\emptyset \neq A</m> and <m>A</m> can not be covered by a countably infinite family in <m>\mathcal{S}</m>, then <m>\mu^*(A) = \infty.</m>
+            </li>
+            </ol>
+            Then <m>\mu^*</m> is an outer measure on <m>X</m>. <idx><h>outer measure</h><h>induced</h></idx>
+        </p>
+    </statement>
+    <proof>
+<p>By definition, <m>\mu^*(\emptyset) = 0</m>, so we only need to show that <m>\mu^*</m> is countably monotone.
+    Take subsets <m>A</m>, and <m>\{A_k\}_{k=1}^\infty</m> of <m>X</m> with <m>A \subseteq \bigcup_k A_k</m>.
+    If <m>\mu^*(A_{k_0}) = \infty</m> for some <m>k_0</m>, then
+<md> \mu^*(A) \leq \sum_{k=1}^\infty \mu^*(A_k) = \infty.</md>
+Suppose now that <m>\mu^*(A_k)&lt;\infty</m> for all <m>k</m>.
+    Fix <m>\varepsilon &gt;0</m>. For each <m>k</m>, choose a countable collection <m>\{E_{k,m}\}_{m=1}^\infty</m> of subsets of <m>\mathcal{S}</m> such that
+<md> \mu^*(A_k) &gt; \sum_{m=1}^\infty \mu(E_{k,m}) - \frac{\varepsilon}{2^k}.</md>
+Since <m>A \subseteq \bigcup_k A_k</m>, the collection <m>\{E_{k,m}\}_{k,m=1}^\infty</m> covers <m>A</m>.
+    Thus
+<md>
+\begin{aligned}
+\mu^*(A) &amp;\leq \sum_{k=1}^\infty \sum_{m=1}^\infty \mu(E_{k,m}) \\
+        &amp;&lt; \sum_{k=1}^\infty [\mu^*(A_k) + \frac{\varepsilon}{2^k}]\\
+        &amp;=  \sum_{k=1}^\infty \mu^*(A_k) + \varepsilon.
+\end{aligned}
+</md>
+Hence <m>\mu^*(A) \leq \sum_{k=1}^\infty \mu^*(A_k)</m>, and so <m>\mu^*</m> is countably monotone.</p>
+    </proof>
+</theorem>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set, and let <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> be a non-empty collection of subsets.
+            Let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> be a function and let <m>\mu^*</m> be the outer measure constructed in <xref ref="thm-outer-measure"/>.
+            We call <m>\mu^*</m> the <term>outer measure induced by <m>\mu</m></term>. <idx><h>outer measure</h><h>induced</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>Let <m>\mu^*</m> be the outer measure induced from a set function <m>\mu \colon \mathcal{S} \rightarrow [0,\infty].</m> In general, there is no reason to expect <m>\mu^*</m> to be well-behaved, beyond being an outer measure. We may not even have <m>\mu^*(A) = \mu(A)</m> for <m>A \in \mathcal{S}</m>. We will see that whether or not <m>\mu^*</m> preserves nice properties of <m>\mu</m> (if there are any) will depend on both <m>\mu</m> <em>and</em> <m>\mathcal{S}</m>. The following two examples give instances when the induced outer measure does end up being useful.</p>
+<example xml:id="ex-induced-counting-outer-measure">
+<p>Let <m>X</m> be an infinite set, and let <m>\mathcal{S}</m> be the collection of all finite subsets of <m>X</m>.
+    Let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty)</m> be the counting function.
+    I.e. for <m>A \subseteq \mathcal{S}</m>, <m>\mu(A)</m> is the (necessarily finite) number of elements of <m>A</m>.
+    If <m>\mu^*</m> is the outer measure induced by <m>\mu</m>, then <m>\mu^*=c</m> is the counting measure (<xref ref="exer-induced-counting-outer-measure"/>).</p>
+</example>
+<example xml:id="ex-induced-length-outer-measure">
+<p>Let <m>\mathcal{S}</m> be the collection of all open intervals in the real line.
+    Let <m>\mu</m> be the length function on <m>\mathcal{S}</m>, i.e. <m>\mu(I) = \ell(I)</m> for all <m>I \in \mathcal{S}</m>.
+    Let <m>\mu^*</m> be the outer measure induced by <m>\mu</m>. 
+    Then <m>\mu^*(I) = \ell(I)</m> for all intervals in <m>\mathbb{R}</m> (<xref ref="exer-induced-length-outer-measure"/>).
+    The outer measure <m>\mu^*</m> is called the <term>Lebesgue outer measure on <m>\mathbb{R}</m></term>. <idx><h>outer measure</h><h>Lebesgue outer measure</h></idx> 
+    We will see (much!) more on this later.</p>
+</example>
+<p>Having constructed an outer measure from an arbitrary (set) function, we will now restrict outer measures to measures.</p>
+
+<definition>
+    <statement>
+        <p>
+            <idx><h>measurable set</h><h>with respect to an outer measure</h></idx>
+            Let <m>X</m> be a non-empty set and let <m>\mu^*</m> be an outer measure on <m>X</m>.
+            A set <m>E \subseteq X</m> is <term>measurable with respect to <m>\mu^*</m></term> if
+            <md> \mu^*(A) = \mu^*(A\cap E) + \mu^*(A\cap E^c),</md>
+            for all <m>A \subseteq X.</m></p>
+            <p>The term <term><m>\mu^*</m>-measurable</term> is also used for sets which are measurable with respect to <m>\mu^*</m>.
+        </p>
+    </statement>
+</definition>
+
+<theorem xml:id="thm-measure-space-from-outer-measure">
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set, let <m>\mu^*</m> be an outer measure on <m>X</m>, and let <m>\mathcal{M}</m> be the collection of all subsets of <m>X</m> which are measurable with respect to <m>\mu^*</m>.
+            Then <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra and the restriction of <m>\mu^*</m> to <m>\mathcal{M}</m> is a measure.
+            That is, <m>(X,\mathcal{M},\mu)</m> is a measure space, where <m>\mu = \mu^*|_\mathcal{M}</m>.
+            Further, <m>(X,\mathcal{M},\mu)</m> is a complete measure space.
+        </p>
+    </statement>
+    <proof>
+<p>Clearly <m>\emptyset \in \mathcal{M}</m>.
+    Also, if <m>E</m> is measurable with respect to <m>\mu^*</m>, then <m>E^c</m> is also in <m>\mathcal{M}</m>.
+    To show that <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra it remains to show that <m>\mathcal{M}</m> is closed under countable unions.
+    We will do this in tandem with showing that <m>\mu^*|_\mathcal{M}</m> is a measure.</p>
+<p>Let <m>E_1</m> and <m>E_2</m> be two <m>\mu^*</m>-measurable sets.
+    Take any <m>A \subseteq X</m>.
+    Then, since <m>E_1</m> and <m>E_2</m> are measurable, we have
+<md>
+\begin{aligned}
+\mu^*(A)  = &amp;\mu^*(A \cap E_1) + \mu^*(A \cap E_1^c) \\
+        = &amp; \mu^*(A \cap E_1) + \mu^*((A \cap E_1^c) \cap E_2) + \mu^*((A \cap E_1^c) \cap E_2^c).
+\end{aligned}
+</md>
+Note that
+<md> [A\cap E_1] \cup [(A\cap E_1^c)\cap E_2] = A\cap (E_1 \cup E_2),</md>
+and
+<md> A \cap E_1^c \cap E_2^c = A \cap (E_1 \cup E_2)^c.</md>
+Hence
+<md>
+\begin{aligned}
+\mu^*(A)  = &amp;\mu^*(A \cap E_1) + \mu^*(A \cap E_1^c) \\
+        = &amp; \mu^*(A \cap E_1) + \mu^*((A \cap E_1^c) \cap E_2) + \mu^*((A \cap E_1^c) \cap E_2^c)\\
+        \geq &amp; \mu^*(A\cap (E_1 \cup E_2)) + \mu^*(A \cap (E_1 \cup E_2)^c).
+\end{aligned}
+</md>
+Therefore, <m>E_1\cup E_2</m> is <m>\mu^*</m>-measurable.
+    It follows inductively that if <m>\{E_k\}_{k=1}^n</m> is a finite collection of measurable sets, then <m>\bigcup_{k=1}^n E_k</m> is measurable.</p>
+<p>Let <m>\{E_k\}_{k=1}^n</m> be a finite collection of disjoint measurable sets.
+    Take any set <m>A \subseteq X</m>.
+    Since the sets <m>\{E_k\}_k</m> are disjoint and measurable, we have
+<md number="yes" xml:id="eq-fin-count">
+\begin{aligned}
+\mu^*(A) &amp;= \mu^*(A\cap E_1) + \mu^*(A \cap E_1^c)\\
+        &amp;= \mu^*((A\cap E_1) + \mu^*(A \cap E_2) + \mu^*(A \cap (E_1 \cup E_2)^c) \\
+        &amp;\vdots \\
+        &amp;= \sum_{k=1}^n \mu^*(A \cap E_k) + \mu^*\left( A \cap \left(\bigcup_{k=1}^n E_k\right)^c\right).
+\end{aligned}
+</md>
+In particular,
+<md> \mu^*\left(\bigcup_{k=1}^n E_k\right) = \sum_{k=1}^n \mu^*(E_k).</md>
+Thus far, we have shown that <m>\mathcal{M}</m> is closed under finite unions, and <m>\mu^*</m> is additive on <em>finite</em> collections of disjoint sets in <m>\mathcal{M}</m>.
+    As <m>\mathcal{M}</m> is closed under taking complements, it follows that <m>\mathcal{M}</m> is also closed under finite intersections.
+    We need to extend finite to <em>infinite</em> in both instances.
+    Let <m>\{E_k\}_{k=1}^\infty</m> be a countable collection of measurable sets and let <m>E = \bigcup_{k=1}^\infty E_k.</m>
+    We will use our favorite trick to <q>disjointize</q> this collection.
+    Though we have used this method before, we will go through the steps carefully to make sure that at each step we remain with a set in <m>\mathcal{M}</m>.
+    Let <m>F_1 = E_1</m>, and <m>F_2 = E_2 \backslash F_1</m>.
+    Note that <m>E_2 \backslash F_1= E_2 \cap F_1^c \in \mathcal{M}.</m>
+    Continuing in this way, for each <m>n</m> let
+<md> F_n = E_n \backslash \bigcup_{k=1}^{n-1}F_k.</md>
+Again, we have that <m>F_n \in \mathcal{M}</m> for each <m>\mathcal{M}</m>.
+    Thus <m>\{F_k\}_{k=1}^\infty</m> is a countable collection of disjoint measurable sets.
+    Further <m>\bigcup_{k=1}^n F_k = \bigcup_{k=1}^n E_k</m> for <m>n \in \mathbb{N} \cup\{\infty\}</m>.</p>
+<p>Fix <m>n</m>, and take any <m>A \subseteq X</m>.
+    Let <m>B = \bigcup_{k=1}^n E_k</m>.
+    Then, by the measurability of <m>B</m>,
+<md>
+\begin{aligned}
+\mu^*(A) = &amp; \mu^*(A \cap B) + \mu^*(A\cap B^c)\\
+        =&amp; \sum_{k=1}^n \mu^*(A\cap F_k) + \mu^*(A\cap B^c)\\
+        \geq&amp; \sum_{k=1}^n \mu^*(A\cap F_k) + \mu^*(A\cap E^c),
+\end{aligned}
+</md>
+where the second inequality comes from  <xref ref="eq-fin-count"/> and the last inequality holds since <m>B \subseteq E</m>.
+    As this holds for all <m>n</m>, the countable monotonicity of the outer measure <m>\mu^*</m> gives
+<md>
+\begin{aligned}
+\mu^*(A)  \geq &amp; \sum_{k=1}^\infty \mu^*(A\cap F_k) + \mu^*(A\cap E^c)\\
+        \geq &amp; \mu^*(A\cap E) + \mu^*(A \cap E^c).
+\end{aligned}
+</md>
+It follows that <m>E</m> is measurable.</p>
+<p>We have thus shown that <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra.
+    It remains to complete the proof that <m>\mu^*</m> is a measure when restricted to <m>\mathcal{M}</m>.
+    It only remains to show that <m>\mu^*</m> is countably additive on disjoint measurable sets.
+    Let <m>\{E_k\}_{k=1}^\infty</m> be a disjoint collection of measurable sets and let <m>E = \bigcup_{k=1}^\infty E_k</m>.
+    If <m>\mu^*(E) = \infty</m>, then
+<md> \mu^*(E) \geq \sum_{k=1}^\infty \mu^*(E_k),</md>
+and so <m>\mu^*(E) = \sum_{k=1}^\infty \mu^*(E_k)</m>.
+    Suppose now that <m>\mu^*(E) &lt; \infty</m>.
+    For every <m>n</m> we have, by the measurability of <m>E</m> and the finite additivity of <m>\mu^*</m> on disjoint sets,
+<md>
+\begin{aligned}
+\mu^*(E) = \sum_{k=1}^n \mu^*(E_k) + \mu^*\left(E \backslash \bigcup_{k=n+1}^\infty E_k \right) \\
+        \geq \sum_{k=1}^n \mu^*(E_k).
+\end{aligned}
+</md>
+As this holds for all <m>n</m>, we have that <m>\mu^*(E) \geq \sum_{k=1}^\infty \mu^*(E_k)</m>.
+    Hence <m>\mu^*(E) = \sum_{k=1}^\infty \mu^*(E_k)</m>.
+    Thus <m>(X, \mathcal{M}, \mu^*|_\mathcal{M})</m> is a measure space.
+    That this measure space is complete is left as an exercise (<xref ref="exer-zero-measurable"/>).</p>
+</proof>
+</theorem>
+
+<p>Starting we a function <m>\mu_0</m> on some set <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> we can now construct a measure.
+<ol>
+<li>Start with <m>\mu_0</m> on <m>\mathcal{S}</m>;
+</li>
+<li>let <m>\mu^*</m> be the outer-measure induced by <m>\mu_0</m> (<xref ref="thm-outer-measure"/>);
+</li>
+<li>let <m>\mu</m> be the measure we get by restricting <m>\mu^*</m> to the <m>\mu^*</m>-measurable sets (<xref ref="thm-measure-space-from-outer-measure"/>).
+</li>
+</ol>
+We call <m>\mu</m> the <term>Carathéodory measure</term> induced by <m>\mu_0</m>.<idx><h>measure</h><h>Carathéodory measure</h></idx></p>
+<p>Now that we can construct the Carathéodory measure <m>\mu</m> induced by a set function <m>\mu_0 \colon \mathcal{S} \rightarrow [0,\infty]</m>, we can ask how <m>\mu_0</m> and <m>\mu</m> relate. In particular, when are we guaranteed that each set <m>A \in \mathcal{S}</m> is measurable with respect to <m>\mu</m>? And if the sets in <m>\mathcal{S}</m> are measurable, is <m>\mu|_{\mathcal{S}} = \mu_0</m>? As stated earlier, the answers to these questions rely both on <m>\mathcal{S}</m> and <m>\mu_0</m>.</p>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set and let <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> be a non-empty collection of subsets of <m>X</m>.
+            A function <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> is a <term>premeasure</term><idx><h>premeasure</h></idx> if
+            <ol>
+            <li><m>\mu</m> is finitely additive, i.e. if <m>\{E_k\}_{k=1}^n</m> is a disjoint collection of sets in <m>\mathcal{S}</m> whose union is also in <m>\mathcal{S}</m>, then <m>\mu\left(\bigcup_{k=1}^n E_k\right) = \sum_{k=1}^n \mu(E_k)</m>;
+            </li>
+            <li><m>\mu</m> is countably monotone, i.e. if <m>E,\ \{E_k\}_{k=1}^\infty</m> are in <m>\mathcal{S}</m> and <m>E \subseteq \bigcup_k E_k</m>, then <m>\mu(E) \leq \sum_{k=1}^\infty \mu(E_k)</m>;
+            </li>
+            <li>if <m>\emptyset \in S</m>, then <m>\mu(\emptyset) =0</m>.
+            </li>
+            </ol>
+        </p>
+    </statement>
+
+</definition>
+<p>
+    Let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m>. As any measure is a premeasure, in necessary condition for the Carathéodory measure induced by <m>\mu</m> to agree with <m>\mu</m> on <m>\mathcal{S}</m> is for <m>\mu</m> to be a premeasure. With some additional structure on <m>\mathcal{S}</m>, we can show that the Carathéodory measure is an extension of a premeasure. When this happens, we call the Carathéodory measure a <term>Carathéodory extension</term>.<idx><h>Carathéodory extension</h></idx><fn>It may be the case that there are more measures than the Carathéodory extension which extend a premeasure <m>\mu</m>. However, we will see in <xref ref="thm-Car-ext-1"/> that Carathéodory is sometimes unique.</fn>
+</p>
+
+<theorem xml:id="thm-Car-ext-1">
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set.
+            Let <m>\mathcal{S} \subseteq \mathcal{P}(X)</m> be a non-empty collection of subseteq which is closed under relative complements<idx><h>relative complement</h></idx>. That is, if <m>A,B \in \mathcal{S}</m>, then <m>A \backslash B \in \mathcal{S}</m>.
+            Let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> be a premeasure, and let <m>\overline{\mu}</m> be the Carathéodory measure induced by <m>\mu</m>.
+            Then each <m>A \in \mathcal{S}</m> is <m>\overline{\mu}</m>-measurable, and <m>\overline{\mu}(A) = \mu(A)</m>.
+            That is, <m>\overline{\mu}</m> is the Carathéodory extenion on <m>\mu</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>Take <m>A \in \mathcal{S}</m>.
+        We will show that <m>A</m> is <m>\mu^*</m>-measurable, where <m>\mu^*</m> is the outer measure induced by <m>\mu</m>.
+        Take any <m>E \in X</m>.
+        We need to show that
+        <md> \mu^*(E) = \mu^*(E\cap A) + \mu^*(E \cap A^c).</md>
+        If <m>\mu^*(E) = \infty</m> then this equality clearly holds.
+        Thus we will suppose that <m>\mu^*(E) &lt; \infty.</m>
+        It suffices to show that
+        <md> \mu^*(E) = \mu^*(E\cap A) + \mu^*(E \cap A^c).</md>
+        Fix a <m>\varepsilon &gt; 0</m>.
+        By the definition of <m>\mu^*</m>, and since <m>\mu^*(E)&lt;\infty</m>, there exists a countable collection <m>\{E_k\}_{k=1}^\infty</m> such that <m>E \subseteq \bigcup_{k=1}^\infty E_k</m> and
+        <md> \mu^*(E) + \varepsilon \geq \sum_{k=1}^\infty \mu(E_k).</md>
+        Note that, <m>E_k \cap A = E_k \backslash [E_k\backslash A]</m>, and hence <m>E_k \cap A \in \mathcal{S}</m> for each <m>k</m>.
+        Further, <m>E_k \cap A^c = E_k \backslash A</m>, and so <m>E \cap A^c \in \mathcal{S}</m> for each <m>k</m>.
+        By the countable additivity of <m>\mu</m> we thus have
+        <md> \mu(E_k) = \mu(E_k \cap A) + \mu(E_k \cap A^c).</md>
+        Thus
+        <md> \sum_{k=1}^\infty \mu(E_k) =\sum_{k=1}^\infty (\mu(E_k \cap A) + \mu(E_k \cap A^c)).</md>
+        As <m>\{E_k \cap A\}_{k=1}^\infty</m> covers <m>E \cap A</m> and <m>\{E_k \cap A^c\}_{k=1}^\infty</m> covers <m>E \cap A^c</m> we have that
+        <md>
+        \begin{aligned}
+        \sum_{k=1}^\infty \mu(E_k\cap A) &amp;\geq \mu^*(E\cap A) \text{ and}\\
+            \sum_{k=1}^\infty \mu(E_k\cap A^c) &amp;\geq \mu^*(E\cap A^c).
+        \end{aligned}
+        </md>
+        Thus
+        <md>
+        \begin{aligned}
+        \mu^*(E) + \varepsilon &amp;\geq \sum_{k=1}^\infty \mu(E_k) \\
+            &amp;= \sum_{k=1}^\infty \mu(E_k \cap A) + \sum_{k=1}^\infty \mu(E_k \cap A^c) \\
+            &amp;\geq \mu^*(E\cap A) + \mu^*(E \cap A^c).
+        \end{aligned}
+        </md>
+        As this holds for all <m>\varepsilon &gt;0</m>, it follows that
+        <md> \mu^*(E) = \mu^*(E\cap A) + \mu^*(E \cap A^c).</md>
+        Thus <m>A</m> is <m>\mu^*</m>-measurable.</p>
+        <p>That <m>\mu^*(E)=\mu(E)</m> for all <m>E \in \mathcal{S}</m> follows since <m>\mu</m> is countably monotone.
+        Thus the Carathéodory measure induced by <m>\mu</m> is an extension of <m>\mu</m>.</p>
+        </proof>
+</theorem>
+
+<p>The conditions on <m>\mathcal{S}</m> in <xref ref="thm-Car-ext-1"/> are not quite what we will have practical use for. We instead will look at <term>semirings of subsets</term>.</p>
+<definition>
+    <notation>
+        <usage><m>\S</m></usage>
+      <description>semiring of sets</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set and let <m>\mathcal{S}</m> be a non-empty collection of subsets of <m>X</m>.
+            The collection <m>\mathcal{S}</m> is a <term>semiring</term> (of subsets of <m>X</m>)<idx><h>semiring</h></idx> if for each <m>A,B \in \mathcal{S}</m>
+            <ol>
+            <li><m>A \cap B \in \mathcal{S}</m>; and
+            </li>
+            <li>there exists a finite disjoint collection <m>\{C_k\}_{k=1}^n</m> of sets in <m>\mathcal{S}</m> such that
+                <md> A \backslash B = \bigcup_{k=1}^n C_k.</md>
+            </li>
+            </ol>
+        </p>
+    </statement>
+</definition>
+<p>Note that if <m>\mathcal{S}</m> is a semiring, then <m>\emptyset \in \mathcal{S}</m>. Indeed, if <m>A \in \mathcal{S}</m> then <m>\emptyset = A \backslash A</m> can be written as a disjoint union of sets in <m>\mathcal{S}</m>. These sets are necessarily the empty set.</p>
+<example xml:id="exam-interval-semiring">
+<p>Let <m>\mathcal{I}_1</m> be the collection of all intervals in <m>\mathbb{R}</m>; let <m>\mathcal{I}_2</m> be the collection of all intervals of finite length in <m>\mathbb{R}</m>; and let <m>\mathcal{I}_3</m> be the collection of intervals of the form
+<md> \mathcal{I}_3 = \{ (a,b] \colon a \leq b\}.</md>
+Then each of <m>\mathcal{I}_1</m>, <m>\mathcal{I}_2</m>, and <m>\mathcal{I}_3</m> are semirings of subsets of <m>\mathbb{R}</m>.</p>
+</example>
+<example xml:id="exam-product-semiring">
+<p>Let <m>(X,\mathcal{M}, \mu)</m> and <m>(Y, \mathcal{N}, \nu)</m> be two measure spaces.
+Let <m>\mathcal{S}</m> be the collection of subsets of <m>X \times Y</m> given by
+<md> \mathcal{S} = \{ A \times B \colon A \in \mathcal{M}, \ B \in \mathcal{N}\}.</md>
+Then <m>\mathcal{S}</m> is a semiring.
+The elements of <m>\mathcal{S}</m> are called <term>measurable rectangles.</term><idx><h>measurable rectangle</h></idx>
+More on this later, when we look at product measures.</p>
+</example>
+<lemma xml:id="lem-Car-ext-2">
+    <statement>
+        <p>
+            Let <m>\mathcal{S}</m> be a semiring of subsets of a non-empty subset <m>X</m>
+            and let
+            <md> \mathcal{S}' = \left\{ \bigcup_{k=1}^n C_k : \{C_k\}_{k=1}^n \text{ finite disjoint collection in }\mathcal{S}\right\}.</md>
+            Then <m>\mathcal{S}'</m> is closed under relative complements.
+            Further, if <m>\mu</m> is a premeasure on <m>\mathcal{S}</m> then <m>\mu</m> extends uniquely to a premeasure on <m>\mathcal{S}'</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>Note that <m>\mathcal{S}</m> is closed under finite intersections.
+        It follows that <m>\mathcal{S}'</m> is also closed under finite intersections.
+        Now take <m>A, B \in \mathcal{S}</m>.
+        We can write <m>A \cup B</m> as the disjoint union
+        <md> A \cup B = (A \backslash B) \cup (A\cap B) \cup (B\backslash A).</md>
+        As each of the three terms can be written as disjoint unions of sets in <m>\mathcal{S}</m>, it follows that <m>A \cup B \in \mathcal{S}'</m>.
+        Inductively, it can be shown that <m>\mathcal{S}'</m> is closed under finite unions.</p>
+        <p>Let <m>\{A_i\}_{i=1}^m</m> and <m>\{B_j\}_{j=1}^n</m> be finite disjoint collections of sets from <m>\mathcal{S}</m>.
+        We have that
+        <md> \left[ \bigcup_{i=1}^m A_i \right] \backslash \left[ \bigcup_{j=1}^n B_j \right]
+        = \bigcup_{j=1}^m \left[ \bigcap_{i=1}^n (A_i \backslash B_j) \right].</md>
+        Thus, relative complements of sets in <m>\mathcal{S}'</m> can be written as finite unions of finite intersections of sets in <m>\mathcal{S}'</m>.
+        As <m>\mathcal{S}'</m> is closed under finite unions and finite intersections, it follows that <m>\mathcal{S}'</m> is closed under relative complements.</p>
+        <p>Suppose now that <m>\mu</m> is a premeasure on <m>\mathcal{S}</m>.
+        For disjoint sets <m>\{A_i\}_{i=1}^m</m> in <m>\mathcal{S}</m> define
+        <md> \mu'\left(\bigcup_{i=1}^m A_i\right) = \sum_{i=1}^m \mu(A_i).</md>
+        We must first show that <m>\mu'</m> is well-defined on <m>\mathcal{S}'</m>.
+        To this end, suppose <m>\{A_i\}_{i=1}^m</m> and <m>\{B_j\}_{j=1}^n</m> are finite disjoint collections in <m>\mathcal{S}</m> with <m>\bigcup_{i=1}^m A_i = \bigcup_{j=1}^n B_j</m>.
+        Note that, for each <m>j</m>, <m>B_j = \bigcup_{i=1}^m (B_j \cap A_i)</m>  is a disjoint union of sets in <m>\mathcal{S}</m>.
+        By the finite additivity of <m>\mu</m>,
+        <md> \mu(B_j) = \sum_{i=1}^m \mu(B_j \cap A_i).</md>
+        Similarly, for each <m>i</m>,
+        <md> \mu(A_i) = \sum_{j=1}^n (B_j \cap A_i).</md>
+        Thus,
+        <md>
+        \begin{aligned}
+        \sum_{j=1}^n \mu(B_j) &amp;= \sum_{j=1}^n \sum_{i=1}^m \mu(B_j \cap A_i) \\
+        &amp;= \sum_{i=1}^m \sum_{j=1}^n \mu(B_j \cap A_i) \\
+        &amp;= \sum_{i=1}^m \mu(A_i).
+        \end{aligned}
+        </md>
+        Hence <m>\mu'</m> is a well-defined function on <m>\mathcal{S}'</m>.</p>
+        <p>That <m>\mu'</m> is finitely additive is clear.
+        To show that <m>\mu'</m> is a premeasure, it remains to show countable monotonicity.
+        To this end, take a countable collection <m>\{E_k\}_{k=1}^\infty</m> in <m>\mathcal{S}'</m>, and <m>E \in \mathcal{S}'</m> such that
+        <md> E \subseteq \bigcup_{k=1}^\infty E_k.</md>
+        Note that, since <m>\mathcal{S}'</m> is closed under finite unions and relative complements, we can assume that the collection <m>\{E_k\}_{k=1}^\infty</m> is disjoint.
+        As sets in <m>\mathcal{S}'</m> are disjoint unions of sets in <m>\mathcal{S}</m>, can further assume that the sets <m>\{E_k\}_{k=1}^\infty</m> are in <m>\mathcal{S}</m>.
+        Let <m>\{A_i\}_{i=1}^m</m> be disjoint sets in <m>\mathcal{S}</m> such that <m>E = \bigcup_{i=1}^m A_i</m>.
+        By the countable monotonicity of <m>\mu</m> we have
+        <md> \mu(A_i) \leq \sum_{k=1}^\infty \mu(A_i \cap E_k)</md>
+        for each <m>1\leq i \leq m</m>.
+        Hence
+        <md>
+        \begin{aligned}
+        \mu'(E) &amp; = \sum_{i=1}^m \mu(A_i) \\
+            &amp;\leq  \sum_{i=1}^m\sum_{k=1}^\infty \mu(A_i \cap E_k)\\
+            &amp;=  \sum_{k=1}^\infty \sum_{i=1}^m \mu(A_i \cap E_k)\\
+            &amp;= \sum_{k=1}^\infty \mu(E \cap E_k) \\
+            &amp;\leq \sum_{k=1}^\infty \mu'(E_k).
+        \end{aligned}
+        </md>
+        Hence <m>\mu'</m> is a premeasure on <m>\mathcal{S}'</m>.</p>
+        <p>The uniqueness of <m>\mu'</m> follows from the definition of <m>\mathcal{S}'</m>.</p>
+    </proof>
+</lemma>
+
+<p>Let <m>\mu_0</m> be a function on a collection of subsets <m>\mathcal{S}</m> of <m>X</m>. Denote by <m>\mathcal{S}_\sigma</m> the collection of all countable unions of sets in <m>\mathcal{S}</m>; and denote by <m>\mathcal{S}_{\sigma\delta}</m> the collection of all countable intersections of sets in <m>\mathcal{S}_\sigma</m>. Note that, if the sets in <m>\mathcal{S}</m> are measurable with respect to the Carathéodory measure <m>\mu</m> induced by <m>\mu_0</m> (in particular, if <m>\mu</m> is an extension of <m>\mu_0</m>), then the sets in <m>\mathcal{S}_{\sigma\delta}</m> are also measurable. The following proposition tells us that the sets in <m>\mathcal{S}_{\sigma\delta}</m> can often be used to approximate the outer measure <m>\mu^*</m> (and indeed the measure <m>\mu</m>).</p>
+<remark>
+<p>The <m>\sigma\delta</m>-notation used above is supposed to be reminiscent of <m>G_\sigma</m> and <m>F_\delta</m> notation used in topology: <m>G_\sigma</m>-sets are countable unions of open sets; <m>F_\delta</m>-sets are countable intersections of closed sets.<fn>`G' for `open' comes from the German word geöffnet; `F' for `closed' comes from the French word fermé.</fn>
+    When working with measures on topological spaces we will often use <m>G_\delta</m> and <m>F_\sigma</m> sets in the way <m>S_{\sigma\delta}</m> sets are used in the following proposition.</p>
+</remark>
+<proposition xml:id="prop-sigma-delta-sets">
+    <statement>
+        <p>
+            Let <m>\mu</m> be a set function on a collection <m>\mathcal{S}</m> of subsets of <m>X</m>, and let <m>\mu^*</m> be the induced outer measure, and let <m>\mu</m> be the induced Carathéodory measure.</p>
+            <p>If <m>E \subseteq X</m> satisfies <m>\mu^*(E)&lt;\infty</m> then there exists an <m>A \in \mathcal{S}_{\sigma\delta}</m> such that <m>E \subseteq A</m> and <m>\mu^*(E) = \mu^*(A)</m>.
+            If <m>E</m> is <m>\mu^*</m>-measurable and each set in <m>\mathcal{S}</m> is <m>\mu^*</m>-measurable, then <m>A</m> is <m>\mu^*</m>-measurable and <m>\mu(A \backslash E) = 0</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>Suppose <m>\mu^*(E) &lt; \infty</m>. 
+        By the definition of <m>\mu^*</m>, for each <m>n</m> there exists a countable collection <m>\{E_{n,k}\}_{k=1}^\infty</m> such that <m>E \subseteq \bigcup_{k=1}^\infty E_{n,k}</m> and
+        <md> \mu^*(E) + \frac{1}{n} &gt; \sum_{k=1}^\infty \mu(E_{n,k}).</md>
+        Let <m>A_n = \bigcup_{k=1}^\infty E_{n,k}</m>.
+        Then <m>A_n \in \mathcal{S}_\sigma</m> and
+        <md> \mu^*(A_n) \leq \sum_{k=1}^\infty \mu(E_k) &lt; \mu^*(E) + \frac{1}{n}.</md>
+        Now let <m>A = \bigcap_{n=1}^\infty A_n</m>.
+        Then <m>A \in \mathcal{S}_{\sigma\delta}</m>, and <m>E \subseteq A</m>.
+        Further, for each <m>n</m>,
+        <md>
+        \begin{aligned}
+        \mu^*(E) &amp;\leq \mu^*(A) \\
+            &amp;\leq \mu^*(A_n) \\
+            &amp;&lt; \mu^*(E) + \frac{1}{n}.
+        \end{aligned}
+        </md>
+        As this holds for all <m>n</m>, it follows that <m>\mu^*(E) = \mu^*(A)</m>.</p>
+        <p>Finally, if <m>\mu</m> extends <m>\mu_0</m> then every set in <m>\mathcal{S}</m> is measurable, and thus every set in <m>\mathcal{S}_\sigma</m> and <m>\mathcal{S}_{\sigma\delta}</m> is measurable.
+        If <m>E</m> is also measurable, then by the excision property
+        <md> \mu(E\backslash A) = \mu(E) - \mu(A) = 0.</md>
+        </p>
+    </proof>
+</proposition>
+
+<p>We are now ready for the main theorem of this section: our main tool for constructing measures. The uniqueness in the following theorem is important and will be used frequently. Before stating the theorem we need one more definition. If <m>\mathcal{S}</m> is a collection of subsets of <m>X</m>, and <m>\mu \colon \mathcal{S} \rightarrow [0,\infty]</m> is a function, we say that <m>\mu</m> is <term><m>\sigma</m>-finite</term><idx><h sortby="sigma-finite set function"><m>\sigma</m>-finite set function</h></idx>if there is a countable collection <m>\{E_k\}_{k=1}^\infty</m> of sets in <m>\mathcal{S}</m> with <m>\mu(E_k)&lt; \infty</m> for all <m>k</m>, and <m>X = \bigcup_{k=1}^\infty E_k</m>. Note that this definition is consistent with the definition of a <m>\sigma</m>-finite measure.</p>
+
+<theorem xml:id="thm-Car-ext-2">
+<title>Carathéodory-Hahn Theorem</title>
+<statement>
+    <p>
+        <idx><h>Carathéodory-Hahn Theorem</h></idx><idx><h>Carathéodory extension</h></idx>
+        Let <m>\mu_0</m> be a premeasure on a semiring <m>\mathcal{S}</m> of subsets of a non-empty set <m>X</m>.
+        Then the Carathéodory measure <m>\mu</m> induced by <m>\mu_0</m> is an extension of <m>\mu_0</m>.
+        Furthermore, if <m>\mu_0</m> is <m>\sigma</m>-finite, then <m>\mu</m> is <m>\sigma</m>-finite and <m>\mu</m> is the unique measure on the set of <m>\mu^*</m>-measurable subsets extending <m>\mu_0</m>.
+    </p>
+</statement>
+<proof>
+<p>That <m>\mu</m> extends <m>\mu_0</m> follows from <xref ref="thm-Car-ext-1"/> and <xref ref="lem-Car-ext-2"/>.
+    If <m>\mu_0</m> is <m>\sigma</m>-finite, then <m>\mu</m> is <m>\sigma</m>-finite since <m>\mu</m> extends <m>\mu_0</m>.</p>
+<p>It remains to show that <m>\mu</m> is unique when <m>\mu_0</m> is <m>\sigma</m>-finite.
+    Suppose that <m>\nu</m> is another measure on the <m>\mu</m>-measurable sets which extends <m>u_0</m>.
+    Suppose <m>E \in X</m> satisfies <m>\mu^*(E) = 0</m>.
+    By the definition of the out measure <m>\mu^*</m>, if we fix <m>\varepsilon&gt;0</m> there exists <m>\{E_k\}_{k=1}^\infty</m> in <m>\mathcal{S}</m> such that <m>E \subseteq \bigcup_k E_k</m> and
+<md> \sum_{k=1}^\infty \mu_0(E_k) &lt; \varepsilon.</md>
+Noting that <m>\mu_0(E_k) = \nu(E_k)</m> for each <m>k</m>, the countable monotonicity of <m>\nu</m> implies that <m>\nu(E) = 0</m>.</p>
+<p>Take any <m>A \in \mathcal{S}_\sigma</m> (i.e. <m>A</m> is a countable union of sets in <m>\mathcal{S}</m>).
+    As <m>\mathcal{S}</m> is a semiring, we can write <m>A</m> as a disjoint countable union of sets in <m>\mathcal{S}</m>.
+    Since <m>\mu</m> and <m>\nu</m> are countably additive and agree on <m>\mathcal{S}</m>, it follows that <m>\mu(A) = \nu(A)</m>.
+    If <m>A \in \mathcal{S}_{\sigma\delta}</m> (i.e. <m>A</m> is a countable intersection of sets in <m>\mathcal{S}_\sigma</m>), and <m>\mu(A)&lt; \infty</m>, then by the <xref ref="thm-continuity-of-measure" text = "custom">continuity of measure</xref>, for both <m>\mu</m> and <m>\nu</m>, we have that <m>\mu(A) = \nu(A)</m>.</p>
+<p>Now take <m>E_0 \in \mathcal{S}</m> with <m>\mu_0(E_0)&lt;\infty</m>.
+    Take any <m>E \subseteq E_0</m>. We will show that <m>\mu(E) = \nu(E)</m>.
+    By <xref ref="prop-sigma-delta-sets"/>, there is an <m>A \in \mathcal{S}_{\sigma\delta}</m> such that <m>E\subseteq A</m> and <m>\mu(A\backslash E) = 0</m>.
+    We can further assume that <m>A \subseteq E_0</m>.
+    By the excision property
+<md> \nu(E) = \nu(A) - \nu(A\backslash E).</md>
+We have already shown that <m>\nu(A) = \mu(A)</m> and <m>\nu(A \backslash E) = \mu(A\backslash E)</m>. And hence <m>\nu(E) = \mu(A)</m>.</p>
+<p>Finally, if <m>\mu_0</m> is <m>\sigma</m>-finite, there are sets <m>\{X_k\}_{k=1}^\infty</m> in <m>\mathcal{S}</m> which cover all of <m>X</m> and satisfy <m>\mu_0(X_k)&lt;\infty</m>.
+    We can further assume that the sets <m>\{X_k\}_{k=1}^\infty</m> are disjoint. 
+    Thus, if <m>E \subseteq X</m> is measurable then
+<md>
+\begin{aligned}
+\nu(E) &amp;= \sum_{k=1}^\infty \nu(E \cap X_k) \\
+        &amp;= \sum_{k=1}^\infty \mu(E \cap X_k) \\
+        &amp;= \mu(E),
+\end{aligned}
+</md>
+thus proving the uniqueness of <m>\mu</m>.</p>
+</proof>
+</theorem>
+</section>

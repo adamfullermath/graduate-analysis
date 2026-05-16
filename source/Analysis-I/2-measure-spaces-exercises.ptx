@@ -1,0 +1,207 @@
+<exercises>
+<exercise xml:id="exer-cocount-measure">
+    <introduction>
+        <p>
+            Let <m>X</m> be an uncountable set.
+            A set <m>A \subseteq X</m> is <term>cocountable</term> if its complement <m>A^c</m> is countable.
+        </p>
+    </introduction>
+
+    <task>
+        <statement>
+            <p>
+                Show that the collection <m>\mathcal{M}</m> of all subsets of <m>X</m> which are either countable or cocountable forms a <m>\sigma</m>-algebra.<idx><h sortby="sigma-algebra"><m>\sigma</m>-algebra</h><h>countable-cocountable <m>\sigma</m>-algebra</h></idx>
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Define a function <m>\mu \colon \mathcal{M} \rightarrow \mathbb{R}</m> by <m>\mu(A) = 0</m> if <m>A</m> is countable, and <m>\mu(A) = 1</m> if <m>A</m> is cocountable. Show that <m>\mu</m> is a measure.
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Prove the claims in <xref ref="exam-counting"/>.
+            That is, show that the counting measure<idx><h>measure</h><h>counting measure</h></idx> <m>c</m> on a non-empty set <m>X</m> defines a complete measure.</p>
+            <p>Show that <m>(X,\mathcal{P}(X),c)</m> is <m>\sigma</m>-finite if and only if <m>X</m> is countable.
+            Show that <m>(X,\mathcal{P}(X),c)</m> is a finite measure space if and only if <m>X</m> is finite.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-counting-Borel">
+    <statement>
+        <p>
+            Let <m>X</m> be a non-empty set with the discrete topology. Let <m>c</m> be the counting measure on <m>(X,\mathcal{P}(X))</m>.
+            Show that <m>c</m> is a Borel measure.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-dirac-meas">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Fix <m>x \in X</m>, and let <m>\delta_x</m> be the Dirac measure defined in <xref ref="exam-dirac-measure"/>.
+            Show that <m>\delta_x</m> is a measure.</p>
+            <p>Suppose <m>X</m> is a topological space, and <m>\mathcal{F} = \mathcal{B}(X)</m> is the Borel sets. Show that <m>\delta_x</m> is a Borel measure.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-borel-on-extended">
+    <statement>
+        <p>
+            Let <m>\overline{\mathbb{R}} = \mathbb{R}\cup \{-\infty, \infty\}</m> be the extended real line.
+            Let <m>\overline{\mathcal{B}}</m> be the collection of sets in <m>\overline{\mathbb{R}}</m> given by
+            <md> \overline{\mathcal{B}} = \{ A \subseteq \overline{\mathbb{R}} \colon A \cap \mathbb{R} \in \mathcal{B}\},</md>
+            where <m>\mathcal{B}</m> is the collection of Borel sets in <m>\mathbb{R}</m>.
+            Show that <m>\overline{\mathcal{B}}</m> is a <m>\sigma</m>-algebra.<idx><h>Borel sets</h><h>in the extended real line</h></idx><idx><h>extended real line</h></idx>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-top-on-extended">
+    <statement>
+        <p>
+            Let <m>\overline{\mathbb{R}} = \{-\infty, \infty\}</m> be the extended real line.<idx><h>extended real line</h></idx>
+            For <m>U \subseteq \overline{\mathbb{R}}</m> we say <m>U</m> is <em>open in <m>\overline{\mathbb{R}}</m></em> if it satisfies the following conditions
+            <ol>
+            <li><m>U \cap \mathbb{R}</m>  is open in <m>\mathbb{R}</m>;
+            </li>
+            <li>if <m>\infty \in U</m>, then there exists <m>n \in \mathbb{R}</m> such that <m>(n,\infty) \subseteq U</m>;
+            </li>
+            <li><m>-\infty \in U</m>, then there exists <m>n \in \mathbb{R}</m> such that <m>(-\infty,n) \subseteq U</m>.
+            </li>
+            </ol>
+            Show that this defines a topology on <m>\overline{\mathbb{R}}</m>.</p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-borel-on-extended-2">
+    <statement>
+        <p>
+            Let <m>\overline{\mathbb{R}} = \{-\infty, \infty\}</m>.<idx><h>extended real line</h></idx>
+            Let <m>\overline{\mathcal{B}}</m> be the <m>\sigma</m>-algebra from <xref ref="exer-borel-on-extended"/>.
+            Endow <m>\overline{\mathbb{R}}</m> with the topology from <xref ref="exer-top-on-extended"/>.
+            Show that the <m>\sigma</m>-algebra of Borel sets in <m>\overline{\mathbb{R}}</m>, <m>\mathcal{B}(\overline{\mathbb{R}})</m>, conincides with <m>\overline{\mathcal{B}}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Prove <xref ref="thm-completion-of-meas-space"/>.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise>
+    <introduction>
+        <p>
+            Let <m>(Y,\mathcal{F},\mu)</m> be a measure space, and let <m>(Z,\mathcal{G})</m> be a measurable space.
+            Let <m>f \colon Y \rightarrow Z</m> be a  function satisfying <m>f^{-1}(B) \in \mathcal{F}</m> for all <m>B \in \mathcal{G}</m>.
+            Define a function <m>f_*\mu</m> on <m>\mathcal{G}</m> by
+            <md>f_*\mu(A) = \mu(f^{-1}(A)).</md>         
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Show that <m>f_*\mu</m> is a measure on <m>(Z,\mathcal{G})</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\mu(Y) = f_*\mu(Y)</m>.         
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise xml:id="exer-induced-counting-outer-measure">
+    <statement>
+        <p>
+            Prove the claim in <xref ref="ex-induced-counting-outer-measure"/>:
+            Let <m>X</m> be an infinite set, and let <m>\mathcal{S}</m> be the collection of all finite subsets of <m>X</m>.
+            Let <m>\mu \colon \mathcal{S} \rightarrow [0,\infty)</m> be the counting function.
+            Let <m>\mu^*</m> be the outer measure induced by <m>\mu</m>. Show that <m>\mu^*=c</m>, the counting measure on <m>X</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-induced-length-outer-measure">
+    <statement>
+        <p>
+            Prove the claim in <xref ref="ex-induced-length-outer-measure"/>:
+            Let <m>\mathcal{S}</m> be the collection of all open intervals in the real line.
+            Let <m>\mu</m> be the length function on <m>\mathcal{S}</m>, i.e. <m>\mu(I) = \ell(I)</m> for all <m>I \in \mathcal{S}</m>.
+            Let <m>\mu^*</m> be the outer measure induced by <m>\mu</m>. 
+            Show that <m>\mu^*(I) = \ell(I)</m> for all intervals <m>I</m> in <m>\mathbb{R}</m>.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-zero-measurable">
+    <statement>
+        <p>
+            Let <m>\mu^*</m> be an outer measure on a non-empty set <m>X</m>.
+            Show that if <m>\mu^*(A) = 0</m> then <m>A</m> is <m>\mu^*</m>-measurable.
+            (Note that this completes the proof of <xref ref="thm-measure-space-from-outer-measure"/>).         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-interval-semiring">
+    <statement>
+        <p>
+            Show that the collections <m>\mathcal{I}_1</m>, <m>\mathcal{I}_2</m> and <m>\mathcal{I}_3</m> from <xref ref="exam-interval-semiring"/> form a semirings of subsets of <m>\mathbb{R}</m>.
+            That is show that the collection <m>\mathcal{I}_1</m> of all intervals in <m>\mathbb{R}</m>; the colletion <m>\mathcal{I}_2</m> of all intervals of finite length; and <m>\mathcal{I}_3</m> of all intervals of the form <m>(a,b]</m>, <m>a\leq b</m>, for semirings.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-product-semiring">
+    <statement>
+        <p>
+            Show that the collection <m>\mathcal{S}</m> from <xref ref="exam-product-semiring"/> forms a semiring.
+            That is, if <m>(X,\mathcal{M}, \mu)</m> and <m>(Y, \mathcal{N}, \nu)</m> are two measure spaces and
+            <md> \mathcal{S} = \{ A \times B \colon A \in \mathcal{M}, \ B \in \mathcal{N}\},</md>
+            show that <m>\mathcal{S}</m> is a semiring of subsets of <m>X \times Y</m>. <idx><h>measurable rectangle</h></idx>            
+        </p>
+    </statement>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Let <m>X</m> be an uncountable set and let <m>\mathcal{S}</m> be the collection of all countable subsets of <m>\mathcal{S}</m>.
+            Define a function <m>\mu</m> on <m>\mathcal{S}</m> by <m>\mu(A) = 0</m> for all <m>A \subseteq \mathcal{S}</m>.
+            Let <m>\mu^*</m> be the outer measure induced by <m>\mu</m>.
+            Determine <m>\mu^*</m> for each <m>A \subseteq X</m>.
+            Determine which sets are <m>\mu^*</m>-measurable.
+            Note that the <m>0</m> measure <m>\nu(A) = 0</m> for all <m>A \subseteq X</m> is also an extension of <m>\mu</m>.
+            Why does this not contradict the Carathéodory-Hahn Theorem (<xref ref="thm-Car-ext-2"/>)?         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-length-premeasure">
+    <statement>
+        <p>
+            Let <m>\mathcal{I}_1</m>, <m>\mathcal{I}_2</m> and <m>\mathcal{I}_3</m> be the semirings of intervals from <xref ref="exer-interval-semiring"/>.
+            Show that the length function <m>\ell</m> when restricted to each <m>\mathcal{I}_i</m> is a premeasure of <m>\mathcal{I}_i</m>, for <m>i=1,2,3</m>.         
+        </p>
+    </statement>
+</exercise>
+</exercises>
+
