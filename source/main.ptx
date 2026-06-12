@@ -11,11 +11,7 @@
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
-    <part>
-      <title>Prerequisites</title>
-      <xi:include href="Prereqs/1-Background.ptx" />
-      <xi:include href="Prereqs/2-Background.ptx" />
-    </part>
+    
 
     <part><title>Measure and Integration</title>
     <!-- Include chapters -->

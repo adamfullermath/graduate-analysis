@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec-haus-examp">
+<section xml:id="sec-haus-examp" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Calculating Hausdorff Dimension</title>
     
     <p>
@@ -302,5 +302,5 @@
         </statement>
     </theorem>
     
-
+    <!-- <xi:include href="../sage/Sierpinski_pyr.ptx"/> -->
 </section>

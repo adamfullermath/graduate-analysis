@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figure xml:id="fig-Tak2">
+    <caption>
+    Van der Waerden's example.
+    The construction is the same as Takagi's example, but uses base 10 instead of base 2.
+    </caption>
+    <image>
+        <shortdescription>Vanderwaerden's example</shortdescription>
+        <description>
+            <p>
+                Visualization of van der Waerden's example of a nowhere differentiable function.
+                The graph is fractal like in nature, symmetric about the vertical line <m>x=1/2</m>.
+                The graph looks similar to a stepped triangle, with zig-zag plateaus.
+            </p>
+        </description>
+
+        <sageplot label="vanderwaerden">
+            g(x) = min_symbolic( x -floor(x),ceil(x)-x)
+
+            N = 10
+            b = 10
+            f(x) = sum([g(b^k*x)/(b^k) for k in range(N)])
+
+            plt = plot(f(x), (x,0,1))
+            plt
+        </sageplot>
+    </image>
+</figure>

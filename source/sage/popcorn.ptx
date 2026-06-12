@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figure xml:id="fig-popcorn">
+    <caption>
+      Riemann's function, which is Riemann integrable and has a dense set of discontinuities. <xref ref="exam-popcorn"/>
+    </caption>
+    <image>
+        <shortdescription>Riemann's popcorn function.</shortdescription>
+        <description>
+            <p>
+                A visual representationo of Riemann's popcorn function, as described <xref ref="exam-popcorn"/>.
+                The image looks like a collection of points inside the isosceles triangle with base <m>[0,1]</m> and apex at the point <m>(1/2,1/2)</m>. The points get significantly denser towards the base.
+            </p>
+        </description>
+        <sageplot label='popcorn'>
+
+                V = [(0,0),(1,0)]
+
+                N = 200
+                for n in [Integer(k) for k in range(2,N)]:
+                    for d in n.coprime_integers(n):
+                        V.append((d/n,1/n))
+                        
+                L1 = line([(0.01,0),(0.99,0)], thickness = 4, gridlines='major')
+                L2 = line([(3/(2*N),1/(2*N)),((2*N-2)/(2*N),1/(2*N))], thickness = 4)
+                L2_points = ([(2/(2*N),1/(2*N)),((2*N-1)/(2*N),1/(2*N))])
+
+
+                point_size = 20
+                popcorn = point(V, size = point_size) + L1 + L2 + point(L2_points, size = point_size)
+                
+                popcorn
+        </sageplot>
+    </image>
+</figure>

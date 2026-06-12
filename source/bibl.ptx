@@ -106,7 +106,7 @@
 
 <biblio type="bibtex" xml:id="Riesz1909translate">
   <author>Riesz, Frigyes</author>
-  <title>Sur les op\'{e</title>
+  <title>Sur les op\'{e}rateurs lin\'{e}aires </title>
   <year>2015</year>
 </biblio>
 
@@ -180,6 +180,20 @@
   <publisher>Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint
               Corp., New York</publisher>
   <pages start="vi+362"/>
+</biblio>
+
+<biblio type="bibtex" xml:id="HeiBor">
+  <author>Wikipedia</author>
+  <title>Heine-Borel Theorem</title>
+  <url href="https://en.wikipedia.org/wiki/Heine%E2%80%93Borel_theorem" visual="example.com">https://en.wikipedia.org/wiki/Heine-Borel_theorem</url>
+  <year>accessed 2026-06-10</year>
+</biblio>
+
+<biblio type="bibtex" xml:id="SchBer">
+  <author>Wikipedia</author>
+  <title>Schröder–Bernstein theorem</title>
+  <url href="https://en.wikipedia.org/wiki/Schr%C3%B6der%E2%80%93Bernstein_theorem" visual="example.com">https://en.wikipedia.org/wiki/Schroder-Bernstein_theorem</url>
+  <year>accessed 2026-06-02</year>
 </biblio>
 
 <biblio type="bibtex" xml:id="wil">

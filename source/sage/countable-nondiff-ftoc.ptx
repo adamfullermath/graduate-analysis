@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<figure xml:id="fig-ftoc-2">
+    <caption>The function <m>G(x)</m> defined in <xref ref="exam-ftoc2"/> which is continuous on <m>[0,1]</m> and differentiable on all but countably many points.</caption>
+    <image>
+        <shortdescription>A piecewise linear function on the unit interval which is differentiable at all but countably many points.</shortdescription>
+        <description>
+            <p>
+                The figure represents a continuous piecewise linear function <m>G(x)</m> on <m>[0,1]</m>.
+                The function <m>G</m> takes the value <m>0</m> at <m>1/n</m> when <m>n</m> is an odd positive integer, and takes the value <m>1/n</m> are <m>1/n</m> when <m>n</m> is an even positive integer.
+                The function <m>G(x)</m> is thus not differentiable when <m>x =1/n</m>, but <m>G(x)</m> is differentiable at all other points.
+            </p>
+        </description>
+        <sageplot label='countable-nondiff-ftoc'>
+            k = 200
+            clr = "green"
+
+            x_ticks = sorted([1/23]+[1/(2*n+1) for n in range(1,6)]+[1],)
+            y_ticks = sorted([1/20]+[1/(2*n) for n in range(1,6)])
+            x_ticks_format =  [r"$\ldots$", r"$\frac{1}{11}$",r"$\frac{1}{9}$",r"$\frac{1}{7}$",r"$\frac{1}{5}$",r"$\frac{1}{3}$", 1]
+            y_ticks_format = [r"$\vdots$",r"$\frac{1}{10}$",r"$\frac{1}{8}$",r"$\frac{1}{6}$",r"$\frac{1}{4}$",r"$\frac{1}{2}$"]
+
+            p = line([(1,0),(1/2,1/2),(1/3,0)], color=clr, ticks=[x_ticks,y_ticks], tick_formatter=[x_ticks_format,y_ticks_format])
+
+            for i in range(1,k,2):
+                l = line([(1/i,0),(1/(i+1),1/(i+1)),(1/(i+2),0)],  color=clr)
+                p = p + l
+
+            start_line = line([(0,0),(1/k,1/k)], color=clr)    
+                
+            p = p + start_line
+
+            p
+        </sageplot>
+    </image>
+
+</figure>

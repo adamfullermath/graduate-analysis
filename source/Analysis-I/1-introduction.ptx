@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="chap-intro">
+<chapter xml:id="chap-intro" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Why study measure theory?</title>
 <introduction>
 
@@ -15,6 +15,7 @@ Bernhard Riemann
 <section xml:id="sec-intro-ftoc">
 <title>The integral of a derivative</title>
 <p>In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named <em>The Fundamental Theorem of Calculus</em>.<idx><h>Fundamental Theorem of Calculus</h></idx> We will focus on the first of these here.</p>
+
 <theorem xml:id="thm-FTOCI">
 <title>The Fundamental Theorem of Calculus I</title>
 <idx><h>Fundamental Theorem of Calculus</h></idx>
@@ -28,6 +29,7 @@ Then
 
 <p>This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions <m>F</m> so that the differentiability of <m>F</m> is automatic? Do we need <m>F'</m> to be continuous everywhere in <m>(a,b)</m> for the theorem to hold? Do we need <m>F'</m> to be defined everywhere in <m>(a,b)</m> for the theorem to hold?</p>
 <p>The following simple example shows that there are functions <m>F</m> where the conclusion of the first fundamental theorem holds, but <m>F'</m> is not defined on all of the interval <m>(a,b)</m>.</p>
+
 <example xml:id="exam-ftoc">
 <p>Let <m>F</m> be the function <m>F(x) = |x|</m> on the interval <m>[a,b]</m>, where <m>a&lt; 0 &lt; b</m>.
 Then <m>F</m> is differentiable at every point in <m>(a,b)</m> except at <m>0</m>.
@@ -51,18 +53,17 @@ We have that
 
 </example>
 <p><xref ref="exam-ftoc"/> shows that we can get away with <m>F'</m> not being defined everywhere, and still satisfy the conclusion of <xref ref="thm-FTOCI" text="custom">the fundamental theorem of calculus</xref>. Similar to <xref ref="exam-ftoc"/>, we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.</p>
+
 <example xml:id="exam-ftoc2">
 <p>Define a function <m>G</m> on <m>[0,1]</m> by
 <md> G(x) = \min\left\{\left|x-\frac{1}{n+1}\right|, \left|x -\frac{1}{n}\right|\right\},\ \text{when }\frac{1}{n+1} \leq x \leq \frac{1}{n}.</md>
 By construction, <m>G</m> is continuous.
 However, <m>G</m> is not differentiable at <m>x= \frac{1}{n}</m> for each integer <m>n &gt; 1</m>; <m>G</m> is differentiable at all other <m>x</m> (where <m>G'(x) = 1</m> or <m>G'(x) = -1</m>).</p>
-<figure xml:id="fig-ftoc-1">
-    <caption>
-        A continuous function <m>G(x)</m> which is not differentiable at each <m>x=\frac{1}{n}</m>. <xref ref="exam-ftoc2"/>
-    </caption>
-    <image source="images/countable nondiff ftoc.png" width="50%"/>
 
-</figure>
+<!-- FIGURE 1 -->
+<xi:include href="../sage/countable-nondiff-ftoc.ptx"/>
+
+
 <p>One can further show that
 <md> \int_0^b G' = G(b) </md>
 for each <m>0\leq b \leq 1.</m>
@@ -96,12 +97,14 @@ f(x) = \begin{cases}
 </md>
 This is function goes by several names, including <em>Riemann's function</em>, <em>Thomae's function</em>, and the <em>popcorn function</em>.</p>
 
-<figure xml:id="fig-popcorn">
+<!-- <figure xml:id="fig-popcorn">
     <caption>
       Riemann's function, which is Riemann integrable and has a dense set of discontinuities. <xref ref="exam-popcorn"/>
     </caption>
     <image source="images/popcorn.png" width="50%" />
-</figure>
+</figure> -->
+
+<xi:include href="../sage/popcorn.ptx" />
 
 <p>Bernhard Riemann (1826 - 1866)<idx><h>Riemann, Bernhard</h></idx> introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, <m>x \in [0,1]\backslash A</m>, and discontinuous at the rational points, <m>x \in A</m>. He further showed that <m>f</m> is Riemann integrable and
 <md> \int_0^1 f = 0.</md>

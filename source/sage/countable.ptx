@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<figure xml:id="fig-countable">
+			<caption>Bijection from <m>\bN \times \bN</m> to <m>\bN</m></caption>
+			<image>
+				<shortdescription>Bijection from N to N times N</shortdescription>
+				<description>
+                    <p>
+                        A grid of blue points representing <m>\bN \times \bN</m> and a red arrow zig-zagging from point to point to illustrate a bijection from <m>\bN \times \bN</m> to <m>\bN</m>.
+                    </p>
+                </description>
+				<sageplot label="countable">
+					K = 10
+
+					def first(p):
+						return p[0]
+
+					def zigzag(ps):
+						grps = [ [p for p in ps if sum(p)==k] for k in range(2*K -1) ]
+						zz = []
+						for grp in grps:
+							if sum(grp[0]) % 2 == 0:
+								grp.sort(key = first, reverse = False)
+							if sum(grp[0]) % 2 == 1:
+								grp.sort(key = first, reverse = True)
+								
+							zz += grp
+						
+						return zz
+
+					points = [(n,m) for n in range(K) for m in range(K)]
+
+					points = zigzag(points)
+
+					plt = sum(point(p) for p in points) + line((points[i] for i in range(50)),color="red",thickness=1.5) + arrow(points[49],points[50],color="red",width=1.5)
+					plt
+				</sageplot>
+			</image>
+		</figure>

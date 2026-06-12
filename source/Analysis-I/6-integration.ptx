@@ -140,12 +140,37 @@
     \end{cases},</md>
 <p>where <m>\lceil\cdot\rceil</m> denotes the ceiling function (i.e. round to the nearest integer above).
     Then <m>\phi_n \leq f</m> for each <m>n</m>.
-    <figure xml:id="fig-integral-1-x">
-<image source="images/integral.png" width="30%" />
+
+<figure xml:id="fig-integral-1-x">
 <caption>
   <p>The functions <m>f(x)</m> (red) and <m>\phi_{10}(x)</m> (blue) from <xref ref="exam-integral-1-x" text="Example"/></p>
 </caption>
+<image>
+    <shortdescription>The curve of the function 1/x, for positive x, is shown in red. A simple/step function below 1/x is shown in red.
+    </shortdescription>
+    <description>
+        <p>
+            The function <m>f(x) = 1/x</m> for positive <m>x</m> is shown, together with the step function <m>\phi_{10}</m>, as described in <xref ref="exam-integral-1-x"/>.
+            The function <m>\phi_{10}</m> is a simple function satisfying <m>\phi_{10}(x) = f(n)</m> for <m>n-1 \lt x \lt n</m>, when <m>x\leq 10</m>, and <m>\phi_{10}(x)= 0 </m> otherwise.
+        </p>
+    </description>
+    <sageplot label="integral">
+        <!-- x = var('x') -->
+        f(x) = 1/x
+        end_point = 12
+        g(x) = piecewise([((0,10),1/ceil(x)),([10,20],0)])
+        jumps = [i for i in range(end_point+1)]
+
+        g_plot = plot(g,(0,end_point),exclude=jumps, color="blue", thickness=2, legend_label=r"$\phi_{10}$")
+        f_plot = plot(f, (0,end_point), color="red", legend_label = r"$f(x)=\frac{1}{x}$")
+
+        plt = f_plot + g_plot
+        plt.set_axes_range(0,end_point,0,4)
+        plt
+    </sageplot>
+</image>
 </figure>
+
 <p>For each <m>n</m> we have</p>
 </p>
 <md> \int_{(0,\infty)} \phi_n\,dm =\sum_{k=1}^n \frac{1}{k},</md>
@@ -518,10 +543,98 @@ If there is an integrable non-negative function <m>g</m> on <m>X</m> such that <
 <p>However, if we restrict the Monotone convergence theorem to an increasing sequence <m>(f_n)_n</m> of integrable non-negative functions which converge pointwise a.e. to an integrable function <m>f</m>, then this is a special case of the Lebesgue Decomposition Theorem.</p>
 </remark>
 </section>
+
 <section>
 <title>Lebesgue integration and Riemann integration</title>
 <p>In Chapter~1 we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals <m>[a,b]</m> that the answer is yes.</p>
-<p>When <m>f</m> is Riemann integrable on an interval <m>[a,b]</m> we denote the Riemann integral of <m>f</m> by <m>\mathrm{R}{\int}_a^b f</m>.</p>
+<p>When <m>f</m> is Riemann integrable on an interval <m>[a,b]</m> we denote the Riemann integral of <m>f</m> by <m>\mathrm{R}{\int}_a^b f</m>.
+We first establish precisely, what functions are Riemann integrable.<idx><h>Riemann integration</h></idx></p>
+
+<p>Let <m>[a,b]</m> be a closed interval in <m>\mathbb{R}</m>, and let <m>f \colon [a,b] \rightarrow \mathbb{R}</m> be a bounded function. Let <m>P = \{x_0, x_1, \ldots, x_n\}</m> be a partition of <m>[a,b]</m>, where</p>
+<md> a = x_0 &lt; x_1 &lt; \ldots &lt; x_n = b.</md>
+<p>We define <m>O(f,P)</m> as</p>
+<md> O(f,P) = \sum_{k=1}^n \sup_{x,y \in [x_{k-1},x_k]}|f(x) - f(y)|(x_k - x_{k-1})</md>
+<p>The function <m>f</m> is <em>Riemann integrable</em><idx><h>integrable</h><h>Riemann integrable</h></idx> if for all <m>\varepsilon &gt; 0</m> there exists a partition <m>P</m> of <m>[a,b]</m> such that <m>O(f,P)&lt; \varepsilon</m>.<fn>You may have seen other definitions of <em>Riemann integrable</em>. Can you prove that your definition of Riemann integrable is equivalent to the definition given here?</fn></p>
+
+<theorem xml:id="thm-Riemann-int">
+<p><idx><h>integrable</h><h>Riemann integrable</h></idx>
+Let <m>f</m> be a bounded function on the closed interval <m>[a,b]</m>,
+and let <m>D = \{x \in [a,b] \colon f \text{ is not continuous at }x\}</m>.
+Then <m>f</m> is Riemann integrable if and only if <m>D</m> has Lebesgue measure <m>0</m>.</p>
+</theorem>
+<proof>
+<p>Suppose that <m>f</m> is Riemann integrable.
+Take <m>x \in [a,b]</m>.
+The function <m>f</m> is not continuous at <m>x</m>, if there exists <m>\varepsilon</m> such that for all <m>\delta &gt;0</m> there exists <m>y \in (x-\delta,x + \delta)\cap [a,b]</m> such that <m>|f(x)-f(y)|\geq \varepsilon</m>.
+Thus, if we set</p>
+<md> D_\eta = \{ x\in [a,b] \colon \forall \delta &gt;0 \exists y\in (x-\delta,x+\delta) \text{ such that }|f(x)-f(y)|\geq\eta\},</md>
+<p>then</p>
+<md> D = \bigcup_{\eta &gt;0} D_\eta.</md>
+<p>That that, if <m>\eta_2 &gt; \eta_1 &gt; 0</m>, then <m>D_{\eta_2} \subseteq D_{\eta_1}.</m>
+Thus, we can write <m>D</m> as a countable union</p>
+<md> D = \bigcup_{n=1}^\infty D_{\frac{1}{n}}.</md>
+<p>Fix <m>\eta &gt;0</m>. We will show that <m>m^*(D_\eta) = 0</m>.
+Take any <m>\varepsilon &gt; 0</m>.
+Since <m>f</m> is Riemann integrable, there exists a partition</p>
+<md> P = \{a=x_0 &lt; x_1 &lt; \ldots &lt; x_n = b\}</md>
+<p>such that <m>O(f,P)&lt; \varepsilon</m>.
+Let <m>\Lambda = \{k \colon D_\eta \cap [x_{k-1},x_k] \neq \emptyset\}.</m>
+Then</p>
+<md>
+\begin{aligned}
+\eta\sum_{k \in \Lambda}(x_k - x_{k-1}) &amp;\leq \sum_{k\in \Lambda} \sup_{x,y \in [x_{k-1},x_k]}|f(x)-f(y)|\\
+     &amp;\leq \sum_{k=1}^n \sup_{x,y \in [x_{k-1},x_k]}|f(x)-f(y)|\\
+     &amp;= O(f,P)&lt; \varepsilon.
+\end{aligned}
+</md>
+<p>Since <m>D_\eta \subseteq \bigcup_{k \in \Lambda} [x_{k-1},x_k]</m> it follows that</p>
+<md> m^*(D_\eta) &lt; \frac{\varepsilon}{\eta}.</md>
+<p>The above inequality holds for all <m>\varepsilon&gt;0</m>, and so <m>m^*(D_\eta) = 0</m>.
+It follows that <m>D_\eta</m> is Lebesgue measurable and <m>m(D_\eta) = 0</m> (see <xref ref="exer-zero-measurable" text="Exercise"/>).
+We have now that</p>
+<md> m^*(D) \leq \sum_{n=1}^\infty m^*(D_{\frac{1}{n}}) = 0</md>
+<p>and so <m>D</m> is also Lebesgue measurable with <m>m(D) = 0</m>.</p>
+<p>Suppose now that <m>D</m> has Lebesgue measure <m>0</m>.
+Given <m>\varepsilon &gt; 0</m>, there exists open intervals <m>\{I_k\}_{k=1}^\infty</m> such that</p>
+<md> m(D) \leq \sum_{k=1}^\infty \ell(I_k) &lt; \varepsilon.</md>
+<p>Let <m>U = \bigcup_{k=1}^\infty I_k</m> and <m>K = [a,b] \backslash U</m>.
+The set <m>U</m> is a union of open intervals, and so <m>U</m> is open in <m>\mathbb{R}</m>.
+Thus, <m>K</m> is closed.
+As <m>K \subseteq [a,b]</m>, <m>K</m> is both closed and bounded, and so <m>K</m> is compact by the Heine-Borel Theorem, <xref ref="thm-heine-borel" text="Theorem"/>.</p>
+<p>The function <m>f</m> is continuous on <m>[a,b]\backslash D</m>.</p>
+<p>Hence, for each <m>x \in [a,b]\backslash D</m> there exists <m>\delta_x&gt;0</m> such that, for if <m>y \in [a,b]</m> and <m>|x-y|&lt;\delta_x</m> then <m>|f(x)-f(y)|&lt;\varepsilon</m>.
+The open intervals <m>\{(x-\frac{\delta_x}{2}, x+\frac{\delta_x}{2})\}_{x\in K}</m> form an open cover of <m>K</m>.
+Since <m>K</m> is compact, there are is a finite set <m>x_1,x_2,\ldots,x_n \in K</m> such that</p>
+<md> K \subseteq \bigcup_{k=1}^n (x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}).</md>
+<p>Let</p>
+<md> P = \{a,b\} \cup (\{x_i-\frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2} \} \colon i = 1,\ldots,n\} \cap [a,b]).</md>
+<p>The set <m>P</m> is finite, and contains both <m>a</m> and <m>b</m>, we can thus order <m>P</m> and view <m>P</m> as a partition of <m>[a,b]</m>.
+Let the ordered elements of <m>P</m> be denoted by</p>
+<md> \{a=y_0 &lt; y_1 &lt;\ldots &lt; y_m = b\}.</md>
+<p>Note that, if there are <m>i</m> and <m>j</m> such that <m>(x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}) \cap (y_{j-1},y_j) \neq \emptyset</m> then <m>[y_{j-1},y_j] \subseteq [x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}] \subseteq (x_i -\delta_{x_i}, x_i + \delta_{x_i})</m>.
+Let</p>
+<md> A = \{ j \colon \exists \ i \text{ such that }[y_{j-1},y_j] \subseteq [x_i-\frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}]\} </md>
+<p>and</p>
+<md> B = \{ j \colon [y_{j-1},y_j] \cap (x_i-\frac{\delta_{x_i}}{2},x_i+\frac{\delta_{x_i}}{2}) = \emptyset \text{ for all }i\}. </md>
+<p>Note, if <m>j \in A</m>, and <m>x,y \in [y_{i-1},y_i]</m> then</p>
+<md> |f(x)-f(y)|\leq |f(x) - f(x_i)| + |f(x_i) - f(x)|  &lt;2 \varepsilon,</md>
+<p>for some <m>i</m>, by the choice of <m>\delta_{x_i}</m>.
+Further</p>
+<md> \bigcup_{j \in B} (y_{i-1},y_i) \subseteq \bigcup_{k=1}^\infty I_k,</md>
+<p>and so</p>
+<md> \sum_{j \in B} (y_i - y_{i-1}) &lt; \varepsilon. </md>
+<p>Let <m>M = \sup_{x \in [a,b]}|f(x)|</m>. Then</p>
+<md>
+\begin{aligned}
+O(f,P)  =&amp; \sum_{j=1}^m \sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1}) \\
+    =&amp; \sum_{j\in A}\sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1})\\ &amp;+ \sum_{j\in B}\sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1})\\
+    &lt;&amp; 2\varepsilon \sum_{j\in A}(y_i - y_{j-1}) + 2M \sum_{j\in B}(y_i - y_{j-1})\\
+    &lt;&amp; 2\varepsilon(b-a) + 2M \varepsilon = 2\varepsilon(b-a + M).
+\end{aligned}
+</md>
+<p>Hence <m>f</m> is Riemann integrable.</p>
+</proof>
+
 <lemma xml:id="lem-riemann-meas">
 <p>Let <m>f</m> be a bounded function on the closed interval <m>[a,b]</m>.
 If <m>f</m> is Riemann integrable, then <m>f</m> is measurable.</p>
@@ -610,31 +723,78 @@ Then</p>
 </md>
 <p>The following examples show that it is possible for a function <m>f</m> to have a finite improper Riemann integral but not be Lebesgue integrable.</p>
 <example xml:id="ex-not-lebesgue-int-1">
-<p>Define a function <m>f(x)</m> on <m>[0,\infty]</m> by</p>
+<p>Define a function <m>f(x)</m> on <m>[0,\infty]</m> by
 <md> f(x) = \frac{(-1)^n}{n}</md>
-<p>when <m>n = \lceil x\rceil</m>.
-    <figure xml:id="fig-not-lebesgue-int-1">
-<image source="images/not lebesgue int 1.png" width="20%" />
-<caption>
-  <p>The function <m>f(x)</m> from <xref ref="ex-not-lebesgue-int-1" text="Example"/></p>
-</caption>
+when <m>n = \lceil x\rceil</m>.</p>
+
+<figure xml:id="fig-not-lebesgue-int-1">
+    <caption>
+        <p>
+            The function <m>f(x)</m> from <xref ref="ex-not-lebesgue-int-1" text="Example"/>
+        </p>
+    </caption>
+    <image>
+        <shortdescription>Visualization of  the function on the poisitve reals that takes the (alternating) value plus or minus 1/n between (n-1) and (n).</shortdescription>
+        <description>
+            <p>
+                Visualization of the function <m>f(x) = (-1)^n/n </m> and its (Riemann) integral.
+                Image graphs a sequence of rectangles of height <m>(-1)^n/n</m> with base between <m>n-1</m> and <m>n</m> in light blue.
+            </p>
+        </description>
+        <sageplot label="not-lebesgue-int-1">
+            endpoint = 20
+            iteration = endpoint
+            thick = 1.5
+
+            lines = line([(iteration,0),(endpoint,0)],thickness=thick, color="blue")
+            poly = polygon([(0,0)], aspect_ratio=5)
+
+
+            for n in range(iteration):
+                lines += line([(n,((-1)^(n+1))/(n+1)),(n+1,((-1)^(n+1))/(n+1))],thickness=thick, color="blue")
+                poly += polygon([(n,0),(n,((-1)^(n+1))/(n+1)),(n+1,((-1)^(n+1))/(n+1)),(n+1,0)],rgbcolor=(153/255,204/255,1))
+
+            plt = poly + lines
+
+            plt.set_axes_range(0,endpoint,-1,1)
+            plt
+        </sageplot>
+    </image>    
+
 </figure>
-<p>Then<fn>The exact value this alternating series takes can be shown to be <m>\ln(2)</m>, but that is finite is enough for us here.</fn></p>
-</p>
+
+<p>Then<fn>The exact value this alternating series takes can be shown to be <m>\ln(2)</m>, but that is finite is enough for us here.</fn>
 <md> \mathrm{R}{\int}_{-\infty}^\infty f = \sum_{n=1}^\infty \frac{(-1)^n}{n} &lt; \infty</md>
-<p>However</p>
+However
 <md>\int_{[0,\infty]} |f|\,dm = \sum_{n=1}^\infty \frac{1}{n} =\infty,</md>
-<p>and hence <m>f</m> is not Lebesgue integrable.</p>
+and hence <m>f</m> is not Lebesgue integrable.</p>
 </example>
+
 <example xml:id="ex-not-lebesgue-int-2">
 <p>Let <m>g(x) = \frac{\sin(x)}{x}</m> on the real line.</p>
-<p><figure xml:id="fig-not-lebesgue-int-2">
-<image source="images/not lebesgue int 2.png" width="20%" />
-<caption>
-  <p>The function <m>g(x)=\frac{\sin(x)}{x}</m> from <xref ref="ex-not-lebesgue-int-2" text="Example"/></p>
-</caption>
+
+<figure xml:id="fig-not-lebesgue-int-2">
+    <caption>
+    <p>The function <m>g(x)=\frac{\sin(x)}{x}</m> from <xref ref="ex-not-lebesgue-int-2" text="Example"/></p>
+    </caption>
+    <image>
+        <shortdescription>THe curve of sin(x)/x</shortdescription>
+        <description>
+            <p>
+                Visualization of the curve <m>g(x) = \sin(x)/x</m> for <m>x</m>  between <m>-20</m> and <m>20</m>.
+                The curve shows decreasing waves as <m>x</m>  goes farther from <m>0</m>.
+                The curve peaks at <m>x=0</m> where <m>g(x)</m> approaches <m>1</m>.
+            </p>
+        </description>
+        <sageplot label="not-lebesgue-int-2">
+            g(x) = sin(x)/x
+            plt = plot(g(x), [-20,20],color="red", legend_label=r"$f(x)=\frac{\sin(x)}{x}$")            
+            plt.set_axes_range(-20,20,-0.5,1)
+            plt
+        </sageplot>
+    </image>
 </figure>
-</p>
+
 <p>It can be shown that<fn>Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.</fn></p>
 <md> \mathrm{R}{\int}_{-\infty}^\infty g =\pi </md>
 <p>Note for every integer <m>n \geq 0</m></p>

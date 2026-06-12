@@ -498,14 +498,11 @@ f((1-\lambda)u + \lambda v) \leq (1-\lambda)f(u) + \lambda f(v).
 <p>That is, the straight line segment from <m>(u,f(u))</m> to <m>(v,f(v))</m> is above the curve <m>(t,f(t))</m> with <m>u \leq t \leq v</m>.
     Intuitively, this can be understood since <m>f''(x) = e^x &gt; 0</m> for all <m>x</m>.
     A formal proof of the inequality  <xref ref="eq-exp-convex" text="Equation"/> is eked out in <xref ref="exer-exp-convex" text="Exercise"/>.</p>
-<p><figure xml:id="fig-exp-convex">
-<image source="images/exp convex.png" width="50%"/>
-<caption>
-  <p>The function <m>f(x)=e^x</m> is convex</p>
-</caption>
-</figure>
-</p>
-<p>Let <m>u = \ln(a^p)</m>, <m>v = \ln(b^q)</m>, and <m>\lambda = \frac{1}{p}.</m>
+
+<!-- FIGURE exp-convex -->
+<xi:include href="../sage/exp-convex.ptx"/>
+
+<p>Let <m>u = \ln(a^p)</m>, <m>v = \ln(b^q)</m>, and <m>\lambda = \frac{1}{p}.</m> 
     Note that, since <m>p&gt;1</m>, <m>0&lt;\lambda &lt;1</m>.
     Further, since <m>q</m> is conjugate to <m>p</m>, <m>1-\lambda = \frac{1}{q}</m>.
     Thus, by  <xref ref="eq-exp-convex" text="Equation"/>,</p>

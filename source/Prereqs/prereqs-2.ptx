@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appendix xml:id="appendix-prereqs-top">
+<title>Prerequisites: Topology</title>
+<introduction>
+
+<p>
+	We briefly cover some key ideas about topology. 
+	In particular, we will focus on the topology on <m>\mathbb{R}</m>.
+</p>
+</introduction>
+<section>
+<title>Open and closed sets in <m>\mathbb{R}</m></title>
+<definition>
+	<statement>
+		<p>A subset <m>A \subseteq \mathbb{R}</m> is <term>open</term> if for all <m>x\in A</m> there exists <m>r&gt;0</m> such that <m>(x-r, x+r) \subseteq A</m>.</p>
+		<p>A subset <m>B \subseteq \mathbb{R}</m> is <term>closed</term> if its complement <m>\mathbb{R}\backslash B</m> is open.
+		<idx><h>open set</h></idx>
+		<idx><h>closed set</h></idx>
+		</p>
+	</statement>
+</definition>
+
+
+<definition>
+	<statement>
+		<p>Let <m>X \subseteq \mathbb{R}</m>.
+			A set <m>A \subseteq X</m> is <term>open in <m>X</m></term> if there is an open subset <m>A' \subseteq \mathbb{R}</m> such that <m>A = A' \cap X</m>.
+			Similarly, a set <m>B \subseteq X</m> is <term>closed in <m>X</m></term> if there is a closed subset <m>B \subseteq \mathbb{R}</m> such that <m>B = B' \cap X</m>.
+			<idx><h>open set</h></idx><idx><h>closed set</h></idx></p>
+	</statement>
+</definition>
+<p>
+	The following theorem lists some key properties of open sets.
+</p>	
+
+<theorem xml:id="thm-open-sets">
+	<statement>
+		<p>
+			<ol>
+			<li><m>\emptyset,\ \mathbb{R}</m> are open;
+			</li>
+			<li>if <m>\mathcal{F}</m> is any collection of open sets then 
+				<md> \bigcup_{F\in \mathcal{F}} F \text{ is open}; </md>
+			</li>
+			<li>if <m>A_1,\ldots, A_n</m> are open then 
+				<md> \bigcap_{i=1}^n A_i \text{ is open.} </md>
+			</li>
+			</ol>
+		</p>
+	</statement>
+</theorem>
+
+<example>
+<p>We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.
+<ol>
+<li><m>\emptyset</m> and <m>\mathbb{R}</m> are open and closed.
+</li>
+<li><p>Open intervals are open, i.e. intervals of the form <m>(-\infty, b),\ (a,+\infty)</m> and <m>(a,b)</m>.</p>
+</li>
+<li>Closed intervals are closed, i.e. intervals of the form <m>(-\infty, b],\ [a,+\infty)</m> and <m>[a,b]</m>.
+</li>
+<li>Finite subsets of <m>\mathbb{R}</m> are closed.
+</li>
+<li>The rational numbers <m>\mathbb{Q}</m> are neither open nor closed.
+</li>
+<li>The intervals <m>(a,b]</m> and <m>[a,b)</m> are neither open nor closed.
+</li>
+</ol>
+</p>
+</example>
+
+
+<remark>
+<p>Using <xref ref="thm-open-sets"/> and <xref ref="eq-de-morgan" text="custom">DeMorgan's identities</xref>, we can show that an arbitrary <em>intersection</em> of closed sets is closed, and a finite <em>union</em> of closed sets is closed.</p>
+</remark>
+
+<!--<p>A useful characterization of closed sets in <m>\mathbb{R}</m> is the following.</p>
+<proposition xml:id="prop-closed">
+<p>A subset <m>B \subseteq \mathbb{R}</m> is closed if and only if given any convergent sequence <m>(x_n)_n</m> of <m>\mathbb{R}</m> with <m>x_n \in B</m> for all <m>n</m>, we must have <m>\lim x_n \in B</m>.</p>
+</proposition>-->
+
+<definition>
+	<notation>
+		<usage><m>\overline{A}</m></usage>
+	  <description>closure of <m>A</m></description>
+	</notation>
+	<notation>
+		<usage><m>A^\circ</m></usage>
+	  <description>interior of <m>A</m></description>
+	</notation>
+<p>Let <m>A\subseteq \mathbb{R}</m>.
+The <term>closure</term> of <m>A</m>, denoted <m>\overline{A}</m> is the smallest closed set containing <m>A</m>.
+The <term>interior</term> of <m>A</m>, denoted <m>A^\circ</m>, is the largest open set contained in <m>A</m>.
+A subset <m>A\subseteq \mathbb{R}</m> is <term>dense</term> in <m>\mathbb{R}</m> if <m>\overline{A}=\mathbb{R}</m>.</p>
+<p>If <m>X \subseteq \mathbb{R}</m> and <m>A \subseteq X</m>, then the <term>closure of <m>A</m> in  <m>X</m></term> is the set <m>\overline{A} \cap X</m>. Similarly, the <term>interior of <m>A</m> in <m>X</m></term> is the set <m>A^\circ \cap X</m>.
+A set <m>A\subseteq X</m> is <term>dense in <m>X</m></term> if the closure of <m>A</m> in <m>X</m> is all of <m>X</m>.
+<idx><h>closed set</h><h>closure</h></idx>
+<idx><h>open set</h><h>interior</h></idx>
+</p>
+</definition>
+
+<example>
+<p>The rational numbers <m>\mathbb{Q}</m> are dense in <m>\mathbb{R}</m>.
+The irrational numbers <m>\mathbb{R}\backslash \mathbb{Q}</m> are also dense in <m>\mathbb{R}</m>.</p>
+</example>
+
+<p>We make frequent use of the following property of open sets in this course.</p>
+
+<proposition xml:id="prop-open-sets">
+	<statement>
+		<p>
+		Every non-empty open set in <m>\mathbb{R}</m> is the disjoint union of countably many open intervals.			
+		</p>
+	</statement>
+	<proof>
+<p>Let <m>A\subseteq \mathbb{R}</m> be non-empty open set.
+Take <m>x\in A</m>.
+Since <m>A</m> is open, there exists <m>y&gt;x</m> such that <m>(x,y) \subseteq A</m>.
+Similarly, there exists <m>z&lt;x</m> with <m>(z,x) \subseteq A</m>.
+Let
+<md>
+\begin{aligned}
+a_x &amp;= \inf \{z \colon (z,x) \subseteq A\} \\
+	b_x &amp;= \sup \{y \colon (x,y) \subseteq A\}
+\end{aligned}
+</md>
+(allowing for the possibility that <m>a_x = -\infty</m> and <m>b_x = +\infty</m>).
+Let <m>I_x = (a_x, b_x)</m>.
+We will show that <m>I_x\subseteq A</m> but <m>a_x,b_x \notin A</m>.</p>
+<p>Take <m>w\in I_x</m>. Suppose <m>x&lt;w&lt;b_x</m>.
+By definition of <m>b_x</m> as the supremum, there exists <m>y&gt;w</m> such that <m>(x,y) \subseteq A</m>.
+Thus <m>w\in A</m>.
+Similarly, if <m>w&lt; x</m> we get <m>w\in A</m>.
+Hence <m>I_x \subseteq A</m>.</p>
+<p>Now assume <m>b_x \in \mathbb{R}</m> and <m>b_x\in A</m>. 
+Then, since <m>A</m> is open , there is an <m>r&gt;0</m> such that <m>(b_x-r, b_x+r) \subseteq A</m>.
+But then <m>(x, b_x+r)\subseteq A</m>.
+This contradicts the definition of <m>b_x</m> as a supremum, and hence <m>b_x\notin A</m>.
+Similarly, <m>a_x\notin A</m>.</p>
+<p>Take <m>x,y \in A</m>.
+Note that, either <m>I_x = I_y</m> or <m>I_x \cap I_y= \emptyset</m>.
+Hence the collection <m>\{I_x \colon x\in A\}</m> is a disjoint collection of open intervals.
+Further, since <m>x\in I_x</m> for all <m>x\in A</m>, we have
+<md> A = \bigcup_{x\in A} I_x. </md>
+It remains to show that there are countably many distinct intervals <m>I_x</m>.
+Note that, since <m>\mathbb{Q}</m> is dense in <m>\mathbb{R}</m>, each open interval <m>I_x</m> contains rational numbers.
+Thus, the set <m>\{I_x\colon x\in A\}</m> can be indexed by a subset of <m>\mathbb{Q}</m>. 
+Since <m>\mathbb{Q}</m> is countable this indexing set is countable, and we are done.</p>
+</proof>
+</proposition>
+
+<definition>
+<p>A countable intersection of open sets if called a <m>G_\delta</m>-set.
+A countable union of closed sets is called an <m>F_\sigma</m>-set.</p>
+<idx><h sortby="G-delta set"><m>G_\delta</m>-set</h></idx>
+<idx><h sortby="F-sigma set"><m>G_\delta</m>-set</h></idx>
+</definition>
+<remark>
+<p>The term <m>G_\delta</m> comes from German. The German for area is <sq>Gebeit</sq>, and the German for intersection is <sq>Durschnitt</sq>. Hence a <m>G_\delta</m> set comes from an intersection of areas.</p>
+<p>The term <m>F_\sigma</m>, on the other hand, comes from another language altogether. In French the word for closed is <sq>fermé</sq>, and the word for sum is <sq>somme</sq>. Hence an <m>F_\sigma</m> set is a sum of closed sets.</p>
+</remark>
+
+<subsection><title>Open sets in <m>\bR^n</m></title>
+<p>
+	In <m>\bR^n</m> there is also a natural way to define open sets. 
+	Heuristically, an open set is one which does not contain any points in its boundary.
+	In order to define an open set, we need to first understand what we mean by distance in <m>\bR^n</m>.
+	In <m>\bR</m>, we use the absolute value to determine the distance between two numbers; in <m>\bR^n</m> we use the Euclidean-norm (or <m>2</m>-norm).
+	For <m>x = (x_1,\ldots,x_n)</m> and <m>y = (y_1,\ldots,y_n)</m> in <m>\bR^n</m> we define the distance between <m>x</m> and <m>y</m> as
+	<md>
+		\|x - y\|_2= \left(\sum_{i=1}^n(x_i-y_i)^2 \right)^{1/2}.
+	</md>
+	Note that, for <m>n = 1, 2, 3</m>, this value is the length of the straight line from <m>x</m> to <m>y</m>.
+</p>
+
+<definition>
+	<statement>
+		<p>
+			A set <m>U \subseteq \bR^n</m> is <term>open</term> if for all <m>x \in U</m> there exists <m>\varepsilon \gt 0</m> such that
+			<md>
+				\{y \in \bR^n \colon \|x-y\|_2\lt 2 \} \subseteq U.
+			</md>
+			A set <m>F \subseteq \bR^n</m>	 is <term>closed</term> if <m>\bR^n \backslash F</m> is open.
+			<idx><h>open set</h></idx><idx><h>closed set</h></idx>
+		</p>		
+	</statement>
+</definition>
+
+<p>
+	Most of what was said for open sets in <m>\bR</m> is true for open sets in <m>\bR^n</m> when <m>n \geq 2</m>.
+	In particular, the analogous statement of <xref ref="thm-open-sets"/> holds in <m>\bR^n</m>; the interior and closure of a set is defined analogously; and <m>F_\sigma</m> and <m>G_\delta</m> sets are similarly defined.
+	We warn that <xref ref="prop-open-sets"/> does not translate in its entirety to <m>\bR^n</m>. 
+	Define an <term>open ball</term> in <m>\bR^n</m> to be a set of the form
+	<md>
+		\{y \in \bR^n \|x-y\|_2\lt r\}
+	</md>
+	for a fixed <m>x \in \bR^n</m> and fixed <m>r \gt 0.</m>
+	It is true that every open set in <m>\bR^n</m> is a countable union of open balls.<fn>You can use the the fact that <m>\bQ^n</m> is dense in <m>\bR^n</m> to prove this.</fn>
+	However, we can not assert that every open set is a countable union of <em>disjoint</em> open balls.
+</p>	
+</subsection>
+</section>
+
+
+
+<section>
+<title>Metric spaces and General topology</title>
+
+<p>
+	The definition of open sets in <m>\bR</m> and <m>\bR^n</m> relies on being able to define a distance between between: <m>|x-y|</m> for <m>x,y \in \bR</m>, <m>\|x-y\|_2</m> for <m>x,y\in \bR^n</m>.
+	If we have a <sq>distance</sq> (which is called a <term>metric</term>) on a set <m>X</m> then we can define open sets in <m>X</m>.
+</p>	
+
+<definition>
+	<notation>
+		<usage><m>d(x,y)</m></usage>
+	  <description>metric</description>
+	</notation>
+	<notation>
+		<usage><m>(X,d)</m></usage>
+	  <description>metric space</description>
+	</notation>
+	<statement>
+		<p>
+			Let <m>X</m> be a non-empty set.
+			A function <m>d \colon X\times X \rightarrow \bR</m> is a <term>metric</term> if
+			<ol>
+				<li>
+					<p>
+						<m>d(x,y) \geq 0</m> for all <m>x,y \in X</m>, and <m>d(x,y)=0</m> if and only if <m>x=y</m>;
+					</p>
+				</li>
+				<li>
+					<p>
+						<m>d(x,y) = d(y,x)</m> for all <m>x,y \in X</m>; and
+					</p>
+				</li>
+				<li>
+					<p>
+						<m>d(x,y) \leq d(x,z) + d(z,y)</m> for all <m>x,y,z \in X</m> (<term>triangle inequality</term>).<idx><h>triangle inequality</h></idx>
+					</p>
+				</li>
+			</ol>
+			<idx><h>metric</h></idx>
+			<idx><h>metric space</h></idx>
+			If <m>d</m> is a metric on <m>X</m>, the pair <m>(X,d)</m> is called a <term>metric space</term>.
+			When the metric <m>d</m> is clear, we often simply call <m>X</m> a metric space.
+		</p>
+	</statement>
+</definition>
+
+<definition>
+	<statement>
+		<p>
+			Let <m>(X,d)</m> be a metric space.
+			A set <m>U \subseteq X</m> is <term>open</term> if for all <m>x \in X</m> there exists <m>\varepsilon \gt 0</m> such that 
+			<md>
+				\{ y\in X \colon d(x,y)\lt \varepsilon \} \subseteq U.
+			</md>
+			A set <m>F \subseteq X</m> is closed if <m>X \backslash F</m> is open.
+			<idx><h>open set</h></idx><idx><h>closed set</h></idx>
+		</p>
+	</statement>
+</definition>
+
+<p>
+	Let <m>(X,d)</m> be a topological space.
+	If <m>A \subseteq X</m>, the <term>closure</term> of <m>A</m>, denoted by <m>\overline{A}</m>, is the smallest closed set containing <m>A</m>; and
+	the <term>interior</term> of <m>A</m>, denoted by <m>A^\circ</m>, is the largest open set contained in <m>A</m>.
+	A set <m>A \subseteq X</m> is <term>dense</term> if <m>\overline{A} = X</m>.
+	A set <m>A</m> is <term>dense</term> in <m>X</m> if <m>\overline{A} = X</m>.
+	<idx><h>closed set</h><h>closure</h></idx>
+	<idx><h>open set</h><h>interior</h></idx>
+	<idx><h>dense set</h></idx>
+</p>
+
+<p>
+	In a metric space, open sets have many of the same properties that open sets in <m>\bR</m> have.
+</p>
+
+<theorem xml:id="thm-open-sets-metric">
+	<statement>
+		<p>
+			Let <m>(X,d)</m> be a metric space. The open sets in <m>(X,d)</m> have the following properties:
+			<ol>
+			<li><m>\emptyset,\ X</m> are open;
+			</li>
+			<li>if <m>\mathcal{F}</m> is any collection of open sets then 
+				<md> \bigcup_{F\in \mathcal{F}} F \text{ is open}; </md>
+			</li>
+			<li>if <m>A_1,\ldots, A_n</m> are open then 
+				<md> \bigcap_{i=1}^n A_i \text{ is open.} </md>
+			</li>
+			</ol>
+		</p>
+	</statement>
+</theorem>
+
+<example>
+	<p>
+		The absolute value function on <m>\bR</m> defines a metric: the distance between two numbers <m>x</m> and <m>y</m> is <m>|x-y|</m>.
+		For <m>n\geq 2</m>, the Euclidean distance between two points <m>x</m> and <m>y</m> is <m>\|x-y\|_2</m>.
+		This defines a metric on <m>\bR^n</m>. That triangle inequality is satisfied is not immediate; it follows from <xref ref="exer-2-norm"/>.
+	</p>
+</example>
+
+<p>
+	In a topological space, we look at open sets in a set without reference to a distance.
+	<xref ref="thm-open-sets"/> and <xref ref="thm-open-sets-metric"/> inspire the following definition
+</p>
+
+<definition>
+	<notation>
+		<usage><m>(X,\tau)</m></usage>
+	  <description>topological space</description>
+	</notation>
+	<statement>
+		<p>
+			A topology on a non-empty set <m>X</m> is a collection of subsets <m>\tau</m> of <m>X</m> with the properties
+			<ol>
+			<li><m>\emptyset</m>, <m>X \in \tau</m>;
+			</li>
+			<li>if <m>\mathcal{F}</m> is a collection of sets in <m>\tau</m> then <m>\bigcup_{F\in \mathcal{F}} F \in \tau</m>;
+			</li>
+			<li>if <m>F_1, \ldots, F_n \in \tau</m> then <m>\bigcap_{i=1}^n F_i \in \tau</m>.
+			</li>
+			</ol>
+			We call the elements of <m>\tau</m> <term>open sets</term>.
+			If <m>A</m> is open, we call <m>X\backslash A</m> <term>closed</term>.
+			We call <m>(X,\tau)</m>, or simply <m>X</m> if the topology <m>\tau</m> is clear, a <term>topological space</term>.
+			<idx><h>topology</h></idx>
+			<idx><h>topological space</h></idx>
+			<idx><h>open set</h></idx>
+			<idx><h>closed set</h></idx>
+		</p>
+	</statement>
+</definition>
+<definition>
+	<statement>
+		<p>
+			Let <m>(X,\tau)</m> be a topological space, and let <m>A \subseteq X</m>.
+			The <term>closure</term> of <m>A</m>, denoted <m>\overline{A}</m>, is the smallest closed set containing <m>A</m>; and the <term>interior</term> of <m>A</m>, denoted <m>A^\circ</m>, is the largest open set containing <m>A</m>.
+		</p>
+	</statement>
+</definition>
+
+
+<example>
+	<p>
+		Let <m>(X,d)</m> be a metric space, and let <m>\tau</m> be all open sets in <m>X</m> (with respect to the metric <m>d</m>).
+		Then <m>\tau</m> is a topology on <m>X</m> by <xref ref="thm-open-sets-metric"/>.
+	</p>
+</example>
+
+
+<example>
+	<p>
+		Let <m>X</m> be any non-empty set and let <m>\tau = \P(X).</m>
+		Then <m>(X,\tau)</m> is a topological space.
+		We call <m>\tau</m> the <term>discrete topology</term> on <m>X</m>.<idx><h>topology</h><h>discrete topology</h></idx>
+	</p>
+</example>
+
+<example>
+	<p>
+		Let <m>X</m> be any non-empty set and let <m>\tau = \{\emptyset, X\}.</m>
+		Then <m>(X,\tau)</m> is a topological space.
+		We call <m>\tau</m> the <term>trivial topology</term> on <m>X</m>.
+		The trivial topology is also refered to as the <term>indiscrete topology.</term>
+		<idx><h>topology</h><h>trivial topology</h></idx>
+		<idx><h>topology</h><h>indiscrete topology</h><see>trivial topology</see></idx>
+	</p>
+</example>
+
+<p>
+	Let <m>(X,\tau)</m> be a topological space, and let <m>A \subseteq X</m> be a non-empty subset.
+	Define
+	<md>
+		\tau_A = \{U \cap A \colon U \in \tau\}.
+	</md>
+	Then <m>(A,\tau_A)</m> is a topological space. 
+	This topology on <m>A</m> is called the <term>induced topology</term> or <term>relative topology</term> on <m>A</m>.
+	<idx><h>topology</h><h>induced topology</h></idx>
+	<idx><h>topology</h><h>relative topology</h><see>induced topology</see></idx>
+</p>
+
+
+
+<definition xml:id="def-haus">
+	<statement>
+		<p>
+			A topological space <m>(X,\tau)</m> is <term>Hausdorff</term>
+			if given <m>x,y \in X</m> with <m>x \neq y</m>, there are disjoint open sets <m>U_x,U_y \in \tau</m> with <m>x \in U_x</m> and <m>y \in U_y</m>.<idx><h>topology</h><h>Hausdorff</h></idx>
+		</p>
+	</statement>
+</definition>
+
+<example>
+	<p>
+		Every metric space is a Hausdorff topological space.
+	</p>
+</example>
+
+<example>
+	<p>
+		If <m>X</m> is a set with more than one point, and <m>\tau = \{\emptyset, X\}</m> is the trivial topology on <m>X</m>, then <m>(X,\tau)</m> is not a Hausdorff topological space.
+	</p>
+</example>
+
+<remark>
+	<p>
+		The property of being <em>Hausdorff</em> is an example of a <term>separation axiom</term> on a topological space. The Hausdorff property is sometimes denoted by <m>T_2</m>.
+		There are several other separation axioms, but we will not concern ourselves with them.
+	</p>
+</remark>
+<!-- </section>
+<section>
+<title>Compactness</title> -->
+<definition>
+<p>Let <m>(X,\tau)</m> be a topological space and let <m>A \subseteq X</m>.
+An <term>open cover of <m>A</m></term> is a collection of open sets <m>\mathcal{F} \subseteq \tau</m> such that
+<md>
+A \subseteq \bigcup_{F\in\mathcal{F}} F.
+</md>
+An open cover <m>\mathcal{F}</m> of <m>A</m> has a <term>finite subcover of <m>A</m></term> if there is a finite subset <m>\{F_1,\ F_2,\ldots,F_n\} \subseteq \mathcal{F}</m> such that
+<md> A \subseteq F_1 \cup F_2 \cup \ldots \cup F_n. </md>
+A set <m>A \subseteq X</m> is called <term>compact</term> given any open cover <m>\mathcal{F}</m> of <m>A</m>, <m>\mathcal{F}</m> has a finite subcover of <m>A</m>.
+<idx><h>compact</h></idx>
+<idx><h>open cover</h></idx>
+<idx><h>open cover</h><h>subcover</h></idx>
+</p>
+</definition>
+
+<p>The following theorem gives an easy characterization of compact sets in <m>\mathbb{R}^n</m>.
+<fn>Proofs are easy to find. The wikipedia page for the result provides several <xref ref="HeiBor"/>.</fn></p>
+
+<theorem xml:id="thm-heine-borel">
+<title>Heine-Borel Theorem</title>
+<statement>
+	<p>
+		<idx><h>Heine-Borel Theorem</h></idx>
+		A subset <m>A \subseteq \mathbb{R}^n</m> is compact if and only if <m>A</m> is closed and bounded.
+	</p>
+</statement>
+<!-- <proof>
+<p>We will first show that a closed bounded interval <m>[a,b]</m> is compact.
+If <m>a=b</m>, then <m>[a,b]</m> is finite and clearly compact.
+Assume <m>a&lt;b</m>.
+Let <m>\mathcal{F}</m> be an arbitrary open cover of <m>[a,b]</m>.
+Note that, for any <m>a\leq x\leq b</m>, <m>\mathcal{F}</m> is also an open cover of <m>[a,x]</m>.
+Let
+<md> E = \{x\in [a,b] \colon \mathcal{F} \text{ has a finite subcover of }[a,x]\}. </md>
+Note that <m>[a,a]= \{a\}</m>.
+As <m>\mathcal{F}</m> is an open cover of <m>[a,b]</m> there is an open set <m>F \in \mathcal{F}</m> such that <m>a\in F</m>.
+Hence <m>a\in E</m>.</p>
+<p>As <m>E</m> is a non-empty, bounded subset of <m>\mathbb{R}</m> we can take its supremum.
+Let
+<md> c = \sup E. </md>
+Clearly, <m>a&lt; c\leq b</m>.
+If we can show that <m>c=b</m> then we are done.</p>
+<p>Now, since <m>c\in [a,b]</m>, there is an open set <m>G \in \mathcal{F}</m> such that <m>c\in G</m>.
+As <m>G</m> is open, there exists <m>r&gt;0</m> such that <m>(c-r,c+r)\subseteq G</m>.
+As <m>c-r</m> is not an upper bounded for <m>E</m>, there exists <m>x\in E</m> such that <m>c-r&lt;x\leq c</m>.
+By definition of <m>E</m>, there are open sets <m>F_1, \ldots, F_n \in \mathcal{F}</m> such that
+<md> [a,x] \subseteq F_1 \cup F_2 \cup \ldots \cup F_n. </md>
+Thus,
+<md> [a, c+r) \subseteq F_1 \cup F_2 \cup \ldots \cup G. </md>
+It follows that <m>c=b</m>, otherwise we could find <m>x\in [a,b]</m> with
+<md> a\leq c&lt; x &lt; c+r </md>
+and have <m>[a,x]</m> finitely covered by <m>F_1,\ldots,F_n,G</m>; contradicting the definition of <m>c</m> as the supremum of <m>E</m>.
+We have now shown that <m>[a,b]</m> is compact.</p>
+<p>Let <m>A</m> be an arbitrary closed bounded subset of <m>\mathbb{R}</m> and let <m>\mathcal{F}</m> be any open cover of <m>A</m>.
+As <m>A</m> is bounded there is a closed interval <m>[a,b]</m> such that <m>A \subseteq [a,b]</m>.</p>
+<p>Let <m>A^c = \mathbb{R}\backslash A</m> be the complement of <m>A</m>.
+Since <m>A</m> is closed, <m>A^c</m> is open.
+Let <m>\mathcal{F}' = \mathcal{F} \cup \{A^c\}</m>.
+Then <m>\mathcal{F}'</m> is an open cover of <m>[a,b]</m>.
+Since <m>[a,b]</m> is compact, <m>\mathcal{F}'</m> has a finite subcover of <m>[a,b]</m>.
+That is
+<md> A \subseteq [a,b] \subseteq F_1 \cup \ldots \cup F_n, </md>
+for some <m>F_1,\ldots,F_n \in \mathcal{F}'</m>.
+If <m>F_1,\ldots, F_n \in \mathcal{F}</m>, then we have a finite subcover of <m>A</m> from open sets in <m>\mathcal{F}</m>, and we are done.
+Otherwise one of <m>F_1,\ldots,F_n</m> is equal to <m>A^c</m>.
+Without loss of generality, say <m>F_1 = A^c</m>.
+Then we have
+<md> A \subseteq F_2 \cup \ldots \cup F_n </md>
+and so <m>F_2, \ldots, F_n</m> form a finite open subcover of <m>A</m> from <m>\mathcal{F}</m>.
+Thus <m>A</m> is compact.</p>
+
+<p>
+Now suppose that <m>A \subseteq \bR^n</m> is closed and bounded, with <m>n \geq 2</m>.
+Let <m>\F</m> be an open cover of <m>A</m>.
+Assume also, that if <m>B \subseteq \bR^k</m> is closed and bounded, and <m>k\lt n</m>, that <m>B</m> is compact.
+For each <m>x \in \bR</m> let
+<md number="no">
+	A_x = \{ (a_2,\ldots,a_n)\in \bR^{n-1} \colon (x,a_2,\ldots,a_n)\in A\}.
+</md>
+
+</p>
+</proof> -->
+</theorem>
+<!-- 
+<definition>
+<p>A set <m>A \subseteq \mathbb{R}</m> is called <term>sequentially compact</term> if every infinite sequence of elements of <m>A</m> has a subsequence which converges to an element of <m>A</m>.</p>
+</definition>
+<p>The Bolzano-Weierstrass theorem, together with <xref ref="prop-closed" text="Proposition"/>, tells us that a set <m>A\subseteq \mathbb{R}</m> is sequentially compact if and only if it is closed and bounded. Combining the Bolzano-Weierstrass Theorem and the Heine-Borel Theorem we get the following result.</p>
+<corollary xml:id="cor-heine-borel">
+<p>Let <m>A\subseteq \mathbb{R}</m>. Then the following are equivalent:</p>
+<ol>
+<li><p><m>A</m> is compact;</p>
+</li>
+<li><p><m>A</m> is sequentially compact;</p>
+</li>
+<li><p><m>A</m> is closed and bounded.</p>
+</li>
+</ol>
+</corollary>
+<p>Many statements which are true for continous real-valued functions on closed bounded intervals, are in fact true for real-valued functions on closed bounded sets, using similar proofs (which rely on compactness/sequential compactness). We record some of these facts below:</p> -->
+
+<remark>
+<p>In a general metric space, a set being closed and bounded is not necessarily equivalent to being  compact.
+	If you study a proof of the Heine-Borel theorem in <m>\bR^n</m>, it will rely on the fact that <m>n</m> is finite.
+	In infinite dimensional normed vector spaces there are closed and bounded sets which are not compact.
+</p>
+</remark>
+
+</section>
+
+<section><title>Continuity and convergence</title>
+<p>
+	Recall the following definitions from a first course in real analysis.
+	Let <m>A \subseteq \bR</m> be a non-empty set and let <m>f \colon A \rightarrow \bR</m> be a function.
+	The function <m>f</m> is <term>continuous</term> at a point <m>x_0 \in A</m> if for all <m>\varepsilon \gt 0</m> there exists a <m>\delta \gt 0</m> such that <m>|f(x_0)-f(y)|\lt\varepsilon</m> for all <m>y \in A</m> with <m>|x_0-y|\lt \delta.</m>
+	The function <m>f</m> is <term>continuous</term> if <m>f</m> is continuous at every point in <m>A</m>.
+	The function <m>f</m> is <term>uniformly continuous</term> if for all <m>\varepsilon \gt 0</m> there is a <m>\delta \gt 0</m> such that if <m>x,y \in A</m> and <m>|x-y| \lt \delta</m> then <m>|f(x) - f(y)|\lt \delta</m>.
+	Note that uniform continuity is a stronger condition than continuity.
+	<idx><h>continuous function</h><h>at a point in <m>\bR</m></h></idx>
+	<idx><h>continuous function</h></idx>
+	<idx><h>continuous function</h><h>uniformly continuous</h></idx>
+</p>
+
+<p>
+	All of these definitions can be easily adapted to apply to general metric spaces.
+</p>
+<definition>
+	<notation>
+		<usage><m>\lim_{n}x_n = 0</m></usage>
+	  <description>limit of a sequence</description>
+	</notation>
+	<statement>
+		<p>
+				Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be two metric spaces, and let <m>f \colon X \rightarrow Y</m> be a function.
+				The function <m>f</m> is <term>continuous</term> at a point <m>x_0 \in X</m> if for all <m>\varepsilon \gt 0</m> there exists a <m>\delta \gt 0</m> such that <m>d_Y(f(x_0),f(y))\lt\varepsilon</m> for all <m>y \in X</m> with <m>d_X(x_0,y)\lt \delta.</m>
+				The function <m>f</m> is <term>uniformly continuous</term> if for all <m>\varepsilon \gt 0</m> there is a <m>\delta \gt 0</m> such that if <m>x,y \in X</m> and <m>d_X(x,y) \lt \delta</m> then <m>d_Y(f(x),f(y))\lt \delta</m>.
+				When <m>(x_n)_n</m> converges to <m>x_0</m> we call <m>x_0</m> the <term>limit</term> of the sequence <m>(x_n)_n</m>.
+				We denote this by <m>\lim_{n\rightarrow \infty}x_n = x_0,</m>, <m>\lim_{n}x_n = x_0,</m>, or
+				<md>
+					x_n \rightarrow x_0 \text{ as }n\rightarrow \infty.
+				</md>
+				
+				<idx><h>continuous function</h><h>on a metric space</h></idx>
+				<idx><h>continuous function</h><h>uniformly continuous</h><h>on a metric space</h></idx>
+				<idx><h>limit</h></idx>
+		</p>
+	</statement>
+</definition>
+
+<p>
+	Similarly, the usual definition of convergence in <m>\bR</m> is easily adapted to the metric space case.	
+</p>
+
+<definition>
+	<statement>
+		<p>
+			Let <m>(X,d)</m> be a metric space and let <m>(x_n)_{n}</m> be a sequence in <m>X</m>.
+			The sequence <m>(x_n)_n</m> converges to a point <m>x_0 \in X</m> if for all <m>\varepsilon \gt 0</m> there is a natural number <m>N</m> such that <m>d(x_n,x_0)\lt \varepsilon</m> when <m>n \geq N</m>.
+		</p>
+	</statement>
+</definition>
+
+<p>
+	We record two other characterizations of continuity, one based on open sets, and one based on sequences.
+</p>
+
+<proposition>
+	<statement>
+		<p>
+			Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be two metric spaces, and let <m>f \colon X \rightarrow Y</m> be a function.
+			The function <m>f</m> is continuous if and only if whenever <m>(x_n)_n</m> is a sequence in <m>X</m> converging to <m>x_0 \in X</m>, the sequence <m>(f(x_n))_n</m> in <m>Y</m> converges to <m>f(x_0).</m>
+		</p>
+	</statement>
+</proposition>
+
+<proposition xml:id="prop-cont-open">
+	<statement>
+		<p>
+			Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be two metric spaces, and let <m>f \colon X \rightarrow Y</m> be a function.
+			The function <m>f</m> is continuous if and only if <m>f^{-1}(U)</m> is an open set in <m>X</m> for all open sets <m>U \subseteq Y</m>.
+		</p>
+	</statement>
+</proposition>
+
+<p>
+	Sequences can also be used to characterize closed sets.
+</p>
+
+<proposition xml:id="prop-closed">
+	<statement>
+		<p>
+			Let <m>(X,d)</m> be a metric space and let <m>A \subseteq X</m>.
+			Then <m>A</m> is closed if and only if whenever <m>(x_n)_n</m> is a convergent sequence in <m>X</m> with each <m>x_n \in A</m>, then <m>\lim_n x_n \in A.</m>
+		</p>
+	</statement>
+</proposition>
+
+<p>
+	There are times when a continuous function is automatically <em>uniformly continuous</em>.
+</p>
+
+<proposition>
+	<statement>
+		<p>
+			Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be metric spaces. 
+			Further suppose that <m>X</m> is compact.
+			Let <m>f \colon X \rightarrow Y</m> be a continuous function.
+			Then, <m>f(X)</m> is a compact subset of <m>Y</m> and <m>f</m> is uniformly continuous.
+			
+		</p>
+	</statement>
+</proposition>
+
+<corollary>
+	<statement>
+		<p>
+			Let <m>(X,d)</m> be a compact metric space and let <m>f \colon X \rightarrow \bR</m> be a continuous function.
+			Then <m>f</m> is uniformly continuous and <m>f</m> attains its maximum and minimum values.
+		</p>
+	</statement>
+</corollary>
+
+<p>
+	In general topological spaces we can also define continuity of functions and convergence of sequences.
+	It turns out that sequences do not always play the same role in topological spaces as they do in metric spaces.
+	The correct analogue of a convergent sequence is (the more general) object of a convergent <term>net</term>.<fn>There are other objects called <term>filters</term> that can be used instead of nets.</fn>
+	As we can avoid using nets in these notes, we will not discuss them.
+	We will, however, need to talk about continuity.
+	Without having a metric, the <m>\varepsilon-\delta</m> definition of continuity does not readily translate to arbitrary topological spaces.
+	However, we do have open sets.
+	<xref ref="prop-cont-open"/> motivates the following definition.
+</p>
+
+<definition>
+	<statement>
+		<p>
+			Let <m>(X,\tau_X)</m> and <m>(Y,\tau_Y)</m> be two topological spaces.
+			A function <m>f \colon X \rightarrow Y</m> is <term>continuous</term> if <m>f^{-1}(U) \in \tau_X</m> for all <m>U \in \tau_Y.</m>
+			<idx><h>continuous function</h><h>on a topological space</h></idx>
+		</p>
+	</statement>
+</definition>
+
+</section>
+
+</appendix>

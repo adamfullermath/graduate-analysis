@@ -1,0 +1,223 @@
+<section xml:id="sec-Lebesgue">
+<title>Lebesgue measure on <m>\mathbb{R}</m></title>
+
+<p>We will now apply the Carathéodory-Hahn Theorem, <xref ref="thm-Car-ext-2"/>, to define the promised Lebesgue measure. Our goal is to extend the length function <m>\ell</m> to a measure. In <xref ref="exam-interval-semiring"/> (see <xref ref="exer-interval-semiring"/>) we saw three different semirings of intervals. <xref ref="exer-length-premeasure"/> tells us that <m>\ell</m> is a premeasure when restricted to each of these semirings. This gives three possibilities of where to apply the Carathéodory-Hahn theorem. The next proposition shows that this choice does not matter. We get the same outer measure no matter the choice.</p>
+
+<proposition xml:id="prop-Lebesgue-outer-measure">
+<p>Let <m>\mathcal{I}</m> be the semiring of all intervals in <m>\mathbb{R}</m>; let <m>\mathcal{I}_f</m> be the semiring of all finite length intervals; and let <m>\mathcal{I}_h</m> be the semiring of intervals of the form <m>(a,b]</m>, where <m>a,b \in \mathbb{R}</m> with <m>a \leq b</m>.
+    Let <m>m^*</m> be the outer measure induced by <m>\ell</m> on <m>\mathcal{I}</m>; let <m>m_f^*</m> be the outer measure induced by <m>\ell</m> restricted to <m>\mathcal{I}_f</m>; and let <m>m_h^*</m> be the outer measure induced by <m>\ell</m> restricted to <m>\mathcal{I}_h</m>.
+    Then for each <m>A \subseteq \mathbb{R}</m>
+<md> m^*(A) = m^*_f(A) = m^*_h(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md></p>
+</proposition>
+<proof>
+<p>Since <m>\mathcal{I}_h \subseteq \mathcal{I}_f \subseteq \mathcal{I}</m> it follows that
+<md> m^*(A) \leq m_f^*(A) \leq m_h^*(A)</md>
+for all <m>A \subseteq \mathbb{R}</m>.
+    Take any <m>A \subseteq \mathbb{R}</m>.
+    If <m>m^*(A) = \infty</m>, then by the above inequalities, <m>m_f^*(A) = \infty</m> and <m>m_h^*(A) = \infty</m>.
+    Suppose <m>m^*(A) &lt; \infty</m>.
+    Fix <m>\varepsilon &gt;0</m>.
+    There  exist intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>A \subseteq \bigcup_{k=1}^\infty I_k</m> and
+<md> m^*(A) + \varepsilon &gt; \sum_{k=1}^\infty \ell(I_k).</md>
+As <m>m^*(A)&lt;\infty</m> it follows that <m>\sum_{k=1}^\infty \ell(I_k)&lt;\infty</m>, and so  <m>I_k</m> is of finite length for each <m>k</m>.
+    Thus
+<md>m^*(A)+\varepsilon &gt; \sum_{k=1}^\infty \ell(I_k) \geq m_f^*(A).</md>
+As this holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m^*(A) \geq m_f^*(A)</m>.
+    Hence <m>m^* = m_f^*</m>.</p>
+<p>We will now show that
+<md>m^*(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md>
+Let <m>m_0^*</m> denote the function
+<md>m_0^*(A) = \inf\left\{ \sum_{i=1}^\infty \ell((a_i,b_i) \colon A \subseteq \bigcup_{i=1}^\infty (a_i,b_i)\right\}.</md>
+Since <m>m^*=m_f^*</m> is an infimum over all covers by intervals of finite length, and <m>m_0^*</m> is an infimum over all covers by <em>open</em> intervals of finite length, it follows that <m>m^*(A) \leq m_0^*(A)</m> for all <m>A \subseteq \mathbb{R}</m>.</p>
+<p>Now take any <m>A \subseteq \mathbb{R}</m>. If <m>m^*(A) = \infty</m>, then <m>m_0^*(A)= \infty</m>.
+    Suppose that <m>m^*(A) &lt;\infty</m>.
+    Fix <m>\varepsilon &gt; 0</m>.
+    Let <m>\{I_k\}_{k=1}^\infty</m> be a countable collection of finite length intervals such that <m>A \subseteq \bigcup_{k=1}^\infty I_k</m> and
+<md> m^*(A) + \varepsilon &gt; \sum_{k=1}^\infty \ell(I_k).</md>
+For each <m>k</m>, let <m>a_k = \inf I_k</m> and let <m>b_k = \sup I_k</m>.
+    Then
+<md>A \subseteq \bigcup_{k=1}^\infty I_k \subseteq \bigcup_{k=1}^\infty (a_i - \frac{\varepsilon}{4^k}, b_i + \frac{\varepsilon}{4^k}). </md>
+That is, <m>\{ (a_i - \frac{\varepsilon}{2^{k+1}}, b_i + \frac{\varepsilon}{2^{k+1}})\}_{k=1}^\infty</m> is a cover of <m>A</m> by open intervals of finite length.
+    Thus
+<md>
+\begin{aligned}
+m_0^*(A) &amp;\leq \sum_{k=1}^\infty \ell((a_i - \frac{\varepsilon}{2^{k+1}}, b_i + \frac{\varepsilon}{2^{k+1}})) \\
+        &amp; = \varepsilon + \sum_{k=1}^\infty\ell(I_k) \\
+        &amp; &lt; m^*(A)+ 2 \varepsilon.
+\end{aligned}
+</md>
+As the above inequality holds for all <m>\varepsilon &gt;0</m>, it follows that <m>m_0^*(A) \leq m^*(A)</m>.
+    Hence <m>m^* = m_0^*</m>.
+    A similar argument shows that <m>m_h^* = m_0^*</m>.</p>
+</proof>
+<definition>
+    <notation>
+        <usage><m>m^*</m></usage>
+      <description>Lebesgue outer measure</description>
+    </notation>
+    <notation>
+        <usage><m>m</m></usage>
+      <description>Lebesgue measure</description>
+    </notation>
+
+    <statement>
+        <p>
+            The function <m>m^* \colon \mathcal{P}(\mathbb{R}) \rightarrow [0,\infty]</m> defined by
+            <md> m^*(A) = \inf \left\{ \sum_{k=1}^\infty \ell(I_k) \colon A \subseteq \bigcup_{k=1}^\infty I_k,\ \{I_k\}_{k=1}^\infty \text{ finite length open intervals}\right\}</md>
+            is call the <term>Lebesgue outer measure</term> on <m>\mathbb{R}</m>.<idx><h>outer measure</h><h>Lebesgue outer measure</h></idx></p>
+            <p>The elements of the <m>\sigma</m>-algebra <m>\mathcal{M}</m> of <m>m^*</m>-measurable sets are called <term>Lebesgue measurable sets</term>.<idx><h>measurable set</h><h>Lebesgue measurable set</h></idx></p>
+            <p>The Carathéodory measure <m>m</m> got by restricting <m>m^*</m> to <m>\mathcal{M}</m> is called the <term>Lebesgue measure</term> on <m>\mathbb{R}</m>.<idx><h>Lebesgue measure</h></idx>
+        </p>
+    </statement>
+</definition>
+<p><xref ref="prop-Lebesgue-outer-measure"/> shows that the Lebesgue outer measure <m>m^*</m> is the outer measure induced by the length function <m>\ell</m>. Thus by the  <xref ref="thm-Car-ext-2" text="custom">Carathéodory-Hahn theorem</xref>, all intervals <m>I \subseteq \mathbb{R}</m> are Lebesgue measurable, and <m>m(I) = \ell(I)</m>. Further, since <m>\ell</m> is <m>\sigma</m>-finite, the measure space <m>(\mathbb{R}, \mathcal{M}, m)</m> is a complete <m>\sigma</m>-finite measure space, and <m>m</m> is the unique extennsion of <m>\ell</m> to a measure on <m>\mathcal{M}</m>.</p>
+
+<theorem xml:id="thm-countable-L-measurable">
+    <statement>
+        <p>
+            If <m>A \subseteq \mathbb{R}</m> is a countable set, then <m>A</m> is Lebesgue measurable and <m>m(A) = 0</m>.         
+        </p>
+    </statement>
+
+    <proof>
+        <p>Take any <m>b \in \mathbb{R}</m>. Then <m>\{b\}</m> can be written as a closed interval of <m>0</m> length
+        <md> \{b\} = [b,b]. </md>
+        Hence all singleton sets are Lebesgue measurable with Lebesgue measure <m>0</m>.
+            Let <m>A</m> be a countable set.
+            If <m>A</m> has <m>n</m> elements then we can write <m>A</m> as <m>A = \{a_1, \ldots, a_n\}</m>; if <m>A</m> is countably infinite we can write <m>A</m> as <m>A = \{a_1,a_2,\ldots\}</m>.
+            Thus
+        <md> A = \bigcup_{i=1}^n \{a_i\} \text{ or }A = \bigcup_{i=1}^\infty \{a_i\}.</md>
+        In either case, <m>A</m> is a countable union of disjoint sets of measure <m>0</m>.
+            Hence <m>m(A) = 0</m> by the countable additivity of <m>m</m>.</p>
+    </proof>
+</theorem>
+
+<remark>
+<p><xref ref="thm-countable-L-measurable"/> says that all countable sets have Lebesgue measure <m>0</m>.
+    It does <em>not</em> say that if <m>m(A) = 0</m> then <m>A</m> is countable.
+    We will see examples of uncountable sets of zero Lebesgue measure later.</p>
+</remark>
+
+<theorem xml:id="thm-Borel-Lebesgue-meas">
+    <statement>
+        <p>
+            All Borel sets in <m>\mathbb{R}</m> are Lebesgue measurable.
+            That is, <m>\mathcal{B} \subseteq \mathcal{M}</m>.
+        </p>
+    </statement>
+    <proof>
+        <p>By the construction of <m>m</m> (i.e. the Carathéodory-Hahn theorem), all open intervals are Lebesgue measurable.
+            Any open set <m>U \subseteq \mathbb{R}</m> can be written as a disjoint union of countably many open sets (<xref ref="prop-open-sets"/>), and hence is also Lebesgue measurable.
+            As the Borel sets <m>\mathcal{B}</m> are the sets in the <m>\sigma</m>-algebra generated by the open sets, and each open set is in <m>\mathcal{M}</m>, it follows that <m>\mathcal{B} \subseteq \mathcal{M}</m>.</p>
+    </proof>
+</theorem>
+
+<remark>
+<p>Finite sets, countably infinite sets, and intervals are all examples of Borel sets in <m>\mathbb{R}</m>.
+    <xref ref="thm-Borel-Lebesgue-meas"/> says that all Borel sets are Lebesgue measurable, but we have not exhibited any sets which are Lebesgue measurable but not Borel.</p>
+<p>In the other direction, we know that <m>\mathcal{M} \subseteq \mathcal{P}(\mathbb{R})</m>, but we have not exhibited any subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.
+    That is, we have
+<md> \mathcal{B} \subseteq \mathcal{M} \subseteq \mathcal{P}(\mathbb{R})</md>
+but it is not clear if these inclusions are strict.
+    We will see in <xref ref="sec-nonmeasurable"/> that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.</p>
+</remark>
+<p>We will now look at some approximation and regularity properties of the Lebesgue measure. By <xref ref="prop-Lebesgue-outer-measure"/> the Lebesgue outer measure <m>m^*</m> is an induced outer measure: <m>m^*</m> is the outer measure induced by the length function <m>\ell</m> on the collection of all intervals in the real line. We can thus apply <xref ref="prop-sigma-delta-sets"/> to <m>m^*</m>. That is, letting <m>\mathcal{I}_{\sigma\delta}</m> be the countable intersections of countable unions of intervals, if <m>E \subseteq \mathbb{R}</m> then there is a set <m>A \in \mathcal{I}_{\sigma\delta}</m> such that <m>E \subseteq A</m> and <m>m^*(A) = m^*(E)</m>. Further, if <m>E</m> is Lebesgue measurable then <m>m(A\backslash E) = 0</m> (noting here that all the sets in <m>\mathcal{I}_{\sigma\delta}</m> are Lebesgue measurable since every interval is Lebesgue measurable). The following result is a strengthening of <xref ref="prop-sigma-delta-sets"/> for the Lebesgue measure.</p>
+
+<theorem xml:id="thm-Leb-meas-sets-G-delta-F-sigma">
+<title>Outer and inner approximation of Lebesgue measure</title>
+    <statement>
+        <p>
+            <idx><h>Lebesgue measure</h><h>inner approximation</h></idx><idx><h>Lebesgue measure</h><h>outer approximation</h></idx>
+            Let <m>E \subseteq \mathbb{R}</m>.
+            The following are equivalent.
+            <ol>
+            <li><m>E</m> is Lebesgue measurable;
+            </li>
+            <li>for every <m>\varepsilon &gt;0</m> there exists an open set <m>U</m> containing <m>E</m> such that <m>m^*(U\backslash E) &lt; \varepsilon</m>;
+            </li>
+            <li>there is a <m>G_\delta</m>-set <m>G</m> contraing <m>E</m> such that <m>m^*(G\backslash E) = 0</m>;
+            </li>
+            <li>for every <m>\varepsilon &gt;0</m> there exists a closed set <m>C</m> contained in <m>E</m> such that <m>m^*(E\backslash C) &lt; \varepsilon</m>;
+            </li>
+            <li>there is an <m>F_\sigma</m>-set <m>F</m> contained in <m>E</m> such that <m>m^*(E\backslash F) = 0</m>.
+            </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>The complement of an open set is a closed set, hence the complement of a <m>G_\delta</m> set is an <m>F_\sigma</m> set.
+            Since the <m>\sigma</m>-algebra of Lebesgue measurable sets is closed under complements, it follows that (ii) is equivalent to (iv) and (iii) is equivalent to (v).</p>
+        <p>Suppose that <m>E</m> is Lebesgue measurable. 
+            We will show that (ii) holds.
+            Assume <m>m(E) &lt; \infty</m>.
+            Fix <m>\varepsilon &gt; 0</m>.
+            By the definition of the Lebesgue outer measure <m>m^*</m>, there exists open intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>E \subseteq \bigcup_{k=1}^\infty I_k</m> and
+        <md> m(E) + \varepsilon &gt; \sum_{k=1}^\infty \ell(I_k).</md>
+        Let <m>U = \bigcup_k I_k</m>. 
+            Then <m>U</m> is open, <m>E \subseteq U</m>, and
+        <md> m(U) \leq \sum_{k=1}^\infty\ell(I_k) &lt; m(E) + \varepsilon.</md>
+        Since <m>m(U)&lt; \infty</m> we can apply the excision property (<xref ref="prop-measure-properties"/>), to get
+            <m>m(U\backslash E) &lt; \varepsilon</m>.
+            Thus (ii) holds.
+            The case when <m>m(E) = \infty</m> is left as an exercise (<xref ref="exer-outer-approx"/>).</p>
+        <p>Now assume (ii) holds. To show (iii) holds is a similar argument to that in <xref ref="prop-sigma-delta-sets"/>.
+            For each <m>n</m> there is an open set <m>U_n</m> such that <m>m^*(U_n \backslash E) &lt; \frac{1}{n}</m>.
+            Let <m>G</m> be the <m>G_\delta</m> set <m>G = \bigcap_n U_n</m>.
+            Then <m>E \subseteq G</m> and
+        <md> m^*(G \backslash E) \leq m^*(U_n \backslash E) &lt; \frac{1}{n}</md>
+        for all <m>n</m>.
+            Hence <m>m^*(G \backslash E) =0.</m></p>
+        <p>Finally, suppose that (iii) holds for a set <m>E \subseteq \mathbb{R}</m>.
+            Take a <m>G_\delta</m> set <m>G</m> containing <m>E</m> with <m>m^*(G\backslash E) = 0</m>.
+            Since <m>G</m> is a <m>G_\delta</m> set, <m>G</m> is Lebesgue measurbale; and since <m>m^*(G\backslash E) = 0</m>, <m>G \backslash E</m> is also Lebesgue measurable (<xref ref="exer-zero-measurable"/>).
+            Noting that
+        <md> E = G \cap (G\backslash E)^c</md>
+        it follows that <m>E</m> is Lebesgue measurable.</p>
+        </proof>
+</theorem>
+
+<p>The following theorem is similar to <xref ref="thm-Leb-meas-sets-G-delta-F-sigma"/>. We record it however, as we will be interested in generalizations of this result in the sequel. The result describes <em>regularity</em> conditions for the Lebesgue measure.</p>
+
+<theorem xml:id="thm-Lebesgue-regular">
+    <statement>
+        <p>
+            Let <m>E \subseteq \mathbb{R}</m> be Lebesgue measurable, then
+            <ol>
+            <li><em>(outer regularity)</em><idx><h>regularity of a measure</h><h>outer regularity of Lebesgue measure</h></idx>
+                <md> m^*(E) = \inf \{ m(U) \colon E \subseteq U,\ U \text{ open}\};</md>
+            </li>
+            <li><em>(inner regularity)</em><idx><h>regularity of a measure</h><h>inner regularity of Lebesgue measure</h></idx>
+                <md> m^*(E) = \sup \{ m(K) \colon K \subseteq E,\ K \text{ compact}\}.</md>
+            </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+<p>Condition (i) follows immediately from the definition of the Lebesgue outer measure.
+    We will use condition (i) to prove (ii).</p>
+<p>Take measurable <m>E \subseteq \mathbb{R}</m>.
+    Assume first that <m>E</m> is bounded, so that <m>E \subseteq [a,b]</m> for some closed interval <m>[a,b]</m>.
+    Let <m>E' = [a,b] \backslash E</m>.
+    Fix <m>\varepsilon &gt; 0</m>.
+    By (i), there is an open set <m>U</m> such that <m>E' \subseteq U</m> and <m>m(U) &lt; m(E') + \frac{1}{n}</m>.
+    Let <m>K = [a,b] \backslash U</m>. 
+    Since <m>U</m> is open, <m>K</m> is closed.
+    Thus, <m>K</m> is a compact set by the <xref ref="thm-heine-borel" text="custom">Heine-Borel theorem</xref>.
+    Further, since <m>E' \subseteq U</m>, <m>K \subseteq E</m>.
+    By repeated application of the excision property and monotonicity of <m>m</m>, we have
+<md>
+\begin{aligned}
+m(K) &amp;= (b-a) - m(U \cap [a-b]) \\
+        &amp;\geq (b-a) - m(U)\\
+        &amp;&gt; (b-a) - m(E') - \frac{1}{n}\\
+        &amp;= (b-a) - [(b-a) - m(E)] - \frac{1}{n} \\
+        &amp;= m(E) - \frac{1}{n}.
+\end{aligned}
+</md>
+Hence
+<md> m(E) = \sup\{m(K) \colon K \subseteq E\text{ compact}\}.</md>
+The case when <m>m(E) = \infty</m> is left as an exercise (<xref ref="exer-Lebesgue-inner-reg"/>).</p>
+</proof>
+</theorem>
+
+</section>

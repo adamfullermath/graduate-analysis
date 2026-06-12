@@ -1,0 +1,177 @@
+<section xml:id="sec-borel-on-R">
+<title>Borel measures on <m>\mathbb{R}</m></title>
+<p>The Lebesgue measure <m>m</m> is induced by the length function on intervals: <m>\ell((c,d])) = d - c</m>. Given an increasing function <m>g</m> on <m>\mathbb{R}</m> we can define a weighted length on intervals by <m>\mu((a,b]) = g(b) - g(a)</m>. In this section we show how, with some reasonable constraints on <m>g</m>, this gives rise to a Borel measure. Conversely, we show how Borel measures on <m>\mathbb{R}</m> give rise to functions. These processes will be, up to the addition of a constant, inverses of each other.</p>
+<p>We will begin with constructing functions from Borel measures.</p>
+<definition xml:id="def-cumulative-dist">
+<p>Let <m>I</m> be a closed interval in <m>\mathbb{R}</m>.
+Let <m>\mu</m> be a finite Borel measure on <m>I</m>.
+Define a function <m>g_\mu \colon I \rightarrow \mathbb{R}</m> by</p>
+<md> g_\mu(x) = \mu(\{y \in I \colon y\leq x\}).</md>
+<p>The function <m>g_\mu</m> is called the <em>cumulative distribution function</em> for <m>\mu</m>.<idx><h>cumulative distribution function</h></idx></p>
+</definition>
+<remark xml:id="rem-cumulative-dist-in-probability">
+<p>The term <em>cumulative distribution function</em> is borrowed from probability theory.</p>
+</remark>
+
+<example xml:id="exam-cdf-of-gaussian">
+<p><idx><h>distribution</h><h>Gaussian distribution</h></idx>
+Let <m>f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}</m>.
+Define a function <m>\gamma</m> on intervals <m>(a,b]\subseteq \bR</m> by taking the Riemann integral of <m>f</m> over <m>(a,b].</m>
+That is,
+<md number="no">
+    \gamma((a,b]) = \int_a^b f(x)\,dx.
+</md>
+One can show that <m>\gamma</m> is a premeasure on the semiring of intervals of the form <m>(a,b]</m>.
+Thus, by the <xref ref="thm-Car-ext-2" label="custom">Carathéodory-Hahn Theorem</xref>, <m>\gamma</m> extends to a Borel measure on <m>\bR.</m>
+In statistics and probabilty theoery, the measure <m>\gamma</m> is called the <term>Gaussian distribution</term>, or the <term>normal distribution</term>.
+The cumulative distribution function of the Gaussian distribution is usually denoted by <m>\Phi</m>.
+By definition <m>\Phi</m> is given by
+<md>\Phi(x) = \gamma((-\infty,x]) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^\frac{-x^2}{2}.</md>
+Note that <m>\Phi</m> is continuous on every closed interval <m>[a,b]</m> in <m>\mathbb{R}</m>.
+Further,
+<md> \Phi'(x) = \frac{1}{\sqrt{2\pi}} e^{\frac{-x^2}{2}}.</md>
+</p>
+
+<figure xml:id="fig-gaussian-cdf">
+<caption>Bell jar curve <m>\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}</m> and its cumulative distribution function <m>\Phi(x).</m></caption>
+
+<image>
+    <shortdescription>Belljar curve and its cumulative distribution function</shortdescription>
+    <description></description>
+    <sageplot label="gaussian-cdf">
+        x = var('x')
+        f(x) = 1/(sqrt(2*pi)) * exp(-x^2/2)
+
+        g(x) = 1/2 * (1 + erf(x/sqrt(2)))
+
+        dist = plot(f, [-2,2], legend_label=r"Gaussian Distribution $\gamma$ defined by $f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$")
+        cdf = plot(g, [-2,2], legend_label=r"Cumulative distribution function: $\Phi(x)= \int_{-\infty}^x f(x)\,dx$", color="red")
+
+        plt = dist + cdf
+        plt
+    </sageplot>
+</image>
+</figure>
+
+</example>
+
+<p>A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in <xref ref="thm-cdf" text="Theorem"/>.</p>
+<definition>
+<p>Let <m>I \subseteq \mathbb{R}</m> be a closed interval. 
+A function <m>g \colon I \rightarrow \mathbb{R}</m> is <em>right-continuous</em> on <m>I</m><idx><h>continuous function</h><h>right-continuous</h></idx> if given <m>x_0 \in I</m> such that there exists <m>\varepsilon &gt;0</m> such that <m>x_0 + \varepsilon \in I</m> (i.e. <m>x_0</m> is not a right end-point of <m>I</m>), then</p>
+<md> \lim_{x \rightarrow x_0^+} g(x) = g(x_0). </md>
+</definition>
+<theorem xml:id="thm-cdf">
+<p><idx><h>cumulative distribution function</h></idx>
+Let <m>I \subseteq \mathbb{R}</m> be a closed interval and let <m>\mu</m> be a finite Borel measure on <m>I</m>.
+Then the cumulative distribution function <m>g_\mu</m> for <m>\mu</m> is increasing and right-continuous.</p>
+</theorem>
+<proof>
+<p>Let <m>\mu</m> be a finite Borel measure on <m>I</m> and let <m>g = g_\mu</m> be the corresponding cumulative distribution function.
+    Note that, if <m>a, b \in I</m> with <m>a&lt;b</m> then</p>
+<md>
+\begin{aligned}
+g(b) - g(a) &amp;= \mu(\{x \in I \colon x \leq b\}) - \mu(\{x \in I \colon x \leq a\})\\
+    &amp;= \mu((a,b]) \geq 0.
+\end{aligned}
+</md>
+<p>Thus, <m>g</m> is an increasing function.</p>
+<p>We will now show that <m>g</m> is right-continuous.
+    Take <m>x_0 \in I</m>, such that there is a <m>\varepsilon &gt;0</m> such that <m>x_0 + \varepsilon \in I</m>.
+    Let <m>(x_k)_k</m> be a sequence in <m>I</m> converging to <m>x_0</m>, with <m>x_k &gt; x_0</m> for each <m>k</m>.
+    Then</p>
+<md> \bigcap_{k=1}^\infty (x_0,x_k] = \emptyset.</md>
+<p>Hence, since <m>\mu</m> is a finite measure, continuity of measure, <xref ref="thm-continuity-of-measure" text="Theorem"/>, gives</p>
+<md> 0 = \mu(\emptyset) = \lim_{k\rightarrow \infty} \mu((x_0,x_k]) = \lim_{k \rightarrow \infty} [g(x_k) - g(x_0)].</md>
+<p>Hence <m>g</m> is right-continuous.</p>
+</proof>
+<p>We will now show how a Borel measure can be recovered from its cumulative distribution function. More generally, we show that any increasing, right-continuous function defines a Borel measure.</p>
+<theorem xml:id="thm-lebesgue-stieltjes-measure">
+<p>Let <m>I \subseteq \mathbb{R}</m> be a closed interval, and let <m>g \colon I \rightarrow \mathbb{R}</m> be a non-negative, increasing, right-continuous function.
+If <m>I</m> has a minimal element we will also assume that <m>g</m> is non-negative.
+Then there is a unique Borel measure <m>\mu_g</m> on <m>I</m> satisfying <m>\mu_g((c,d]) = g(d) - g(c).</m></p>
+</theorem>
+<proof>
+<p>First assume that <m>I</m> does not have a minimal element.
+That is, assume <m>I = (-\infty,b]</m> for some <m>b</m>, or <m>I = \mathbb{R}</m>.
+Let <m>\mathcal{S}</m> be the semiring of subsets of <m>I</m>,</p>
+<md> \mathcal{S} = \{ (c,d] \colon c,d \in I,\ c&lt;d \} \cup \{\emptyset\}.</md>
+<p>Define <m>\mu</m> on <m>\mathcal{S}</m> by <m>\mu(\emptyset) = 0</m> and <m>\mu((c,d]) = g(d)- g(c).</m>
+We will show that <m>\mu</m> is a premeasure on <m>\mathcal{S}</m>.
+It is straightforward to show that</p>
+<md> \mu((c,d]) = \sum_{k=1}^n \mu((c_k,d_k]]</md>
+<p>if <m>\{(c_k,d_k]\}_{k=1}^n</m>  are disjoint intervals in <m>\mathcal{S}</m> with <m>(c,d] = \bigcup_k (c_k,d_k]</m>.</p>
+<p>It remains to show that <m>\mu</m> is countably monotonic.
+Suppose <m>(c,d]</m> and <m>\{(c_k,d_k]\}_{k=1}^\infty</m> are in <m>\mathcal{S}</m> and satisfy</p>
+<md> (c,d] \subseteq \bigcup_{k=1}^\infty (c_k,d_k]. </md>
+<p>Fix <m>\varepsilon &gt; 0</m> such that <m>c+ \varepsilon &lt; d</m>.
+For each <m>k</m>, choose <m>d_k'</m> such that <m>d_k &lt; d_k'</m> and</p>
+<md> g(d_k') - g(d_k) &lt; \frac{\varepsilon}{2^k} .</md>
+<p>(if <m>d_k</m> is the end-point of <m>I</m> for some <m>k</m> we can extend <m>g</m> so that <m>g(x) - g(d_k)</m> for <m>x &gt; d_k</m>).
+Note that we can <m>d_k'</m> by the right continuity of <m>g</m>.
+We now have the following inclusions</p>
+<md>[c+\varepsilon,d] \subseteq (c,d] \subseteq \bigcup_{k=1}^\infty (c_k,d_k] \subseteq \bigcup_{k=1}^\infty (c_k,d_k').</md>
+<p>Thus, <m>\{(c_k,d_k')\}_k</m> is an open cover of <m>[c+\varepsilon,d]</m>.
+By the Heine-Borel Theorem, <m>[c+\varepsilon,d]</m> is compact, thus there is a finite subcover of <m>[c+\varepsilon, d]</m>.
+We (relabelling if necessary) denote the sets in this subcover by <m>(c_1,d_1'),\ldots,(c_n,d_n').</m>
+As <m>g</m> is increasing, it follows that</p>
+<md>
+\begin{aligned}
+g(d) - g(c+\varepsilon)&amp;\leq \sum_{k=1}^n g(d_k') - g(c_k) \\
+&amp; &lt; \sum_{k=1}^n [g(d_k) - g(c_k) + \frac{\varepsilon}{2^k}] \\
+&amp; &lt; \sum_{k=1}^\infty [g(d_k) - g(c_k) + \frac{\varepsilon}{2^k}]\\
+&amp; = \sum_{k=1}^\infty  [g(d_k) - g(c_k)] + \varepsilon.
+\end{aligned}
+</md>
+<p>Taking a limit as <m>\varepsilon</m> goes to <m>0</m> (from above), the right continuity of <m>g</m> gives that</p>
+<md> g(d) - g(c) \leq  \sum_{k=1}^\infty  [g(d_k) - g(c_k)],</md>
+<p>and so <m>\mu</m> is countably monotonic.
+Hence <m>\mu</m> is a premeasure on <m>\mathcal{S}</m>.</p>
+<p>When <m>I</m> has a minimal element <m>a</m>, so that <m>I = [a,b]</m> or <m>I = [a,\infty)</m> we define <m>\mathcal{S}</m> to be</p>
+<md> \mathcal{S} = \{a\} \cup \{ (c,d] \colon c,d \in I,\ c&lt;d \} \cup \{\emptyset\}.</md>
+<p>We define <m>\mu</m> as above with the extra condition <m>\mu(\{a\}) = g(a)</m>.
+Again, <m>\mu</m> will be a premeasure on the semiring <m>\mathcal{S}</m>.</p>
+<p>In both cases, the Carathéodory-Hahn Theorem says that <m>\mu</m> extends to a measure on <m>I</m>, which we will still denote by <m>\mu</m>.
+The uniqueness of <m>\mu</m> follows again from the Carathéodory-Hahn Theorem, and the fact that <m>\mu</m> is <m>\sigma</m>-finite on <m>I</m>.
+As the sets in <m>\mathcal{S}</m> will be <m>\mu</m>-measurable, the Borel sets will be measurable with respect to <m>\mu</m>.
+If <m>K = [c,d]</m> is a closed interval in <m>I</m>, then <m>\mu([c,d]) &lt; \infty</m>.
+It follows that <m>\mu(K) &lt; \infty</m> for any compact set <m>K</m>, and thus <m>\mu</m> defines a Borel measure on <m>I</m>.</p>
+</proof>
+<remark>
+<p>When <m>I = \mathbb{R}</m> and <m>g(x) = x</m>,  the measure <m>\mu_g</m> constructed by <xref ref="thm-cdf" text="Theorem"/> is the Lebesgue measure.</p>
+</remark>
+<corollary xml:id="cor-lebesgue-stieltjes-measure">
+<p>Let <m>I</m> be a closed interval in <m>\mathbb{R}</m> and let <m>g</m> be a non-negative, increasing, right-continuous function on <m>I</m>.
+If <m>I</m> is not bounded below, further assume <m>\lim_{x\rightarrow -\infty}g(x) = 0</m>.
+Let <m>\mu_g</m> be the Borel measure on <m>I</m> satisfying <m>\mu_g((c,d]) = g(d) - g(c)</m> constructed in <xref ref="thm-lebesgue-stieltjes-measure" text="Theorem"/>.</p>
+<p>If <m>\mu_g</m> is a finite Borel measure then <m>g</m> is the cumulative distribution function for <m>\mu_g</m>.</p>
+</corollary>
+<proof>
+<p>Suppose <m>a</m> is the minimal element of <m>I</m>.
+Then, for each <m>x \in I</m>, the construction of <m>\mu_g</m> in <xref ref="thm-cdf" text="Theorem"/> gives</p>
+<md>
+\begin{aligned}
+\mu(\{y \in I \colon y \leq x \} &amp;= \mu([a,x]) \\
+    &amp;= \mu(\{a\}) + \mu((a,x]) \\
+    &amp;= g(a) + (g(x) - g(a)) = g(x).
+\end{aligned}
+</md>
+<p>Thus, <m>g</m> is the cumulative distribution function for <m>\mu_g</m>.</p>
+<p>Now suppose <m>I</m> is not bounded below and that <m>\lim_{x\rightarrow -\infty} g(x) = 0.</m>
+Fix <m>x \in I</m>.
+Then</p>
+<md>
+\begin{aligned}
+\mu((-\infty,x]) &amp;= \mu\left(\bigcup_{-n&lt;x} (-n,x]\right) \\
+    &amp;= \lim_n \mu((-n,x]) \\
+    &amp;= g(x) - \lim_n g(-n) \\
+    &amp;= g(x),
+\end{aligned}
+</md>
+<p>and hence <m>g</m> is the cumulative distribution function for <m>\mu_g</m>.</p>
+</proof>
+<corollary xml:id="cor-cdf-and-Borel">
+<p>Let <m>[a,b]</m> be a closed bounded interval in <m>\mathbb{R}</m>.
+Every Borel measure on <m>[a,b]</m> is uniquely determined by its cumulative distribution function.</p>
+</corollary>
+</section>

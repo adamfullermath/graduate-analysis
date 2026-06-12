@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figure xml:id="fig-siepinski-pyr">
+    <!-- <caption>The Sierpinski Pyramid 3 steps into the construction.</caption> -->
+    <image>
+        <shortdescription>Sierpinski Pyramid</shortdescription>
+        <description>
+            <p>
+                Representation of the Sierpinski Pyramid. 
+                Here we show the construction of the Sierpinksi Pyramid after <m>3</m> iterations.
+                At each iteration, we remove a regular tetrahedron from the center of each existing regular tetrahedron, leaving us with <m>4</m> smaller tetrahedra.
+            </p>
+        </description>
+        
+        <sageplot label="sierpinski-pyr" variant="3d">
+            RegularTetrahedron = [vector([1,0,-1/sqrt(2)]),vector([-1,0,-1/sqrt(2)]),vector([0,1,1/sqrt(2)]),vector([0,-1,1/sqrt(2)])]
+
+            theta = -arccos(1/sqrt(3))
+            R = matrix(([1,0,0],[0,cos(theta),-sin(theta)],[0,sin(theta),cos(theta)]))
+            shift = vector([0,0,1/sqrt(2)])
+
+            StartingTetrahedron = [R*(v + shift) +vector([1,0,0]) for v in RegularTetrahedron]
+
+            def plot_tetrahedron(L):
+                tetra = None
+                triangles = [[L[0],L[1],L[2]], [L[0],L[1],L[3]], [L[0],L[2],L[3]], [L[1],L[2],L[3]]]
+                
+                for t in triangles:
+                    tetra = tetra + polygon3d(t)
+                
+                return tetra
+
+            move1 = vector([1,0,0])
+            move2 = 1/2 * StartingTetrahedron[2]
+            move3 = 1/2 * StartingTetrahedron[3]
+            moves = [vector([0,0,0]), move1, move2, move3]
+
+            def Similtudes(T):
+                Sim1 = [1/2*v for v in T]
+                Sim2 = [1/2*v + moves[1] for v in T]
+                Sim3 = [1/2*v + moves[2] for v in T]
+                Sim4 = [1/2*v + moves[3] for v in T]
+                return Sim1 + Sim2 + Sim3 + Sim4
+
+            tetra = StartingTetrahedron
+
+            N = 3
+
+            for k in range(N):
+                tetra = Similtudes(tetra)
+
+            plt = plot_tetrahedron(tetra[0:4])
+            for i in range(4,len(tetra),4):
+                plt += plot_tetrahedron(tetra[i:i+4])
+                
+            plt
+        </sageplot>
+    </image>
+</figure>

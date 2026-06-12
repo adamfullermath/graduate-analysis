@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<figure xml:id="fig-Hausdorff-dim">
+    <caption><p>Graph of <m>H_q(E)</m> against <m>q</m>.</p> </caption>
+
+    <image>
+        <shortdescription>A graph of H_q(E) against q.</shortdescription>
+        <description>
+            <p>
+                A graph of <m>H_q(E)</m> against <m>q</m>.
+                The picture shows a horizontal line above the <m>x</m>- axis marked <m>\infty</m> between <m>0</m> and a point <m>p</m>; after <m>p</m> the graph is the line <m>H_q(E) = 0.</m>
+            </p>
+        </description>
+
+        <sageplot label="Hausdorff-dim">
+            p = 8
+
+            height = 8
+            end = 20
+
+            tick = [[0,p],[0,height]]
+            tick_labels = [[0,r"$p$"], [0,r"$\infty$"]]             
+
+            inf = line([(0,height), (p,height)],thickness=3, ticks=tick, tick_formatter=tick_labels)
+            zero =line([(p,0),(end,0)],thickness = 3)
+
+            haus_dim = inf + zero 
+            haus_dim.axes_labels(['$q$','$H_q(E)$'])
+
+            haus_dim
+        </sageplot>
+    </image>
+
+</figure>

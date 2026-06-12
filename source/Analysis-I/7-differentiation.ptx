@@ -459,15 +459,48 @@ Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m
     <m>\lim_{N\rightarrow \infty} \int_{[-N,N]} f\,dm = \int_\mathbb{R} f\,dm&lt;\infty.</m>
     Hence, there is an <m>N&gt;0</m> such that</p>
 <md> \int_\mathbb{R} f\,dm - \int_{[-N,N]}f\,dm&lt;\varepsilon/3.</md>
-<p>Suppose <m>g</m> is a non-negative continuous function on <m>[-N,N]</m> such that</p>
+<p>Suppose <m>g</m> is a non-negative continuous function on <m>[-N,N]</m> such that
 <md>\int_{[-N,N]} |f- g|\,dm&lt;\varepsilon/3.</md>
-<p><figure xml:id="fig-integrable-close-to-cont">
-<image source="images/cont diff.png" width="10%" />
-<caption>
-  <p>An example of <m>g_n</m> defined in the proof of <xref ref="thm-integrable-close-to-cont" text="Theorem"/>.</p>
-</caption>
-</figure>
 </p>
+
+<figure xml:id="fig-integrable-close-to-cont">
+    <caption>
+    <p>An example of <m>g_n</m> defined in the proof of <xref ref="thm-integrable-close-to-cont" text="Theorem"/>.</p>
+    </caption>
+    <image>
+        <shortdescription>Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.
+        </shortdescription>
+        <description>
+            <p>
+                Visualization of a positive polynomial <m>g</m> on an interval <m>[-N,N]</m> extended to a function <m>g_n</m> on all of <m>\bR</m> by drawing straight lines from <m>(-N-1/n,0)</m> to <m>(-N,g(-N))</m> and from <m>(N,g(N))</m> to <m>(N+1/n,0)</m>, and setting <m>g_n(x) = 0</m> outside of <m>(-N-\frac{1}{n},N+\frac{1}{n})</m>.
+            </p>
+        </description>
+        <sageplot label="cont-diff">
+            <!-- g(x) = -1/2*sin(1/3*x)+5 -->
+            g(x) = 1/3*x^3 +1/20*x^2 - 3/4*x + 10
+
+            N = 1
+            n = 3
+
+            plt = plot(g, [-N,N], legend_label="$g_n(x)$", ticks=[[-N-1/n,-N,N,N+1/n],[18]], tick_formatter=[[r"$-N-\frac{1}{n}$","$-N$","$N$",r"$N+\frac{1}{n}$"],""])
+
+            L1 = line([(-N,0),(-N,g(-N))], linestyle="--")
+            L2 = line([(N,0),(N,g(N))], linestyle="--")
+
+            cont_L1 = line([(-N-1/n,0),(-N,g(-N))])
+            cont_L2 = line([(N+1/n,0),(N,g(N))])
+
+            L3 = line([(-N-3,0),(-N-1/n,0)])
+            L4 = line([(N+1/n,0),(N+3,0)])
+
+            plt += L1 + L2 + cont_L1 + cont_L2 + L3 + L4
+
+            plt.set_axes_range(-N-2/n,N+2/n,0,11)
+            plt
+        </sageplot>
+    </image>
+</figure>
+
 <p>For each <m>n</m>, we define <m>g_n</m> by <m>g_n(x) = g(x)</m> for <m>x \in \mathbb{R}</m>; <m>g_n(x) = 0</m> for <m>x \notin (-N-\frac{1}{n},N+\frac{1}{n})</m>; <m>g_n</m> is the straight line from the point <m>(-N-\frac{1}{n},0)</m> to <m>(-N,g(-N))</m> on <m>(-N-\frac{1}{n},-N)</m>; and <m>g_n</m> is the straight line from the point <m>(N,g(N))</m> to <m>(N+\frac{1}{n}),0)</m> on <m>(-N-\frac{1}{n},-N)</m> (see Figure~\ref{fig: integrable close to cont}).
     Choose <m>n\geq 0</m> so that <m>g(N)/n&lt;\varepsilon/6</m> and <m>g(-N)/n&lt;\varepsilon/6</m>.
     Then,</p>

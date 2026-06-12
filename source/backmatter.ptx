@@ -12,18 +12,15 @@
 
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
 
-  <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
+  <xi:include href="./Prereqs/prereqs.ptx" />
+  <xi:include href="./Prereqs/prereqs-2.ptx" />
     
   <xi:include href="./Appendices/real-examples.ptx" />
   
-  <!-- <appendix xml:id="appendix-list-results">
-  <title>Index of Notation</title>
 
-  <notation-list empty="yes"/>
-  </appendix> -->
+    <appendix> <title>List of Symbols</title> <notation-list/> </appendix>
   <index>
-    <title>Notation List and Index</title>
-    <notation-list empty="yes"/>
+    <title>Index</title>
     <index-list empty="yes"/>
   </index>
 

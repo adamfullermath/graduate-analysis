@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appendix xml:id="appendix-real-examples">
+<appendix xml:id="appendix-real-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Interesting examples of real valued functions</title>
 <introduction>
 
@@ -100,18 +100,30 @@ These examples played an important role in motivating the development of measure
 <md> g'(x) = \begin{cases} 1 &amp;,\ x-\lfloor{x}\rfloor &lt; 1/2\\
 -1 &amp;,\ x-\lfloor{x}\rfloor &gt; 1/2.
 \end{cases}</md>
+
 <figure xml:id="fig-Tak1">
-<image source="images/takagi-pre.png" width="20%" />
+    <caption>The function <m>g(x)</m> used in the constuction of Takagi's example.</caption>
+<!-- <image source="images/takagi-pre.png" width="20%" /> -->
+    <image>
+        <shortdescription>The zig-zag/saw function used in the constuction of Takagi's example.</shortdescription>
+        <description>
+            <p>
+                The function <m>>g(x) = \min\{x-\lfloor{x}\rfloor, \lceil{x}\rceil -x\}</m>. The graph is a zig-zag shape of straight line segments. The function takes the value <m>0</m> at each integer, and takes the value <m>1/2</m> at each half-integer.
+            </p>
+        </description>
+        <sageplot label="takagi-pre">
+            g(x) = min_symbolic(x - floor(x), ceil(x) - x)
+            plot(g, (x, -0.1, 1.7))
+        </sageplot>
+    </image>
 </figure>
+
 <p>Define a function <m>f</m> on the closed interval <m>[0,1]</m> by</p>
 <md>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}.</md>
 <p>The series <m>f</m> is uniformly convergent by the Weierstrass <m>M</m>-test; and hence <m>f</m> is continuous.</p>
-<figure xml:id="fig-Tak2">
-<image source="images/Takagi.png" width="20%" />
-<caption>
-<p>Takagi's example <m>f(x) = \sum_{n=0}^\infty \frac{g(2^nx)}{2^n}</m> in \ref{subsec: Tak}.</p>
-</caption>
-</figure>
+
+<xi:include href="../sage/Tak2.ptx" />
+
 <p>Fix <m>x_0 \in (0,1)</m>. We can write <m>x_0</m> as a series</p>
 <md> x_0 = \sum_{k=1}^\infty \frac{c_k}{2^k},</md>
 <p>where each <m>c_k \in \{0,1\}.</m> Note that this series expression may not be unique, e.g.</p>
@@ -139,12 +151,15 @@ These examples played an important role in motivating the development of measure
 <p>There is nothing special about the role of <m>2</m> in this example. Van der Waerden used base 10 for his example:</p>
 <md>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}.</md>
 <p>Similarly analysis can be done for other bases.</p>
-<figure xml:id="fig-Tak3">
+<!-- <figure xml:id="fig-Tak3">
 <image source="images/vanderwaerden.png" width="20%" />
 <caption>
 <p>Van der Waerden's example <m>f(x) = \sum_{n=0}^\infty \frac{g(10^nx)}{10^n}</m> has the same basic idea as Takagi's example from \ref{subsec: Tak}.</p>
 </caption>
-</figure>
+</figure> -->
+
+<xi:include href="../sage/vandermaerden.ptx" />
+
 </subsection>
 </section>
 <section xml:id="sec-diff-ae">
@@ -159,12 +174,26 @@ These examples played an important role in motivating the development of measure
 \varphi(x) = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}
 </md>
 <p>where <m>\lfloor x \rfloor</m> is the floor function (i.e. <m>x</m> rounded down to the nearest integer).</p>
+
 <figure xml:id="fig-Schwarz1">
-<image source="images/Schwarz1.png" width="20%" />
-<caption>
-<p>The function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> used to construct Schwarz's example in \ref{subsec: Schwarz}</p>
+<caption> The function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> used to construct Schwarz's example.
 </caption>
+    <image>
+        <shortdescription>The function phi used in the construction of Schwarz's example.</shortdescription>
+        <description>
+            <p>
+                Graph of the function <m>\varphi = \lfloor x \rfloor + \sqrt{x - \lfloor x \rfloor}</m> for <m>x</m> between -2 and 5. 
+                The curve is continuous, and smooth everywhere except at integers.
+            </p>
+        </description>  
+        <sageplot label="Schwarz1">
+            f(x) = floor(x) + sqrt(x - floor(x))
+            plot(f(x), (x, -2, 5))
+        </sageplot>
+        
+    </image>
 </figure>
+
 <p>The function <m>\varphi</m> is continuous on all of <m>\mathbb{R}</m>, and is differentiable on all non-integer values. Indeed, it is not hard to show for a <m>x \notin \mathbb{Z}</m></p>
 <md> \varphi'(x) = \frac{1}{2\sqrt{x-\lfloor x\rfloor}}. </md>
 <p>If <m>x\in \mathbb{Z}</m> then <m>\varphi(x) = x</m>, and so, if <m>0&lt;h&lt;1</m> then</p>
@@ -229,20 +258,41 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
 <p>The function <m>f</m> is differentiable everywhere, with derivative</p>
 <md> f'(x) = \begin{cases} 2x\sin\left(\frac{1}{x}\right) - \cos\left(\frac{1}{x}\right)&amp; x\neq 0,\\ 0 &amp; x=0.\end{cases}</md>
 <p>Whilst <m>f'</m> is defined everywhere (and is bounded), <m>f'</m> is not continuous at <m>0</m>.</p>
+
 <figure xml:id="fig-Volterra1">
-<image source="images/x2sin1x.png" width="20%" />
+<!-- <image source="images/x2sin1x.png" width="20%" /> -->
 <caption>
-<p>The function <m>f(x) = x^2\sin(1/x)</m> used to construct Volterra's function in Section~\ref{subsec: Volterra}.</p>
+The function <m>f(x) = x^2\sin(1/x)</m> used to construct Volterra's function.
 </caption>
+    <image>
+        <shortdescription>Graph of the function of x squared times sine 1 over x.</shortdescription>
+        <description>
+            <p>
+                Graph of the function <m>f(x) = x^2\sin(1/x)</m>.
+                The function oscillates above and below the <m>x</m>-axis, with smaller and smaller amplitude as <m>x</m> gets closer to <m>0</m>. There are infinitely many oscillations in any neighborhood of <m>0</m>.
+            </p>
+        </description>
+        <sageplot label="x2sin1x">
+            f(x) = x^2*sin(1/x)
+            <!-- g(x) = x^2
+            h(x) = -x^2
+            plt1 = plot(g, (x, -0.4, 0.4), color='red') + plot(h, (x, -0.4, 0.4), color='red') -->
+            plt = plot(f, (x, -0.4, 0.4))
+            plt 
+        </sageplot>                
+        
+    </image>
 </figure>
+
 <p>The idea behind the Volterra function is to create a function <m>V</m> which behaves on some suitably large set the way <m>f</m> behaves at <m>\{0\}</m>. Before defining <m>V</m>, we must first introduce the desired set.</p>
-<p>We will construct a set <m>A \subseteq [0,1]</m> called the <em>Smith-Volterra-Cantor</em> set.<idx><h>Smith-Volterra-Cantor set</h></idx> This construction is very similar to the construction of the Cantor set in, <xref ref="ex-Cantor" text="Example"/>. The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.</p>
+<p>We will construct a set <m>A \subseteq [0,1]</m> called the <em>Smith-Volterra-Cantor</em> set.<idx><h>Smith-Volterra-Cantor set</h></idx> This construction is very similar to the construction of the Cantor set in, <xref ref="ex-Cantor"/>.</p>
 <p>Let <m>A_0 = [0,1]</m>. Create <m>A_1</m> be removing the middle quarter from <m>A_0</m>. Thus</p>
 <md> A_1 = [0,3/8] \cup [5/8,1].</md>
-<p>Create <m>A_2</m> be reomving the middle quarter from each of the two intervals in <m>A_1</m>. Thus</p>
+<p>Create <m>A_2</m> be reomving the middle sixteenth from each of the two intervals in <m>A_1</m>. Thus</p>
 <md>A_2 = [0,5/32] \cup [7/32,3/8] \cup [5/8,25/32] \cup [27/32,1].</md>
-<p>Continue in this manner to create a sequence of closed sets <m>\{A_n\}_{n=1}^\infty</m>. The {Smith-Volterra-Cantor} set<idx><h>Smith-Volterra-Cantor set</h></idx> is defined as</p>
+<p>Continue in this manner, removing the middle <m>\frac{1}{4^n}</m>th interval, to create a sequence of closed sets <m>\{A_n\}_{n=1}^\infty</m>. The Smith-Volterra-Cantor set<idx><h>Smith-Volterra-Cantor set</h></idx> is defined as
 <md> A = \bigcap_{n=1}^\infty A_n.</md>
+</p>
 <p>Like the Cantor set <m>C</m>, <m>A</m> is nowhere dense. That is, <m>A</m> does not contain any intervals as subsets. However, unlike the Cantor set, <m>A</m> has positive Lebesgue measure. Indeed, if <m>U = [0,1]\backslash A,</m> then</p>
 <md> m(U) = \sum_{k=1}^\infty \frac{2^{k-1}}{4^k} = \sum_{k=1}^\infty \frac{1}{2^{k+1}} = \frac{1}{2}.</md>
 <p>Thus <m>m(A)= 1/2&gt;0.</m></p>
@@ -253,12 +303,26 @@ f(x) = \sum_{n=0}^\infty \frac{\varphi(2^nx)}{4^n}.
     f(b_k - x) &amp; b_k -x \leq c_k.
 \end{cases}</md>
 <p>An illustration of Volterra's function is given in Figure~\ref{fig: Volterra2}. Since <m>f</m> is a continuous function, and <m>f(0) = 0</m>, <m>V</m> is a continuous function.</p>
+
 <figure xml:id="fig-Volterra2">
-<image source="images/volterra.png" width="30%" />
 <caption>
-<p>Volterra's function.</p>
+Volterra's function.
 </caption>
+<image source="images/Volterra">
+    <shortdescription>A visualization of Volterra's funcion</shortdescription>
+        <description>
+            <p>
+                The graph of (an apporximation of) Volterra's function. The graph is depicted in blue in a box with <m>x</m>-axis labelled form <m>0</m> to <m>1</m>, and <m>y</m>-axis labelled from <m>-0.008</m> to <m>0.004</m>.
+                The graph is symmetric about the line <m>x = 0.5</m>. 
+                We see part of, a copy of <m>x^2\sin(1/x)</m> shifted up the <m>x</m>-axis by  <m>3/8</m>, this is mirrored around <m>x = 0.5</m> and a straight horizontal line joins the two parts.
+                Similar, smaller bumps occur in the intervals removed in the first 3 steps in the construction of the Cantor-Smith-Volterra set.
+            </p>
+        </description>
+</image>
 </figure>
+
+<!-- <xi:include href="../sage/volterra.ptx" /> -->
+
 <p>By construction, on each interval <m>(a_k,b_k)</m>, <m>V'</m> is a bounded continuous function.</p>
 <p>Take now <m>x \in A</m> and fix <m>h&gt;0</m>. If <m>x+h \in A</m>, then</p>
 <md>\frac{V(x+h)-V(x)}{h} = 0.</md>

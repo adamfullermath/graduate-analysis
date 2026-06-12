@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<figure xml:id="fig-Volterra2">
+    <caption>Volterra's function</caption>
+    <image>
+        <shortdescription>A visualization of Volterra's funcion</shortdescription>
+        <description>
+            <p>
+                The graph of (an apporximation of) Volterra's function. The graph is depicted in blue in a box with <m>x</m>-axis labelled form <m>0</m> to <m>1</m>, and <m>y</m>-axis labelled from <m>-0.008</m> to <m>0.004</m>.
+                The graph is symmetric about the line <m>x = 0.5</m>. 
+                We see part of, a copy of <m>x^2\sin(1/x)</m> shifted up the <m>x</m>-axis by  <m>3/8</m>, this is mirrored around <m>x = 0.5</m> and a straight horizontal line joins the two parts.
+                Similar, smaller bumps occur in the intervals removed in the first 3 steps in the construction of the Cantor-Smith-Volterra set.
+            </p>
+        </description>
+
+        <sageplot label="Volterra">
+            from sage.functions.log import logb
+            import matplotlib.pyplot as plt
+            import numpy as np
+
+            ENDPOINTS = [0,1]
+
+            def S(a,b,n):
+                midpoint = a+ (b-a)/2
+                a1 = midpoint - (1/2)*(1/4^n)
+                b1 = midpoint + (1/2)*(1/4^n)
+                return [a,a1,b1,b]
+
+            def SVC_step(L,n):
+                L = list(L)
+                N = Integer(len(L))
+                new_L = copy(L)
+
+                for i in range(0,N,2):
+                    new_points = S(L[i],L[i+1],n)
+                    pos = new_L.index(L[i])
+                    new_L.insert(pos+1,new_points[1])        
+                    new_L.insert(pos+2,new_points[2])
+                    
+                return new_L        
+
+            def generate_SVC(N=2):
+                SVC = ENDPOINTS
+                for k in range(1,N+1):
+                    SVC = SVC_step(SVC, k)
+                return SVC
+
+            x = var('x')
+
+            f(x) = x^2 * sin(1/x)
+            g(x) = diff(f,x)
+
+            def crit_point(n = 1):
+                end_point = 1/2* 1/(4^n)
+                no_root = True 
+                n=end_point/1000
+                while no_root:
+                    try:
+                        max_crit_point = find_root(g,end_point-n,end_point)
+                        no_root = False
+                    except:
+                        n += n  
+
+                return max_crit_point
+
+            def interval_function(a,b,n):
+                c = crit_point(n)
+                V(x) = piecewise([ ([0,a],0), ((a,a+c), f(x-a)) , ([a+c, b-c],f(c)),((b-c,b),f(b-x)),([b,1],0)])
+                return V
+
+            N = 7
+            SVC = generate_SVC(N)
+
+            V(x)= 0
+
+            for i in range(1,len(SVC)-1,2):
+                interval_length = SVC[i+1]-SVC[i]
+                n = logb(interval_length, 1/4)
+                
+                V += interval_function(SVC[i],SVC[i+1],n)
+    
+            theta = np.linspace(0,1, 8000)
+
+            X = [V(t) for t in theta]
+
+            fig = plt.figure()
+            Volt = fig.add_subplot()
+
+            Volt.plot(theta, X, label="Volterra's function", linewidth=0.5)
+            Volt.legend()
+            fig
+        </sageplot>
+    </image>
+</figure>

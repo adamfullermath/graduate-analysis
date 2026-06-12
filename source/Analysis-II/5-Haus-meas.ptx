@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec-haus-meas">
+<section xml:id="sec-haus-meas" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hausdorff measures</title>
 
     <p>
@@ -236,12 +236,9 @@
         Fix<m>E \subseteq \bR</m>.
         From <xref ref="prop-Hausdorff-dim"/>, we see that there is a <m>q\gt 0</m> such <m>H_p(E)=\infty</m> for <m>p\lt q</m>, and <m>H_p(E)=0</m> for <m>p \gt q.</m> This is illustrated in <xref ref="fig-Hausdorff-dim"/>.
         Thus the following definition is well defined.
-        </p>
-    <figure xml:id="fig-Hausdorff-dim">
-        <image source="images/Hausdorff-dim.png" width="50%"/>
-        <caption><p>Graph of <m>H_q(E)</m> against <m>q</m>.</p> </caption>
-    </figure>
+    </p>
 
+    <xi:include href="../sage/Hausdorff-dim.ptx"/>
     <definition>
         <statement>
             <p>

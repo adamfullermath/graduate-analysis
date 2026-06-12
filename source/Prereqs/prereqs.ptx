@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appendix xml:id="appendix-prereqs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Prerequisites: Set theory</title>
+<introduction>
+<p>
+    In this appendix we cover some prerequisites for the course. Whilst not comprehensive, the topics discussed in this appendix should give an idea of what background is expected of students taking the course.
+</p>
+</introduction>
+
+<section>
+<title>Set theory notation</title>
+
+<p>The empty-set is denoted by <m>\emptyset</m>. Let <m>X</m> be any set, and let <m>A, B \subseteq X</m>. The <term>union</term> of <m>A</m> and <m>B</m> is given by
+<md> A \cup B = \{x\in X \colon x\in A \text{ or }x\in B\}. </md>
+Their <term>intersection</term> is
+<md> A \cap B =\{x\in X \colon x\in A \text{ and }x\in B\}. </md>
+We will usually call a set whose elements are sets a <term>collection</term>. Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The union and intersection of all sets in <m>\mathcal{F}</m> are written
+<md>
+\bigcup_{F\in \mathcal{F}} F \AND \bigcap_{F \in \mathcal{F}} F
+</md>
+respectively. A collection of sets <m>\mathcal{F}</m> is <term>disjoint</term>, or <term>pairwise disjoint</term>, if <m>F\cap G = \emptyset</m> for all <m>F, G \in \mathcal{F}</m>.</p>
+
+<p>The <term>complement of <m>A</m> in <m>B</m></term> is given by
+<md> B \backslash A = \{b \in B \colon b\notin A\}. </md>
+When it is clear what ambient set <m>X</m> we are working in we will often refer to <m>X\backslash A</m> as simply the complement of <m>A</m>. We will also  write <m>X\backslash A</m> as <m>A^c</m>. For example, we will often be implicitly be working with subsets of <m>\mathbb{R}</m>. Thus, by <q>the complement of <m>[0,1]</m></q> we will mean
+<md> \mathbb{R}\backslash [0,1] = (-\infty, 0) \cup (1,\infty). </md>
+<idx><h>complement</h></idx>
+</p>
+
+<p>
+	<notation>
+        <usage><m>\P(X)</m></usage>
+      <description>the power set of a set <m>X</m></description>
+</notation>
+The collection of all subsets of a set <m>X</m> is called the <term>the power set of <m>X</m></term><idx><h>power set</h></idx> and is denoted by <m>\mathcal{P}(X)</m>. The notation <m>2^X</m> is also sometimes used for the power-set of <m>X</m>. Note that if <m>X</m> has <m>n</m> elements, then <m>\mathcal{P}(X)</m> has <m>2^n</m> elements.</p>
+
+<p>Let <m>\mathcal{F}</m> be a collection of subsets of <m>X</m>. The following two identities are called <term>De Morgan's Identities</term>.<idx><h>De Morgan's Identities</h></idx>
+<md xml:id="eq-de-morgan">
+\begin{aligned}
+X \backslash \left[\bigcup_{F\in \mathcal{F}} F\right] &amp; = \bigcap_{F\in \mathcal{F}}X\backslash F, \\
+	X \backslash \left[\bigcap_{F\in \mathcal{F}} F\right] &amp; = \bigcup_{F\in \mathcal{F}}X\backslash F.
+\end{aligned}
+</md>
+</p>
+<p>
+Let <m>\Lambda</m> be any set. Suppose for each <m>\lambda \in \Lambda</m> there is a set <m>E_\lambda</m>. Let <m>\mathcal{F} = \{E_\lambda \colon \lambda \in \Lambda\}</m>. We will write the collection <m>\mathcal{F}</m> by
+<md> \mathcal{F} = \{E_\lambda\}_{\lambda \in \Lambda}, </md>
+and call <m>\Lambda</m> an <term>index set</term> for the collection <m>\mathcal{F}</m>.</p>
+
+
+
+
+<p>
+<notation>
+        <usage><m>f^{-1}(E)</m></usage>
+      <description>inverse image of <m>E</m> under <m>f</m></description>
+</notation>	
+For a function/mapping <m>f \colon E \rightarrow B</m> we let
+<md> f^{-1}(E) = \{a\in A \colon f(a) \in E\}. </md>
+We call <m>f^{-1}(E)</m> the <term>inverse image of <m>E</m> under <m>f</m></term>. Note that the inverse image of a set is defined whether or not the mapping <m>f</m> is invertible.<idx><h>inverse image</h></idx></p>
+<p>For subsets <m>E_1,E_2\in B</m> we have the following identities:
+<md>
+\begin{aligned}
+f^{-1}(E_1\cup E_2) &amp;= f^{-1}(E_1) \cup f^{-1}(E_2) \\
+	f^{-1}(E_1\cap E_2) &amp;= f^{-1}(E_1) \cap f^{-1}(E_2) \\
+	f^{-1}(E_1\backslash E_2) &amp;= f^{-1}(E_1) \backslash f^{-1}(E_2).
+\end{aligned}
+</md>
+</p>
+
+
+
+<p>A relation <m>\sim</m> on <m>X</m> is an <term>equivalence relation</term><idx><h>equivalence relation</h></idx> if it satisfies the following conditions:
+<ol>
+<li><m>x\sim x</m> for all <m>x\in X</m> (<m>\sim</m> is <term>reflexive</term>);
+</li>
+<li><m>x\sim y</m> if and only if <m>y\sim x</m> (<m>\sim</m> is <term>symmetric</term>);
+</li>
+<li>if <m>x\sim y</m> an <m>y\sim z</m> then <m>x\sim z</m> (<m>\sim</m> is <term>transitive</term>).
+</li>
+</ol>
+Let <m>\sim</m> be an equivalence relation on <m>X</m>.
+For <m>x\in X</m>, the <term>equivalence class</term> of <m>x</m> is
+<md>
+[x] = \{y\in X \colon x\sim y\}.
+</md>
+</p>
+
+<p>Note that <m>x\in [x]</m> for all <m>x\in X</m>. Also if <m>x\in [y]</m>, then <m>y\in [x]</m>. Further <m>[x] \cap [y] \neq \emptyset</m> if and only if <m>[x] = [y]</m>. That is, each element <m>x \in X</m> is in one, and only one, equivalence class. Hence the collection <m>\mathcal{F} = \{[x] \colon x\in X\}</m> is a disjoint collection of subsets of <m>X</m> such that
+<md> X = \bigcup_{F \in \mathcal{F}} F. </md>
+We call such a collection a <term>partition of <m>X</m></term>.</p>
+</section>
+
+<section>
+<title>Cardinality and choice</title>
+<p>
+	Cardinality allows us to compare the <q>size</q> of sets.
+	There is a lot one can say about cardinality, but for our purposes in these notes we only need some basic facts. 
+	We review these here.
+</p>
+
+<definition>
+	<statement>
+		<p>
+			Two sets, <m>A</m> and <m>B</m> have the same <term>cardinality</term> if there is a bijective map
+			<md> f \colon A \rightarrow B. </md>
+			
+			A set <m>A</m> is called <term>countable</term> if <m>A</m> has finitely many elements, or if <m>A</m> has the same cardinality as the natural numbers <m>\mathbb{N}</m>. In the latter case we call <m>A</m> <term>countably infinite</term>.
+			In the former, we say <m>A</m> has cardinality <m>n</m>, where <m>n</m> is the number of elements in <m>A</m>.
+			If a set is not countable, we say it is <term>uncountable</term>.<idx><h>cardinality</h></idx><idx><h>countable</h></idx><idx><h>countable</h><h>countably infinite</h></idx><idx><h>uncountable</h></idx>
+		</p>
+	</statement>
+</definition>	
+
+<remark>
+	<p>
+		Note that cardinality forms an equivalence relation on sets.
+	</p>
+</remark>
+
+
+<definition>
+	<statement>
+		<p>
+			Let <m>A</m> and <m>B</m> be two sets. We say that <m>A</m> has cardinality <term>less than or equal to</term> <m>B</m> if there is an injective map from <m>A</m> to <m>B</m>.
+			<idx><h>cardinality</h><h>less than or equal to</h></idx>
+		</p>
+	</statement>
+</definition>
+
+<p>
+	It is not immediately obvious that <em>less than or equal to</em> for cardinalities behaves as one would expect.
+	That is, if <m>A</m> has cardinality less than or equal to <m>B</m> and <m>B</m> has cardinality less than or equal to <m>A</m>, do <m>A</m> and <m>B</m> have the same cardinality?
+	The answer is, of course, yes.
+	We state this result below, without proof.<fn>There are many proofs and they are easily found. The wikipedia page for the result is as good as any <xref ref="SchBer"/>.</fn>
+</p>
+
+<theorem xml:id="thm-schroder-bernstein">
+	<title>Schröder–Bernstein theorem</title>
+	<statement>
+		<p>
+			Let <m>A</m> and <m>B</m> be sets.
+			If there is an injective map from <m>A</m> to <m>B</m> and an injective map from <m>B</m> to <m>A</m>, then <m>A</m> and <m>B</m> have the same cardinality.
+		</p>
+	</statement>
+</theorem>
+
+<remark>
+	<p>
+		There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that <m>\mathcal{P}(X)</m> has a larger cardinality than <m>X</m>, for any set <m>X</m>. In these notes we are primarily concerned with whether a set is countable or not.
+	</p>
+</remark>
+
+<proposition xml:id="prop-countable">
+	<statement>
+		<p>
+			<ol>
+			<li>If <m>A</m> is a countable set, and <m>B \subseteq A</m> then <m>B</m> is countable.</li>
+			<li>If <m>\{A_i\}_{i \in I}</m> is a countable collection of countable sets, then <m>\bigcup_{i\in I} A_i</m> is countable.</li>
+			<li>If <m>\{A_i\}_{i=1}^n</m> is a finite collection of countable sets, then the cartesian product <m>\prod_{i=1}^n A_i</m> is countable.</li>
+			</ol>
+		</p>
+	</statement>
+
+	<proof>
+		<p>
+			If <m>B \subseteq A</m> and <m>A</m> is finite, then <m>B</m> is finite and hence countable.
+			If <m>A</m> is countably infinite, then there is a bijection <m>f \colon A \rightarrow \bN</m>.
+			Using <m>f</m>, we can identify <m>A</m> with <m>\bN</m>, and hence identify <m>B</m> with a subset of <m>\bN</m>.
+			If <m>B</m> is finite, then <m>B</m> is countable.
+			Otherwise, <m>B</m> is an inifinite subset of <m>\bN</m>.
+			Let <m>b_1</m> be the smallest element of <m>B</m>, let <m>b_2</m> be the smallest element of <m>B \backslash \{b_1\}</m>, and so on.
+			The map <m>g \colon B \rightarrow \bN</m> defined by <m>g(b_n) = n</m> is a bijection from <m>B</m> to <m>\bN</m>.
+		</p>
+
+		<p>
+			Let <m>\{A_i\}_{i \in I}</m> be a countable collection of finite sets.
+			We will further assume that the sets <m>A_i</m> are disjoint. The general case can be handled by replacing each <m>A_i</m> with <m>A_i \backslash \bigcup_{j=1}^{i-1} A_j</m>.
+			Without loss of generality, we can assume that <m>I = \bN</m>.
+			Let <m>A = \bigcup_{i\in I} A_i</m>.
+			Let <m>n_i</m> be the number of elements in <m>A_i</m> for each <m>i \in \bN.</m>
+			We can define a bijection from <m>A</m>	to <m>\bN</m> by sending the elements of <m>A_1</m> to the first <m>n_1</m> natural numbers, the elements of <m>A_2</m> to the next <m>n_2</m> natural numbers, and so on.
+			Hence <m>A</m> is countable.
+		</p>
+
+		<p>
+			We will now show that <m>\bN \times \bN</m> is countable.
+			For each <m>k \in \bN</m> let 
+			<md>
+				A_k = \{(n,m) \in \bN \times \bN \colon n+m = k\}.
+			</md>
+			Then <m>\bN \times \bN = \bigcup_{k=1}^\infty A_k</m> is a countable union of finite sets.
+			Thus, by the above argument, <m>\bN \times \bN</m> is countable.
+		</p>
+
+		<!--<xi:include href="../sage/countable.ptx" />-->
+
+		<p>
+			Now, let <m>\{A_i\}_{i \in I}</m> be a countable collection of countably infinite sets.
+			Let <m>A = \bigcup_{i\in I} A_i</m>.
+			We will show that <m>A</m> is countable.
+			We will again assume that the sets <m>A_i</m> are disjoint and that <m>I = \bN</m>.
+			Let <m>f_i \colon A_i \rightarrow \bN</m> be a bijection for each <m>i\in I</m>.
+			Then the map <m>f(a) = (f_i(a), i)</m> for <m>a \in A_i</m> is a bijection from <m>A</m> to <m>\bN \times \bN</m>.
+			Thus <m>A</m> is countable.
+		</p>
+
+		<p>
+			Finally, since <m>\bN \times \bN</m> is countable, we can show by induction that <m>\prod_{i=1}^n A_i</m> is countable for any finite collection of countable sets <m>\{A_i\}_{i=1}^n</m>.
+		</p>
+	</proof>
+</proposition>
+
+<example>
+	<p>
+		The natural numbers <m>\bN</m>, the integers <m>\bZ</m>, and the rational numbers <m>\bQ</m> are all countable.
+		Further, cartesian products <m>\bN^n</m>, <m>\bZ^n</m>, and <m>\bQ^n</m> are countable for all <m>n \in \bN</m>.
+	</p>
+	<p>
+		The natural numbers are countable by definition.
+		To see that <m>\bZ</m> is countable, note that the map
+		<md>
+			f(n) = \begin{cases}2n \amp n \geq 0; \\ (-2)n-1 \amp n \lt 0, \end{cases}
+		</md>
+		is a bijection from <m>\bZ</m> to <m>\bN</m>.	
+	</p>
+
+	<p>
+		We will now show that <m>\bQ</m> is countable.
+		Define a map <m>f \colon \bQ \rightarrow \bZ \times \bZ</m> by f(0) = 0, and <m>f(q) = (n,m)</m> when <m>q = \frac{n}{m}\neq0</m> and <m>n</m> and <m>m</m> are coprime with <m>m \gt 0.</m>
+		The set <m>\bZ \times \bZ</m> is countable by <xref ref="prop-countable"/>, since <m>\bZ</m> is countable.
+		The map <m>f</m> is injective, and thus <m>\bQ</m> has the same cardinality as a subset of <m>\bZ \times \bZ</m>.
+		Thus, by <xref ref="prop-countable"/> again, <m>\bQ</m> is countable.
+	</p>
+	<p>
+		That <m>\bN^n</m>, <m>\bZ^n</m>, and <m>\bQ^n</m> are countable follows from <xref ref="prop-countable"/>.
+	</p>
+</example>
+
+<p>
+	Not all sets are countable. We will show now that the interval <m>[0,1]\subseteq\bR</m>  is uncountable.
+	The argument in this proof (and any argument of a similar flavor) is commonly called <term>Cantor's diagoanlization argument</term>, named after George Cantor (1845 - 1918).<idx><h>Cantor's diagonalization argument</h></idx>
+</p>
+
+<proposition xml:id="prop-diagonal-argument">
+	<statement>
+		<p>
+			The interval <m>[0,1]\subseteq\bR</m> is uncountable.
+		</p>
+	</statement>
+	<proof>
+		<p>
+			Every number in <m>[0,1]</m> can be written as a decimal expansion.
+			If we agree to not write non-zero numbers with a tail of inifinitely many zeros (and instead write as a tail of infinitely many nines), then each number has a unique decimal expansion of the form <md>0.a_1 a_2 a_3 \ldots</md>
+			where <m>a_i \in \{0,1,2,3,4,5,6,7,8,9\}</m> for each <m>i\in\bN.</m>
+			Assume that <m>[0,1]</m> is countable.
+			Let <m>f\colon [0,1] \rightarrow \bN</m> be a bijection.
+			Write the decimal expansion of the elements of <m>[0,1]</m> as
+			<md>
+				<mrow> f^{-1}(1) \amp= 0.a_{11} a_{12} a_{13} \ldots</mrow>
+				<mrow> f^{-1}(2) \amp= 0.a_{21} a_{22} a_{23} \ldots</mrow>
+				<mrow> f^{-1}(3) \amp= 0.a_{31} a_{32} a_{33} \ldots</mrow>
+				<mrow> \amp \vdots. </mrow>
+			</md>
+			Now define a number <m>b \in [0,1]</m> with decimal expansion
+			<md>
+				b = 0.b_1 b_2 b_3 \ldots
+			</md>
+			where
+			<md>
+				b_1\neq a_{11},\ b_2\neq a_{22},\ b_3 \neq a_{33},\ldots.
+			</md>
+			Then, by construction, <m>b</m> is not in the image of <m>f^{-1}</m>, contradicting the assumption that <m>f</m> is a bijection.
+			Thus <m>[0,1]</m> is not countable.
+		</p>
+	</proof>
+</proposition>
+
+<example xml:id="ex-uncountable-intervals">
+	<p>
+		An argument similar to that of <xref ref="prop-diagonal-argument"/> can be used to show that each of <m>(0,1]</m>, <m>[0,1)</m> and <m>(0,1)</m> are uncountable.
+		It follows that any non-empty, non-singleton interval in <m>\bR</m> is uncountable.
+		For example, if <m>a \lt b</m> then
+		<md>
+			<mrow>f \colon (0,1) \amp \rightarrow (a,b)</mrow>
+			<mrow>x\amp  \mapsto (b-a)x+a</mrow>
+		</md>
+		is a bijection from <m>(0,1)</m> to <m>(a,b)</m>, and hence <m>(0,1)</m> and <m>(a,b)</m> have the same cardinality.
+	</p>
+</example>
+
+<example>
+	<p>
+		Since <m>[0,1]</m> is uncountable, and <m>[0,1]\subseteq \bR</m>, it follows that <m>\bR</m> is uncountable.
+	</p>
+	<p>
+		Recall that the arctangent function is a bijection from <m>(-\pi/2,\pi/2)</m> to <m>\bR</m>.
+		Thus, <m>\bR</m> and <m>(-\pi/2,\pi/2)</m> have the same cardinality.
+		Hence, by the argument in <xref ref="ex-uncountable-intervals"/>, <m>\bR</m> has the same cardinality as <m>(0,1)</m>.
+		Now, since
+		<md>
+			(0,1) \subseteq [0,1] \subseteq \bR
+		</md>
+		it follows from the Schröder–Bernstein theorem that <m>(0,1)</m>, <m>[0,1]</m> and <m>\bR</m> all have the same cardinality.
+		Hence, all non-empty, non-singleton intervals in <m>\bR</m> have the same cardinality as <m>\bR</m>.
+	</p>
+</example>
+
+<example>
+	<p>
+		The cartesian product <m>\bR^n</m> is also uncountable, since 
+		<md>
+			\bR \times \{0\} \times \ldots \times \{0\} \subseteq \bR^n,
+		</md>
+		and <m>\bR</m> is uncountable.
+		Note that, the complex numbers <m>\bC</m> can be identified with <m>\bR^2</m>, and so <m>\bC</m> is uncountable.
+	</p>
+	<p>
+		In fact, <m>\bR</m>,<m>\bC</m>, and <m>\bR^n</m> all have the same cardinality.
+	</p>
+</example>
+</section>
+
+
+<section>
+<title>Axiom of Choice</title>
+<p>A <term>choice function</term><idx><h>choice function</h></idx> <m>f</m> on <m>\mathcal{F}</m> is a mapping
+<md> f \colon \mathcal{F} \rightarrow \bigcup_{F\in\mathcal{F}} F, </md>
+such that <m>f(F) \in F</m> for all <m>F\in \mathcal{F}</m>. That is, <m>f</m> <em>chooses</em> an element from each set <m>F \in \mathcal{F}</m>. <term>The axiom of choice</term><idx><h>axiom of choice</h></idx> states that given any collection of non-empty sets a choice function always exists.</p>
+
+<p>Note that the axiom of choice is an axiom. It does not follow from the standard set theory axioms (the Zermelo-Fraenkel axioms). While the axiom of choice seems very natural, it does lead to some interesting, counter-intuitive results, e.g. the Banach-Tarski paradox and the well-ordering principal.</p>
+<p>The axiom of choice is generally assumed by working mathematicians, especially in analysis. We take is an axiom in these notes.</p>
+
+<remark>
+<p>The <term>axiom of countable choice</term><idx><h>axiom of choice</h><h>countable choice</h></idx> states that any countable collection of non-empty sets has a choice function.
+This is a weaker axiom than the axiom of choice.
+As most functional analysis is carried out with underlying field <m>\mathbb{C}</m> or <m>\mathbb{R}</m>, which contain countable dense subsets (<m>\mathbb{Q}</m> and <m>\mathbb{Q}+ \mathbb{Q} i</m> respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. 
+However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice.
+It is also worth noting that (uncountable) choice is needed at times in these notes.</p>
+</remark>
+
+</section>
+</appendix>

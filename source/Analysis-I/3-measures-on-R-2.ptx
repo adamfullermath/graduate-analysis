@@ -1,0 +1,198 @@
+<section xml:id="sec-nonmeasurable" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Borel sets, Lebesgue measurable sets, and subsets of <m>\mathbb{R}</m>.</title>
+<p>Let <m>\mathcal{B}</m> be the Borel sets of <m>\mathbb{R}</m>, and let <m>\mathcal{M}</m> be the Lebesgue measurable sets of <m>\mathbb{R}</m>. We have seen that the following inclusions hold:
+<md> \mathcal{B} \subseteq \mathcal{M} \subseteq \mathcal{P}(\mathbb{R}). </md>
+In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable.</p>
+<p>Another question arising from <xref ref="sec-Lebesgue"/> is the following: are there any uncountable Lebesgue measurable sets with <m>0</m> Lebesgue measure? We know that countable sets have measure <m>0</m>, but are the countable sets all of the Lebesgue measure <m>0</m> sets? We will see presently, that there are uncountable sets with Lebesgue measure <m>0</m>.</p>
+<p>We will begin with proving the existence of subsets of <m>\mathbb{R}</m> which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) <idx><h>Vitali, Giuseppe</h></idx> in 1905.</p>
+
+<theorem xml:id="thm-Vitali-non-meas">
+<title>Vitali</title>
+<statement>
+    <p>
+        Let <m>E \subseteq \mathbb{R}</m> satisfy <m>m^*(E)&gt;0</m>.
+        Then there exists <m>C \subseteq E</m> such that <m>C</m> is not Lebesgue measurable.
+    </p>
+</statement>
+    <proof>
+<p>By the countable monotonicity of <m>m^*</m>,
+<md> m^*(E) \leq \sum_{n=1}^\infty m^*(E \cap [-n,n]).</md>
+Thus, <m>E</m> contains a bounded subset with positive Lebesgue outer measure.
+    We can thus assume that <m>E</m> is bounded.</p>
+<p>Define a relation <m>\sim_\mathbb{Q}</m> on <m>E</m> by the following rule: if <m>x,y\in E</m> then <m>x \sim_\mathbb{Q} y</m> if and only if there is a rational number <m>q \in \mathbb{Q}</m> such that <m>x - y = q</m>.
+    It is not hard to see that <m>\sim_\mathbb{Q}</m> is an equivalence relation on <m>E</m> (<xref ref="exer-Q-equiv-rel" />).
+    Create a set <m>C \subseteq E</m> by choosing a representative element from each equivalence class of the equivalence relation <m>\sim_\mathbb{Q}</m>.
+    Thus <m>C \subseteq E</m> satisfies: if <m>x \in E</m> then there exists a unique <m>q_x \in \mathbb{Q}</m> such that <m>x+q_x \in C</m>.
+    It follows that the collection of sets <m>\{C + q\}_{q \in \mathbb{Q}}</m> are disjoint and cover <m>E</m>.
+    Further, as <m>E</m> is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set <m>\Lambda \subseteq \mathbb{Q}</m> such that
+<md> E \subseteq \bigcup_{\lambda \in \Lambda} C + \lambda. </md>
+Suppose now that <m>C</m> is Lebesgue measurable.
+    Then, since <m>C \subseteq E</m>, <m>m(C) &lt; \infty</m>.
+    Further, <m>C + \lambda</m> is Lebesgue measurable for each <m>\lambda \in \Lambda</m>, and <m>m(C + \lambda) = m(C)</m> (<xref ref="exer-Lebesgue-translation-inv"/>).
+    Thus, <m>\bigcup_{\lambda \in \Lambda} (C + \lambda)</m> is Lebesgue measurable, as it is a countable union of Lebesgue measurable sets.
+    We also, have that <m>\bigcup_{\lambda \in \Lambda} C + \lambda</m> is bounded, since <m>E</m> and <m>\Lambda</m> are bounded.
+    Thus
+<md> \infty &gt; m(\bigcup_{\lambda \in \Lambda} C + \lambda) = \sum_{\lambda\in \Lambda} m(C+ \lambda) = \sum_{\lambda\in \Lambda} m(C).</md>
+Since <m>\Lambda</m> is an infinite set, it follows that <m>m(C) = 0</m>.</p>
+<p>Now, by the countable submonotonicity of the Lebesgue outer measure <m>m^*</m> we have
+<md> m^*(E) \leq \sum_{\lambda\in\Lambda} m(C+\lambda) = 0.</md>
+This contradicts, <m>m^*(E) &gt; 0</m>, and so <m>C</m> is not Lebesgue measurable.</p>
+</proof>
+</theorem>
+
+<remark>
+<p><xref ref="thm-Vitali-non-meas"/> tells us that there are many subsets off <m>\mathbb{R}</m> which are not Lebesgue measurable. 
+    Still, there is something unsatisfactory about the proof. 
+    In the proof we construct a set <m>C</m> which is not Lebesgue measurable, but what does <m>C</m> look like?
+    It is important to note that the construction of <m>C</m> given here relies on the axiom of choice.
+    We <em>choose</em> an element from each equivalence class of <m>\sim_\mathbb{Q}</m>.
+    This is not, however, a shortcoming of the proof.
+    It is a necessity.
+    There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable.
+    This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do.
+    We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC).
+    Thus, we are living in a world where <xref ref="thm-Vitali-non-meas"/> holds.
+    This won't be the last time that the axiom of choice plays a role in these notes; but it is perhaps the most famous and consequential.</p>
+</remark>
+<p>We will now embark on the construction of an uncountable subset of <m>\mathbb{R}</m> which is Lebesgue measurable with Lebesgue measure <m>0</m>.</p>
+<example xml:id="ex-Cantor">
+<p><idx><h>Cantor set</h></idx>
+Let <m>C_0 = [0,1]</m>.
+Let <m>C_1 = [0,\frac{1}{3}] \cup [\frac{2}{3},1]</m>. 
+Note, that <m>C_1</m> is <m>C_0 \backslash (\frac{1}{3},\frac{2}{3})</m>. I.e. <m>C_1</m> is <m>C_0</m> with the middle third of its interval removed.
+To construct <m>C_2</m> we remove the (open) middle third from each of the two disjoint intervals in <m>C_1</m>.
+That is
+<md>C_2 = \left[0,\frac{1}{9}\right] \cup \left[\frac{2}{9},\frac{1}{3}\right]\cup\left[\frac{2}{3},\frac{7}{9}\right]\cup\left[\frac{8}{9},1\right].</md>
+We construct <m>C_3</m> by removing the open middle thirds from each of the 4 intervals in <m>C_2</m>.
+We continue in this way: <m>C_n</m> is constructed from <m>C_{n-1}</m> by removing the open middle thirds from each of the <m>2^{n-1}</m> closed intervals in <m>C_{n-1}</m>.</p>
+
+
+<xi:include href="../sage/cantor.ptx"/>
+
+
+<p>Let <m>C = \bigcap_{n=0}^\infty C_n</m>.
+We call <m>C</m> the <em>Cantor set</em>.<idx><h>Cantor set</h></idx><fn>The set <m>C</m> is also referred to as the <em>Cantor middle-third set</em>.</fn>
+Since each <m>C_n</m> is a closed set, <m>C</m> is also a closed set (as intersections of closed sets are closed sets).
+It follows that <m>C</m> is a Borel set, and hence <m>C</m> is Lebesgue measurable.</p>
+<p>Let <m>U_k</m> be the open set which is removed from <m>C_{k-1}</m> to get <m>C_k</m>.
+Thus, <m>U_1 = (1/3,2/3)</m>, <m>U_2 = (1/9,2/9) \cup (7/9,8/9)</m>, etc.
+Let <m>U = \bigcup_{k=1}^\infty U_k</m>.
+Note that
+<md> m(U_k) = \frac{2^{k-1}}{3^k}.</md>
+As the sets <m>\{U_k\}_{k=1}^\infty</m> are disjoint, we have that
+<md> m(U) = \sum_{k=1}^\infty \frac{2^{k-1}}{3^k} = \frac{1}{3}\sum_{k=0}^\infty \frac{2^{k}}{3^k} = 1.</md>
+Now, as <m>[0,1] = U \cup C</m>, and <m>\ell([0,1])=1</m>, it follows that <m>m(C) = 0</m>.</p>
+<p>We will now look at the cardinality of <m>C</m>.
+Every number in <m>[0,1]</m> has a binary expansion.
+If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique.<fn>That is we will write the binary expansion <m>0.1</m> as <m>0.011111\ldots</m>.</fn>
+Suppose <m>c \in C</m>. 
+Construct <m>f(c) \in [0,1]</m> be the following algorithm: if <m>c</m> is in the left half <m>C_1</m>, then the first digit in the binary expansion of <m>f(c)</m> is <m>0</m>; if <m>c</m> is in the right interval of <m>C_1</m> then the first digit of the binary expansion of <m>f(c)</m> is <m>1</m>.
+Now, in <m>C_2</m>, <m>f(c)</m> is in either the left subinterval, or the right subinterval of the interval <m>c</m> is in <m>C_0</m>.
+Let <m>0</m> be the second digit of <m>f(c)</m> if <m>c</m> is to the left, <m>1</m> be the second digit if <m>c</m> is to the right.
+Continuing in this way we get <m>f(c)</m> as a binary expansion.
+The map <m>f</m> is a bijection from <m>C</m> to <m>[0,1]</m>, hence <m>C</m> and <m>[0,1]</m> have the same cardinality.
+As <m>[0,1]</m> is uncountable<fn>This is traditionally proved using the famed diagonal argument of Cantor. We also know that <m>[0,1]</m> is uncountable since <m>m([0,1]) = 1</m> and countable sets have Lebesgue measure <m>0</m> by <xref ref="thm-countable-L-measurable"/>.</fn>, it follows that <m>C</m> is uncountable.</p>
+</example>
+<p>We thus shown have that the Cantor set <m>C</m> has Lebesgue measure <m>0</m> and is uncountable.<idx><h>Cantor set</h></idx> Hence the converse of <xref ref="thm-countable-L-measurable"/> does not hold. All countable sets have Lebesgue measure <m>0</m>, but not all Lebesgue measure <m>0</m> sets are countable.</p>
+<p>We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the <term>Cantor-Lebesgue function</term>.<idx><h>Cantor-Lebesgue function</h></idx> Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.</p>
+<example xml:id="ex-cantor-lebesgue">
+<p>Let <m>C</m> be the Cantor set, from <xref ref="ex-Cantor"/>, and let <m>U = [0,1]\backslash C</m>.
+    We first define a function <m>\varphi</m> on <m>U</m>.
+    Recall that <m>U = \bigcup_{k=1}^\infty U_k</m> where <m>U_k</m> is the open set removed from <m>C_k</m> at the <m>k</m>th step of the construction of the Cantor set <m>C</m>.</p>
+<p>Let <m>\varphi(x) = 1/2</m> for <m>x \in U_1 = (1/3,2/3)</m>.
+    For <m>x \in U_2</m> define <m>\varphi(x)</m> by
+<md>
+\varphi(x) = \begin{cases} \frac{1}{4} &amp; x \in (1/9,2/9) \\
+        \frac{3}{4} &amp; x \in (7/9,8/9).
+        \end{cases}
+</md>
+Continue in this way, so that for <m>x \in U_k</m>
+<md> \varphi(x) = \frac{2m-1}{2^k}</md>
+when <m>x</m> is in the <m>m</m>th interval in <m>U_k</m> (See <xref ref="fig-cantor-lebesgue"/>).</p>
+<p>
+
+<xi:include href="../sage/cantor-lebesgue.ptx"/>
+
+</p>
+<p>We extend <m>\varphi</m> to all of <m>[0,1]</m> by setting <m>\varphi(0)=0</m>, and for <m>x \in C\backslash\{0\}</m>,
+<md> \varphi(x) = \sup\{\varphi(y) \colon y \in [0,x) \cap U \}.</md>
+We call <m>\varphi</m> the <term>Cantor-Lebesgue function</term><idx><h>Cantor-Lebesgue function</h></idx>
+    Note that <m>\varphi</m> is continuous.
+    Indeed, <m>\varphi</m> is clearly continuous on <m>U</m>, since <m>\varphi</m> is constant on open intervals in <m>U</m>.
+    For <m>x \in C</m>, and <m>K</m> large enough, we can find <m>a_k &lt; x &lt; b_k</m> such that
+<md>\varphi(b_k) - \varphi(a_k) &lt; \frac{1}{2^k}</md>
+for all <m>k\geq K</m>.
+    It follows that <m>\varphi</m> does not have a jump discontinuity at <m>x</m>.
+    As <m>\varphi</m> is increasing, this shows that <m>\varphi</m> is continuous at <m>x</m>.</p>
+</example>
+<lemma xml:id="lem-non-Borel">
+    <statement>
+        <p>
+            Let <m>C</m> be the Cantor set.
+            Then there is a set <m>A \subseteq C</m> such that <m>A</m> is Lebesgue measurable but <m>A</m> is not a Borel set.
+        </p>
+    </statement>
+    <proof>
+<p>Let <m>\varphi</m> be the Cantor-Lebesgue function from <xref ref="ex-cantor-lebesgue"/>.<idx><h>Cantor-Lebesgue function</h></idx>
+    The function <m>\varphi</m> is an increasing, continuous function with <m>\varphi(0) = 0</m> and <m>\varphi(1) = 1</m>.
+    It follows from the Intermediate Value Theorem that <m>\varphi</m> maps <m>[0,1]</m> surjectively onto <m>[0,1]</m>.
+    Define a function <m>\psi \colon [0,1] \rightarrow [0,2]</m> by
+<md> \psi(x) = \varphi(x) + x.</md>
+Then <m>\psi</m> is a continuous, strictly increasing function with <m>\psi([0,1]) = [0,2]</m>.</p>
+
+
+<!-- <figure xml:id="fig-Cantor-Lebesgue-x">
+    <image source ="images/Cantor-Lebesgue+x.png" width="100%"/>
+    <caption>The function <m>\psi(x)=\phi(x)+x</m> used in the proof of <xref ref="lem-non-Borel"/>.</caption>
+    
+</figure> -->
+
+<xi:include href="../sage/Cantor-Lebesgue-x.ptx"/>
+
+
+<p>Let <m>C \subseteq [0,1]</m> be the Cantor set, and let <m>U = [0,1] \backslash U</m>.
+    By <xref ref="ex-Cantor"/>, <m>m(C) = 0</m>, and hence <m>m(U) = 1</m>.
+    Applying <m>\psi</m> to <m>C</m> and <m>U</m> we get disjoint sets <m>\psi(C)</m> and <m>\psi(U)</m> satisfying</p>
+<md> [0,2] = \psi(C) \cup \psi(U). </md>
+<p>Recall that <m>\varphi</m> is constructed so that there are disjoint open intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>U = \bigcup_k I_k</m> and <m>\varphi</m> is constant on each <m>I_k</m>.
+    Let <m>c_k = \varphi(x)</m> when <m>c \in I_k</m>.
+    Then, <m>\psi(I_k) = c_k + I_k</m>.
+    Hence <m>\psi(U) = \bigcup_k(c_k + I_k)</m> is a countable union of intervals, and hence <m>\psi(U)</m> is Lebesgue measurable.
+    Further
+<md> m(\psi(U)) = \sum_{k=1}^\infty \ell(c_k + I_k) = \sum_{k=1}^\infty \ell(I_k) = m(U) = 1.</md>
+As <m>[0,2]</m> and <m>\psi(U)</m> are Lebesgue measurable, it follows that <m>\psi(C)</m> is Lebesgue measurable, and <m>m(\psi(C)) = m([0,2]) - m(\psi(U)) = 1.</m></p>
+<p><xref ref="thm-Vitali-non-meas"/> tells us that there is a set <m>B \subseteq \psi(C)</m> which is not Lebesgue measurable.</p>
+<p>Since <m>\psi</m> is strictly increasing bijection from <m>[0,1]</m> to <m>[0,2]</m> it has a continuous inverse <m>\psi^{-1} \colon [0,2] \rightarrow [0,1]</m> (<xref ref="exer-cont-inverse"/>).
+    Let <m>A = \psi^{-1}(B) \subseteq C</m>.
+    As <m>\psi(A) = B</m> is not Lebesgue measurable, and hence not a Borel set, it follows from <xref ref="exer-Borel-inv-img"/> that <m>A</m> is not a Borel set.
+    As <m>A \subseteq C</m> and <m>m(C) = 0</m>, <m>A</m> is a Lebesgue measurable since <m>(\mathbb{R}, \mathcal{M}, m)</m> is a complete measure space.</p>
+</proof>
+</lemma>
+
+<theorem>
+    <statement>
+        <p>
+            The <m>\sigma</m>-algebra of Borel subsets of <m>\mathbb{R}</m> is strictly contained in the <m>\sigma</m>-algebra of Lebesgue measurable subsets of <m>\mathbb{R}</m>.         
+        </p>
+    </statement>
+    <proof>
+<p>That the Borel sets <m>\mathcal{B}</m> are contained in the Lebesgue measurable sets <m>\mathcal{M}</m> is <xref ref="thm-Borel-Lebesgue-meas"/>.
+    <xref ref="lem-non-Borel"/> gives the existence of a Lebesgue measurable set which is not Borel.</p>
+</proof>
+</theorem>
+
+
+<corollary>
+    <statement>
+        <p>
+            The measure space <m>(\mathbb{R},\mathcal{B},m)</m> of the Lebesgue measure restricted to the Borel sets of <m>\mathbb{R}</m> is not a complete measure space.
+        </p>
+    </statement>
+    <proof>
+<p>The Cantor set <m>C</m> is closed, and hence a Borel set.
+    Further <m>m(C)=0</m>.
+    <xref ref="lem-non-Borel"/> shows that there is a set <m>A \subseteq C</m> which is not a Borel set, hence <m>(\mathbb{R},\mathcal{B},m)</m> is not a complete measure space.</p>
+</proof>
+</corollary>
+
+</section>

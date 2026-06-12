@@ -1,0 +1,112 @@
+<exercises>
+
+<exercise>
+    <statement>
+        <p>
+            Let <m>m</m> be the Lebesgue measure on <m>\mathbb{R}</m>. Suppose <m>E \subseteq \mathbb{R}</m> is Lebesgue measurable.
+            Take <m>\varepsilon &gt;0</m>.
+            Show that there are disjoint Lebesgue measure able sets <m>\{E_k\}_{k=1}^\infty</m> such that
+            <md> E = \bigcup_{k=1}^\infty E_k</md>
+            and <m>m(E_k)&lt;\varepsilon</m> for each <m>k</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-Lebesgue-translation-inv">
+    <statement>
+        <p>
+            Let <m>A \subseteq \mathbb{R}</m>. Show that <m>m^*(A) = m^*(A + \lambda)</m> for all <m>\lambda \in \mathbb{R}</m>.
+            Show that <m>A</m> is Lebesgue measurable if and only if <m>A + \lambda</m> is Lebesgue measurable for all <m>\lambda \in \mathbb{R}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-outer-approx">
+    <statement>
+        <p>
+            Complete the proof of <xref ref="thm-Leb-meas-sets-G-delta-F-sigma"/>.
+            That is, show that if <m>E</m> is measurable  then for all <m>\varepsilon &gt;0</m> there is an open set <m>U</m> containing <m>E</m> such that <m>m(U\backslash E) &lt; \varepsilon</m>.
+            (You can assume that the result holds when <m>m(E)&lt;\infty</m>; the proof of that case is given in the proof of <xref ref="thm-Leb-meas-sets-G-delta-F-sigma"/>).
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-Lebesgue-inner-reg">
+    <statement>
+        <p>
+            Complete the proof of <xref ref="thm-Lebesgue-regular"/>.
+            That is, show that if <m>E \subseteq \mathbb{R}</m> is Lebesgue measurable then
+            <md> m(E) = \sup\{m(K) \colon K \subseteq E,\ K\text{ compact}\}.</md>
+            (The case when <m>m(E)&lt;\infty</m> is given in the proof of <xref ref="thm-Lebesgue-regular"/>).
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-Q-equiv-rel">
+    <statement>
+        <p>
+            Let <m>E \subseteq \mathbb{R}</m> be a subset, and let <m>\sim_\mathbb{Q}</m> be the relation defined in <xref ref="thm-Vitali-non-meas"/>.
+            That is, <m>x \sim_\mathbb{Q} y</m> if and only if there is a <m>q \in \mathbb{Q}</m> such that <m>x = y + q</m>.
+            Show that <m>\sim_\mathbb{Q}</m> is an equivalence relation.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-cont-inverse">
+    <statement>
+        <p>
+            Let <m>\psi \colon [a,b] \rightarrow [c,d]</m> be a strictly increasing continuous bijection.
+            Show that <m>\psi</m> has a continuous inverse.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-Borel-inv-img">
+    <statement>
+        <p>
+            Let <m>f \colon \mathbb{R} \rightarrow \mathbb{R}</m> be a continuous function.
+            Show that <m>f^{-1}(B)</m> is Borel for any Borel set <m>B \subseteq \mathbb{R}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-dirac-cdf">
+    <statement>
+        <p>
+            Let <m>\delta_0</m> be the Dirac measure on the Borel sets <m>\mathbb{B}</m> in <m>\mathbb{R}</m> (<xref ref="exer-dirac-meas"/>).
+            That is, for <m>A \in \mathcal{B}</m>, <m>\delta_0(A) = 0</m> if <m>0 \notin A</m>, and <m>\delta_0(A) = 1</m> if <m>0 \in A</m>.
+            Find the cumulative distribution function <m>H</m> for <m>\delta_0</m>.
+        </p>
+    </statement>
+</exercise>            
+
+<exercise>
+    <statement>
+        <p>
+            Let <m>(\mathbb{R},\mathcal{B},m)</m> be the measure space of the Lebesgue measure restricted to the Borel sets <m>\mathcal{B}</m>.
+            Let <m>(\mathbb{R}, \mathcal{B}_0, m_0)</m> be the completion of <m>(\mathbb{R},\mathcal{B},m)</m>.
+            Show that <m>\mathcal{B}_0 = \mathcal{M}</m>, the <m>\sigma</m>-algebra of all Lebesgue measurable sets; and that <m>m_0 = m</m>, the Lebesgue measure.
+            I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-cant-len-func-singular">
+    <statement>
+        <p>
+            Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m>, let <m>C</m> be the Cantor set, and let <m>U = [0,1] \backslash C</m>.
+            Show that <m>\varphi'(x) = 0</m> for all <m>x \in U</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-cantor-leb-cdf">
+    <statement>
+        <p>
+            Let <m>C \subseteq [0,1]</m> be the Cantor set; let <m>U = [0,1]\backslash C</m>; and let <m>\varphi \colon [0,1] \rightarrow [0,1]</m>.
+            Let <m>\mu</m> be the Borel measure on <m>[0,1]</m> induced by <m>\varphi</m> (using <xref ref="thm-lebesgue-stieltjes-measure"/>).
+            Show that <m>\mu([0,1]) = 1</m>; <m>\mu(C) = 1</m> and <m>\mu(U) = 0</m>.
+        </p>
+    </statement>
+</exercise>
+</exercises>
