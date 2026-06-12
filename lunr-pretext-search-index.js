@@ -10,319 +10,13 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
-  "id": "real-analysis-4-2-3",
-  "level": "1",
-  "url": "real-analysis-4-2-3.html",
-  "type": "Section",
-  "number": "1.1",
-  "title": "Set Theory Notation",
-  "body": " Set Theory Notation  The empty-set is denoted by . Let be any set, and let . The union of and is given by   Their intersection is   We will usually call a set whose elements are sets a collection . Let be a collection of subsets of . The union and intersection of all sets in are written   respectively. A collection of sets is disjoint , or pairwise disjoint , if for all .  The complement of in is given by   When it is clear what ambient set we are working in we will often refer to as simply the complement of . We will also write as . For example, we will often be implicitly be working with subsets of . Thus, by the complement of we will mean   The collection of all subsets of a set is called the the power set of power set and is denoted by . The notation is also sometimes used for the power-set of . Note that if has elements, then has elements.  Let be a collection of subsets of . The following two identities are called De Morgan's Identities . De Morgan's Identities   Let be any set. Suppose for each there is a set . Let . We will write the collection by   and call an index set for the collection .   Mappings  For we let   We call the inverse image of under . Note that the inverse image of a set is defined whether or not the mapping is invertible.  For subsets we have the following identities:    "
-},
-{
-  "id": "real-analysis-4-2-4",
-  "level": "1",
-  "url": "real-analysis-4-2-4.html",
-  "type": "Section",
-  "number": "1.2",
-  "title": "Equivalence Relations and Classes",
-  "body": " Equivalence Relations and Classes  A relation on is an equivalence relation equivalence relation if it satisfies the following conditions:   for all ( is reflexive );   if and only if ( is symmetric );   if an then ( is transitive ). Let be an equivalence relation on . For , the equivalence class of is     Note that for all . Also if , then . Further if and only if . That is, each element is in one, and only one, equivalence class. Hence the collection is a disjoint collection of subsets of such that   We call such a collection a partition of .  "
-},
-{
-  "id": "real-analysis-4-2-5",
-  "level": "1",
-  "url": "real-analysis-4-2-5.html",
-  "type": "Section",
-  "number": "1.3",
-  "title": "Cardinality",
-  "body": " Cardinality   Note that cardinality forms an equivalence relation on sets.  A set is called countable if is finite, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite .  If a set is not countable, we say it is uncountable . There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . However, we will primarily be concerned with whether a set is countable or not.  \\begin{egs}   , and are all countable (see Section 1.3, Corollary 4 of ).   The union of a countable collection of countable sets is countable (see Section 1.3, Corollary 6 of ).   and are uncountable (they have the same cardinality).   For , , the intervals , , and are uncountable. In fact, they have the same cardinality as and (see Section 1.3, Theorem 7 of ).    \\end{egs}  "
-},
-{
-  "id": "real-analysis-4-2-6",
-  "level": "1",
-  "url": "real-analysis-4-2-6.html",
-  "type": "Section",
-  "number": "1.4",
-  "title": "Axiom of Choice",
-  "body": " Axiom of Choice  A choice function choice function  on is a mapping   such that for all . That is, chooses an element from each set  The axiom of choice axiom of choice states that given any collection of non-empty sets a choice function always exists.  Note that the axiom of choice is an axiom! It does not follow from the standard set theory axioms (the Zermelo-Fraenkel axioms). While the axiom of choice seems very natural, it does lead to some interesting, counter-intuitive results, e.g. the Banach-Tarski paradox and the well-ordering principal.  In the first part of the course we will use the axiom of choice to prove the existence of non-measurable sets in . We will also make use of Zorn's Lemma, Zorn's Lemma which is logically equivalent to the axiom of choice. The axiom of choice axiom of choice is widely used by working mathematicians, especially in analysis\/functional analysis.  We state Zorn's Lemma here. We will make use of this Lemma several times; it is used frequently in analysis and functional analysis. Zorn's Lemma is also used in other areas. For example, it is a straightforward application of Zorn's lemma to show that every vector space has a basis. The converse also holds. That is, the assumption that every vector space has a basis is equivalent to the axiom of choice, and hence equivalent to Zorn's Lemma, see   Zorn's Lemma  Zorn's Lemma Let be a partially ordered set. If every totally ordered subsets has an upper bound in , then contains maximal elements.    The axiom of countable choice axiom of choice countable choice states that any countable collection of non-empty sets has a choice function. This is a weaker axiom than the axiom of choice. As most functional analysis is carried out with underlying field or , which contain countable dense subsets ( and respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice. It is also worth noting that (uncountable) choice is needed to show the existence of non-measurable sets.   "
-},
-{
-  "id": "lem-zorn",
-  "level": "2",
-  "url": "real-analysis-4-2-6.html#lem-zorn",
-  "type": "Lemma",
-  "number": "1.4.1",
-  "title": "Zorn’s Lemma.",
-  "body": " Zorn's Lemma  Zorn's Lemma Let be a partially ordered set. If every totally ordered subsets has an upper bound in , then contains maximal elements.  "
-},
-{
-  "id": "real-analysis-4-2-6-9",
-  "level": "2",
-  "url": "real-analysis-4-2-6.html#real-analysis-4-2-6-9",
-  "type": "Remark",
-  "number": "1.4.2",
-  "title": "",
-  "body": " The axiom of countable choice axiom of choice countable choice states that any countable collection of non-empty sets has a choice function. This is a weaker axiom than the axiom of choice. As most functional analysis is carried out with underlying field or , which contain countable dense subsets ( and respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice. It is also worth noting that (uncountable) choice is needed to show the existence of non-measurable sets.  "
-},
-{
-  "id": "real-analysis-4-3-3",
-  "level": "1",
-  "url": "real-analysis-4-3-3.html",
-  "type": "Subsection",
-  "number": "2.1",
-  "title": "Open and closed sets in <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>",
-  "body": " Open and closed sets in   A subset is open if for all there exists such that .  A subset is closed if its complement is open.    We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.   and are open and closed.   Open intervals are open, i.e. intervals of the form and .   Closed intervals are closed, i.e. intervals of the form and .   Finite subsets of are closed.   The rational numbers are neither open nor closed.   The intervals and are neither open nor closed.      Let . A set is open in if there is an open subset such that . Similarly, a set is closed in if there is a closed subset such that .   The key properties of open sets are:   are open;   if is any collection of open sets then    if are open then      Using DeMorgan's identities you can use (ii) to show that an arbitrary intersection of closed sets is closed; and using (iii) you can show a finite union of closed sets is closed.   A useful characterization of closed sets in is the following.   A subset is closed if and only if given any convergent sequence of with for all , we must have .    Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .  If and , then the closure of in is the set . Similarly, the interior of in is the set . A set is dense in if the closure of in is all of .    The rational numbers are dense in . The irrational numbers are also dense in .   We will use the following property of open sets later in the course.   Every non-empty open set in is the disjoint union of countably many open intervals.    Let be non-empty open set. Take . Since is open, there exists such that . Similarly, there exists with . Let   (allowing for the possibility that and ). Let . We will show that but .  Take . Suppose . By definition of as the supremum, there exists such that . Thus . Similarly, if we get . Hence .  Now assume and . Then, since is open , there is an such that . But then . This contradicts the definition of as a supremum, and hence . Similarly, .  Take . Note that, either or . Hence the collection is a disjoint collection of open intervals. Further, since for all , we have   It remains to show that there are countably many distinct intervals . Note that, since is dense in , each open interval contains rational numbers. Thus, the set can be indexed by a subset of . Since is countable this indexing set is countable, and we are done.    A countable intersection of open sets if called a -set. A countable union of closed sets is called an -set.    The term comes from German. The German for area is `Gebeit', and the German for intersection is `Durschnitt'. Hence a set comes from an intersection of areas.  The term , on the other hand, comes from another language altogether. In French the word for closed is `fermé', and the word for sum is `somme'. Hence an set is a sum of closed sets.   Recall that continuity of functions on can be defined solely in terms of open sets, with out making reference to the distance function on .   continuous function Let . A function is continuous if and only is open in for all open sets in .   "
-},
-{
-  "id": "real-analysis-4-3-3-2",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-2",
-  "type": "Definition",
-  "number": "2.1.3",
-  "title": "",
-  "body": " A subset is open if for all there exists such that .  A subset is closed if its complement is open.  "
-},
-{
-  "id": "real-analysis-4-3-3-3",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-3",
-  "type": "Example",
-  "number": "2.1.4",
-  "title": "",
-  "body": " We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.   and are open and closed.   Open intervals are open, i.e. intervals of the form and .   Closed intervals are closed, i.e. intervals of the form and .   Finite subsets of are closed.   The rational numbers are neither open nor closed.   The intervals and are neither open nor closed.    "
-},
-{
-  "id": "real-analysis-4-3-3-4",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-4",
-  "type": "Definition",
-  "number": "2.1.5",
-  "title": "",
-  "body": " Let . A set is open in if there is an open subset such that . Similarly, a set is closed in if there is a closed subset such that .  "
-},
-{
-  "id": "real-analysis-4-3-3-7",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-7",
-  "type": "Remark",
-  "number": "2.1.6",
-  "title": "",
-  "body": " Using DeMorgan's identities you can use (ii) to show that an arbitrary intersection of closed sets is closed; and using (iii) you can show a finite union of closed sets is closed.  "
-},
-{
-  "id": "prop-closed",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#prop-closed",
-  "type": "Proposition",
-  "number": "2.1.7",
-  "title": "",
-  "body": " A subset is closed if and only if given any convergent sequence of with for all , we must have .  "
-},
-{
-  "id": "real-analysis-4-3-3-10",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-10",
-  "type": "Definition",
-  "number": "2.1.8",
-  "title": "",
-  "body": " Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .  If and , then the closure of in is the set . Similarly, the interior of in is the set . A set is dense in if the closure of in is all of .  "
-},
-{
-  "id": "real-analysis-4-3-3-11",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-11",
-  "type": "Example",
-  "number": "2.1.9",
-  "title": "",
-  "body": " The rational numbers are dense in . The irrational numbers are also dense in .  "
-},
-{
-  "id": "prop-open-sets",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#prop-open-sets",
-  "type": "Proposition",
-  "number": "2.1.10",
-  "title": "",
-  "body": " Every non-empty open set in is the disjoint union of countably many open intervals.  "
-},
-{
-  "id": "real-analysis-4-3-3-14",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-14",
-  "type": "Proof",
-  "number": "2.1.1",
-  "title": "",
-  "body": " Let be non-empty open set. Take . Since is open, there exists such that . Similarly, there exists with . Let   (allowing for the possibility that and ). Let . We will show that but .  Take . Suppose . By definition of as the supremum, there exists such that . Thus . Similarly, if we get . Hence .  Now assume and . Then, since is open , there is an such that . But then . This contradicts the definition of as a supremum, and hence . Similarly, .  Take . Note that, either or . Hence the collection is a disjoint collection of open intervals. Further, since for all , we have   It remains to show that there are countably many distinct intervals . Note that, since is dense in , each open interval contains rational numbers. Thus, the set can be indexed by a subset of . Since is countable this indexing set is countable, and we are done.  "
-},
-{
-  "id": "real-analysis-4-3-3-15",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-15",
-  "type": "Definition",
-  "number": "2.1.11",
-  "title": "",
-  "body": " A countable intersection of open sets if called a -set. A countable union of closed sets is called an -set.  "
-},
-{
-  "id": "real-analysis-4-3-3-16",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-16",
-  "type": "Remark",
-  "number": "2.1.12",
-  "title": "",
-  "body": " The term comes from German. The German for area is `Gebeit', and the German for intersection is `Durschnitt'. Hence a set comes from an intersection of areas.  The term , on the other hand, comes from another language altogether. In French the word for closed is `fermé', and the word for sum is `somme'. Hence an set is a sum of closed sets.  "
-},
-{
-  "id": "real-analysis-4-3-3-18",
-  "level": "2",
-  "url": "real-analysis-4-3-3.html#real-analysis-4-3-3-18",
-  "type": "Proposition",
-  "number": "2.1.13",
-  "title": "",
-  "body": " continuous function Let . A function is continuous if and only is open in for all open sets in .  "
-},
-{
-  "id": "real-analysis-4-3-4",
-  "level": "1",
-  "url": "real-analysis-4-3-4.html",
-  "type": "Section",
-  "number": "2.1",
-  "title": "General topology",
-  "body": " General topology   A topology on a non-empty set is a collection of subsets of with the properties   , ;   if is a collection of sets in then ;   if then .    We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space .   Once we have defined what sets we want to be open, we can define what it means for a function to be continuous by mirroring what happened in .   Let and be topological spaces. A function is continuous if for all .    A subset is open if given there is an such that   This defines a topology on .  The usual - definition of continuous functions on coincides with .    Recall that there are other norms we can put on : For each define   The usual norm is the same as the -norm . We could say that a set is open with respect to the -norm if for each there is an such that   This would also define a topology on . However, the topology defined using a -norm and the topology defined using the usual -norm are exactly the same.  In particular, it follows that if you are interested in studying continuous functions it does not matter which -norm you use.    Let be a metric space. A set is open if for each there is an such that   Again, this defines a topology on and the - definition of continuity coincides with .    Let be a topological space. Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .   "
-},
-{
-  "id": "real-analysis-4-3-4-2",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#real-analysis-4-3-4-2",
-  "type": "Definition",
-  "number": "2.1.1",
-  "title": "",
-  "body": " A topology on a non-empty set is a collection of subsets of with the properties   , ;   if is a collection of sets in then ;   if then .    We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space .  "
-},
-{
-  "id": "def-cont",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#def-cont",
-  "type": "Definition",
-  "number": "2.1.2",
-  "title": "",
-  "body": " Let and be topological spaces. A function is continuous if for all .  "
-},
-{
-  "id": "real-analysis-4-3-4-5",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#real-analysis-4-3-4-5",
-  "type": "Example",
-  "number": "2.1.3",
-  "title": "",
-  "body": " A subset is open if given there is an such that   This defines a topology on .  The usual - definition of continuous functions on coincides with .  "
-},
-{
-  "id": "real-analysis-4-3-4-6",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#real-analysis-4-3-4-6",
-  "type": "Example",
-  "number": "2.1.4",
-  "title": "",
-  "body": " Recall that there are other norms we can put on : For each define   The usual norm is the same as the -norm . We could say that a set is open with respect to the -norm if for each there is an such that   This would also define a topology on . However, the topology defined using a -norm and the topology defined using the usual -norm are exactly the same.  In particular, it follows that if you are interested in studying continuous functions it does not matter which -norm you use.  "
-},
-{
-  "id": "real-analysis-4-3-4-7",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#real-analysis-4-3-4-7",
-  "type": "Example",
-  "number": "2.1.5",
-  "title": "",
-  "body": " Let be a metric space. A set is open if for each there is an such that   Again, this defines a topology on and the - definition of continuity coincides with .  "
-},
-{
-  "id": "real-analysis-4-3-4-8",
-  "level": "2",
-  "url": "real-analysis-4-3-4.html#real-analysis-4-3-4-8",
-  "type": "Definition",
-  "number": "2.1.6",
-  "title": "",
-  "body": " Let be a topological space. Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .  "
-},
-{
-  "id": "real-analysis-4-3-5",
-  "level": "1",
-  "url": "real-analysis-4-3-5.html",
-  "type": "Section",
-  "number": "2.2",
-  "title": "Compactness",
-  "body": " Compactness   Let be a topological space and let . An open cover of is a collection of open sets such that   An open cover of has a finite subcover of if there is a finite subset such that   A set is called compact given any open cover of , has a finite subcover of .   The following theorem gives an easy characterization of compact sets in .   Heine-Borel Theorem  Heine-Borel Theorem A subset is compact if and only if is closed and bounded.    We will first show that a closed bounded interval is compact. If , then is finite and clearly compact. Assume . Let be an arbitrary open cover of . Note that, for any , is also an open cover of . Let   Note that . As is an open cover of there is an open set such that . Hence .  As is a non-empty, bounded subset of we can take its supremum. Let   Clearly, . If we can show that then we are done.  Now, since , there is an open set such that . As is open, there exists such that . As is not an upper bounded for , there exists such that . By definition of , there are open sets such that   Thus   It follows that , otherwise we could find with   and have finitely covered by ; contradicting the definition of as the supremum of . We have now shown that is compact.  Let be an arbitrary closed bounded subset of and let be any open cover of . As is bounded there is a closed interval such that .  Let be the complement of . Since is closed, is open. Let . Then is an open cover of . Since is compact, has a finite subcover of . That is   for some . If , then we have a finite subcover of from open sets in , and we are done. Otherwise one of is equal to . Without loss of generality, say . Then we have   and so form a finite open subcover of from . Thus is compact.  To prove the converse statement, that a set is closed and bounded if it is compact, it suffices to prove the following two results, which we leave as an exercise:   if is unbounded then is not compact;   if is not closed, then is not compact. \\qedhere      A set is called sequentially compact if every infinite sequence of elements of has a subsequence which converges to an element of .   The Bolzano-Weierstrass theorem, together with , tells us that a set is sequentially compact if and only if it is closed and bounded. Combining the Bolzano-Weierstrass Theorem and the Heine-Borel Theorem we get the following result.   Let . Then the following are equivalent:   is compact;   is sequentially compact;   is closed and bounded.     Many statements which are true for continous real-valued functions on closed bounded intervals, are in fact true for real-valued functions on closed bounded sets, using similar proofs (which rely on compactness\/sequential compactness). We record some of these facts below:   Let be a closed bounded set. Let be a continuous function. Then   is uniformly continuous;   attains its maximum and minimum value.      The Heine-Borel Theorem and actually hold in : a set is compact if and only if it is sequentially compact if and only if it is closed and bounded.  However, in general topology the three conditions need not be the same. A metric space is compact if and only if it is sequentially compact. However, there are topological spaces which are not metric spaces, which are sequentially compact but not compact.  If is a normed vector space which is complete (i.e. Cauchy sequences are convergent) then the statement: is compact if and only if is closed and bounded is true if and only if is finite dimensional. That is, it is possible to find closed and bounded sets which are not compact.  In this course we will study a large class of complete, normed vector spaces which are infinite dimensional: -spaces.   "
-},
-{
-  "id": "real-analysis-4-3-5-2",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#real-analysis-4-3-5-2",
-  "type": "Definition",
-  "number": "2.2.1",
-  "title": "",
-  "body": " Let be a topological space and let . An open cover of is a collection of open sets such that   An open cover of has a finite subcover of if there is a finite subset such that   A set is called compact given any open cover of , has a finite subcover of .  "
-},
-{
-  "id": "thm-heine-borel",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#thm-heine-borel",
-  "type": "Theorem",
-  "number": "2.2.2",
-  "title": "Heine-Borel Theorem.",
-  "body": " Heine-Borel Theorem  Heine-Borel Theorem A subset is compact if and only if is closed and bounded.  "
-},
-{
-  "id": "real-analysis-4-3-5-5",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#real-analysis-4-3-5-5",
-  "type": "Proof",
-  "number": "2.2.1",
-  "title": "",
-  "body": " We will first show that a closed bounded interval is compact. If , then is finite and clearly compact. Assume . Let be an arbitrary open cover of . Note that, for any , is also an open cover of . Let   Note that . As is an open cover of there is an open set such that . Hence .  As is a non-empty, bounded subset of we can take its supremum. Let   Clearly, . If we can show that then we are done.  Now, since , there is an open set such that . As is open, there exists such that . As is not an upper bounded for , there exists such that . By definition of , there are open sets such that   Thus   It follows that , otherwise we could find with   and have finitely covered by ; contradicting the definition of as the supremum of . We have now shown that is compact.  Let be an arbitrary closed bounded subset of and let be any open cover of . As is bounded there is a closed interval such that .  Let be the complement of . Since is closed, is open. Let . Then is an open cover of . Since is compact, has a finite subcover of . That is   for some . If , then we have a finite subcover of from open sets in , and we are done. Otherwise one of is equal to . Without loss of generality, say . Then we have   and so form a finite open subcover of from . Thus is compact.  To prove the converse statement, that a set is closed and bounded if it is compact, it suffices to prove the following two results, which we leave as an exercise:   if is unbounded then is not compact;   if is not closed, then is not compact. \\qedhere    "
-},
-{
-  "id": "real-analysis-4-3-5-6",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#real-analysis-4-3-5-6",
-  "type": "Definition",
-  "number": "2.2.3",
-  "title": "",
-  "body": " A set is called sequentially compact if every infinite sequence of elements of has a subsequence which converges to an element of .  "
-},
-{
-  "id": "cor-heine-borel",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#cor-heine-borel",
-  "type": "Corollary",
-  "number": "2.2.4",
-  "title": "",
-  "body": " Let . Then the following are equivalent:   is compact;   is sequentially compact;   is closed and bounded.    "
-},
-{
-  "id": "real-analysis-4-3-5-10",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#real-analysis-4-3-5-10",
-  "type": "Proposition",
-  "number": "2.2.5",
-  "title": "",
-  "body": " Let be a closed bounded set. Let be a continuous function. Then   is uniformly continuous;   attains its maximum and minimum value.    "
-},
-{
-  "id": "real-analysis-4-3-5-11",
-  "level": "2",
-  "url": "real-analysis-4-3-5.html#real-analysis-4-3-5-11",
-  "type": "Remark",
-  "number": "2.2.6",
-  "title": "",
-  "body": " The Heine-Borel Theorem and actually hold in : a set is compact if and only if it is sequentially compact if and only if it is closed and bounded.  However, in general topology the three conditions need not be the same. A metric space is compact if and only if it is sequentially compact. However, there are topological spaces which are not metric spaces, which are sequentially compact but not compact.  If is a normed vector space which is complete (i.e. Cauchy sequences are convergent) then the statement: is compact if and only if is closed and bounded is true if and only if is finite dimensional. That is, it is possible to find closed and bounded sets which are not compact.  In this course we will study a large class of complete, normed vector spaces which are infinite dimensional: -spaces.  "
-},
-{
   "id": "sec-intro-ftoc",
   "level": "1",
   "url": "sec-intro-ftoc.html",
   "type": "Section",
   "number": "1.1",
   "title": "The integral of a derivative",
-  "body": " The integral of a derivative  In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named The Fundamental Theorem of Calculus . Fundamental Theorem of Calculus We will focus on the first of these here.   The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus  Suppose is a continuous function which is differentiable on and has continuous bounded derivative on . Then    This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions so that the differentiability of is automatic? Do we need to be continuous everywhere in for the theorem to hold? Do we need to be defined everywhere in for the theorem to hold?  The following simple example shows that there are functions where the conclusion of the first fundamental theorem holds, but is not defined on all of the interval .   Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed, We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that    shows that we can get away with not being defined everywhere, and still satisfy the conclusion of the fundamental theorem of calculus . Similar to , we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.   Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).   A continuous function which is not differentiable at each .     One can further show that for each Thus    shows that the conclusion of the fundamental theorem of calculus holds for some functions where the derivative is undefined at infinitely many points. Can we classify\/describe the functions where the fundamental theorem of calculus applies?  These questions are closely related to another question which many 19th century mathematicians struggled with. What is the relationship between continuity and differentiability? If is a continuous function, how non-differentiable can it be? Is a continuous function necessarily differentiable at some points? On some intervals? Is a continuous function differentiable enough to apply the first fundamental theorem of calculus?  In , the function is not differentiable at each . Whilst this gives (countably) infinite points where is not differentiable, each point where is not differentiable is isolated (meaning if is not differentiable at then there is an interval around in which is differentiable at all ). In the early 1800s, it was widely believed (or suspected, at least) that all examples would satisfy this. That is, it was conjectured that if was continuous on a closed interval then each point where is not differentiable is isolated). André-Marie Ampère (1775–1836) Ampère, André-Marie went so far as to present a proof of this statement. All mathematicians make mistakes. Most mathematicians go as far to publish mistakes. If you are to remember Ampère Ampère, André-Marie for anything it should not be for this. Augustin-Louis Cauchy (1789 - 1857) Cauchy, Augustin-Louis credits Ampère in influencing his work on the formalization of calculus.  The question of the relationship between continuity and differentiability was settled by Karl Weierstrass (1815–1897) Weierstrass, Karl and Hermann Schwarz (1843–1921) Schwarz, Hermann Schwarz's example in the 1870s. Weierstrass published the first example of a continuous function which is differentiable nowhere. The history is more complicated than alluded to here. As early as the 1830s Bernard Bolzano (1781-1848) gave an example of a nowhere differentiable function. This work was not published at the time. In Bolzano's work he exhibited the continuity of the function and that it was not differentiable on a dense set. That Bolzano's function is nowhere differentiable was not proved until after Bolzano's manuscript was published in the 1920s. Charles Cellérier (1818-1889) gave an example of a nowhere differentiable continuous function in the 1860s. This was not published until after Cellérier's death, and after Weierstrass's work, in 1890. Schwarz gave an example of a continuous function which is differentiable at all but countably many points; but the points where is not differentiable are not isolated. Schwarz's example has an unbounded derivative which is not Riemann integrable. Schwarz's example Weierstrass's example and Schwarz's example are presented in and , respectively.  The existence of nowhere differentiable functions means that there are continuous functions for which the first fundamental theorem does not apply. But for which functions does it apply? Which continuous functions are differentiable enough to apply the fundamental theorem?  Here is where we run into some shortcomings of the Riemann integral. Consider the following two examples.   Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .   Riemann's function, which is Riemann integrable and has a dense set of discontinuities.     Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and     Let . Consider the characteristic function . That is As is dense in , it follows that any lower Darboux sum of is 0, and any upper Darboux sum is 1. Hence is not Riemann integrable.   and show that Riemann integration can sometimes work well with countable dense subsets, but not always. Vito Volterra (1860 - 1940) Volterra, Vito gave an example in 1881 which gives a further complication to the theory. Volterra's function Volterra's function is continuous, with bounded and defined for all . However, is not Riemann integrable. Hence, the conclusion of the fundamental theorem of calculus does not hold for . Volterra's function is presented in .  These failures of the Riemann integral necessitate defining a new type of integral: the Lebesgue integral . Henri Lebesgue (1875 - 1941) Lebesgue, Henri introduced this more robust way integrating functions. For Riemann integrable functions, the Lebesgue integral and the Riemann integral coincide. However, the Lebesgue integral allows us to integrate many functions which are not Riemann integrable, including from and the derivative of Volterra's function .  Lebesgue also worked on the theory of differentiation, and its relationship to (both Riemann and Lebesgue) integration. Lebesgue showed that every increasing function is differentiable almost everywhere. This, in turn, can be used to show that a class of continuous functions called absolutely continuous functions absolutely continuous function , are differentiable almost everywhere. The term almost everywhere is not a vague colloquialism; it has an exact technical definition that we will see later in this chapter. In we will introduce the Lebesgue measure on subsets the real line, a generalization of the length function on intervals in . In we use these ideas to introduce Lebesgue integration (and generalizations thereof). In we will study absolutely continuous functions and complete our story on the relationship between (Lebesgue) integration and differentiation. In we give Lebesgue's version of the fundamental theorem of calculus: for all absolutely continuous functions (where we use the Lebesgue integral to integrate ).  "
+  "body": " The integral of a derivative  In a first real analysis course, or indeed a first calculus course, students are presented with two theorems grandly named The Fundamental Theorem of Calculus . Fundamental Theorem of Calculus We will focus on the first of these here.   The Fundamental Theorem of Calculus I  Fundamental Theorem of Calculus  Suppose is a continuous function which is differentiable on and has continuous bounded derivative on . Then    This is clearly a useful, strong theorem. However, it does leave a number of questions unanswered. Is there a class of functions so that the differentiability of is automatic? Do we need to be continuous everywhere in for the theorem to hold? Do we need to be defined everywhere in for the theorem to hold?  The following simple example shows that there are functions where the conclusion of the first fundamental theorem holds, but is not defined on all of the interval .   Let be the function on the interval , where . Then is differentiable at every point in except at . Indeed, We can choose any value for , but we can not choose a value so that is continuous at . However, we can still calculate the Riemann integral , since a Riemann integral is not changed by the value at a single point. We have that    shows that we can get away with not being defined everywhere, and still satisfy the conclusion of the fundamental theorem of calculus . Similar to , we can easily construct examples of continuous functions which are not differentiable at finitely many points. With a little thought, we can construct an example of a continuous function which is continuous and not differentiable at countably many points. We give one such example below.   Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).    The function defined in which is continuous on and differentiable on all but countably many points.   A piecewise linear function on the unit interval which is differentiable at all but countably many points.   The figure represents a continuous piecewise linear function on . The function takes the value at when is an odd positive integer, and takes the value are when is an even positive integer. The function is thus not differentiable when , but is differentiable at all other points.      One can further show that for each Thus    shows that the conclusion of the fundamental theorem of calculus holds for some functions where the derivative is undefined at infinitely many points. Can we classify\/describe the functions where the fundamental theorem of calculus applies?  These questions are closely related to another question which many 19th century mathematicians struggled with. What is the relationship between continuity and differentiability? If is a continuous function, how non-differentiable can it be? Is a continuous function necessarily differentiable at some points? On some intervals? Is a continuous function differentiable enough to apply the first fundamental theorem of calculus?  In , the function is not differentiable at each . Whilst this gives (countably) infinite points where is not differentiable, each point where is not differentiable is isolated (meaning if is not differentiable at then there is an interval around in which is differentiable at all ). In the early 1800s, it was widely believed (or suspected, at least) that all examples would satisfy this. That is, it was conjectured that if was continuous on a closed interval then each point where is not differentiable is isolated). André-Marie Ampère (1775–1836) Ampère, André-Marie went so far as to present a proof of this statement. All mathematicians make mistakes. Most mathematicians go as far to publish mistakes. If you are to remember Ampère Ampère, André-Marie for anything it should not be for this. Augustin-Louis Cauchy (1789 - 1857) Cauchy, Augustin-Louis credits Ampère in influencing his work on the formalization of calculus.  The question of the relationship between continuity and differentiability was settled by Karl Weierstrass (1815–1897) Weierstrass, Karl and Hermann Schwarz (1843–1921) Schwarz, Hermann Schwarz's example in the 1870s. Weierstrass published the first example of a continuous function which is differentiable nowhere. The history is more complicated than alluded to here. As early as the 1830s Bernard Bolzano (1781-1848) gave an example of a nowhere differentiable function. This work was not published at the time. In Bolzano's work he exhibited the continuity of the function and that it was not differentiable on a dense set. That Bolzano's function is nowhere differentiable was not proved until after Bolzano's manuscript was published in the 1920s. Charles Cellérier (1818-1889) gave an example of a nowhere differentiable continuous function in the 1860s. This was not published until after Cellérier's death, and after Weierstrass's work, in 1890. Schwarz gave an example of a continuous function which is differentiable at all but countably many points; but the points where is not differentiable are not isolated. Schwarz's example has an unbounded derivative which is not Riemann integrable. Schwarz's example Weierstrass's example and Schwarz's example are presented in and , respectively.  The existence of nowhere differentiable functions means that there are continuous functions for which the first fundamental theorem does not apply. But for which functions does it apply? Which continuous functions are differentiable enough to apply the fundamental theorem?  Here is where we run into some shortcomings of the Riemann integral. Consider the following two examples.   Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .    Riemann's function, which is Riemann integrable and has a dense set of discontinuities.    Riemann's popcorn function.   A visual representationo of Riemann's popcorn function, as described . The image looks like a collection of points inside the isosceles triangle with base and apex at the point . The points get significantly denser towards the base.      Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and     Let . Consider the characteristic function . That is As is dense in , it follows that any lower Darboux sum of is 0, and any upper Darboux sum is 1. Hence is not Riemann integrable.   and show that Riemann integration can sometimes work well with countable dense subsets, but not always. Vito Volterra (1860 - 1940) Volterra, Vito gave an example in 1881 which gives a further complication to the theory. Volterra's function Volterra's function is continuous, with bounded and defined for all . However, is not Riemann integrable. Hence, the conclusion of the fundamental theorem of calculus does not hold for . Volterra's function is presented in .  These failures of the Riemann integral necessitate defining a new type of integral: the Lebesgue integral . Henri Lebesgue (1875 - 1941) Lebesgue, Henri introduced this more robust way integrating functions. For Riemann integrable functions, the Lebesgue integral and the Riemann integral coincide. However, the Lebesgue integral allows us to integrate many functions which are not Riemann integrable, including from and the derivative of Volterra's function .  Lebesgue also worked on the theory of differentiation, and its relationship to (both Riemann and Lebesgue) integration. Lebesgue showed that every increasing function is differentiable almost everywhere. This, in turn, can be used to show that a class of continuous functions called absolutely continuous functions absolutely continuous function , are differentiable almost everywhere. The term almost everywhere is not a vague colloquialism; it has an exact technical definition that we will see later in this chapter. In we will introduce the Lebesgue measure on subsets the real line, a generalization of the length function on intervals in . In we use these ideas to introduce Lebesgue integration (and generalizations thereof). In we will study absolutely continuous functions and complete our story on the relationship between (Lebesgue) integration and differentiation. In we give Lebesgue's version of the fundamental theorem of calculus: for all absolutely continuous functions (where we use the Lebesgue integral to integrate ).  "
 },
 {
   "id": "thm-FTOCI",
@@ -349,7 +43,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.3",
   "title": "",
-  "body": " Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).   A continuous function which is not differentiable at each .     One can further show that for each Thus   "
+  "body": " Define a function on by By construction, is continuous. However, is not differentiable at for each integer ; is differentiable at all other (where or ).    The function defined in which is continuous on and differentiable on all but countably many points.   A piecewise linear function on the unit interval which is differentiable at all but countably many points.   The figure represents a continuous piecewise linear function on . The function takes the value at when is an odd positive integer, and takes the value are when is an even positive integer. The function is thus not differentiable when , but is differentiable at all other points.      One can further show that for each Thus   "
 },
 {
   "id": "exam-popcorn",
@@ -358,7 +52,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.1.5",
   "title": "",
-  "body": " Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .   Riemann's function, which is Riemann integrable and has a dense set of discontinuities.     Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and   "
+  "body": " Thomae's function Riemann's function popcorn function Riemann's function Riemann's function  Let . Define a function on by This is function goes by several names, including Riemann's function , Thomae's function , and the popcorn function .    Riemann's function, which is Riemann integrable and has a dense set of discontinuities.    Riemann's popcorn function.   A visual representationo of Riemann's popcorn function, as described . The image looks like a collection of points inside the isosceles triangle with base and apex at the point . The points get significantly denser towards the base.      Bernhard Riemann (1826 - 1866) Riemann, Bernhard introduced this function in his doctoral thesis in 1854, in which he also introduced the method of integration which bears his name. Riemann showed that this function was continuous at each irrational, , and discontinuous at the rational points, . He further showed that is Riemann integrable and   "
 },
 {
   "id": "exam-char-Q",
@@ -961,7 +655,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Lebesgue measure on <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>",
-  "body": " Lebesgue measure on  We will now apply the Carathéodory-Hahn Theorem, , to define the promised Lebesgue measure. Our goal is to extend the length function to a measure. In (see ) we saw three different semirings of intervals. tells us that is a premeasure when restricted to each of these semirings. This gives three possibilities of where to apply the Carathéodory-Hahn theorem. The next proposition shows that this choice does not matter. We get the same outer measure no matter the choice.   Let be the semiring of all intervals in ; let be the semiring of all finite length intervals; and let be the semiring of intervals of the form , where with . Let be the outer measure induced by on ; let be the outer measure induced by restricted to ; and let be the outer measure induced by restricted to . Then for each     Since it follows that for all . Take any . If , then by the above inequalities, and . Suppose . Fix . There exist intervals such that and As it follows that , and so is of finite length for each . Thus As this holds for all , it follows that . Hence .  We will now show that Let denote the function Since is an infimum over all covers by intervals of finite length, and is an infimum over all covers by open intervals of finite length, it follows that for all .  Now take any . If , then . Suppose that . Fix . Let be a countable collection of finite length intervals such that and   For each , let and let . Then That is, is a cover of by open intervals of finite length. Thus As the above inequality holds for all , it follows that . Hence . A similar argument shows that .    The function defined by   is call the Lebesgue outer measure on . outer measure Lebesgue outer measure  The elements of the -algebra of -measurable sets are called Lebesgue measurable sets . measurable set Lebesgue measurable set  The Carathéodory measure got by restricting to is called the Lebesgue measure on . Lebesgue measure   shows that the Lebesgue outer measure is the outer measure induced by the length function . Thus by the Carathéodory-Hahn theorem, , all intervals are Lebesgue measurable, and . Further, since is -finite, the measure space is a complete -finite measure space, and is the unique extennsion of to a measure on .   If is a countable set, then is Lebesgue measurable and .    Take any . Then can be written as a closed interval of length   Hence all singleton sets are Lebesgue measurable with Lebesgue measure . Let be a countable set. If has elements then we can write as ; if is countably infinite we can write as . Thus   In either case, is a countable union of disjoint sets of measure . Hence by the countable additivity of .    says that all countable sets have Lebesgue measure . It does not say that if then is countable. We will see examples of uncountable sets of zero Lebesgue measure later.    All Borel sets in are Lebesgue measurable. That is, .    By the construction of (i.e. the Carathéodory-Hahn theorem), all open intervals are Lebesgue measurable. Any open set can be written as a disjoint union of countably many open sets ( ), and hence is also Lebesgue measurable. As the Borel sets are the sets in the -algebra generated by the open sets, and each open set is in , it follows that .    Finite sets, countably infinite sets, and intervals are all examples of Borel sets in . says that all Borel sets are Lebesgue measurable, but we have not exhibited any sets which are Lebesgue measurable but not Borel.  In the other direction, we know that , but we have not exhibited any subsets of which are not Lebesgue measurable. That is, we have   but it is not clear if these inclusions are strict. We will see in that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of which are not Lebesgue measurable.   We will now look at some approximation and regularity properties of the Lebesgue measure. By the Lebesgue outer measure is an induced outer measure: is the outer measure induced by the length function on the collection of all intervals in the real line. We can thus apply to . That is, letting be the countable intersections of countable unions of intervals, if then there is a set such that and . Further, if is Lebesgue measurable then (noting here that all the sets in are Lebesgue measurable since every interval is Lebesgue measurable). The following result is a strengthening of for the Lebesgue measure.   Outer and inner approximation of Lebesgue measure  Lebesgue measure inner approximation Lebesgue measure outer approximation Let . The following are equivalent.   is Lebesgue measurable;   for every there exists an open set containing such that ;   there is a -set contraing such that ;   for every there exists a closed set contained in such that ;   there is an -set contained in such that .      The complement of an open set is a closed set, hence the complement of a set is an set. Since the -algebra of Lebesgue measurable sets is closed under complements, it follows that (ii) is equivalent to (iv) and (iii) is equivalent to (v).  Suppose that is Lebesgue measurable. We will show that (ii) holds. Assume . Fix . By the definition of the Lebesgue outer measure , there exists open intervals such that and   Let . Then is open, , and   Since we can apply the excision property ( ), to get . Thus (ii) holds. The case when is left as an exercise ( ).  Now assume (ii) holds. To show (iii) holds is a similar argument to that in . For each there is an open set such that . Let be the set . Then and   for all . Hence  Finally, suppose that (iii) holds for a set . Take a set containing with . Since is a set, is Lebesgue measurbale; and since , is also Lebesgue measurable ( ). Noting that   it follows that is Lebesgue measurable.   The following theorem is similar to . We record it however, as we will be interested in generalizations of this result in the sequel. The result describes regularity conditions for the Lebesgue measure.   Let be Lebesgue measurable, then   (outer regularity) regularity of a measure outer regularity of Lebesgue measure     (inner regularity) regularity of a measure inner regularity of Lebesgue measure        Condition (i) follows immediately from the definition of the Lebesgue outer measure. We will use condition (i) to prove (ii).  Take measurable . Assume first that is bounded, so that for some closed interval . Let . Fix . By (i), there is an open set such that and . Let . Since is open, is closed. Thus, is a compact set by the Heine-Borel theorem ( ). Further, since , . By repeated application of the excision property and monotonicity of , we have   Hence   The case when is left as an exercise ( ).   We end this section with a result (due to Lebesgue) showing the connection between the Lebesgue measure and Riemann integration. Riemann integration We first establish\/recall some notation and concepts to do with Riemann integration.  Let be a closed interval in , and let be a bounded function. Let be a partition of , where   We define as   The function is Riemann integrable integrable Riemann integrable if for all there exists a partition of such that . You may have seen other definitions of Riemann integrable . Can you prove that your definition of Riemann integrable is equivalent to the definition given here?   integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .    Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.   "
+  "body": " Lebesgue measure on  We will now apply the Carathéodory-Hahn Theorem, , to define the promised Lebesgue measure. Our goal is to extend the length function to a measure. In (see ) we saw three different semirings of intervals. tells us that is a premeasure when restricted to each of these semirings. This gives three possibilities of where to apply the Carathéodory-Hahn theorem. The next proposition shows that this choice does not matter. We get the same outer measure no matter the choice.   Let be the semiring of all intervals in ; let be the semiring of all finite length intervals; and let be the semiring of intervals of the form , where with . Let be the outer measure induced by on ; let be the outer measure induced by restricted to ; and let be the outer measure induced by restricted to . Then for each     Since it follows that for all . Take any . If , then by the above inequalities, and . Suppose . Fix . There exist intervals such that and As it follows that , and so is of finite length for each . Thus As this holds for all , it follows that . Hence .  We will now show that Let denote the function Since is an infimum over all covers by intervals of finite length, and is an infimum over all covers by open intervals of finite length, it follows that for all .  Now take any . If , then . Suppose that . Fix . Let be a countable collection of finite length intervals such that and For each , let and let . Then That is, is a cover of by open intervals of finite length. Thus As the above inequality holds for all , it follows that . Hence . A similar argument shows that .      Lebesgue outer measure     Lebesgue measure    The function defined by is call the Lebesgue outer measure on . outer measure Lebesgue outer measure  The elements of the -algebra of -measurable sets are called Lebesgue measurable sets . measurable set Lebesgue measurable set  The Carathéodory measure got by restricting to is called the Lebesgue measure on . Lebesgue measure     shows that the Lebesgue outer measure is the outer measure induced by the length function . Thus by the Carathéodory-Hahn theorem , all intervals are Lebesgue measurable, and . Further, since is -finite, the measure space is a complete -finite measure space, and is the unique extennsion of to a measure on .    If is a countable set, then is Lebesgue measurable and .    Take any . Then can be written as a closed interval of length Hence all singleton sets are Lebesgue measurable with Lebesgue measure . Let be a countable set. If has elements then we can write as ; if is countably infinite we can write as . Thus In either case, is a countable union of disjoint sets of measure . Hence by the countable additivity of .     says that all countable sets have Lebesgue measure . It does not say that if then is countable. We will see examples of uncountable sets of zero Lebesgue measure later.     All Borel sets in are Lebesgue measurable. That is, .    By the construction of (i.e. the Carathéodory-Hahn theorem), all open intervals are Lebesgue measurable. Any open set can be written as a disjoint union of countably many open sets ( ), and hence is also Lebesgue measurable. As the Borel sets are the sets in the -algebra generated by the open sets, and each open set is in , it follows that .     Finite sets, countably infinite sets, and intervals are all examples of Borel sets in . says that all Borel sets are Lebesgue measurable, but we have not exhibited any sets which are Lebesgue measurable but not Borel.  In the other direction, we know that , but we have not exhibited any subsets of which are not Lebesgue measurable. That is, we have but it is not clear if these inclusions are strict. We will see in that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of which are not Lebesgue measurable.   We will now look at some approximation and regularity properties of the Lebesgue measure. By the Lebesgue outer measure is an induced outer measure: is the outer measure induced by the length function on the collection of all intervals in the real line. We can thus apply to . That is, letting be the countable intersections of countable unions of intervals, if then there is a set such that and . Further, if is Lebesgue measurable then (noting here that all the sets in are Lebesgue measurable since every interval is Lebesgue measurable). The following result is a strengthening of for the Lebesgue measure.   Outer and inner approximation of Lebesgue measure    Lebesgue measure inner approximation Lebesgue measure outer approximation Let . The following are equivalent.  is Lebesgue measurable;  for every there exists an open set containing such that ;  there is a -set contraing such that ;  for every there exists a closed set contained in such that ;  there is an -set contained in such that .      The complement of an open set is a closed set, hence the complement of a set is an set. Since the -algebra of Lebesgue measurable sets is closed under complements, it follows that (ii) is equivalent to (iv) and (iii) is equivalent to (v).  Suppose that is Lebesgue measurable. We will show that (ii) holds. Assume . Fix . By the definition of the Lebesgue outer measure , there exists open intervals such that and Let . Then is open, , and Since we can apply the excision property ( ), to get . Thus (ii) holds. The case when is left as an exercise ( ).  Now assume (ii) holds. To show (iii) holds is a similar argument to that in . For each there is an open set such that . Let be the set . Then and for all . Hence  Finally, suppose that (iii) holds for a set . Take a set containing with . Since is a set, is Lebesgue measurbale; and since , is also Lebesgue measurable ( ). Noting that it follows that is Lebesgue measurable.    The following theorem is similar to . We record it however, as we will be interested in generalizations of this result in the sequel. The result describes regularity conditions for the Lebesgue measure.    Let be Lebesgue measurable, then  (outer regularity) regularity of a measure outer regularity of Lebesgue measure    (inner regularity) regularity of a measure inner regularity of Lebesgue measure        Condition (i) follows immediately from the definition of the Lebesgue outer measure. We will use condition (i) to prove (ii).  Take measurable . Assume first that is bounded, so that for some closed interval . Let . Fix . By (i), there is an open set such that and . Let . Since is open, is closed. Thus, is a compact set by the Heine-Borel theorem . Further, since , . By repeated application of the excision property and monotonicity of , we have Hence The case when is left as an exercise ( ).    "
 },
 {
   "id": "prop-Lebesgue-outer-measure",
@@ -979,7 +673,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "3.1.1",
   "title": "",
-  "body": " Since it follows that for all . Take any . If , then by the above inequalities, and . Suppose . Fix . There exist intervals such that and As it follows that , and so is of finite length for each . Thus As this holds for all , it follows that . Hence .  We will now show that Let denote the function Since is an infimum over all covers by intervals of finite length, and is an infimum over all covers by open intervals of finite length, it follows that for all .  Now take any . If , then . Suppose that . Fix . Let be a countable collection of finite length intervals such that and   For each , let and let . Then That is, is a cover of by open intervals of finite length. Thus As the above inequality holds for all , it follows that . Hence . A similar argument shows that .  "
+  "body": " Since it follows that for all . Take any . If , then by the above inequalities, and . Suppose . Fix . There exist intervals such that and As it follows that , and so is of finite length for each . Thus As this holds for all , it follows that . Hence .  We will now show that Let denote the function Since is an infimum over all covers by intervals of finite length, and is an infimum over all covers by open intervals of finite length, it follows that for all .  Now take any . If , then . Suppose that . Fix . Let be a countable collection of finite length intervals such that and For each , let and let . Then That is, is a cover of by open intervals of finite length. Thus As the above inequality holds for all , it follows that . Hence . A similar argument shows that .  "
 },
 {
   "id": "sec-Lebesgue-5",
@@ -988,7 +682,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "3.1.2",
   "title": "",
-  "body": " The function defined by   is call the Lebesgue outer measure on . outer measure Lebesgue outer measure  The elements of the -algebra of -measurable sets are called Lebesgue measurable sets . measurable set Lebesgue measurable set  The Carathéodory measure got by restricting to is called the Lebesgue measure on . Lebesgue measure  "
+  "body": "   Lebesgue outer measure     Lebesgue measure    The function defined by is call the Lebesgue outer measure on . outer measure Lebesgue outer measure  The elements of the -algebra of -measurable sets are called Lebesgue measurable sets . measurable set Lebesgue measurable set  The Carathéodory measure got by restricting to is called the Lebesgue measure on . Lebesgue measure    "
 },
 {
   "id": "thm-countable-L-measurable",
@@ -997,21 +691,12 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "3.1.3",
   "title": "",
-  "body": " If is a countable set, then is Lebesgue measurable and .  "
+  "body": "  If is a countable set, then is Lebesgue measurable and .    Take any . Then can be written as a closed interval of length Hence all singleton sets are Lebesgue measurable with Lebesgue measure . Let be a countable set. If has elements then we can write as ; if is countably infinite we can write as . Thus In either case, is a countable union of disjoint sets of measure . Hence by the countable additivity of .   "
 },
 {
   "id": "sec-Lebesgue-8",
   "level": "2",
   "url": "sec-Lebesgue.html#sec-Lebesgue-8",
-  "type": "Proof",
-  "number": "3.1.2",
-  "title": "",
-  "body": " Take any . Then can be written as a closed interval of length   Hence all singleton sets are Lebesgue measurable with Lebesgue measure . Let be a countable set. If has elements then we can write as ; if is countably infinite we can write as . Thus   In either case, is a countable union of disjoint sets of measure . Hence by the countable additivity of .  "
-},
-{
-  "id": "sec-Lebesgue-9",
-  "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-9",
   "type": "Remark",
   "number": "3.1.4",
   "title": "",
@@ -1024,25 +709,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "3.1.5",
   "title": "",
-  "body": " All Borel sets in are Lebesgue measurable. That is, .  "
+  "body": "  All Borel sets in are Lebesgue measurable. That is, .    By the construction of (i.e. the Carathéodory-Hahn theorem), all open intervals are Lebesgue measurable. Any open set can be written as a disjoint union of countably many open sets ( ), and hence is also Lebesgue measurable. As the Borel sets are the sets in the -algebra generated by the open sets, and each open set is in , it follows that .   "
 },
 {
-  "id": "sec-Lebesgue-11",
+  "id": "sec-Lebesgue-10",
   "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-11",
-  "type": "Proof",
-  "number": "3.1.3",
-  "title": "",
-  "body": " By the construction of (i.e. the Carathéodory-Hahn theorem), all open intervals are Lebesgue measurable. Any open set can be written as a disjoint union of countably many open sets ( ), and hence is also Lebesgue measurable. As the Borel sets are the sets in the -algebra generated by the open sets, and each open set is in , it follows that .  "
-},
-{
-  "id": "sec-Lebesgue-12",
-  "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-12",
+  "url": "sec-Lebesgue.html#sec-Lebesgue-10",
   "type": "Remark",
   "number": "3.1.6",
   "title": "",
-  "body": " Finite sets, countably infinite sets, and intervals are all examples of Borel sets in . says that all Borel sets are Lebesgue measurable, but we have not exhibited any sets which are Lebesgue measurable but not Borel.  In the other direction, we know that , but we have not exhibited any subsets of which are not Lebesgue measurable. That is, we have   but it is not clear if these inclusions are strict. We will see in that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of which are not Lebesgue measurable.  "
+  "body": " Finite sets, countably infinite sets, and intervals are all examples of Borel sets in . says that all Borel sets are Lebesgue measurable, but we have not exhibited any sets which are Lebesgue measurable but not Borel.  In the other direction, we know that , but we have not exhibited any subsets of which are not Lebesgue measurable. That is, we have but it is not clear if these inclusions are strict. We will see in that each inclusion is indeed strict: there are Lebesgue measurable sets which are not Borel sets; and there are subsets of which are not Lebesgue measurable.  "
 },
 {
   "id": "thm-Leb-meas-sets-G-delta-F-sigma",
@@ -1051,16 +727,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "3.1.7",
   "title": "Outer and inner approximation of Lebesgue measure.",
-  "body": " Outer and inner approximation of Lebesgue measure  Lebesgue measure inner approximation Lebesgue measure outer approximation Let . The following are equivalent.   is Lebesgue measurable;   for every there exists an open set containing such that ;   there is a -set contraing such that ;   for every there exists a closed set contained in such that ;   there is an -set contained in such that .    "
-},
-{
-  "id": "sec-Lebesgue-15",
-  "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-15",
-  "type": "Proof",
-  "number": "3.1.4",
-  "title": "",
-  "body": " The complement of an open set is a closed set, hence the complement of a set is an set. Since the -algebra of Lebesgue measurable sets is closed under complements, it follows that (ii) is equivalent to (iv) and (iii) is equivalent to (v).  Suppose that is Lebesgue measurable. We will show that (ii) holds. Assume . Fix . By the definition of the Lebesgue outer measure , there exists open intervals such that and   Let . Then is open, , and   Since we can apply the excision property ( ), to get . Thus (ii) holds. The case when is left as an exercise ( ).  Now assume (ii) holds. To show (iii) holds is a similar argument to that in . For each there is an open set such that . Let be the set . Then and   for all . Hence  Finally, suppose that (iii) holds for a set . Take a set containing with . Since is a set, is Lebesgue measurbale; and since , is also Lebesgue measurable ( ). Noting that   it follows that is Lebesgue measurable.  "
+  "body": " Outer and inner approximation of Lebesgue measure    Lebesgue measure inner approximation Lebesgue measure outer approximation Let . The following are equivalent.  is Lebesgue measurable;  for every there exists an open set containing such that ;  there is a -set contraing such that ;  for every there exists a closed set contained in such that ;  there is an -set contained in such that .      The complement of an open set is a closed set, hence the complement of a set is an set. Since the -algebra of Lebesgue measurable sets is closed under complements, it follows that (ii) is equivalent to (iv) and (iii) is equivalent to (v).  Suppose that is Lebesgue measurable. We will show that (ii) holds. Assume . Fix . By the definition of the Lebesgue outer measure , there exists open intervals such that and Let . Then is open, , and Since we can apply the excision property ( ), to get . Thus (ii) holds. The case when is left as an exercise ( ).  Now assume (ii) holds. To show (iii) holds is a similar argument to that in . For each there is an open set such that . Let be the set . Then and for all . Hence  Finally, suppose that (iii) holds for a set . Take a set containing with . Since is a set, is Lebesgue measurbale; and since , is also Lebesgue measurable ( ). Noting that it follows that is Lebesgue measurable.   "
 },
 {
   "id": "thm-Lebesgue-regular",
@@ -1069,34 +736,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "3.1.8",
   "title": "",
-  "body": " Let be Lebesgue measurable, then   (outer regularity) regularity of a measure outer regularity of Lebesgue measure     (inner regularity) regularity of a measure inner regularity of Lebesgue measure      "
-},
-{
-  "id": "sec-Lebesgue-18",
-  "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-18",
-  "type": "Proof",
-  "number": "3.1.5",
-  "title": "",
-  "body": " Condition (i) follows immediately from the definition of the Lebesgue outer measure. We will use condition (i) to prove (ii).  Take measurable . Assume first that is bounded, so that for some closed interval . Let . Fix . By (i), there is an open set such that and . Let . Since is open, is closed. Thus, is a compact set by the Heine-Borel theorem ( ). Further, since , . By repeated application of the excision property and monotonicity of , we have   Hence   The case when is left as an exercise ( ).  "
-},
-{
-  "id": "thm-Riemann-int",
-  "level": "2",
-  "url": "sec-Lebesgue.html#thm-Riemann-int",
-  "type": "Theorem",
-  "number": "3.1.9",
-  "title": "",
-  "body": " integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .  "
-},
-{
-  "id": "sec-Lebesgue-26",
-  "level": "2",
-  "url": "sec-Lebesgue.html#sec-Lebesgue-26",
-  "type": "Proof",
-  "number": "3.1.6",
-  "title": "",
-  "body": " Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.  "
+  "body": "  Let be Lebesgue measurable, then  (outer regularity) regularity of a measure outer regularity of Lebesgue measure    (inner regularity) regularity of a measure inner regularity of Lebesgue measure        Condition (i) follows immediately from the definition of the Lebesgue outer measure. We will use condition (i) to prove (ii).  Take measurable . Assume first that is bounded, so that for some closed interval . Let . Fix . By (i), there is an open set such that and . Let . Since is open, is closed. Thus, is a compact set by the Heine-Borel theorem . Further, since , . By repeated application of the excision property and monotonicity of , we have Hence The case when is left as an exercise ( ).   "
 },
 {
   "id": "sec-nonmeasurable",
@@ -1105,7 +745,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Borel sets, Lebesgue measurable sets, and subsets of <span class=\"process-math\">\\(\\mathbb{R}\\text{.}\\)<\/span>",
-  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold:   In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.    tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   Illustration of the first several steps in the construction of the Cantor set.    Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .    Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.    The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.    The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
+  "body": " Borel sets, Lebesgue measurable sets, and subsets of .  Let be the Borel sets of , and let be the Lebesgue measurable sets of . We have seen that the following inclusions hold: In this section we will see that both these inclusions are strict. I.e. we will see that there exist Lebesgue measurable sets which are not Borel; and there exists subsets of which are not Lebesgue measurable.  Another question arising from is the following: are there any uncountable Lebesgue measurable sets with Lebesgue measure? We know that countable sets have measure , but are the countable sets all of the Lebesgue measure sets? We will see presently, that there are uncountable sets with Lebesgue measure .  We will begin with proving the existence of subsets of which are not Lebesgue measurable. The following theorem was published by Giuseppe Vitali (1875 - 1932) Vitali, Giuseppe in 1905.   Vitali   Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of , Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, is Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have This contradicts, , and so is not Lebesgue measurable.     tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose an element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a role in these notes; but it is perhaps the most famous and consequential.   We will now embark on the construction of an uncountable subset of which is Lebesgue measurable with Lebesgue measure .   Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   The first several steps in the construction of the Cantor set.   The first several steps in the construction of the Cantor set.   The first several steps in the construction of the Cantor set are shown. On top, there is . Below, we have , then . This continues down to , removing the middle third from each interval in the step above.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that As the sets are disjoint, we have that Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.   We thus shown have that the Cantor set has Lebesgue measure and is uncountable. Cantor set Hence the converse of does not hold. All countable sets have Lebesgue measure , but not all Lebesgue measure sets are countable.  We want to prove the existence of Lebesgue measurable sets which are not Borel sets. In order to do this we first introduce a function, the Cantor-Lebesgue function . Cantor-Lebesgue function Whilst we introduce it now for the purpose of finding a set which is not Borel, the Cantor-Lebesgue function is of interest in its own right.   Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the th step of the construction of the Cantor set .  Let for . For define by Continue in this way, so that for  when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for , We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .     Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   The function psi(x) = phi(x) + x, where phi is the Cantor-Lebesgue function.   The function , where is the Cantor-Lebesgue function. The function is continuous and strictly increasing with domain and range . If is the Cantor set, then is linear on the disjoint intervals comprising .      Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.      The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.      The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.    "
 },
 {
   "id": "thm-Vitali-non-meas",
@@ -1114,25 +754,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "3.2.1",
   "title": "Vitali.",
-  "body": " Vitali  Let satisfy . Then there exists such that is not Lebesgue measurable.  "
+  "body": " Vitali   Let satisfy . Then there exists such that is not Lebesgue measurable.    By the countable monotonicity of , Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, is Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have This contradicts, , and so is not Lebesgue measurable.   "
 },
 {
-  "id": "sec-nonmeasurable-8",
+  "id": "sec-nonmeasurable-6",
   "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-8",
-  "type": "Proof",
-  "number": "3.2.1",
-  "title": "",
-  "body": " By the countable monotonicity of ,   Thus, contains a bounded subset with positive Lebesgue outer measure. We can thus assume that is bounded.  Define a relation on by the following rule: if then if and only if there is a rational number such that . It is not hard to see that is an equivalence relation on ( ). Create a set by choosing a representative element from each equivalence class of the equivalence relation . Thus satisfies: if then there exists a unique such that . It follows that the collection of sets are disjoint and cover . Further, as is bounded (and there are infinitely many rational numbers between any two rational numbers), there is a bounded, infinite set such that   Suppose now that is Lebesgue measurable. Then, since , . Further, is Lebesgue measurable for each , and ( ). Thus, Lebesgue measurable, as it is a countable union of Lebesgue measurable sets. We also, have that is bounded, since and are bounded. Thus   Since is an infinite set, it follows that .  Now, by the countable submonotonicity of the Lebesgue outer measure we have   This contradicts, , and so is not Lebesgue measurable.  "
-},
-{
-  "id": "sec-nonmeasurable-9",
-  "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-9",
+  "url": "sec-nonmeasurable.html#sec-nonmeasurable-6",
   "type": "Remark",
   "number": "3.2.2",
   "title": "",
-  "body": " tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose and element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a significant role in these notes; but it is perhaps the most famous and consequential.  "
+  "body": " tells us that there are many subsets off which are not Lebesgue measurable. Still, there is something unsatisfactory about the proof. In the proof we construct a set which is not Lebesgue measurable, but what does look like? It is important to note that the construction of given here relies on the axiom of choice. We choose an element from each equivalence class of . This is not, however, a shortcoming of the proof. It is a necessity. There are models of set theory where the axiom of choice is not assumed, where it can be shown that all subsets of the real line are Lebesgue measurable. This is an interesting topic, but is too far into the weeds of set theory for what we are trying to do. We will (happily!) stick to the standard Zermelo–Fraenkel axioms of set theory plus the axiom of choice (ZFC). Thus, we are living in a world where holds. This won't be the last time that the axiom of choice plays a role in these notes; but it is perhaps the most famous and consequential.  "
 },
 {
   "id": "ex-Cantor",
@@ -1141,7 +772,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.3",
   "title": "",
-  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is   We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   Illustration of the first several steps in the construction of the Cantor set.    Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that   As the sets are disjoint, we have that   Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
+  "body": " Cantor set Let . Let . Note, that is . I.e. is with the middle third of its interval removed. To construct we remove the (open) middle third from each of the two disjoint intervals in . That is We construct by removing the open middle thirds from each of the 4 intervals in . We continue in this way: is constructed from by removing the open middle thirds from each of the closed intervals in .   The first several steps in the construction of the Cantor set.   The first several steps in the construction of the Cantor set.   The first several steps in the construction of the Cantor set are shown. On top, there is . Below, we have , then . This continues down to , removing the middle third from each interval in the step above.      Let . We call the Cantor set . Cantor set The set is also referred to as the Cantor middle-third set . Since each is a closed set, is also a closed set (as intersections of closed sets are closed sets). It follows that is a Borel set, and hence is Lebesgue measurable.  Let be the open set which is removed from to get . Thus, , , etc. Let . Note that As the sets are disjoint, we have that Now, as , and , it follows that .  We will now look at the cardinality of . Every number in has a binary expansion. If we do not consider finite binary expansions, and only consider infinite expansions, the binary expansions are unique. That is we will write the binary expansion as . Suppose . Construct be the following algorithm: if is in the left half , then the first digit in the binary expansion of is ; if is in the right interval of then the first digit of the binary expansion of is . Now, in , is in either the left subinterval, or the right subinterval of the interval is in . Let be the second digit of if is to the left, be the second digit if is to the right. Continuing in this way we get as a binary expansion. The map is a bijection from to , hence and have the same cardinality. As is uncountable This is traditionally proved using the famed diagonal argument of Cantor. We also know that is uncountable since and countable sets have Lebesgue measure by . , it follows that is uncountable.  "
+},
+{
+  "id": "sec-nonmeasurable-10",
+  "level": "2",
+  "url": "sec-nonmeasurable.html#sec-nonmeasurable-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Cantor-Lebesgue function "
 },
 {
   "id": "ex-cantor-lebesgue",
@@ -1150,7 +790,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.5",
   "title": "",
-  "body": " Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the step of the construction of the Cantor set .  Let for . For define by   Continue in this way, so that for   when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for ,   We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that   for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .  "
+  "body": " Let be the Cantor set, from , and let . We first define a function on . Recall that where is the open set removed from at the th step of the construction of the Cantor set .  Let for . For define by Continue in this way, so that for  when is in the th interval in (See ).    The Cantor-Lebesgue function on the set .     We extend to all of by setting , and for , We call the Cantor-Lebesgue function Cantor-Lebesgue function Note that is continuous. Indeed, is clearly continuous on , since is constant on open intervals in . For , and large enough, we can find such that for all . It follows that does not have a jump discontinuity at . As is increasing, this shows that is continuous at .  "
 },
 {
   "id": "lem-non-Borel",
@@ -1159,52 +799,25 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "3.2.7",
   "title": "",
-  "body": " Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.  "
+  "body": "  Let be the Cantor set. Then there is a set such that is Lebesgue measurable but is not a Borel set.    Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   The function psi(x) = phi(x) + x, where phi is the Cantor-Lebesgue function.   The function , where is the Cantor-Lebesgue function. The function is continuous and strictly increasing with domain and range . If is the Cantor set, then is linear on the disjoint intervals comprising .      Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.   "
 },
 {
-  "id": "sec-nonmeasurable-16",
+  "id": "sec-nonmeasurable-13",
   "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-16",
-  "type": "Proof",
-  "number": "3.2.2",
-  "title": "",
-  "body": " Let be the Cantor-Lebesgue function from . Cantor-Lebesgue function The function is an increasing, continuous function with and . It follows from the Intermediate Value Theorem that maps surjectively onto . Define a function by Then is a continuous, strictly increasing function with .    The function used in the proof of .   Let be the Cantor set, and let . By , , and hence . Applying to and we get disjoint sets and satisfying   Recall that is constructed so that there are disjoint open intervals such that and is constant on each . Let when . Then, . Hence is a countable union of intervals, and hence is Lebesgue measurable. Further   As and are Lebesgue measurable, it follows that is Lebesgue measurable, and  tells us that there is a set which is not Lebesgue measurable.  Since is strictly increasing bijection from to it has a continuous inverse ( ). Let . As is not Lebesgue measurable, and hence not a Borel set, it follows from that is not a Borel set. As and , is a Lebesgue measurable since is a complete measure space.  "
-},
-{
-  "id": "sec-nonmeasurable-17",
-  "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-17",
+  "url": "sec-nonmeasurable.html#sec-nonmeasurable-13",
   "type": "Theorem",
   "number": "3.2.9",
   "title": "",
-  "body": " The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .  "
+  "body": "  The -algebra of Borel subsets of is strictly contained in the -algebra of Lebesgue measurable subsets of .    That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.   "
 },
 {
-  "id": "sec-nonmeasurable-18",
+  "id": "sec-nonmeasurable-14",
   "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-18",
-  "type": "Proof",
-  "number": "3.2.3",
-  "title": "",
-  "body": " That the Borel sets are contained in the Lebesgue measurable sets is . gives the existence of a Lebesgue measurable set which is not Borel.  "
-},
-{
-  "id": "sec-nonmeasurable-19",
-  "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-19",
+  "url": "sec-nonmeasurable.html#sec-nonmeasurable-14",
   "type": "Corollary",
   "number": "3.2.10",
   "title": "",
-  "body": " The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.  "
-},
-{
-  "id": "sec-nonmeasurable-20",
-  "level": "2",
-  "url": "sec-nonmeasurable.html#sec-nonmeasurable-20",
-  "type": "Proof",
-  "number": "3.2.4",
-  "title": "",
-  "body": " The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.  "
+  "body": "  The measure space of the Lebesgue measure restricted to the Borel sets of is not a complete measure space.    The Cantor set is closed, and hence a Borel set. Further . shows that there is a set which is not a Borel set, hence is not a complete measure space.   "
 },
 {
   "id": "sec-borel-on-R",
@@ -1213,7 +826,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Borel measures on <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>",
-  "body": " Borel measures on  The Lebesgue measure is induced by the length function on intervals: . Given an increasing function on we can define a weighted length on intervals by . We in this section we show how, with some reasonable constraints on , this gives rise to a Borel measure. Conversely, we show how Borel measures on give rise to functions. These processes will be, up to the addition of a constant, inverses of each other.  We will begin with constructing functions from Borel measures.   Let be a closed interval in . Let be a finite Borel measure on . Define a function by   The function is called the cumulative distribution function for . cumulative distribution function    The term cumulative distribution function is borrowed from probability theory.    distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function     A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in .   Let be a closed interval. A function is right-continuous on continuous function right-continuous if given such that there exists such that (i.e. is not a right end-point of ), then     cumulative distribution function Let be a closed interval and let be a finite Borel measure on . Then the cumulative distribution function for is increasing and right-continuous.    Let be a finite Borel measure on and let be the corresponding cumulative distribution function. Note that, if with then   Thus, is an increasing function.  We will now show that is right-continuous. Take , such that there is a such that . Let be a sequence in converging to , with for each . Then   Hence, since is a finite measure, continuity of measure, , gives   Hence is right-continuous.   We will now show how a Borel measure can be recovered from its cumulative distribution function. More generally, we show that any increasing, right-continuous function defines a Borel measure.   Let be a closed interval, and let be a non-negative, increasing, right-continuous function. If has a minimal element we will also assume that is non-negative. Then there is a unique Borel measure on satisfying    First assume that does not have a minimal element. That is, assume for some , or . Let be the semiring of subsets of ,   Define on by and We will show that is a premeasure on . It is straightforward to show that   if are disjoint intervals in with .  It remains to show that is countably monotonic. Suppose and are in and satisfy   Fix such that . For each , choose such that and   (if is the end-point of for some we can extend so that for ). Note that we can by the right continuity of . We now have the following inclusions   Thus, is an open cover of . By the Heine-Borel Theorem, is compact, thus there is a finite subcover of . We (relabelling if necessary) denote the sets in this subcover by As is increasing, it follows that   Taking a limit as goes to (from above), the right continuity of gives that   and so is countably monotonic. Hence is a premeasure on .  When has a minimal element , so that or we define to be   We define as above with the extra condition . Again, will be a premeasure on the semiring .  In both cases, the Carathéodory-Hahn Theorem says that extends to a measure on , which we will still denote by . The uniqueness of follows again from the Carathéodory-Hahn Theorem, and the fact that is -finite on . As the sets in will be -measurable, the Borel sets will be measurable with respect to . If is a closed interval in , then . It follows that for any compact set , and thus defines a Borel measure on .    When and , the measure constructed by is the Lebesgue measure.    Let be a closed interval in and let be a non-negative, increasing, right-continuous function on . If is not bounded below, further assume . Let be the Borel measure on satisfying constructed in .  If is a finite Borel measure then is the cumulative distribution function for .    Suppose is the minimal element of . Then, for each , the construction of in gives   Thus, is the cumulative distribution function for .  Now suppose is not bounded below and that Fix . Then   and hence is the cumulative distribution function for .    Let be a closed bounded interval in . Every Borel measure on is uniquely determined by its cumulative distribution function.   "
+  "body": " Borel measures on  The Lebesgue measure is induced by the length function on intervals: . Given an increasing function on we can define a weighted length on intervals by . In this section we show how, with some reasonable constraints on , this gives rise to a Borel measure. Conversely, we show how Borel measures on give rise to functions. These processes will be, up to the addition of a constant, inverses of each other.  We will begin with constructing functions from Borel measures.   Let be a closed interval in . Let be a finite Borel measure on . Define a function by   The function is called the cumulative distribution function for . cumulative distribution function    The term cumulative distribution function is borrowed from probability theory.    distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function   Belljar curve and its cumulative distribution function       A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in .   Let be a closed interval. A function is right-continuous on continuous function right-continuous if given such that there exists such that (i.e. is not a right end-point of ), then     cumulative distribution function Let be a closed interval and let be a finite Borel measure on . Then the cumulative distribution function for is increasing and right-continuous.    Let be a finite Borel measure on and let be the corresponding cumulative distribution function. Note that, if with then   Thus, is an increasing function.  We will now show that is right-continuous. Take , such that there is a such that . Let be a sequence in converging to , with for each . Then   Hence, since is a finite measure, continuity of measure, , gives   Hence is right-continuous.   We will now show how a Borel measure can be recovered from its cumulative distribution function. More generally, we show that any increasing, right-continuous function defines a Borel measure.   Let be a closed interval, and let be a non-negative, increasing, right-continuous function. If has a minimal element we will also assume that is non-negative. Then there is a unique Borel measure on satisfying    First assume that does not have a minimal element. That is, assume for some , or . Let be the semiring of subsets of ,   Define on by and We will show that is a premeasure on . It is straightforward to show that   if are disjoint intervals in with .  It remains to show that is countably monotonic. Suppose and are in and satisfy   Fix such that . For each , choose such that and   (if is the end-point of for some we can extend so that for ). Note that we can by the right continuity of . We now have the following inclusions   Thus, is an open cover of . By the Heine-Borel Theorem, is compact, thus there is a finite subcover of . We (relabelling if necessary) denote the sets in this subcover by As is increasing, it follows that   Taking a limit as goes to (from above), the right continuity of gives that   and so is countably monotonic. Hence is a premeasure on .  When has a minimal element , so that or we define to be   We define as above with the extra condition . Again, will be a premeasure on the semiring .  In both cases, the Carathéodory-Hahn Theorem says that extends to a measure on , which we will still denote by . The uniqueness of follows again from the Carathéodory-Hahn Theorem, and the fact that is -finite on . As the sets in will be -measurable, the Borel sets will be measurable with respect to . If is a closed interval in , then . It follows that for any compact set , and thus defines a Borel measure on .    When and , the measure constructed by is the Lebesgue measure.    Let be a closed interval in and let be a non-negative, increasing, right-continuous function on . If is not bounded below, further assume . Let be the Borel measure on satisfying constructed in .  If is a finite Borel measure then is the cumulative distribution function for .    Suppose is the minimal element of . Then, for each , the construction of in gives   Thus, is the cumulative distribution function for .  Now suppose is not bounded below and that Fix . Then   and hence is the cumulative distribution function for .    Let be a closed bounded interval in . Every Borel measure on is uniquely determined by its cumulative distribution function.   "
 },
 {
   "id": "def-cumulative-dist",
@@ -1240,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.3.3",
   "title": "",
-  "body": " distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function    "
+  "body": " distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function   Belljar curve and its cumulative distribution function      "
 },
 {
   "id": "sec-borel-on-R-8",
@@ -1330,7 +943,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "3.4",
   "title": "Exercises",
-  "body": "  Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that   and for each .    Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .    Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).    Complete the proof of . That is, show that if is Lebesgue measurable then   (The case when is given in the proof of ).    Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.    Let be a strictly increasing continuous bijection. Show that has a continuous inverse.    Let be a continuous function. Show that for any Borel set .    Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .    Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.    Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .    Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .   "
+  "body": "   Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that and for each .      Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .      Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).      Complete the proof of . That is, show that if is Lebesgue measurable then (The case when is given in the proof of ).      Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.      Let be a strictly increasing continuous bijection. Show that has a continuous inverse.      Let be a continuous function. Show that is Borel for any Borel set .      Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .      Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.      Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .      Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .    "
 },
 {
   "id": "chap-lebesgue-measure-6-1",
@@ -1339,7 +952,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.1",
   "title": "",
-  "body": " Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that   and for each .  "
+  "body": "  Let be the Lebesgue measure on . Suppose is Lebesgue measurable. Take . Show that there are disjoint Lebesgue measure able sets such that and for each .   "
 },
 {
   "id": "exer-Lebesgue-translation-inv",
@@ -1348,7 +961,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.2",
   "title": "",
-  "body": " Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .  "
+  "body": "  Let . Show that for all . Show that is Lebesgue measurable if and only if is Lebesgue measurable for all .   "
 },
 {
   "id": "exer-outer-approx",
@@ -1357,7 +970,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.3",
   "title": "",
-  "body": " Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).  "
+  "body": "  Complete the proof of . That is, show that if is measurable then for all there is an open set containing such that . (You can assume that the result holds when ; the proof of that case is given in the proof of ).   "
 },
 {
   "id": "exer-Lebesgue-inner-reg",
@@ -1366,7 +979,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.4",
   "title": "",
-  "body": " Complete the proof of . That is, show that if is Lebesgue measurable then   (The case when is given in the proof of ).  "
+  "body": "  Complete the proof of . That is, show that if is Lebesgue measurable then (The case when is given in the proof of ).   "
 },
 {
   "id": "exer-Q-equiv-rel",
@@ -1375,7 +988,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.5",
   "title": "",
-  "body": " Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.  "
+  "body": "  Let be a subset, and let be the relation defined in . That is, if and only if there is a such that . Show that is an equivalence relation.   "
 },
 {
   "id": "exer-cont-inverse",
@@ -1384,7 +997,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.6",
   "title": "",
-  "body": " Let be a strictly increasing continuous bijection. Show that has a continuous inverse.  "
+  "body": "  Let be a strictly increasing continuous bijection. Show that has a continuous inverse.   "
 },
 {
   "id": "exer-Borel-inv-img",
@@ -1393,7 +1006,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.7",
   "title": "",
-  "body": " Let be a continuous function. Show that for any Borel set .  "
+  "body": "  Let be a continuous function. Show that is Borel for any Borel set .   "
 },
 {
   "id": "exer-dirac-cdf",
@@ -1402,7 +1015,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.8",
   "title": "",
-  "body": " Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .  "
+  "body": "  Let be the Dirac measure on the Borel sets in ( ). That is, for , if , and if . Find the cumulative distribution function for .   "
 },
 {
   "id": "chap-lebesgue-measure-6-9",
@@ -1411,7 +1024,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.9",
   "title": "",
-  "body": " Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.  "
+  "body": "  Let be the measure space of the Lebesgue measure restricted to the Borel sets . Let be the completion of . Show that , the -algebra of all Lebesgue measurable sets; and that , the Lebesgue measure. I.e., show that the completion of the Lebesgue measure restricted to the Borel sets, is the Lebesgue measure on all Lebesgue measurable sets.   "
 },
 {
   "id": "exer-cant-len-func-singular",
@@ -1420,7 +1033,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.10",
   "title": "",
-  "body": " Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .  "
+  "body": "  Let be the Cantor-Lebesgue function on , let be the Cantor set, and let . Show that for all .   "
 },
 {
   "id": "exer-cantor-leb-cdf",
@@ -1429,12 +1042,12 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3.4.11",
   "title": "",
-  "body": " Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .  "
+  "body": "  Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .   "
 },
 {
-  "id": "real-analysis-5-5-3",
+  "id": "real-analysis-4-5-3",
   "level": "1",
-  "url": "real-analysis-5-5-3.html",
+  "url": "real-analysis-4-5-3.html",
   "type": "Section",
   "number": "4.1",
   "title": "Signed measures",
@@ -1443,25 +1056,25 @@ var ptx_lunr_docs = [
 {
   "id": "def-signed-measure",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#def-signed-measure",
+  "url": "real-analysis-4-5-3.html#def-signed-measure",
   "type": "Definition",
   "number": "4.1.1",
   "title": "",
   "body": " signed measure Let be a measurable space. A function   is a signed measure if   takes at most value from ;   ; and   if are disjoint sets in , then     The elements of are called the measurable sets measurable set for a signed measure , or -measurable sets . A signed measure on is finite if . signed measure finite  "
 },
 {
-  "id": "real-analysis-5-5-3-16",
+  "id": "real-analysis-4-5-3-16",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-16",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-16",
   "type": "Definition",
   "number": "4.1.2",
   "title": "",
   "body": " Let be a signed measure on a measurable space and let be a measurable set.   The set is positive (or -positive positive set if there is room for confusion) if is measurable, then ;   the set is negative (or -negative negative set if there is room for confusion) if is measurable, then ; and   the set is a null set (or -null null set if there is room for confusion) if is measurable, then .    "
 },
 {
-  "id": "real-analysis-5-5-3-17",
+  "id": "real-analysis-4-5-3-17",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-17",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-17",
   "type": "Remark",
   "number": "4.1.3",
   "title": "",
@@ -1470,16 +1083,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-hahn-lemma",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#lem-hahn-lemma",
+  "url": "real-analysis-4-5-3.html#lem-hahn-lemma",
   "type": "Lemma",
   "number": "4.1.4",
   "title": "Hahn.",
   "body": " Hahn  Let be a signed measure on a measurable space . Suppose , with . Then there is a positive set such that .  "
 },
 {
-  "id": "real-analysis-5-5-3-19",
+  "id": "real-analysis-4-5-3-19",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-19",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-19",
   "type": "Proof",
   "number": "4.1.1",
   "title": "",
@@ -1488,43 +1101,43 @@ var ptx_lunr_docs = [
 {
   "id": "thm-Hahn-decomp",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#thm-Hahn-decomp",
+  "url": "real-analysis-4-5-3.html#thm-Hahn-decomp",
   "type": "Theorem",
   "number": "4.1.5",
   "title": "Hahn Decomposition Theorem.",
   "body": " Hahn Decomposition Theorem  Hahn Decomposition Theorem Let be a signed measure on a measurable space . Then there are disjoint measurable subsets such that , is positive, and is negative.  If are also disjoint measurable sets with positive, negative, and , then the sets   The set is called the symmetric difference of and . are null sets.  "
 },
 {
-  "id": "real-analysis-5-5-3-21",
+  "id": "real-analysis-4-5-3-21",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-21",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-21",
   "type": "Proof",
   "number": "4.1.2",
   "title": "",
   "body": " Assume that does not take the value (replace with if it does). Let be the collection of all positive sets. Note that is non-empty since . Let   We will show that is attained, i.e. is the maximum value in . Choose a sequence such that   Let . Note that is positive by . Thus . Also, since is positive, , and   Taking the limit as , we get . Thus .  Let . We will show that is negative. If is not negative, then there is a measurable set with . Since, by assumption, does not take the value , we have   It follows from that there is a positive set with . The set is positive with   This contradicts the definition of . Thus is negative.  Suppose and are another pair of disjoint measurable sets, with , positive, and negative. Then and . Hence is both positive and negative. Thus, is a null set. Similar arguments show that , , and are null sets.  "
 },
 {
-  "id": "real-analysis-5-5-3-22",
+  "id": "real-analysis-4-5-3-22",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-22",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-22",
   "type": "Definition",
   "number": "4.1.6",
   "title": "",
   "body": " Let be a signed measure on a measurable space . If and are disjoint measurable sets satisfying for disjoint sets and , with positive and negative, we call and a Hahn decomposition for . Hahn decomposition  "
 },
 {
-  "id": "real-analysis-5-5-3-25",
+  "id": "real-analysis-4-5-3-25",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-25",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-25",
   "type": "Definition",
   "number": "4.1.7",
   "title": "",
   "body": " Let be a measurable space, and let and be two measures on . The measures and are mutually singular , singular measures mutually singular denoted , if there are disjoint measurable sets with satisfying , , , and .  "
 },
 {
-  "id": "real-analysis-5-5-3-26",
+  "id": "real-analysis-4-5-3-26",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-26",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-26",
   "type": "Example",
   "number": "4.1.8",
   "title": "",
@@ -1533,43 +1146,43 @@ var ptx_lunr_docs = [
 {
   "id": "thm-jordan-decomp-measure",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#thm-jordan-decomp-measure",
+  "url": "real-analysis-4-5-3.html#thm-jordan-decomp-measure",
   "type": "Theorem",
   "number": "4.1.9",
   "title": "The Jordan Decomposition Theorem.",
   "body": " The Jordan Decomposition Theorem  Jordan Decomposition Theorem for signed measures Let be a signed measure on a measurable space . Then there are mutually orthogonal measures on and on such that , i.e.   for all .  Further, and are unique mutually orthogonal measures satisfying .  "
 },
 {
-  "id": "real-analysis-5-5-3-28",
+  "id": "real-analysis-4-5-3-28",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-28",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-28",
   "type": "Proof",
   "number": "4.1.3",
   "title": "",
   "body": " Let be a Hahn decomposition for , with positive and negative. For each , define   That is a measure follows from . That is a measure can be proved similarly. That and are mutually orthogonal follows from the fact that and are disjoint.  Suppose now that and are mutually orthogonal measures satisfying . Since and are mutually orthogonal, there are disjoint measurable sets and satisfying , , , , and . We will show that and give a Hahn decomposition for . That is, we will show that is -positive and is -negative. Take any . Since , , thus   Similarly, if , then and so   Since and are a Hahn decompoistion for , and and are a Hahn decompoistion for , it follows from that and are null sets. Take any , then   and   and so   Take any . Then   where the penultimate equality comes from . Hence . We can show that in a similar fashion.  "
 },
 {
-  "id": "real-analysis-5-5-3-29",
+  "id": "real-analysis-4-5-3-29",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-29",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-29",
   "type": "Definition",
   "number": "4.1.10",
   "title": "",
   "body": " Let be a signed measure on a measurable space . Let and be mutually orthogonal measures on satisfying   We call and the Jordan decomposition of . Jordan decomposition of a signed measure  We call the measure the positive part of , and call the measure the negative part of .  "
 },
 {
-  "id": "real-analysis-5-5-3-30",
+  "id": "real-analysis-4-5-3-30",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-30",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-30",
   "type": "Definition",
   "number": "4.1.11",
   "title": "",
   "body": " Let be a signed measure and let be the Jordan decomposition of . The measure defined by   is called the measure of total variation of . measure of total variation The value is the total variation of . total variation of a signed measure. When is finite then is of bounded variation . bounded variation for a signed measure  "
 },
 {
-  "id": "real-analysis-5-5-3-31",
+  "id": "real-analysis-4-5-3-31",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-31",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-31",
   "type": "Remark",
   "number": "4.1.12",
   "title": "",
@@ -1578,7 +1191,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-bv-signed-meas-as-sup",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#prop-bv-signed-meas-as-sup",
+  "url": "real-analysis-4-5-3.html#prop-bv-signed-meas-as-sup",
   "type": "Proposition",
   "number": "4.1.13",
   "title": "",
@@ -1587,16 +1200,16 @@ var ptx_lunr_docs = [
 {
   "id": "prop-total-variation",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#prop-total-variation",
+  "url": "real-analysis-4-5-3.html#prop-total-variation",
   "type": "Proposition",
   "number": "4.1.14",
   "title": "",
   "body": " Let be a signed measure on a measurable space with finite total variation . Suppose and are measures on satisfying . Then .  Further, if and only if and .  "
 },
 {
-  "id": "real-analysis-5-5-3-36",
+  "id": "real-analysis-4-5-3-36",
   "level": "2",
-  "url": "real-analysis-5-5-3.html#real-analysis-5-5-3-36",
+  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-36",
   "type": "Proof",
   "number": "4.1.4",
   "title": "",
@@ -1801,9 +1414,9 @@ var ptx_lunr_docs = [
   "body": " Let be a right-continuous function of bounded variation and let be the signed Borel measure satisfying (which exists by ). Let be the Jordan decomposition of , and be the Jordan decomposition of . By , there are Borel measures and on so that and for intervals .  Note that and so, by ,   Let be a partition of , by ,   Thus . Hence .  Let be a signed Borel measure on , and define for . Then is right-continuous and of bounded variation by , Let be the Jordan decomposition of . Define functions and on by and . By , and are increasing, right continuous functions. Since , it follows that . Let and be the Jordan decomposition of . By , there are Borel measures and whose cumulative distribution functions are and , respectively.  Note that . By for each   By , for all , and thus   We have now,   Hence   where . It follows that   "
 },
 {
-  "id": "real-analysis-5-5-5",
+  "id": "real-analysis-4-5-5",
   "level": "1",
-  "url": "real-analysis-5-5-5.html",
+  "url": "real-analysis-4-5-5.html",
   "type": "Exercises",
   "number": "4.3",
   "title": "Exercises",
@@ -1812,16 +1425,16 @@ var ptx_lunr_docs = [
 {
   "id": "exer-measures-vec-space",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-measures-vec-space",
+  "url": "real-analysis-4-5-5.html#exer-measures-vec-space",
   "type": "Exercise",
   "number": "4.3.1",
   "title": "",
   "body": " Let and be measures on a measurable space .   For a real number , define on by for all . Show that is a measure on .   Define on by  Show that is a measure on . We denote by .     "
 },
 {
-  "id": "real-analysis-5-5-5-2",
+  "id": "real-analysis-4-5-5-2",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-2",
+  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-2",
   "type": "Exercise",
   "number": "4.3.2",
   "title": "",
@@ -1830,7 +1443,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-diff-of-measures",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-diff-of-measures",
+  "url": "real-analysis-4-5-5.html#exer-diff-of-measures",
   "type": "Exercise",
   "number": "4.3.3",
   "title": "",
@@ -1839,7 +1452,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-signed-meas-vec-sp",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-signed-meas-vec-sp",
+  "url": "real-analysis-4-5-5.html#exer-signed-meas-vec-sp",
   "type": "Exercise",
   "number": "4.3.4",
   "title": "",
@@ -1848,7 +1461,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-finite-signed-measures",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-finite-signed-measures",
+  "url": "real-analysis-4-5-5.html#exer-finite-signed-measures",
   "type": "Exercise",
   "number": "4.3.5",
   "title": "",
@@ -1857,7 +1470,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-positive-union",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-positive-union",
+  "url": "real-analysis-4-5-5.html#exer-positive-union",
   "type": "Exercise",
   "number": "4.3.6",
   "title": "",
@@ -1866,7 +1479,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-signed-meas-to-meas",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-signed-meas-to-meas",
+  "url": "real-analysis-4-5-5.html#exer-signed-meas-to-meas",
   "type": "Exercise",
   "number": "4.3.7",
   "title": "",
@@ -1875,7 +1488,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-total-variation",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-total-variation",
+  "url": "real-analysis-4-5-5.html#exer-total-variation",
   "type": "Exercise",
   "number": "4.3.8",
   "title": "",
@@ -1884,7 +1497,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-signed-measure-space-with-norm",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-signed-measure-space-with-norm",
+  "url": "real-analysis-4-5-5.html#exer-signed-measure-space-with-norm",
   "type": "Exercise",
   "number": "4.3.9",
   "title": "",
@@ -1893,7 +1506,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-bv-arc-length",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-bv-arc-length",
+  "url": "real-analysis-4-5-5.html#exer-bv-arc-length",
   "type": "Exercise",
   "number": "4.3.10",
   "title": "",
@@ -1902,7 +1515,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-not-tv-1",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-not-tv-1",
+  "url": "real-analysis-4-5-5.html#exer-not-tv-1",
   "type": "Exercise",
   "number": "4.3.11",
   "title": "",
@@ -1911,7 +1524,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-not-tv-2",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-not-tv-2",
+  "url": "real-analysis-4-5-5.html#exer-not-tv-2",
   "type": "Exercise",
   "number": "4.3.12",
   "title": "",
@@ -1920,7 +1533,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-sin-bv",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-sin-bv",
+  "url": "real-analysis-4-5-5.html#exer-sin-bv",
   "type": "Exercise",
   "number": "4.3.13",
   "title": "",
@@ -1929,7 +1542,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-cos-bv",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-cos-bv",
+  "url": "real-analysis-4-5-5.html#exer-cos-bv",
   "type": "Exercise",
   "number": "4.3.14",
   "title": "",
@@ -1938,25 +1551,25 @@ var ptx_lunr_docs = [
 {
   "id": "exer-poly-bv",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#exer-poly-bv",
+  "url": "real-analysis-4-5-5.html#exer-poly-bv",
   "type": "Exercise",
   "number": "4.3.15",
   "title": "",
   "body": " Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.  "
 },
 {
-  "id": "real-analysis-5-5-5-16",
+  "id": "real-analysis-4-5-5-16",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-16",
+  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-16",
   "type": "Exercise",
   "number": "4.3.16",
   "title": "",
   "body": " Let be a function of bounded variation on an interval . Show that, if , then   "
 },
 {
-  "id": "real-analysis-5-5-5-17",
+  "id": "real-analysis-4-5-5-17",
   "level": "2",
-  "url": "real-analysis-5-5-5.html#real-analysis-5-5-5-17",
+  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-17",
   "type": "Exercise",
   "number": "4.3.17",
   "title": "",
@@ -2410,7 +2023,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Integration of non-negative functions",
-  "body": " Integration of non-negative functions   Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , integral of a non-negative simple function denote as   If is a measurable set we define the integral of over as    Note that, the condition that is non-negative is necessary in order to guarantee that is defined. If and then   is not defined.   Let be a measure space and let be a non-negative simple function. If   where are (not necessarily distinct) scalars and are disjoint measurable sets, then     Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for   Hence   Hence     linearity of integration non-negative simple functions Let be a measure space and let and be non-negative simple functions on . Then, for any scalars ,   Further, integration is monotonic: monotonicity of integration non-negative simple functions if then     That is straightforward.  Let and be simple functions. Let , , for , and . Then   By ,   Now suppose that and are non-negative simple functions with . Then . It follows that   Hence .    Let be a collection of measurable sets, let be non-negative real numbers, and let By ,   That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate   The following corollary is immediate on noting that   for disjoint sets and .   If non-negative simple function on a measure space and are disjoint sets, then    The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure does not affect the integral.   If is a simple function on a measure space and satisfies then    We will now define the integral of non-negative measurable functions.   Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by   If is a measurable set we define the integral of over as   A non-negative measurable function on is integrable integrable non-negative functions if   When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable. integrable Lebesgue integrable   The proof of the following two propositions are left to and , respectively.   Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then     Monotonicity of integration  monotonicity of integration non-negative functions Let be a measure space, and let and be non-negative measurable functions on . If then    Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is does not need to integrable in order to calculate . If is a simple function (where are measurable sets), then if and only if for some . If , it is possible to have even if for all simple function . The following example illustrates this point.   Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .    The functions (red) and (blue) from    For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that    If is integrable, then will be, in some sense, well-behaved. We make this explicit in after the following important lemma.   Chebyshev's Inequality  Chebyshev's Inequality Let be a measure space and let be a non-negative measurable function. Then, for each real number ,     Fix and let   Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus   Dividing the above inequality by gives the desired result.    Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set   is -finite.    Let . To show that is finite a.e. we must show that . For each , let and let . Then and so   Thus   and so . Note that , and so by the continuity of measure   and hence is finite a.e.  Let Note that   By Chebshev's Inequality,   Thus is a countable union of sets of finite measure. That is, is -finite.   In Section~\\ref{sec: int lim swap} we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function , do we have   The answer is, of course: not necessarily. We give some counter examples here.   Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further   Hence   In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.   The obvious moral to take away from is that, in order for there to be a positive answer to we need some additional conditions on the functions and . There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let be a sequence of real numbers. The limit superior limit inferior liminf limit inferior of is defined as   and the limit superior limit superior limsup limit superior is defined as   The limit inferior and limit superior always exist (with and as possible values). It is always the case that   Further if and only if is a convergent sequence, in which case   Returning to . Whilst we do not have that is a limit of the integrals of the functions which converge pointwise to , we do have the following inequalities:   That these inequalities hold for each of our sequences is not a coincidence.   Fatou's Lemma  Fatou's Lemma Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then     Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that   First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let   Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure,   By Chebyshev's Inequality,   and hence Thus   Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let   The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since ,   Choose such that for all . Let be the maximum value takes. For any we have that   Summarizing the above, for , we have   Hence   Since is arbitrary, and since and , it follows that   Now, taking a supremum over all simple with gives the desired result.   Fatou's Lemma will prove to be a powerful tool. We give now our first application of Fatou's Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.   Monotone Convergence Theorem  Monotone Convergence Theorem Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and     Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each ,   By Fatou's Lemma, ,   Thus    It is reasonable to ask whether `increasing' can be replaced by `decreasing' in the Monotone Convergence Theorem. That is, if is a decreasing sequence of non-negative measurable functions converging pointwise to , is it true that   The following example shows that we cannot expect the statement to hold for decreasing sequences. You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.   Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each ,   and so    The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, .   Let be a measure space, let be a sequence of non-negative measurable functions, and let Then     Let be a non-negative measurable function on a measure space . By the definition of the integral, can be approximated by integrals of simple functions below . By the Simple Approximation Theorem, can be (pointwise) approximated by simple functions below . The Monotone Convergence Theorem allows us to put these two approximations together. Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions , , which converge pointwise to . By the Monotone Convergence Theorem    We end this subsection by showing that integration is linear.   linearity of integration non-negative functions Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then     By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get    "
+  "body": " Integration of non-negative functions   Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , integral of a non-negative simple function denote as   If is a measurable set we define the integral of over as    Note that, the condition that is non-negative is necessary in order to guarantee that is defined. If and then   is not defined.   Let be a measure space and let be a non-negative simple function. If   where are (not necessarily distinct) scalars and are disjoint measurable sets, then     Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for   Hence   Hence     linearity of integration non-negative simple functions Let be a measure space and let and be non-negative simple functions on . Then, for any scalars ,   Further, integration is monotonic: monotonicity of integration non-negative simple functions if then     That is straightforward.  Let and be simple functions. Let , , for , and . Then   By ,   Now suppose that and are non-negative simple functions with . Then . It follows that   Hence .    Let be a collection of measurable sets, let be non-negative real numbers, and let By ,   That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate   The following corollary is immediate on noting that   for disjoint sets and .   If non-negative simple function on a measure space and are disjoint sets, then    The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure does not affect the integral.   If is a simple function on a measure space and satisfies then    We will now define the integral of non-negative measurable functions.   Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by   If is a measurable set we define the integral of over as   A non-negative measurable function on is integrable integrable non-negative functions if   When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable. integrable Lebesgue integrable   The proof of the following two propositions are left to and , respectively.   Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then     Monotonicity of integration  monotonicity of integration non-negative functions Let be a measure space, and let and be non-negative measurable functions on . If then    Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is does not need to integrable in order to calculate . If is a simple function (where are measurable sets), then if and only if for some . If , it is possible to have even if for all simple function . The following example illustrates this point.   Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .   The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.      For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that    If is integrable, then will be, in some sense, well-behaved. We make this explicit in after the following important lemma.   Chebyshev's Inequality  Chebyshev's Inequality Let be a measure space and let be a non-negative measurable function. Then, for each real number ,     Fix and let   Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus   Dividing the above inequality by gives the desired result.    Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set   is -finite.    Let . To show that is finite a.e. we must show that . For each , let and let . Then and so   Thus   and so . Note that , and so by the continuity of measure   and hence is finite a.e.  Let Note that   By Chebshev's Inequality,   Thus is a countable union of sets of finite measure. That is, is -finite.   In Section~\\ref{sec: int lim swap} we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function , do we have   The answer is, of course: not necessarily. We give some counter examples here.   Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further   Hence   In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.   The obvious moral to take away from is that, in order for there to be a positive answer to we need some additional conditions on the functions and . There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let be a sequence of real numbers. The limit superior limit inferior liminf limit inferior of is defined as   and the limit superior limit superior limsup limit superior is defined as   The limit inferior and limit superior always exist (with and as possible values). It is always the case that   Further if and only if is a convergent sequence, in which case   Returning to . Whilst we do not have that is a limit of the integrals of the functions which converge pointwise to , we do have the following inequalities:   That these inequalities hold for each of our sequences is not a coincidence.   Fatou's Lemma  Fatou's Lemma Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then     Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that   First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let   Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure,   By Chebyshev's Inequality,   and hence Thus   Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let   The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since ,   Choose such that for all . Let be the maximum value takes. For any we have that   Summarizing the above, for , we have   Hence   Since is arbitrary, and since and , it follows that   Now, taking a supremum over all simple with gives the desired result.   Fatou's Lemma will prove to be a powerful tool. We give now our first application of Fatou's Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.   Monotone Convergence Theorem  Monotone Convergence Theorem Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and     Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each ,   By Fatou's Lemma, ,   Thus    It is reasonable to ask whether `increasing' can be replaced by `decreasing' in the Monotone Convergence Theorem. That is, if is a decreasing sequence of non-negative measurable functions converging pointwise to , is it true that   The following example shows that we cannot expect the statement to hold for decreasing sequences. You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.   Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each ,   and so    The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, .   Let be a measure space, let be a sequence of non-negative measurable functions, and let Then     Let be a non-negative measurable function on a measure space . By the definition of the integral, can be approximated by integrals of simple functions below . By the Simple Approximation Theorem, can be (pointwise) approximated by simple functions below . The Monotone Convergence Theorem allows us to put these two approximations together. Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions , , which converge pointwise to . By the Monotone Convergence Theorem    We end this subsection by showing that integration is linear.   linearity of integration non-negative functions Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then     By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get    "
 },
 {
   "id": "chap-integration-3-2",
@@ -2518,7 +2131,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.10",
   "title": "",
-  "body": " Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .    The functions (red) and (blue) from    For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that   "
+  "body": " Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .   The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.      For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that   "
 },
 {
   "id": "lem-chenyshev",
@@ -2770,32 +2383,50 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Lebesgue integration and Riemann integration",
-  "body": " Lebesgue integration and Riemann integration  In Chapter~1 we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals that the answer is yes.  When is Riemann integrable on an interval we denote the Riemann integral of by .   Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.    Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.   We have defined the Lebesgue integral in terms of integrals of simple functions. The Riemann integral is usually defined in terms of Riemann sums. The following definition allows us to describe Riemann sums by integrals of simple functions.   A simple function on a closed interval is a step function step function if   for some partition of .   Let be a bounded function on and let be a partition of . For , let . Then the lower Darboux sum Darboux sum lower of with respect to is   If we let be the step function then   Similarly, if . Then the upper Darboux sum Darboux sum upper of with respect to is   If we let be the step function then   That is, the upper and lower Riemann sums are equal to the integrals of step functions.   Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and     Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then   Thus is Lebesgue integrable.  For each partition let be a step function such and   and let be a step function such and   Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that   Since, for every partition , , the monotonicity of Lebesgue integral tell us   Hence .    Let be a closed interval. We have shown that the set of bounded Riemann integrable functions on is contained in the set of bounded Lebesgue integrable functions on . When is not a singleton (i.e. when ), this inclusion is strict. If then is a Lebesgue integrable function on , but is not Riemann integrable.   The following example shows that the statements analogous to the Monotone Convergence Theorem and the Lebesgue Dominated Convergence Theorem for Riemann integration do not hold.   Let and let . The set is countable and so can be enumerated as   For each let   and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have   since is not defined. Of course, using Lebesgue integration, we get   Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.   Recall that Riemann integrals can be extended beyond closed intervals by improper Riemann integrals. integral Riemann integral improper That is we define   The following examples show that it is possible for a function to have a finite improper Riemann integral but not be Lebesgue integrable.   Define a function on by   when .    The function from    Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.    However   and hence is not Lebesgue integrable.    Let on the real line.     The function from     It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.    and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then   For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then   for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of   Thus, the series is not only convergent, but absolutely convergent. In and   are conditionally convergent, not absolutely convergent.   "
+  "body": " Lebesgue integration and Riemann integration  In Chapter~1 we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals that the answer is yes.  When is Riemann integrable on an interval we denote the Riemann integral of by . We first establish precisely, what functions are Riemann integrable. Riemann integration  Let be a closed interval in , and let be a bounded function. Let be a partition of , where   We define as   The function is Riemann integrable integrable Riemann integrable if for all there exists a partition of such that . You may have seen other definitions of Riemann integrable . Can you prove that your definition of Riemann integrable is equivalent to the definition given here?   integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .    Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.    Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.    Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.   We have defined the Lebesgue integral in terms of integrals of simple functions. The Riemann integral is usually defined in terms of Riemann sums. The following definition allows us to describe Riemann sums by integrals of simple functions.   A simple function on a closed interval is a step function step function if   for some partition of .   Let be a bounded function on and let be a partition of . For , let . Then the lower Darboux sum Darboux sum lower of with respect to is   If we let be the step function then   Similarly, if . Then the upper Darboux sum Darboux sum upper of with respect to is   If we let be the step function then   That is, the upper and lower Riemann sums are equal to the integrals of step functions.   Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and     Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then   Thus is Lebesgue integrable.  For each partition let be a step function such and   and let be a step function such and   Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that   Since, for every partition , , the monotonicity of Lebesgue integral tell us   Hence .    Let be a closed interval. We have shown that the set of bounded Riemann integrable functions on is contained in the set of bounded Lebesgue integrable functions on . When is not a singleton (i.e. when ), this inclusion is strict. If then is a Lebesgue integrable function on , but is not Riemann integrable.   The following example shows that the statements analogous to the Monotone Convergence Theorem and the Lebesgue Dominated Convergence Theorem for Riemann integration do not hold.   Let and let . The set is countable and so can be enumerated as   For each let   and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have   since is not defined. Of course, using Lebesgue integration, we get   Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.   Recall that Riemann integrals can be extended beyond closed intervals by improper Riemann integrals. integral Riemann integral improper That is we define   The following examples show that it is possible for a function to have a finite improper Riemann integral but not be Lebesgue integrable.   Define a function on by when .    The function from     Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.    Let on the real line.    The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.    and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then   For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then   for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of   Thus, the series is not only convergent, but absolutely convergent. In and   are conditionally convergent, not absolutely convergent.   "
+},
+{
+  "id": "thm-Riemann-int",
+  "level": "2",
+  "url": "chap-integration-5.html#thm-Riemann-int",
+  "type": "Theorem",
+  "number": "6.3.1",
+  "title": "",
+  "body": " integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .  "
+},
+{
+  "id": "chap-integration-5-10",
+  "level": "2",
+  "url": "chap-integration-5.html#chap-integration-5-10",
+  "type": "Proof",
+  "number": "6.3.1",
+  "title": "",
+  "body": " Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.  "
 },
 {
   "id": "lem-riemann-meas",
   "level": "2",
   "url": "chap-integration-5.html#lem-riemann-meas",
   "type": "Lemma",
-  "number": "6.3.1",
+  "number": "6.3.2",
   "title": "",
   "body": " Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.  "
 },
 {
-  "id": "chap-integration-5-5",
+  "id": "chap-integration-5-12",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-5",
+  "url": "chap-integration-5.html#chap-integration-5-12",
   "type": "Proof",
-  "number": "6.3.1",
+  "number": "6.3.2",
   "title": "",
   "body": " Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.  "
 },
 {
-  "id": "chap-integration-5-7",
+  "id": "chap-integration-5-14",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-7",
+  "url": "chap-integration-5.html#chap-integration-5-14",
   "type": "Definition",
-  "number": "6.3.2",
+  "number": "6.3.3",
   "title": "",
   "body": " A simple function on a closed interval is a step function step function if   for some partition of .  "
 },
@@ -2804,25 +2435,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chap-integration-5.html#thm-Riemann-is-Lebesgue",
   "type": "Theorem",
-  "number": "6.3.3",
+  "number": "6.3.4",
   "title": "",
   "body": " Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and   "
 },
 {
-  "id": "chap-integration-5-18",
+  "id": "chap-integration-5-25",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-18",
+  "url": "chap-integration-5.html#chap-integration-5-25",
   "type": "Proof",
-  "number": "6.3.2",
+  "number": "6.3.3",
   "title": "",
   "body": " Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then   Thus is Lebesgue integrable.  For each partition let be a step function such and   and let be a step function such and   Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that   Since, for every partition , , the monotonicity of Lebesgue integral tell us   Hence .  "
 },
 {
-  "id": "chap-integration-5-19",
+  "id": "chap-integration-5-26",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-19",
+  "url": "chap-integration-5.html#chap-integration-5-26",
   "type": "Remark",
-  "number": "6.3.4",
+  "number": "6.3.5",
   "title": "",
   "body": " Let be a closed interval. We have shown that the set of bounded Riemann integrable functions on is contained in the set of bounded Lebesgue integrable functions on . When is not a singleton (i.e. when ), this inclusion is strict. If then is a Lebesgue integrable function on , but is not Riemann integrable.  "
 },
@@ -2831,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chap-integration-5.html#exam-MCT-DCT-failure-for-Riemann",
   "type": "Example",
-  "number": "6.3.5",
+  "number": "6.3.6",
   "title": "",
   "body": " Let and let . The set is countable and so can be enumerated as   For each let   and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have   since is not defined. Of course, using Lebesgue integration, we get   Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.  "
 },
@@ -2840,25 +2471,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chap-integration-5.html#ex-not-lebesgue-int-1",
   "type": "Example",
-  "number": "6.3.6",
+  "number": "6.3.7",
   "title": "",
-  "body": " Define a function on by   when .    The function from    Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.    However   and hence is not Lebesgue integrable.  "
+  "body": " Define a function on by when .    The function from     Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.  "
 },
 {
   "id": "ex-not-lebesgue-int-2",
   "level": "2",
   "url": "chap-integration-5.html#ex-not-lebesgue-int-2",
   "type": "Example",
-  "number": "6.3.8",
+  "number": "6.3.9",
   "title": "",
-  "body": " Let on the real line.     The function from     It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.  "
+  "body": " Let on the real line.    The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.  "
 },
 {
-  "id": "chap-integration-5-27",
+  "id": "chap-integration-5-34",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-27",
+  "url": "chap-integration-5.html#chap-integration-5-34",
   "type": "Remark",
-  "number": "6.3.10",
+  "number": "6.3.11",
   "title": "",
   "body": " and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then   For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then   for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of   Thus, the series is not only convergent, but absolutely convergent. In and   are conditionally convergent, not absolutely convergent.  "
 },
@@ -3184,7 +2815,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.3",
   "title": "The fundamental theorem of calculus",
-  "body": " The fundamental theorem of calculus  The main reference for the rest of this chapter is , though we present the results in less generality than what is done in . We begin with a result which has nothing at all to do with differentiation, but will be useful.   Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that     We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that      An example of defined in the proof of .     For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and    For each and , denote by the open interval of length centred at . That is . The in this definition stands for `ball'. That term makes more sense when working in , but we will stick with the notation here, even though we are working in .   Suppose is an integrable function on . For each and , we define as   average value function We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by Hardy-Littlewood maximal function     Let is an integrable function on some closed interval . The function is jointly continuous in and .    Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then   Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then   It follows now from the Lebesgue Dominated Convergence Theorem that   is jointly continuous in and . It follows that is jointly continuous in and .    Let be an integrable function, then Hardy-Littlewood maximal function is measurable and   is open for all .    For any ,   Since is continuous for all , is an open set. Thus is measurable.    The Hardy-Littlewood Maximal Theorem  For all integrable on and ,   Hardy-Littlewood Maximal Theorem    Fix and let . By , is an open set. By the continuity of , for each there is an such that   for all . Note that   Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that   Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that   Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have   where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.   For Fatou's Lemma we needed the concept of a limit inferior, , for a sequence. For what follows we will need to consider the limit superior of a function. If is a real-valued function we define the limit superior limit superior of a function of as approaches as   and we define the limit inferior limit inferior of a function of as approaches as   The limit if and only if   Further, by the definition of the Hardy-Littlewood maximal function,    Let be a Lebesgue integrable function on , then   for almost all .    Fix . By , there is an integrable continuous function such that   Take and . By the continuity of there is an , such that if , then . Thus, if then   Hence, as , .  Take any , then   For let   Then   By Chebyshev's inequality, and the choice of ,   By the Hardy-Littlewood Maximal Theorem, and the choice of ,   Thus   As this holds for all , it follows that for all .  Let . Then, , and if ,   Thus, for all .   This brings us now to an important theorem: The Lebesgue Differentiation Theorem. Lebesgue Differentiation Theorem   Lebesgue Differentiation Theorem  Lebesgue Differentiation Theorem Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all ,   and   where , or .    Let   For each , let By , there is a Lebesgue measurable set , such that , and if , then   Let   Then , since is countable. Take and . By the density of in , there is a such that   For any ,   Thus, since ,   As is arbitrary, it follows that . Hence .  Now, for all , if or   Thus the first equality holds for all . The second equality follows from .   We are almost ready to give a concrete description of the Radon-Nikodym derivative of a Borel measure on . We first need to understand which Borel measures have continuous cumulative distribution functions.   Let be a Borel measure on the real line. We say that is outer regular regularity of a measure Borel measureson if     Let be a Borel measure on a closed interval , then   for all Borel sets .    Take any Borel set . By the monotonicity of the measure   Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and   By the continuity of measure, for each ,   Thus, for each , we can choose such that   Let . Then   It follows that   It is a relatively straightforward exercise to show that   which completes the proof.    Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then,   for almost all .    Note that   Similarly   Thus, to prove the result we can assume is a measure, and we need only need to show that   for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let   Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and   Taking the supremum over all we get for all . Hence . Let . Then , and if   and hence   Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case   By the Lebesgue Differentiation Theorem, and the Radon-Nikodym Theorem,   Hence   for almost all .    Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.    If then   It follows from   for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.    Fundamental Theorem of Calculus for Lebesgue Integrals  Fundamental Theorem of Calculus Lebesgue integration Let be a function on a closed interval . Then the following are equivalent   is absolutely continuous on ;\\   for , for some integrable function on ;   is differentiable almost everywhere on , is integrable on , and for        By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by   Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that   for . Let be the Borel signed-measure   for Borel sets . Then is absolutely continuous, and   By , is absolutely continuous.   "
+  "body": " The fundamental theorem of calculus  The main reference for the rest of this chapter is , though we present the results in less generality than what is done in . We begin with a result which has nothing at all to do with differentiation, but will be useful.   Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that     We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and    For each and , denote by the open interval of length centred at . That is . The in this definition stands for `ball'. That term makes more sense when working in , but we will stick with the notation here, even though we are working in .   Suppose is an integrable function on . For each and , we define as   average value function We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by Hardy-Littlewood maximal function     Let is an integrable function on some closed interval . The function is jointly continuous in and .    Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then   Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then   It follows now from the Lebesgue Dominated Convergence Theorem that   is jointly continuous in and . It follows that is jointly continuous in and .    Let be an integrable function, then Hardy-Littlewood maximal function is measurable and   is open for all .    For any ,   Since is continuous for all , is an open set. Thus is measurable.    The Hardy-Littlewood Maximal Theorem  For all integrable on and ,   Hardy-Littlewood Maximal Theorem    Fix and let . By , is an open set. By the continuity of , for each there is an such that   for all . Note that   Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that   Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that   Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have   where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.   For Fatou's Lemma we needed the concept of a limit inferior, , for a sequence. For what follows we will need to consider the limit superior of a function. If is a real-valued function we define the limit superior limit superior of a function of as approaches as   and we define the limit inferior limit inferior of a function of as approaches as   The limit if and only if   Further, by the definition of the Hardy-Littlewood maximal function,    Let be a Lebesgue integrable function on , then   for almost all .    Fix . By , there is an integrable continuous function such that   Take and . By the continuity of there is an , such that if , then . Thus, if then   Hence, as , .  Take any , then   For let   Then   By Chebyshev's inequality, and the choice of ,   By the Hardy-Littlewood Maximal Theorem, and the choice of ,   Thus   As this holds for all , it follows that for all .  Let . Then, , and if ,   Thus, for all .   This brings us now to an important theorem: The Lebesgue Differentiation Theorem. Lebesgue Differentiation Theorem   Lebesgue Differentiation Theorem  Lebesgue Differentiation Theorem Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all ,   and   where , or .    Let   For each , let By , there is a Lebesgue measurable set , such that , and if , then   Let   Then , since is countable. Take and . By the density of in , there is a such that   For any ,   Thus, since ,   As is arbitrary, it follows that . Hence .  Now, for all , if or   Thus the first equality holds for all . The second equality follows from .   We are almost ready to give a concrete description of the Radon-Nikodym derivative of a Borel measure on . We first need to understand which Borel measures have continuous cumulative distribution functions.   Let be a Borel measure on the real line. We say that is outer regular regularity of a measure Borel measureson if     Let be a Borel measure on a closed interval , then   for all Borel sets .    Take any Borel set . By the monotonicity of the measure   Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and   By the continuity of measure, for each ,   Thus, for each , we can choose such that   Let . Then   It follows that   It is a relatively straightforward exercise to show that   which completes the proof.    Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then,   for almost all .    Note that   Similarly   Thus, to prove the result we can assume is a measure, and we need only need to show that   for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let   Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and   Taking the supremum over all we get for all . Hence . Let . Then , and if   and hence   Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case   By the Lebesgue Differentiation Theorem, and the Radon-Nikodym Theorem,   Hence   for almost all .    Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.    If then   It follows from   for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.    Fundamental Theorem of Calculus for Lebesgue Integrals  Fundamental Theorem of Calculus Lebesgue integration Let be a function on a closed interval . Then the following are equivalent   is absolutely continuous on ;\\   for , for some integrable function on ;   is differentiable almost everywhere on , is integrable on , and for        By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by   Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that   for . Let be the Borel signed-measure   for Borel sets . Then is absolutely continuous, and   By , is absolutely continuous.   "
 },
 {
   "id": "thm-integrable-close-to-cont",
@@ -3202,7 +2833,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "7.3.1",
   "title": "",
-  "body": " We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that      An example of defined in the proof of .     For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and   "
+  "body": " We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and   "
 },
 {
   "id": "sec-ftoc-6",
@@ -3931,7 +3562,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "<span class=\"process-math\">\\(L^p\\)<\/span>-norms",
-  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.    The sets for different values of in .     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
+  "body": " -norms  Denote by be the collection of all extended real-valued measurable functions on which are finite almost everywhere. By , is a vector space. Let be the equivalence relation: if and only if almost everywhere, for . By , is an equivalence relation on . Let be the equivalence classes of in . For each denote by the equivalence class of under the equivalence relation . The set inherits a vector space structure from by the operations for and (see ).   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on .  For , define   -space We call the -space of .    Note, that is well-defined. Indeed, if and a.e., then a.e. and so is integrable if and only if is integrable.   We will also define the -space for .   Let be a measure space, let be all finite almost everywhere measurable functions on , and let be the equivalence relation of equivalence almost everywhere on . A function is essentially bounded essentially bounded if there is a constant such that almost everywhere. In this case, we call an essential bound essential bound for . Define as   -space We call the -space for    Note, that is well-defined. Indeed, if and a.e., then is essentially bounded if and only if is essentially bounded.    Let . The set is defined as a subset of . Thus, the elements of are not functions, but equivalence classes of functions. We will, however, often abuse language and refer to the elements of as functions. We will often abuse notation, and write, for , to mean that .   We will show that each -space is a Banach space under an appropriate norm. To do this, we must first show that each -space is a vector space.   Let be a measure space, and let . Then is a vector subspace of    First, assume that . Take and a scalar . Then   Hence .  Note that if , then Indeed,   and hence   Thus, if , then   Hence .  That is a vector space is left as an exercise, .   We now define a norm on . To show that these are indeed norms will take some work. Fix .\\ For let   When we define things differently. For define   For we call the -norm norm -norm norm -norm on .  The introduction of the -norms has given us some overlapping notation for and . We address this in the following remarks.   Let be a Lebesgue measurable set and let be the Lebesgue measure on . We have the -norm on , and we have the -norm on . Note that any continuous function on is measurable with respect to Lebesgue measure , by . Thus, if then , and the -norm and the -norm of coincide. Thus the -norm is a restriction of an -norm to continuous bounded functions.    We also have two -norms: on and on . Let and let be the counting measure on the subsets of . In this case, the finite a.e. measurable functions on are all functions . Further, two functions and on are equal a.e. if and only if everywhere. Letting be the collection of all finite a.e. measurable functions on as above, we have that for all Note that is isomorphic to via the isomorphism   Take any . It is not hard to see that   Thus, the -norm on is an example of a -norm on a -space.   Have not yet shown that is a norm on . We will work towards this for the rest of this section. We begin with the simplest cases: and .   Let be a measure space. Then is a norm on and is a norm on .    It is clear that for all . Suppose, and . Then   Let and . Then   Hence, by , . That is, a.e., and so in . Therefore if and only if .  If and , then   Finally, suppose .Then   Thus satisfies the triangle inequality. We have, therefore, shown that is a norm on .  We now consider on . Again, for all . If then for almost all . Thus if and only if in .  It is straightforward to show that for all and . It remains to show that satisfies the triangle inequality. Take , and let be an essential bound for and be an essential bound for . Thus, there exist measurable sets and in with , for all , and for all . Thus, if , then   As , it follows that is an essential bound for . Hence   Thus   Therefore is a norm on .   In order to show that is a norm on for , we first need to introduce some new definitions and prove some inequalities.   For , we define to be conjugate of conjugate when   We define the conjugate of to be , and the conjugate of to be .    Note that if and is conjugate to , then is the unique number such that   In particular, is conjugate to , and if then .    Young's Inequality  Young's Inequality Let and be conjugate to . If then     The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex    Graph of the function f(x) = exp(x) with x between -0.5 and 1.5, together with a line segment joining to points on the curve.   The graph of with . Two points and are shown, with the straight line segment between them. The line segment lies above the curve, illustrating that is convex.      Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.    Hölder's Inequality  Let be a measure space, let be any value and let be conjugate to . If are measurable functions on then   In particular, if and then and     The inequality holds if either or are zero almost everywhere in . We can thus assume that neither or is a.e. If either or is not intergable, i.e. if   then the desired inequality holds trivially.  We can thus assume that and are non-zero. For any non-zero and non-zero we have   for almost all , by Young's Inequality, . Applying this inequality to and we get   Thus   A special case of Hölder's inequality is when When , we call Hölder's inequality the Cauchy-Schwarz inequality Cauchy-Schwarz inequality . For posterity, we state this special case here. A special case of the Cauchy-Schwarz inequality is in . An alternate proof of the Cauchy-Schwarz inequality, which does not rely on Hölders inequality, is described in .   Cauchy-Schwarz Inequality  Cauchy-Schwarz inequality Let be a measure space. If , then is integrable and    The following corollary to Hölder's inequality will be used frequently.   Let and let be conjugate to . If , then there exists with such that     If , then the result holds for any with . Let be non-zero. Define the sign function for sign function by   and let Let Since and are measurable functions, is measurable. Noting that , we have   Thus, and . Further,   completing the proof.   We come now to our final named inequality of this section.   Minkowski's Inequality  Minkowski's inequality Let be a measure space and take with . If , then     Let be conjugate to . Take . By , there exists with such that   Thus   with the last inequality coming from two applications of Hölder's inequality, and the fact that .   We now have all we need to show that is a norm for .   Let be a measure space. For each , , is a norm on .    The cases when and are covered in . For , Minkowski's inequality, , shows that satisfies the triangle inequality. That satisfies the other properties of a norm is straightforward.    Let be a measure space. If , then the Cauchy-Schwarz inequality (or Hölder's inequality) says that is integrable. We can thus define a map   by   This map is bilinear, by the linearity properties of integration. Further   Hence is an inner-product on and the -norm is the induced inner-product norm on . inner-product on -space   Given a measure space we now have infinitely many vector space . What is the relationship between these vector spaces? When do we have ? When we have the following:   Let be a finite measure space. If , then .    Take . If , then   and hence .  Suppose now that . Note that   and hence is the conjugate of . Applying Hölder's inequality with the conjugates and we have   Hence, .   The following example shows that the containment in can be strict.   Let be the Lebesgue measure on the interval . By , if , then . Let Then with   However since   More generally, if and   then but Also, note that is not bounded, and so Thus, if then    When the conclusion of does not necessarily hold. In fact, we may not have containments in any direction.   Let be the Lebesgue measure on . Suppose . Let for , and for . Since is bounded, we have that . If , then, since , . However, since is not integrable on . Thus   Using the examples from we can also show that   Explicitly, for , if for and for , then but    -spaces and  We pronounce as `little '. -space When , we simply write for . The space thus consists of all sequences of real-numbers such that   when ; and consists of all bounded sequences.  The following result shows that the conclusion of can hold on non-finite measure spaces, when the measure is the counting measure. This should be compared with   Let , then and for all    Take any non-negative function on . If is not bounded, then there is an and a sequence in such that for all . Thus   Hence is not integrable. Therefore, if , then is bounded. Take and . There exists an such that   Thus   As this holds for all , it follows that .  Suppose now that . Then   Thus and   The following example shows that the inclusion of from can be strict.   Take and let Then but  Any non-zero constant sequence is in but not for . E.g., if for all , then but for any .   We turn our attention now to finite dimensional vector spaces. Let . In we observed that, for all , is the real-valued functions on . Further, we can identify with via the isomorphism   Under this identification, we have a norms on for . These norms are given by   for , and   norm -norm on When these norms are all different, as illustrated in Figure~\\ref{fig: p-norm}. However, the norms are all equivalent.    The sets for different values of in .     The norms on are all equivalent.    Take any . Then   and   Thus, the norms -norm and the -norm are equivalent.  Let be such that . Then   Thus   By , for all . Thus, for we have   Hence the -norm is equivalent to the -norm for all . Therefore, all the -norms are equivalent on .    "
 },
 {
   "id": "chap-Lp-4-3",
@@ -4066,7 +3697,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "1.2.3",
   "title": "",
-  "body": " The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex     Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.  "
+  "body": " The proof we present here is based on the convexity of the function . By convexity convex function we mean that, for and   That is, the straight line segment from to is above the curve with . Intuitively, this can be understood since for all . A formal proof of the inequality is eked out in .     The function is convex    Graph of the function f(x) = exp(x) with x between -0.5 and 1.5, together with a line segment joining to points on the curve.   The graph of with . Two points and are shown, with the straight line segment between them. The line segment lies above the curve, illustrating that is convex.      Let , , and Note that, since , . Further, since is conjugate to , . Thus, by ,   Thus, noting that and ,   which proves the desired inequality.  "
 },
 {
   "id": "thm-holder",
@@ -5239,18 +4870,18 @@ var ptx_lunr_docs = [
   "body": " Let be a locally compact Hausdorff space and let be all finite Radon signed measures on .   Show that is a vector space under the operations  for and .    Show that defines a norm on , where  for all . (Recall, that is the total variation of .)     "
 },
 {
-  "id": "real-analysis-7-2-3",
+  "id": "real-analysis-6-2-3",
   "level": "1",
-  "url": "real-analysis-7-2-3.html",
+  "url": "real-analysis-6-2-3.html",
   "type": "Section",
   "number": "1.1",
   "title": "Product measures",
   "body": " Product measures  Given two measure spaces and , we want to construct a measure on from and . We will call this the product measure of and , and denote the product measure by . The basic road-map for this construction is simple: if and , we define . We then show that is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem ( ), extends to a measure on .    Let and be two measurable spaces. If and , we call the set a measurable rectangle in . measurable rectangle       Let and be measure spaces; let be the measurable rectangles in ; and let be the extended real-valued function on defined by for all and . Then is a semiring, and is a premeasure on .    Recall, from , that the collection of all measurable rectangles in forms a semiring of sets.  Note that , and . To show is a premeasure it remains to show that is finitely additive and countably monotone.  Suppose is a measurable rectangle such that where are disjoint measurable rectangles. For a fixed , we have Note that, if and , then since and are disjoint, and are disjoint. Thus, the collection are a disjoint collection of measurable sets is in , and hence Hence, for any , Now, by the series version of the Monotone Convergence Theorem, , Hence, is countably additive, and therefore finitely additive.  Note that, for measurable rectangles and , if and only if Thus, if , then Thus, is monotonic.  Let be a measurable rectangle and be measurable rectangles, such that Since the measurable rectangles are a semiring, and is finitely additive, we can assume that the sets are disjoint. Thus Hence is countably monotone, and therefore is a premeasure on the measurable rectangles.    Let and be two measure spaces, and let for and . By , is a premeasure on a semiring. Thus, by the Carathéodory-Hahn Theorem ( ), extends to a measure on -measurable sets in (where is the outer measure induced by the premeasure ). We denote this extension by . The measure is called the product measure measure product measure of and .   Recall that the Carathéodory-Hahn Theorem does not guarantee uniqueness of the Carathéodory extension. In particular, if is the collection of -measurable sets, we are not guaranteed that is the only measure on satisfying for all and .  We do have uniqueness when is -finite on . In particular, if and are -finite then will be -finite ( ), and therefore the product measure is the unique measure satisfying .  An example where the product measure is not the unique measure satisfying is given in    A word of warning: Some texts define the -algebra that is defined on to be the -algebra generated by the measurable rectangles. Our definition has as a function on the -algebra of -measurable sets. This may be a larger -algebra. gives sufficient conditions for when the -algebra generated by measurable rectangles is smaller than -measurable sets.  We discuss some differences between these different definitions of product measure further in     Let and be non-empty sets and let . For the -section section of a set  of is defined as For the -section section of a set  of is defined as If is a function on , and then the -section  of is a function on defined by If then the -section  of is a function on defined by section of a function    We will prove two theorems relating an integral with respect to a product measure and nested integrals with respect to and separately: Fubini's Theorem and Tonelli's Theorem.  We begin with some lemmas. The goal of the following lemmas is to describe as an integral with respect to . This allows us to (nearly immediately) describe the integrals of simple functions on . Then, using simple approximations of measurable functions, we will get the general results needed.  Recall that if is a collection of subsets of a set , then is the collection of all countable unions of sets from , and is the countable intersection of sets from .    Let and be measure spaces and let be the collection of all measurable rectangles in . If satisfying , then the -section is -measurable for all , and     Take By , is -measurable for all . Alternatively, this can be proved directly by first considering , then , and then .  If for some and , then Thus  Now suppose . Thus, there are measurable rectangles such that . Since is a semiring, we can assume that the sets are disjoint. Then, for each , the -sections are disjoint and . Thus, applying the series version of the Monotone Convergence Theorem (Corollar~\\ref{cor: MCT series}), we have  Now suppose that and . There are sets such that . Since is a semiring, we can assume that the sets are descending. As is defined as the outer measure induced by on , we can further assume that . Thus, by the continuity of measure, For each and , the -section is -measurable. Hence is -measurable. Further, since  for almost all . Hence, for almost all , Thus, by the Lebesgue Dominated Convergence Theorem,    If and are -finite, then conclusion of holds for any in the -algebra generated by the measurable rectangles, not just the -sets of finite measure. This is explored in .     Let and be measure spaces with a complete measure. If is -measurable with , then the -section is -measurable for almost all and .    Take -measurable with . By , there is a set an -set such that , and . Since , we can apply , to get Since the map is non-negative, it follows that for all most all . Since for all , it follows from the completeness of that if then is -measurable and .      Let and be measure spaces with a complete measure. If is -measurable with , then the -sections are -meaurable for almost all , and the function is a -measurable function. Further,    Since , by there is an -set such that and . Thus by the excision property.  By , is measurable for all , and is measurable for almost all . For each , Thus, for almost all , is -measurable and Applying again, we have     Fubini's Theorem   Fubini's Theorem Let be a measure space, let be a complete measure space and let be a measurable function which is integrable with respect to .  Then for almost all , the -section of is integrable with respect to and    First suppose that where is a measurable set with . Note that, for each , the -section is given by By , is measurable for almost all , hence is measurable for almost all . Further, again by , Hence for almost all . Thus, for almost all , Thus is integrable for almost all . We have now that By the linearity of integration, the result holds when is an integrable simple function on .  Now suppose that is a non-negative integrable function on . Let be an increasing sequence of simple functions which converge pointwise to . By the above arguments, and the Monotone Convergence Theorem, it follows that  To complete the proof we will show that By removing a set of measure zero if necessary, we can assume that the -sections are integrable for all for all . Thus, for each , is an increasing sequence of measurable functions, converging pointwise to . Thus is measurable for each . For each , let define a function on by and define a function on by Since each is simple, it follows that is integrable for all . Thus sequence is an increasing sequence of non-negative measurable functions. By the Monotone Covergenece Theorem applied to , converges pointwise to . Applying the Monotone Convergence Theorem to the sequence , we get i.e.  If is an arbitrary integrable function on , then where is the positive part of , and is the negative part of . Since the result holds for and , the result holds for by the linearity of integration.     Let be a measurable function on a product space . Note that, in order to apply Fubini's theorem, we must first know that is integrable with repsect to the product measure . It is possible that the iterated integral exists and is finite, but itself is not integral with resepct to . An example is given in .   The shortcoming of Fubini's Theorem discussed in does not arise when when we deal exclusively with -finite measure spaces. This is the famed theorem of Tonelli.   Tonelli's Theorem    Tonelli's Theorem Let and be -finite measure spaces, with a complete measure, and let be a non-negative -measurable function on . Then, for almost all , the -section of is -measurable, and the (almost everywhere defined) function on  is -measurable. Further,     Since, and are -finite, the product measure is -finite on , by . Thus, by the Simple Approximation Theorem, , there is an increasing sequence of simple functions which converge pointwise to and each is supported in a set of finite measure. For each , since is a supported in a set of finite measure, is integrable with respect to . Hence, we can apply Fubini's Theorem to each function , to get The rest of the proof proceeds in a similar vein to that of Fubini's Theorem.    With obvious modifications, replacing -sections with -sections, we can prove the analogous results of Fubini's Theorem and Tonelli's Theorem on , for measure space and when is complete. Fubini's Theorem and Tonelli's Theorem are often combined into one result, the Fubini-Tonelli Theorem, which combines the two results.   The Fubini-Tonelli Theorem    Fubini's Theorem The Fubini-Tonelli Theorem Tonelli's Theorem Fubini's Theorem Let and be -finite complete measure spaces, and let be a -measurable function on . Then Further, if any of the three integrals above are finite, then is integrable and      We note in , that some people only define the product measure to act on the -algebra generated by the measurable rectangles. Let and be -finite measure spaces, let be the product measure on , and let be the restriction of be the restriction of to the -algebra generated by the measurable rectangles. The analogue of Fubini's Theorem We will not prove this version of Fubini's Theorem. If you wish you can prove it using and similar arguments to how we proved . for states: if is integrable with respect to , then the -sections are integrable with respect to for all , and The key differences between Fubini's Theorem for ( our version) and for are  we do not need to assume that or is a complete measure to prove Fubini's Theorem for ;  we have that is -integrable for all , not just for almost all , in Fubini's Theorem for ; and  we are assuming that the measure spaces are -finite in Fubini's Theorem for .  In practice, concerns over these differences rarely matter. For nice functions and nice  -algebras one usually has that    Products of three or more measures  If are a collection of $n$ measure spaces, we define the measurable rectangles measurable rectangles in as the sets We can similarly define a product measure on . We leave the details of the next proposition to the exercises, and .    Let be measure spaces, let be the measurable rectangles in ; and let be the extended real-valued function on defined by for for . Then is a semiring, and is a premeasure on .    By , we can thus extend to a measure on by the Carathéodory-Hahn Theorem. This measure is also called the product measure . product measure Just as in the case, it is not guaranteed that the measure is the unique extension of the its restriction to the measurable rectangles. However, when each measure space is a -finite measure space, for , then we do have uniqueness. The uniqueness results also gives the following associativity result.    Let , , and be -finite measure spaces. Then      "
 },
 {
-  "id": "real-analysis-7-2-3-3",
+  "id": "real-analysis-6-2-3-3",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-3",
+  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-3",
   "type": "Definition",
   "number": "1.1.1",
   "title": "",
@@ -5259,16 +4890,16 @@ var ptx_lunr_docs = [
 {
   "id": "prop-product-premeas",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#prop-product-premeas",
+  "url": "real-analysis-6-2-3.html#prop-product-premeas",
   "type": "Proposition",
   "number": "1.1.2",
   "title": "",
   "body": "  Let and be measure spaces; let be the measurable rectangles in ; and let be the extended real-valued function on defined by for all and . Then is a semiring, and is a premeasure on .    Recall, from , that the collection of all measurable rectangles in forms a semiring of sets.  Note that , and . To show is a premeasure it remains to show that is finitely additive and countably monotone.  Suppose is a measurable rectangle such that where are disjoint measurable rectangles. For a fixed , we have Note that, if and , then since and are disjoint, and are disjoint. Thus, the collection are a disjoint collection of measurable sets is in , and hence Hence, for any , Now, by the series version of the Monotone Convergence Theorem, , Hence, is countably additive, and therefore finitely additive.  Note that, for measurable rectangles and , if and only if Thus, if , then Thus, is monotonic.  Let be a measurable rectangle and be measurable rectangles, such that Since the measurable rectangles are a semiring, and is finitely additive, we can assume that the sets are disjoint. Thus Hence is countably monotone, and therefore is a premeasure on the measurable rectangles.   "
 },
 {
-  "id": "real-analysis-7-2-3-6",
+  "id": "real-analysis-6-2-3-6",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-6",
+  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-6",
   "type": "Remark",
   "number": "1.1.3",
   "title": "",
@@ -5277,16 +4908,16 @@ var ptx_lunr_docs = [
 {
   "id": "rem-alt-prod-meas",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#rem-alt-prod-meas",
+  "url": "real-analysis-6-2-3.html#rem-alt-prod-meas",
   "type": "Remark",
   "number": "1.1.4",
   "title": "",
   "body": " A word of warning: Some texts define the -algebra that is defined on to be the -algebra generated by the measurable rectangles. Our definition has as a function on the -algebra of -measurable sets. This may be a larger -algebra. gives sufficient conditions for when the -algebra generated by measurable rectangles is smaller than -measurable sets.  We discuss some differences between these different definitions of product measure further in  "
 },
 {
-  "id": "real-analysis-7-2-3-8",
+  "id": "real-analysis-6-2-3-8",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-8",
+  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-8",
   "type": "Definition",
   "number": "1.1.5",
   "title": "",
@@ -5295,25 +4926,25 @@ var ptx_lunr_docs = [
 {
   "id": "lem-prod-meas-as-integral",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral",
+  "url": "real-analysis-6-2-3.html#lem-prod-meas-as-integral",
   "type": "Lemma",
   "number": "1.1.6",
   "title": "",
   "body": "  Let and be measure spaces and let be the collection of all measurable rectangles in . If satisfying , then the -section is -measurable for all , and   "
 },
 {
-  "id": "real-analysis-7-2-3-13",
+  "id": "real-analysis-6-2-3-13",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-13",
+  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-13",
   "type": "Proof",
   "number": "1.1.1",
   "title": "",
   "body": " Take By , is -measurable for all . Alternatively, this can be proved directly by first considering , then , and then .  If for some and , then Thus  Now suppose . Thus, there are measurable rectangles such that . Since is a semiring, we can assume that the sets are disjoint. Then, for each , the -sections are disjoint and . Thus, applying the series version of the Monotone Convergence Theorem (Corollar~\\ref{cor: MCT series}), we have  Now suppose that and . There are sets such that . Since is a semiring, we can assume that the sets are descending. As is defined as the outer measure induced by on , we can further assume that . Thus, by the continuity of measure, For each and , the -section is -measurable. Hence is -measurable. Further, since  for almost all . Hence, for almost all , Thus, by the Lebesgue Dominated Convergence Theorem,  "
 },
 {
-  "id": "real-analysis-7-2-3-14",
+  "id": "real-analysis-6-2-3-14",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#real-analysis-7-2-3-14",
+  "url": "real-analysis-6-2-3.html#real-analysis-6-2-3-14",
   "type": "Remark",
   "number": "1.1.7",
   "title": "",
@@ -5322,7 +4953,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-prod-meas-as-integral-0",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral-0",
+  "url": "real-analysis-6-2-3.html#lem-prod-meas-as-integral-0",
   "type": "Lemma",
   "number": "1.1.8",
   "title": "",
@@ -5331,7 +4962,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-prod-meas-as-integral-general",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#lem-prod-meas-as-integral-general",
+  "url": "real-analysis-6-2-3.html#lem-prod-meas-as-integral-general",
   "type": "Lemma",
   "number": "1.1.9",
   "title": "",
@@ -5340,7 +4971,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-fubini",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#thm-fubini",
+  "url": "real-analysis-6-2-3.html#thm-fubini",
   "type": "Theorem",
   "number": "1.1.10",
   "title": "Fubini’s Theorem.",
@@ -5349,7 +4980,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-fubini",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#rem-fubini",
+  "url": "real-analysis-6-2-3.html#rem-fubini",
   "type": "Remark",
   "number": "1.1.11",
   "title": "",
@@ -5358,7 +4989,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-tonelli",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#thm-tonelli",
+  "url": "real-analysis-6-2-3.html#thm-tonelli",
   "type": "Theorem",
   "number": "1.1.12",
   "title": "Tonelli’s Theorem.",
@@ -5367,7 +4998,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-fubini-tonelli",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#thm-fubini-tonelli",
+  "url": "real-analysis-6-2-3.html#thm-fubini-tonelli",
   "type": "Theorem",
   "number": "1.1.13",
   "title": "The Fubini-Tonelli Theorem.",
@@ -5376,7 +5007,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-alt-prod-meas-2",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#rem-alt-prod-meas-2",
+  "url": "real-analysis-6-2-3.html#rem-alt-prod-meas-2",
   "type": "Remark",
   "number": "1.1.14",
   "title": "",
@@ -5385,7 +5016,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-n-dim-prod-measure",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#prop-n-dim-prod-measure",
+  "url": "real-analysis-6-2-3.html#prop-n-dim-prod-measure",
   "type": "Proposition",
   "number": "1.1.15",
   "title": "",
@@ -5394,7 +5025,7 @@ var ptx_lunr_docs = [
 {
   "id": "prop-n-dim-prod-measure-associative",
   "level": "2",
-  "url": "real-analysis-7-2-3.html#prop-n-dim-prod-measure-associative",
+  "url": "real-analysis-6-2-3.html#prop-n-dim-prod-measure-associative",
   "type": "Proposition",
   "number": "1.1.16",
   "title": "",
@@ -5500,9 +5131,9 @@ var ptx_lunr_docs = [
   "body": "  Let . The following are equivalent.  is Lebesgue measurable;  for every there exists an open set containing such that ;  there is a -set contraing such that ;  for every there exists a closed set contained in such that ;  there is an -set contained in such that .     "
 },
 {
-  "id": "real-analysis-7-2-5",
+  "id": "real-analysis-6-2-5",
   "level": "1",
-  "url": "real-analysis-7-2-5.html",
+  "url": "real-analysis-6-2-5.html",
   "type": "Section",
   "number": "1.3",
   "title": "Change of variables",
@@ -5511,7 +5142,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-linear-cont",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#lem-linear-cont",
+  "url": "real-analysis-6-2-5.html#lem-linear-cont",
   "type": "Lemma",
   "number": "1.3.1",
   "title": "",
@@ -5520,7 +5151,7 @@ var ptx_lunr_docs = [
 {
   "id": "rem-operator-norm-matrix",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#rem-operator-norm-matrix",
+  "url": "real-analysis-6-2-5.html#rem-operator-norm-matrix",
   "type": "Remark",
   "number": "1.3.2",
   "title": "",
@@ -5529,7 +5160,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-meas-of-interval",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#lem-meas-of-interval",
+  "url": "real-analysis-6-2-5.html#lem-meas-of-interval",
   "type": "Lemma",
   "number": "1.3.3",
   "title": "",
@@ -5538,7 +5169,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-lin-meas",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#lem-lin-meas",
+  "url": "real-analysis-6-2-5.html#lem-lin-meas",
   "type": "Lemma",
   "number": "1.3.4",
   "title": "",
@@ -5547,16 +5178,16 @@ var ptx_lunr_docs = [
 {
   "id": "prop-comp-meas-linear",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#prop-comp-meas-linear",
+  "url": "real-analysis-6-2-5.html#prop-comp-meas-linear",
   "type": "Proposition",
   "number": "1.3.5",
   "title": "",
   "body": " Let be an invertible linear map and let be a Lebesgue measurable function on , then is Lebesgue measurable.  "
 },
 {
-  "id": "real-analysis-7-2-5-10",
+  "id": "real-analysis-6-2-5-10",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#real-analysis-7-2-5-10",
+  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-10",
   "type": "Proof",
   "number": "1.3.1",
   "title": "",
@@ -5565,7 +5196,7 @@ var ptx_lunr_docs = [
 {
   "id": "thm-change-of-variables",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#thm-change-of-variables",
+  "url": "real-analysis-6-2-5.html#thm-change-of-variables",
   "type": "Theorem",
   "number": "1.3.6",
   "title": "",
@@ -5574,7 +5205,7 @@ var ptx_lunr_docs = [
 {
   "id": "lem-change-of-variables-n-1",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#lem-change-of-variables-n-1",
+  "url": "real-analysis-6-2-5.html#lem-change-of-variables-n-1",
   "type": "Lemma",
   "number": "1.3.7",
   "title": "",
@@ -5583,16 +5214,16 @@ var ptx_lunr_docs = [
 {
   "id": "lem-change-of-variables-n-2",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#lem-change-of-variables-n-2",
+  "url": "real-analysis-6-2-5.html#lem-change-of-variables-n-2",
   "type": "Lemma",
   "number": "1.3.8",
   "title": "",
   "body": "  Let be a Lebesgue integrable function. Let be non-zero. Define functions on by Then and are integrable, and and     Note that and are measurable by . We will prove the result for . We will assume that is non-negative. Then general case follows from writing as the difference of its positive and negative parts. The proofs for and are similar, with an application of in the case of . Note that, if is Lebesgue integrable and then By Tonelli's theorem , we have that    "
 },
 {
-  "id": "real-analysis-7-2-5-17",
+  "id": "real-analysis-6-2-5-17",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#real-analysis-7-2-5-17",
+  "url": "real-analysis-6-2-5.html#real-analysis-6-2-5-17",
   "type": "Proof",
   "number": "1.3.2",
   "title": "Proof of Theorem 1.3.6.",
@@ -5601,16 +5232,16 @@ var ptx_lunr_docs = [
 {
   "id": "cor-change-of-variables",
   "level": "2",
-  "url": "real-analysis-7-2-5.html#cor-change-of-variables",
+  "url": "real-analysis-6-2-5.html#cor-change-of-variables",
   "type": "Corollary",
   "number": "1.3.9",
   "title": "",
   "body": "  Let be an invertible linear map and let be a Lebesgue measurable set with . Then,     Let . Note that Thus, by , and so    "
 },
 {
-  "id": "real-analysis-7-2-6",
+  "id": "real-analysis-6-2-6",
   "level": "1",
-  "url": "real-analysis-7-2-6.html",
+  "url": "real-analysis-6-2-6.html",
   "type": "Exercises",
   "number": "1.4",
   "title": "Exercises",
@@ -5619,7 +5250,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-sigma-finite-product",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-sigma-finite-product",
+  "url": "real-analysis-6-2-6.html#exer-sigma-finite-product",
   "type": "Exercise",
   "number": "1.4.1",
   "title": "",
@@ -5628,7 +5259,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-prod-meas-not-unique",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-prod-meas-not-unique",
+  "url": "real-analysis-6-2-6.html#exer-prod-meas-not-unique",
   "type": "Exercise",
   "number": "1.4.2",
   "title": "",
@@ -5637,7 +5268,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-product-measurable-sets",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-product-measurable-sets",
+  "url": "real-analysis-6-2-6.html#exer-product-measurable-sets",
   "type": "Exercise",
   "number": "1.4.3",
   "title": "",
@@ -5646,7 +5277,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-meas-rect-sigma-alg",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-meas-rect-sigma-alg",
+  "url": "real-analysis-6-2-6.html#exer-meas-rect-sigma-alg",
   "type": "Exercise",
   "number": "1.4.4",
   "title": "",
@@ -5655,7 +5286,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-failure-of-fubini",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-failure-of-fubini",
+  "url": "real-analysis-6-2-6.html#exer-failure-of-fubini",
   "type": "Exercise",
   "number": "1.4.5",
   "title": "",
@@ -5664,7 +5295,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-measurable-rectangles-2",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-measurable-rectangles-2",
+  "url": "real-analysis-6-2-6.html#exer-measurable-rectangles-2",
   "type": "Exercise",
   "number": "1.4.6",
   "title": "",
@@ -5673,7 +5304,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-n-dim-prod-measure",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-n-dim-prod-measure",
+  "url": "real-analysis-6-2-6.html#exer-n-dim-prod-measure",
   "type": "Exercise",
   "number": "1.4.7",
   "title": "",
@@ -5682,7 +5313,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-triangle",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-triangle",
+  "url": "real-analysis-6-2-6.html#exer-triangle",
   "type": "Exercise",
   "number": "1.4.8",
   "title": "",
@@ -5691,7 +5322,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-operator-norm-matrix",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-operator-norm-matrix",
+  "url": "real-analysis-6-2-6.html#exer-operator-norm-matrix",
   "type": "Exercise",
   "number": "1.4.9",
   "title": "",
@@ -5700,7 +5331,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-equiv-matrix-norms",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-equiv-matrix-norms",
+  "url": "real-analysis-6-2-6.html#exer-equiv-matrix-norms",
   "type": "Exercise",
   "number": "1.4.10",
   "title": "",
@@ -5709,7 +5340,7 @@ var ptx_lunr_docs = [
 {
   "id": "exer-borel-in-Rn",
   "level": "2",
-  "url": "real-analysis-7-2-6.html#exer-borel-in-Rn",
+  "url": "real-analysis-6-2-6.html#exer-borel-in-Rn",
   "type": "Exercise",
   "number": "1.4.11",
   "title": "",
@@ -6055,7 +5686,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Hausdorff measures",
-  "body": " Hausdorff measures  For most of what we have done so far, we have worked with a measurable space, and finite number of measures on the space. That finite measure has usually been one, but occasionally we have looked at two or three measures simultaneously. Things will be different in this chapter. We will define a family of measures on a fixed . Give a bounded , we are not so much interested in for fixed ; we are interested in finding which satisfies We will not, usually, be interested in the exact value of .  For a set , we define the diameter of to be  diameter For and , define a map on the subsets of with by Let be the outer measure induced by this map. Thus, for , Note that if and , then . This increases as decreases. Define, for all      For each , is an outer measure on .    Fix Clearly , so we only need to show that is countably monotone. Take and sets such that Then, since is an outer measure for each , where the penultimate equality (the interchanging of the sum and the limit) comes from the Monotone Convergence Theorem . Thus is countably monotone, and therefore is an outer measure on .      For the outer measure on subsets of is called the Hausdorff outer measure of dimension on . Hausdorff measure Hausdorff outer measure     We now have a family of outer measures on . By restricting to the -measurable sets, we have a family of measures on . It is not clear if these measures act on the same -algebra of measurable sets. That is, if , it is not clear that the -measurable sets coincide with the -measurable sets. However, we will see that Borel sets in are -measurable for all . Thus, the measures define a family of measures, called the Hausdorff measures of dimension , on the -algebra of Borel sets in . Hausdorff measure     Let and fix . If then     Take with Let be a countable collection of subsets of with such that Assume that for all (we can remove any with empty intersection with and not increase the estimate of that the define). Note, since if then ; and if then . Thus, the collection splits into two disjoint collections and with Hence Taking the infimum over all such families , gives Since is an outer measure, it follows that This equation holds for all thus, taking the limit as , we get       Let be a Hausdorff outer measure on for some , and let be a Borel set. Then is measurable with respect to .    It suffices to show the closed sets are measurable, since the Borel sets are generated as a -algebra by the closed sets of . Further, since any closed set in is a countable union of closed sets, it suffices to prove the result for closed bounded sets. Let be a closed bounded set. We will show that is measurable with respect to the outer measure .  Let be a set . Note that, if then, since is closed, . For each positive integer let By , since , Thus, for all . The result will be proved once we show that This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets are measurable with respect to . . For each , let Note, if and then and so Thus, when , and . Hence, by , for all  Thus the series and are both convergent. Take and choose so that As, for each  it follows that if , then Hence, , and so by  Hence is -measurable, completing the proof.     For each , we have shown that defines a measure on the Borel sets of . This does not mean that is a Borel measure. Recall, that a measure on Borel sets is a Borel measurse if for all compact sets . We will see that for a compact set it is possible to have  Some authors do not have the finite on compact sets stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.    As stated earlier, we are not (usually) interested in a single one of the measures . For a fixed  we are interested in for which is and for which is . The next proposition sheds significant light on these problems.    Let be a Borel set.  If and , then .  If and , then       Suppose and . Take and . Now choose sets with for each such that and We have now that Since , it follows that   The second statement is the contrapositive of the first, and thus the result is proved.    Fix . From , we see that there is a such for , and for This is illustrated in . Thus the following definition is well defined.    Graph of against .      Let be a Borel set. If satisfies we say that has Hausdorff dimension . We write this as Hausdorff dimension      "
+  "body": " Hausdorff measures  For most of what we have done so far, we have worked with a measurable space, and finite number of measures on the space. That finite measure has usually been one, but occasionally we have looked at two or three measures simultaneously. Things will be different in this chapter. We will define a family of measures on a fixed . Give a bounded , we are not so much interested in for fixed ; we are interested in finding which satisfies We will not, usually, be interested in the exact value of .  For a set , we define the diameter of to be  diameter For and , define a map on the subsets of with by Let be the outer measure induced by this map. Thus, for , Note that if and , then . This increases as decreases. Define, for all      For each , is an outer measure on .    Fix Clearly , so we only need to show that is countably monotone. Take and sets such that Then, since is an outer measure for each , where the penultimate equality (the interchanging of the sum and the limit) comes from the Monotone Convergence Theorem . Thus is countably monotone, and therefore is an outer measure on .      For the outer measure on subsets of is called the Hausdorff outer measure of dimension on . Hausdorff measure Hausdorff outer measure     We now have a family of outer measures on . By restricting to the -measurable sets, we have a family of measures on . It is not clear if these measures act on the same -algebra of measurable sets. That is, if , it is not clear that the -measurable sets coincide with the -measurable sets. However, we will see that Borel sets in are -measurable for all . Thus, the measures define a family of measures, called the Hausdorff measures of dimension , on the -algebra of Borel sets in . Hausdorff measure     Let and fix . If then     Take with Let be a countable collection of subsets of with such that Assume that for all (we can remove any with empty intersection with and not increase the estimate of that the define). Note, since if then ; and if then . Thus, the collection splits into two disjoint collections and with Hence Taking the infimum over all such families , gives Since is an outer measure, it follows that This equation holds for all thus, taking the limit as , we get       Let be a Hausdorff outer measure on for some , and let be a Borel set. Then is measurable with respect to .    It suffices to show the closed sets are measurable, since the Borel sets are generated as a -algebra by the closed sets of . Further, since any closed set in is a countable union of closed sets, it suffices to prove the result for closed bounded sets. Let be a closed bounded set. We will show that is measurable with respect to the outer measure .  Let be a set . Note that, if then, since is closed, . For each positive integer let By , since , Thus, for all . The result will be proved once we show that This looks a lot like continuity of measure. But we cannot apply continuity of measure here. There is no reason to believe that sets are measurable with respect to . . For each , let Note, if and then and so Thus, when , and . Hence, by , for all  Thus the series and are both convergent. Take and choose so that As, for each  it follows that if , then Hence, , and so by  Hence is -measurable, completing the proof.     For each , we have shown that defines a measure on the Borel sets of . This does not mean that is a Borel measure. Recall, that a measure on Borel sets is a Borel measurse if for all compact sets . We will see that for a compact set it is possible to have  Some authors do not have the finite on compact sets stipulation as part of the definition of a Borel measure, so you may see the Hausdorff measures being referred to as Borel measures in other texts.    As stated earlier, we are not (usually) interested in a single one of the measures . For a fixed  we are interested in for which is and for which is . The next proposition sheds significant light on these problems.    Let be a Borel set.  If and , then .  If and , then       Suppose and . Take and . Now choose sets with for each such that and We have now that Since , it follows that   The second statement is the contrapositive of the first, and thus the result is proved.    Fix . From , we see that there is a such for , and for This is illustrated in . Thus the following definition is well defined.   Graph of against .    A graph of H_q(E) against q.   A graph of against . The picture shows a horizontal line above the - axis marked between and a point ; after the graph is the line         Let be a Borel set. If satisfies we say that has Hausdorff dimension . We write this as Hausdorff dimension      "
 },
 {
   "id": "sec-haus-meas-3",
@@ -6136,7 +5767,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "3.1.7",
   "title": "",
-  "body": "  Graph of against .   "
+  "body": " Graph of against .    A graph of H_q(E) against q.   A graph of against . The picture shows a horizontal line above the - axis marked between and a point ; after the graph is the line      "
 },
 {
   "id": "sec-haus-meas-14",
@@ -6154,7 +5785,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Calculating Hausdorff Dimension",
-  "body": " Calculating Hausdorff Dimension  In this section we will give some examples of calculating the Hausdorff dimension. We begin with a simple, but important example: a unit interval in    Let be a unit interval in . That is, let For , subdivide each interval in into equal length pieces, so that is divided into smaller intervals. That is, Each of these subintervals has diameter . Take and choose such that when . If , then Hence Thus, by ,   Let be the volume of the unit ball in . That is, if  where is the Lebesgue measure on Now, if is a ball anywhere in with diameter , then by and . Thus, if is bounded, there is a ball with with   Let and let be sets with and By the above argument, there are balls , with and for each Thus, As this holds for any such choice of cover of , it follows that Thus, by , . It follows that     has wider reaching consequences than just the interval .    There is a constant , such that the Hausdorff measure on satisfies,     The Hausdorff measure on is a non-zero Borel measure by . Each Hausdorff measure is clearly invariant under addition, i.e. for all and Thus, is a Haar measure on . By , there is a non-zero scalar such that       If is a Borel set and , then . In particular, if , then .    In the next example we give the Hausdorff measure of a curve in defined by a continuously differentiable function. Such a curve will have Lebesgue measure .   Let be a continuous, non-constant function with defined and bounded on by Let . We want to calculate the Huasdorff dimension of the curve . Since , shows that is an upper bound for   Note that is absolutely continuous, and hence of bounded variation, by . Take and let be a partition of Then, where the first inequality follow from the Mean Value Theorem. Thus, if , then where is the total variation of restricted to . Let be the Borel measure on induced by . That is, if is the Borel signed-measure induced by , then is the measure of total variation of . Define a Borel measure on by . Extend to a Borel measure on by setting for Borel sets It follows from the above inequality that for Borel sets , Let be a cover of where each for some . We can take the closure of each without changing the diameter of . Thus, we can assume each is a Borel set. Hence Hence for each . Therefore   Let be the arc length of . Since is of bounded variation, is finite by . For each , we can choose such that the arc length of over is Let for Then It follows that , and hence Therefore     justifies, somewhat, the use of the word dimension in Hausdorff dimension. Lebesgue measure on generalizes length; Lebesgue measure on generalizes area; Lebesgue measure on generalizes volume; et cetera. Thus, if a set can be said to have length\/area\/volume in , then has (Hausdorff) dimension . Further evidence that Hausdorff dimension is consistent with intuition on what dimension should mean is given in , , and . If these were the only application of Hausdorff measure, then Hausdorff measure would not be of much interest. The interesting examples are when a set has Lebesgue measure , and for any proper subspace , but is still sufficiently complex to have non-zero Hausdorff dimension. The first example of a complicated, Lebesgue measure set we saw was the Cantor set, .   Let be the Cantor set, and let be the closed sets used to construct the Cantor set, as described in . That is, . , and so on (see ), and For each , and is a disjoint union of intervals of diameter . Take , and such that for all . For , we thus have, for all . Let . Then, for all , Hence, if , and therefore Hence,   Let be the Cantor-Lebesgue function on , as described in . Extend to all of by setting if , and if . Let be the Borel measure on induced by . That is, is the Borel measure induced by the premeasure By , is singular with respect to Lebesgue measure , and Take . If and , then there is an such that Since , intersects at most interval in . Thus, Hence, with , Now, suppose where each and . Then, by the above calculation, Taking an infimum over all such families and taking the limit as , we see that and so We have thus shown that    It should be noted that the line of argument used in , , and is the same: we get an upper bound for by finding suitable covers of , and we get a lower bound for by comparing to a measure on . In we used the Lebesgue measure ; in we used the measure induced by the function of total variation; in we used the Borel measure induced by the Cantor-Lebesgue function. If we want to apply this method to calculate the Hausdorff dimension of other sets, we will need to find a suitable measure for each set. If and how we can do this is not at all clear. However, we will see in , that if a set is suitably symmetric we can always find a suitable measure.    A map is a similitude with scaling factor if there is a orthogonal map on , a vector , and a scalar such that for all . similitude  similitude scaling factor   Let be a -tuple of similitudes on . For , let We say that is invariant under the similtudes if similitude invariant set       Let be a family of similitudes on . A non-empty open set is a separating set for if  separating set     When is a tuple of similitudes and we define for by    Define similitudes and on (both with scaling factor ) by Let be the Cantor set, as in . Then and Thus, is invariant under Further, if is the open inverval , then is a separating set for .  Note that we can construct using and . Indeed, if is the closure on (i.e. ) then where are defined as in . Thus,          "
+  "body": " Calculating Hausdorff Dimension  In this section we will give some examples of calculating the Hausdorff dimension. We begin with a simple, but important example: a unit interval in    Let be a unit interval in . That is, let For , subdivide each interval in into equal length pieces, so that is divided into smaller intervals. That is, Each of these subintervals has diameter . Take and choose such that when . If , then Hence Thus, by ,   Let be the volume of the unit ball in . That is, if  where is the Lebesgue measure on Now, if is a ball anywhere in with diameter , then by and . Thus, if is bounded, there is a ball with with   Let and let be sets with and By the above argument, there are balls , with and for each Thus, As this holds for any such choice of cover of , it follows that Thus, by , . It follows that     has wider reaching consequences than just the interval .    There is a constant , such that the Hausdorff measure on satisfies,     The Hausdorff measure on is a non-zero Borel measure by . Each Hausdorff measure is clearly invariant under addition, i.e. for all and Thus, is a Haar measure on . By , there is a non-zero scalar such that       If is a Borel set and , then . In particular, if , then .    In the next example we give the Hausdorff measure of a curve in defined by a continuously differentiable function. Such a curve will have Lebesgue measure .   Let be a continuous, non-constant function with defined and bounded on by Let . We want to calculate the Huasdorff dimension of the curve . Since , shows that is an upper bound for   Note that is absolutely continuous, and hence of bounded variation, by . Take and let be a partition of Then, where the first inequality follow from the Mean Value Theorem. Thus, if , then where is the total variation of restricted to . Let be the Borel measure on induced by . That is, if is the Borel signed-measure induced by , then is the measure of total variation of . Define a Borel measure on by . Extend to a Borel measure on by setting for Borel sets It follows from the above inequality that for Borel sets , Let be a cover of where each for some . We can take the closure of each without changing the diameter of . Thus, we can assume each is a Borel set. Hence Hence for each . Therefore   Let be the arc length of . Since is of bounded variation, is finite by . For each , we can choose such that the arc length of over is Let for Then It follows that , and hence Therefore     justifies, somewhat, the use of the word dimension in Hausdorff dimension. Lebesgue measure on generalizes length; Lebesgue measure on generalizes area; Lebesgue measure on generalizes volume; et cetera. Thus, if a set can be said to have length\/area\/volume in , then has (Hausdorff) dimension . Further evidence that Hausdorff dimension is consistent with intuition on what dimension should mean is given in , , and . If these were the only application of Hausdorff measure, then Hausdorff measure would not be of much interest. The interesting examples are when a set has Lebesgue measure , and for any proper subspace , but is still sufficiently complex to have non-zero Hausdorff dimension. The first example of a complicated, Lebesgue measure set we saw was the Cantor set, .   Let be the Cantor set, and let be the closed sets used to construct the Cantor set, as described in . That is, . , and so on (see ), and For each , and is a disjoint union of intervals of diameter . Take , and such that for all . For , we thus have, for all . Let . Then, for all , Hence, if , and therefore Hence,   Let be the Cantor-Lebesgue function on , as described in . Extend to all of by setting if , and if . Let be the Borel measure on induced by . That is, is the Borel measure induced by the premeasure By , is singular with respect to Lebesgue measure , and Take . If and , then there is an such that Since , intersects at most interval in . Thus, Hence, with , Now, suppose where each and . Then, by the above calculation, Taking an infimum over all such families and taking the limit as , we see that and so We have thus shown that    It should be noted that the line of argument used in , , and is the same: we get an upper bound for by finding suitable covers of , and we get a lower bound for by comparing to a measure on . In we used the Lebesgue measure ; in we used the measure induced by the function of total variation; in we used the Borel measure induced by the Cantor-Lebesgue function. If we want to apply this method to calculate the Hausdorff dimension of other sets, we will need to find a suitable measure for each set. If and how we can do this is not at all clear. However, we will see in , that if a set is suitably symmetric we can always find a suitable measure.    A map is a similitude with scaling factor if there is a orthogonal map on , a vector , and a scalar such that for all . similitude  similitude scaling factor   Let be a -tuple of similitudes on . For , let We say that is invariant under the similtudes if similitude invariant set       Let be a family of similitudes on . A non-empty open set is a separating set for if  separating set     When is a tuple of similitudes and we define for by    Define similitudes and on (both with scaling factor ) by Let be the Cantor set, as in . Then and Thus, is invariant under Further, if is the open inverval , then is a separating set for .  Note that we can construct using and . Indeed, if is the closure on (i.e. ) then where are defined as in . Thus,           "
 },
 {
   "id": "ex-square-Hausdorff-dim",
@@ -6274,108 +5905,738 @@ var ptx_lunr_docs = [
   "body": " Probability Theory  "
 },
 {
+  "id": "appendix-prereqs-3",
+  "level": "1",
+  "url": "appendix-prereqs-3.html",
+  "type": "Section",
+  "number": "A.1",
+  "title": "Set theory notation",
+  "body": " Set theory notation  The empty-set is denoted by . Let be any set, and let . The union of and is given by Their intersection is We will usually call a set whose elements are sets a collection . Let be a collection of subsets of . The union and intersection of all sets in are written respectively. A collection of sets is disjoint , or pairwise disjoint , if for all .  The complement of in is given by When it is clear what ambient set we are working in we will often refer to as simply the complement of . We will also write as . For example, we will often be implicitly be working with subsets of . Thus, by the complement of we will mean  complement      the power set of a set  The collection of all subsets of a set is called the the power set of power set and is denoted by . The notation is also sometimes used for the power-set of . Note that if has elements, then has elements.  Let be a collection of subsets of . The following two identities are called De Morgan's Identities . De Morgan's Identities    Let be any set. Suppose for each there is a set . Let . We will write the collection by and call an index set for the collection .     inverse image of under  For a function\/mapping we let We call the inverse image of under . Note that the inverse image of a set is defined whether or not the mapping is invertible. inverse image  For subsets we have the following identities:   A relation on is an equivalence relation equivalence relation if it satisfies the following conditions:  for all ( is reflexive );  if and only if ( is symmetric );  if an then ( is transitive ).  Let be an equivalence relation on . For , the equivalence class of is   Note that for all . Also if , then . Further if and only if . That is, each element is in one, and only one, equivalence class. Hence the collection is a disjoint collection of subsets of such that We call such a collection a partition of .  "
+},
+{
+  "id": "appendix-prereqs-3-2",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "union intersection collection disjoint pairwise disjoint "
+},
+{
+  "id": "appendix-prereqs-3-3",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "complement of in "
+},
+{
+  "id": "appendix-prereqs-3-4",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "the power set of "
+},
+{
+  "id": "appendix-prereqs-3-5",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "De Morgan's Identities "
+},
+{
+  "id": "appendix-prereqs-3-6",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "index set "
+},
+{
+  "id": "appendix-prereqs-3-7",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "inverse image of under "
+},
+{
+  "id": "appendix-prereqs-3-9",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "equivalence relation reflexive symmetric transitive equivalence class "
+},
+{
+  "id": "appendix-prereqs-3-10",
+  "level": "2",
+  "url": "appendix-prereqs-3.html#appendix-prereqs-3-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "partition of "
+},
+{
+  "id": "appendix-prereqs-4",
+  "level": "1",
+  "url": "appendix-prereqs-4.html",
+  "type": "Section",
+  "number": "A.2",
+  "title": "Cardinality and choice",
+  "body": " Cardinality and choice  Cardinality allows us to compare the size of sets. There is a lot one can say about cardinality, but for our purposes in these notes we only need some basic facts. We review these here.    Two sets, and have the same cardinality if there is a bijective map A set is called countable if has finitely many elements, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite . In the former, we say has cardinality , where is the number of elements in . If a set is not countable, we say it is uncountable . cardinality countable countable countably infinite uncountable      Note that cardinality forms an equivalence relation on sets.     Let and be two sets. We say that has cardinality less than or equal to  if there is an injective map from to . cardinality less than or equal to     It is not immediately obvious that less than or equal to for cardinalities behaves as one would expect. That is, if has cardinality less than or equal to and has cardinality less than or equal to , do and have the same cardinality? The answer is, of course, yes. We state this result below, without proof. There are many proofs and they are easily found. The wikipedia page for the result is as good as any .    Schröder–Bernstein theorem   Let and be sets. If there is an injective map from to and an injective map from to , then and have the same cardinality.     There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . In these notes we are primarily concerned with whether a set is countable or not.       If is a countable set, and then is countable.  If is a countable collection of countable sets, then is countable.  If is a finite collection of countable sets, then the cartesian product is countable.      If and is finite, then is finite and hence countable. If is countably infinite, then there is a bijection . Using , we can identify with , and hence identify with a subset of . If is finite, then is countable. Otherwise, is an inifinite subset of . Let be the smallest element of , let be the smallest element of , and so on. The map defined by is a bijection from to .  Let be a countable collection of finite sets. We will further assume that the sets are disjoint. The general case can be handled by replacing each with . Without loss of generality, we can assume that . Let . Let be the number of elements in for each We can define a bijection from to by sending the elements of to the first natural numbers, the elements of to the next natural numbers, and so on. Hence is countable.  We will now show that is countable. For each let Then is a countable union of finite sets. Thus, by the above argument, is countable.   Now, let be a countable collection of countably infinite sets. Let . We will show that is countable. We will again assume that the sets are disjoint and that . Let be a bijection for each . Then the map for is a bijection from to . Thus is countable.  Finally, since is countable, we can show by induction that is countable for any finite collection of countable sets .     The natural numbers , the integers , and the rational numbers are all countable. Further, cartesian products , , and are countable for all .  The natural numbers are countable by definition. To see that is countable, note that the map is a bijection from to .  We will now show that is countable. Define a map by f(0) = 0, and when and and are coprime with The set is countable by , since is countable. The map is injective, and thus has the same cardinality as a subset of . Thus, by again, is countable.  That , , and are countable follows from .   Not all sets are countable. We will show now that the interval is uncountable. The argument in this proof (and any argument of a similar flavor) is commonly called Cantor's diagoanlization argument , named after George Cantor (1845 - 1918). Cantor's diagonalization argument     The interval is uncountable.    Every number in can be written as a decimal expansion. If we agree to not write non-zero numbers with a tail of inifinitely many zeros (and instead write as a tail of infinitely many nines), then each number has a unique decimal expansion of the form where for each Assume that is countable. Let be a bijection. Write the decimal expansion of the elements of as Now define a number with decimal expansion where Then, by construction, is not in the image of , contradicting the assumption that is a bijection. Thus is not countable.     An argument similar to that of can be used to show that each of , and are uncountable. It follows that any non-empty, non-singleton interval in is uncountable. For example, if then is a bijection from to , and hence and have the same cardinality.    Since is uncountable, and , it follows that is uncountable.  Recall that the arctangent function is a bijection from to . Thus, and have the same cardinality. Hence, by the argument in , has the same cardinality as . Now, since it follows from the Schröder–Bernstein theorem that , and all have the same cardinality. Hence, all non-empty, non-singleton intervals in have the same cardinality as .    The cartesian product is also uncountable, since and is uncountable. Note that, the complex numbers can be identified with , and so is uncountable.  In fact, , , and all have the same cardinality.   "
+},
+{
+  "id": "appendix-prereqs-4-3",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-3",
+  "type": "Definition",
+  "number": "A.2.1",
+  "title": "",
+  "body": "  Two sets, and have the same cardinality if there is a bijective map A set is called countable if has finitely many elements, or if has the same cardinality as the natural numbers . In the latter case we call  countably infinite . In the former, we say has cardinality , where is the number of elements in . If a set is not countable, we say it is uncountable . cardinality countable countable countably infinite uncountable    "
+},
+{
+  "id": "appendix-prereqs-4-4",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-4",
+  "type": "Remark",
+  "number": "A.2.2",
+  "title": "",
+  "body": " Note that cardinality forms an equivalence relation on sets.  "
+},
+{
+  "id": "appendix-prereqs-4-5",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-5",
+  "type": "Definition",
+  "number": "A.2.3",
+  "title": "",
+  "body": "  Let and be two sets. We say that has cardinality less than or equal to  if there is an injective map from to . cardinality less than or equal to    "
+},
+{
+  "id": "thm-schroder-bernstein",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#thm-schroder-bernstein",
+  "type": "Theorem",
+  "number": "A.2.4",
+  "title": "Schröder–Bernstein theorem.",
+  "body": " Schröder–Bernstein theorem   Let and be sets. If there is an injective map from to and an injective map from to , then and have the same cardinality.   "
+},
+{
+  "id": "appendix-prereqs-4-8",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-8",
+  "type": "Remark",
+  "number": "A.2.5",
+  "title": "",
+  "body": " There are many uncountable cardinalities. In fact, there are infinitely many uncountable cardinalities. This can be observed by showing that has a larger cardinality than , for any set . In these notes we are primarily concerned with whether a set is countable or not.  "
+},
+{
+  "id": "prop-countable",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#prop-countable",
+  "type": "Proposition",
+  "number": "A.2.6",
+  "title": "",
+  "body": "    If is a countable set, and then is countable.  If is a countable collection of countable sets, then is countable.  If is a finite collection of countable sets, then the cartesian product is countable.      If and is finite, then is finite and hence countable. If is countably infinite, then there is a bijection . Using , we can identify with , and hence identify with a subset of . If is finite, then is countable. Otherwise, is an inifinite subset of . Let be the smallest element of , let be the smallest element of , and so on. The map defined by is a bijection from to .  Let be a countable collection of finite sets. We will further assume that the sets are disjoint. The general case can be handled by replacing each with . Without loss of generality, we can assume that . Let . Let be the number of elements in for each We can define a bijection from to by sending the elements of to the first natural numbers, the elements of to the next natural numbers, and so on. Hence is countable.  We will now show that is countable. For each let Then is a countable union of finite sets. Thus, by the above argument, is countable.   Now, let be a countable collection of countably infinite sets. Let . We will show that is countable. We will again assume that the sets are disjoint and that . Let be a bijection for each . Then the map for is a bijection from to . Thus is countable.  Finally, since is countable, we can show by induction that is countable for any finite collection of countable sets .   "
+},
+{
+  "id": "appendix-prereqs-4-10",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-10",
+  "type": "Example",
+  "number": "A.2.7",
+  "title": "",
+  "body": " The natural numbers , the integers , and the rational numbers are all countable. Further, cartesian products , , and are countable for all .  The natural numbers are countable by definition. To see that is countable, note that the map is a bijection from to .  We will now show that is countable. Define a map by f(0) = 0, and when and and are coprime with The set is countable by , since is countable. The map is injective, and thus has the same cardinality as a subset of . Thus, by again, is countable.  That , , and are countable follows from .  "
+},
+{
+  "id": "appendix-prereqs-4-11",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Cantor's diagoanlization argument "
+},
+{
+  "id": "prop-diagonal-argument",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#prop-diagonal-argument",
+  "type": "Proposition",
+  "number": "A.2.8",
+  "title": "",
+  "body": "  The interval is uncountable.    Every number in can be written as a decimal expansion. If we agree to not write non-zero numbers with a tail of inifinitely many zeros (and instead write as a tail of infinitely many nines), then each number has a unique decimal expansion of the form where for each Assume that is countable. Let be a bijection. Write the decimal expansion of the elements of as Now define a number with decimal expansion where Then, by construction, is not in the image of , contradicting the assumption that is a bijection. Thus is not countable.   "
+},
+{
+  "id": "ex-uncountable-intervals",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#ex-uncountable-intervals",
+  "type": "Example",
+  "number": "A.2.9",
+  "title": "",
+  "body": " An argument similar to that of can be used to show that each of , and are uncountable. It follows that any non-empty, non-singleton interval in is uncountable. For example, if then is a bijection from to , and hence and have the same cardinality.  "
+},
+{
+  "id": "appendix-prereqs-4-14",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-14",
+  "type": "Example",
+  "number": "A.2.10",
+  "title": "",
+  "body": " Since is uncountable, and , it follows that is uncountable.  Recall that the arctangent function is a bijection from to . Thus, and have the same cardinality. Hence, by the argument in , has the same cardinality as . Now, since it follows from the Schröder–Bernstein theorem that , and all have the same cardinality. Hence, all non-empty, non-singleton intervals in have the same cardinality as .  "
+},
+{
+  "id": "appendix-prereqs-4-15",
+  "level": "2",
+  "url": "appendix-prereqs-4.html#appendix-prereqs-4-15",
+  "type": "Example",
+  "number": "A.2.11",
+  "title": "",
+  "body": " The cartesian product is also uncountable, since and is uncountable. Note that, the complex numbers can be identified with , and so is uncountable.  In fact, , , and all have the same cardinality.  "
+},
+{
+  "id": "appendix-prereqs-5",
+  "level": "1",
+  "url": "appendix-prereqs-5.html",
+  "type": "Section",
+  "number": "A.3",
+  "title": "Axiom of Choice",
+  "body": " Axiom of Choice  A choice function choice function  on is a mapping such that for all . That is,  chooses an element from each set . The axiom of choice axiom of choice states that given any collection of non-empty sets a choice function always exists.  Note that the axiom of choice is an axiom. It does not follow from the standard set theory axioms (the Zermelo-Fraenkel axioms). While the axiom of choice seems very natural, it does lead to some interesting, counter-intuitive results, e.g. the Banach-Tarski paradox and the well-ordering principal.  The axiom of choice is generally assumed by working mathematicians, especially in analysis. We take is an axiom in these notes.   The axiom of countable choice axiom of choice countable choice states that any countable collection of non-empty sets has a choice function. This is a weaker axiom than the axiom of choice. As most functional analysis is carried out with underlying field or , which contain countable dense subsets ( and respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice. It is also worth noting that (uncountable) choice is needed at times in these notes.   "
+},
+{
+  "id": "appendix-prereqs-5-2",
+  "level": "2",
+  "url": "appendix-prereqs-5.html#appendix-prereqs-5-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "choice function The axiom of choice "
+},
+{
+  "id": "appendix-prereqs-5-5",
+  "level": "2",
+  "url": "appendix-prereqs-5.html#appendix-prereqs-5-5",
+  "type": "Remark",
+  "number": "A.3.1",
+  "title": "",
+  "body": " The axiom of countable choice axiom of choice countable choice states that any countable collection of non-empty sets has a choice function. This is a weaker axiom than the axiom of choice. As most functional analysis is carried out with underlying field or , which contain countable dense subsets ( and respectively), there are many times that the countable axiom of choice can be used in place of the axiom of choice. However, this leads to more technical proofs in an already technical field, so we will speak no more of the countable axiom of choice. It is also worth noting that (uncountable) choice is needed at times in these notes.  "
+},
+{
+  "id": "appendix-prereqs-top-3",
+  "level": "1",
+  "url": "appendix-prereqs-top-3.html",
+  "type": "Section",
+  "number": "B.1",
+  "title": "Open and closed sets in <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>",
+  "body": " Open and closed sets in    A subset is open if for all there exists such that .  A subset is closed if its complement is open. open set  closed set       Let . A set is open in if there is an open subset such that . Similarly, a set is closed in if there is a closed subset such that . open set closed set    The following theorem lists some key properties of open sets.      are open;  if is any collection of open sets then   if are open then        We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.  and are open and closed.  Open intervals are open, i.e. intervals of the form and .   Closed intervals are closed, i.e. intervals of the form and .  Finite subsets of are closed.  The rational numbers are neither open nor closed.  The intervals and are neither open nor closed.      Using and DeMorgan's identities , we can show that an arbitrary intersection of closed sets is closed, and a finite union of closed sets is closed.       closure of     interior of   Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .  If and , then the closure of in is the set . Similarly, the interior of in is the set . A set is dense in if the closure of in is all of . closed set closure  open set interior     The rational numbers are dense in . The irrational numbers are also dense in .   We make frequent use of the following property of open sets in this course.    Every non-empty open set in is the disjoint union of countably many open intervals.    Let be non-empty open set. Take . Since is open, there exists such that . Similarly, there exists with . Let (allowing for the possibility that and ). Let . We will show that but .  Take . Suppose . By definition of as the supremum, there exists such that . Thus . Similarly, if we get . Hence .  Now assume and . Then, since is open , there is an such that . But then . This contradicts the definition of as a supremum, and hence . Similarly, .  Take . Note that, either or . Hence the collection is a disjoint collection of open intervals. Further, since for all , we have It remains to show that there are countably many distinct intervals . Note that, since is dense in , each open interval contains rational numbers. Thus, the set can be indexed by a subset of . Since is countable this indexing set is countable, and we are done.     A countable intersection of open sets if called a -set. A countable union of closed sets is called an -set.  -set  -set    The term comes from German. The German for area is Gebeit , and the German for intersection is Durschnitt . Hence a set comes from an intersection of areas.  The term , on the other hand, comes from another language altogether. In French the word for closed is fermé , and the word for sum is somme . Hence an set is a sum of closed sets.   Open sets in  In there is also a natural way to define open sets. Heuristically, an open set is one which does not contain any points in its boundary. In order to define an open set, we need to first understand what we mean by distance in . In , we use the absolute value to determine the distance between two numbers; in we use the Euclidean-norm (or -norm). For and in we define the distance between and as Note that, for , this value is the length of the straight line from to .    A set is open if for all there exists such that A set is closed if is open. open set closed set     Most of what was said for open sets in is true for open sets in when . In particular, the analogous statement of holds in ; the interior and closure of a set is defined analogously; and and sets are similarly defined. We warn that does not translate in its entirety to . Define an open ball in to be a set of the form for a fixed and fixed It is true that every open set in is a countable union of open balls. You can use the the fact that is dense in to prove this. However, we can not assert that every open set is a countable union of disjoint open balls.   "
+},
+{
+  "id": "appendix-prereqs-top-3-2",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-2",
+  "type": "Definition",
+  "number": "B.1.1",
+  "title": "",
+  "body": "  A subset is open if for all there exists such that .  A subset is closed if its complement is open. open set  closed set    "
+},
+{
+  "id": "appendix-prereqs-top-3-3",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-3",
+  "type": "Definition",
+  "number": "B.1.2",
+  "title": "",
+  "body": "  Let . A set is open in if there is an open subset such that . Similarly, a set is closed in if there is a closed subset such that . open set closed set   "
+},
+{
+  "id": "thm-open-sets",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#thm-open-sets",
+  "type": "Theorem",
+  "number": "B.1.3",
+  "title": "",
+  "body": "    are open;  if is any collection of open sets then   if are open then      "
+},
+{
+  "id": "appendix-prereqs-top-3-6",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-6",
+  "type": "Example",
+  "number": "B.1.4",
+  "title": "",
+  "body": " We list here some examples of open set, closed sets, sets which are both open and closed, and sets which are neither.  and are open and closed.  Open intervals are open, i.e. intervals of the form and .   Closed intervals are closed, i.e. intervals of the form and .  Finite subsets of are closed.  The rational numbers are neither open nor closed.  The intervals and are neither open nor closed.    "
+},
+{
+  "id": "appendix-prereqs-top-3-7",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-7",
+  "type": "Remark",
+  "number": "B.1.5",
+  "title": "",
+  "body": " Using and DeMorgan's identities , we can show that an arbitrary intersection of closed sets is closed, and a finite union of closed sets is closed.  "
+},
+{
+  "id": "appendix-prereqs-top-3-8",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-8",
+  "type": "Definition",
+  "number": "B.1.6",
+  "title": "",
+  "body": "   closure of     interior of   Let . The closure of , denoted is the smallest closed set containing . The interior of , denoted , is the largest open set contained in . A subset is dense in if .  If and , then the closure of in is the set . Similarly, the interior of in is the set . A set is dense in if the closure of in is all of . closed set closure  open set interior   "
+},
+{
+  "id": "appendix-prereqs-top-3-9",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-9",
+  "type": "Example",
+  "number": "B.1.7",
+  "title": "",
+  "body": " The rational numbers are dense in . The irrational numbers are also dense in .  "
+},
+{
+  "id": "prop-open-sets",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#prop-open-sets",
+  "type": "Proposition",
+  "number": "B.1.8",
+  "title": "",
+  "body": "  Every non-empty open set in is the disjoint union of countably many open intervals.    Let be non-empty open set. Take . Since is open, there exists such that . Similarly, there exists with . Let (allowing for the possibility that and ). Let . We will show that but .  Take . Suppose . By definition of as the supremum, there exists such that . Thus . Similarly, if we get . Hence .  Now assume and . Then, since is open , there is an such that . But then . This contradicts the definition of as a supremum, and hence . Similarly, .  Take . Note that, either or . Hence the collection is a disjoint collection of open intervals. Further, since for all , we have It remains to show that there are countably many distinct intervals . Note that, since is dense in , each open interval contains rational numbers. Thus, the set can be indexed by a subset of . Since is countable this indexing set is countable, and we are done.   "
+},
+{
+  "id": "appendix-prereqs-top-3-12",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-12",
+  "type": "Definition",
+  "number": "B.1.9",
+  "title": "",
+  "body": " A countable intersection of open sets if called a -set. A countable union of closed sets is called an -set.  -set  -set  "
+},
+{
+  "id": "appendix-prereqs-top-3-13",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-13",
+  "type": "Remark",
+  "number": "B.1.10",
+  "title": "",
+  "body": " The term comes from German. The German for area is Gebeit , and the German for intersection is Durschnitt . Hence a set comes from an intersection of areas.  The term , on the other hand, comes from another language altogether. In French the word for closed is fermé , and the word for sum is somme . Hence an set is a sum of closed sets.  "
+},
+{
+  "id": "appendix-prereqs-top-3-14-3",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-14-3",
+  "type": "Definition",
+  "number": "B.1.11",
+  "title": "",
+  "body": "  A set is open if for all there exists such that A set is closed if is open. open set closed set    "
+},
+{
+  "id": "appendix-prereqs-top-3-14-4",
+  "level": "2",
+  "url": "appendix-prereqs-top-3.html#appendix-prereqs-top-3-14-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "open ball "
+},
+{
+  "id": "appendix-prereqs-top-4",
+  "level": "1",
+  "url": "appendix-prereqs-top-4.html",
+  "type": "Section",
+  "number": "B.2",
+  "title": "Metric spaces and General topology",
+  "body": " Metric spaces and General topology  The definition of open sets in and relies on being able to define a distance between between: for , for . If we have a distance (which is called a metric ) on a set then we can define open sets in .     metric     metric space    Let be a non-empty set. A function is a metric if    for all , and if and only if ;     for all ; and     for all ( triangle inequality ). triangle inequality     metric  metric space If is a metric on , the pair is called a metric space . When the metric is clear, we often simply call a metric space.      Let be a metric space. A set is open if for all there exists such that A set is closed if is open. open set closed set     Let be a topological space. If , the closure of , denoted by , is the smallest closed set containing ; and the interior of , denoted by , is the largest open set contained in . A set is dense if . A set is dense in if . closed set closure  open set interior  dense set   In a metric space, open sets have many of the same properties that open sets in have.    Let be a metric space. The open sets in have the following properties:  are open;  if is any collection of open sets then   if are open then        The absolute value function on defines a metric: the distance between two numbers and is . For , the Euclidean distance between two points and is . This defines a metric on . That triangle inequality is satisfied is not immediate; it follows from .   In a topological space, we look at open sets in a set without reference to a distance. and inspire the following definition     topological space    A topology on a non-empty set is a collection of subsets of with the properties  , ;  if is a collection of sets in then ;  if then .  We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space . topology  topological space  open set  closed set       Let be a topological space, and let . The closure of , denoted , is the smallest closed set containing ; and the interior of , denoted , is the largest open set containing .     Let be a metric space, and let be all open sets in (with respect to the metric ). Then is a topology on by .    Let be any non-empty set and let Then is a topological space. We call the discrete topology on . topology discrete topology     Let be any non-empty set and let Then is a topological space. We call the trivial topology on . The trivial topology is also refered to as the indiscrete topology.  topology trivial topology  topology indiscrete topology trivial topology    Let be a topological space, and let be a non-empty subset. Define Then is a topological space. This topology on is called the induced topology or relative topology on . topology induced topology  topology relative topology induced topology     A topological space is Hausdorff if given with , there are disjoint open sets with and . topology Hausdorff      Every metric space is a Hausdorff topological space.    If is a set with more than one point, and is the trivial topology on , then is not a Hausdorff topological space.    The property of being Hausdorff is an example of a separation axiom on a topological space. The Hausdorff property is sometimes denoted by . There are several other separation axioms, but we will not concern ourselves with them.     Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact given any open cover of , has a finite subcover of . compact  open cover  open cover subcover    The following theorem gives an easy characterization of compact sets in . Proofs are easy to find. The wikipedia page for the result provides several .   Heine-Borel Theorem    Heine-Borel Theorem A subset is compact if and only if is closed and bounded.       In a general metric space, a set being closed and bounded is not necessarily equivalent to being compact. If you study a proof of the Heine-Borel theorem in , it will rely on the fact that is finite. In infinite dimensional normed vector spaces there are closed and bounded sets which are not compact.   "
+},
+{
+  "id": "appendix-prereqs-top-4-2",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "metric "
+},
+{
+  "id": "appendix-prereqs-top-4-3",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-3",
+  "type": "Definition",
+  "number": "B.2.1",
+  "title": "",
+  "body": "   metric     metric space    Let be a non-empty set. A function is a metric if    for all , and if and only if ;     for all ; and     for all ( triangle inequality ). triangle inequality     metric  metric space If is a metric on , the pair is called a metric space . When the metric is clear, we often simply call a metric space.   "
+},
+{
+  "id": "appendix-prereqs-top-4-4",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-4",
+  "type": "Definition",
+  "number": "B.2.2",
+  "title": "",
+  "body": "  Let be a metric space. A set is open if for all there exists such that A set is closed if is open. open set closed set    "
+},
+{
+  "id": "appendix-prereqs-top-4-5",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "closure interior dense dense "
+},
+{
+  "id": "thm-open-sets-metric",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#thm-open-sets-metric",
+  "type": "Theorem",
+  "number": "B.2.3",
+  "title": "",
+  "body": "  Let be a metric space. The open sets in have the following properties:  are open;  if is any collection of open sets then   if are open then      "
+},
+{
+  "id": "appendix-prereqs-top-4-8",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-8",
+  "type": "Example",
+  "number": "B.2.4",
+  "title": "",
+  "body": " The absolute value function on defines a metric: the distance between two numbers and is . For , the Euclidean distance between two points and is . This defines a metric on . That triangle inequality is satisfied is not immediate; it follows from .  "
+},
+{
+  "id": "appendix-prereqs-top-4-10",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-10",
+  "type": "Definition",
+  "number": "B.2.5",
+  "title": "",
+  "body": "   topological space    A topology on a non-empty set is a collection of subsets of with the properties  , ;  if is a collection of sets in then ;  if then .  We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space . topology  topological space  open set  closed set    "
+},
+{
+  "id": "appendix-prereqs-top-4-11",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-11",
+  "type": "Definition",
+  "number": "B.2.6",
+  "title": "",
+  "body": "  Let be a topological space, and let . The closure of , denoted , is the smallest closed set containing ; and the interior of , denoted , is the largest open set containing .   "
+},
+{
+  "id": "appendix-prereqs-top-4-12",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-12",
+  "type": "Example",
+  "number": "B.2.7",
+  "title": "",
+  "body": " Let be a metric space, and let be all open sets in (with respect to the metric ). Then is a topology on by .  "
+},
+{
+  "id": "appendix-prereqs-top-4-13",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-13",
+  "type": "Example",
+  "number": "B.2.8",
+  "title": "",
+  "body": " Let be any non-empty set and let Then is a topological space. We call the discrete topology on . topology discrete topology   "
+},
+{
+  "id": "appendix-prereqs-top-4-14",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-14",
+  "type": "Example",
+  "number": "B.2.9",
+  "title": "",
+  "body": " Let be any non-empty set and let Then is a topological space. We call the trivial topology on . The trivial topology is also refered to as the indiscrete topology.  topology trivial topology  topology indiscrete topology trivial topology   "
+},
+{
+  "id": "appendix-prereqs-top-4-15",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-15",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "induced topology relative topology "
+},
+{
+  "id": "def-haus",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#def-haus",
+  "type": "Definition",
+  "number": "B.2.10",
+  "title": "",
+  "body": "  A topological space is Hausdorff if given with , there are disjoint open sets with and . topology Hausdorff    "
+},
+{
+  "id": "appendix-prereqs-top-4-17",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-17",
+  "type": "Example",
+  "number": "B.2.11",
+  "title": "",
+  "body": " Every metric space is a Hausdorff topological space.  "
+},
+{
+  "id": "appendix-prereqs-top-4-18",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-18",
+  "type": "Example",
+  "number": "B.2.12",
+  "title": "",
+  "body": " If is a set with more than one point, and is the trivial topology on , then is not a Hausdorff topological space.  "
+},
+{
+  "id": "appendix-prereqs-top-4-19",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-19",
+  "type": "Remark",
+  "number": "B.2.13",
+  "title": "",
+  "body": " The property of being Hausdorff is an example of a separation axiom on a topological space. The Hausdorff property is sometimes denoted by . There are several other separation axioms, but we will not concern ourselves with them.  "
+},
+{
+  "id": "appendix-prereqs-top-4-20",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-20",
+  "type": "Definition",
+  "number": "B.2.14",
+  "title": "",
+  "body": " Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact given any open cover of , has a finite subcover of . compact  open cover  open cover subcover   "
+},
+{
+  "id": "thm-heine-borel",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#thm-heine-borel",
+  "type": "Theorem",
+  "number": "B.2.15",
+  "title": "Heine-Borel Theorem.",
+  "body": " Heine-Borel Theorem    Heine-Borel Theorem A subset is compact if and only if is closed and bounded.    "
+},
+{
+  "id": "appendix-prereqs-top-4-23",
+  "level": "2",
+  "url": "appendix-prereqs-top-4.html#appendix-prereqs-top-4-23",
+  "type": "Remark",
+  "number": "B.2.16",
+  "title": "",
+  "body": " In a general metric space, a set being closed and bounded is not necessarily equivalent to being compact. If you study a proof of the Heine-Borel theorem in , it will rely on the fact that is finite. In infinite dimensional normed vector spaces there are closed and bounded sets which are not compact.  "
+},
+{
+  "id": "appendix-prereqs-top-5",
+  "level": "1",
+  "url": "appendix-prereqs-top-5.html",
+  "type": "Section",
+  "number": "B.3",
+  "title": "Continuity and convergence",
+  "body": "Continuity and convergence  Recall the following definitions from a first course in real analysis. Let be a non-empty set and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is continuous if is continuous at every point in . The function is uniformly continuous if for all there is a such that if and then . Note that uniform continuity is a stronger condition than continuity. continuous function at a point in  continuous function  continuous function uniformly continuous   All of these definitions can be easily adapted to apply to general metric spaces.     limit of a sequence    Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . When converges to we call the limit of the sequence . We denote this by , , or  continuous function on a metric space  continuous function uniformly continuous on a metric space  limit     Similarly, the usual definition of convergence in is easily adapted to the metric space case.    Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when .    We record two other characterizations of continuity, one based on open sets, and one based on sequences.    Let and be two metric spaces, and let be a function. The function is continuous if and only if whenever is a sequence in converging to , the sequence in converges to       Let and be two metric spaces, and let be a function. The function is continuous if and only if is an open set in for all open sets .    Sequences can also be used to characterize closed sets.    Let be a metric space and let . Then is closed if and only if whenever is a convergent sequence in with each , then     There are times when a continuous function is automatically uniformly continuous .    Let and be metric spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.      Let be a compact metric space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.    In general topological spaces we can also define continuity of functions and convergence of sequences. It turns out that sequences do not always play the same role in topological spaces as they do in metric spaces. The correct analogue of a convergent sequence is (the more general) object of a convergent net . There are other objects called filters that can be used instead of nets. As we can avoid using nets in these notes, we will not discuss them. We will, however, need to talk about continuity. Without having a metric, the definition of continuity does not readily translate to arbitrary topological spaces. However, we do have open sets. motivates the following definition.    Let and be two topological spaces. A function is continuous if for all  continuous function on a topological space     "
+},
+{
+  "id": "appendix-prereqs-top-5-2",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "continuous continuous uniformly continuous "
+},
+{
+  "id": "appendix-prereqs-top-5-4",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-4",
+  "type": "Definition",
+  "number": "B.3.1",
+  "title": "",
+  "body": "   limit of a sequence    Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . When converges to we call the limit of the sequence . We denote this by , , or  continuous function on a metric space  continuous function uniformly continuous on a metric space  limit    "
+},
+{
+  "id": "appendix-prereqs-top-5-6",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-6",
+  "type": "Definition",
+  "number": "B.3.2",
+  "title": "",
+  "body": "  Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when .   "
+},
+{
+  "id": "appendix-prereqs-top-5-8",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-8",
+  "type": "Proposition",
+  "number": "B.3.3",
+  "title": "",
+  "body": "  Let and be two metric spaces, and let be a function. The function is continuous if and only if whenever is a sequence in converging to , the sequence in converges to    "
+},
+{
+  "id": "prop-cont-open",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#prop-cont-open",
+  "type": "Proposition",
+  "number": "B.3.4",
+  "title": "",
+  "body": "  Let and be two metric spaces, and let be a function. The function is continuous if and only if is an open set in for all open sets .   "
+},
+{
+  "id": "prop-closed",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#prop-closed",
+  "type": "Proposition",
+  "number": "B.3.5",
+  "title": "",
+  "body": "  Let be a metric space and let . Then is closed if and only if whenever is a convergent sequence in with each , then    "
+},
+{
+  "id": "appendix-prereqs-top-5-13",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-13",
+  "type": "Proposition",
+  "number": "B.3.6",
+  "title": "",
+  "body": "  Let and be metric spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.   "
+},
+{
+  "id": "appendix-prereqs-top-5-14",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-14",
+  "type": "Corollary",
+  "number": "B.3.7",
+  "title": "",
+  "body": "  Let be a compact metric space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.   "
+},
+{
+  "id": "appendix-prereqs-top-5-15",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-15",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "net filters "
+},
+{
+  "id": "appendix-prereqs-top-5-16",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-16",
+  "type": "Definition",
+  "number": "B.3.8",
+  "title": "",
+  "body": "  Let and be two topological spaces. A function is continuous if for all  continuous function on a topological space    "
+},
+{
   "id": "sec-nowhere-diff",
   "level": "1",
   "url": "sec-nowhere-diff.html",
   "type": "Section",
-  "number": "A.1",
+  "number": "C.1",
   "title": "Nowhere differentiable functions",
-  "body": " Nowhere differentiable functions  In 1872, Karl Weierstrass Weierstrass, Karl gave an example of a real valued function which is nowhere differentiable. This put an end to several decades of attempts by mathematicians to determine to what extent continuity determined differentiability. Whilst nowhere differentiable functions were difficult to discover, they are, in fact, very common. If we put the norm on , then the nowhere differentiable functions form a dense subset in . Further, there is a natural probability measure on (the classical Wiener measure) with which the nowhere differentiable functions have measure .  Before we begin, we should discuss what it means for a function to be differentiable. Let be a function whose domain includes a point and an open interval containing . The derivative at the point is defined as   when the limit exists. If the limit does not exist, or if we say is not differentiable at .  Thus, there is some ambiguity in the literature on what it means for a function to be nowhere differentiable. The Weierstrass function in Section~\\ref{subsec: weierstrass} is nowhere differentiable in our sense. That is,   does not exist at any . The example in Section~\\ref{subsec: Tak} is nowhere differentiable in the sense of the more restrictive sense of the derivative:   is either , or the limit does not exist at each .   The Weierstrass function  In this section we study the Weierstrass function, introduced by Weierstrass in 1872. This is, perhaps, the most historically significant example of a nowhere differentiable function: whilst it was not the first example ever written down, it was the first widely known example. For our discussion we will closely follow Weierstrass's own description of the function, see e.g. . The rough idea is to create a function that oscillates wildly at every point.  Fix an odd integer and real value with such that   Define, for all , Weierstrass function   We call the Weierstrass function . A straightforward application of the Weierstrass -test shows that is uniformly convergent, and hence continuous.  Now fix any . For each positive integer , there is an integer such that   Let We define values, and by   Then   and   Thus Further,  Now,   Fix . Using the trigonometric identity   we have   It follows that   Since is an odd number, we have   Hence   For each ,   Further, since , . Hence   Putting all of this together, there is a and such that   By a similar analysis, there is a and such that   Since we have assumed ,   Thus, and have opposite signs for each . Now, since   it follows that is not differentiable at .    Takagi's example  We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section~\\ref{subsec: weierstrass}, this function does have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in , see also . A similar function was independently discovered by Van Der Waerden in 1930 . Riesz and Sz.-Nagy's text begins with a presentation of Van Der Waerden's example.  We present Takagi's example because it is more intuitive than the Weierstrass function. The simplest example of a function not differentiable at a point is . This function is not differentiable at ; there is a sharp point at . The idea behind Takagi's example is to create a function made from a series of increasingly many `sharp points'.  Let   where is the floor function (i.e. rounded down to the nearest integer) and is the ceiling function (i.e. rounded up to the nearest integer). The function is not differentiable at any point where . At all other points,      Define a function on the closed interval by   The series is uniformly convergent by the Weierstrass -test; and hence is continuous.     Takagi's example in \\ref{subsec: Tak}.    Fix . We can write as a series   where each Note that this series expression may not be unique, e.g.   In these circumstances, we choose the finite sum instead of the infinite. Note that, for each ,   For each let   That is, is the number of ones in the list , and is the number of zeros in the list .  Suppose . Let Then, for ,   Let   Then   For , if , , and , let Then, again   We these values for   we can find a subsequence of such that   either does not exist, or is Thus does not have a finite derivative at any point.  There is nothing special about the role of in this example. Van der Waerden used base 10 for his example:   Similarly analysis can be done for other bases.     Van der Waerden's example has the same basic idea as Takagi's example from \\ref{subsec: Tak}.     "
+  "body": " Nowhere differentiable functions  In 1872, Karl Weierstrass Weierstrass, Karl gave an example of a real valued function which is nowhere differentiable. This put an end to several decades of attempts by mathematicians to determine to what extent continuity determined differentiability. Whilst nowhere differentiable functions were difficult to discover, they are, in fact, very common. If we put the norm on , then the nowhere differentiable functions form a dense subset in . Further, there is a natural probability measure on (the classical Wiener measure) with which the nowhere differentiable functions have measure .  Before we begin, we should discuss what it means for a function to be differentiable. Let be a function whose domain includes a point and an open interval containing . The derivative at the point is defined as   when the limit exists. If the limit does not exist, or if we say is not differentiable at .  Thus, there is some ambiguity in the literature on what it means for a function to be nowhere differentiable. The Weierstrass function in Section~\\ref{subsec: weierstrass} is nowhere differentiable in our sense. That is,   does not exist at any . The example in Section~\\ref{subsec: Tak} is nowhere differentiable in the sense of the more restrictive sense of the derivative:   is either , or the limit does not exist at each .   The Weierstrass function  In this section we study the Weierstrass function, introduced by Weierstrass in 1872. This is, perhaps, the most historically significant example of a nowhere differentiable function: whilst it was not the first example ever written down, it was the first widely known example. For our discussion we will closely follow Weierstrass's own description of the function, see e.g. . The rough idea is to create a function that oscillates wildly at every point.  Fix an odd integer and real value with such that   Define, for all , Weierstrass function   We call the Weierstrass function . A straightforward application of the Weierstrass -test shows that is uniformly convergent, and hence continuous.  Now fix any . For each positive integer , there is an integer such that   Let We define values, and by   Then   and   Thus Further,  Now,   Fix . Using the trigonometric identity   we have   It follows that   Since is an odd number, we have   Hence   For each ,   Further, since , . Hence   Putting all of this together, there is a and such that   By a similar analysis, there is a and such that   Since we have assumed ,   Thus, and have opposite signs for each . Now, since   it follows that is not differentiable at .    Takagi's example  We present now an example of a function which has does not have a finite derivative at any point. Unlike the Weierstrass function discussed in Section~\\ref{subsec: weierstrass}, this function does have infinite derivative at some points (rather than the derivative not being defined). This example was first described by Takagi in 1903. It can be found in , see also . A similar function was independently discovered by Van Der Waerden in 1930 . Riesz and Sz.-Nagy's text begins with a presentation of Van Der Waerden's example.  We present Takagi's example because it is more intuitive than the Weierstrass function. The simplest example of a function not differentiable at a point is . This function is not differentiable at ; there is a sharp point at . The idea behind Takagi's example is to create a function made from a series of increasingly many `sharp points'.  Let   where is the floor function (i.e. rounded down to the nearest integer) and is the ceiling function (i.e. rounded up to the nearest integer). The function is not differentiable at any point where . At all other points,    The function used in the constuction of Takagi's example.    The zig-zag\/saw function used in the constuction of Takagi's example.   The function . The graph is a zig-zag shape of straight line segments. The function takes the value at each integer, and takes the value at each half-integer.      Define a function on the closed interval by   The series is uniformly convergent by the Weierstrass -test; and hence is continuous.   Takagi's example .   Takagi's example   Visualization of Takagi's example of a nowhere differentiable function. The graph is fractal like in nature, symmetric about the vertical line . It is said to resemble a Blancmange dessert.      Fix . We can write as a series   where each Note that this series expression may not be unique, e.g.   In these circumstances, we choose the finite sum instead of the infinite. Note that, for each ,   For each let   That is, is the number of ones in the list , and is the number of zeros in the list .  Suppose . Let Then, for ,   Let   Then   For , if , , and , let Then, again   We these values for   we can find a subsequence of such that   either does not exist, or is Thus does not have a finite derivative at any point.  There is nothing special about the role of in this example. Van der Waerden used base 10 for his example:   Similarly analysis can be done for other bases.    Van der Waerden's example. The construction is the same as Takagi's example, but uses base 10 instead of base 2.   Vanderwaerden's example   Visualization of van der Waerden's example of a nowhere differentiable function. The graph is fractal like in nature, symmetric about the vertical line . The graph looks similar to a stepped triangle, with zig-zag plateaus.       "
 },
 {
   "id": "fig-Tak1",
   "level": "2",
   "url": "sec-nowhere-diff.html#fig-Tak1",
   "type": "Figure",
-  "number": "A.1.1",
+  "number": "C.1.1",
   "title": "",
-  "body": "  "
-},
-{
-  "id": "fig-Tak2",
-  "level": "2",
-  "url": "sec-nowhere-diff.html#fig-Tak2",
-  "type": "Figure",
-  "number": "A.1.2",
-  "title": "",
-  "body": "   Takagi's example in \\ref{subsec: Tak}.   "
+  "body": " The function used in the constuction of Takagi's example.    The zig-zag\/saw function used in the constuction of Takagi's example.   The function . The graph is a zig-zag shape of straight line segments. The function takes the value at each integer, and takes the value at each half-integer.     "
 },
 {
   "id": "fig-Tak3",
   "level": "2",
   "url": "sec-nowhere-diff.html#fig-Tak3",
   "type": "Figure",
-  "number": "A.1.3",
+  "number": "C.1.2",
   "title": "",
-  "body": "   Van der Waerden's example has the same basic idea as Takagi's example from \\ref{subsec: Tak}.   "
+  "body": " Takagi's example .   Takagi's example   Visualization of Takagi's example of a nowhere differentiable function. The graph is fractal like in nature, symmetric about the vertical line . It is said to resemble a Blancmange dessert.     "
+},
+{
+  "id": "fig-Tak2",
+  "level": "2",
+  "url": "sec-nowhere-diff.html#fig-Tak2",
+  "type": "Figure",
+  "number": "C.1.3",
+  "title": "",
+  "body": " Van der Waerden's example. The construction is the same as Takagi's example, but uses base 10 instead of base 2.   Vanderwaerden's example   Visualization of van der Waerden's example of a nowhere differentiable function. The graph is fractal like in nature, symmetric about the vertical line . The graph looks similar to a stepped triangle, with zig-zag plateaus.     "
 },
 {
   "id": "sec-diff-ae",
   "level": "1",
   "url": "sec-diff-ae.html",
   "type": "Section",
-  "number": "A.2",
+  "number": "C.2",
   "title": "Differentiable almost everywhere functions",
-  "body": " Differentiable almost everywhere functions  The examples presented in this section illustrate further the stark difference between continuity and differentiability. Further, they show the strength of the Lebesgue integral over the Riemann integral. The examples below are all continuous functions with defined (almost) everywhere, but is not Riemann integrable. However, in these examples will be Lebesgue integrable.   Schwarz's example  Schwarz published the following example in 1873 .  Schwarz presented this function in order to show that it is possible for a continuous function to be differentiable on some points, but for to be undefined on a dense set. Thus, differentiability is not a local property. It was perhaps the first such example. This example served to dispute earlier conjectures on the nature of differentiability. Explicitly, Schwarz gives exhibits a continuous increasing function on which is not differentiable on any dyadic rational, i.e. is not differentiable on any rational of the form , where are integers.  Before we give the example, we first introduce a continuous function on . Define by   where is the floor function (i.e. rounded down to the nearest integer).     The function used to construct Schwarz's example in \\ref{subsec: Schwarz}    The function is continuous on all of , and is differentiable on all non-integer values. Indeed, it is not hard to show for a   If then , and so, if then   Thus, for ,   On the other hand, for and   and so, by an application of L'H\\^{o}pital's rule,   Thus is not differentiable on : the right-sided derivative is and the left-sided derivative is on .  We now define the function by   Note that is uniformly convergent on all compact subsets of , and so is continuous. This can be shown, e.g., using the inequality A better, indeed the best, linear upper bound for is , but there is no need for precision here. together with the Weierstrass -test.  We will now study . The basic idea is that, since is not differentiable on the integers, is not differentiable on dyadic rationals.  Suppose for some non-negative integers and . If , then   Hence   Taking still, we now consider the left sided derivative. Consider . For , is an integer. Note, for any integer and , if , then and so   Thus, for   By the Weierstrass -test we see that   is uniformly convergent for Take the limit as we get a left-sided derivative as   The above set shows that there is a dense set on which is not differentiable. Since is increasing and continuous, is defined almost everywhere, by . Alternatively, a similar analysis to the above can explicitly show that exists for when is not a dyadic rational.    A function that is not differentiable on a prescribed set  tells us that if is continuous of bounded variation then is defined almost everywhere. We will now show that given with , there is a continuous function of bounded variation which is not differentiable at any point in , but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book .  Let be a closed interval, and let be a set with Lebesgue measure . By EXERCISE, there is a countable family of open intervals in such that, for each there is an infinite subsequence of natural numbers such that for each and   Fix such a collection and define a function on by   where is the length function on intervals in .   "
+  "body": " Differentiable almost everywhere functions  The examples presented in this section illustrate further the stark difference between continuity and differentiability. Further, they show the strength of the Lebesgue integral over the Riemann integral. The examples below are all continuous functions with defined (almost) everywhere, but is not Riemann integrable. However, in these examples will be Lebesgue integrable.   Schwarz's example  Schwarz published the following example in 1873 .  Schwarz presented this function in order to show that it is possible for a continuous function to be differentiable on some points, but for to be undefined on a dense set. Thus, differentiability is not a local property. It was perhaps the first such example. This example served to dispute earlier conjectures on the nature of differentiability. Explicitly, Schwarz gives exhibits a continuous increasing function on which is not differentiable on any dyadic rational, i.e. is not differentiable on any rational of the form , where are integers.  Before we give the example, we first introduce a continuous function on . Define by   where is the floor function (i.e. rounded down to the nearest integer).   The function used to construct Schwarz's example.   The function phi used in the construction of Schwarz's example.   Graph of the function for between -2 and 5. The curve is continuous, and smooth everywhere except at integers.      The function is continuous on all of , and is differentiable on all non-integer values. Indeed, it is not hard to show for a   If then , and so, if then   Thus, for ,   On the other hand, for and   and so, by an application of L'H\\^{o}pital's rule,   Thus is not differentiable on : the right-sided derivative is and the left-sided derivative is on .  We now define the function by   Note that is uniformly convergent on all compact subsets of , and so is continuous. This can be shown, e.g., using the inequality A better, indeed the best, linear upper bound for is , but there is no need for precision here. together with the Weierstrass -test.  We will now study . The basic idea is that, since is not differentiable on the integers, is not differentiable on dyadic rationals.  Suppose for some non-negative integers and . If , then   Hence   Taking still, we now consider the left sided derivative. Consider . For , is an integer. Note, for any integer and , if , then and so   Thus, for   By the Weierstrass -test we see that   is uniformly convergent for Take the limit as we get a left-sided derivative as   The above set shows that there is a dense set on which is not differentiable. Since is increasing and continuous, is defined almost everywhere, by . Alternatively, a similar analysis to the above can explicitly show that exists for when is not a dyadic rational.    A function that is not differentiable on a prescribed set  tells us that if is continuous of bounded variation then is defined almost everywhere. We will now show that given with , there is a continuous function of bounded variation which is not differentiable at any point in , but differentiable at all other points. I believe this construction is due to Riesz and Sz.-Nagy; it can be found in their book .  Let be a closed interval, and let be a set with Lebesgue measure . By EXERCISE, there is a countable family of open intervals in such that, for each there is an infinite subsequence of natural numbers such that for each and   Fix such a collection and define a function on by   where is the length function on intervals in .   "
 },
 {
   "id": "fig-Schwarz1",
   "level": "2",
   "url": "sec-diff-ae.html#fig-Schwarz1",
   "type": "Figure",
-  "number": "A.2.1",
+  "number": "C.2.1",
   "title": "",
-  "body": "   The function used to construct Schwarz's example in \\ref{subsec: Schwarz}   "
+  "body": " The function used to construct Schwarz's example.   The function phi used in the construction of Schwarz's example.   Graph of the function for between -2 and 5. The curve is continuous, and smooth everywhere except at integers.     "
 },
 {
   "id": "sec-diff-bounded",
   "level": "1",
   "url": "sec-diff-bounded.html",
   "type": "Section",
-  "number": "A.3",
+  "number": "C.3",
   "title": "Differentiable functions with bounded derivative",
-  "body": " Differentiable functions with bounded derivative  In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, , will apply.   Volterra's function  In this section we will present Volterra's function, introduced by Voltera in 1881 . This example was likely had an influence on Lebesgue; it is cited in Lebesgue's 1902 thesis . Volterra presented this example in answer to a question of Dini on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg's text .  Consider the function defined by   The function is differentiable everywhere, with derivative   Whilst is defined everywhere (and is bounded), is not continuous at .     The function used to construct Volterra's function in Section~\\ref{subsec: Volterra}.    The idea behind the Volterra function is to create a function which behaves on some suitably large set the way behaves at . Before defining , we must first introduce the desired set.  We will construct a set called the Smith-Volterra-Cantor set. Smith-Volterra-Cantor set This construction is very similar to the construction of the Cantor set in, . The difference is, instead of removing the middle third from intervals, we will remove the middle quarter.  Let . Create be removing the middle quarter from . Thus   Create be reomving the middle quarter from each of the two intervals in . Thus   Continue in this manner to create a sequence of closed sets . The {Smith-Volterra-Cantor} set Smith-Volterra-Cantor set is defined as   Like the Cantor set , is nowhere dense. That is, does not contain any intervals as subsets. However, unlike the Cantor set, has positive Lebesgue measure. Indeed, if then   Thus  The Smith-Volterra-Cantor set is closed, hence is open. Let , where the intervals are disjoint. We define Volterra's function on as follows. Volterra's function For , let . For each , let For let   An illustration of Volterra's function is given in Figure~\\ref{fig: Volterra2}. Since is a continuous function, and , is a continuous function.     Volterra's function.    By construction, on each interval , is a bounded continuous function.  Take now and fix . If , then   Otherwise, , i.e. for some . Thus for some natural number and real . If , then   If , then   Finally, if , then for some , and . Thus   It follows that   One can similarly show that   and hence for .  Hence is defined on all of Further, since for   That is, is bounded.  Fix now . For each , Hence, there is an such that As converges to , and does not converge to , is not continuous at any point in .  Note that since is continuous and is bounded, is absolutely continuous by . Hence is Lebesgue integrable. However, since the set of discontinuities of has Lebesuge measure , it follows from that is not Riemann integrable.   "
+  "body": " Differentiable functions with bounded derivative  In this section we will look at examples of functions that are differentiable everywhere, with bounded derivative, but for which the derivative is not Riemann integrable. By these functions will be absolutely continuous. Hence, the examples in this example do not satisfy the conclusion of the Fundamental Theorem of Calculus, (which uses Riemann integration), but the Fundamental Theorem of Lebesgue Integration, , will apply.   Volterra's function  In this section we will present Volterra's function, introduced by Voltera in 1881 . This example was likely had an influence on Lebesgue; it is cited in Lebesgue's 1902 thesis . Volterra presented this example in answer to a question of Dini on when a function can be described as an integral of its derivative. Our presentation owes something to Stromberg's text .  Consider the function defined by   The function is differentiable everywhere, with derivative   Whilst is defined everywhere (and is bounded), is not continuous at .    The function used to construct Volterra's function.   Graph of the function of x squared times sine 1 over x.   Graph of the function . The function oscillates above and below the -axis, with smaller and smaller amplitude as gets closer to . There are infinitely many oscillations in any neighborhood of .      The idea behind the Volterra function is to create a function which behaves on some suitably large set the way behaves at . Before defining , we must first introduce the desired set.  We will construct a set called the Smith-Volterra-Cantor set. Smith-Volterra-Cantor set This construction is very similar to the construction of the Cantor set in, .  Let . Create be removing the middle quarter from . Thus   Create be reomving the middle sixteenth from each of the two intervals in . Thus   Continue in this manner, removing the middle th interval, to create a sequence of closed sets . The Smith-Volterra-Cantor set Smith-Volterra-Cantor set is defined as   Like the Cantor set , is nowhere dense. That is, does not contain any intervals as subsets. However, unlike the Cantor set, has positive Lebesgue measure. Indeed, if then   Thus  The Smith-Volterra-Cantor set is closed, hence is open. Let , where the intervals are disjoint. We define Volterra's function on as follows. Volterra's function For , let . For each , let For let   An illustration of Volterra's function is given in Figure~\\ref{fig: Volterra2}. Since is a continuous function, and , is a continuous function.   Volterra's function.   A visualization of Volterra's funcion   The graph of (an apporximation of) Volterra's function. The graph is depicted in blue in a box with -axis labelled form to , and -axis labelled from to . The graph is symmetric about the line . We see part of, a copy of shifted up the -axis by , this is mirrored around and a straight horizontal line joins the two parts. Similar, smaller bumps occur in the intervals removed in the first 3 steps in the construction of the Cantor-Smith-Volterra set.      By construction, on each interval , is a bounded continuous function.  Take now and fix . If , then   Otherwise, , i.e. for some . Thus for some natural number and real . If , then   If , then   Finally, if , then for some , and . Thus   It follows that   One can similarly show that   and hence for .  Hence is defined on all of Further, since for   That is, is bounded.  Fix now . For each , Hence, there is an such that As converges to , and does not converge to , is not continuous at any point in .  Note that since is continuous and is bounded, is absolutely continuous by . Hence is Lebesgue integrable. However, since the set of discontinuities of has Lebesuge measure , it follows from that is not Riemann integrable.   "
 },
 {
   "id": "fig-Volterra1",
   "level": "2",
   "url": "sec-diff-bounded.html#fig-Volterra1",
   "type": "Figure",
-  "number": "A.3.1",
+  "number": "C.3.1",
   "title": "",
-  "body": "   The function used to construct Volterra's function in Section~\\ref{subsec: Volterra}.   "
+  "body": "  The function used to construct Volterra's function.   Graph of the function of x squared times sine 1 over x.   Graph of the function . The function oscillates above and below the -axis, with smaller and smaller amplitude as gets closer to . There are infinitely many oscillations in any neighborhood of .     "
 },
 {
   "id": "fig-Volterra2",
   "level": "2",
   "url": "sec-diff-bounded.html#fig-Volterra2",
   "type": "Figure",
-  "number": "A.3.2",
+  "number": "C.3.2",
   "title": "",
-  "body": "   Volterra's function.   "
-},
-{
-  "id": "backmatter-2",
-  "level": "1",
-  "url": "backmatter-2.html",
-  "type": "Index",
-  "number": "",
-  "title": "Notation List and Index",
-  "body": " Notation List and Index    "
-},
-{
-  "id": "backmatter-3",
-  "level": "1",
-  "url": "backmatter-3.html",
-  "type": "References",
-  "number": "",
-  "title": "References",
-  "body": "  Agler, Jim, McCarthy, John E.  Pick interpolation and {H  2002  44  American Mathematical Society, Providence, RI     Allaart, Pieter C., Kawamura, Kiko  The {T  Real Anal. Exchange  2011\/12  37  1     Blass, Andreas  Existence of bases implies the axiom of choice  Axiomatic set theory  1984  31  Amer. Math. Soc., Providence, RI     Cartan, Henri  Sur la mesure de {H}aar  C. R. Acad. Sci. Paris  211  1940  759--762  0001-4036    Dini, U.  Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali  1878    Dudley, R. M.  Real analysis and probability  2002  74  Cambridge University Press, Cambridge     Folland, Gerald B.  Real analysis  1999  John Wiley & Sons, Inc., New York     Fremlin, D.H.  Measure Theory  II  https:\/\/www1.essex.ac.uk\/maths\/people\/fremlin\/mt.htm    Pedersen, Gert K.  The Existence and Uniqueness of the Haar integral on a locally compact topological group  2000    Riesz, Frigyes, Sz.-Nagy, B\\'ela  Functional analysis  1990  Dover Publications, Inc., New York     Lebesgue, Henri  Int{\\'e  Annali di Matematica Pura ed Applicata (1898-1922)  1902  7  1  Springer     Riesz, Frigyes  Sur les op\\'{e  Comptes rendus hebdomadaires des s\\'{e  1909  149     Riesz, Frigyes  Sur les op\\'{e  2015    Royden, H.L., Fitzpatrick, P.M.  Real Analysis  2017  Pearson    Schwarz, HA  Neues Beispiel einer stetigen, nicht differentiirbaren Funktion  1874  Schaffhausen    Stromberg, Karl R.  Introduction to classical real analysis  1981  Wadsworth International, Belmont, CA     Takagi, Teiji  Collected papers  2014  Springer, Heidelberg     Thim, Johan  Continuous nowhere differentiable functions ({D  2003    Classics on fractals  2004  Westview Press. Advanced Book Program, Boulder, CO     van der Waerden, B. L.  Ein einfaches {B  Math. Z.  1930  32  1     Volterra, Vito  Sui principi del calcolo integrale  Opere matematiche: memorie e note\/Vito Volterra  1881  1  Accademia Nazionale dei Lincei     Weierstrass, Karl  Mathematische {W  1967  Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint Corp., New York     Willard, Stephen  General topology  2004  Dover Publications, Inc., Mineola, NY    "
+  "body": " Volterra's function.   A visualization of Volterra's funcion   The graph of (an apporximation of) Volterra's function. The graph is depicted in blue in a box with -axis labelled form to , and -axis labelled from to . The graph is symmetric about the line . We see part of, a copy of shifted up the -axis by , this is mirrored around and a straight horizontal line joins the two parts. Similar, smaller bumps occur in the intervals removed in the first 3 steps in the construction of the Cantor-Smith-Volterra set.    "
 },
 {
   "id": "backmatter-4",
   "level": "1",
   "url": "backmatter-4.html",
+  "type": "Appendix",
+  "number": "D",
+  "title": "List of Symbols",
+  "body": " List of Symbols   "
+},
+{
+  "id": "backmatter-5",
+  "level": "1",
+  "url": "backmatter-5.html",
+  "type": "Index",
+  "number": "",
+  "title": "Index",
+  "body": " Index   "
+},
+{
+  "id": "backmatter-6",
+  "level": "1",
+  "url": "backmatter-6.html",
+  "type": "References",
+  "number": "",
+  "title": "References",
+  "body": "  Agler, Jim, McCarthy, John E.  Pick interpolation and {H  2002  44  American Mathematical Society, Providence, RI     Allaart, Pieter C., Kawamura, Kiko  The {T  Real Anal. Exchange  2011\/12  37  1     Blass, Andreas  Existence of bases implies the axiom of choice  Axiomatic set theory  1984  31  Amer. Math. Soc., Providence, RI     Cartan, Henri  Sur la mesure de {H}aar  C. R. Acad. Sci. Paris  211  1940  759--762  0001-4036    Dini, U.  Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali  1878    Dudley, R. M.  Real analysis and probability  2002  74  Cambridge University Press, Cambridge     Folland, Gerald B.  Real analysis  1999  John Wiley & Sons, Inc., New York     Fremlin, D.H.  Measure Theory  II  https:\/\/www1.essex.ac.uk\/maths\/people\/fremlin\/mt.htm    Pedersen, Gert K.  The Existence and Uniqueness of the Haar integral on a locally compact topological group  2000    Riesz, Frigyes, Sz.-Nagy, B\\'ela  Functional analysis  1990  Dover Publications, Inc., New York     Lebesgue, Henri  Int{\\'e  Annali di Matematica Pura ed Applicata (1898-1922)  1902  7  1  Springer     Riesz, Frigyes  Sur les op\\'{e  Comptes rendus hebdomadaires des s\\'{e  1909  149     Riesz, Frigyes  Sur les op\\'{e}rateurs lin\\'{e}aires  2015    Royden, H.L., Fitzpatrick, P.M.  Real Analysis  2017  Pearson    Schwarz, HA  Neues Beispiel einer stetigen, nicht differentiirbaren Funktion  1874  Schaffhausen    Stromberg, Karl R.  Introduction to classical real analysis  1981  Wadsworth International, Belmont, CA     Takagi, Teiji  Collected papers  2014  Springer, Heidelberg     Thim, Johan  Continuous nowhere differentiable functions ({D  2003    Classics on fractals  2004  Westview Press. Advanced Book Program, Boulder, CO     van der Waerden, B. L.  Ein einfaches {B  Math. Z.  1930  32  1     Volterra, Vito  Sui principi del calcolo integrale  Opere matematiche: memorie e note\/Vito Volterra  1881  1  Accademia Nazionale dei Lincei     Weierstrass, Karl  Mathematische {W  1967  Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint Corp., New York     Wikipedia  Heine-Borel Theorem  https:\/\/en.wikipedia.org\/wiki\/Heine-Borel_theorem  accessed 2026-06-10    Wikipedia  Schröder–Bernstein theorem  https:\/\/en.wikipedia.org\/wiki\/Schroder-Bernstein_theorem  accessed 2026-06-02    Willard, Stephen  General topology  2004  Dover Publications, Inc., Mineola, NY    "
+},
+{
+  "id": "backmatter-7",
+  "level": "1",
+  "url": "backmatter-7.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",

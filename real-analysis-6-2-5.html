@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>L^p-approximations and the Riesz-Fischer Theorem</title>
+<title>Change of variables</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.0.0';
+eBookConfig.runestone_version = '8.1.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.ce7e0a2163cb330f.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.f4a2ffb04bb978bb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -118,7 +118,7 @@ eBookConfig.enable_chatcodes =  false;
 <h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
 <p class="byline">Adam H. Fuller</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -129,7 +129,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="real-analysis-6-2-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-6-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="real-analysis-6-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-lebesgue-measure-on-Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="real-analysis-6-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="real-analysis-6-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(      \newcommand{\qedhere}{\blacksquare}
       
   \newcommand{\bA}{{\mathbb{A}}}
@@ -380,39 +380,19 @@ eBookConfig.enable_chatcodes =  false;
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-part">
-<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Prerequisites</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-4-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Sets and cardinality</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="real-analysis-4-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Set Theory Notation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-2-3.html#real-analysis-4-2-3-19" class="internal"><span class="title">Mappings</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Equivalence Relations and Classes</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Cardinality</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Axiom of Choice</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-4-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Topology</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-4-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-4.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General topology</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-3-5.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Compactness</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-part">
-<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Measure and Integration</span></a></div>
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Measure and Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-lim-swap.html" class="internal"><span class="codenumber">1.2</span> <span class="title">More shortcomings of Riemann integration</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-intro-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">On beyond</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-else.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Yeah, but why else?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-else.html#sec-int-lim-swap" class="internal"><span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-else.html#sec-why-else-4" class="internal"><span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -434,11 +414,11 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-5-5.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<div class="toc-title-box"><a href="real-analysis-4-5.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-5-5-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-5-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-5-5-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-4-5-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -470,573 +450,395 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-part contains-active">
-<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Spaces of Functions</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">1</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-Lp.html" class="internal"><span class="codenumber">1</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Lp-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="real-analysis-6-2-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-4.html#real-analysis-6-2-4-49" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+<div class="toc-title-box"><a href="chap-Lp-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap-Lp-4.html#chap-Lp-4-49" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Lp-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Lp-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-6-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Dual spaces</span></a></div>
+<div class="toc-title-box"><a href="chap-dual-spaces.html" class="internal"><span class="codenumber">2</span> <span class="title">Dual spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-dual-spaces-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear functionals</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="real-analysis-6-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-3-4.html#real-analysis-6-3-4-19" class="internal"><span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+<div class="toc-title-box"><a href="chap-dual-spaces-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap-dual-spaces-4.html#chap-dual-spaces-4-19" class="internal"><span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-dual-spaces-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-3-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-dual-spaces-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-item toc-part">
-<div class="toc-title-box"><a href="real-analysis-7.html" class="internal"><span class="codenumber">IV</span> <span class="title">Further examples of measures</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-7-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Product measures</span></a></div>
-<ul class="structural toc-item-list">
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Further examples of measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="real-analysis-7-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Product measures</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-7-2-3.html#sec-products-three-or-more" class="internal"><span class="title">Products of three or more measures</span></a></div></li></ul>
+<div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-3.html#sec-products-three-or-more" class="internal"><span class="title">Products of three or more measures</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lebesgue-measure-on-Rn.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Change of variables</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Change of variables</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-7-3.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<div class="toc-title-box"><a href="chap-Haar.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-7-3-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-3-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Haar-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Haar-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Haar-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-7-4.html" class="internal"><span class="codenumber">3</span> <span class="title">Hausdorff Dimension</span></a></div>
+<div class="toc-title-box"><a href="chap-Hausdorff.html" class="internal"><span class="codenumber">3</span> <span class="title">Hausdorff Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-meas.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Hausdorff measures</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-examp.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Calculating Hausdorff Dimension</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-7-4-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Hausdorff-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-probability.html" class="internal"><span class="codenumber">4</span> <span class="title">Probability Theory</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-appendix">
-<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">A</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<div class="toc-title-box"><a href="appendix-prereqs.html" class="internal"><span class="codenumber">A</span> <span class="title">Prerequisites: Set theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-3.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Set theory notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-4.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Cardinality and choice</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-5.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-prereqs-top.html" class="internal"><span class="codenumber">B</span> <span class="title">Prerequisites: Topology</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<div class="toc-title-box"><a href="appendix-prereqs-top-3.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-prereqs-top-3.html#appendix-prereqs-top-3-14" class="internal"><span class="title">Open sets in <span class="process-math">\(\bR^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-top-4.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Metric spaces and General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-top-5.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Continuity and convergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">C</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="title">The Weierstrass function</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="title">Takagi’s example</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">C.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="title">Schwarz’s example</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">C.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="title">Volterra’s function</span></a></div></li></ul>
 </li>
 </ul>
 </li>
-<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-2.html" class="internal"><span class="title">Index</span></a></div></li>
-<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">References</span></a></div></li>
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="codenumber">D</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-7.html" class="internal"><span class="title">Colophon</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="real-analysis-6-2-5"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Change of variables</span>
 </h2>
-<div class="para" id="real-analysis-6-2-5-2">In the proof, we will incidentally end up considering different types of convergence we now have for measurable functions.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="real-analysis-6-2-5-2">In this section we will study how changes of variables in <span class="process-math">\(\mathbb{R}^n\)</span> effect the integral. We begin by noting that all linear maps from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\)</span> are continuous.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="thm-Riesz-Fischer"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riesz-Fischer Theorem.</span>
+<article class="lemma theorem-like" id="lem-linear-cont"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="thm-Riesz-Fischer-2"> Let <span class="process-math">\((X,\mathcal{M},\mu)\)</span> be a measure space. Then <span class="process-math">\(L^p(X,\mathcal{M},\mu)\)</span> is a Banach space for all <span class="process-math">\(1\leq p\leq \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Riesz-Fischer-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="lem-linear-cont-1-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be a linear map. Then <span class="process-math">\(T\)</span> is continuous.<div class="autopermalink" data-description="Paragraph"><a href="#lem-linear-cont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 1.3.1: Riesz-Fischer Theorem"><a href="#thm-Riesz-Fischer" title="Copy heading and permalink for Theorem 1.3.1: Riesz-Fischer Theorem" aria-label="Copy heading and permalink for Theorem 1.3.1: Riesz-Fischer Theorem">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-4"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-4-1">First take <span class="process-math">\(1\leq p &lt; \infty\text{.}\)</span> Let <span class="process-math">\((f_n)_n\)</span> be a Cauchy sequence in <span class="process-math">\(L^p(X,\mu)\text{.}\)</span> Choose <span class="process-math">\(n_1&lt;n_2&lt; \ldots\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Lemma 1.3.1"><a href="#lem-linear-cont" title="Copy heading and permalink for Lemma 1.3.1" aria-label="Copy heading and permalink for Lemma 1.3.1">🔗</a></div></article><article class="proof" id="lem-linear-cont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-linear-cont-2-1">
+<div class="para">Let <span class="process-math">\(e_1,\ldots,e_n\)</span> be the canonical basis of <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> That is, let <span class="process-math">\(e_1= (1,0,\ldots,0)\text{,}\)</span> <span class="process-math">\(e_2 = (0,1,0,\ldots,0)\text{,}\)</span> and so on. Take <span class="process-math">\(x = (x_1,\ldots,x_n) \in \mathbb{R}^n\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-Cauchy-Schwarz-Rn.html ./knowl/xref/prop-bounded-cont.html" id="lem-linear-cont-2-1-6">
+\begin{align*}
+\|T(x)\|_2 \amp= \| x_1 T(e_1) + \ldots + x_nT(e_n)\|_2 \\
+\amp\leq \sum_{k=1}^n |x_k| \|T(e_k)\|_2 \\
+\amp\leq \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2} \|x\|_2,
+\end{align*}
 </div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-2">
-\begin{equation*}
-\|f_n - f_m\|_\infty &lt; \frac{1}{2^k}
-\end{equation*}
+<div class="para">where the last inequality is an application of the <a href="chap-Lp-6.html#exer-Cauchy-Schwarz-Rn" class="xref" data-knowl="./knowl/xref/exer-Cauchy-Schwarz-Rn.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.1">Cauchy-Schwarz inequality</a>. Letting <span class="process-math">\(M = \left(\sum_{k=1}^n\|T(e_k)\|_2^2\right)^{1/2}\text{,}\)</span> we have shown that <span class="process-math">\(\|T(x)\|_2 \leq M \|x\|_2\)</span> for all <span class="process-math">\(x \in \mathbb{R}^n\text{.}\)</span> Hence, by <a href="chap-dual-spaces-3.html#prop-bounded-cont" class="xref" data-knowl="./knowl/xref/prop-bounded-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.1">Proposition II.2.1.1</a>, <span class="process-math">\(T\)</span> is continuous.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-linear-cont-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="real-analysis-6-2-5-4-3">for <span class="process-math">\(n,m \geq n_k\text{.}\)</span> Let <span class="process-math">\(g_1 = f_{n_1}\)</span> and <span class="process-math">\(g_k = f_{n_{k+1}} - f_{n_{k}}\)</span> for <span class="process-math">\(j &gt;1\text{.}\)</span> Then,<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-4">
-\begin{equation*}
-\sum_{k=1}^\infty \|g_k\|_p \leq \|g_1\|_p + \sum_{k=1}^\infty \frac{1}{2^k} &lt; \infty.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-5">Let <span class="process-math">\(B =\sum_{k=1}^\infty \|g_k\|_p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-4-6">Let <span class="process-math">\(G_n = \sum_{k=1}^n |g_k|\)</span> and <span class="process-math">\(G = \sum_{k=1}^\infty |g_k|.\)</span> Note that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-7">
-\begin{equation*}
-\|G_n\|_p \leq \sum_{k=1}^n \|g_k\|_p \leq B
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-8">for all <span class="process-math">\(n\text{.}\)</span> Since <span class="process-math">\((G_n)_n\)</span> is an increasing sequence converging pointwise to <span class="process-math">\(G\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-9">
-\begin{equation*}
-\int_X G^p\,d\mu = \lim_{n\rightarrow \infty} \int_X G_n^p\,d\mu =\lim_{n\rightarrow \infty}\|G_n\|_p^p \leq B^p,
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-10">by the Monotone Convergence Theorem. Thus <span class="process-math">\(G \in L^p(X,\mu)\text{.}\)</span> In particular, <span class="process-math">\(G\)</span> is finite a.e. and so the series <span class="process-math">\(\sum_{k=1}^\infty g_k\)</span> converges absolutely a.e. Let <span class="process-math">\(F = \sum_{k=1}^\infty g_k\)</span> be the pointwise a.e. limit. Then <span class="process-math">\(|F|\leq G\text{,}\)</span> and hence <span class="process-math">\(F \in L^p(X,\mu)\text{.}\)</span> Further,<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-11">
-\begin{equation*}
-\left| F - \sum_{k=1}^n g_k\right|^p \leq \left(|F| + \sum_{k=1}^n|g_k|\right)^p\leq (2G)^p.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-12">Hence, by the Lebesgue Dominated Convergence Theorem,<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-13">
-\begin{equation*}
-\lim_{n\rightarrow \infty}\left\|F-\sum_{k=1}^n g_k\right\|_p^p = \lim_{n\rightarrow 0}\int_X \left|F-\sum_{k=1}^ng_k\right|^p\,d\mu = 0.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-14">Hence the sequence of partial sums <span class="process-math">\((\sum_{k=1}^n g_k)_n\)</span> converges to <span class="process-math">\(F\)</span> in <span class="process-math">\(p\)</span>-norm. Note that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-15">
-\begin{equation*}
-\sum_{k=1}^m g_k = f_{n_m}.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-16">Thus the subsequence <span class="process-math">\((f_{n_k})_k\)</span> converges to <span class="process-math">\(F\)</span> in <span class="process-math">\(p\)</span>-norm. It follows that <span class="process-math">\((f_n)_n\)</span> converges to <span class="process-math">\(F\text{,}\)</span> and hence <span class="process-math">\(L^p(X,\mu)\)</span> is complete.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-4-17">Now let <span class="process-math">\(p= \infty\)</span> and let <span class="process-math">\((f_n)_n\)</span> be a Cauchy sequence in <span class="process-math">\(L^\infty(X,\mu)\text{.}\)</span> By excising a set of measure <span class="process-math">\(0\)</span> if necessary, assume that each <span class="process-math">\(f_n\)</span> is bounded. Take any <span class="process-math">\(\varepsilon&gt;0\text{.}\)</span> There is an <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(n,m\geq N\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-18">
-\begin{equation*}
-\|f_n-f_m\|_\infty &lt; \varepsilon.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-19">Take any <span class="process-math">\(x \in X\text{,}\)</span> and <span class="process-math">\(n,m\geq N\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-20">
-\begin{equation*}
-|f_n(x) - f_m(x)|\leq \|f_n-f_m\|_\infty &lt; \infty.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-21">Thus, <span class="process-math">\((f_n(x))_n\)</span> is a Cauchy sequence of real numbers. Since <span class="process-math">\(\mathbb{R}\)</span> is complete, <span class="process-math">\((f_n(x))_n\)</span> is convergent. Define a function <span class="process-math">\(f\)</span> by<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-22">
-\begin{equation*}
-f(x) = \lim_{n\rightarrow\infty} f_n(x)
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-23">for each <span class="process-math">\(x \in X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-4-24">There is an <span class="process-math">\(N \geq 0\)</span> such that if <span class="process-math">\(n,m\geq N\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-25">
-\begin{equation*}
-\|f_n - f_m\|_\infty \leq 1.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-26">Thus, if <span class="process-math">\(n \geq N\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-27">
-\begin{equation*}
-\|f_n\|_\infty= \|f_n - f_N + f_N\|_\infty \leq \|f_N\|_\infty + 1.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-28">Letting<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-29">
-\begin{equation*}
-M = \max\{\|f_1\|_\infty,\ldots,\|f_{N-1}\|_\infty,\|f_N\|_\infty +1\},
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-30">we have <span class="process-math">\(\|f_n\|_\infty\leq M\)</span> for all <span class="process-math">\(n\text{.}\)</span> Thus, for <span class="process-math">\(x \in X\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-31">
-\begin{equation*}
-|f(x)| = \lim_{n\rightarrow\infty} |f_n(x)| \leq M.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-32">Hence <span class="process-math">\(f \in L^\infty(X,\mu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-4-33">Take <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> Choose <span class="process-math">\(N\text{,}\)</span> such that if <span class="process-math">\(n,m\geq N\)</span> then <span class="process-math">\(\|f_n-f_m\|_\infty&lt;\varepsilon/2.\)</span> Then, for <span class="process-math">\(x\in X\text{,}\)</span> if <span class="process-math">\(n \geq N\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-34">
-\begin{equation*}
-|f(x) - f_N(x)| = \lim_{n\rightarrow\infty}|f_n(x) - f_N(x)|&lt;\varepsilon.
-\end{equation*}
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-4-35">
-\begin{equation*}
-\begin{aligned}
-\|f-f_n\|_\infty &amp;= \sup_{x\in X}|f(x) - f_n(x)\|_\infty \\
-&amp;= \sup_{x\in X} \lim_{m\rightarrow \infty} |f_m(x) -f_n(x)|\\
-&amp;&lt; \varepsilon.
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-4-36">Hence <span class="process-math">\(f\)</span> is the limit of <span class="process-math">\((f_n)_n\)</span> in the <span class="process-math">\(\infty\)</span>-norm, and hence <span class="process-math">\(L^\infty(X,\mu)\)</span> is complete.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-4-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.1"><a href="#real-analysis-6-2-5-4" title="Copy heading and permalink for Proof 1.3.1" aria-label="Copy heading and permalink for Proof 1.3.1">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-5">For the <span class="process-math">\(p&lt;\infty\)</span> our proof was a little but stronger than the statement given. In the proof of the Riesz-Fischer theorem for <span class="process-math">\(p&lt;\infty\)</span> we showed that, if <span class="process-math">\((f_n)_n\)</span> is a Cauchy sequence in <span class="process-math">\(L^p(X,\mu)\)</span> then <span class="process-math">\((f_n)_n\)</span> converges to some  <span class="process-math">\(f \in L^p(X,\mu)\)</span> in <span class="process-math">\(p\)</span>-norm <em class="emphasis">and</em> there is a subsequence of <span class="process-math">\((f_n)_n\)</span> that converges pointwise a.e. to <span class="process-math">\(f\text{.}\)</span> We record this statement in the following porism <details class="ptx-footnote" aria-live="polite" id="real-analysis-6-2-5-5-11"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-6-2-5-5-11">We are using the term ‘porism’ to refer to a result that is a consequence of a preceding proof, but not a corollary of the statement of the result the proof accompanies. This terminology was coined by Agler and McCarthy <a href="backmatter-3.html#AglerMcCarthy" class="xref" data-knowl="./knowl/xref/AglerMcCarthy.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 1: Pick interpolation and {H">[1]</a>.</div></details>.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="algorithm theorem-like" id="cor-subseq-pw-ae-conver"><h3 class="heading">
-<span class="type">Porism</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proof 1.3.1.1"><a href="#lem-linear-cont-2" title="Copy heading and permalink for Proof 1.3.1.1" aria-label="Copy heading and permalink for Proof 1.3.1.1">🔗</a></div></article><article class="remark remark-like" id="rem-operator-norm-matrix"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="cor-subseq-pw-ae-conver-1">Let <span class="process-math">\((X,\mathcal{M},\mu)\)</span>  be a measure space and let <span class="process-math">\(1\leq p&lt;\infty.\)</span> If <span class="process-math">\((f_n)_n\)</span> is a sequence in <span class="process-math">\(L^p(X,\mu)\)</span> which converges to some <span class="process-math">\(f \in L^p(X,\mu)\)</span> in <span class="process-math">\(p\)</span>-norm, then there is a subsequence of <span class="process-math">\((f_n)_n\)</span> which converges pointwise a.e. to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-subseq-pw-ae-conver-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="rem-operator-norm-matrix-1">
+<div class="para">Recall that the norm of a linear functional <span class="process-math">\(\phi\)</span> on a normed vector space <span class="process-math">\(X\)</span> is defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-linear-cont.html" id="rem-operator-norm-matrix-1-3">
+\begin{equation*}
+\|\phi\|_\mathrm{op} = \inf\{M \colon |\phi(x)|\leq M \|x\| \text{ for all } x \in X \}.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Porism 1.3.2"><a href="#cor-subseq-pw-ae-conver" title="Copy heading and permalink for Porism 1.3.2" aria-label="Copy heading and permalink for Porism 1.3.2">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-7">In general, pointwise a.e. convergence does not imply convergence in the <span class="process-math">\(p\)</span>-norm for <span class="process-math">\(1\leq p &lt; \infty\text{;}\)</span> and convergence in the <span class="process-math">\(p\)</span>-norm does not imply pointwise a.e. convergence. We can see this in the following examples.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">We can use <a href="real-analysis-6-2-5.html#lem-linear-cont" class="xref" data-knowl="./knowl/xref/lem-linear-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.1">Lemma 1.3.1</a> to similarly define a norm on the space of linear maps from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> That is, if <span class="process-math">\(T\)</span> is a linear map from <span class="process-math">\(\mathbb{R}^n\)</span> to <span class="process-math">\(\mathbb{R}^n\)</span> we can define <span class="process-math">\(\|T\|_\mathrm{op}\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-linear-cont.html" id="rem-operator-norm-matrix-1-11">
+\begin{equation*}
+\|T\|_\mathrm{op} = \inf\{M \colon \|T(x)\|_2 \leq M \|x\|_2 \text{ for all } x \in \mathbb{R}^n\}.
+\end{equation*}
 </div>
-<article class="example example-like" id="ex-pw-not-L1"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="para">We will not not make too much use of the fact that this is a norm in these notes, but it plays an important role in functional analysis. </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rem-operator-norm-matrix-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.3.2"><a href="#rem-operator-norm-matrix" title="Copy heading and permalink for Remark 1.3.2" aria-label="Copy heading and permalink for Remark 1.3.2">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-5">If <span class="process-math">\(f\)</span> is a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> and <span class="process-math">\(T\)</span> is an invertible linear map on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> we want to compare the integrals <span class="process-math">\(\intd{\mathbb{R}^n}{f}{m_n}\)</span> and <span class="process-math">\(\intd{\mathbb{R}^n}{f\circ T}{m_n}\text{.}\)</span> It is not (yet) clear that the second integral is defined. In general, the composition of a measurable function and a continuous function need not be continuous. <details class="ptx-footnote" aria-live="polite" id="real-analysis-6-2-5-5-7"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-6-2-5-5-7">Note that we can not apply <a href="chap-meas-fun-3.html#prop-comp-meas" class="xref" data-knowl="./knowl/xref/prop-comp-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.15">Proposition I.5.1.15</a> here.</div></details> Thus, in order to proceed, we must first show that <span class="process-math">\(f \circ T\)</span> is measurable. As we are ultimately interested in the case when <span class="process-math">\(T\)</span> is an invertible linear map, we will restrict to this case (though conclusions of <a href="real-analysis-6-2-5.html#lem-meas-of-interval" class="xref" data-knowl="./knowl/xref/lem-meas-of-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.3">Lemma 1.3.3</a>, <a href="real-analysis-6-2-5.html#lem-lin-meas" class="xref" data-knowl="./knowl/xref/lem-lin-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.4">Lemma 1.3.4</a>, and <a href="real-analysis-6-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a> hold for all linear maps).<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="real-analysis-6-2-5-6">
+<div class="para">Let <span class="process-math">\(e_1,\ldots,e_n\)</span> be the standard orthonormal basis of <span class="process-math">\(\bR^n\text{.}\)</span> Recall that if <span class="process-math">\(T\)</span> is an invertible linear map in <span class="process-math">\(\bR^n\text{,}\)</span> then <span class="process-math">\(T\)</span> can be written as product of matrices of the form:<details class="ptx-footnote" aria-live="polite" id="real-analysis-6-2-5-6-6"><summary class="ptx-footnote__number" title="Footnote 1.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-6-2-5-6-6">We are just using the fact that any invertible matrix can be row-reduced to the identity matrix.</div></details>
+</div>
+<dl class="description-list">
+<dt id="li-type1">Type 1<div class="autopermalink" data-description="Part: Type 1"><a href="#li-type1" title="Copy heading and permalink for Part: Type 1" aria-label="Copy heading and permalink for Part: Type 1">🔗</a></div>
+</dt>
+<dd>there is an <span class="process-math">\(i\)</span> such that <span class="process-math">\(Te_i = ce_i\)</span> for some real <span class="process-math">\(c\neq 0\text{,}\)</span> and <span class="process-math">\(Te_j = e_j\)</span> for all <span class="process-math">\(j\neq i\text{;}\)</span>
+</dd>
+<dt id="li-type2">Type 2<div class="autopermalink" data-description="Part: Type 2"><a href="#li-type2" title="Copy heading and permalink for Part: Type 2" aria-label="Copy heading and permalink for Part: Type 2">🔗</a></div>
+</dt>
+<dd>there is an <span class="process-math">\(i &lt; n\)</span> such that <span class="process-math">\(Te_i = e_i + e_{i+1}\text{,}\)</span> and <span class="process-math">\(Te_k = e_k\)</span> for all <span class="process-math">\(k\neq i\text{;}\)</span>
+</dd>
+<dt id="li-type3">Type 3<div class="autopermalink" data-description="Part: Type 3"><a href="#li-type3" title="Copy heading and permalink for Part: Type 3" aria-label="Copy heading and permalink for Part: Type 3">🔗</a></div>
+</dt>
+<dd> there is an <span class="process-math">\(i &lt; n\)</span> such that <span class="process-math">\(Te_i = e_{i+1}\text{,}\)</span> <span class="process-math">\(Te_{i+1} = e_i\text{,}\)</span> and <span class="process-math">\(Te_k = e_k\)</span> for all <span class="process-math">\(k\neq i,i+1\text{.}\)</span>
+</dd>
+</dl>
+<div class="para">Note that, if <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a>, then <span class="process-math">\(\det(T) = c\text{,}\)</span> if <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, then <span class="process-math">\(\det(T) = 1\text{,}\)</span> and if <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 3">Type 3</a>, then <span class="process-math">\(\det(T) = -1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-meas-of-interval"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="ex-pw-not-L1-1">For <span class="process-math">\(n\geq 2\text{,}\)</span> let <span class="process-math">\(f_n\)</span> be the function on <span class="process-math">\([0,1]\)</span> given by<div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-not-L1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-subseq-pw-ae-conver.html" id="ex-pw-not-L1-2">
+<div class="para logical" id="lem-meas-of-interval-1-1">
+<div class="para">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map. Then</div>
+<div class="displaymath process-math" id="lem-meas-of-interval-1-1-2">
 \begin{equation*}
-f(x) = \begin{cases}n^2 x &amp;x \in[0,\frac{1}{n}],\\
--n^2x+2n &amp;x\in[\frac{1}{n},\frac{2}{n}], \\
-0 &amp; x\in[\frac{2}{n},1].\end{cases}
+m_n^*(T(E)) \leq |\det(T)| m_n^*(E)
 \end{equation*}
 </div>
-<div class="para" id="ex-pw-not-L1-3">The sequence <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(0\text{.}\)</span> Also<div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-not-L1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">for all <span class="process-math">\(E \subseteq \mathbb{R}^n\text{.}\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-subseq-pw-ae-conver.html" id="ex-pw-not-L1-4">
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 1.3.3"><a href="#lem-meas-of-interval" title="Copy heading and permalink for Lemma 1.3.3" aria-label="Copy heading and permalink for Lemma 1.3.3">🔗</a></div></article><article class="proof" id="lem-meas-of-interval-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-meas-of-interval-2-1">Let <span class="process-math">\(I = I_1 \times \ldots \times I_n\)</span> be an interval in <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> If <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a> for some non-zero constant <span class="process-math">\(c\text{,}\)</span> then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = |c| m_n(I) = |\det(T)| m_n(I)\text{.}\)</span> Similarly, if <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 3</a>, then <span class="process-math">\(T(I)\)</span> is an interval and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-2">
+<div class="para">Suppose <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a> and <span class="process-math">\(n=2\text{.}\)</span> As <span class="process-math">\(T\)</span> is linear, we can assume that <span class="process-math">\(I = [0,a]\times[0,b]\)</span> for some <span class="process-math">\(a,b\geq 0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html" id="lem-meas-of-interval-2-2-7">
 \begin{equation*}
-\int_{[0,1]}f_n\,dm = \frac{1}{2}\cdot \frac{2}{n}\cdot{n}=1
+T(I) = \{ (x,y) \colon 0\leq x \leq a,\ ax \leq y \leq ax + b\}
 \end{equation*}
 </div>
-<div class="para" id="ex-pw-not-L1-5">and so each <span class="process-math">\(f_n \in L^1([0,1],m)\)</span> with <span class="process-math">\(\|f_n\|_1 = 1\text{.}\)</span> Hence <span class="process-math">\((f_n)_{n\geq 2}\)</span> does not converge to <span class="process-math">\(0\)</span> in <span class="process-math">\(1\)</span>-norm.<div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-not-L1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">is a parallelogram in <span class="process-math">\(\bR^2\text{.}\)</span> By <a href="real-analysis-6-2-6.html#exer-triangle" class="xref" data-knowl="./knowl/xref/exer-triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.8">Exercise 1.4.8</a>, <span class="process-math">\(T(I)\)</span> is measurable and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type2.html ./knowl/xref/exer-triangle.html ./knowl/xref/li-type2.html" id="lem-meas-of-interval-2-2-11">
+\begin{equation*}
+m_2(T(I)) =ab = m_2(I).
+\end{equation*}
 </div>
-<div class="para" id="ex-pw-not-L1-6">Note that, the sequence <span class="process-math">\((f_n)_{n\geq 2}\)</span> can not converge to anything in <span class="process-math">\(1\)</span>-norm. Indeed, if <span class="process-math">\((f_n)_{n\geq 2}\)</span> converges in <span class="process-math">\(1\)</span>-norm to some <span class="process-math">\(f \in L^1([0,1],m)\text{,}\)</span> then by <a href="real-analysis-6-2-5.html#cor-subseq-pw-ae-conver" class="xref" data-knowl="./knowl/xref/cor-subseq-pw-ae-conver.html" data-reveal-label="Reveal" data-close-label="Close" title="Porism 1.3.2">Porism 1.3.2</a>, a subsequence would converge pointwise a.e. to <span class="process-math">\(f\text{.}\)</span> Since <span class="process-math">\((f_n)_{n\geq 2}\)</span> converges pointwise to <span class="process-math">\(0\text{,}\)</span> any subsequence converges pointwise to <span class="process-math">\(0\text{,}\)</span> and so we must have <span class="process-math">\(f=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-not-L1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Note that, if <span class="process-math">\(n &gt; 2\)</span>  and <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, then <span class="process-math">\(T\)</span> only changes on the <span class="process-math">\(i\)</span> and <span class="process-math">\(i+1\)</span> coordinates of an <span class="process-math">\(x \in \bR^n\text{,}\)</span> and leaves all other coordinates fixed. Thus, by the <span class="process-math">\(n = 2\)</span> case, <span class="process-math">\(T(I)\)</span> is measurable and <span class="process-math">\(m_n(T(I)) = m_n(I) = |\det(T)| m_n(I)\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Example 1.3.3"><a href="#ex-pw-not-L1" title="Copy heading and permalink for Example 1.3.3" aria-label="Copy heading and permalink for Example 1.3.3">🔗</a></div></article><article class="example example-like" id="ex-typewriter"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-3">
+<div class="para">Suppose now, that <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a>, <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, or <a href="real-analysis-6-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 3">Type 3</a>. Take any <span class="process-math">\(E \subseteq \bR^n\)</span> with <span class="process-math">\(m_n^*(E)&lt;\infty\text{.}\)</span> Let <span class="process-math">\(\{I_k\}_{k=1}^\infty\)</span> be a countable collection of intervals in <span class="process-math">\(\bR^n\)</span> such that <span class="process-math">\(E \subseteq \bigcup_{k=1}^\infty I_k\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html" id="lem-meas-of-interval-2-3-10">
+\begin{align*}
+m_n^*(T(E)) \amp \leq \sum_{k=1}^\infty m_n(T(I_k)) \\
+\amp = |\det(T)| \sum_{k=1}^\infty m_n(I_k). 
+\end{align*}
+</div>
+<div class="para">Taking an infimum over all such collections of intervals, we have that <span class="process-math">\(m_n^*(T(E)) \leq |\det(T)| m_n^*(E)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-meas-of-interval-2-4">
+<div class="para">Now suppose that <span class="process-math">\(T\)</span> is an arbitrary invertible linear map on <span class="process-math">\(\bR^n\text{.}\)</span> Then <span class="process-math">\(T = T_1\ldots T_k\)</span> where each <span class="process-math">\(T_i\)</span> is of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a>, <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, or <a href="real-analysis-6-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 3">Type 3</a>. Thus, for <span class="process-math">\(E \subseteq \bR^n\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html" id="lem-meas-of-interval-2-4-9">
+\begin{align*}
+m_n^*(T(E)) \amp \leq |\det(T_1)| m_n^*(T_2T_3\ldots T_k (E)) \\
+\amp \leq |\det(T_1)| \ldots|det(T_k)| m_n^*(E) \\
+\amp = |\det(T)| m_n^*(E), 
+\end{align*}
+</div>
+<div class="para">completing the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-meas-of-interval-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.3.1"><a href="#lem-meas-of-interval-2" title="Copy heading and permalink for Proof 1.3.3.1" aria-label="Copy heading and permalink for Proof 1.3.3.1">🔗</a></div></article><article class="lemma theorem-like" id="lem-lin-meas"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="ex-typewriter-1">For each <span class="process-math">\(n\geq 1\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="lem-lin-meas-1-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map. Then, if <span class="process-math">\(E \subseteq \bR^n\)</span> is Lebesgue measurable, <span class="process-math">\(T(E)\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-typewriter.html" id="ex-typewriter-2">
+<div class="autopermalink" data-description="Lemma 1.3.4"><a href="#lem-lin-meas" title="Copy heading and permalink for Lemma 1.3.4" aria-label="Copy heading and permalink for Lemma 1.3.4">🔗</a></div></article><article class="proof" id="lem-lin-meas-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-lin-meas-2-1">Let <span class="process-math">\(E \subseteq \mathbb{R}\)</span> be a bounded Lebesgue measurable set. By <a href="sec-lebesgue-measure-on-Rn.html#cor-Leb-meas-sets-G-delta-F-sigma" class="xref" data-knowl="./knowl/xref/cor-Leb-meas-sets-G-delta-F-sigma.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.2.9">Corollary 1.2.9</a> there is an <span class="process-math">\(F_\sigma\)</span>-set <span class="process-math">\(F \subseteq E\)</span> such that <span class="process-math">\(m_n(E) = m_n(F) = 0\text{.}\)</span> Let <span class="process-math">\(B = E\backslash F\text{.}\)</span> Then <span class="process-math">\(m_n(B) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-lin-meas-2-2">Note that, since <span class="process-math">\(T\)</span> is linear, <span class="process-math">\(T^{-1}\)</span> is linear, and therefore continuous. Hence <span class="process-math">\(T\)</span> sends closed sets to closed sets, and hence <span class="process-math">\(F_\sigma\)</span> sets to <span class="process-math">\(F_\sigma\)</span> sets. Further, since <span class="process-math">\(T\)</span> is continuous, there is an <span class="process-math">\(M \geq 0\text{,}\)</span> such that <span class="process-math">\(\|T(x)\|_2 \leq M \|x\|_2\text{.}\)</span> Hence, <span class="process-math">\(T\)</span> sends bounded sets to bounded sets. Hence <span class="process-math">\(T(F)\)</span> is a bounded <span class="process-math">\(F_\sigma\)</span> set. In particular, <span class="process-math">\(T(F)\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-lin-meas-2-3">
+<div class="para">By <a href="real-analysis-6-2-5.html#lem-meas-of-interval" class="xref" data-knowl="./knowl/xref/lem-meas-of-interval.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.3">Lemma 1.3.3</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-meas-of-interval.html" id="lem-lin-meas-2-3-2">
 \begin{equation*}
-f_n = \chi_{\left[\frac{k}{2^m},\frac{k+1}{2^m}\right]},
+m_n^*(T(B))\leq |\det(T)|m_n(B) = 0.
 \end{equation*}
 </div>
-<div class="para" id="ex-typewriter-3">where <span class="process-math">\(m\geq 0\)</span> and <span class="process-math">\(0\leq k &lt; 2^m\)</span> satisfy<div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-typewriter.html" id="ex-typewriter-4">
+<div class="para">Hence, <span class="process-math">\(m_n^*(T(B))=0\text{,}\)</span> and hence <span class="process-math">\(T(B)\)</span> is Lebesgue measurable. Thus,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-meas-of-interval.html" id="lem-lin-meas-2-3-5">
 \begin{equation*}
-n = 2^m +k.
+T(E) = T(F) \cup T(B)
 \end{equation*}
 </div>
-<div class="para" id="ex-typewriter-5">These functions are sometimes called the <em class="emphasis">typewriter functions</em> or <em class="emphasis">dancing functions</em>. Explicitly, we have<div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">is Lebesgue measurable. As any measurable set is a countable union of bounded measurable sets, the result follows for all Lebesgue measurable sets.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-lin-meas-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-typewriter.html" id="ex-typewriter-6">
-\begin{equation*}
-f_1 = \chi_{[0,1]},\ f_2 = \chi_{[0,1/2]},\ f_3=\chi_{[1/2,1]}, f_4 = \chi_{[0,1/4]}, f_5 =\chi_{[1/4,1/2]},\ldots
-\end{equation*}
-</div>
-<div class="para" id="ex-typewriter-7">
-<figure class="figure figure-like" id="fig-typewriter"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/typewriter.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="para" id="fig-typewriter-2-1">The typewriter functions, from <a href="real-analysis-6-2-5.html#ex-typewriter" class="xref" data-knowl="./knowl/xref/ex-typewriter.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.4">Example 1.3.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#fig-typewriter-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Figure 1.3.5"><a href="#fig-typewriter" title="Copy heading and permalink for Figure 1.3.5" aria-label="Copy heading and permalink for Figure 1.3.5">🔗</a></div></figcaption></figure> <div class="para" id="ex-typewriter-7-2">If <span class="process-math">\(n = 2^m +k\)</span> as above,<div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-typewriter.html" id="ex-typewriter-8">
-\begin{equation*}
-\int_{[0,1]}f_n\,dm = \frac{1}{2^m}.
-\end{equation*}
-</div>
-<div class="para" id="ex-typewriter-9">Thus <span class="process-math">\(f_n \in L^1([0,1],m)\)</span> and <span class="process-math">\((f_n)_n\)</span> converges to <span class="process-math">\(0\)</span> in <span class="process-math">\(1\)</span>-norm. However, <span class="process-math">\((f_n)_n\)</span> does not converge pointwise (nor pointwise a.e.) to any function. Indeed, for any <span class="process-math">\(x \in [0,1]\)</span> there are infinitely many <span class="process-math">\(n\)</span> such that <span class="process-math">\(f_n(x) = 0\)</span> and infinitely many <span class="process-math">\(n\)</span> such that <span class="process-math">\(f_n(x) =1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-typewriter-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Example 1.3.4"><a href="#ex-typewriter" title="Copy heading and permalink for Example 1.3.4" aria-label="Copy heading and permalink for Example 1.3.4">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-10">The <span class="process-math">\(\infty\)</span>-norm plays wholly more nicely with our earlier modes of convergence.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="proposition theorem-like" id="real-analysis-6-2-5-11"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proof 1.3.4.1"><a href="#lem-lin-meas-2" title="Copy heading and permalink for Proof 1.3.4.1" aria-label="Copy heading and permalink for Proof 1.3.4.1">🔗</a></div></article><article class="proposition theorem-like" id="prop-comp-meas-linear"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="real-analysis-6-2-5-11-1">Let <span class="process-math">\((X,\mathcal{M},\mu)\)</span> be a measure space and let <span class="process-math">\((f_n)_n\)</span> be a sequence in <span class="process-math">\(L^{\infty}(X,\mu)\text{.}\)</span> Then <span class="process-math">\((f_n)_n\)</span> converges to some <span class="process-math">\(f \in L^\infty(X,\mu)\)</span> if and only if there is a measure zero set <span class="process-math">\(X_0\)</span> such that <span class="process-math">\(f_n\)</span> converges uniformly to <span class="process-math">\(f\)</span> on <span class="process-math">\(X\backslash X_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop-comp-meas-linear-1">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map and let <span class="process-math">\(f\)</span> be a Lebesgue measurable function on <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> then <span class="process-math">\(f \circ T\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#prop-comp-meas-linear-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="real-analysis-6-2-5-11-2">In particular, if <span class="process-math">\((f_n)_n\)</span> converges to <span class="process-math">\(f\)</span> in the <span class="process-math">\(\infty\)</span>-norm, then <span class="process-math">\(f_n\)</span> converges pointwise a.e. to <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 1.3.5"><a href="#prop-comp-meas-linear" title="Copy heading and permalink for Proposition 1.3.5" aria-label="Copy heading and permalink for Proposition 1.3.5">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-10"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="real-analysis-6-2-5-10-1">Take, <span class="process-math">\(U \subseteq \bR\)</span> open. Since, <span class="process-math">\(f\)</span> is measurable, <span class="process-math">\(f^{-1}(U)\)</span> is a Lebesgue measurable set in <span class="process-math">\(\bR^n\text{.}\)</span> By <a href="real-analysis-6-2-5.html#lem-lin-meas" class="xref" data-knowl="./knowl/xref/lem-lin-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.4">Lemma 1.3.4</a>, <span class="process-math">\(T^{-1}(f^{-1}(U))\)</span> is a Lebesgue measurable set in <span class="process-math">\(\bR^n\text{.}\)</span> Thus, <span class="process-math">\((f\circ T)^{-1}\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 1.3.6"><a href="#real-analysis-6-2-5-11" title="Copy heading and permalink for Proposition 1.3.6" aria-label="Copy heading and permalink for Proposition 1.3.6">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-12">We turn our attention now to the question of separability of <span class="process-math">\(L^p\)</span>-spaces. We first establish that simple functions are dense in <span class="process-math">\(L^p(X,\mu)\text{,}\)</span> <span class="process-math">\(1\leq p&lt;\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 1.3.1"><a href="#real-analysis-6-2-5-10" title="Copy heading and permalink for Proof 1.3.1" aria-label="Copy heading and permalink for Proof 1.3.1">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-11">We state now the main theorem of this section. We delay the proof for now, to deal with some special cases.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="proposition theorem-like" id="prop-simple-dense"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="theorem theorem-like" id="thm-change-of-variables"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="prop-simple-dense-1">Let <span class="process-math">\((X,\mathcal{M},\mu)\)</span> be a measure space, and let <span class="process-math">\(1\leq p&lt;\infty\text{.}\)</span> The collection of simple functions of the form <span class="process-math">\(\varphi = \sum_{k=1}^na_k\chi_{E_i}\)</span> where <span class="process-math">\(E_i \in \mathcal{M}\)</span> with <span class="process-math">\(\mu(E_i)&lt;\infty\)</span> is dense in <span class="process-math">\(L^p(X,\mu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-simple-dense-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proposition 1.3.7"><a href="#prop-simple-dense" title="Copy heading and permalink for Proposition 1.3.7" aria-label="Copy heading and permalink for Proposition 1.3.7">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-14"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-14-1">Let <span class="process-math">\(\varphi\)</span> be a simple function on <span class="process-math">\(X\text{.}\)</span> There are unique scalars <span class="process-math">\(a_1,\ldots,a_n\)</span> and disjoint measurable sets <span class="process-math">\(E_1,\ldots,E_n\)</span> such that <span class="process-math">\(\varphi = \sum_{k=1}^n a_i\chi_{E_i}.\)</span> If <span class="process-math">\(\varphi \in L^p(X,\mu)\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-14-2">
+<div class="para logical" id="thm-change-of-variables-1-1">
+<div class="para">Let <span class="process-math">\(T \colon \mathbb{R}^n \rightarrow \mathbb{R}^n\)</span> be an invertible linear map and let <span class="process-math">\(f\)</span> be a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> Then <span class="process-math">\(f\circ T\)</span> is integrable and</div>
+<div class="displaymath process-math" id="thm-change-of-variables-1-1-5">
 \begin{equation*}
-\|\varphi\|_p^p = \sum_{k=1}^n |a_i|^p \mu(E_i) &lt; \infty,
+\int_{\mathbb{R}^n} f\circ T \, d\mu = \frac{1}{\left|\det(T)\right|} \int_{\mathbb{R}^n} f \, d\mu.
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-14-3">and hence <span class="process-math">\(\mu(E_i)&lt;\infty\)</span> for <span class="process-math">\(1\leq i \leq n\text{.}\)</span> Conversely, it <span class="process-math">\(\mu(E_i)&lt;\infty\)</span> for <span class="process-math">\(1\leq i \leq n\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-change-of-variables-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-14-4">
+<div class="autopermalink" data-description="Theorem 1.3.6"><a href="#thm-change-of-variables" title="Copy heading and permalink for Theorem 1.3.6" aria-label="Copy heading and permalink for Theorem 1.3.6">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-13">The proof of <a href="real-analysis-6-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a> will ultimately follow an inductive argument. It suffices to show that the result holds for linear maps of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a>, <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, and <a href="real-analysis-6-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 3">Type 3</a>. We will prove the <span class="process-math">\(n=1\)</span> and <span class="process-math">\(n=2\)</span> cases first, and then use these cases to prove the general case. We leave the <span class="process-math">\(n=1\)</span> case, <a href="real-analysis-6-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a>, as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-change-of-variables-n-1"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-change-of-variables-n-1-1-1">
+<div class="para">Let <span class="process-math">\(f \colon \bR \rightarrow \bR\)</span> be a Lebesgue integrable function. Then if <span class="process-math">\(\alpha \in \bR\)</span> is non-zero,</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-1-1-1-3">
 \begin{equation*}
-\int_X|\varphi|^p\,d\mu = \sum_{k=1}^n |a_i|^p \mu(E_i) &lt; \infty,
+\int_\bR f\,dm = |\alpha| \int_\bR f(\alpha x) \, dm(x). 
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-14-5">and hence <span class="process-math">\(\varphi \in L^p(X,\mu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="real-analysis-6-2-5-14-6">Take any <span class="process-math">\(f \in L^p(X,\mu)\text{.}\)</span> By the simple approximation theorem there are simple functions <span class="process-math">\((\phi_n)_n\)</span> converging pointwise to <span class="process-math">\(f\)</span> such that <span class="process-math">\(|\phi_n|\leq |f|\)</span> for all <span class="process-math">\(n\text{.}\)</span> Since <span class="process-math">\(f \in L^p(X,\mu)\)</span> and <span class="process-math">\(|\phi_n|^p \leq |f|^p\text{,}\)</span> it follows that <span class="process-math">\(\phi_n \in L^p(X,\mu)\)</span> for all <span class="process-math">\(n\text{.}\)</span> Further<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-14-7">
-\begin{equation*}
-|\phi_n - f|^p \leq (|\phi_n|+|f|)^p\leq 2^p|f|^p.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-14-8">As <span class="process-math">\(2^p|f|^p\)</span> is integrable and is an upper bound for <span class="process-math">\(|\phi_n-f|^p\text{,}\)</span> the Lebesgue Dominated Convergence theorem says<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-14-9">
-\begin{equation*}
-0 = \lim_{n\rightarrow\infty}\int_X|\phi_n-f|^p\,d\mu.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-14-10">Hence <span class="process-math">\(\lim_{n\rightarrow \infty}\|\phi_n-f\|_p =0\text{.}\)</span> I.e., <span class="process-math">\((\phi_n)_n\)</span> converges to <span class="process-math">\(f\)</span> in the <span class="process-math">\(p\)</span>-norm.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-14-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.2"><a href="#real-analysis-6-2-5-14" title="Copy heading and permalink for Proof 1.3.2" aria-label="Copy heading and permalink for Proof 1.3.2">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-15">When we are working with the Lebesgue measure on subsets of the real line we go further: replacing simple functions with step functions. We will then use this to show that <span class="process-math">\(L^p(E,m)\)</span> is separable when <span class="process-math">\(E \subseteq \mathbb{R}\)</span> is Lebesgue measurable, and <span class="process-math">\(1\leq p&lt;\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="lemma theorem-like" id="lem-step-dense"><h3 class="heading">
+<div class="autopermalink" data-description="Lemma 1.3.7"><a href="#lem-change-of-variables-n-1" title="Copy heading and permalink for Lemma 1.3.7" aria-label="Copy heading and permalink for Lemma 1.3.7">🔗</a></div></article><article class="lemma theorem-like" id="lem-change-of-variables-n-2"><h3 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="lem-step-dense-1">Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a bounded closed interval, and let <span class="process-math">\(1\leq p &lt; \infty\text{.}\)</span> The step functions on <span class="process-math">\([a,b]\)</span> are dense in <span class="process-math">\(L^p([a,b],m).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-step-dense-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Lemma 1.3.8"><a href="#lem-step-dense" title="Copy heading and permalink for Lemma 1.3.8" aria-label="Copy heading and permalink for Lemma 1.3.8">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-17"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-17-1">Let <span class="process-math">\(E \subseteq [a,b]\)</span> be a Lebesgue measurable set. We will show that we can approximate <span class="process-math">\(\chi_E\)</span> with a step function in the <span class="process-math">\(p\)</span>-norm. Fix <span class="process-math">\(\varepsilon&gt;0\text{.}\)</span> By the outer regularity of the Lebesgue measure, there is an open set <span class="process-math">\(E \subseteq U\subseteq \mathbb{R}\)</span> such that <span class="process-math">\(m(U\backslash E)&lt; \varepsilon^p/2.\)</span> Since <span class="process-math">\(U \subseteq \mathbb{R}\)</span> is open, <span class="process-math">\(U\)</span> is a disjoint union of countably many open intervals <span class="process-math">\(\{I_k\}_{k=1}^\infty\text{.}\)</span> Choose <span class="process-math">\(n\text{,}\)</span> so that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html" id="real-analysis-6-2-5-17-2">
+<div class="para logical" id="lem-change-of-variables-n-2-1-1">
+<div class="para">Let <span class="process-math">\(f \colon \bR^2 \rightarrow \bR\)</span> be a Lebesgue integrable function. Let <span class="process-math">\(c \in \bR\)</span> be non-zero. Define functions <span class="process-math">\(g,h,k\)</span> on <span class="process-math">\(\bR^2\)</span> by</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-5">
 \begin{equation*}
-\sum_{k=n+1}^\infty m(I_k)&lt;\varepsilon^p/2,
+g(x,y) = f(y,x),\ h(x,y) = f(x,x+y),\text{ and } k(x,y) = f(cx,y).
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-17-3">and let <span class="process-math">\(V = \bigcup_{k=1}^n I_k\text{.}\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html" id="real-analysis-6-2-5-17-4">
+<div class="para">Then <span class="process-math">\(g,h,\)</span> and <span class="process-math">\(k\)</span> are integrable, and</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-8">
 \begin{equation*}
-m(V \backslash E) \subseteq m(U\backslash E) &lt; \varepsilon^p/2
+\int_{\bR^2} g \, dm_2 = \int_{\bR^2} h \, dm_2 = \int_{\bR^2} f \, dm_2,
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-17-5">and<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html" id="real-analysis-6-2-5-17-6">
+<div class="para">and</div>
+<div class="displaymath process-math" id="lem-change-of-variables-n-2-1-1-9">
 \begin{equation*}
-m(E\backslash V) \subseteq m(U \backslash V) =\sum_{k=n+1}^\infty m(I_k)&lt;\varepsilon^p/2.
+\int_{\bR^2} k \, dm_2 = \frac{1}{|c|} \int_{\bR^2} f \, dm_2.
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-17-7">Note that, since <span class="process-math">\(V\)</span> is a finite union of disjoint intervals, <span class="process-math">\(\chi_V\)</span> is a set function. By the above calculations we have<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html" id="real-analysis-6-2-5-17-8">
-\begin{equation*}
-\begin{aligned}
-\|\chi_E - \chi_V\|_p &amp;= \left(\int_{[a,b]}|\chi_E - \chi_V|^p \,dm\right)^{1/p} \\
-&amp;= [m(E\backslash V) + m(V \backslash E)]^{1/p} &lt; \varepsilon.
-\end{aligned}
-\end{equation*}
+<div class="autopermalink" data-description="Lemma 1.3.8"><a href="#lem-change-of-variables-n-2" title="Copy heading and permalink for Lemma 1.3.8" aria-label="Copy heading and permalink for Lemma 1.3.8">🔗</a></div></article><article class="proof" id="lem-change-of-variables-n-2-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-change-of-variables-n-2-2-1">
+<div class="para">Note that <span class="process-math">\(h,g,\)</span> and <span class="process-math">\(k\)</span> are measurable by <a href="real-analysis-6-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a>. We will prove the result for <span class="process-math">\(h\text{.}\)</span> We will assume that <span class="process-math">\(f\)</span> is non-negative. Then general case follows from writing <span class="process-math">\(f\)</span> as the difference of its positive and negative parts. The proofs for <span class="process-math">\(g\)</span> and <span class="process-math">\(k\)</span> are similar, with an application of <a href="real-analysis-6-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a> in the case of <span class="process-math">\(k\text{.}\)</span> Note that, if <span class="process-math">\(l \colon \bR \rightarrow \bR\)</span> is Lebesgue integrable and <span class="process-math">\(\beta \in \bR\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html" id="eq-change-of-variables-n-2">
+\begin{equation}
+\int_\bR l(x+\beta)\,dm(x) = \int_\bR l\,dm.\tag{1.2}
+\end{equation}
 </div>
-<div class="para" id="real-analysis-6-2-5-17-9">As simple functions are linear combinations of characteristic functions, it follows now that step functions are dense in the simple functions in <span class="process-math">\(L^p([a,b],m)\text{.}\)</span> Hence, by <a href="real-analysis-6-2-5.html#prop-simple-dense" class="xref" data-knowl="./knowl/xref/prop-simple-dense.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.7">Proposition 1.3.7</a>, the step functions are dense in <span class="process-math">\(L^p([a,b],m)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">By <a href="real-analysis-6-2-3.html#thm-tonelli" class="xref" data-knowl="./knowl/xref/thm-tonelli.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.12: Tonelli’s Theorem">Tonelli’s theorem</a>, we have that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-comp-meas-linear.html ./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/thm-tonelli.html" id="lem-change-of-variables-n-2-2-1-15">
+\begin{align*}
+\int_{\bR^2}h\,dm_2 \amp = \int_\bR \int_\bR h(x,y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,x+y)\, dm(y)dm(x) \\
+\amp = \int_\bR \int_\bR f(x,y)\, dm(y)dm(x). 
+\end{align*}
 </div>
-<div class="autopermalink" data-description="Proof 1.3.3"><a href="#real-analysis-6-2-5-17" title="Copy heading and permalink for Proof 1.3.3" aria-label="Copy heading and permalink for Proof 1.3.3">🔗</a></div></article><article class="lemma theorem-like" id="lem-Lp-separable"><h3 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-change-of-variables-n-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.8.1"><a href="#lem-change-of-variables-n-2-2" title="Copy heading and permalink for Proof 1.3.8.1" aria-label="Copy heading and permalink for Proof 1.3.8.1">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-16">We can now prove <a href="real-analysis-6-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proof" id="real-analysis-6-2-5-17"><h3 class="heading"><span class="title">Proof of Theorem 1.3.6.</span></h3>
+<div class="para logical" id="real-analysis-6-2-5-17-2">
+<div class="para">
+<a href="real-analysis-6-2-5.html#lem-change-of-variables-n-1" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.7">Lemma 1.3.7</a> and <a href="real-analysis-6-2-5.html#lem-change-of-variables-n-2" class="xref" data-knowl="./knowl/xref/lem-change-of-variables-n-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.8">Lemma 1.3.8</a> show that the result holds for <span class="process-math">\(n=1,2\text{.}\)</span> Assume now that <span class="process-math">\(n\geq 3\)</span> and the result holds for <span class="process-math">\(\bR^k\)</span> when <span class="process-math">\(k&lt; n\text{.}\)</span> Assume that <span class="process-math">\(T\)</span> is of <a href="real-analysis-6-2-5.html#li-type1" class="xref" data-knowl="./knowl/xref/li-type1.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 1">Type 1</a>, <a href="real-analysis-6-2-5.html#li-type2" class="xref" data-knowl="./knowl/xref/li-type2.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 2">Type 2</a>, and <a href="real-analysis-6-2-5.html#li-type3" class="xref" data-knowl="./knowl/xref/li-type3.html" data-reveal-label="Reveal" data-close-label="Close" title="Part: Type 3">Type 3</a>. Then, either <span class="process-math">\(Te_1 = e_1\)</span> and <span class="process-math">\(T \{(0,x_2,\ldots,x_n)\} \subseteq \{(0,x_2,\ldots,x_n)\}\text{,}\)</span> or <span class="process-math">\(Te_n = e_n\)</span> and <span class="process-math">\(T\{(x_1,x_2,\ldots,0)\} \subseteq \{(x_1,x_2,\ldots,0)\}\text{.}\)</span> Assume the former, the latter case is done similarly. Let <span class="process-math">\(T'\)</span> be the restriction to the <span class="process-math">\(n-1\)</span>-dimensional space <span class="process-math">\(\{(0,x_2,\ldots,x_n)\} \text{.}\)</span> Then, by <a href="real-analysis-6-2-3.html#thm-fubini" class="xref" data-knowl="./knowl/xref/thm-fubini.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.10: Fubini’s Theorem">Fubini’s Theorem</a> (and <a href="real-analysis-6-2-5.html#prop-comp-meas-linear" class="xref" data-knowl="./knowl/xref/prop-comp-meas-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.5">Proposition 1.3.5</a>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-change-of-variables-n-1.html ./knowl/xref/lem-change-of-variables-n-2.html ./knowl/xref/li-type1.html ./knowl/xref/li-type2.html ./knowl/xref/li-type3.html ./knowl/xref/thm-fubini.html ./knowl/xref/prop-comp-meas-linear.html" id="real-analysis-6-2-5-17-2-20">
+\begin{align*}
+\int_\bR^n f\circ T \,dm_n \amp= \int_\bR \left( \int_{\bR^{n-1}} f(x_1, T'(x_2,\ldots,x_n)))\,dm_{n-1}\right)dm\\
+\amp = \frac{1}{|\det(T')|}\int_\bR \left( \int_{\bR^{n-1}} f(x_1, x_2,\ldots,x_n))\,dm_{n-1}\right)dm\\
+\amp = \frac{1}{|\det(T')|}\int_\bR^n f \,dm_n.
+\end{align*}
+</div>
+<div class="para">Noting that <span class="process-math">\(\det(T) = \det(T')\)</span> completes the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.3.2: Proof of Theorem 1.3.6"><a href="#real-analysis-6-2-5-17" title="Copy heading and permalink for Proof 1.3.2: Proof of Theorem 1.3.6" aria-label="Copy heading and permalink for Proof 1.3.2: Proof of Theorem 1.3.6">🔗</a></div></article><article class="corollary theorem-like" id="cor-change-of-variables"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="lem-Lp-separable-1">Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a bounded closed interval, and let <span class="process-math">\(1\leq p &lt; \infty\text{.}\)</span> The Banach space <span class="process-math">\(L^p([a,b],m)\)</span> is separable.<div class="autopermalink" data-description="Paragraph"><a href="#lem-Lp-separable-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="cor-change-of-variables-1-1">Let <span class="process-math">\(T \colon \bR^n\rightarrow \bR^n\)</span> be an invertible linear map and let <span class="process-math">\(E \subseteq \bR^n\)</span> be a Lebesgue measurable set with <span class="process-math">\(m_n(E) &lt; \infty\text{.}\)</span> Then, <span class="process-math">\(|\det(T)|m_n(T(E))=m_n(E).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-change-of-variables-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 1.3.9"><a href="#lem-Lp-separable" title="Copy heading and permalink for Lemma 1.3.9" aria-label="Copy heading and permalink for Lemma 1.3.9">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-19"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-19-1">Take an arbitrary step function<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-step-dense.html" id="real-analysis-6-2-5-19-2">
+<div class="autopermalink" data-description="Corollary 1.3.9"><a href="#cor-change-of-variables" title="Copy heading and permalink for Corollary 1.3.9" aria-label="Copy heading and permalink for Corollary 1.3.9">🔗</a></div></article><article class="proof" id="cor-change-of-variables-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="cor-change-of-variables-2-1">
+<div class="para">Let <span class="process-math">\(f = \chi_E\text{.}\)</span> Note that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-change-of-variables.html" id="cor-change-of-variables-2-1-2">
 \begin{equation*}
-\varphi = \sum_{k=1}^n c_i \chi_{[x_{i-1},x_i]}
+\chi_E \circ T = \chi_{T(E)}.
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-19-3">where <span class="process-math">\(a=x_0&lt;x_1&lt;\ldots&lt;x_n=b\)</span> is a partition of <span class="process-math">\([a,b]\text{,}\)</span> let <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> Choose rationals <span class="process-math">\(y_1,\ldots,y_{n-1} \in [a,b]\)</span> such that, for <span class="process-math">\(1\leq i\leq n-1\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-step-dense.html" id="real-analysis-6-2-5-19-4">
+<div class="para">Thus, by <a href="real-analysis-6-2-5.html#thm-change-of-variables" class="xref" data-knowl="./knowl/xref/thm-change-of-variables.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.6">Theorem 1.3.6</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-change-of-variables.html" id="cor-change-of-variables-2-1-4">
 \begin{equation*}
-y_i \leq x_i \text{ and }x_i - y_i &lt;\frac{\varepsilon}{2n(b-a)^p},
+m_n(T(E)) = \int_\bR^n \chi_{T(E)}\,dm_n = \frac{1}{|\det(T)|}\int_\bR^n \chi_E\,dm_n = \frac{1}{|\det(T)|}m_n(E),
 \end{equation*}
 </div>
-<div class="para" id="real-analysis-6-2-5-19-5">and let <span class="process-math">\(y_0=a\)</span> and <span class="process-math">\(y_n =b\text{.}\)</span> Choose <span class="process-math">\(q_1,\ldots, q_n \in \mathbb{Q}\)</span> such that for <span class="process-math">\(1\leq i \leq n\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">and so <span class="process-math">\(|\det(T)|\det(T(E)) = m_n(E).\)</span>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-step-dense.html" id="real-analysis-6-2-5-19-6">
-\begin{equation*}
-|q_i - c_i| &lt; \frac{\varepsilon^p}{[2n(x_{i}-x_{i-1})]^{1/p}},
-\end{equation*}
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-change-of-variables-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="real-analysis-6-2-5-19-7">and let <span class="process-math">\(\psi\)</span> be the step function<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-step-dense.html" id="real-analysis-6-2-5-19-8">
-\begin{equation*}
-\psi = \sum_{i=1}^n q_i \chi_{[y_{i-1},y_i}].
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-19-9">Then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-step-dense.html" id="real-analysis-6-2-5-19-10">
-\begin{equation*}
-\begin{aligned}
-\int_{[a,b]}|\varphi-\psi|^p\,dm &amp;= \sum_{i=1}^n \int_{[x_{i-1},y_i]}|c_i-q_i|^p\,dm + \sum_{i=1}^{n-1}\int_{[y_i,x_i]}|x_i - y_{i+1}|^p\,dm\\
-&amp;\leq \sum_{i=1}^{n} \frac{\varepsilon^p}{2n} + \sum_{i=1}^{n-1} \frac{\varepsilon^p}{2n}\leq \varepsilon^p.
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-19-11">Hence <span class="process-math">\(\|\varphi-\psi\|_p &lt; \varepsilon.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-19-12">We have shown that the collection <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> of all step functions taking rational values on partitions of <span class="process-math">\([a,b]\)</span> with rational interior endpoints is dense in the collection of all step functions. It follows from <a href="real-analysis-6-2-5.html#lem-step-dense" class="xref" data-knowl="./knowl/xref/lem-step-dense.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.8">Lemma 1.3.8</a>, that <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> is dense in <span class="process-math">\(L^p([a,b],m)\text{.}\)</span> It is not hard to see that <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> is countable, and hence <span class="process-math">\(L^p([a,b])\)</span> is separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-19-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.4"><a href="#real-analysis-6-2-5-19" title="Copy heading and permalink for Proof 1.3.4" aria-label="Copy heading and permalink for Proof 1.3.4">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-20">Having shown that <span class="process-math">\(L^p([a,b],m)\)</span> is separable, we can now show that <span class="process-math">\(L^p(E,m)\)</span> is separable for all <span class="process-math">\(1\leq p&lt;\infty\)</span> and all Lebesgue measurable <span class="process-math">\(E \subseteq \mathbb{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="thm-Lp-separable"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="thm-Lp-separable-1">Let <span class="process-math">\(E \subseteq \mathbb{R}\)</span> be a Lebesgue measurable set, and let <span class="process-math">\(1\leq p&lt; \infty\text{.}\)</span> The Banach space <span class="process-math">\(L^p(E,m)\)</span> is separable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lp-separable-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 1.3.10"><a href="#thm-Lp-separable" title="Copy heading and permalink for Theorem 1.3.10" aria-label="Copy heading and permalink for Theorem 1.3.10">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-22"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-22-1">For a closed bounded interval <span class="process-math">\([a,b] \subseteq \mathbb{R}\text{,}\)</span> let <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> be defined as in the proof of <a href="real-analysis-6-2-5.html#lem-Lp-separable" class="xref" data-knowl="./knowl/xref/lem-Lp-separable.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.3.9">Lemma 1.3.9</a>. That is, <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> is all rational-valued step functions on <span class="process-math">\([a,b]\)</span> defined using partitions of <span class="process-math">\([a,b]\)</span> using rational values.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-22-2">First assume that <span class="process-math">\(E \subseteq \mathbb{R}\)</span> is bounded. Let <span class="process-math">\([a,b]\)</span> be a closed bounded interval such that <span class="process-math">\(E \subseteq [a,b]\text{.}\)</span> Since <span class="process-math">\(\mathcal{S}_\mathbb{Q}([a,b])\)</span> is dense in the set of simple functions on <span class="process-math">\([a,b]\text{,}\)</span> the set<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-Lp-separable.html ./knowl/xref/prop-simple-dense.html ./knowl/xref/prop-integral-cont.html" id="real-analysis-6-2-5-22-3">
-\begin{equation*}
-\{\psi|_E \colon \psi \in \mathcal{S}_\mathbb{Q}([a,b])\}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-22-4">is dense in the collection of simple functions on <span class="process-math">\(E\text{.}\)</span> Hence, <span class="process-math">\(L^p(E,m)\)</span> is separable, by <a href="real-analysis-6-2-5.html#prop-simple-dense" class="xref" data-knowl="./knowl/xref/prop-simple-dense.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.7">Proposition 1.3.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-22-5">Assume now that <span class="process-math">\(E\)</span> is unbounded. For each <span class="process-math">\(n\in\mathbb{N}\text{,}\)</span> let <span class="process-math">\(E_n = E \cap [-n,n]\text{.}\)</span> By the above argument, since <span class="process-math">\(E_n\)</span> is bounded, there is a countable set <span class="process-math">\(\mathcal{S}_n\)</span> which is dense in <span class="process-math">\(L^p(E_n,m).\)</span> Extend each <span class="process-math">\(\varphi \in \mathcal{S}_n\)</span> to <span class="process-math">\(E\)</span> by setting <span class="process-math">\(\varphi(x) = 0\)</span> for <span class="process-math">\(x \in E \backslash E_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-22-6">Take <span class="process-math">\(\varepsilon &gt;0\)</span> and fix <span class="process-math">\(f \in L^p(E,m).\)</span> By the continuity of integration, <a href="chap-integration-4.html#prop-integral-cont" class="xref" data-knowl="./knowl/xref/prop-integral-cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 6.2.6: Continuity of Integration">Proposition II.6.2.6</a>,<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-Lp-separable.html ./knowl/xref/prop-simple-dense.html ./knowl/xref/prop-integral-cont.html" id="real-analysis-6-2-5-22-7">
-\begin{equation*}
-\lim_{n\rightarrow\infty}\int_{E_n} |f|^p\,dm = \int_E |f|^p\,dm&lt;\infty.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-22-8">Thus, we can choose <span class="process-math">\(n\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-Lp-separable.html ./knowl/xref/prop-simple-dense.html ./knowl/xref/prop-integral-cont.html" id="real-analysis-6-2-5-22-9">
-\begin{equation*}
-\int_{E\backslash E_n} |f|^p\,dm &lt; \varepsilon^p/2.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-22-10">Since <span class="process-math">\(\mathcal{S}_n\)</span> is dense in <span class="process-math">\(L^p(E_n,m)\text{,}\)</span> there exists <span class="process-math">\(\varphi \in \mathcal{S}_n\)</span> such that <span class="process-math">\(\|f|_{E_n} - \varphi\|^p_p &lt; \varepsilon/2.\)</span> Thus<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-Lp-separable.html ./knowl/xref/prop-simple-dense.html ./knowl/xref/prop-integral-cont.html" id="real-analysis-6-2-5-22-11">
-\begin{equation*}
-\begin{aligned}
-\|f-\varphi\|^p_p &amp;= \int_E |f-\varphi|^p\,dm \\
-&amp;= \int_{E_n} |f-\varphi|^p\,dm + \int_{E\backslash E_n} |f|^p\,dm\\
-&amp;&lt;= \frac{\varepsilon^p}{2} + \frac{\varepsilon^p}{2} = \varepsilon^p.
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-22-12">Thus <span class="process-math">\(\|f-\varphi\|_p&lt;\varepsilon\text{.}\)</span> Hence, the countable set <span class="process-math">\(\bigcup_n \mathcal{S}_n\)</span> is dense in <span class="process-math">\(L^p(E,m)\text{,}\)</span> and so <span class="process-math">\(L^p(E,m)\)</span> is separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-22-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.5"><a href="#real-analysis-6-2-5-22" title="Copy heading and permalink for Proof 1.3.5" aria-label="Copy heading and permalink for Proof 1.3.5">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-23">The <span class="process-math">\(L^p\)</span>-spaces for Lebesgue measure are not the only separable nice class of separable <span class="process-math">\(L^p\)</span>-spaces: <span class="process-math">\(\ell^p\)</span>-spaces are also separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="thm-lp-separable"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="thm-lp-separable-1">Let <span class="process-math">\(A\)</span> be a non-empty set and take <span class="process-math">\(1\leq p &lt; \infty\text{.}\)</span> Then <span class="process-math">\(\ell^p(A)\)</span> is separable if and only if <span class="process-math">\(A\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-lp-separable-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 1.3.11"><a href="#thm-lp-separable" title="Copy heading and permalink for Theorem 1.3.11" aria-label="Copy heading and permalink for Theorem 1.3.11">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-25"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-25-1">If <span class="process-math">\(A\)</span> is finite, then <span class="process-math">\(\ell^p(A) \simeq \mathbb{R}^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is the cardinality of <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(\ell^p(A)\)</span> is separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-25-2">If <span class="process-math">\(A\)</span> is countably infinite, then there is a bijection from <span class="process-math">\(A\)</span> to <span class="process-math">\(\mathbb{N}\text{.}\)</span> This bijection defines an isometric isomorphism from <span class="process-math">\(\ell^p(A)\)</span> to <span class="process-math">\(\ell^p\text{.}\)</span> We will thus assume that <span class="process-math">\(A = \mathbb{N}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-25-3">The simple functions in <span class="process-math">\(\ell^p\)</span> are the sequences which are finitely non-zero. Take simple <span class="process-math">\(a = (a_1,a_2,\ldots,a_n,0,0,\ldots)\)</span> and <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> For <span class="process-math">\(1\leq i \leq n\text{,}\)</span> choose <span class="process-math">\(q_i \in \mathbb{Q}\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html ./knowl/xref/exer-lp-not-separable.html ./knowl/xref/thm-linf-not-separable.html ./knowl/xref/exer-lp-not-separable.html" id="real-analysis-6-2-5-25-4">
-\begin{equation*}
-|q_i-a_i|&lt;\frac{\varepsilon}{n^{1/p}}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-25-5">and let <span class="process-math">\(q = (q_1,q_2,\ldots,q_n,0,\ldots).\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-simple-dense.html ./knowl/xref/exer-lp-not-separable.html ./knowl/xref/thm-linf-not-separable.html ./knowl/xref/exer-lp-not-separable.html" id="real-analysis-6-2-5-25-6">
-\begin{equation*}
-\sum_{i=1}^n |q_i-a_i|^p&lt;  \varepsilon^p,
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-25-7">and so <span class="process-math">\(\|a-q\|_p&lt;\varepsilon.\)</span> Hence the finitely non-zero rational sequences are dense in the finitely non-zero sequences. As the finitely non-zero sequences are dense in <span class="process-math">\(\ell^p\)</span> by <a href="real-analysis-6-2-5.html#prop-simple-dense" class="xref" data-knowl="./knowl/xref/prop-simple-dense.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.7">Proposition 1.3.7</a>, it follows that the rational-valued simple functions are dense in <span class="process-math">\(\ell^p\text{.}\)</span> There are countably many finitely non-zero rational sequences, and hence <span class="process-math">\(\ell^p\)</span> is simple.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-25-8">That <span class="process-math">\(\ell^p(A)\)</span> is not separable when <span class="process-math">\(A\)</span> is uncountable is left as an exercise, <a href="real-analysis-6-2-6.html#exer-lp-not-separable" class="xref" data-knowl="./knowl/xref/exer-lp-not-separable.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.15">Exercise 1.4.15</a>.<details class="ptx-footnote" aria-live="polite" id="real-analysis-6-2-5-25-8-4"><summary class="ptx-footnote__number" title="Footnote 1.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="real-analysis-6-2-5-25-8-4">I recommend looking at the proof of <a href="real-analysis-6-2-5.html#thm-linf-not-separable" class="xref" data-knowl="./knowl/xref/thm-linf-not-separable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.12">Theorem 1.3.12</a> before attempting <a href="real-analysis-6-2-6.html#exer-lp-not-separable" class="xref" data-knowl="./knowl/xref/exer-lp-not-separable.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.4.15">Exercise 1.4.15</a>.</div></details><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-25-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.6"><a href="#real-analysis-6-2-5-25" title="Copy heading and permalink for Proof 1.3.6" aria-label="Copy heading and permalink for Proof 1.3.6">🔗</a></div></article><div class="para" id="real-analysis-6-2-5-26">Take <span class="process-math">\(1\leq p &lt;\infty\text{.}\)</span> We have shown that <span class="process-math">\(L^p(E,m)\)</span> is separable for all Lebesgue measurable <span class="process-math">\(E \subseteq \mathbb{R}\text{,}\)</span> and that <span class="process-math">\(\ell^p\)</span> is separable. What happens when <span class="process-math">\(p=\infty\text{?}\)</span> In this case, we are not guaranteed separability.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="theorem theorem-like" id="thm-linf-not-separable"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="thm-linf-not-separable-1">The Banach spaces <span class="process-math">\(L^\infty([0,1],m)\)</span> and <span class="process-math">\(\ell^\infty\)</span> are not separable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-linf-not-separable-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Theorem 1.3.12"><a href="#thm-linf-not-separable" title="Copy heading and permalink for Theorem 1.3.12" aria-label="Copy heading and permalink for Theorem 1.3.12">🔗</a></div></article><article class="proof" id="real-analysis-6-2-5-28"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para" id="real-analysis-6-2-5-28-1">Consider first <span class="process-math">\(L^\infty([0,1],m)\text{.}\)</span> For each <span class="process-math">\(x \in [0,1]\text{,}\)</span> let<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-28-2">
-\begin{equation*}
-F_x = \chi_{[0,x]}.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-28-3">Each <span class="process-math">\(F_x\)</span> is bounded and measurable, and hence <span class="process-math">\(F_x \in L^\infty([0,1],m)\text{.}\)</span> Note that, if <span class="process-math">\(0\leq x &lt; y \leq 1\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-28-4">
-\begin{equation*}
-\|F_x-F_y\|_\infty = \|\chi_{(x,y]}\|_\infty = 1.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-28-5">Suppose <span class="process-math">\(S\)</span> is a dense subset of <span class="process-math">\(L^\infty\text{.}\)</span> For each <span class="process-math">\(x\in [0,1]\text{,}\)</span>fix <span class="process-math">\(s_x\in S\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-28-6">
-\begin{equation*}
-\|F_x - s_x\|_\infty.
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-28-7">Note that, if <span class="process-math">\(x \neq y\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="displaymath process-math" id="real-analysis-6-2-5-28-8">
-\begin{equation*}
-\begin{aligned}
-1 &amp;= \|F_x-F_y\|_\infty\\
-&amp;\leq \|F_x -s_x\|_\infty + \|s_x - F_y\|_\infty \\
-&amp;&lt; \frac{1}{2} + \|s_x - F_y\|_\infty.
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para" id="real-analysis-6-2-5-28-9">Thus, when <span class="process-math">\(x \neq y\text{,}\)</span> <span class="process-math">\(\|s_x-F_y\|&gt;\frac{1}{2}.\)</span> In, particular, if <span class="process-math">\(x\neq y\)</span> then <span class="process-math">\(s_x \neq s_y.\)</span> Hence, the collection <span class="process-math">\(\{s_x\}_{x\in[0,1]}\)</span> is uncountable. Therefore, <span class="process-math">\(S\)</span> is uncountable, and hence <span class="process-math">\(L^\infty([0,1],m)\)</span> is not separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="real-analysis-6-2-5-28-10">The proof that <span class="process-math">\(\ell^\infty\)</span> is not separable is similar. We will outline the details. Let <span class="process-math">\(F\)</span> be the collection of all sequences in of zeros and ones. Note that this is an uncountable collection. Indeed, if we can identify the binary expansion of any <span class="process-math">\(x \in [0,1)\)</span> with a sequence in <span class="process-math">\(F\text{,}\)</span> and hence <span class="process-math">\(F\)</span> and <span class="process-math">\([0,1)\)</span> have the same cardinality. Further, if <span class="process-math">\(a,b\in F\)</span> and <span class="process-math">\(a\neq b\text{,}\)</span> then <span class="process-math">\(a-b\)</span> is a sequence  of <span class="process-math">\(-1,0\)</span> and <span class="process-math">\(1\)</span> with at least one non-zero term. Thus, <span class="process-math">\(\|a-b\|_\infty=1\text{.}\)</span> Using <span class="process-math">\(F\)</span> in the role that <span class="process-math">\(\{F_x\}_{x\in[0,1]}\)</span> played in <span class="process-math">\(L^\infty([0,1],m)\text{,}\)</span> we can show that any dense set in <span class="process-math">\(\ell^\infty\)</span> has to be uncountable. Hence <span class="process-math">\(\ell^\infty\)</span> is not separable.<div class="autopermalink" data-description="Paragraph"><a href="#real-analysis-6-2-5-28-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 1.3.7"><a href="#real-analysis-6-2-5-28" title="Copy heading and permalink for Proof 1.3.7" aria-label="Copy heading and permalink for Proof 1.3.7">🔗</a></div></article><div class="autopermalink" data-description="Section 1.3: L^p-approximations and the Riesz-Fischer Theorem"><a href="#real-analysis-6-2-5" title="Copy heading and permalink for Section 1.3: L^p-approximations and the Riesz-Fischer Theorem" aria-label="Copy heading and permalink for Section 1.3: L^p-approximations and the Riesz-Fischer Theorem">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 1.3.9.1"><a href="#cor-change-of-variables-2" title="Copy heading and permalink for Proof 1.3.9.1" aria-label="Copy heading and permalink for Proof 1.3.9.1">🔗</a></div></article><div class="autopermalink" data-description="Section 1.3: Change of variables"><a href="#real-analysis-6-2-5" title="Copy heading and permalink for Section 1.3: Change of variables" aria-label="Copy heading and permalink for Section 1.3: Change of variables">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="real-analysis-6-2-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="real-analysis-6-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-lebesgue-measure-on-Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="real-analysis-6-2-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

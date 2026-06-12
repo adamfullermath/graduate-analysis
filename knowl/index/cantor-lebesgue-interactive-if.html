@@ -350,7 +350,7 @@ def _(iteration=slider([1 .. 7])):
         flat_line = plot(i/(2**n),C[2*i-1],C[2*i], thickness=1.5)
         phi = phi + flat_line
     
-    pretty_print(html(r'Construction of $\phi$ on $U_{%s}$.' % latex(n)))
+    pretty_print(html(r'Construction of $\phi$ on $\bigcup_{k=1}^{%s} U_k$.' % latex(n)))
     show(phi, xmin=0,xmax=1, ymin=0,ymax=1)
 </script></pre></div>
 </body>
