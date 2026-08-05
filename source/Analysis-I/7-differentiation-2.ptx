@@ -1,0 +1,216 @@
+<section>
+<title>Absolutely continuous functions</title>
+
+<p>Let <m>[a,b]</m> be closed interval in <m>\mathbb{R}</m> and let <m>m</m> be the Lebesgue measure on <m>[a,b]</m>. In this section we want to compare Borel measures on <m>[a,b]</m> with the Lebesgue measure. If <m>\nu</m> is a Borel measure on <m>[a,b]</m>, when is <m>\nu \perp m</m>? When is <m>\nu \ll m</m>? What can we learn from the <xref ref="thm-Radon-Nikodym" text="custom">Radon-Nikodym Theorem</xref> and the <xref ref="thm-lebesegue-decomposition" text="custom">Lebesgue decomposition theorem</xref>?</p>
+<p>We first give a quantitative description of absolute continuity.</p>
+
+<proposition xml:id="prop-abs-cont-eps-delta">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+        Suppose <m>\nu</m> is a finite signed-measure on <m>(X,\mathcal{F})</m>.
+        Then <m>\nu \ll \mu</m> if and only if for all <m>\varepsilon &gt;0</m> there exists a <m>\delta &gt;0</m> such that given <m>E \in \mathcal{F}</m>, if <m>\mu(E) &lt; \delta</m> then <m>\nu(E) &lt; \varepsilon.</m>     
+    </p>
+</statement>
+
+<proof>
+<p>First, assume the <m>\varepsilon - \delta</m> criterion does not hold.
+    That is, we will assume that there is an <m>\varepsilon &gt; 0</m> such that for all <m>\delta &gt; 0</m> there is a set <m>F_\delta</m> with <m>\mu(F_\delta)&lt;\delta</m> and <m>\nu(F_\delta) \geq \varepsilon.</m>
+    There is thus a sequence of sets <m>\{E_n\}_n^\infty</m> such that
+<md> \mu(E_n) &lt; \frac{1}{2^n} \text{ and }\nu(E_n)\geq \varepsilon_0.</md>
+For each <m>n</m>, let <m>A_n = \bigcup_{k=n}^\infty E_k</m>.
+    Then <m>\{A_n\}_{n=1}^\infty</m> is a descending sequence of sets with
+<md> \mu(A_n) &lt; \sum_{k=1}^n \frac{1}{2^k} = \frac{1}{2^{n-1}} \text{ and } \nu(A_n)\geq \varepsilon_0</md>
+Let <m>A = \bigcap_{n=1}^\infty A_n</m>.
+    Since <m>A_n \subseteq A</m> for all <m>n</m>,
+<md> \mu(A) \leq \mu(A_n) &lt; \frac{1}{2^{n-1}}</md>
+for all <m>n</m>.
+    Hence <m>\mu(A) = 0</m>.
+    By the continuity of measure (since <m>\nu</m> is a finite measure)
+<md> \nu(A) = \lim_n\nu(A_n) \geq \varepsilon_0&gt;0.</md>
+Hence <m>\nu</m> is not absolutely continuous with respect to <m>\mu</m>.</p>
+<p>Conversely, suppose that <m>\varepsilon -\delta</m> criterion holds.
+    Suppose <m>\mu(A) = 0</m>.
+    Then, for all <m>\varepsilon &gt; 0</m>, <m>\nu(A)&lt; \varepsilon</m>.
+    Hence <m>\nu(A) = 0</m>.
+    Thus <m>\nu\ll\mu</m>.<fn>Note that we did not use the <m>\nu</m> was finite for this direction of the proof. That <m>\nu</m> was finite was only used in the first paragraph to apply the continuity of measure for intersections.</fn></p>
+</proof>
+</proposition>
+
+<definition>
+<statement>
+    <p>
+        Let <m>[a,b] \subseteq \mathbb{R}</m> be a closed interval, let <m>m</m> be the Lebesgue measure on the Borel sets in <m>[a,b]</m>, and let <m>\nu</m> be a Borel signed-measure on <m>[a,b]</m>.
+        We say that <m>\nu</m> is <term>absolutely continuous</term> if <m>|\nu| \ll m</m>.
+        We say the <m>\nu</m> is <term>singular</term> if <m>\nu_+ \perp m</m> and <m>\nu_- \perp m</m>, where <m>\nu = \nu_+ - \nu_-</m> is the <xref ref="def-jordan-decomp" text="custom">Jordan decomposition</xref> of <m>\nu</m>.
+        <idx><h>absolutely continuous</h><h>Borel measure</h></idx>
+        <idx><h>singular measures</h><h>Borel measure</h></idx>
+    </p>
+</statement>
+</definition>
+
+<p>We know that any Borel measure on <m>[a,b]</m> determines a right-continuous function <m>f</m> of bounded variation on <m>[a,b]</m>; and any right-continuous function <m>f</m> on <m>[a,b]</m> determines a Borel measure, <xref ref="thm-signed-meas-1-1-bv"/>. <xref ref="exer-cant-len-func-singular"/> shows that we can get singular measures this way; <xref ref="ex-x-2-is-abs-cont"/> shows that we can absolutely continuous measures this way. The following definition is clearly leading to what functions give what types of measures.</p>
+
+<definition>
+<statement>
+    <p>
+        Let <m>[a,b]</m> be a closed interval and let <m>f\colon [a,b] \rightarrow \mathbb{R}</m> be a function.
+        The function <m>f</m> is <term>absolutely continuous</term> if for all <m>\varepsilon &gt;0</m> there is a <m>\delta &gt; 0</m> such that if <m>\{(a_i,b_i)\}_{i=1}^n</m> are disjoint open intervals with
+        <md> \sum_{i=1}^n(b_i - a_i) &lt; \delta</md>
+        then
+        <md> \sum_{i=1}^n|f(b_i) - f(a_i)| &lt; \varepsilon.</md>
+        <idx><h>absolutely continuous function</h></idx>
+    </p>
+</statement>
+</definition>
+
+<p>It should be clear that an absolutely continuous function is continuous. The following example shows that all Lipschitz functions are absolutely continuous, and induce absolutely continuous Borel signed measures.</p>
+
+<example xml:id="exam-Lipschitz-abs-cont">
+<p>Let <m>f</m> be a Lipschitz function on <m>[a,b]</m><idx><h>Lipschitz function</h></idx>.
+    That is, assume there is a constant <m>K</m> such that <m>|f(x) - f(y)|\leq K|x-y|</m> for all <m>x,y\in[a,b]</m>.
+    Take any <m>\varepsilon&gt;0</m> and let <m>\delta = \varepsilon/K</m>.
+    Let <m>\{(a_i,b_i)\}_{i=1}^n</m> be a collection of disjoint open intervals such that <m>\sum_i(b_i-a_i)&lt;\delta</m>.
+    Then
+    <md>
+    \begin{aligned}
+    \sum_{i=1}^n|f(b_i) - f(a_i)| &amp; \leq\sum_{i=1}^nK(b_i - a_i) \\
+            &amp;&lt; \varepsilon.
+    \end{aligned}
+    </md>
+    Thus, <m>f</m> is absolutely continuous.</p>
+
+    <p>Assume now that <m>f\neq 0</m>.
+    By <xref ref="exer-lipschitz-bv"/>, <m>f</m> is of bounded variation.
+    Thus, <m>f</m> induces a Borel signed measure <m>\nu</m> on <m>[a,b]</m> by <xref ref="thm-signed-meas-1-1-bv"/>.
+    That is, if <m>f = f_1 - f_2</m> is the Jordan decomposition of <m>f</m>, then
+     <m>\nu = \nu_+ - \nu_-</m> where <m>\nu_+</m> is the Carathéodory extension of the premeasure <m>\nu_+((c,d]) = f_1(d) - f_1(c)</m> and <m>\nu_-</m> is the Carathéodory extension of the premeasure <m>\nu_-((c,d]) = f_2(d) - f_2(c)</m>, for <m>(c,d] \subseteq [a,b]</m>.
+    Following a similar argument as in <xref ref="ex-x-2-is-abs-cont"/>, we can show that <m>\nu</m> is absolutely continuous.</p>
+</example>
+
+<p>The following theorem has a similar proof to the analogous statements for continuous functions and is left as an exercise.</p>
+
+<theorem>
+    <statement>
+        <p>
+            Let <m>f</m> and <m>g</m> be absolutely continuous functions on a closed interval <m>[a,b]</m>, then
+            <ol>
+            <li><m>\alpha f + \beta g</m> is absolutely continuous for all <m>\alpha, \beta \in \mathbb{R}</m>;
+            </li>
+            <li><m>fg</m> is absolutely continuous;
+            </li>
+            <li>if <m>g(x) \neq 0</m> for all <m>x \in [a,b]</m>, <m>f/g</m> is absolutely continuous.
+            </li>
+            </ol>
+        </p>
+    </statement>
+</theorem>
+
+<p>If we want to talk about Borel signed-measures constructed from absolutely continuous functions in general, we must first show that absolutely continuous functions have bounded variation.</p>
+
+<proposition xml:id="prop-abs-cont-jordan-decomp">
+    <statement>
+        <p>
+            Let <m>f</m> be an absolutely continuous function on a closed interval <m>[a,b]</m>, then <m>f</m> is of bounded variation.</p>
+            <p>Further, if <m>f = f_1 - f_2</m> is the Jordan decomposition of <m>f</m>, then <m>f_1</m> and <m>f_2</m> are absolutely continuous.
+        </p>
+    </statement>
+
+    <proof>
+<p>Let <m>\delta &gt; 0</m> satisfy
+<md> \sum_{k=1}^n |f(b_k) - f(a_k)| &lt; 1</md>
+whenever <m>\{(a_k,b_k)\}_{k=1}^n</m> are disjoint open intervals in <m>[a,b]</m> with
+<md>\sum_{k=1}^n(b_k-a_k)&lt;\delta.</md>
+Let <m>K</m> be an integer greater than <m>(b-a)/\delta</m>.
+     Then, for any partition <m>P</m> of <m>[a,b]</m>
+<md> V(f,P) \leq K.</md>
+Thus, <m>f</m> has bounded variation, with total variation <m>TV(f) \leq K</m>.</p>
+<p>Let <m>f = f_1 - f_2</m> be the Jordan decomposition of <m>f</m>. Recall
+<md> f_1 = \frac{1}{2}(T_f + f) \text{ and }f_2 = \frac{1}{2}(T_f - f),</md>
+where <m>T_f</m> is the function of total variation for <m>f</m>.
+     Fix <m>\varepsilon &gt;0</m>. Fix <m>\delta&gt;0</m> such that if <m>\{(a_i,b_i)\}_{i=1}^n</m> are disjoint open intervals such that <m>\sum_{i=1}^n(b_i-a_i) &lt; \delta</m> then
+<md> \sum_{i=1}^n |f(b_i) -f(a_i)|&lt;\varepsilon/2.</md>
+Fix disjoint open intervals  <m>\{(a_i,b_i)\}_{i=1}^n</m> with <m>\sum_{i=1}^n(b_i-a_i) &lt; \delta</m>.
+     For each <m>i</m>, let <m>P_i</m> be a partition of <m>[a_i,b_i]</m>.
+     Then
+<md> \sum_{i=1}^n V(f,P_i) &lt; \varepsilon/2. </md>
+Thus
+<md>
+\begin{aligned}
+\varepsilon &gt; \varepsilon/2 &amp; \geq \sum_{i=1}^n TV(f|_{[a_i,b_i]}) \\
+         &amp;= \sum_{i=1}^n T_f(b_i) - T_f(a_i).
+\end{aligned}
+</md>
+Hence <m>T_f</m> is absolutely continuous. 
+     It follows that <m>f_1</m> and <m>f_2</m> are absolutely continuous.</p>
+</proof>
+</proposition>
+
+<p>The following proposition shows that what we have just found Lipschitz functions in <xref ref="exam-Lipschitz-abs-cont"/> is not just a happy coincidence. We have a  correspondence between absolutely continuous sign-measures and absolutely continuous functions.</p>
+
+<proposition xml:id="prop-abs-cont-meas-and-func">
+    <statement>
+        <p>
+            Let <m>[a,b]</m> be a closed interval in <m>\mathbb{R}</m>.
+            Let <m>\nu</m> be a signed Borel measure on <m>[a,b]</m>, and let <m>f(x) = \nu([a,x])</m>.
+            Then <m>\nu</m> is absolutely continuous with respect to the Lebesgue measure <m>m</m>, if and only if <m>f</m> is an absolutely continuous function and <m>f(a) = 0</m>.         
+        </p>
+    </statement>
+    <proof>
+<p>Suppose <m>\nu \ll m</m>.
+    First suppose that <m>\nu</m> is a measure, i.e. <m>\nu(E)\geq 0</m> for all Borel sets <m>E \subseteq [a,b]</m>.
+    Fix <m>\varepsilon &gt; 0</m>.
+    By <xref ref="prop-abs-cont-eps-delta"/>, there exists <m>\delta &gt;0</m> such that, if <m>E \subseteq [a,b]</m> is a Borel set with <m>m(E) &lt; \delta</m>, then <m>\nu(E) &lt; \varepsilon</m>.
+    Let <m>\{[a_k,b_k]\}_{k=1}^n</m> be a family of disjoint intervals in <m>[a,b]</m> such that <m>\sum_k (b_k - a_k) &lt; \delta</m>.
+    Note that, since <m>\nu \ll m</m>,
+<md> \nu((c,d)) = \nu([c,d]) = \nu((c,d])</md>
+for any <m>a\leq c \leq d &lt; b.</m>
+    Thus
+<md>
+\begin{aligned}
+\varepsilon &amp;&gt; \nu\left(\bigcup_{k=1}^n (a_k,b_k]\right) \\
+    &amp;= \sum_{k=1}^n \nu((a_k,b_k]) \\
+    &amp;= \sum_{k=1}^n f(b_k) - f(a_k) \\
+    &amp;= \sum_{k=1}^n |f(b_k) - f(a_k)|.
+\end{aligned}
+</md>
+Hence <m>f</m> is an absolutely continuous function.</p>
+<p>Suppose now that <m>\nu</m> is a signed Borel measure.
+    Let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>.
+    Then, by <xref ref="prop-jordan-decomp-measure-and-function"/>, the Jordan decomposition of <m>f</m> is given by <m>f = f_1 - f_2</m> where <m>f_1</m> is the cumulative distribution function of <m>\nu_+</m> and <m>f_2</m> is the cumulative distribution function of <m>\nu_-</m>.
+    If <m>\nu \ll m</m> then, by definition, <m>|\nu| = \nu_+ + \nu_-</m> is absolutely continuous with respect to <m>m</m>.
+    Hence, <m>\nu_+ \ll m</m> and <m>\nu_- \ll m</m>. 
+    It follows by the above argument that <m>f_1</m> and <m>f_2</m> are absolutely continuous, and hence <m>f</m> is absolutely continuous.</p>
+<p>Suppose now that <m>f</m> is absolutely continuous and <m>f(a)=0</m>.
+    Again, first assume that <m>\nu</m> is a measure, so that <m>f</m> is an increasing function.
+    By the continuity of <m>f</m> and the continuity of measure, for any <m>a\leq c &lt; d &lt; b</m>,
+<md>
+\begin{aligned}
+\nu((c,d]) &amp;= f(d) - f(c) \\
+        &amp; = \lim_{x \rightarrow d^-}f(x) - f(c) \\
+        &amp;= \lim_{x \rightarrow d^-} \nu((c,x]) \\
+        &amp; = \nu((c,d)).
+\end{aligned}
+</md>
+Fix <m>\varepsilon&gt;0</m>. Fix <m>\delta &gt;0</m> so that if <m>\{(a_k,b_k)\}_{k=1}^n</m> are disjoint open intervals in <m>[a,b]</m> with <m>\sum_{k=1}^n (b_k - a_k) &lt; \delta</m>, then
+<md> \nu\left( \bigcup_{k=1}^n (a_k,b_k)\right) = \sum_{k=1}^n \left[ f(b_k) - f(a_k) \right] &lt; \varepsilon/2.</md>
+Let <m>U \subseteq [a,b]</m> be an open set with <m>m(U) &lt; \delta</m>.
+    There are disjoint intervals <m>\{(a_k,b_k)\}_{k=1}^\infty</m> such that <m>U = \bigcup_{k=1}^\infty (a_k,b_k)</m>.
+    Hence
+<md> \sum_{k=1}^\infty [b_k -a_k] &lt; \delta.</md>
+Thus, for any <m>n</m>,
+<md> \nu\left( \bigcup_{k=1}^n (a_k,b_k) \right)  &lt; \varepsilon/2.</md>
+Hence <m>\nu(U) \leq \frac{\varepsilon}{2} &lt; \varepsilon</m>.</p>
+<p>Take now any Borel set <m>E \subseteq [a,b]</m> with <m>m(E) &lt; \delta/2</m>.
+    By the outer regularity of the Lebesgue measure, there is an open set <m>U</m> with <m>E \subseteq U</m> and <m>m(U) &lt; \delta</m>.
+    Hence <m>\nu(E) \leq \nu(U) &lt; \varepsilon.</m>
+    Hence, by <xref ref="prop-abs-cont-eps-delta"/>, <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
+<p>Now suppose <m>\nu</m> is a Borel signed measure, such that <m>f(x) = \nu([a,x])</m> is absolutely continuous.
+    As before, let <m>f_1</m> and <m>f_2</m> be the cumulative distribution functions of <m>\nu_+</m> and <m>\nu_-</m>, respectively. 
+    As <m>f</m> is absolutely continuous, <m>f_1</m> and <m>f_2</m> are absolutely continuous by <xref ref="prop-abs-cont-jordan-decomp"/>.
+    By the above argument, it follows that <m>\nu_+ \ll m</m> and <m>\nu_- \ll m</m>.
+    Hence, we have that <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
+</proof>
+</proposition>
+
+</section>

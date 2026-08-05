@@ -1,0 +1,328 @@
+<section>
+<title>The Radon-Nikodym Theorem</title>
+<p>In <xref ref="exer-integration-measure"/> we saw how integration against a non-negative measurable function with respect to a measure <m>\mu</m> gave gives rise to a new measure <m>\nu</m>. In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.</p>
+
+<p>We begin by recalling the definition of mutually singular measures, and extending this definition to signed-measures.</p>
+
+<definition>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\mu</m> and <m>\nu</m> be two signed-measures on <m>(X,\mathcal{F})</m>.
+        The measures <m>\mu</m> and <m>\nu</m> are <term>mutually singular</term>, denoted <m>\mu \perp \nu</m>, if there are disjoint measurable sets <m>A,B \subseteq X</m> with <m>A \cup B = X</m> such that <m>A</m> is a null set for <m>\mu</m>, and <m>B</m> is a null set for <m>\nu</m>.
+        <idx><h>singular measures</h><h>mutually singular</h><h>signed-measures</h></idx>
+    </p>
+</statement>
+</definition>
+
+<example xml:id="ex-Cantor-Lebesgue-not-abs-cont">
+<p>Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m>, let <m>C</m> be the Cantor set in <m>[0,1]</m> and let <m>U = [0,1]\backslash U</m>.
+    Let <m>\nu</m> be the Borel measure on <m>[0,1]</m> which is the Carathéodory extension of the premeasure
+<md> \nu((a,b]) = \varphi(b) - \varphi(a), \ \nu(\{0\}) = 0.</md>
+By <xref ref="ex-Cantor"/>, <m>m(C) = 0</m> and <m>m(U) =1</m>, and by <xref ref="exer-cantor-leb-cdf"/>, <m>\nu(C) = 1</m>  and <m>\nu(U) = 1</m>.
+    Thus <m>\nu</m> and <m>m</m> are mutually singular.</p>
+</example>
+<p>Mutually singular measures are, in some sense, very different from eachother. We now introduce a comparison between measures.</p>
+
+<definition>
+<notation>
+    <usage><m>\nu \ll \mu</m></usage>
+  <description><m>\nu</m> is absolutely continuous with respect to <m>\mu</m></description>
+</notation>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>\nu</m> be a measure on <m>(X,\mathcal{F})</m>.
+        Then <m>\nu</m> is <term>absolutely continuous with respect to <m>\mu</m></term><idx><h>absolutely continuous measures</h></idx>, written <m>\nu \ll \mu</m>, if for <m>E \in \mathcal{F}</m>, <m>\nu(E) = 0</m> if <m>\mu(E) = 0</m>.
+    </p>
+    <p>
+        If <m>\lambda</m> is a signed-measure on <m>(X,\mathcal{F})</m>, then <m>\lambda</m> is <term>absolutely continuous with respect to <m>\mu</m></term><idx><h>absolutely continuous measures</h></idx>, written <m>\lambda \ll \mu</m>, if <m>|\lambda| \ll \mu</m>.
+    </p>
+</statement>
+</definition>
+
+<p>Let <m>\mu</m> and <m>\nu</m> be two non-zero measures on the same measure space. If <m>\mu \perp \nu</m> then <m>\mu \not\ll \nu</m> and <m>\mu \not\ll \nu</m>. Conversely, if <m>\mu \ll \nu</m> or <m>\nu \ll \mu</m>, then <m>\mu \not \perp \nu</m>. Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures <m>\mu</m> and <m>\nu</m>, we can always write <m>\nu= \nu_s + \nu_a</m> where <m>\nu_s \perp \mu</m> and <m>\nu_a \ll \mu</m>, (The Lebesgue Decomposition Theorem, <xref ref="thm-lebesegue-decomposition"/>). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.</p>
+
+<p>Given a measure <m>\mu</m>, the next example shows that it is easy to create measures which are absolutely continuous with respect to <m>\mu</m>. We will see, with some reasonable conditions on <m>(X,\mathcal{F},\mu)</m>, all measures which are absolutely continuous with respect to <m>\mu</m> will be of this form.</p>
+<example xml:id="ex-integration-measure-abs-cont">
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+    Let <m>f</m> be a non-negative measurable function on <m>X</m>, and let <m>g</m> be an integrable function on <m>X</m>.
+    Then
+<md>\nu_1(E) = \int_E f\,d\mu</md>
+defines a measure on <m>(X,\mathcal{F})</m>, and
+<md>\nu_2(E) = \int_E g\,d\mu</md>
+defines a signed measure on <m>(X,\mathcal{F})</m> (<xref ref="exer-integration-measure"/>).
+    Then <m>\nu_1 \ll \mu</m> and <m>\nu_2 \ll \mu</m>.</p>
+</example>
+
+<p>We can also get examples of absolutely continuous measures (with respect to the Lebesgue measure) using what we have learnt about Borel measures on <m>\mathbb{R}</m>. Below is one such example.</p>
+
+<example xml:id="ex-x-2-is-abs-cont">
+<p>Let <m>f(x) = x^2</m> on <m>[0,1]</m>.
+    Let <m>\nu</m> be the Borel measure on <m>[0,1]</m> induced by <m>f</m>.
+    That is, <m>\nu</m> is the Borel measure which is the Carathéodory extension of the premeasure
+<md> \nu((a,b]) = b^2 - a^2,\ \nu(\{0\}) = 0</md>
+as described in <xref ref="cor-cdf-and-Borel"/>.
+    We will show that <m>\nu \ll m</m>.</p>
+<p>Take a Borel set <m>E \subseteq [0,1]</m> such that <m>m(E) = 0</m>.
+    We want to show that <m>\nu(E) = 0</m>.
+    Fix <m>\varepsilon &gt;0</m>. We will assume <m>0 \notin E</m> (removing <m>0</m> does not change <m>m(E)</m> or <m>\nu(E)</m>).
+    By <xref ref="prop-Lebesgue-outer-measure"/>, there is a countable collection <m>\{(a_i,b_i]\}_{i=1}^\infty</m> of subsets of <m>[0,1]</m> such that
+<md> E \subseteq \bigcup_{i=1}^\infty (a_i,b_i]</md>
+and <m>\sum_{i=1}^\infty m((a_i,b_i])&lt;\varepsilon/2.</m>
+    Now
+<md>
+\begin{aligned}
+\nu(E) \leq \nu\left(\bigcup_{i=1}^\infty (a_i,b_i]\right)
+      &amp;\leq \sum_{i=1}^\infty \nu((a_i,b_i]) \\  
+      &amp;= \sum_{i=1}^\infty(b_i^2-a_i^2) \\
+      &amp;= \sum_{i=1}^\infty(b_i-a_i)(b_i + a_i) \\
+      &amp;\leq 2\sum_{i=1}^\infty(b_i-a_i) \\
+      &amp;&lt; \varepsilon.
+\end{aligned}
+</md>
+As <m>\nu(E) &lt; \varepsilon</m> for all <m>\varepsilon &gt;0</m>, it follows that <m>\nu(E) =0</m>.
+    Thus <m>\nu</m> is absolutely continuous with respect to <m>m</m>.</p>
+</example>
+
+<theorem xml:id="thm-Radon-Nikodym">
+<title>Radon-Nikodym Theorem</title>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space, and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m>.
+        Then there is a non-negative measurable function <m>f</m> on <m>X</m> such that
+        <md number="yes" xml:id="eq-radon-nikodym">
+        \nu(E) = \int_E f\,d\mu
+        </md>
+        for all <m>E \in \mathcal{F}</m>.
+        Further, if <m>f</m> and <m>g</m> are both non-negative functions satisfying  <xref ref="eq-radon-nikodym"/>, then <m>f=g</m> a.e.
+        <idx><h>Radon-Nikodym Theorem</h></idx>
+    </p>
+</statement>
+<proof>
+<p>First assume that both <m>\mu</m> and <m>\nu</m> are finite measures.
+    If <m>\nu(E) = 0</m> for all <m>E \in \mathcal{F}</m>, then we can take <m>f = 0</m> for  <xref ref="eq-radon-nikodym"/> to hold.
+    Thus suppose that <m>\nu</m> is not the zero measure.</p>
+<p>Let <m>\mathcal{A}</m> be the collection of non-negative measurable functions <m>f</m> with
+<md> \int_E f\,d\mu \leq \nu(E)</md>
+for all <m>E \in \mathcal{F}</m>.
+    Since the zero function <m>0</m> is in <m>\mathcal{A}</m>, <m>\mathcal{A}</m> is non-empty.    
+    Let <m>a = \sup\{ \int_X f\,d\mu \colon f \in \mathcal{A}\}</m>.
+    Note that, since <m>\nu</m> is finite, <m>a</m> is finite with <m>a \leq \nu(E)</m>.</p>
+<p>Clearly, <m>a \geq 0</m>. We claim that <m>a &gt; 0</m>.
+    Consider, for each real <m>\alpha &gt; 0</m>, the signed measure <m>\sigma_\alpha = \nu - \alpha\mu</m>.
+    For each <m>\sigma_\alpha</m> let <m>X = P_\alpha \cup N_\alpha</m> be a Hahn-Decomposition of <m>X</m> for <m>\sigma_\alpha</m>.
+    That is <m>P_\alpha</m> is a positive set for <m>\sigma_\alpha</m>, and <m>N_\alpha</m> is a negative set for <m>\sigma_\alpha</m>.
+    If <m>\mu(P_\alpha)= 0</m> for all <m>\alpha</m>, then
+<md> \nu(E) \leq \alpha \mu(E)</md>
+for all <m>E \in \mathcal{F}</m> and <m>\alpha &gt; 0</m>.
+    Hence, if <m>\mu(E) &gt;0</m> then <m>\nu(E) = 0</m>.
+    Since <m>\nu \ll \mu</m> we also have <m>\mu(E) = 0</m> implies <m>\nu(E) = 0</m>,
+    and so <m>\nu</m> is the <m>0</m> measure. 
+    This contradicts the assumption that <m>\nu</m> is non-zero.
+    Hence there is some <m>\alpha</m> for which <m>\mu(P_\alpha)&gt;0</m>.
+    Let
+<md> \varphi = \alpha \chi_{P_\alpha}.</md>
+Then, for any <m>E \in F</m>
+<md> \int_E \varphi\,d\mu = \alpha \mu(E \cap P_\alpha) \leq \nu(E\cap P_\alpha)\leq \nu(E).</md>
+Thus, <m>\varphi \in \mathcal{F}</m>. 
+    As <m>\int_X \varphi\,d\mu = \alpha &gt;0</m>, we must have <m>a &gt; 0</m>.</p>
+<p>We will show that <m>a</m> is attained by a function <m>f \in \mathcal{A}</m>.
+    Let <m>(f_n)_n</m> be a sequence of functions in <m>\mathcal{A}</m> so that
+<md> \lim_n \int_X f_n\,d\mu = a.</md>
+Note also that if <m>f,g \in \mathcal{A}</m> and <m>h = \max\{f,g\}</m> then <m>h \in \mathcal{A}</m>.
+    Indeed, if <m>E \in F</m> and <m>F = \{x \in E \colon f(x) &gt; g(x)\}</m> then
+<md>
+\begin{aligned}
+\int_E h\,d\mu &amp;= \int_F f \,d\mu + \int_{E\backslash F}g\,d\mu \\
+        &amp;\leq \nu(F) + \nu(E\backslash F) = \nu(E).
+\end{aligned}
+</md>
+We can thus assume that the sequence <m>(f_n)_n</m> is increasing, by replacing each <m>f_n</m> with <m>\max\{f_1,\ldots,f_n\}</m> if necessary.
+    Let <m>f(x) = \lim_n f_n(x)</m> for all <m>x \in X</m>.
+    By the Monotone Convergence Theorem
+<md> \int_E f\,d\mu = \lim_n\int_E f_n\,d\mu \leq \nu(E) </md>
+
+    for all <m>E \in \mathcal{F}</m>. 
+    Thus <m>f \in \mathcal{A}</m>.
+    Setting <m>E = X</m> we have
+<md> \int_X fd\mu = \lim_n \int_X f_n\,d\mu = a.</md>
+</p>
+<p>Our goal now is to show that <m>f</m> satisfies  <xref ref="eq-radon-nikodym"/>.
+    That is, we will show that for all <m>E \in \mathcal{F}</m>
+<md> \nu(E) = \int_X f\,d\mu.</md>
+Define a measure <m>\lambda</m> on <m>(X,\mathcal{F})</m> by
+<md> \lambda(E) = \nu(E) - \int_E f\,d\mu .</md>
+(Note that <m>\lambda</m> is indeed a measure, and not just a signed-measure, since <m>f \in \mathcal{A}</m>).</p>
+<p>Since <m>\nu</m> is absolutely continuous with respect to <m>\mu</m>, and <m>E \mapsto \int_E f\,d\mu</m> is absolutely continuous with respect to <m>\mu</m>, <m>\lambda</m> is absolutely continuous with respect to <m>\mu</m>.
+    Applying the above argument to <m>\lambda</m> (in place of <m>\nu</m>), if <m>\lambda</m> is a non-zero measure, then there is a non-negative measurable function <m>g</m> such that <m>\int_X g \,d\mu &gt; 0</m> and
+<md> \int_E g\,d\mu \leq \lambda(E)</md>
+for all <m>E \in \mathcal{F}</m>.</p>
+<p>Taking any <m>E \in F</m> we  have
+<md>
+\begin{aligned}
+\int_E g\,d\mu \leq \lambda(E) = \nu(E) - \int_E f\,d\mu.
+\end{aligned}
+</md>
+Thus
+<md> \int_E(f+g) \,d\mu = \int_E f\,d\mu + \int_E g\,d\mu \leq \nu(E).</md>
+Hence <m>f +g \in F</m>.
+    However,
+<md> \int_X(f+g)\,d\mu= a + \int_Xg\,d\mu &gt; a,</md>
+contradicting the definition of <m>a</m>.
+    Hence <m>\lambda(E) = 0</m> for all <m>E \in \mathcal{F}</m>, and thus
+<md> \nu(E) = \int_E f\,d\mu</md>
+as desired.</p>
+<p>Now suppose that <m>\mu</m> and <m>\nu</m> are both <m>\sigma</m>-finite.
+    There are disjoint sets <m>\{A_n\}_{n=1}^\infty</m> and disjoint sets <m>\{B_n\}_{n=1}^\infty</m> such that
+<md> \bigcup_n A_n = X = \bigcup_n B_n,</md>
+<m>\mu(A_n)&lt; \infty</m> and <m>\nu(B_n)&lt; \infty</m> for all <m>n</m>.
+    Let <m>\{C_k\}_{k=1}^\infty</m> be the countable collection of disjoint sets <m>\{A_n\cap B_m\}_{m,n=1}^\infty</m>.
+    Then <m>X = \bigcup_k C_k</m>, and for all <m>k</m>, <m>\mu(C_k)&lt;\infty</m> and <m>\nu(C_k)&lt; \infty</m>.</p>
+<p>For each <m>k</m> there is a non-negative measurable function <m>f_k</m> such that
+<md> \nu(E) = \int_E f_k \,d\mu</md>
+for all measurable <m>E \subseteq C_k</m>.
+    Extend <m>f_k</m> to all of <m>x</m> by setting <m>f_k(x) = 0</m> for <m>x \notin C_k</m>.
+    Let <m>f = \sum_{k=1}^\infty f_k</m>.
+    Take any <m>E \in F</m>. 
+    Applying <xref ref="cor-MCT-series"/>, we get
+<md>
+\begin{aligned}
+\int_E f\,d\mu &amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f\,d\mu \\
+        &amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f_k\,d\mu \\
+        &amp;= \sum_{k=1}^\infty \nu(E \cap C_k) \\
+        &amp;= \nu(E).
+\end{aligned}
+</md>
+The uniqueness (almost everywhere) follows from <xref ref="exer-int-a-e"/>.</p>
+</proof>
+</theorem>
+
+<p>The following corollary to the Radon-Nikodym Theorem is immediate on taking the <xref ref="thm-jordan-decomp-measure" text="custom">Jordan decomposition of a signed-measure</xref> and applying the Radon-Nikodym Theorem.</p>
+
+<corollary xml:id="cor-signed-Radon-Nikodym">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a finite signed-measure on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m>.
+        Then there is a measurable function <m>f</m> which is integrable with respect to <m>\mu</m> such that, for all <m>E \in \mathcal{F}</m>,
+        <md> \nu(E) = \int_E f\,d\mu.</md>
+        Further, the function <m>f</m> is unique up to almost everywhere equivalence.     
+    </p>
+</statement>
+</corollary>
+
+<definition>
+<notation>
+    <usage><m>\frac{d\nu}{d\mu}</m></usage>
+  <description>Radon-Nikodym derivative</description>
+</notation>
+
+<statement>
+    <p>
+        <idx><h>Radon-Nikodym derivative</h></idx>
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a <m>\sigma</m>-finite measure or a finite signed measure on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m>.
+        Let <m>f</m> be the measurable function on <m>X</m> such that
+        <md> \nu(E) = \int_E f\,d\mu</md>
+        for all <m>E \in \mathcal{F}</m>.
+        The function <m>f</m> is called the <term>Radon-Nikodym derivative</term> of <m>\nu</m> with respect to <m>\mu</m>. <idx><h>Radon-Nikodym derivative</h></idx>
+        The Radon-Nikodym derivative is denotated as
+        <md> f = \frac{d\nu}{d\mu}.</md>
+    </p>
+</statement>
+</definition>
+
+<p>The word <q>derivative</q> in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? <xref ref="sec-ftoc"/>, in particular <xref ref="thm-Borel-radon-nikodym-derivative"/>, goes some way to justify the term. We will satiate ourselves with a simple example now.</p>
+
+<example xml:id="ex-x-2-Radon-Nikodym-derivative">
+<p>Let <m>f(x) = x^2</m> on <m>[0,1]</m>.
+    Let <m>\nu</m> be the Carathéodory extension of the premeasure
+<md> \nu((a,b])= f(b) - f(a) = b^2 - a^2</md>
+on <m>[0,1]</m>.
+    We saw in  <xref ref="ex-x-2-is-abs-cont"/> that <m>\nu</m> is absolutely continuous with respect to <m>m</m>.
+    Hence, by the Radon-Nikodym theorem there is a non-negative measurable function <m>h</m> on <m>[0,1]</m> such that
+<md> \nu(E) = \int_E h\,dm.</md>
+In particular, for <m>0\leq a &lt; b \leq 1</m> we have
+<md> \nu((a,b]) = \int_{(a,b]}h\,dm</md>
+By the Fundamental Theorem of Calculus we also have <fn>We can comfortably apply the Fundamental Theorem of Calculus since <m>f</m> and <m>f'</m> are continuous on <m>[0,1]</m>, and thus are Riemann integrable.</fn>
+<md> \nu((a,b]) = \int_{[a,b]} 2x \,dm(x).</md>
+By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that
+<md> \nu(E) = \int_E f'\,dm = \int_E h\,dm</md>
+for all Borel sets <m>E \subseteq [a,b]</m>.
+   It follows from <xref ref="exer-same-int-same-func"/>, that <m>h(x) = 2x</m>.<fn>Technically, it means that <m>h(x) = 2x</m> almost everywhere, but <m>h</m> can be chosen so that <m>h(x) = 2x</m>.</fn>
+   Thus, the Radon-Nikodym derivative of <m>\nu</m> is the derivative of <m>f</m>.
+   That is
+<md> \frac{d\nu}{dm} = \frac{df}{dx}.</md>
+</p>
+</example>
+
+<p>We end this section with an important decomposition.</p>
+
+<theorem xml:id="thm-lebesegue-decomposition">
+<title>Lebesgue Decomposition Theorem</title>
+<statement>
+    <p>          
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m>.
+        Then there are mutually orthogonal measures <m>\nu_s</m> and <m>\nu_a</m> such that <m>\nu = \nu_s + \nu_a</m>
+        <ol>
+        <li><m>\nu_a \ll \mu</m>, and
+        </li>
+        <li><m>\nu_s \perp \mu</m>.
+        </li>
+        </ol>  
+        <idx><h>Lebesgue Decomposition Theorem</h></idx>
+    </p>
+</statement>
+<proof>
+<p>Let <m>\lambda = \mu + \nu</m>.
+Then <m>\lambda</m> is a <m>\sigma</m>-finite measure and <m>\mu \ll \lambda</m>.
+By the Radon-Nikodym Theorem, there is a non-negative measurable function <m>f</m> such that, for all <m>E \in \mathcal{F}</m>
+<md> \mu(E) = \int_\lambda f \,d\mu = \int_E f\,d\mu + \int_E f\,d\nu,</md>
+with the last equality following from <xref ref="ex-integration-sum-measures"/>.
+Let
+<md> X_+ = \{x \in X \colon f(x) &gt; 0\}</md>
+and
+<md> X_0 = \{x \in X \colon f(x) = 0\}.</md>
+Define measures <m>\nu_s</m> and <m>\nu_a</m> by
+<md> \nu_s(E) = \nu(E \cap X_0) \text{ and }\nu_a(E) = \nu(E \cap X_+).</md>
+Then <m>\nu_s</m> and <m>\nu_a</m> are mutually singular, with <m>\nu = \nu_s + \nu_a</m>.</p>
+<p>That <m>\mu</m> and <m>\nu_s</m> are mutually singular is clear.
+It remains to show <m>\nu_a \ll \mu</m>.
+Take <m>E \in \mathcal{F}</m> such that <m>\mu(E) = 0</m>.
+Then
+<md> 0 = \mu(E) = \int_E f\,d\mu + \int_E f\,d\nu.</md>
+Thus
+<md> 0 = \int_E f\,d\nu = \int_{E\cap X_+} f\,d\nu = 0.</md>
+Since <m>f&gt;0</m> on <m>E\cap X_+</m>, it follows that <m>\nu(E\cap X_+) = 0</m> (<xref ref="exer-positive-integral"/>).
+Thus <m>\nu_a(E) = 0</m>, and hence <m>\nu_a\ll\mu</m>.</p>
+</proof>
+</theorem>
+
+<p>The following corollary follows by applying the applying the Lebesgue Decomposition Theorem to each of the measures in the Jordan decomposition of the signed-measure.</p>
+
+<corollary>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a  finite signed-measure on <m>(X,\mathcal{F})</m>.
+        Then there are mutually orthogonal signed-measures <m>\nu_s</m> and <m>\nu_a</m> such that <m>\nu = \nu_s + \nu_a</m>
+        <ol>
+        <li><m>\nu_a \ll \mu</m>, and
+        </li>
+        <li><m>\nu_s \perp \mu</m>.
+        </li>
+        </ol>
+    </p>
+</statement>
+</corollary>
+
+<definition>
+<notation>
+    <usage><m>\nu = \nu_a + \nu_s</m></usage>
+  <description>Lebesgue decomposition of <m>\nu</m></description>
+</notation>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space, let <m>\nu</m> be a <m>\sigma</m>-finite measure or a finite signed-measure, and let <m>\nu_s</m> and <m>\nu_a</m> are mutually orthogonal measures such that <m>\nu_s \perp \mu</m>, <m>\nu_a \ll \mu</m>, and <m>\nu = \nu_s + \nu_a</m>.
+        The measures <m>\nu_s</m> and <m>\nu_a</m> are called the <term>Lebesgue decomposition of <m>\nu</m> with respect to <m>\mu</m></term>.<idx><h>Lebesgue decomposition</h><h>of a measure</h></idx>
+        We call the Radon-Nikodym derivative of <m>\nu_a</m> witrh respect to <m>\mu</m> the <term>Radon-Nikodym derivative on <m>\nu</m> with respect to <m>\mu</m></term> and denote the it by <m>\frac{d\nu}{d\mu}</m>.<idx><h>Radon-Nikodym derivative</h></idx>
+    </p>
+</statement>
+</definition>
+</section>

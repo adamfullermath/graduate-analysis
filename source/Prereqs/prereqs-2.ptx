@@ -424,7 +424,7 @@ A \subseteq \bigcup_{F\in\mathcal{F}} F.
 </md>
 An open cover <m>\mathcal{F}</m> of <m>A</m> has a <term>finite subcover of <m>A</m></term> if there is a finite subset <m>\{F_1,\ F_2,\ldots,F_n\} \subseteq \mathcal{F}</m> such that
 <md> A \subseteq F_1 \cup F_2 \cup \ldots \cup F_n. </md>
-A set <m>A \subseteq X</m> is called <term>compact</term> given any open cover <m>\mathcal{F}</m> of <m>A</m>, <m>\mathcal{F}</m> has a finite subcover of <m>A</m>.
+A set <m>A \subseteq X</m> is called <term>compact</term> if given any open cover <m>\mathcal{F}</m> of <m>A</m>, <m>\mathcal{F}</m> has a finite subcover of <m>A</m>.
 <idx><h>compact</h></idx>
 <idx><h>open cover</h></idx>
 <idx><h>open cover</h><h>subcover</h></idx>
@@ -537,30 +537,20 @@ For each <m>x \in \bR</m> let
 	<idx><h>continuous function</h><h>at a point in <m>\bR</m></h></idx>
 	<idx><h>continuous function</h></idx>
 	<idx><h>continuous function</h><h>uniformly continuous</h></idx>
+	<idx><h>convergent sequence</h></idx>
 </p>
 
 <p>
 	All of these definitions can be easily adapted to apply to general metric spaces.
 </p>
 <definition>
-	<notation>
-		<usage><m>\lim_{n}x_n = 0</m></usage>
-	  <description>limit of a sequence</description>
-	</notation>
 	<statement>
 		<p>
 				Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be two metric spaces, and let <m>f \colon X \rightarrow Y</m> be a function.
 				The function <m>f</m> is <term>continuous</term> at a point <m>x_0 \in X</m> if for all <m>\varepsilon \gt 0</m> there exists a <m>\delta \gt 0</m> such that <m>d_Y(f(x_0),f(y))\lt\varepsilon</m> for all <m>y \in X</m> with <m>d_X(x_0,y)\lt \delta.</m>
 				The function <m>f</m> is <term>uniformly continuous</term> if for all <m>\varepsilon \gt 0</m> there is a <m>\delta \gt 0</m> such that if <m>x,y \in X</m> and <m>d_X(x,y) \lt \delta</m> then <m>d_Y(f(x),f(y))\lt \delta</m>.
-				When <m>(x_n)_n</m> converges to <m>x_0</m> we call <m>x_0</m> the <term>limit</term> of the sequence <m>(x_n)_n</m>.
-				We denote this by <m>\lim_{n\rightarrow \infty}x_n = x_0,</m>, <m>\lim_{n}x_n = x_0,</m>, or
-				<md>
-					x_n \rightarrow x_0 \text{ as }n\rightarrow \infty.
-				</md>
-				
 				<idx><h>continuous function</h><h>on a metric space</h></idx>
 				<idx><h>continuous function</h><h>uniformly continuous</h><h>on a metric space</h></idx>
-				<idx><h>limit</h></idx>
 		</p>
 	</statement>
 </definition>
@@ -570,10 +560,25 @@ For each <m>x \in \bR</m> let
 </p>
 
 <definition>
+	<notation>
+		<usage><m>\lim_{n}x_n = x_0</m></usage>
+	  <description>limit of a sequence</description>
+	</notation>
+	<notation>
+		<usage><m>x_n \rightarrow x_0 \text{ as }n\rightarrow \infty.</m></usage>
+	  <description>limit of a sequence</description>
+	</notation>
 	<statement>
 		<p>
 			Let <m>(X,d)</m> be a metric space and let <m>(x_n)_{n}</m> be a sequence in <m>X</m>.
 			The sequence <m>(x_n)_n</m> converges to a point <m>x_0 \in X</m> if for all <m>\varepsilon \gt 0</m> there is a natural number <m>N</m> such that <m>d(x_n,x_0)\lt \varepsilon</m> when <m>n \geq N</m>.
+			When <m>(x_n)_n</m> converges to <m>x_0</m> we call <m>x_0</m> the <term>limit</term> of the sequence <m>(x_n)_n</m>.
+			We denote this by <m>\lim_{n\rightarrow \infty}x_n = x_0,</m>, <m>\lim_{n}x_n = x_0,</m>, or
+			<md>
+				x_n \rightarrow x_0 \text{ as }n\rightarrow \infty.
+			</md>
+			<idx><h>limit</h></idx>
+			<idx><h>convergent sequence</h></idx>
 		</p>
 	</statement>
 </definition>
@@ -617,7 +622,7 @@ For each <m>x \in \bR</m> let
 	There are times when a continuous function is automatically <em>uniformly continuous</em>.
 </p>
 
-<proposition>
+<proposition xml:id="prop-compact-cont">
 	<statement>
 		<p>
 			Let <m>(X,d_X)</m> and <m>(Y,d_Y)</m> be metric spaces. 
@@ -629,7 +634,7 @@ For each <m>x \in \bR</m> let
 	</statement>
 </proposition>
 
-<corollary>
+<corollary xml:id="cor-compact-cont">
 	<statement>
 		<p>
 			Let <m>(X,d)</m> be a compact metric space and let <m>f \colon X \rightarrow \bR</m> be a continuous function.
@@ -659,6 +664,31 @@ For each <m>x \in \bR</m> let
 	</statement>
 </definition>
 
+<p>
+	As hinted above, the direct analogue of <xref ref="prop-closed"/> does not hold in general topological spaces.
+	However, <xref ref="prop-compact-cont"/> (and <xref ref="cor-compact-cont"/>) do translate readily topological spaces.
+</p>
+
+<proposition xml:id="prop-top-compact-cont">
+	<statement>
+		<p>
+			Let <m>(X,\tau_X)</m> and <m>(Y,\tau_Y)</m> be topological spaces. 
+			Further suppose that <m>X</m> is compact.
+			Let <m>f \colon X \rightarrow Y</m> be a continuous function.
+			Then, <m>f(X)</m> is a compact subset of <m>Y</m> and <m>f</m> is uniformly continuous.
+			
+		</p>
+	</statement>
+</proposition>
+
+<corollary xml:id="cor-top-compact-cont">
+	<statement>
+		<p>
+			Let <m>(X,\tau_X)</m> be a compact topological space and let <m>f \colon X \rightarrow \bR</m> be a continuous function.
+			Then <m>f</m> is uniformly continuous and <m>f</m> attains its maximum and minimum values.
+		</p>
+	</statement>
+</corollary>
 </section>
 
 </appendix>

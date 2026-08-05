@@ -1,0 +1,142 @@
+<exercises>
+<exercise xml:id="exer-f-c-meas">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>f</m> be a measurable extended real-valued function with measurable domain <m>E</m>.
+            Show that the set
+            <md> \{x \in E \colon f(x) =c \}</md>
+            is measurable for all <m>c \in \mathbb{R}\cup \{-\infty,\infty\}.</m>
+        </p>
+    </statement>
+    <hint>
+        <p>
+            You will need to treat the values <m>c=-\infty</m> and <m>c=\infty</m> differently than <m>c \in \mathbb{R}</m>
+        </p>
+    </hint>
+</exercise>
+
+<exercise xml:id="exer-f-c-not-meas">
+    <statement>
+        <p>
+            Give an example of a measurable space <m>(X,\mathcal{F})</m> and an extended real-valued function <m>f</m> with measurable domain <m>E</m> which satisfies
+            <md> \{x \in E \colon f(x) =c \}</md>
+            is measurable for all <m>c \in \mathbb{R}\cup \{-\infty,\infty\}</m>, but <m>f</m> is <em>not</em> a measurable function.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-char-measurable">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>A \subseteq X</m> and let <m>f = \chi_A</m> be the characteristic function on <m>A</m>.
+            Show that <m>f</m> is a measurable function if and only if <m>A</m> is a measurable set.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-f-g-a-e">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space which is not complete.
+            Show that there is a measurable function <m>f</m> on <m>X</m>, and a function <m>g</m> on <m>X</m> such that <m>f =g</m> almost everywhere, but <m>g</m> is not a measurable function.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-cont-ae">
+    <statement>
+        <p>
+            Let <m>f,g</m> be two continuous functions on <m>\mathbb{R}</m>.
+            Show that if <m>f = g</m> almost everywhere, then <m>f = g</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-meas-func-equiv">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>\mathcal{L}</m> be the collection of all extended real-valued functions on <m>X</m>.
+            Define a relation <m>\sim</m> on <m>\mathcal{L}</m> by
+            <md> f \sim g \text{ if and only if } f=g \text{ a.e.}</md>
+            Show that <m>\sim</m> is an equivalence relation on <m>\mathcal{L}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-scale-meas">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>f</m> be a measurable function with measurable domain <m>E \in \mathcal{F}</m>.
+            Show that <m>\alpha f</m> is a measurable function for all <m>\alpha \in \mathbb{R}</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-simple-disjiont">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space and let
+            <md> \varphi = \sum_{k=1}^n b_i \chi_{F_i}</md>
+            where <m>F_1,\ldots,F_n \subseteq X</m> are measurable sets, and <m>b_1,\ldots,b_n \in \mathbb{R}</m>.
+            Show that there are disjoint measurable sets <m>E_1,\ldots,E_m</m> and distinct real numbers <m>a_1,\ldots,a_m</m> such that
+            <md> \varphi = \sum_{k=1}^m a_k \chi_{E_k}.</md>
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-sup-inf-liminf-limsup">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>(f_n)_n</m> be a sequence of measurable functions on <m>X</m>.
+            Show that the functions
+            <ol>
+            <li><m>\sup_n f_n</m>;
+            </li>
+            <li><m>\inf_n f_n</m>;
+            </li>
+            <li><m>\limsup_n f_n</m>; and
+            </li>
+            <li><m>\liminf_n f_n</m>
+            </li>
+            </ol>
+            are all measurable functions.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-simple-approx-lemma">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>f \colon X \rightarrow \mathbb{R}</m> be a bounded measurable function.
+            Show that, for all <m>\varepsilon &gt; 0</m> there exist simple functions <m>\varphi</m> and <m>\psi</m> such that <m>\varphi \leq f \leq \psi</m> and <m>0 \leq \psi - \varphi &lt; \varepsilon</m> on <m>X</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-uniform-convergence">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{M},\mu)</m> be a measure space and let <m>f \colon X \rightarrow \mathbb{R}</m> be a bounded measurable function.
+	        Show that there is a sequence <m>(\phi_n)_n</m>  of simple functions with <m>\phi_n\leq f</m> for all, such that <m>(\phi_n)</m> converges uniformly to <m>f</m>. 
+        </p>
+    </statement>
+    <hint>
+        <p>
+           Use <xref ref="exer-simple-approx-lemma"/>. 
+        </p>
+    </hint>
+</exercise>
+
+<exercise xml:id="exer-Borel-meas-functions">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>\overline{\mathbb{R}} =\mathbb{R}\cup \{-\infty,\infty\}</m> be the extended real-line and let <m>\mathcal{B}(\overline{\mathbb{R}})</m> be the Borel sets in <m>\overline{\mathbb{R}}</m>, with respect to the topology defined in <xref ref="exer-top-on-extended"/> (see also <xref ref="exer-borel-on-extended-2"/>).</p>
+            <p>Let <m>f \colon X \rightarrow \overline{\mathbb{R}}</m> be a function.
+            Show that <m>f</m> is a measurable function if and only if <m>f^{-1}(B) \in \mathcal{F}</m> for all <m>B \in \mathcal{B}(\overline{\mathbb{R}})</m>.
+        </p>
+    </statement>
+</exercise>
+
+</exercises>

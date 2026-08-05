@@ -174,4 +174,60 @@ Then</p>
 <p>Let <m>[a,b]</m> be a closed bounded interval in <m>\mathbb{R}</m>.
 Every Borel measure on <m>[a,b]</m> is uniquely determined by its cumulative distribution function.</p>
 </corollary>
+
+<p>
+    We end by noting that Borel measures on the real line have regularity properties similar to those of the Lebesgue measure.
+</p>
+
+<definition>
+<statement>
+    <p>
+        Let <m>\nu</m> be a Borel measure on the real line.
+        We say that <m>\nu</m> is <term>outer regular</term> if
+        <md> \nu(E) = \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}.</md>
+        <idx><h>regularity of a measure</h><h>Borel measures on <m>\mathbb{R}</m></h></idx>   
+    </p>
+</statement>
+</definition>
+
+<lemma xml:id="lem-regular-borel">
+<statement>
+    <p>
+        Let <m>\nu</m> be a Borel measure on a closed interval <m>[a,b]</m>, then
+        <md> \nu(E) = \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}</md>
+        for all Borel sets <m>E \subseteq [a,b]</m>.
+        That is, Borel measures on closed intervals are outer regular.
+    </p>
+</statement>
+
+<proof>
+<p>Take any Borel set <m>E \subseteq [a,b]</m>.
+    By the monotonicity of the measure <m>\nu</m>
+<md> \nu(E) \leq \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}. </md>
+Fix <m>\varepsilon &gt;0</m> and let <m>f</m> be the cumulative distribution function for <m>\nu</m>. 
+    Assume first that <m>a \notin E</m>.
+    By <xref ref="thm-lebesgue-stieltjes-measure"/>, there is a countable collection of intervals <m>\{(a_k,b_k]\}_{k=1}^\infty</m> in <m>[a,b]</m> such that
+    <m>E \subseteq \bigcup_{k=1}^\infty (a_k,b_k]</m> and
+<md> \nu(E) + \varepsilon/2 &gt; \sum_{k=1}^\infty \nu((a_k,b_k]).</md>
+By the continuity of measure, for each <m>k</m>,
+<md> \nu((a_k,b_k]) = \lim_{r\rightarrow 0} \nu((a_k,b_k+r)).</md>
+Thus, for each <m>k</m>, we can choose <m>r_k&gt;0</m> such that
+<md> \nu((a_k,b_k+r_k)) &lt; \nu((a_k,b_k]) + \varepsilon/2^{k+1}.</md>
+Let <m>U = \bigcup_{k=1}^\infty (a_k,b_k + r_k)</m>.
+    Then
+<md>
+\begin{aligned}
+\nu(U) &amp;\leq \sum_{k=1}^\infty\nu((a_k,b_k+r_k)) \\
+        &amp;&lt; \varepsilon/2 + \sum_{k=1}^\infty \nu((a_k,b_k]) \\
+        &amp;&lt; \nu(E) + \varepsilon.
+\end{aligned}
+</md>
+It follows that
+<md> \nu(E) = \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}.</md>
+It is a relatively straightforward exercise to show that
+<md> \nu(\{a\}) = \inf \{\nu(U) \colon a\in U,\, U \text{ open}\},</md>
+which completes the proof.</p>
+</proof>
+</lemma>
+
 </section>

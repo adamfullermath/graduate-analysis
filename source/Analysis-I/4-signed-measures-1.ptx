@@ -1,0 +1,396 @@
+<section xml:id="sec-signed-measure">
+<title>Signed measures</title>
+
+<p>
+    The definition of a signed measure is much like that of a measure.
+    You may be able to guess how it is defined.
+</p>
+
+<definition xml:id="def-signed-measure">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            A function
+            <md> \nu \colon \mathcal{F} \rightarrow [-\infty,\infty]</md>
+            is a <term>signed measure</term> if
+            <ol>
+            <li><m>\nu</m> takes at most value from <m>\{-\infty,\infty\}</m>;
+            </li>
+            <li><m>\nu(\emptyset) = 0</m>; and
+            </li>
+            <li>if <m>\{E_k\}_{k=1}^\infty</m> are disjoint sets in <m>\mathcal{F}</m>, then 
+                    <md> \nu(\bigcup_{k=1}^\infty E_k) = \sum_{k=1}^\infty \nu(E_k).</md>
+            </li>
+            </ol>
+            The elements of <m>\mathcal{F}</m> are called the <term>measurable sets</term>, or <term><m>\nu</m>-measurable sets</term>.
+            <idx><h>signed measure</h></idx>
+            <idx><h>measurable set</h><h>for a signed measure</h></idx>
+        </p>    
+        <p>
+            A signed measure <m>\nu</m> on <m>(X,\mathcal{F})</m> is <term>finite</term> if <m>|\nu(X)|&lt; \infty</m>.
+            <idx><h>signed measure</h><h>finite</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+    <p>
+    Though the definition of a signed measure is very similar to that of a measure, a couple of points are worth discussing. Firstly, the condition that <m>\nu</m> takes at most one value from <m>\{-\infty,\infty\}</m> is necessary in order for the third condition (countable additivity) to make sense. Suppose <m>\nu</m> is a function on a <m>\sigma</m>-algebra <m>\mathcal{F}</m> satisfying conditions (ii) and (iii) of a signed measure. Suppose <m>\nu(E) = \infty</m> and <m>\nu(F) = -\infty</m>. Condition (iii) then says that
+        <md> \infty = \nu(E) = \nu(E\backslash F) + \nu(E\cap F).</md>
+    Hence, <m>\nu(E \cap F) \neq - \infty</m>. Further
+        <md> -\infty = \nu(F) = \nu(F \backslash E) + \nu(E \cap F).</md>
+    Since <m>\nu(E\cap F) \neq - \infty</m>, it follows that <m>\nu(F \backslash E) = - \infty</m>. Thus
+        <md> \nu(E \cup F) = \nu(F \backslash E) + \nu(E) = -\infty + \infty.</md>
+    As <m>-\infty + \infty</m> is not defined, <m>\nu</m> cannot defined to take both of the values <m>-\infty</m> and <m>\infty</m>. In particular, we could have defined signed measures to only satisfy (ii) and (iii); the above argument shows that condition (i) follows from condition (iii). We include condition (i) for clarity.
+</p>
+<p>
+    Secondly, there is room for some misunderstandings in condition (iii). Suppose <m>\{E_k\}_{k=1}^\infty</m> are disjoint measurable sets, and <m>E = \bigcup_k E_k</m>, and that <m>|\nu(E)|&lt;\infty</m>. Then
+        <md> \sum_{k=1}^\infty \nu(E_k) = \nu(E).</md>
+    That is, <m>\sum_{k=1}^\infty \nu(E_k)</m> is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set <m>E</m> is independent on the order of the sets <m>\{E_k\}_{k=1}^\infty</m>, and so <m>\nu(E)</m> is independent of the order of the sets <m>\{E_k\}_{k=1}^\infty</m>. As <m>\sum_k \nu(E_k) = \nu(E)</m>, it follows that the (finite) value of <m>\sum_k \nu(E_k)</m> is independent of the order of the terms <m>\nu(E_k)</m>. It follows that the series <m>\sum_k \nu(E_k)</m> converges <em>absolutely</em>.
+</p>
+</remark>
+
+<p><xref ref="exer-diff-of-measures"/> says that the difference of two measures is a signed measure. We will show that all signed measures are of this form. We need some preliminary definitions and results first.</p>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m> and let <m>A</m> be a measurable set.
+            <ol>
+            <li>The set <m>A \subseteq X</m> is <term>positive</term> (or <term><m>\nu</m>-positive</term><idx><h>positive set</h></idx> if there is room for confusion) if <m>B \subseteq A</m> is measurable, then <m>\nu(B) \geq 0</m>;
+            </li>
+            <li>the set <m>A \subseteq X</m> is <term>negative</term> (or <term><m>\nu</m>-negative</term><idx><h>negative set</h></idx> if there is room for confusion) if <m>B \subseteq A</m> is measurable, then <m>\nu(B) \leq 0</m>; and
+            </li>
+            <li>the set <m>A \subseteq X</m> is a <term>null set</term> (or <term><m>\nu</m>-null</term><idx><h>null set</h></idx> if there is room for confusion) if <m>B \subseteq A</m> is measurable, then <m>\nu(B) = 0</m>.
+            </li>
+            </ol>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>Note that null sets are both positive and negative.</p>
+</remark>
+
+<lemma xml:id="lem-hahn-lemma">
+<title>Hahn's Lemma</title>
+<statement>
+    <p>
+        Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+        Suppose <m>E \in \mathcal{F}</m>, with <m>0 \lt \nu(E) \lt \infty</m>.
+        Then there is a positive set <m>A \subseteq E</m> such that <m>\nu(A)\gt 0</m>.        
+    </p>
+</statement>
+<proof>
+<p>If <m>E</m> is positive, then we are done.
+    Otherwise, there are subsets <m>B \subseteq E</m> with <m>\nu(B)&lt;0</m>.
+    Let <m>m_1</m> be the smallest natural number such that there is a measurable <m>B_1 \subseteq E</m> such that
+<md> \nu(B_1) &lt; -\frac{1}{m_1}.</md>
+Continuing, choose minimal natural number <m>m_k</m> such that there is a
+<md> B_k \subseteq E \backslash \bigcup_{j=1}^{k-1}B_j</md>
+with
+<md> \nu(B_k) &lt; - \frac{1}{m_k}.</md>
+If this process ends after <m>n</m> steps, let
+<md> A = E \backslash \bigcup_{k=1}^n B_k.</md>
+Then <m>A</m> is positive, since it contains no subsets <m>B</m> such that <m>\nu(B)&lt;0</m>.
+    Further,
+<md> \nu(E) = \nu(A) + \sum_{k=1}^n \nu(B_k).</md>
+Since <m>\nu(E)&gt;0</m> and <m>\sum_{k=1}^n \nu(B_k)&lt;0</m>, it follows that <m>\nu(A)&gt;0</m>.</p>
+<p>If the process does not end, we get a sequence of sets <m>B_1,B_2,\ldots.</m>
+    Let <m>B = \bigcup_{k=1}^\infty B_k</m> and let <m>A = E \backslash B.</m>
+    Since <m>\nu(E) &lt; \infty</m>, it follows from <xref ref="exer-finite-signed-measures"/> that <m>|\nu(B)|&lt;\infty</m>.
+    Thus
+<md> -\infty &lt; \nu(B) = \sum_{k=1}^\infty \nu(B_k)\leq \sum_{k=1}^\infty \frac{-1}{m_k} &lt; 0.</md>
+Thus <m>\lim_{k\rightarrow \infty} m_k = \infty</m>.</p>
+<p>We will show that <m>A</m> is positive.
+    Suppose <m>C \subseteq A</m> and <m>\nu(C)&lt;0.</m>
+    Then for each <m>k</m> we have
+<md> C \subseteq A \subseteq E\backslash \bigcup_{j=1}^{k-1}B_j.</md>
+Thus, by the choice of <m>m_k</m>,
+<md> \nu(C) \geq \frac{-1}{m_k-1}.</md>
+As this holds for all <m>k</m>, and <m>\lim_k m_k = \infty</m>, it follows that <m>\nu(C)\geq 0</m>.
+    Hene <m>A</m> is a positive set.</p>
+<p>To show that <m>\nu(A)&gt;0</m> we note that
+<md> \nu(E) = \nu(A) + \nu(B),</md>
+Since <m>\nu(E)&gt;0</m> and <m>\nu(B)&lt;0</m>, it follows that <m>\nu(A) &gt;0</m>.</p>
+</proof>
+</lemma>
+
+<theorem xml:id="thm-Hahn-decomp">
+<title>Hahn Decomposition Theorem</title>
+<statement>
+<p>
+    Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+    Then there are disjoint measurable subsets <m>A,B \subseteq X</m> such
+    that <m>X = A \cup B</m>, <m>A</m> is positive, and <m>B</m> is negative.</p>
+<p>If <m>A',B'</m> are also disjoint measurable sets with <m>A'</m> positive, <m>B'</m> negative, and <m>X = A' \cup B'</m>, then the sets
+<md> (A\backslash A') \cup (A'\backslash A) \text{ and }(B\backslash B') \cup (B'\backslash B)</md>
+are null sets.<fn>The set <m>(A\backslash A') \cup (A'\backslash A)</m> is called the <term>symmetric difference</term> of <m>A</m> and <m>A'</m>.</fn>
+<idx><h>Hahn Decomposition Theorem</h></idx>
+</p>
+</statement>
+    <proof>
+<p>Assume that <m>\nu</m> does not take the value <m>+\infty</m> (replace <m>\nu</m> with <m>-\nu</m> if it does).
+    Let <m>\mathcal{P} \subseteq \mathcal{F}</m> be the collection of all positive sets.
+    Note that <m>\mathcal{P}</m> is non-empty since <m>\emptyset \in \mathcal{P}</m>.
+    Let
+<md> \lambda = \sup \{\nu(A) \colon A \in \mathcal{P}\}.</md>
+We will show that <m>\lambda</m> is attained, i.e. <m>\lambda</m> is the maximum value in <m>\{\nu(A)\}_{A \in \mathcal{P}}</m>.
+    Choose a sequence <m>\{A_k\}_{k=1}^\infty</m> such that
+<md> \lim_{k\rightarrow \infty} \nu(A_k) = \lambda.</md>
+Let <m>A = \bigcup_{k=1}^\infty A_k</m>.
+    Note that <m>A</m> is positive by <xref ref="exer-positive-union"/>.
+    Thus <m>\nu(A) \leq \lambda</m>.
+    Also, since <m>A</m> is positive, <m>\nu(A \backslash A_k) \geq 0</m>, and
+<md>
+\begin{aligned}
+\nu(A) =&amp; \nu(A \backslash A_k) + \nu(A_k)\\
+     \geq&amp; \nu(A_k).
+\end{aligned}
+</md>
+Taking the limit as <m>k \rightarrow \infty</m>, we get <m>\nu(A) \geq \lambda</m>.
+    Thus <m>\nu(A) = \lambda</m>.</p>
+<p>Let <m>B = X \backslash A</m>.
+    We will show that <m>B</m> is negative.
+    If <m>B</m> is not negative, then there is a measurable set <m>C \subseteq B</m> with <m>\nu(C)&gt;0</m>.
+    Since, by assumption, <m>\nu</m> does not take the value <m>\infty</m>, we have
+<md> 0 &lt; \nu(C) &lt; \infty.</md>
+It follows from <xref ref="lem-hahn-lemma"/> that there is a positive set <m>C' \subseteq C</m> with <m>\nu(C') &gt;0</m>.
+    The set <m>A \cup C'</m> is positive with
+<md> \nu(A \cup C') = \nu(A) + \nu(C') &gt; \lambda.</md>
+This contradicts the definition of <m>\lambda</m>.
+    Thus <m>B</m> is negative.</p>
+<p>Suppose <m>A'</m> and <m>B'</m> are another pair of disjoint measurable sets, with <m>X = A' \cup B'</m>, <m>A'</m> positive, and <m>B'</m> negative.
+    Then <m>A\backslash A' \subseteq A</m> and <m>A\backslash A' \subseteq B'</m>.
+    Hence <m>A \backslash A'</m> is both positive and negative.
+    Thus, <m>A \backslash A'</m> is a null set.
+    Similar arguments show that <m>A'\backslash A</m>, <m>B\backslash B'</m>, and <m>B'\backslash B</m> are null sets.</p>
+</proof>
+</theorem>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            If <m>A</m> and <m>B</m> are disjoint measurable sets satisfying <m>X = A \cup B</m> for disjoint sets <m>A</m> and <m>B</m>, with <m>A</m> positive and <m>B</m> negative, we call <m>A</m> and <m>B</m> a <term>Hahn decomposition</term> for <m>\nu</m>.<idx><h>Hahn decomposition</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>The Hahn Decomposition, <xref ref="thm-Hahn-decomp"/>, says that Hahn decompositions exist for all signed measures. We can now, as promised, decompose signed measures as the difference of two measures. Before we do this we introduce just one more definition.</p>
+
+<definition>
+    <notation>
+        <usage><m>\perp </m></usage>
+        <description>mutually singular measures</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\mu</m> and <m>\nu</m> be two measures on <m>(X,\mathcal{F})</m>.
+            The measures <m>\mu</m> and <m>\nu</m> are <term>mutually singular</term>, denoted <m>\mu \perp \nu</m>, if there are disjoint measurable sets <m>A,B \subseteq X</m> with <m>A \cup B = X</m> satisfying
+            <m>\mu(A) = \mu(X)</m>, <m>\mu(B) = 0</m>, <m>\nu(A) = 0</m>, and <m>\nu(B) = \nu(X)</m>.
+            <idx><h>singular measures</h><h>mutually singular</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<example>
+<p>Let <m>m</m> be the Lebesgue measure on the Borel sets of <m>[0,1]</m>, and let <m>\mu</m> be the Borel measure on the Borel sets of <m>[0,1]</m> whose cumulative distribution function is the Cantor-Lebesgue function (see <xref ref="cor-cdf-and-Borel"/>).
+    It follows from <xref ref="exer-cantor-leb-cdf"/> that <m>m</m> and <m>\mu</m> are mutually singular.</p>
+</example>
+
+<theorem xml:id="thm-jordan-decomp-measure">
+<title>The Jordan Decomposition Theorem</title>
+<statement>
+    <p>
+        Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+        Then there are mutually orthogonal measures on <m>\nu_+</m> and <m>\nu_-</m> on <m>(X,\mathcal{F})</m> such that <m>\nu = \nu_+ - \nu_-</m>, i.e.
+        <md> \nu(E) = \nu_+(E) - \nu_-(E)</md>
+        for all <m>E \in \mathcal{F}</m>.</p>
+        <p>Further, <m>\nu_+</m> and <m>\nu_-</m> are unique mutually orthogonal measures satisfying <m>\nu = \nu_+ - \nu_-</m>.
+        <idx><h>Jordan Decomposition Theorem</h><h>for signed measures</h></idx>
+    </p>
+</statement>
+    <proof>
+<p>Let <m>X = A \cup B</m> be a Hahn decomposition for <m>\nu</m>, with <m>A</m> positive and <m>B</m> negative.
+    For each <m>E \in \mathcal{F}</m>, define
+<md>
+\begin{aligned}
+\nu_+(E) &amp;= \nu(E\cap A) \text{ and }\\
+        \nu_-(E) &amp;= -\nu(E \cap B).
+\end{aligned}
+</md>
+</p>
+<p>That <m>\nu_+</m> is a measure follows from <xref ref="exer-signed-meas-to-meas"/>.
+    That <m>\nu_-</m> is a measure can be proved similarly.
+    That <m>\nu_+</m> and <m>\nu_-</m> are mutually orthogonal follows from the fact that <m>A</m> and <m>B</m> are disjoint.</p>
+<p>Suppose now that <m>\mu_1</m> and <m>\mu_2</m> are mutually orthogonal measures satisfying <m>\nu = \mu_1 - \mu_2</m>.
+    Since <m>\mu_1</m> and <m>\mu_2</m> are mutually orthogonal, there are disjoint measurable sets <m>C</m> and <m>D</m> satisfying <m>X = C \cup D</m>, <m>\mu_1(C) = \mu(X)</m>, <m>\mu_1(D) = 0</m>, <m>\mu_2(C) = 0</m>, and <m>\mu_2(D) = 0</m>.
+    We will show that <m>C</m> and <m>D</m> give a Hahn decomposition for <m>\nu</m>.
+    That is, we will show that <m>C</m> is <m>\nu</m>-positive and <m>D</m> is <m>\nu</m>-negative.
+    Take any <m>E \subseteq C</m>.
+    Since <m>E \subseteq C</m>, <m>\mu_2(C) = 0</m>, thus
+<md> \nu(E) = \mu_1(E) - \mu_2(E) = \mu_1(E) \geq 0.</md>
+Similarly, if <m>E \subseteq D</m>, then <m>\mu_1(E) =0</m> and so
+<md> \nu(E) = \mu_1(E) - \mu_2(E) = 0 - \mu_2(E) \leq 0.</md>
+Since <m>C</m> and <m>D</m> are a Hahn decompoistion for <m>\nu</m>, and <m>A</m> and <m>B</m> are a Hahn decompoistion for <m>\nu</m>, it follows from <xref ref="thm-Hahn-decomp"/> that <m>A\backslash C \cup C \backslash A</m> and <m>B \backslash D \cup D \backslash B</m> are null sets.
+    Take any <m>E \in \mathcal{F}</m>, then
+<md> E \cap C = ([E\cap C] \backslash A)  \cup ([E \cap C] \cap A)</md>
+and
+<md> E \cap A = ([E\cap A] \backslash C)  \cup ([E \cap A] \cap C)</md>
+and so
+<md number="yes" xml:id="eq-jord-eq">
+\nu(E\cap C) = \nu(E \cap A).
+</md>
+Take any <m>E \in \mathcal{F}</m>.
+    Then
+<md>
+\begin{aligned}
+\mu_1(E) &amp;= \mu_1(E \cap C) \\
+        &amp;= \mu_1(E \cap C) - \mu_2(E \cap C) \\
+        &amp;= \nu(E \cap C)\\
+        &amp;= \nu(E \cap A) \\
+        &amp;= \nu_+(E),
+\end{aligned}
+</md>
+where the penultimate equality comes from  <xref ref="eq-jord-eq"/>.
+    Hence <m>\mu_1 = \nu_+</m>.
+    We can show that <m>\mu_2 = \nu_-</m> in a similar fashion.</p>
+</proof>
+</theorem>
+
+
+<definition xml:id="def-jordan-decomp">
+    <notation>
+        <usage><m>\nu = \nu_+ - \nu_-</m></usage>
+      <description>Jordan decomposition of a signed measure</description>
+    </notation>
+
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            Let <m>\nu_+</m> and <m>\nu_-</m> be mutually orthogonal measures on <m>(X,\mathcal{F})</m> satisfying
+            <md> \nu = \nu_+ - \nu_-.</md>
+            We call <m>\nu_+</m> and <m>\nu_-</m> the Jordan decomposition of <m>\nu</m>.
+            We call the measure <m>\nu_+</m> the <term>positive part of <m>\nu</m></term>, and call the measure <m>\nu_-</m> the <term>negative part of <m>\nu</m></term>.
+            <idx><h>Jordan decomposition</h><h>of a signed measure</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<definition>
+    <notation>
+        <usage><m>|\nu|</m></usage>
+      <description>measure of total variation of a signed measure</description>
+    </notation>
+    <notation>
+        <usage><m>|\nu|(X)</m></usage>
+      <description>total variation of a signed measure</description>
+    </notation>
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure and let <m>\nu = \nu_+ - \nu_-</m> be the Jordan decomposition of <m>\nu</m>.
+            The measure <m>|\nu|</m> defined by
+                <md> |\nu|(E) = \nu_+(E) + \nu_-(E)</md>
+            is called the <term>measure of total variation of <m>\nu</m></term>.<idx><h>measure of total variation</h></idx>
+            The value <m>|\nu|(X)</m> is the <term>total variation</term> of <m>\nu</m>.
+            When <m>|\nu|(X)</m> is finite then <m>\nu</m> is of <term>bounded variation</term>.
+            <idx><h>bounded variation</h><h>for a signed measure</h></idx>
+            <idx><h>total variation</h><h>of a signed measure.</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>Let <m>\nu</m> be a signed measure.
+    Then <m>|\nu|</m>, measure of total variation of <m>\nu</m>, is indeed a measure by <xref ref="exer-measures-vec-space"/>.</p>
+<p>It is worth noting that, when <m>\nu</m> is a signed measure, in general it is not true that
+<md>|\nu|(E) = |\nu(E)|</md>
+for a <m>\nu</m>-measurable set.
+    That is, the placement of the <m>|\cdot|</m> lines is important.</p>
+<p>In general, there is no reason to expect the function <m>E \mapsto |\nu(E)|</m> to be a measure.
+    Can you see why not?</p>
+</remark>
+
+<p>Note that <m>|\nu|(X)</m> is finite if and only if <m>\nu</m> is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to <xref ref="exer-total-variation"/></p>
+
+<proposition xml:id="prop-bv-signed-meas-as-sup">
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            Then the total variation <m>|\nu|(X)</m> is given by
+                <md> |\nu|(X) = \sup \left\{ \sum_{k=1}^n |\nu(E_k)| \colon \{E_k\}_{k=1}^n \text{ disjoint measurable sets} \right\}. </md>
+        </p>
+    </statement>    
+</proposition>
+
+<p>We end this section with another characterization of <m>|\nu|(X)</m> for finite signed measures.</p>
+
+<proposition xml:id="prop-total-variation">
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m> with finite total variation <m>|\nu|(X)</m>.
+            Suppose <m>\mu_1</m> and <m>\mu_2</m> are measures on <m>(X,\mathcal{F})</m> satisfying <m>\nu = \mu_1 - \mu_2</m>.
+            Then <m>|\nu|(X) \leq \mu_1(X) + \mu_2(X)</m>.</p>
+            <p>Further, <m>|\nu|(X) = \mu_1(X) + \mu_2(X)</m> if and only if <m>\mu_1 = \nu_+</m> and <m>\mu_2 = \nu_-</m>.
+        </p>
+    </statement>
+    <proof>
+<p>Let <m>X = A \cup B</m> be a Hahn decomposition for <m>\nu</m> so that
+<md> \nu(A) = \nu_+(A),\ \nu(B) = - \nu_+(B)</md>
+and
+<md> \nu_+(B) = 0 = \nu_-(A).</md>
+Take any measurable <m>E \subseteq A</m>, then
+<md>
+\begin{aligned}
+\nu_+(E) &amp;= \nu(E) \\
+        &amp;= \mu_1(E) - \mu_2(E) \\
+        &amp;\leq \mu_1(E).
+\end{aligned}
+</md>
+Similarly, if <m>F \subseteq B</m> is measurable then
+<md>
+\begin{aligned}
+\nu_-(F) &amp;= -\nu(F) \\
+        &amp;= \mu_2(F) - \mu_1(F)\\
+        &amp;\leq \mu_2(F).
+\end{aligned}
+</md>
+We have then that
+<md>
+\begin{aligned}
+|\nu|(X) &amp;= \nu_+(X) + \nu_-(X) \\
+        &amp;= \nu_+(A) + \nu_-(B) \\
+        &amp;\leq \mu_1(A) + \mu_2(B) \\
+        &amp;\leq \mu_1(X) + \mu_2(X).
+\end{aligned}
+</md></p>
+<p>Now suppose that <m>|\nu|(X) = \mu_1(X) + \mu_2(X)</m>.
+    If <m>\mu_1(A)&gt;\nu_+(A)</m> or <m>\mu_2(B) &gt; \nu_-(B)</m> then, by the same reasoning as earlier in this proof,
+<md> |\nu|(X)&lt; \mu_1(X) + \mu_2(X).</md>
+Thus <m>\mu_1(A) = \nu_+(A)</m> and <m>\mu_2(B) = \nu_+(B)</m>.</p>
+<p>Take any measurable <m>E \subseteq A</m>.
+    We have shown that <m>\mu_1(E) \geq \nu_+(E)</m>.
+    If <m>\mu_1(E) &gt; \nu_+(E)</m> then
+<md> \mu_1(A) = \mu_1(E) + \mu_1(A\backslash E) &gt; \nu_+(A).</md>
+As <m>\mu_1(A) = \nu_+(A)</m>, it follows that <m>\mu_1(E) = \nu_+(E)</m> for all measurable <m>E \subseteq A</m>.</p>
+<p>Suppose <m>E \in \mathcal{F}</m> satisfies <m>\mu_1(E) \neq \nu_+(E)</m>.
+    Then
+<md> \mu_1(E) = \mu_1(E \cap A) + \mu_1(E \cap B) = \nu_+(E) + \mu_1(E\cap B).</md>
+Hence, if <m>\mu_1 \neq \nu_+</m>, then <m>\mu_1(B)&gt;0</m>.</p>
+<p>We can similarly show that <m>\mu_2(F) = \nu_-(F)</m> for all measurable <m>F \subseteq B</m>, and that if <m>\mu_2 \neq \nu_-</m> then <m>\mu_2(A)&gt;0</m>.</p>
+<p>Thus, if <m>\mu_1 \neq \nu_+</m> or <m>\mu_2 \neq \nu_-</m>, we have
+<md>
+\begin{aligned}
+|\nu|(X) &amp;= \mu_1(X) + \mu_2(x) \\
+        &amp;= \mu_1(A) + \mu_1(B) + \mu_2(A) + \mu_2(B) \\
+        &amp;&gt; \nu_+(A) + \nu_-(B) \\
+        &amp;= \nu_+(X) + \nu_-(X).
+\end{aligned}
+</md>
+This contradicts the definition of the total variation <m>|\nu|(X)</m>.
+    Hence <m>\mu_1 = \nu_+</m> and <m>\mu_2 = \nu_-</m>.</p>
+</proof>
+</proposition>
+
+</section>

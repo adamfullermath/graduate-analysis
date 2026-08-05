@@ -1,0 +1,188 @@
+<section xml:id="sec-integration">
+<title>Integration of measurable functions</title>
+
+<p>Recall that if <m>f</m> is a measurable function on a measure space <m>(X,\mathcal{F},\mu)</m> then <m>f = f_+ - f_-</m> where <m>f_+ = \max\{0,f\}</m> is the positive part of <m>f</m> and <m>f_- = \max\{0,-f\}</m> is the negative part of <m>f</m>. Further, <m>|f| = f_+ + f_-</m>. As <m>|f|</m>, <m>f_+</m> and <m>f_-</m> are non-negative measurable functions we can use <xref ref="thm-pos-int-linear"/> to get
+<md> \int_X |f| \,d\mu = \int_X f_+ \,d\mu + \int_X f_-\,d\mu.</md>
+Thus <m>|f|</m> is integrable if and only if <m>f_+</m> and <m>f_-</m> are integrable.
+This leads us to the following definition.</p>
+
+<definition>
+<notation>
+    <usage><m>\int_X f \,d\mu</m></usage>
+    <description>The integral of <m>f</m> over the set <m>X</m> with respect to the measure <m>\mu</m></description>
+</notation>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be a measurable function on <m>X</m> with positive part <m>f_+</m> and negative part <m>f_-</m>.
+        The function <m>f</m> is <term>integrable with respect to <m>\mu</m></term> if <m>|f|</m> is integrable.
+        That is, <m>f</m> is integrable if <m>\int_X |f|\,d\mu &lt; \infty</m>.
+        If <m>f</m> is integrable we define the <term>integral of <m>f</m> over <m>X</m> with respect to <m>\mu</m></term> by
+        <md> \int_X f\,d\mu = \int_X f_+ \,d\mu - \int_X f_- \,d\mu.</md>
+        If <m>f</m> is integrable and <m>E \subseteq X</m> is measurable, we define the <term>integral of <m>f</m> over <m>E</m> with respect to <m>\mu</m></term> as
+        <md> \int_E f \,d\mu = \int_X f\chi_E \,d\mu.</md>
+        <idx><h>integrable</h></idx><idx><h>integral</h></idx>
+    </p>
+    <p>
+        When <m>X \subseteq \mathbb{R}</m> is Lebesgue measurable, <m>\mathcal{F}</m> is the Lebesgue measurable subsets of <m>X</m>, and <m>\mu = m</m> is the Lebesgue measure, an integrable function <m>f</m> is called <term>Lebesgue integrable</term> and the integral <m>\int_X f\,d\mu</m> is called the <term>Lebesgue integral</term>.<idx><h>integral</h><h>Lebesgue integral</h></idx><idx><h>integrable</h><h>Lebesgue integrable</h></idx>
+    </p>
+</statement>
+</definition>
+
+<p>We first note the following important property relating the integral of <m>f</m> and the integral of <m>|f|</m>.</p>
+
+<proposition>
+<statement>
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be an integrable function on <m>X</m>. Then
+<md> \left| \int_X f\,d\mu \right| \leq \int_X |f| \,d\mu.</md>
+</p>
+</statement>
+<proof>
+<p>Let <m>f = f_+ - f_-</m> be the decomposition of <m>f</m> into its positive and negative parts.
+    Then
+<md>
+\begin{aligned}
+\left| \int_X f\,d\mu \right| &amp; = \left| \int_X f_+\,d\mu - \int_X f_-\,d\mu \right| \\
+        &amp;\leq \int_X f_+\,d\mu + \int_X f_-\,d\mu \\
+        &amp;= \int_X |f|\,d\mu.
+\end{aligned}
+</md>
+</p>
+</proof>
+</proposition>
+
+<theorem xml:id="thm-int-liner">
+<title>Linearity and Monotonicity of Integration</title>
+<statement>
+<p>
+Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>f</m> and <m>g</m> be integrable functions on <m>X</m>, and let <m>\alpha, \beta \in\mathbb{R}</m>.
+Then <m>\alpha f + \beta g</m> is integrable and
+<md> \int_X (\alpha f + \beta g)\,d\mu = \alpha \int_X f\,d\mu + \beta \int_X g\, d\mu.</md>
+Further, it <m>f \leq g</m> then
+<md> \int_X f\, d\mu \leq \int_X g\, d\mu.</md>
+<idx><h>monotonicty of integration</h></idx><idx><h>linearity of integration</h></idx>
+</p>
+</statement>  
+
+<proof>
+<p>It is straightforward to show that <m>\int_X \alpha f\,d\mu = \alpha \int_X f\,d\mu</m>.
+    We will show <m>\int_X(f+g)\,d\mu = \int_X f\,d\mu + \int_X g\,d\mu</m>.
+    First note that by <xref ref="thm-f-integrable"/>, <m>f</m> and <m>g</m> being integrable implies <m>f</m> and <m>g</m> are finite a.e.
+    Thus <m>f + g</m> is defined.
+    Note that <m>|f + g| \leq |f| + |g|</m>.
+    By the monotonicity of integration of non-negative measurable functions, it follows that <m>f+g</m> is integrable.</p>
+<p>As <m>f+g = (f+g)_+ - (f+g)_-</m>, <m>f = f_+ - f_-</m>, and <m>g = g_+ -g_-</m>, it follows that
+<md> (f+g)_+ - (f+g)_- = (f_+ - f_-) + (g_+ -g_-)</md>
+and so
+<md> (f+g)_+  +f_- + g_- =(f+g)_- +f_+ + g_+.</md>
+By <xref ref="thm-pos-int-linear"/>, we have then that
+<md>
+<mrow>\int_X(f+g)_+\,d\mu  +\int_Xf_-\,d\mu + \int_Xg_-\,d\mu  </mrow>
+<mrow>=\int_X(f+g)_-\,d\mu +\int_Xf_+\,d\mu + \int_Xg_+\,d\mu </mrow>
+</md>
+
+Thus,
+<md>
+<mrow>\int_X(f+g)_+\,d\mu - \int_X(f+g)_-\,d\mu </mrow>
+<mrow>= \int_Xf_+\,d\mu -\int_Xf_-\,d\mu + \int_Xg_+\,d\mu - \int_Xg_-\,d\mu,  </mrow>
+</md>
+and hence
+<md> \int_X (f+ g)\,d\mu = \int_Xf\,d\mu + \int_Xg\,d\mu</md>
+If <m>f\leq g</m>, then <m>g-f \geq 0</m> and so
+<md> 0 \leq \int_X (g-f)\,d\mu = \int_X g\,d\mu - \int_X f\,d\mu.</md>
+Thus <m>\int_X g\,d\mu \geq \int_X f\,d\mu</m>.</p>
+</proof>
+</theorem>
+
+<p>Several results can now be stated which follow readily from <xref ref="thm-int-liner"/> and what we have already proved for integrals of non-negative linear functions.</p>
+
+<corollary>
+<statement>
+<p>If <m>A</m> and <m>B</m> are disjoint measurable subsets in a measure space <m>(X,\mathcal{F},\mu)</m> and <m>f</m> is integrable, then
+<md> \int_{A\cup B} f\,d\mu = \int_A f\,d\mu + \int_Bf\,d\mu.</md>
+</p>
+</statement>
+</corollary>
+
+<proposition>
+<statement>
+<p>If <m>(X,\mathcal{F},\nu)</m> is a measure space, <m>(f_n)</m> is a sequence of integrable functions on <m>X</m>, and <m>f = \sum_{k=1}^\infty f_k</m> is integrable, then
+<md> \int_X f \,d\mu = \sum_{k=1}^\infty \int_X f_k \,d\mu.</md>
+</p>
+</statement>
+
+<proof>
+<p>Apply <xref ref="cor-MCT-series"/> and the linearity of integration.</p>
+</proof>
+</proposition>
+
+<p>In <xref ref="exer-integration-measure"/> it is shown that <m>\nu(E) = \int_E f\,d\mu</m> defines a measure when <m>f \geq 0</m>. The following proposition is a straightforward application of <xref ref="exer-integration-measure"/>, the linearity of integration, and the continuity of measure.</p>
+
+<proposition xml:id="prop-integral-cont">
+<title>Continuity of Integration</title>
+<statement>
+<p>
+Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be an integrable function on <m>X</m>.
+<ol>
+<li>If <m>\{E_n\}_n</m> is an ascending sequence of measurable sets in <m>X</m> with <m>E = \bigcup_n E_n</m> then
+<md> \int_E f\,d\mu = \lim_n \int_{E_n} f\,d\mu.</md>
+</li>
+<li>If <m>\{F_n\}_n</m> is a descending sequence of measurable sets in <m>X</m> with <m>F = \bigcap_n F_n</m> then
+<md> \int_F f\,d\mu = \lim_n \int_{F_n} f\,d\mu.</md>
+</li>
+</ol>
+<idx><h>integral</h><h>continuity</h></idx>
+</p>
+</statement>
+</proposition>
+
+<p>The following theorem continues our theme of results which ask when a limit of integrals is the integral of the pointwise limit.</p>
+
+<theorem xml:id="thm-LDC">
+<title>Lebesgue Dominated Convergence Theorem</title>
+<statement>
+<p>
+Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>(f_n)</m> be a sequence of measurable functions which converge pointwise a.e. to a measurable function <m>f</m>.
+If there is an integrable non-negative function <m>g</m> on <m>X</m> such that <m>|f_n|\leq g</m> a.e. for all <m>n</m>, then <m>f</m> is integrable over <m>X</m> and
+<md> \int_X f \,d\mu = \lim_n\int_X f_n\,d\mu.</md>
+<idx><h>Lebesgue Dominated Convergence Theorem</h></idx><idx><h>Dominated Convergence Theorem</h><see>Lebesgue Dominated Convergence Theorem</see></idx>
+</p>
+</statement>
+
+<proof>
+<p>By removing a set of measure <m>0</m>, we will assume that the sequence <m>(f_n)_n</m> converges pointwise to <m>f</m> and <m>|f_n|\leq g</m> everywhere.
+    Note that each <m>f_n</m> is integrable since <m>|f_n|\leq g</m> and <m>g</m> is integrable.
+    It follows that <m>|f| \leq g</m>, and so <m>f</m> is integrable as well.</p>
+<p>The sequence <m>(f_n + g)_n</m> is a sequence of non-negative measurable functions which converges pointwise to <m>f +g</m>.
+    Thus, by <xref ref="lem-fatou" text="custom">Fatou's Lemma</xref>,
+<md> \int_X(f+g)\,d\mu \leq \liminf_n \int_X (f_n + g)\,d\mu.</md>
+The linearity of integration thus gives that
+<md number="yes" xml:id="eq-fatou-1">
+\int_X f \,d\mu \leq \liminf_n \int_X f_n\,d\mu.
+</md>
+</p>
+<p>
+The sequence <m>(g - f_n)_n</m> is also a sequence of non-negative measurable functions. 
+    This sequence converges pointwise to <m>g -f</m>.
+    Applying Fatou's Lemma  and the linearity of integration we have
+<md>
+\begin{aligned}
+\int_X g\,d\mu - \int_X f\,d\mu = \int_X(g-f)\,d\mu &amp;\leq \liminf_n \int_X (g - f_n)\,d\mu\\
+        &amp;= \int_X g\,d\mu - \limsup_n \int_X f_n\,d\mu.
+\end{aligned}
+</md>
+Thus
+<md number="yes" xml:id="eq-fatou-2">
+\int_X f \,d\mu \geq \limsup_n \int_X f\,d\mu.
+</md>
+By  <xref ref="eq-fatou-1"/> and  <xref ref="eq-fatou-2"/> we have that
+<md> \limsup_n \int_X f_n\,d\mu \leq \int_X f \,d\mu \leq \liminf_n \int_X f_n\,d\mu </md>
+It follows that <m>\left(\int_X f_n\,d\mu\right)_n</m> is a convergent sequence and <m>\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu</m></p>
+</proof>
+</theorem>
+
+<remark>
+<p>Note that the Lebesgue Dominated Convergence Theorem is not a generalization of the Monotone Convergence Theorem.
+    The Lebesgue Dominated Convergence Theorem only deals with integrable functions, whilst the Monotone Convergence Theorem allows for possibly infinite integrals.</p>
+<p>However, if we restrict the Monotone convergence theorem to an increasing sequence <m>(f_n)_n</m> of integrable non-negative functions which converge pointwise a.e. to an integrable function <m>f</m>, then this is a special case of the Lebesgue Decomposition Theorem.</p>
+</remark>
+</section>

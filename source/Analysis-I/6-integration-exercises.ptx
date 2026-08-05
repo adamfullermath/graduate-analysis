@@ -1,0 +1,112 @@
+<exercises>
+<exercise xml:id="exer-int-a-e">
+<statement>
+    <p>
+        Let <m>f</m> be a non-negative function on a measure space <m>(X,\mathcal{F},\mu)</m>, and let <m>E \subseteq X</m> be a measurable set with <m>\mu(E) = 0</m>.
+        Prove
+        <md> \int_X f \,d\mu = \int_{X\backslash E} f\,d\mu.</md>     
+    </p>
+</statement>
+</exercise>
+
+<exercise xml:id="exer-int-mono-non-neg">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space, and let <m>f</m> and <m>g</m> be non-negative measurable functions on <m>X</m>.
+        If <m>f \leq g</m> then
+        <md> \int_X f \,d\mu \leq \int_X g \,d\mu.</md>     
+    </p>
+</statement>
+</exercise>
+
+<exercise xml:id="exer-dirac-integration">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F})</m> be a measurable space.
+        Fix <m>x \in X</m> and let <m>\delta_x</m> be the Dirac measure at <m>x</m>.
+        If <m>f</m> is a non-negative measurable function on <m>X</m>, what is the value of <m>\int_X f \,d \delta_x</m>?     
+    </p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+    <p>
+        Let <m>c</m> be the counting measure on the subsets of <m>\mathbb{N}</m>, and let <m>f</m> be a (necessarily measurable) function from <m>\mathbb{N}</m> to <m>\mathbb{R}</m>.</p>
+        <p>Show that <m>f</m> is integrable with respect to <m>c</m> if and only if the series <m>\sum_{n=1}^\infty f(n)</m> converges absolutely to a finite number. 
+        Further show that if <m>f</m> is integrable then
+        <md> \int_\mathbb{N} f \,dc = \sum_{k=1}^\infty f(n).</md>     
+    </p>
+</statement>
+</exercise>
+
+<exercise xml:id="exer-positive-integral">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space, and let <m>f</m> be a non-negative measurable function on <m>X</m>.
+        Let <m>E \in \mathcal{F}</m> be a measurable set such that <m>f(x)&gt;0</m> for all <m>x \in E</m>.
+        Show that, if <m>\mu(E)&gt;0</m> then
+        <md> \int_E f\,d\mu &gt; 0.</md>     
+    </p>
+</statement>
+</exercise>
+
+<exercise xml:id="exer-MCT-series">
+<statement>
+    <p>
+        Prove <xref ref="cor-MCT-series"/>:    Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>(f_n)_n</m> be a sequence of non-negative measurable functions, and let <m>f = \sum_{n=1}^\infty f_n.</m>
+        Prove
+        <md> \int_X f \, d\mu = \sum_{k=1}^\infty \int_X f_n\, d\mu.</md>
+    </p>
+</statement>
+</exercise>
+
+<exercise xml:id="exer-same-int-same-func">
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+        Suppose <m>f</m> and <m>g</m> are integrable functions such that
+        <md> \int_A f\ d\mu = \int_A g\ d\mu</md>
+        for all measurable sets <m>A \subseteq X</m>.
+        Show that <m>f = g</m> almost everywhere with respect to <m>\mu</m>.
+        
+    </p>
+</statement>
+<hint>
+    <p>
+        First show that if <m>f \geq 0</m> and <m>\int_Ef\,d\mu = 0</m> for all <m>E \in F</m> then <m>f = 0</m> a.e.
+    </p>
+</hint>
+</exercise>
+
+<exercise xml:id="exer-integration-measure">
+<introduction>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+    </p>
+</introduction>
+
+<task>
+    <statement>
+        <p>
+            Let <m>f</m> be a non-negative measurable function on <m>X</m>.
+            Define <m>\nu \colon \mathcal{F} \rightarrow [0,\infty]</m> by
+            <md> \nu(E) = \int_E f\, d\mu.</md>
+            Show that <m>\nu</m> is a measure on <m>(X,\mathcal{F})</m> satisfying <m>\nu(E) = 0</m> when <m>\mu(E) = 0</m>.
+        </p>
+    </statement>
+</task>
+
+<task>
+    <statement>
+        <p>
+            Let <m>g</m> an integrable function on <m>X</m> with respect to <m>\mu</m>.
+            Define <m>\sigma \colon \mathcal{F} \rightarrow \mathbb{R}</m> by
+            <md> \sigma(E) = \int_E g \,d\mu.</md>
+            Show that <m>\sigma</m> is a signed-measure on <m>(X,\mathcal{F})</m> satisfying <m>\sigma(E) = 0</m> when <m>\mu(E) = 0</m>.    
+        </p>
+    </statement>
+</task>
+</exercise>
+
+</exercises>

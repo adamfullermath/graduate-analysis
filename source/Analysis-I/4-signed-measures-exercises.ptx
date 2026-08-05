@@ -1,0 +1,295 @@
+<exercises>
+<exercise xml:id="exer-measures-vec-space">
+    <introduction>
+        <p>
+            Let <m>\mu</m> and <m>\nu</m> be measures on a measurable space <m>(X,\mathcal{F})</m>.
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                For a real number <m>c\geq 0</m>, define <m>c\mu</m> on <m>\mathcal{F}</m> by <m>(c\mu)(E) = c\mu(E)</m> for all <m>E \in \mathcal{F}</m>.
+                Show that <m>c\mu</m> is a measure on <m>(X,\mathcal{F})</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Define <m>\lambda</m> on <m>\mathcal{F}</m> by
+                    <md> \lambda(E) = \mu(E) + \nu(E). </md>
+                Show that <m>\lambda</m> is a measure on <m>(X,\mathcal{F})</m>. We denote <m>\lambda</m> by <m>\mu + \nu</m>.
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise>
+    <introduction>
+        <p>
+            Suppose <m>\mu</m> and <m>\nu</m> are measures on a measurable space <m>(X,\mathcal{F})</m> and <m>\mu \geq \nu</m> (i.e. <m>\mu(E) \geq \nu(E)</m> for all <m>E\in \mathcal{F}</m>).
+            Define <m>\lambda</m> on <m>\mathcal{F}</m> by
+            <md> \lambda(E) = \sup\{\mu(F) - \nu(F) \colon F \subseteq E \text{ measurable, } \nu(F)&lt; \infty\}. </md>        
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\lambda</m> is a measure on <m>(X,\mathcal{F})</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\nu + \lambda = \mu</m> (where <m>\nu + \lambda</m> is defined by <xref ref="exer-measures-vec-space"/>).
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that if <m>(X,\mathcal{F},\nu)</m> is <m>\sigma</m>-finite then the <m>\lambda</m> is the unique measure satisfying <m>\nu + \lambda = \mu</m>.
+            </p>
+        </statement>
+        <hint>
+            <p>
+                Assume there are two such measures <m>\lambda_1</m> and <m>\lambda_2</m> and show they have to be equal on sets with <m>\nu(E)&lt;\infty</m>. Then move to general measurable sets.
+            </p>
+        </hint>
+    </task>
+</exercise>
+
+<exercise xml:id="exer-diff-of-measures">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>\mu_1</m> and <m>\mu_2</m> be measures on <m>(X,\mathcal{F})</m>. Further assume that one or both of <m>\mu_1</m> and <m>\mu_2</m> are finite measures. 
+            Define <m>\nu = \mu_1 - \mu_2</m>, i.e. <m>\nu(E) = \mu_1(E) - \mu_2(E)</m> for all <m>E \in \mathcal{F}</m>.
+            Show that <m>\nu</m> is a signed measure on <m>(X,\mathcal{F})</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-signed-meas-vec-sp">
+    <introduction>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>\mathcal{V}</m> be the set of all finite signed measures on <m>(X,\mathcal{F})</m>.
+            Define addition <m>+</m> on <m>\mathcal{V}</m> by
+            <md> (\nu_1 + \nu_2)(E) = \nu_1(E) + \nu_2(E)</md>
+            for all <m>\nu_1,\nu_2 \in \mathcal{F}</m> and all <m>E \in F</m>;
+            and define scalar multiplication on <m>\mathcal{V}</m> by
+            <md> (c\nu)(E) = c(\nu(E))</md>
+            for all <m>c\in \mathbb{R}</m>, <m>\nu \in \mathcal{V}</m>, and <m>E \in \mathcal{F}</m>
+        </p>
+    </introduction>
+
+    <task>
+        <statement>
+            <p>
+                Show that <m>\nu_1 + \nu_2 \in \mathcal{V}</m> for all <m>\nu_1, \nu_2 \in \mathcal{V}</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that <m>c\nu \in \mathcal{V}</m> for all <m>c \in \mathbb{R}</m> and <m>\nu \in \mathcal{V}</m>.
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                Show that <m>\mathcal{V}</m> is a vector space under the given operations of addition and scalar multiplication.        
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise xml:id="exer-finite-signed-measures">
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            Suppose <m>E \in \mathcal{F}</m> with <m>|\nu(E)|&lt;\infty</m>.
+            Show that if <m>A \subseteq E</m>, then <m>|\nu(A)|&lt;\infty</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-positive-union">
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            Suppose <m>\{E_k\}_{k=1}^\infty</m> are positive sets.
+            Show that <m>E = \bigcup_k E_k</m> is a positive set.         
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-signed-meas-to-meas">
+    <statement>
+        <p>
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>, and let <m>A</m> be a positive set.
+            Define a function <m>\nu_A</m> on <m>\mathcal{F}</m> by <m>\nu_A(E) = \nu(A \cap E)</m> for all <m>E \in \mathcal{F}</m>. 
+            Show that <m>\nu_A</m> is a measure on <m>(X,\mathcal{F})</m>.        
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-total-variation">
+    <statement>
+        <p>
+            Prove <xref ref="prop-total-variation"/>:
+            Let <m>\nu</m> be a signed measure on a measurable space <m>(X,\mathcal{F})</m>.
+            Show that that the total variation of <m>\nu</m> can be calculated by
+            <md> |\nu|(X) = \sup \left\{ \sum_{k=1}^n |\nu(E_k)| \colon \{E_k\}_{k=1}^n \text{ disjoint sets in }\mathcal{F}\right\}. </md>        
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-signed-measure-space-with-norm">
+    <introduction>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mathcal{V}</m> the vector space of finite signed measures on <m>(X,\mathcal{F})</m>, see <xref ref="exer-signed-meas-vec-sp"/>.
+            For <m>\nu \in \mathcal{V}</m>, define <m>\|\nu\|_{\textrm{var}}</m> by
+            <md> \|\nu\|_{\textrm{var}} = |\nu|(X).</md>
+            Show that <m>\|\cdot\|_{\mathrm{var}}</m> defines a norm on <m>\mathcal{V}</m>.<idx><h>norm</h></idx><idx><h>norm</h><h>on the space of finite signed measures</h></idx>
+            That is, show that        
+        </p>
+    </introduction>
+    <task>
+        <statement>
+            <p>
+                <m>\|\nu\|_{\textrm{var}} = 0</m> if and only if <m>\nu = 0</m>, the zero measure in <m>\mathcal{V}</m>;
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                <m>\|c\nu\|_{\textrm{var}} = |c|\|\nu\|_{\textrm{var}}</m> for all <m>c \in \mathbb{R}</m>; and
+            </p>
+        </statement>
+    </task>
+    <task>
+        <statement>
+            <p>
+                <m>\|\nu_1 + \nu_2\|_{\textrm{var}} \leq \|\nu_1\|_{\textrm{var}} + \|\nu_2\|_{\textrm{var}}</m> for all <m>\nu_1, \nu_2 \in \mathcal{V}</m>. I.e. show that <m>\|\cdot\|_{\textrm{var}}</m> satisfies the <term>triangle inequality</term>.<idx>
+                <h>triangle inequality</h><h>for norms</h></idx>
+            </p>
+        </statement>
+    </task>
+</exercise>
+
+<exercise xml:id="exer-lipschitz-bv">
+    <statement>
+        <p>
+            Let <m>f</m> be a Lipschitz function on a closed interval <m>[a,b]</m>.
+            That is, assume there there is a constant <m>K&gt;0</m> such that <m>|f(x) - f(y)| \leq K|x-y|</m> for all <m>x,y \in [a,b]</m>.
+            Show that <m>f</m> is of bounded variation on <m>[a,b]</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-bv-arc-length">
+    <statement>
+        <p>
+            Let <m>f</m> be a continuous function on a closed interval <m>[a,b]</m>.
+            For a partition <m>P = \{a=x_0\lt \ldots \lt x_n = b\}</m> of <m>[a,b]</m> define
+            <m>L(f,P)</m> as
+            <md>
+                L(f,P) = \sum_{i=1}^n \sqrt{(x_i - x_{i-1})^2 - (f(x_i)-f(x_{i-1}))^2},
+            </md>
+            and define the <term>arc length</term> <m>L</m> of <m>f</m> on <m>[a,b]</m> as
+            <md>
+                L = \sup_P L(f,P).
+            </md><idx><h>arc length</h></idx>
+
+            Show that <m>f</m> is of bounded variation if and only if <m>L\lt \infty</m>.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-not-tv-1">
+    <statement>
+        <p>
+            Define <m>f</m> on <m>[0,1]</m> by
+            <md> f(x) = \begin{cases} \sin(\frac{1}{x}) &amp; x \neq 0 \\
+            0 &amp; x = 0.\end{cases}</md>
+            Show that <m>f</m> is not of bounded variation.        
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-not-tv-2">
+    <statement>
+        <p>
+            Define <m>g</m> on <m>[0,1]</m> by
+            <md> g(x) = \begin{cases} x\sin(\frac{1}{x}) &amp; x \neq 0 \\
+                0 &amp; x = 0.\end{cases}</md>
+            Show that <m>g</m> is  continuous.
+            Show that <m>g</m> is not of bounded variation.        
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-sin-bv">
+    <statement>
+        <p>
+            Let <m>f(x) = \sin(x)</m> for <m>x \in [0,2\pi]</m>.
+            Write <m>f</m> as the difference of two increasing, continuous functions.        
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-cos-bv">
+    <statement>
+        <p>
+            Let <m>f(x) = \cos(x)</m> for <m>x \in [0,2\pi]</m>.
+            Write <m>f</m> as the difference of two increasing, continuous functions.
+        </p>
+    </statement>
+</exercise>
+
+<exercise xml:id="exer-poly-bv">
+    <statement>
+        <p>
+            Let <m>p(x)</m> be a polynomial on the closed interval <m>[a,b]</m>.
+            Show that <m>p</m> is the difference of two increasing, continuous functions.        
+        </p>
+    </statement>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Let <m>f</m> be a function of bounded variation on an interval <m>[a,b]</m>.
+            Show that, if <m>a \leq c &lt; d \leq b</m>, then
+            <md> TV(f|_{[c,d]}) = T_f(d) - T_f(c).</md>        
+        </p>
+    </statement>
+</exercise>
+
+<exercise>
+    <statement>
+        <p>
+            Let <m>f</m> be a function of bounded variation on the closed interval <m>[a,b]</m>.
+            Suppose <m>f = m -n</m> where <m>m</m> and <m>n</m> are increasing functions.
+            Show that
+            <md> TV(f) \leq (m(b) - m(a)) + (n(b) - n(a)).</md>
+            Show that
+            <md> TV(f) = (m(b) - m(a)) + (n(b) - n(a))</md>
+            if and only if there is a constant <m>c</m> such that 
+            <m>m = \frac{1}{2}(T_f + f) + c</m> and <m>n =  \frac{1}{2}(T_f - f) +c</m>.        
+        </p>
+    </statement>
+    <hint>
+        <p>
+            Compare this question to <xref ref="prop-bv-signed-meas-as-sup"/>.
+        </p>
+    </hint>
+</exercise>
+
+</exercises>

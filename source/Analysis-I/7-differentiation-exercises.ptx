@@ -1,0 +1,82 @@
+<exercises>
+<exercise xml:id="ex-integration-sum-measures">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mu</m> and <m>\nu</m> be two measures on <m>(X,\mathcal{F})</m>.
+    Take any non-negative measurable function on <m>(X,\mathcal{F})</m>.
+    Show that, for all <m>E \in \mathcal{F}</m></p>
+<md> \int_E f \,d(\mu+\nu) = \int_E f\,d\mu + \int_E f\,d\nu.</md>
+</exercise>
+<exercise>
+<p>Let <m>(\mathbb{R},\mathcal{M})</m> be the measurable space of Lebesgue measurable subsets of <m>\mathbb{R}</m>, let <m>m</m> be the Lebesgue measure on <m>(\mathbb{R},\mathcal{M})</m>, and let <m>c</m> be the counting measure on <m>(\mathbb{R},\mathcal{M})</m>.</p>
+<ol>
+<li><p>Show that <m>m \ll c</m>.</p>
+</li>
+<li><p>Show that there does not exist a measurable function <m>f</m> on <m>(\mathbb{R},\mathcal{M})</m> so that
+    <md> m(E) = \int_E f\,dc.</md>
+</p>
+</li>
+<li><p>Why does this not contradict the Radon-Nikodym Theorem?</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-abs-cont-integration">
+    <statement>
+<p>Let <m>(X,\mathcal{F},\mu)</m> be a <m>\sigma</m>-finite measure space and let <m>\nu</m> be a <m>\sigma</m>-finite measure on <m>(X,\mathcal{F})</m> with <m>\nu \ll \mu</m>.
+    Let <m>f = \frac{d\nu}{d\mu}</m> be the Radon-Nikodym derivative of <m>\nu</m> with respect to <m>\mu</m>.
+    Let <m>E \subseteq \mathcal{F}</m> be a measurable set, and let <m>g</m> be a measurable function on <m>X</m> which is integrable with respect to <m>\nu</m>.
+    Show that
+<md> \int_X g\,d\nu = \int_X gf\,d\mu.</md>
+</p>
+</statement>
+<hint>
+<p>First show the result holds for simple functions.</p>
+</hint>
+</exercise>
+<exercise xml:id="exer-abs-cont-preorder">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable set.
+    Show that absolute continuity <m>\ll</m> defines a <em>preorder</em><idx><h>preorder</h></idx> on the set of all measures on <m>(X,\mathcal{F})</m>.
+    That is, show</p>
+<ol>
+<li><p><m>\mu \ll \mu</m> for all measures <m>\mu</m> (<m>\ll</m> is symmetric); and</p>
+</li>
+<li><p>if <m>\mu \ll \nu</m> and <m>\nu \ll \lambda</m>, then <m>\mu \ll \lambda</m> (<m>\ll</m> is transitive).</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-abs-cont-not-antisymmetric">
+<p>In <xref ref="exer-abs-cont-preorder" text="Exercise"/> it is shown that <m>\ll</m> is a preorder.</p>
+<ol>
+<li><p>Show that <m>\ll</m> is not a <em>partial order</em>. I.e. show that <m>\ll</m> is not antisymmetric.
+    That is, show that we can have <m>\mu \ll \nu</m> and <m>\nu \ll \mu</m> but <m>\mu \neq \nu</m>.</p>
+</li>
+<li><p>For <m>\sigma</m>-finite measures, show that if <m>\mu \ll \nu</m> and <m>\nu \ll \mu</m> then there is a scalar <m>c</m> such that <m>\mu = c \nu</m>.
+    That is, let <m>(X,\mathcal{F})</m> be a measurable space and let <m>\mu</m> and <m>\nu</m> be non-zero <m>\sigma</m>-finite measures on <m>(X,\mathcal{F})</m> such that <m>\nu \ll \mu</m> and <m>\mu \ll \nu</m>.
+    Show that the Radon-Nikodym derivatives <m>\frac{d\mu}{d\nu}</m> and <m>\frac{d\nu}{d\mu}</m> are constant and (multiplicative) inverses of eachother.
+    (HINT: Recall <xref ref="exer-same-int-same-func" text="Exercise"/> and <xref ref="exer-abs-cont-integration" text="Exercise"/>).</p>
+</li>
+</ol>
+</exercise>
+<exercise xml:id="exer-bounded-derivative-abs-cont">
+    <statement>
+        <p>
+            Let <m>f</m> be a continuous function on a closed interval <m>[a,b]\subseteq\mathbb{R}</m>.
+            Show that if <m>f'(x)</m> exists for all <m>x</m> and <m>f'</m> is bounded, then <m>f</m> is absolutely continuous.         
+        </p>
+    </statement>
+
+    <hint>
+        <p>HINT: Recall the Mean Value Theorem.</p>
+    </hint>
+</exercise>
+<exercise xml:id="exer-countable-discont">
+<p>Complete the proof of <xref ref="prop-countable-discont" text="Proposition"/>.
+    That is, if <m>A=\{x_n\}_{n=1}^\infty \subseteq [a,b]</m> is a countable set, <m>\sum_n a_n</m> is a convergent series of positive numbers, and <m>f</m> is the function on <m>[a,b]</m></p>
+<md> f(x) = \sum_{n\colon x_n\leq x}a_n,</md>
+<p>then <m>f</m> is continuous for all <m>x \in [a,b]\backslash A</m>.</p>
+</exercise>
+<exercise xml:id="exer-discrete-measure">
+<p>Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>\{x_1,x_2,\ldots\}</m> be a countable subset of <m>[a,b]</m>.
+    Show that, for real numbers <m>(a_n)_n</m>,</p>
+<md> \nu = \sum_{n=1}^\infty a_n\delta_{x_n}</md>
+<p>is a Borel signed-measure on <m>[a,b]</m> if and only if <m>\sum_{n=1}^\infty a_n</m> converges absolutely.</p>
+</exercise>
+</exercises>

@@ -1,0 +1,345 @@
+<section>
+<title>Measurable functions</title>
+
+<p>We first need to decide on what class of functions it makes sense to consider. These will be called measurable functions. Given a set <m>X</m>, a function <m>f</m> from <m>X</m> to <m>\mathbb{R}</m> is called a <term>real-valued function</term>; a function from <m>f</m> to the extended reals <m>\mathbb{R} \cup \{-\infty, \infty\}</m> is an <term>extended real-valued function</term>.<idx><h>real-valued function</h></idx><idx><h>extended real-valued function</h></idx> We will be interested in extended real-valued functions. The following theorem is necessary before the definition of a measurable function.</p>
+
+<theorem xml:id="thm-measurable-function-equiv">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space.
+            Let <m>E \in \mathcal{F}</m> and let <m>f</m> be an extended real-valued function with domain <m>E</m>.
+            Then the following are equivalent:
+            <ol>
+            <li>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) &gt; \alpha \} \in \mathcal{M}</m>;
+            </li>
+            <li>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) \geq \alpha \} \in \mathcal{M}</m>;
+            </li>
+            <li>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) &lt; \alpha \} \in \mathcal{M}</m>; and
+            </li>
+            <li>for all <m>\alpha \in \mathbb{R}</m>, <m>\{x \in E \colon f(x) \leq \alpha \} \in \mathcal{M}</m>.
+            </li>
+            </ol>
+        </p>
+    </statement>
+
+    <proof>
+<p>Note that
+<md> \{x \in E \colon f(x) &gt; \alpha \}^c = \{x \in E \colon f(x) \leq \alpha \},</md>
+and
+<md> \{x \in E \colon f(x) &lt; \alpha \}^c = \{x \in E \colon f(x) \geq \alpha \}.</md>
+As the <m>\sigma</m>-algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).</p>
+<p>Assume that (i) holds and take any <m>\alpha \in \mathbb{R}</m>.
+    For each <m>n \in \mathbb{N}</m>, the set <m>\left\{x \in E \colon f(x) &gt; \alpha - \frac{1}{n}\right\}</m> is in <m>\mathcal{M}</m>.
+    As a countable intersection of measurable sets is measurable it follows that
+<md> \{x \in E \colon f(x) \geq \alpha\} = \bigcap_{n=1}^\infty\left\{x \in E \colon f(x) &gt; \alpha - \frac{1}{n}\right\}</md>
+is measurable.
+    Hence (ii) holds.</p>
+<p>Finally, assume (ii) holds and take any <m>\alpha \in \mathbb{R}</m>.
+    For each <m>n \in \mathbb{N}</m>, the set <m>\left\{x \in E \colon f(x) \geq \alpha + \frac{1}{n}\right\}</m> is in <m>\mathcal{M}</m>.
+    As a countable union of measurable sets is measurable it follows that
+<md> \{x \in E \colon f(x) &gt; \alpha\} = \bigcup_{n=1}^\infty\left\{x \in E \colon f(x) \geq \alpha + \frac{1}{n}\right\}</md>
+is measurable.
+    Hence (i) holds.</p>
+</proof>
+
+</theorem>
+
+<definition xml:id="def-meas-func">
+    <statement>
+       <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, <m>E \in \mathcal{M}</m>, and <m>f \colon E \rightarrow [-\infty,\infty]</m> be an extended real-valued function.
+            Then <m>f</m> is a <term>measurable function with respect to <m>\mu</m></term> if <m>f</m> satisfies any of the equivalent conditions from <xref ref="thm-measurable-function-equiv"/>.
+            If there is no chance of confusion on what the <m>\sigma</m>-algebra is, we will simply say that <m>f</m> is a measurable function.
+        <idx><h>measurable function</h></idx></p>
+
+        <p>If <m>(X,\mathcal{F},\mu)</m> is a measure space, and <m>f</m> is measurable with respect to <m>\mathcal{F}</m> we also say <m>f</m> is measurable with respect to <m>\mu</m>, or <m>\mu</m>-measurable.</p>
+        <p>If <m>f</m> is a measurable function with domain <m>E</m>, and there is a measurable set <m>F \subseteq E</m> such that <m>\mu(F)&lt;\infty</m> and <m>f(x) = 0</m> for all <m>x \in E \backslash F</m>, then <m>f</m> is <term>finitely supported.</term> or <term>of finite support</term>.<idx><h>measurable function</h><h>of finite support</h></idx></p>
+    </statement>
+</definition>
+
+<p>
+    <notation>
+        <usage><m>\chi_A</m></usage>
+      <description>The characteristic function of a set <m>A</m></description>
+    </notation>
+    Over the next several results we will examples of functions which are measurable. We begin with a simple example. Let <m>X</m> be a set and let <m>A \subseteq X</m>. We define the <term>characteristic function of <m>A</m></term>, <m>\chi_A</m>, by<idx><h>characteristic function</h></idx>
+<md> \chi_A(x) = \begin{cases}1 &amp;\text{if }x\in A\\0&amp; \text{if }x \notin A. \end{cases}</md>
+Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, <xref ref="exer-char-measurable"/>.</p>
+<proposition xml:id="prop-char-measurable">
+<p>Let <m>(X,\mathcal{F})</m> be a measurable space, and take <m>A \subseteq X</m>.
+    The characteristic function <m>\chi_A</m> is a measurable function if and only if <m>A</m> is a measurable set.</p>
+</proposition>
+<p>We now give an alternative characterization of a measurable real-valued function.</p>
+
+<proposition xml:id="prop-meas-fun-inverse-open">
+    <statement>
+        <p>Let <m>(X,\mathcal{F})</m> be a measurable space.</p>
+        <p>If <m>f</m> is an extended real-valued measurable function on <m>X</m>, then <m>f^{-1}(U)</m> is measurable for all open <m>U \subseteq \mathbb{R}</m>.</p>
+        <p>If <m>f</m> is a real-valued function and <m>f^{-1}(U)</m> is measurable for all open <m>U \subseteq \mathbb{R}</m>, then <m>f</m> is a measurable function.</p>
+    </statement>
+    <proof>
+<p>Let <m>f</m> be a measurable extended real-valued function on <m>\mathbb{R}</m>.
+    Then <m>f^{-1}((-\infty,b))</m> and <m>f^{-1}((a,\infty))</m> are measurable sets for all <m>a,b \in \mathbb{R}.</m>
+    Thus, if <m>a&lt;b</m>, then
+<md> f^{-1}((a,b)) = f^{-1}((a,\infty)) \cap f^{-1}((-\infty,b))</md>
+is the intersection of two measurable sets, and hence measurable.
+    That is, if <m>I \subseteq \mathbb{R}</m> is an open interval, then <m>f^{-1}(I)</m> is measurable.
+    If <m>U \subseteq \mathbb{R}</m> is open, then <m>U = \bigcup_{k=1}^\infty I_k</m> where <m>\{I_k\}_{k=1}^\infty</m> are disjoint open intervals.
+    Thus
+<md> f^{-1}(U) = \bigcup_{k=1}^\infty f^{-1}(I_k) </md>
+is a countable union of measurable sets, and thus is measurable.</p>
+<p>If <m>f</m> is a real-valued function on <m>X</m> an <m>f^{-1}(U)</m> is measurable for open <m>U \subseteq \mathbb{R}</m> then for all <m>\alpha \in \mathbb{R}</m>
+<md> \{x \in X \colon f(x) &gt; \alpha \} = f^{-1}((\alpha,\infty))</md>
+is measurable.
+    Hence <m>f</m> is a measurable function.</p>
+</proof>
+</proposition>
+
+<p><xref ref="prop-meas-fun-inverse-open"/> immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.</p>
+
+<corollary xml:id="cor-Cont-are-meas">
+    <statement>
+        <p>Let <m>X</m> be a topological space, let <m>\mathcal{B}(X)</m> be the <m>\sigma</m>-algebra of Borel sets in <m>X</m>, and let <m>\mathcal{F}</m> be a <m>\sigma</m>-algebra with <m>\mathcal{B}(X) \subseteq \mathcal{F}</m>.
+        Let <m>f \colon X \rightarrow \mathbb{R}</m> be a continuous function.
+        Then <m>f</m> is measurable with respect to <m>\mathcal{F}</m>.</p>
+    </statement>
+    <proof>
+<p>Since <m>f</m> is continuous, <m>f^{-1}(U)</m> is open in <m>X</m> for all open sets <m>U \subseteq \mathbb{R}</m>.
+    Hence, by <xref ref="prop-meas-fun-inverse-open"/>, if <m>U</m> is an open set in <m>\mathbb{R}</m>,
+<md> f^{-1}(U) \in \mathcal{B}(X) \subseteq \mathcal{F}.</md>
+Thus <m>f</m> is measurable with respect to <m>\mathcal{F}</m>.</p>
+</proof>
+</corollary>
+
+<p>Recall that two functions <m>f</m> and <m>g</m> on a measure space <m>(X,\mathcal{F},\mu)</m> are equal almost everywhere if there is a measurable <m>E \subseteq X</m> with <m>\mu(E) = 0</m> so that that <m>f(x) = g(x)</m> for all <m>x \in X \backslash E</m>.</p>
+
+<proposition xml:id="prop-f-g-a-e">
+    <statement>
+        <p>Let <m>(X,\mathcal{F},\mu)</m> be a complete measure space.
+        Let <m>f,g</m> be functions from a measurable set <m>E</m> to <m>\mathbb{R} \cup \{-\infty,\infty\}</m>.
+        If <m>f = g</m> almost everywhere and <m>f</m> is a measurable function, then <m>g</m> is a measurable function.</p>
+    </statement>
+    <proof>
+<p>Let <m>E \subseteq X</m> be a measurable set with <m>\mu(F) = 0</m> such that <m>f(x) = g(x)</m> for all <m>x \in X \backslash F</m>.
+    Fix any <m>c &gt;0</m>. 
+    Then
+<md>
+\begin{aligned}
+\{x \in E \colon g(x) &gt; c \} &amp;= \{x \in E \cap F \colon g(x) &gt; c \} \cup \{x \in E \backslash F \colon g(x) &gt; c\}\\
+        &amp;= \{x \in E \cap F \colon g(x) &gt; c \} \cup \{x \in E \backslash F \colon f(x) &gt; c\}.
+\end{aligned}
+</md>
+Note tha
+<md> \{x \in E \backslash F \colon f(x) &gt; c \} = \{x \in E \colon f(x) &gt; c \} \cap F^c</md>
+<p>is the intersection of two measurable sets, and thus is measurable.
+    Further</p>
+<md> \{x \in E \cap F \colon g(x) &gt; c \}  \subseteq F</md>
+thus <m>\{x \in E \cap F \colon g(x) &gt; c \}</m> is measurable, since <m>(X,\mathcal{F},\mu)</m> is complete.
+    Thus <m>\{x \in E \colon g(x) &gt; c \}</m> is the union of two measurable sets, and hence is measurable.</p>
+</proof>
+</proposition>
+
+<remark>
+<p>The completeness of the measure space <m>(X,\mathcal{F},\mu)</m> is necessary in <xref ref="prop-f-g-a-e"/>, see <xref ref="exer-f-g-a-e"/>.</p>
+</remark>
+
+<p>The following theorem gives some simple ways of creating measurable functions from measurable functions: by linear combinations and products. Before we start we need to do some mild bookkeeping. If <m>f</m> and <m>g</m> are measurable functions, with the same measurable domain <m>F</m>, we want to consider their sum, <m>f+g</m>. However, if there is an <m>x \in F</m> such that <m>f(x) = \infty</m> and <m>g(x) = -\infty</m>, then <m>f(x) + g(x)</m> is undefined. One way to circumvent this issue would be to only consider real-valued measurable functions. However, there will be times when considering functions with infinite values is either unavoidable or desirable.</p>
+
+<p>Instead, we will focus on measurable that are <em>finite almost everywhere</em>. Let <m>(X,\mathcal{F},\mu)</m> be a measure space. A function <m>f</m> on <m>F \subseteq X</m> is <term>finite almost everywhere</term>,<idx><h>finite almost eveywhere</h></idx> if there is a <m>E\in \mathcal{F}</m> with <m>\mu(E) = 0</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E</m>. If <m>f</m> and <m>g</m> are two measurable functions with common domain <m>F</m>, and <m>f</m> and <m>g</m> are finite almost everywhere, then there is a measurable set <m>E_1</m> such that <m>|f(x)|&lt;\infty</m> for all <m>x \in F \backslash E_1</m>, and there is a set <m>E_2</m> such that <m>|g(x)|&lt;\infty</m> for all <m>x \in F \backslash E_2</m>. Note that <m>\mu(E_1 \cup E_2) = 0</m>. We can thus, define <m>f+g</m> on <m>F \backslash (E_1 \cup E_2)</m> by
+<md> (f+g)(x) = f(x) + g(x) \text{ for }x \in F \backslash(E_1 \cup E_2).</md>
+For <m>x \in E_1 \cup E_2</m> we will assign arbitrary values to <m>(f+g)(x).</m> We thus are not uniquely defining the function <m>f+g</m>, we are instead defining <m>f+g</m> up the equivalence class of equality almost everywhere. That <q>equal almost everywhere</q> forms an equivalence class in functions is covered by <xref ref="exer-meas-func-equiv"/>.</p>
+
+<theorem xml:id="thm-meas-fnc-vec-sp">
+    <statement>
+        <p>Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+        Let <m>f</m> and <m>g</m> be measurable functions with the same domain <m>E \in \mathcal{F}</m> which are finite almost everywhere.
+        Then
+        <ol>
+        <li>for all <m>\alpha,\beta \in \mathbb{R}</m>, there is a <m>E_0 \subseteq E</m> with <m>\mu(E\backslash E_0) =0</m> such that <m>\alpha f + \beta g</m> is measurable on <m>E_0</m>; and
+        </li>
+        <li>there is a <m>E_0 \subseteq E</m> with <m>\mu(E\backslash E_0) =0</m>, <m>fg</m> is measurable on <m>E_0</m>.
+        </li>
+        </ol>
+        If <m>f</m> or <m>g</m> are real-valued, or if <m>(X,\mathcal{F},\mu)</m> is complete, then we can take <m>E_0 = E</m> in both (i) and (ii).</p>
+    </statement>
+<proof>
+<p>That <m>\alpha f</m> is a measurable function for <m>\alpha \in \mathbb{R}</m> when <m>f</m> is a measurable function is left to <xref ref="exer-scale-meas"/>.</p>
+<p>Let <m>f</m> and <m>g</m> be measurable functions on a measurable set <m>E</m>, where both <m>f</m> and <m>g</m> are finite almost everywhere.
+    Then there is a measurable set <m>E_0 \subseteq E</m> such that <m>\mu(E \backslash E_0) = 0</m> and <m>f</m> and <m>g</m> are finite on <m>E_0</m>.
+    Fix <m>c \in \mathbb{R}</m>.
+    We want to show that
+<md> A = \{ x\in E_0 \colon f(x) + g(x) &lt; c \}</md>
+is a measurable set.
+    Take <m>x_0 \in A</m>.
+    Then <m>f(x_0) + g(x_0) &lt; q</m>.
+    By the density of the rationals <m>\mathbb{Q}</m> in <m>\mathbb{R}</m>, there is a <m>q \in \mathbb{Q}</m> such that
+<md> f(x_0) + g(x_0) &lt; q &lt; c.</md>
+Thus
+<md> x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}.</md>
+Conversely, if <m>x_0 \in E_0</m> and there is <m>q \in \mathbb{Q}</m> such that
+<md> x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\},</md>
+then
+<md> f(x_0) + g(x_0) &lt; q + (c-q) = c.</md>
+Thus
+<md> A = \bigcup_{q\in \mathbb{Q}}[\{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}].</md>
+Since <m>f</m> and <m>g</m> are measurable the sets <m>\{x \in E \colon f(x) &lt; q\}</m> and <m>\{x \in E \colon g(x) &lt; c - q\}</m> are measurable for every <m>q \in \mathbb{Q}</m>.
+    Hence <m>A</m> is a measurable set.
+    It follows that <m>f+g</m> is a measurable function on <m>E_0</m>.</p>
+<p>Note that
+<md> fg = \frac{1}{2}(f^2 +g^2 - (f-g)^2).</md>
+Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable.
+    Let <m>f</m> be a measurable on <m>E</m> and take <m>c \geq 0</m>.
+    Then
+<md> \{x \in E \colon f(x)^2 &gt; c \} = \{x \in E \colon f(x) &gt; \sqrt{c}\} \cup \{x \in E \colon f(x) &lt; -\sqrt{c}\}</md>
+is a measurable set.
+    If <m>c&lt;0</m> then <m>\{x \in E \colon f(x)^2 &gt; c \}= \emptyset</m> is also measurable.
+    Thus <m>f^2</m> is a measurable function.</p>
+<p>If <m>(X,\mathcal{F},\mu)</m> is a complete measure space we can take <m>E_0 = E</m> in the above cases, by <xref ref="prop-f-g-a-e"/>.</p>
+</proof>
+</theorem>
+
+<p>We now introduce an important class of measurable functions: simple functions.</p>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, and let <m>\varphi</m> be a real-valued measurable function on <m>X</m>.
+            The function <m>\varphi</m> is <term>simple</term> if <m>\varphi(X)</m> is a finite set. <idx><h>simple function</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<remark>
+<p>Let <m>\varphi</m> be a simple function on a measurable space <m>(X,\mathcal{F})</m> and let <m>\varphi(X) = \{a_1,a_2,\ldots,a_n\}</m>.
+    For each <m>i = 1,\ldots,n</m> let
+<md> E_i = \{x \in X \colon \varphi(x) = a_i\}.</md>
+By <xref ref="exer-f-c-meas"/>, each set <m>E_i</m> is a measurable set.
+    Thus
+<md> \varphi = \sum_{i=1}^n a_i \chi_{E_i}.</md>
+Conversely, if <m>F_1,F_2,\ldots, F_m</m> are measurable sets, and <m>b_1,\ldots,b_m</m> are real numbers then  if
+<md> \psi = \sum_{k=1}^m b_k \chi_{F_k},</md>
+<m>\psi</m> is a measurable function by <xref ref="thm-meas-fnc-vec-sp"/>.
+    Further, as <m>\psi</m> takes finitely many values<fn>Note the sets <m>\{F_k\}_{k=1}^m</m> are not necessarily disjoint, so <m>\psi</m> may take values other than the values <m>b_1,b_2,\ldots,b_m</m>.</fn>, <m>\psi</m> is a simple function.</p>
+</remark>
+
+<p>The following few results give further ways of constructing measurable functions from measurable functions.</p>
+
+<proposition xml:id="prop-max-min-meas">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a complete measure space and let <m>f_1,\ldots,f_n</m> be measurable functions on <m>X</m>.
+            Then
+            <ol>
+            <li><m>\max\{f_1,\ldots,f_n\}</m> is measurable; and
+            </li>
+            <li><m>\min\{f_1,\ldots,f_n\}</m> is measurable.
+            </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+<p>Let <m>f_1,\ldots,f_n</m> be measurable functions, and let <m>f = \max\{f_1,\ldots,f_n\}.</m>
+    Take any <m>c \in \mathbb{R}</m>.
+    Then
+<md> \{x \in X\colon f(x) &gt;c\} = \bigcup_{k=1}^n \{x \in \mathcal{X} \colon f_k(x) &gt; c\}.</md>
+Thus <m>\{x \in X\colon f(x) &gt;c\}</m> is a measurable set, and hence <m>f</m> is a measurale function.</p>
+<p>Note that
+<md> \min\{f_1,\ldots,f_n\} = -\max\{-f_1,-f_2,\ldots,-f_n\}.</md>
+Hence, <m>\min\{f_1,\ldots,f_n\}</m> is a measurable function.</p>
+</proof>
+</proposition>
+
+<definition>
+    <notation>
+        <usage><m>f_+</m></usage>
+      <description>positive part of a function <m>f</m></description>
+    </notation>
+    
+    <notation>
+        <usage><m>f_-</m></usage>
+      <description>negative part of a function <m>f</m></description>
+    </notation>
+
+    <statement>
+        <p>
+            For a measurable function <m>f</m> on a measurable space <m>(X,\mathcal{F})</m>, <m>f_+ = \max\{f,0\}</m> is the <term>positive part</term> of <m>f</m><idx><h>positive part of a function</h></idx> and <m>f_-</m> is the <term>negative part</term> of <m>f</m>. <idx><h>negative part of a function</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>Note that, <xref ref="prop-max-min-meas"/> shows that if <m>f</m> is a measurable function, then <m>f_+</m> and <m>f_-</m> is a measurable function. Further, note that <m>f = f_+ - f_-</m>. That is, <m>f</m> is the difference of two non-negative measurable functions. This decomposition, <m>f = f_+ - f_-</m> will be used frequently when studying integration.</p>
+
+<corollary xml:id="cor-abs-val">
+    <statement>
+        <p>
+            Let <m>f</m> be a measurable function on a measurable space <m>(X,\mathcal{F})</m>.
+            The the function <m>|f|</m> is measurable.
+        </p>
+    </statement>
+    <proof>
+<p>Note that <m>|f| = f_+ + f_-.</m>
+    Both <m>f_+</m> and <m>f_-</m> are measurable, by <xref ref="prop-max-min-meas"/>.
+    As <m>f_+</m> and <m>f_-</m> are both non-negative functions, <m>f_+(x) + f_-(x)</m> is defined (possibly infinite) for all <m>x \in X</m>.
+    It follows from the same argument as in <xref ref="thm-meas-fnc-vec-sp"/>, that <m>f_+ + f_-</m> is a measurable function.</p>
+</proof>
+</corollary>
+
+<p>The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, <xref ref="ex-comp-not-meas"/> However, there are circumstances where measurability of a composition is guaranteed, <xref ref="prop-comp-meas"/>.</p>
+
+<example xml:id="ex-comp-not-meas">
+<p>In the proof of <xref ref="lem-non-Borel"/>, we prove the existence of a non-Lebesgue measurable set <m>B \subseteq [0,2]</m> and a bijective continuous function <m>f\colon [0,2] \rightarrow [0,1]</m> such that <m>f(B)</m> is Lebesgue measurable.
+    By a simple adjustment, we can assume that <m>f(B) \subseteq (0,1).</m>
+    We extend <m>f</m> to a continuous function on all of <m>\mathbb{R}</m> by setting <m>f(x) = 1</m> for <m>x \geq 2</m> and <m>f(x) = 0</m> for <m>x \leq 0</m>.
+    Let <m>A = f(B)</m>.</p>
+<p>Consider the measure space <m>(\mathbb{R},\mathcal{M})</m>, where <m>\mathcal{M}</m> is all Lebesgue measurable sets in <m>\mathbb{R}</m>.
+    The function <m>\chi_A</m> is a measurable function since <m>A</m> is measurable, <xref ref="exer-char-measurable"/>, and <m>f</m> is measurable since it is continuous, <xref ref="cor-Cont-are-meas"/>.
+    However the function <m>g = \chi_A \circ f</m> is not measurable.
+    Indeed
+<md>
+\begin{aligned}
+\{x \in \mathbb{R} \colon g(x) &gt; 0 \} &amp;= \{x \in \mathbb{R} \colon \chi_A(f(x)) &gt;0 \} \\
+        &amp;= \{x \in \mathbb{R} \colon f(x) \in A\} \\
+        &amp;= B,
+\end{aligned}
+</md>
+is not Lebesgue measurable, and hence <m>g</m> is not a measurable function.</p>
+</example>
+
+<proposition xml:id="prop-comp-meas">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F})</m> be a measurable space, let <m>f</m> be a real-valued measurable function on <m>X</m>, and let <m>\varphi \colon \mathbb{R} \rightarrow \mathbb{R}</m> be a continuous function.
+            Then <m>\varphi \circ f</m> is continuous.
+        </p>
+    </statement>
+    <proof>
+<p>Take any open set <m>U \subseteq \mathbb{R}</m>, and let <m>V = \varphi^{-1}(U)</m>.
+    Then <m>V</m> is an open subset of <m>\mathbb{R}</m>, since <m>\varphi</m> is continuous.
+    By, <xref ref="prop-meas-fun-inverse-open"/>, <m>f^{-1}(V)</m> is a measurable set.
+    Thus,
+<md> (f\circ \varphi)^{-1}(U) = f^{-1}(V)</md>
+is measurable for all open sets <m>U \subseteq \mathbb{R}</m>.
+    Hence <m>f \circ \varphi</m> is a measurable function, by <xref ref="prop-meas-fun-inverse-open"/>.</p>
+</proof>
+</proposition>
+
+<remark xml:id="rem-morphisms">
+<p>We have only considered extended real-valued measurable functions.
+    This is what we will be interested in for the majority of these notes.
+    In more generality, if <m>(X,\mathcal{M})</m> and <m>(Y,\mathcal{N})</m> are two measurable spaces, a function <m>f \colon X \rightarrow Y</m> is <term>measurable with respect to <m>\mathcal{M}</m> and <m>\mathcal{N}</m></term><idx><h>measurable function</h><h>between two measure spaces</h></idx> if <m>f^{-1}(E) \in \mathcal{M}</m> for all <m>E \in \mathcal{N}</m>.
+    This definition is consistent with <xref ref="def-meas-func"/> when <m>Y = \mathbb{R}\cup\{-\infty,\infty\}</m> and <m>\mathcal{N} = \mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>, the Borel sets in the extended real line. See <xref ref="exer-borel-on-extended"/> for more on <m>\mathcal{B}(\mathbb{R} \cup \{-\infty,\infty\})</m>.
+    This fact <em>almost</em> follows from <xref ref="prop-meas-fun-inverse-open"/>. 
+    The full details are left to <xref ref="exer-Borel-meas-functions"/>.</p>
+<p>When we study measurable functions from <m>\mathbb{R}</m> to <m>\mathbb{R}</m>, we study measurable functions from with respect to <m>\mathcal{M}</m> and <m>\mathcal{B}</m>, <m>\mathcal{M}</m> is the Lebesgue measurable sets on <m>\mathbb{R}</m> and <m>\mathcal{B}</m> is the Borel sets on <m>\mathbb{R}</m>.
+    I.e. we study measurable functions from the measure space <m>(\mathbb{R},\mathcal{M},m)</m> to the measure space <m>(\mathbb{R},\mathcal{B},m)</m>.
+    The lopsidedness of this naturally raises questions.
+    Firstly, the advantage of the domain being <m>(\mathbb{R},\mathcal{M},m)</m> is that <m>(\mathbb{R},\mathcal{M},m)</m> is a complete measure space.
+    See, e.g., <xref ref="prop-f-g-a-e"/> for an advantage of having a complete measure space in the domain.</p>
+<p>One reason for taking the Borel sets in the range, instead of all Lebesgue measurable sets, is the following.
+    As described in the proof of <xref ref="lem-non-Borel"/> and <xref ref="ex-comp-not-meas"/>, there is a continuous function <m>f \colon \mathbb{R} \rightarrow \mathbb{R}</m> and a set <m>B \subseteq \mathbb{R}</m> which is not Lebesgue measurable, such that <m>A=f(B)</m> is Lebesgue measurable but <m>A</m> is not a Borel set, and <m>f^{-1}(A) = B</m>.
+    I.e. there is a continuous function <m>f</m> and a Lebesgue measurable set <m>A</m> such that <m>f^{-1}(A)</m> is not Lebesgue measurable.
+    In conclusion, the measurable functions from <m>(\mathbb{R},\mathcal{M})</m> to <m>(\mathbb{R},\mathcal{M})</m> do not include all continuous functions.
+    We do, however, want to study the continuous functions.
+    Hence the measurable functions from <m>(\mathbb{R},\mathcal{M})</m> to <m>(\mathbb{R},\mathcal{M})</m> is not the right class to study.</p>
+</remark>
+</section>

@@ -1,0 +1,321 @@
+<section>
+<title>The Lebesgue Decomposition of function</title>
+<p>Let <m>\nu</m> be a Borel measure on a closed interval <m>[a,b]</m>.
+    By the <xref ref="thm-lebesegue-decomposition" text="custom">Lebesgue Decomposition Theorem</xref>, <m>\nu = \nu_a + \nu_s</m>, where <m>\nu_a \ll m</m> and <m>\nu_s \perp s</m>. Let <m>f_a</m> be the cumulative distribution function for <m>\nu_a</m>, and let <m>f_s</m> be the cumulative distribution function for <m>\nu_s</m>. By <xref ref="prop-abs-cont-meas-and-func"/>, <m>f_a</m> is absolutely continuous. In this section we will further study <m>f_s</m>.</p>
+
+<definition>
+<statement>
+    <p>
+        Let <m>f</m> be a continuous function on a closed interval <m>[a,b]</m>.
+        Then <m>f</m> is a continuous <term>singular</term> function<idx><h>singular</h><h>function</h></idx> if <m>f'= 0</m> a.e.     
+    </p>
+</statement>
+</definition>
+
+<example xml:id="ex-Cantor-Lebesgue-singular-function">
+<p>Let <m>\varphi</m> be the Cantor-Lebesgue function on <m>[0,1]</m> (see <xref ref="ex-cantor-lebesgue"/>), let <m>C</m> be the Cantor set in <m>[0,1]</m> and let <m>U = [0,1]\backslash U.</m>
+    By the definition of <m>\varphi</m>, there are disjoint open intervals <m>\{I_k\}_{k=1}^\infty</m> such that <m>U = \bigcup_{k=1}^\infty I_k</m> such that <m>\varphi</m> is constant on each <m>I_k</m>.
+    It follows that <m>\varphi'(x)= 0</m> for all <m>x \in U</m>.
+    By <xref ref="ex-Cantor"/>, <m>m(U)  = 1 =m([0,1])</m>.
+    Hence <m>\varphi'=0</m> a.e., and so <m>\varphi</m> is a continuous singular function.</p>
+<p>Recall that, by <xref ref="ex-Cantor-Lebesgue-not-abs-cont"/>, if <m>\nu</m> is the Borel measure on <m>[0,1]</m> satisfying <m>\varphi((c,d]) = \varphi(d) - \varphi(c)</m>, then <m>\nu</m> is a singular measure.</p>
+</example>
+
+<p><xref ref="ex-Cantor-Lebesgue-singular-function"/> gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.</p>
+
+<proposition xml:id="prop-f-singular">
+    <statement>
+        <p>
+            Let <m>f</m> be a right-continuous function of bounded variation on a closed interval <m>[a,b]</m> and let <m>\nu_f</m> be the Borel signed-measure defined by <m>\nu_f((c,d]) = f(d) - f(c).</m>
+            Then <m>\nu_f</m> is singular if and only if <m>f' =0</m> a.e.
+        </p>
+    </statement>
+    <proof>
+<p>Note that, as argued in <xref ref="cor-f-integrable"/>,
+<md> \lim_{r\rightarrow 0}\frac{\nu_f(E_r(x))}{r} = f'(x),</md>
+where <m>E_r(x)</m> is <m>(x,x+r]</m> or <m>(x-r,x]</m>.
+    From <xref ref="thm-Borel-radon-nikodym-derivative"/>, <m>\nu_f</m> is singular if and only if, for almost all <m>x \in [a,b]</m>,
+<md> \lim_{r\rightarrow 0}\frac{\nu(E_r(x))}{r} = 0.</md>
+Thus <m>\nu_f \perp m</m> if and only if <m>f' = 0</m> a.e.</p>
+</proof>
+</proposition>
+
+<theorem xml:id="thm-Lebesgue-decomp-function">
+<title>Lebesgue Decomposition Theorem</title>
+<statement>
+    <p>
+        <idx><h>Lebesgue Decomposition Theorem</h><h>for functions</h></idx>
+        Let <m>f</m> be a continuous function of bounded variation on a closed interval <m>[a,b]</m>, then there are unique continuous functions <m>f_a</m> and <m>f_s</m> on <m>[a,b]</m> satisying <m>f = f_a + f_s</m>, such that
+        <ol>
+        <li><m>f_a</m> is absolutely continuous; and
+        </li>
+        <li><m>f_s</m> is singular.
+        </li>
+        </ol>
+    </p>
+</statement>
+
+<proof>
+<p>The result follows immediately from <xref ref="thm-lebesegue-decomposition"/>, <xref ref="prop-abs-cont-meas-and-func"/>, and <xref ref="prop-f-singular"/>.</p>
+</proof>
+</theorem>
+
+<example>
+<p>Let <m>\delta_0</m> be the Dirac measure on the Borel sets of <m>[-1,1]</m>, centered at <m>0</m>.
+I.e. <m>\delta_0(E) = 1</m> if <m>0 \in E</m>, and <m>\delta_0(E)=0</m> otherwise.
+If <m>H</m> is the cumulative distribution function of <m>\delta_0</m>, then <m>H</m> is not continuous, see <xref ref="exer-dirac-cdf"/>.
+Thus <xref ref="thm-Lebesgue-decomp-function"/>, does not apply to <m>H</m>.</p>
+</example>
+
+<remark>
+<p>Let <m>\nu</m> be a Borel measure on <m>[a,b]</m>, with cumulative distribution function <m>f</m>. 
+    If <m>f</m> is continuous, then applying <xref ref="thm-lebesegue-decomposition"/>  to <m>\nu</m> gives the same decomposition as applying <xref ref="thm-Lebesgue-decomp-function"/> to <m>f</m>.</p>
+<p>If <m>f</m> is not continuous, we can still apply <xref ref="thm-lebesegue-decomposition"/> to <m>\nu</m> and decompose <m>f = f_a + f_s</m>, where <m>f_a</m> is absolutely continuous, and <m>f_s'= 0</m> a.e.
+    In this case <m>f_s</m> will not be continuous.</p>
+<p>This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If <m>f</m> is right-continuous and of bounded variation, how discontinuous can it be?</p>
+</remark>
+
+<definition>
+<statement>
+    <p>
+        Let <m>\nu</m> be a Borel signed-measure on a closed interval <m>[a,b]</m>.
+        Then <m>\nu</m> is a <term>continuous Borel signed-measure</term> is <m>\nu(\{x\}) = 0</m> for all <m>x \in [a,b]</m>.
+        <idx><h>measure</h><h>continuous</h></idx><idx><h>signed-measure</h><h>continuous</h></idx>
+    </p>
+</statement>
+</definition>
+
+<proposition>
+    <statement>
+        <p>
+            Let <m>\nu</m> be a Borel signed-measure on a closed interval <m>[a,b]</m>, and let <m>f(x) = \nu([a,x))</m>.
+            Then <m>\nu</m> is continuous if and only if <m>f</m> is continuous and <m>f(a) = 0</m>.         
+        </p>
+    </statement>
+
+    <proof>
+<p>By <xref ref="thm-cdf"/>, <m>f</m> is right continuous.
+    Assume that <m>f</m> is continuous and <m>f(a) = 0</m>.
+    Since <m>f(a) = 0</m>, <m>\nu(\{a\}) = 0</m>.
+    Take any <m>x \in (a,b]</m>.
+    Then
+<md>
+\begin{aligned}
+\nu(\{x\}) &amp;= \lim_{n\rightarrow \infty}\nu((x-1/n,x]) \\
+        &amp; = f(x) - \lim_{n\rightarrow \infty}f(x-1/n)\\
+        &amp;= f(x) - f(x) = 0,
+\end{aligned}
+</md>
+by the (left) continuity of <m>f</m>.</p>
+<p>Conversely, suppose <m>\nu(\{x\}) = 0</m> for all <m>x \in [a,b]</m>.
+    Then <m>f(a) = \nu(\{a\}) =0</m>.
+    If <m>x \in (a,b]</m> then
+<md> \lim_{n\rightarrow \infty} f(x) - f(x-1/n) = 
+    lim_{n\rightarrow \infty} \nu((x-1/n,x])=\nu(\{x\}) = 0.</md>
+Hence <m>f</m> is left-continuous, and therefore continuous, at <m>x</m>.</p>
+</proof>
+</proposition>
+
+<p>In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).</p>
+
+<p>Let <m>\Lambda</m> be an index set, and let <m>\{a_\lambda\}_{\lambda \in \Lambda}</m> be a collection of real numbers indexed by <m>\Lambda</m>. Let <m>\mathcal{F}(\Lambda)</m> be the collection of all finite subsets of <m>\Lambda</m>.<idx><h>convergence</h><h>of uncountable series</h></idx> Let <m>s</m> be a real number. We say <term>the series <m>\sum_{\lambda \in \Lambda}a_\lambda</m> converges to some <m>s</m></term> if for all <m>\varepsilon &gt;0</m> there is an <m>F \in \mathcal{F}(\Lambda)</m> such that if <m>G \in \mathcal{F}(\Lambda)</m> with <m>F \subseteq G</m> then
+<md> \left| s - \sum_{\lambda \in G}a_\lambda\right|&lt;\varepsilon.</md>
+In this case we write <m>\sum_{\lambda\in\Lambda}a_\lambda =s</m>.\footnote{If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums <m>\left(\sum_{\lambda\in F}a_\lambda\right)_{F \in \mathcal{F}(\Lambda)}</m>.}</p>
+<p>If each <m>a_\lambda \geq 0</m>, and <m>\sum_{\lambda \in \Lambda}a_\lambda = s</m> then
+<md>s = \sup\left\{ \sum_{\lambda \in F}a_\lambda \colon F \subseteq \Lambda\text{ finite}\right\}.</md>
+Further, if <m>\Lambda = \mathbb{N}</m> is the set of natural numbers, then <m>\sum_{\lambda\in\Lambda}a_\lambda = s</m> if and only if <m>\sum_{n \in \mathbb{N}}a_n</m> converges absolutely.</p>
+
+<lemma xml:id="lem-uncountable-series">
+<statement>
+    <p>
+        Let <m>\Lambda</m> be an index set, and let <m>\{a_\lambda\}_{\lambda \in \Lambda}</m> be a collection of real numbers indexed by <m>\Lambda</m>.
+        If <m>\sum_{\lambda \in \Lambda} a_\lambda</m> is convergent,
+        then <m>\{\lambda \colon a_\lambda \neq 0\}</m> is countable.
+        <idx><h>convergence</h><h>of uncountable series</h></idx>
+    </p>
+</statement>
+<proof>
+<p>Let <m>\Lambda_{\geq 0} = \{\lambda \in \Lambda \colon a_\lambda \geq 0\}</m> and
+    <m>\Lambda_{&lt; 0} = \{\lambda \in \Lambda \colon a_\lambda &lt; 0\}</m>.
+    Note that <m>\sum_{\lambda\in\Lambda}a_\lambda</m> is convergent if and only if <m>\sum_{\lambda\in\Lambda_{\geq 0}}a_\lambda</m> and <m>\sum_{\lambda\in\Lambda_{&lt;0}}a_\lambda</m> are both convergent.
+    We will thus assume that <m>a_\lambda \geq 0</m> for all <m>\lambda \in \Lambda</m>.</p>
+<p>Suppose the set <m>\Lambda_0 = \{\lambda \colon a_\lambda \neq 0\}</m> is uncountable.
+    Let <m>a_0 = \inf_{\lambda \in \Lambda_0} a_\lambda.</m>
+    For each <m>n</m>, choose <m>\lambda_n \in \Lambda_0</m>
+    such that
+<md> a_0 \leq a_\lambda &lt; a_0 + 1/n.</md>
+Let <m>\Lambda_n = \{\lambda \in \Lambda_0 \colon a_\lambda \geq a_{\lambda_n}\}.</m>
+    Then
+<md> \Lambda_0 = \bigcup_{n\geq 1} \Lambda_n.</md>
+As <m>\Lambda_0</m> is uncountable, it follows that <m>\Lambda_n</m> is countable for some <m>n</m>.
+    Let <m>N</m> be such that  <m>\lambda_N \in \Lambda_0</m> and the set <m>\Lambda_N</m> is uncountable.</p>
+<p>For each <m>m</m>, choose a finite set <m>F_m \subseteq \Lambda_N</m> with <m>m</m> elements.
+    Then
+<md> \sum_{\lambda \in F_n} a_\lambda \geq ma_{\lambda_N}.</md>
+Hence
+<md> \sup_m \sum_{\lambda \in F_m} a_\lambda = \infty,</md>
+and therefore
+<md> \sum_{\lambda \in \Lambda}a_\lambda = \infty. </md>
+</p>
+</proof>
+</lemma>
+
+<theorem xml:id="thm-bv-countable-discont">
+    <statement>
+        <p>
+        Let <m>f</m> be a function of bounded variation on <m>[a,b]</m>.
+        Then <m>f</m> the set of discontinuities of <m>f</m> is countable.        
+        </p>
+    </statement>
+<proof>
+<p>Assume that <m>f</m> is increasing.
+    The general result follows from the increasing case by the <xref ref="thm-jordan-decomp-function" text="custom">Jordan Decomposition Theorem</xref>.
+    For each <m>x \in (a,b)</m>, let
+<md> a_x = \lim_{y\rightarrow x^-}f(y)\text{ and } b_x = \lim_{y\rightarrow x^+}f(y).</md>
+Since <m>f</m> is continuous at <m>x</m> if and only if <m>a_x = b_x</m>.
+    Further, since <m>f</m> is increasing, <m>b_x \leq a_y</m> when <m>x&lt;y</m>.
+    The collection of open intervals <m>\{(a_x,b_x)\}_{x\in(a,b)}</m> is therefore a disjoint collection (viewing <m>(a_x,b_x)</m> as the empty set when <m>a_x = b_x</m>);
+    and>
+<md> \sum_{x\in(a,b)} (b_x - a_x) \leq f(b) - f(a) &lt; \infty.</md>
+By <xref ref="lem-uncountable-series"/> it follows that <m>a_x = b_x</m> for all but at most countably many points.
+    Thus <m>f</m> the set of discontinuities of <m>f</m> is countable.</p>
+</proof>
+</theorem>
+
+<p>The following result offers a sort of converse to <xref ref="thm-bv-countable-discont"/>: for every countable set <m>A</m> there is an increasing function whose set of discontinuities is <m>A</m>.</p>
+
+<proposition xml:id="prop-countable-discont">
+    <statement>
+        <p>
+            Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval, and let <m>A \subseteq [a,b]</m> be a countable set.
+            There is an increasing function <m>f</m> on <m>[a,b]</m> where <m>f</m> is continuous on <m>[a,b]\backslash A</m> and discontinuous on <m>A</m>.
+            Further, <m>f</m> can be chosen to be right-continuous.         
+        </p>
+    </statement>
+    <proof>
+<p>We will assume that <m>A</m> is countably infinite. 
+    The case when <m>A</m> is finite is straightforward.
+    Enumerate the points in <m>A</m> by
+<md> A = \{x_1,x_2,x_3,\ldots\}.</md>
+Let <m>(a_n)_{n=1}^\infty</m> be a sequence of positive real numbers such that <m>\sum_{n=1}^\infty a_n&lt;\infty</m>.
+    Define a function <m>f</m> on <m>[a,b]</m> by
+<md> f(x) = \sum_{n \colon x_n \leq x}a_n.</md>
+We will show that <m>f</m> is right-continuous; <m>f</m> is discontinuous at every point in <m>A</m>; and <m>f</m> is continuous on <m>[a,b]\backslash A</m>.</p>
+<p>We will first prove right-continuity.
+    Take any <m>x \in [a,b)</m> and fix <m>\varepsilon &gt;0</m>.
+    Suppose there exists <m>\delta&gt;0</m> such that <m>(x,x+\delta) \cap A = \emptyset</m>. If <m>y&gt;x</m> and <m>|x-y|&lt;\delta</m>, then <m>|f(x) - f(y)| = 0&lt;\varepsilon</m>. Thus <m>f</m> is right-continuous at <m>x</m>.
+    Otherwise, for each <m>\eta&gt;0</m> the set <m>(x,x+\eta)\cap A</m> is infinite.
+    Fix <m>\eta&gt;0</m>. 
+    The series
+<md> \sum_{n\colon x&lt;x_n\leq x+\eta}a_n&lt;\infty.</md>
+Hence, there is a finite set <m>F \subseteq \{n \colon  x&lt;x_n\leq x+\eta\}</m> such that
+<md> \sum_{n\colon x&lt;x_n\leq x+\eta}a_n - \sum_{n \in F}a_n &lt; \varepsilon.</md>
+Fix <m>\delta&gt;0</m> such that
+<md>(x,x+\delta) \cap \{x_n \in A \colon n \in F\} = \emptyset.</md>
+Take <m>y&gt;x</m> with <m>|x-y|&lt;\delta.</m> Then
+<md> |f(y) -f(x)|\leq\sum_{n\colon x&lt;x_n\leq x+\eta}a_n - \sum_{n \in F}a_n &lt; \varepsilon. </md>
+Hence <m>f</m> is right-continuous at <m>x</m>.</p>
+<p>Take any <m>x_m \in A</m>, and <m>y&lt;x_m</m>.
+    Then
+<md> |f(x_m) - f(y)|\geq a_m &gt; 0.</md>
+Hence <m>f</m> is not continuous at <m>x_m</m>.</p>
+<p>The argument that <m>f</m> is (left) continuous on <m>[a,b]\backslash A</m> follows similar reasoning as the argument that <m>f</m> is right-continuous and is left as an exercise (<xref ref="exer-countable-discont"/>).</p>
+</proof>
+</proposition>
+
+<p>What do non-continuous Borel signed-measures look like? Let <m>[a,b]\subseteq \mathbb{R}</m> be a closed interval and let <m>x \in [a,b]</m> be any point. The Dirac measure at <m>x</m>, <m>\delta_x</m>, is not a continuous Borel measure, since <m>\delta_x(\{x\}) = 1 \neq 0</m>. Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.</p>
+
+<definition>
+<statement>
+    <p>
+        A non-zero Borel signed-measure <m>\nu</m> on a closed interval <m>[a,b]</m> is <term>discrete</term> if there is a countable collection of points <m>\{x_n\}^{\infty}_n</m> and a sequence of real numbers <m>(a_n)_{n=1}^\infty</m> such that
+        <md> \nu = \sum_{n=1}^\infty a_n \delta_{x_n},</md>
+        where <m>\delta_{x_n}</m> is the Dirac measure at the point <m>x_n</m>.
+        <idx><h>measure</h><h>discrete Borel</h></idx><idx><h>signed-measure</h><h>discrete Borel</h></idx> 
+    </p>
+</statement>
+</definition>
+
+<remark>
+<p>Note that, if <m>\nu = \sum_{n=1}^\infty a_n\delta_{x_n}</m> is a discrete Borel signed-measure, then the series <m>\sum_{n=1}^\infty a_n</m> is absolutely convergent.</p>
+<p>Conversely, if <m>\sum_{n=1}^\infty a_n</m> is an absolutely convergent series, and <m>\{x_n\}_{n=1}^\infty</m> is a countable collection of points in a closed interval <m>[a,b]</m>, then <m>\sum_{n} a_n \delta_{x_n}</m> is a discrete Borel signed-measure on <m>[a,b]</m>, (<xref ref="exer-discrete-measure"/>).</p>
+</remark>
+
+<p>It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.</p>
+
+<theorem xml:id="thm-Lebesgue-decomp-function-further">
+    <statement>
+        <p>
+            If <m>\nu</m> is a Borel signed-measure on <m>[a,b]</m> then there are mutually singular signed Borel measures <m>\nu_d</m>, <m>\nu_{sc}</m> and <m>\nu_{ac}</m> such that
+            <ol>
+            <li><m>\nu = \nu_d + \nu_{sc} + \nu_{ac}</m>;
+            </li>
+            <li><m>\nu_d</m> is a discrete Borel signed-measure;
+            </li>
+            <li><m>\nu_{sc}</m> is a singular continuous Borel signed-measure; and
+            </li>
+            <li><m>\nu_{ac}</m> is an absolutely continuous Borel signed-measure.
+            </li>
+            </ol>
+            <idx><h>Lebesgue decomposition</h><h>function</h></idx>
+        </p>
+    </statement>
+<proof>
+<p>By the Lebesgue decomposition, <xref ref="thm-lebesegue-decomposition"/>, there are mutually singular measures <m>\nu_s</m> and <m>\nu_{ac}</m> where <m>\nu_s</m> is singular, <m>\nu_{ac}</m> is absolutely continuous, and <m>\nu = \nu_s + \nu_{ac}</m>.
+    It remains to show that we can decompose <m>\nu_s</m> into a discrete part and a continuous part.
+    We will thus assume that <m>\nu=\nu_s</m> is singular.</p>
+<p>First, assume <m>\nu</m> is a measure.
+    Let <m>f(x) = \nu([a,x])</m> be the cumulative distribution function for <m>\nu</m>.
+    Then <m>f</m> is a right-continuous increasing function on <m>[a,b]</m>.
+    By <xref ref="thm-bv-countable-discont"/> the set <m>D</m> of discontinuities of <m>f</m> is countable.
+    For each <m>x \in D</m>, let
+<md> a_x = f(x) - lim_{y\rightarrow d^-}f(y)\neq 0.</md>
+Note that the sequence <m>\sum_{x\in D}a_x</m> is absolutely convergent, since <m>f</m> is of bounded variation.
+    Let <m>\nu_d</m> be the discrete Borel signed-measure
+<md> \nu_d = \sum_{x\in A} a_x \delta_{x},</md>
+and let <m>\nu_{sc} = \nu - \nu_d</m>.</p>
+<p>For any <m>x \notin D</m>, <m>\nu(\{x\}) = \nu_d(\{x\}) = 0</m>, and hence <m>\nu_{sc}(\{x\}) = 0.</m>
+    If <m>x \in D</m>, then
+<md>
+\begin{aligned}
+\nu_{sc}(\{x\}) &amp;= \nu(\{x\}) - \nu_d(\{x\})\\ &amp; = \lim_{n\rightarrow \infty} \left(\nu((x-1/n,x]))\right) - a_x\\
+        &amp;= \lim_{n\rightarrow \infty}\left(f(x) - f(x-1/n)\right) - a_x \\
+        &amp;= a_x - a_x = 0.
+\end{aligned}
+</md>
+Hence <m>\nu_{sc}</m> is continuous, completing the proof</p>
+</proof>
+</theorem>
+
+<p>Let <m>H</m> be the Heaviside function<idx><h>Heaviside function</h></idx> on <m>\mathbb{R}</m>. That is
+<md> H(x) = \begin{cases} 0 &amp; x&lt;0 \\ 1 &amp; x \geq 0.\end{cases}</md>
+The Heaviside function is the cumulative distribution function for the Dirac measure at <m>0</m>, <m>\delta_0</m> (see <xref ref="exer-dirac-cdf"/>). Thus, if <m>x_0 \in \mathbb{R}</m>, then the cumulative distribution function for the Dirac measure <m>\delta_{x_0}</m> is <m>H(x-x_0).</m></p>
+
+<corollary>
+<statement>
+    <p>
+        Let <m>f</m> be a right-continuous function of bounded variation on a closed interval <m>[a,b]</m>.
+    Then there are functions <m>f_d</m>, <m>f_{sc}</m>, and <m>f_{ac}</m> on <m>[a,b]</m> such that
+<ol>
+<li><m>f = f_d + f_{sc} + f_{ac}</m>;
+</li>
+<li><m>f_{ac}</m> is absolutely continuous on <m>[a,b]</m>;
+</li>
+<li><m>f_{sc}</m> is continuous and singular;
+</li>
+<li>there are points <m>\{x_n\}_{n=1}^\infty</m> in <m>[a,b]</m> and a sequence of real numbers <m>(a_n)_n</m> such that
+        <md> f_d(x) = \sum_{n=1}^\infty a_nH(x-x_n)</md>
+for all <m>x \in [a,b]</m>.
+</li>
+</ol>     
+    </p>
+</statement>
+<proof>
+<p>Let <m>\nu = \sum_{n=1}^\infty a_n\delta_{x_n}</m> be a discrete Borel signed-measure on <m>[a,b]</m>.
+ The result follows from <xref ref="thm-Lebesgue-decomp-function-further"/>, on noting that if <m>f(x)=\nu([a,x])</m>, then
+<md> f(x) = \sum_{n=1}^\infty a_nH(x-x_n) = \sum_{n\colon x_n\leq x}a_n. </md>
+</p>
+</proof>
+</corollary>
+
+</section>

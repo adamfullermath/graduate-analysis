@@ -1,0 +1,332 @@
+<section xml:id="sec-int-Riemann">
+<title>Lebesgue integration and Riemann integration</title>
+<p>
+    <notation>
+        <usage><m>\mathrm{R}{\int}_a^b f</m></usage>
+      <description>The Riemann integral of <m>f</m> over <m>[a,b]</m></description>
+    </notation>
+    In <xref ref="chap-intro"/> we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals <m>[a,b]</m> that the answer is yes.</p>
+<p>When <m>f</m> is Riemann integrable on an interval <m>[a,b]</m> we denote the Riemann integral of <m>f</m> by <m>\mathrm{R}{\int}_a^b f</m>.
+We first establish precisely, what functions are Riemann integrable.<idx><h>Riemann integration</h></idx></p>
+
+<p>Let <m>[a,b]</m> be a closed interval in <m>\mathbb{R}</m>, and let <m>f \colon [a,b] \rightarrow \mathbb{R}</m> be a bounded function. Let <m>P = \{x_0, x_1, \ldots, x_n\}</m> be a partition of <m>[a,b]</m>, where
+<md> a = x_0 &lt; x_1 &lt; \ldots &lt; x_n = b.</md>
+We define <m>O(f,P)</m> as
+<md> O(f,P) = \sum_{k=1}^n \sup_{x,y \in [x_{k-1},x_k]}|f(x) - f(y)|(x_k - x_{k-1})</md>
+The function <m>f</m> is <term>Riemann integrable</term> if for all <m>\varepsilon &gt; 0</m> there exists a partition <m>P</m> of <m>[a,b]</m> such that <m>O(f,P)&lt; \varepsilon</m>.<fn>You may have seen other definitions of <em>Riemann integrable</em>. Can you prove that your definition of Riemann integrable is equivalent to the definition given here?</fn><idx><h>integrable</h><h>Riemann integrable</h></idx></p>
+
+<theorem xml:id="thm-Riemann-int">
+    <statement>
+        <p>
+            Let <m>f</m> be a bounded function on the closed interval <m>[a,b]</m>,
+            and let <m>D = \{x \in [a,b] \colon f \text{ is not continuous at }x\}</m>.
+            Then <m>f</m> is Riemann integrable if and only if <m>D</m> has Lebesgue measure <m>0</m>.
+            <idx><h>integrable</h><h>Riemann integrable</h></idx>      
+        </p>
+    </statement>
+
+<proof>
+<p>Suppose that <m>f</m> is Riemann integrable.
+Take <m>x \in [a,b]</m>.
+The function <m>f</m> is not continuous at <m>x</m>, if there exists <m>\varepsilon</m> such that for all <m>\delta &gt;0</m> there exists <m>y \in (x-\delta,x + \delta)\cap [a,b]</m> such that <m>|f(x)-f(y)|\geq \varepsilon</m>.
+Thus, if we set
+<md> D_\eta = \{ x\in [a,b] \colon \forall \delta &gt;0 \exists y\in (x-\delta,x+\delta) \text{ such that }|f(x)-f(y)|\geq\eta\},</md>
+then
+<md> D = \bigcup_{\eta &gt;0} D_\eta.</md>
+That that, if <m>\eta_2 &gt; \eta_1 &gt; 0</m>, then <m>D_{\eta_2} \subseteq D_{\eta_1}.</m>
+Thus, we can write <m>D</m> as a countable union
+<md> D = \bigcup_{n=1}^\infty D_{\frac{1}{n}}.</md>
+Fix <m>\eta &gt;0</m>. We will show that <m>m^*(D_\eta) = 0</m>.
+Take any <m>\varepsilon &gt; 0</m>.
+Since <m>f</m> is Riemann integrable, there exists a partition
+<md> P = \{a=x_0 &lt; x_1 &lt; \ldots &lt; x_n = b\}</md>
+such that <m>O(f,P)&lt; \varepsilon</m>.
+Let <m>\Lambda = \{k \colon D_\eta \cap [x_{k-1},x_k] \neq \emptyset\}.</m>
+Then
+<md>
+\begin{aligned}
+\eta\sum_{k \in \Lambda}(x_k - x_{k-1}) &amp;\leq \sum_{k\in \Lambda} \sup_{x,y \in [x_{k-1},x_k]}|f(x)-f(y)|\\
+     &amp;\leq \sum_{k=1}^n \sup_{x,y \in [x_{k-1},x_k]}|f(x)-f(y)|\\
+     &amp;= O(f,P)&lt; \varepsilon.
+\end{aligned}
+</md>
+Since <m>D_\eta \subseteq \bigcup_{k \in \Lambda} [x_{k-1},x_k]</m> it follows that
+<md> m^*(D_\eta) &lt; \frac{\varepsilon}{\eta}.</md>
+The above inequality holds for all <m>\varepsilon&gt;0</m>, and so <m>m^*(D_\eta) = 0</m>.
+It follows that <m>D_\eta</m> is Lebesgue measurable and <m>m(D_\eta) = 0</m> (see <xref ref="exer-zero-measurable"/>).
+We have now that
+<md> m^*(D) \leq \sum_{n=1}^\infty m^*(D_{\frac{1}{n}}) = 0</md>
+and so <m>D</m> is also Lebesgue measurable with <m>m(D) = 0</m>.</p>
+<p>Suppose now that <m>D</m> has Lebesgue measure <m>0</m>.
+Given <m>\varepsilon &gt; 0</m>, there exists open intervals <m>\{I_k\}_{k=1}^\infty</m> such that
+<md> m(D) \leq \sum_{k=1}^\infty \ell(I_k) &lt; \varepsilon.</md>
+Let <m>U = \bigcup_{k=1}^\infty I_k</m> and <m>K = [a,b] \backslash U</m>.
+The set <m>U</m> is a union of open intervals, and so <m>U</m> is open in <m>\mathbb{R}</m>.
+Thus, <m>K</m> is closed.
+As <m>K \subseteq [a,b]</m>, <m>K</m> is both closed and bounded, and so <m>K</m> is compact by the Heine-Borel Theorem, <xref ref="thm-heine-borel"/>.</p>
+<p>The function <m>f</m> is continuous on <m>[a,b]\backslash D</m>.</p>
+<p>Hence, for each <m>x \in [a,b]\backslash D</m> there exists <m>\delta_x&gt;0</m> such that, for if <m>y \in [a,b]</m> and <m>|x-y|&lt;\delta_x</m> then <m>|f(x)-f(y)|&lt;\varepsilon</m>.
+The open intervals <m>\{(x-\frac{\delta_x}{2}, x+\frac{\delta_x}{2})\}_{x\in K}</m> form an open cover of <m>K</m>.
+Since <m>K</m> is compact, there are is a finite set <m>x_1,x_2,\ldots,x_n \in K</m> such that
+<md> K \subseteq \bigcup_{k=1}^n (x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}).</md>
+Let
+<md> P = \{a,b\} \cup (\{x_i-\frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2} \} \colon i = 1,\ldots,n\} \cap [a,b]).</md>
+The set <m>P</m> is finite, and contains both <m>a</m> and <m>b</m>, we can thus order <m>P</m> and view <m>P</m> as a partition of <m>[a,b]</m>.
+Let the ordered elements of <m>P</m> be denoted by
+<md> \{a=y_0 &lt; y_1 &lt;\ldots &lt; y_m = b\}.</md>
+Note that, if there are <m>i</m> and <m>j</m> such that <m>(x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}) \cap (y_{j-1},y_j) \neq \emptyset</m> then <m>[y_{j-1},y_j] \subseteq [x_i - \frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}] \subseteq (x_i -\delta_{x_i}, x_i + \delta_{x_i})</m>.
+Let
+<md> A = \{ j \colon \exists \ i \text{ such that }[y_{j-1},y_j] \subseteq [x_i-\frac{\delta_{x_i}}{2}, x_i + \frac{\delta_{x_i}}{2}]\} </md>
+and
+<md> B = \{ j \colon [y_{j-1},y_j] \cap (x_i-\frac{\delta_{x_i}}{2},x_i+\frac{\delta_{x_i}}{2}) = \emptyset \text{ for all }i\}. </md>
+Note, if <m>j \in A</m>, and <m>x,y \in [y_{i-1},y_i]</m> then
+<md> |f(x)-f(y)|\leq |f(x) - f(x_i)| + |f(x_i) - f(x)|  &lt;2 \varepsilon,</md>
+for some <m>i</m>, by the choice of <m>\delta_{x_i}</m>.
+Further
+<md> \bigcup_{j \in B} (y_{i-1},y_i) \subseteq \bigcup_{k=1}^\infty I_k,</md>
+and so
+<md> \sum_{j \in B} (y_i - y_{i-1}) &lt; \varepsilon. </md>
+Let <m>M = \sup_{x \in [a,b]}|f(x)|</m>. Then
+<md>
+\begin{aligned}
+O(f,P)  =&amp; \sum_{j=1}^m \sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1}) \\
+    =&amp; \sum_{j\in A}\sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1})\\ &amp;+ \sum_{j\in B}\sup_{x,y \in [y_{j-1},y_j]}|f(x) - f(y)|(y_i - y_{j-1})\\
+    &lt;&amp; 2\varepsilon \sum_{j\in A}(y_i - y_{j-1}) + 2M \sum_{j\in B}(y_i - y_{j-1})\\
+    &lt;&amp; 2\varepsilon(b-a) + 2M \varepsilon = 2\varepsilon(b-a + M).
+\end{aligned}
+</md>
+Hence <m>f</m> is Riemann integrable.</p>
+</proof>
+</theorem>
+
+
+<lemma xml:id="lem-riemann-meas">
+<statement>
+    <p>
+        Let <m>f</m> be a bounded function on the closed interval <m>[a,b]</m>.
+        If <m>f</m> is Riemann integrable, then <m>f</m> is measurable.
+    </p>
+</statement>
+
+<proof>
+<p>Let <m>D = \{x \in [a,b] \colon f \text{ not continuous at }x\}</m>, and let <m>E = [a,b]\backslash D</m>.
+    Since <m>f</m> is continuous on <m>E</m>, we have that <m>f|_E</m> is a measurable function by <xref ref="cor-Cont-are-meas"/>.
+    By <xref ref="thm-Riemann-int"/>, <m>m(D) = 0</m>.
+    Since <m>m</m> is a complete measure on <m>[a,b]</m>, <m>f|_D</m> is a measurable function.
+    Thus <m>f</m> is measurable.</p>
+</proof>
+</lemma>
+
+<p>We have defined the Lebesgue integral in terms of integrals of simple functions. The Riemann integral is usually defined in terms of Riemann sums. The following definition allows us to describe Riemann sums by integrals of simple functions.</p>
+
+<definition>
+<statement>
+    <p>
+        A simple function <m>\varphi</m> on a closed interval <m>[a,b]</m> is a <term>step function</term><idx><h>step function</h></idx> if
+        <md> \varphi = \sum_{k=1}^n a_k \chi_{[x_{n-1},x_n]}</md>
+        for some partition <m>P = \{a=x_0 &lt; x_1&lt;\ldots&lt;x_n = b\}</m>  of <m>[a,b]</m>.
+    </p>
+</statement>
+</definition>
+
+<p>
+    <notation>
+        <usage><m>L(f,P)</m></usage>
+      <description>Lower Darboux sum of <m>f</m> with respect to <m>P</m></description>
+    </notation>
+    <notation>
+        <usage><m>U(f,P)</m></usage>
+      <description>Upper Darboux sum of <m>f</m> with respect to <m>P</m></description>
+    </notation>
+
+    Let <m>f</m> be a bounded function on <m>[a,b]</m> and let <m>P = \{a=x_0 &lt; x_1&lt;\ldots&lt;x_n = b\}</m> be a partition of <m>[a,b]</m>. For <m>1\leq k \leq n</m>, let <m>a_k = \inf_{x \in[x_{k-1},x_k]} f(x)</m>. Then the lower Darboux sum of <m>f</m> with respect to <m>P</m> is
+    <md> L(f,P) := \sum_{k=1}^n a_k(x_{k-1} - x_k).</md>
+    If we let <m>\varphi</m> be the step function <m>\phi_P = \sum_{k=1}^n a_k \chi_{[x_{k-1},x_k]}</m> then
+    <md> \int_{[a,b]} \phi_P \,dm = L(f,P).</md>
+    Similarly, if <m>b_k =  \sup_{x \in[x_{k-1},x_k]} f(x)</m>. Then the upper Darboux sum of <m>f</m> with respect to <m>P</m> is
+    <md> U(f,P) := \sum_{k=1}^n b_k(x_{k-1} - x_k).</md>
+    If we let <m>\psi</m> be the step function <m>\psi_P = \sum_{k=1}^n b_k \chi_{[x_{k-1},x_k]}</m> then
+    <md> \int_{[a,b]} \psi_P \,dm = U(f,P).</md>
+    That is, the upper and lower Riemann sums are equal to the integrals of step functions.
+    <idx><h>Darboux sum</h><h>lower</h></idx>
+    <idx><h>Darboux sum</h><h>upper</h></idx>
+</p>
+
+<theorem xml:id="thm-Riemann-is-Lebesgue">
+    <statement>
+        <p>
+            Let <m>f</m> be a bounded function on a closed interval <m>[a,b]</m>.
+            If <m>f</m> is Riemann integrable then <m>f</m> is Lebesgue integrable and
+            <md>\mathrm{R}{\int}_a^b f = \int_{[a,b]}f\,dm. </md>
+        </p>
+    </statement>
+    
+<proof>
+<p>Assume <m>f</m> is Riemann integrable.
+By <xref ref="lem-riemann-meas"/>, <m>f</m> is measurable.
+Let <m>M</m> be an upper bound for <m>|f|</m>.
+Then
+<md> \int_{[a,b]}|f|\,dm \leq M m([a,b]) &lt; \infty.</md>
+Thus <m>f</m> is Lebesgue integrable.</p>
+<p>For each partition <m>P</m> let <m>\phi_P</m> be a step function such <m>\phi_P\leq f</m> and
+<md>\int_{[a,b]}\phi_P\,dm = L(f,P),</md>
+and let <m>\psi_P</m> be a step function such <m>f\leq\psi_P</m> and
+<md>\int_{[a,b]}\psi_P\,dm = U(f,P).</md>
+Note that such a step functions <m>\phi_P</m> and <m>\psi_P</m> exist by the argument preceding this theorem.</p>
+<p>Since <m>f</m> is Riemann integrable we have that
+<md> \mathrm{R}{\int}_a^b = \sup_P L(f,P) = \inf_P U(f,P).</md>
+Since, for every partition <m>P</m>, <m>\phi_P \leq f \leq \psi_P</m>, the monotonicity of Lebesgue integral tells us
+<md>
+\begin{aligned}
+\sup_P L(f,P) = \sup_P \int_{[a,b]}\phi_P\,dm &amp;\leq \int_{[a,b]} f\,dm \\ &amp;\leq \sup_P \int_{[a,b]}\psi_P\,dm = \sup_P U(f,P).
+\end{aligned}
+</md>
+Hence <m>\mathrm{R}{\int}_a^b f = \int_{[a,b]}f\,dm</m>.</p>
+</proof>
+</theorem>
+
+<remark>
+<p>Let <m>[a,b]</m> be a closed interval. 
+    We have shown that the set of bounded Riemann integrable functions on <m>[a,b]</m> is contained in the set of bounded Lebesgue integrable functions on <m>[a,b]</m>.
+    When <m>[a,b]</m> is not a singleton (i.e. when <m>a&lt;b</m>), this inclusion is strict.
+    If <m>A = \mathbb{Q} \cap [a,b]</m> then <m>\chi_A</m> is a Lebesgue integrable function on <m>[a,b]</m>, but <m>[a,b]</m> is not Riemann integrable.</p>
+</remark>
+
+<p>The following example shows that the statements analogous to the <xref ref="thm-MCT" text="custom">Monotone Convergence Theorem</xref> and the <xref ref="thm-LDC" text="custom">Lebesgue Dominated Convergence Theorem</xref> for Riemann integration do not hold.</p>
+
+<example xml:id="exam-MCT-DCT-failure-for-Riemann">
+<p>Let <m>X = [0,1]</m> and let <m>A = \mathbb{Q} \cap [0,1]</m>.
+    The set <m>A</m> is countable and so can be enumerated as
+<md> A = \{a_1,a_2,\ldots\}</md>
+For each <m>n</m> let
+<md> A_n = \{a_1,\ldots,a_n\},</md>
+and let <m>f_n = \chi_{A_n}</m>.
+    Then <m>(f_n)_n</m> is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to <m>\chi_A</m>.
+    The Riemann integral of each <m>f_n</m> is <m>0</m>.
+    However, as noted in <xref ref="exam-char-Q"/>, <m>\chi_A</m> is not Riemann integrable.</p>
+<p>We do not have
+<md>\lim_n \mathrm{R}{\int}_0^1f_n = \mathrm{R}{\int}_0^1 \chi_A </md>
+since <m>\mathrm{R}{\int}_0^1 \chi_A</m> is not defined.
+    Of course, using Lebesgue integration, we get
+<md> \lim_n \int_{[0,1]}f_n \,dm = \int_{[0,1]} \chi_A \,dm=0.</md>
+Indeed this is an easy calculation to do directly.
+    Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.</p>
+</example>
+
+<p>Recall that Riemann integrals can be extended beyond closed intervals by improper Riemann integrals. That is we define
+<md>
+\begin{aligned}
+\mathrm{R}{\int}_a^\infty f &amp;= \lim_{b \rightarrow \infty}\mathrm{R}{\int}_a^b f, \\
+    \mathrm{R}{\int}_{-\infty}^b f &amp;= \lim_{a \rightarrow -\infty}\mathrm{R}{\int}_a^b f,\text{ and} \\
+    \mathrm{R}{\int}_{-\infty}^\infty f &amp;= \lim_{b \rightarrow \infty}\lim_{a \rightarrow -\infty}\mathrm{R}{\int}_a^b f \\
+\end{aligned}
+</md>
+The following examples show that it is possible for a function <m>f</m> to have a finite improper Riemann integral but not be Lebesgue integrable.
+<idx><h>integral</h><h>Riemann integral</h><h>improper</h></idx>
+</p>
+
+<example xml:id="ex-not-lebesgue-int-1">
+<p>Define a function <m>f(x)</m> on <m>[0,\infty]</m> by
+<md> f(x) = \frac{(-1)^n}{n}</md>
+when <m>n = \lceil x\rceil</m>.</p>
+
+<figure xml:id="fig-not-lebesgue-int-1">
+    <caption>
+            The function <m>f(x)</m> from <xref ref="ex-not-lebesgue-int-1"/>
+    </caption>
+    <image>
+        <shortdescription>Visualization of  the function on the poisitve reals that takes the (alternating) value plus or minus 1/n between (n-1) and (n).</shortdescription>
+        <description>
+            <p>
+                Visualization of the function <m>f(x) = (-1)^n/n </m> and its (Riemann) integral.
+                Image graphs a sequence of rectangles of height <m>(-1)^n/n</m> with base between <m>n-1</m> and <m>n</m> in light blue.
+            </p>
+        </description>
+        <sageplot label="not-lebesgue-int-1">
+            endpoint = 20
+            iteration = endpoint
+            thick = 1.5
+
+            lines = line([(iteration,0),(endpoint,0)],thickness=thick, color="blue")
+            poly = polygon([(0,0)], aspect_ratio=5)
+
+
+            for n in range(iteration):
+                lines += line([(n,((-1)^(n+1))/(n+1)),(n+1,((-1)^(n+1))/(n+1))],thickness=thick, color="blue")
+                poly += polygon([(n,0),(n,((-1)^(n+1))/(n+1)),(n+1,((-1)^(n+1))/(n+1)),(n+1,0)],rgbcolor=(153/255,204/255,1))
+
+            plt = poly + lines
+
+            plt.set_axes_range(0,endpoint,-1,1)
+            plt
+        </sageplot>
+    </image>    
+
+</figure>
+
+<p>Then<fn>The exact value this alternating series takes can be shown to be <m>\ln(2)</m>, but that is finite is enough for us here.</fn>
+<md> \mathrm{R}{\int}_{-\infty}^\infty f = \sum_{n=1}^\infty \frac{(-1)^n}{n} &lt; \infty</md>
+However
+<md>\int_{[0,\infty]} |f|\,dm = \sum_{n=1}^\infty \frac{1}{n} =\infty,</md>
+and hence <m>f</m> is not Lebesgue integrable.</p>
+</example>
+
+<example xml:id="ex-not-lebesgue-int-2">
+<p>Let <m>g(x) = \frac{\sin(x)}{x}</m> on the real line.</p>
+
+<figure xml:id="fig-not-lebesgue-int-2">
+    <caption>
+    The function <m>g(x)=\frac{\sin(x)}{x}</m> from <xref ref="ex-not-lebesgue-int-2"/>
+    </caption>
+    <image>
+        <shortdescription>THe curve of sin(x)/x</shortdescription>
+        <description>
+            <p>
+                Visualization of the curve <m>g(x) = \sin(x)/x</m> for <m>x</m>  between <m>-20</m> and <m>20</m>.
+                The curve shows decreasing waves as <m>x</m>  goes farther from <m>0</m>.
+                The curve peaks at <m>x=0</m> where <m>g(x)</m> approaches <m>1</m>.
+            </p>
+        </description>
+        <sageplot label="not-lebesgue-int-2">
+            g(x) = sin(x)/x
+            plt = plot(g(x), [-20,20],color="red", legend_label=r"$f(x)=\frac{\sin(x)}{x}$")            
+            plt.set_axes_range(-20,20,-0.5,1)
+            plt
+        </sageplot>
+    </image>
+</figure>
+
+<p>It can be shown that<fn>Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.</fn>
+<md> \mathrm{R}{\int}_{-\infty}^\infty g =\pi </md>
+Note for every integer <m>n \geq 0</m>
+<md>
+\begin{aligned}
+\int_{[n\pi,(n+1)\pi]} \left|\frac{\sin(x)}{x}\right|\,dm &amp;\geq \frac{1}{(n+1)\pi} \int_{[n\pi,(n+1)\pi]} |\sin(x)|\, dm\\
+    &amp;= \frac{2}{(n+1)\pi}.
+\end{aligned}
+</md>
+Hence
+<md> \int_{[0,\infty]} |g|\,dm \geq \sum_{k=0}^\infty \frac{2}{(n+1)\pi}= \infty.</md>
+Thus
+<md> \int_\mathbb{R} |g|\, dm = \infty</md>
+and so <m>g</m> is not Lebesgue integrable.</p>
+</example>
+
+<remark>
+<p><xref ref="ex-not-lebesgue-int-1"/> and <xref ref="ex-not-lebesgue-int-2"/> highlight an important difference between Lebesgue integrals and improper Riemann integrals.
+Let <m>f</m> be a function on the non-negative real line <m>[0,\infty)</m>.
+Then <m>f</m> has a finite improper Riemann integral if and only if <m>f</m> is Riemann integrable on every each interval <m>[n-1,n]</m> and the series <m>\sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n f</m>.
+Then
+<md>\mathrm{R}{\int}_0^\infty f = \sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n f = \sum_{n=1}^\infty \int_{[n-1,n)}f\,dm.</md>
+For Lebesgue integration, convergence of the series <m>\sum_{k=1}^\infty \int_{[n-1,n)}f\,dm</m> is not sufficient.
+If <m>f</m> is Lebesgue integrable on <m>[0,\infty)</m> then
+<md> \int_{[0,\infty)} f\,dm = \sum_{n=1}^\infty \int_{E_n} f\,dm</md>
+for any collection of disjoint measurable sets <m>\{E_n\}_n</m> with <m>\bigcup_n E_n = [0,\infty)</m>.
+Thus, reordering the collection <m>\{E_n\}_n</m> does not affect the value of
+<md> \int_{[0,\infty)}f\,dm = \sum_{n=1}^\infty \int_{E_n} f\,dm.</md>
+Thus, the series <m>\sum_{n=1}^\infty \int_{E_n} f\,dm</m> is not only convergent, but absolutely convergent.
+In <xref ref="ex-not-lebesgue-int-1"/> and <xref ref="ex-not-lebesgue-int-2"/>
+<md> \sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n f \text { and } \sum_{n=1}^\infty \mathrm{R}{\int}_{n-1}^n g</md>
+are conditionally convergent, not absolutely convergent.</p>
+</remark>
+</section>

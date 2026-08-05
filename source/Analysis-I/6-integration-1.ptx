@@ -1,0 +1,514 @@
+<section xml:id="sec-int-non-neg">
+<title>Integration of non-negative functions</title>
+
+<p>
+    In this section we will define the integral of non-negative measurable functions.
+    We begin with the integral of non-negative simple functions.
+</p>    
+
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space.
+            Let <m>\varphi = \sum_{k=1}^n a_n \chi_{E_n}</m> be a non-negative simple function on <m>X</m> where <m>\{a_1,\ldots,a_n\} = \varphi(X)</m> are distinct scalars and <m>\{E_k\}_{k=1}^n</m> are disjoint measurable functions.
+            We define the <term>integral of <m>\varphi</m> with respect to <m>\mu</m></term>, denote <m>\int_X \varphi d\mu</m> as
+            <md> \int_X \varphi\, d\mu = \sum_{k=1}^n a_k \mu(E_k).</md>
+            If <m>E \subseteq X</m> is a measurable set we define the integral of <m>\varphi</m> over <m>E</m> as
+            <md> \int_E \varphi\,d\mu = \int_X \varphi\chi_E\,d\mu.</md>
+            <idx><h>integral</h><h>of a non-negative simple function</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>Note that, the condition that <m>\varphi</m> is non-negative is necessary in order to guarantee that <m>\sum_{k=1}^n a_k \mu(E_k)</m> is defined. If <m>\mu(E_1) = \infty</m> and <m>\mu(E_2) = \infty</m> then
+<md> (1) \mu(E_1) + (-1) \mu(E_2)</md>
+is not defined.</p>
+
+<lemma xml:id="lem-simp-int">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>\varphi</m> be a non-negative simple function.
+            If
+            <md> \varphi = \sum_{k=1}^n b_k \chi_{F_k}</md>
+            where <m>b_1,\ldots,b_n</m> are (not necessarily distinct) scalars and <m>\{F_k\}_{k=1}^n</m> are disjoint measurable sets, then
+            <md> \int_X \varphi\, d\mu = \sum_{k=1}^n b_k \mu(F_k).</md>
+        </p>
+    </statement>        
+
+    <proof>
+<p>Let <m>\{a_1,\ldots,a_m\} = \varphi(X)</m> be distinct scalars and <m>E_1,\ldots, E_m</m> be disjoint sets such that <m> \varphi = \sum_k a_k \chi_{E_k}</m>.
+        Assume <m>X = \bigcup_{k=1}^n F_k</m>, (by adding <m>0</m> to <m>\{b_1,\ldots,b_m\}</m> and <m>X \backslash \bigcup_k F_k</m> to <m>\{F_1,\ldots,F_n\}</m> if necessary).</p>
+<p>Note that for each <m>1\leq j \leq n</m>, <m>b_j \in \{a_1,\ldots,a_m\}</m>.
+        Thus, for <m>1\leq k \leq m</m>
+<md> E_k = \bigcup_{j\colon b_j=a_k}F_j.</md>
+Hence
+<md> \mu(E_k) = \sum_{j \colon b_j = a_k} \mu(F_j).</md>
+Hence
+<md>
+\begin{aligned}
+\int_X \varphi\,d\mu &amp;=\sum_{k=1}^m a_k \mu(E_k)\\
+            &amp;= \sum_{k=1}^m a_k \sum_{j \colon b_j = a_k}\mu(F_j) \\
+            &amp;= \sum_{k=1}^m \sum_{j \colon b_j = a_k}b_j\mu(F_j) \\
+            &amp;= \sum_{j=1}^n b_j \mu(F_j).
+\end{aligned}
+</md>
+</p>
+</proof>
+</lemma>
+
+<theorem xml:id="thm-simple-int-linear">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>\varphi</m> and <m>\psi</m> be non-negative simple functions on <m>X</m>. Then, for any scalars <m>\alpha, \beta \geq 0</m>,
+            <md> \int_X(\alpha \varphi + \beta \psi) \,d\mu = \alpha \int_X\varphi \,d\mu + \beta \int_X \psi\, d\mu.</md>
+            Further, integration is monotonic:<idx><h>monotonicity of integration</h><h>non-negative simple functions</h></idx> if <m>\varphi \leq \psi</m> then
+            <md> \int_X \varphi\, d\mu \leq \int_X \psi\, d\mu.</md>
+            <idx><h>linearity of integration</h><h>non-negative simple functions</h></idx>
+        </p>
+    </statement>
+
+    <proof>
+<p>That <m>\int_X \alpha \varphi\, d\mu = \alpha \int_X \varphi \,d\mu</m> is straightforward.</p>
+<p>Let <m>\varphi</m> and <m>\psi</m> be simple functions.
+        Let <m>\{a_1,\ldots,a_m\} = \varphi(X)</m>, <m>\{b_1,\ldots,b_n\} = \psi(X)</m>, <m>E_i = \varphi^{-1}(\{a_i\})</m> for <m>1 \leq i \leq m</m>, and <m>F_j = \psi^{-1}(\{b_j\})</m>.
+        Then
+<md> \varphi + \psi = \sum_{i=1}^m \sum_{j=1}^n(a_i + b_j) \chi_{E_i \cap F_j}.</md>
+By <xref ref="lem-simp-int"/>,
+<md>
+\begin{aligned}
+\int_X(\varphi + \psi)\, d\mu &amp;= \sum_{i=1}^m \sum_{j=1}^n (a_i + b_j) \mu(E_i \cap F_j) \\
+        &amp;= \sum_{i=1}^m\sum_{j=1}^n a_i\mu(E_i \cap F_j) + \sum_{j=1}^n\sum_{i=1}^m b_j\mu(E_i \cap F_j) \\
+        &amp;= \sum_{i=1}^m a_i \sum_{j=1}^n \mu(E_i \cap F_j) + \sum_{j=1}^n b_j\sum_{i=1}^m \mu(E_i \cap F_j) \\
+        &amp;= \sum_{i=1}^m a_i \mu(E_i) + \sum_{j=1}^n b_j \mu(F_j) \\
+        &amp;= \int_X \varphi\,d\mu + \int_X\psi\,d\mu.
+\end{aligned}
+</md>
+Now suppose that <m>\varphi</m> and <m>\psi</m> are non-negative simple functions with <m>\varphi \leq \psi</m>.
+        Then <m>\psi - \varphi \geq 0</m>.
+        It follows that
+<md> 0 \leq \int_X(\psi - \varphi)\,d\mu = \int_X \psi\,d\mu - \int_X\varphi\,d\mu.</md>
+Hence <m>\int_X \psi\,d\mu \geq \int_X \varphi\,d\mu</m>.</p>
+</proof>
+</theorem>
+
+<remark>
+<p>Let <m>E_1,\ldots,E_n</m> be a collection of measurable sets, let <m>a_1,\ldots,a_n</m> be non-negative real numbers, and let <m>\varphi = \sum_{k=1}^n a_k \chi_{E_k}.</m>
+        By <xref ref="thm-simple-int-linear"/>,
+<md> \int_X \varphi \, d\mu = \sum_{k=1}^n a_k \int_X \chi_{E_k}\,d\mu = \sum_{k=1}^n a_k \mu(E_k).</md>
+That is, if <m>\varphi = \sum_{k=1}^n a_k \chi_{E_k}</m> is a simple function we do not need the sets <m>\{E_k\}_{k=1}^n</m> to be disjoint in order to easily calculate <m>\int_X \varphi \,d\mu.</m></p>
+</remark>
+
+<p>The following corollary is immediate on noting that
+<md> \chi_{A\cup B} = \chi_A + \chi_B</md>
+for disjoint sets <m>A</m> and <m>B</m>.</p>
+
+<corollary xml:id="cor-simp-A-union-B">
+    <statement>
+        <p>
+            If <m>\varphi</m> non-negative simple function on a measure space <m>(X,\mathcal{F},\mu)</m> and <m>A, B \subseteq X</m> are disjoint sets, then
+            <md> \int_{A \cup B} \varphi \,d\mu = \int_A \varphi\, d\mu + \int_B\varphi\, d\mu.</md>
+        </p>
+    </statement>    
+</corollary>
+
+<p>The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure <m>0</m> does not affect the integral.</p>
+
+<corollary xml:id="cor-remove-meas-0-simp">
+    <statement>
+        <p>
+            If <m>\varphi</m> is a simple function on a measure space <m>(X,\mathcal{F},\mu)</m> and <m>E \subseteq X</m> satisfies <m>\mu(E)= 0</m> then
+            <md> \int_X \varphi\,d\mu = \int_{X\backslash E} \varphi\, d\mu.</md>
+        </p>
+    </statement>
+</corollary>
+
+<p>We will now define the integral of non-negative measurable functions.</p>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be a non-negative measurable function on <m>X</m>.
+            Define the <term>integral of <m>f</m> with respect to <m>\mu</m></term><idx><h>integral</h><h>of a non-negative function</h></idx> by
+            <md> \int_X f\,d\mu = \sup\left\{ \int_X \varphi\,d\mu \colon 0\leq \varphi \leq f,\ \varphi\text{ simple.}\right\}</md>
+            If <m>E \subseteq X</m> is a measurable set we define the integral of <m>f</m> over <m>E</m> as
+            <md> \int_E f\,d\mu = \int_X f\chi_E\,d\mu.</md>
+            A non-negative measurable function <m>f</m> on <m>X</m> is <term>integrable</term><idx><h>integrable</h><h>non-negative functions</h></idx> if
+            <md> \int_X f\,d\mu &lt; \infty.</md>
+            When <m>X \subseteq \mathbb{R}</m> is a Lebesgue measurable set, <m>\mathcal{F}</m> is the Lebesgue measurable subsets of <m>X</m>, and <m>\mu = m</m> is the Lebesgue measure, we refer to the integral with respect to <m>m</m> as the <term>Lebesgue integral</term>.<idx><h>integral</h><h>Lebesgue integral</h></idx>
+            If <m>f</m> is an integrable function with respect to <m>m</m> we say that <m>f</m> is <term>Lebesgue integrable.</term>
+            <idx><h>integrable</h><h>Lebesgue integrable</h></idx>
+        </p>
+    </statement>
+</definition>
+
+<p>The proof of the following two propositions are left to <xref ref="exer-int-a-e"/> and <xref ref="exer-int-mono-non-neg"/>, respectively.</p>
+
+<proposition xml:id="prop-int-remove-zero-set-non-neg">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>f</m> be non-negative measurable function on <m>X</m>, and let <m>E \subseteq X</m> be a measurable set with <m>\mu(E) = 0</m>.
+            Then
+            <md> \int_X f\, d\mu = \int_{X\backslash E} f\, d\mu.</md>
+        </p>
+    </statement>
+</proposition>
+
+<proposition xml:id="prop-int-mono-non-neg">
+<title>Monotonicity of integration</title>
+<statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space, and let <m>f</m> and <m>g</m> be non-negative measurable functions on <m>X</m>.
+            If <m>f \leq g</m> then
+            <md> \int_X f \,d\mu \leq \int_X g \,d\mu.</md>
+            <idx><h>monotonicity of integration</h><h>non-negative functions</h></idx>
+        </p>
+    </statement>
+</proposition>
+
+<p>Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is <m>f\geq 0</m> does not need to integrable in order to calculate <m>\int_X f\,d\mu</m>. If <m>\varphi =\sum_{k=1}^n a_k \chi_{E_k}</m> is a simple function (where <m>E_1,\ldots,E_n</m> are measurable sets), then <m>\int_X \varphi\, d\mu = \infty</m> if and only if <m>\mu(E_k) = \infty</m> for some <m>k</m>. If <m>f \geq 0</m>, it is possible to have <m>\int_X f \,d\mu = \infty</m> even if <m>\int_X \varphi \,d\mu &lt; \infty</m> for all simple function <m>0 \leq \varphi \leq f</m>. The following example illustrates this point.</p>
+
+<example xml:id="exam-integral-1-x">
+<p>Consider the function <m>f(x) = \int\frac{1}{x}</m> on the interval <m>(0,\infty)</m>.
+    Let <m>m</m> be the Lebesgue measure on <m>(0,\infty)</m>.
+    We will show <m>\int_{(0,\infty)} f \,dm = \infty</m> whilst <m>\int_{(0,\infty)}\varphi\,dm &lt;\infty</m> for all simple <m>0 \leq \varphi \leq f</m>.</p>
+<p>First, suppose <m>\varphi = \sum_{k=1}^n a_k \chi_{E_k}</m> is a simple function with <m>0 \leq \varphi \leq f</m>.
+    For each <m>k</m>, <m>a_k \leq \frac{1}{x}</m> for all <m>x \in E_k</m>.
+    Since <m>\lim_{x \rightarrow \infty}\frac{1}{x} = 0</m>, it follows that if <m>a_k &gt; 0</m>, then <m>E_k</m> is a bounded set.
+    Thus <m>m(E_k) &lt; \infty</m> for each <m>k</m> when <m>a_k &gt;0</m>, and so <m>\int_{(0,\infty)}\varphi\,dm &lt; \infty</m>.</p>
+<p>For each <m>n</m> define a simple function
+<md>\phi_n(x) = \begin{cases}
+        \frac{1}{\lceil x\rceil}&amp; x \leq n \\
+        0 &amp; x &gt;n
+    \end{cases},</md>
+where <m>\lceil\cdot\rceil</m> denotes the ceiling function (i.e. round to the nearest integer above).
+    Then <m>\phi_n \leq f</m> for each <m>n</m>.
+
+<figure xml:id="fig-integral-1-x">
+<caption>
+  The functions <m>f(x)</m> (red) and <m>\phi_{10}(x)</m> (blue) from <xref ref="exam-integral-1-x"/>
+</caption>
+<image>
+    <shortdescription>The curve of the function 1/x, for positive x, is shown in red. A simple/step function below 1/x is shown in red.
+    </shortdescription>
+    <description>
+        <p>
+            The function <m>f(x) = 1/x</m> for positive <m>x</m> is shown, together with the step function <m>\phi_{10}</m>, as described in <xref ref="exam-integral-1-x"/>.
+            The function <m>\phi_{10}</m> is a simple function satisfying <m>\phi_{10}(x) = f(n)</m> for <m>n-1 \lt x \lt n</m>, when <m>x\leq 10</m>, and <m>\phi_{10}(x)= 0 </m> otherwise.
+        </p>
+    </description>
+    <sageplot label="integral">
+        <!-- x = var('x') -->
+        f(x) = 1/x
+        end_point = 12
+        g(x) = piecewise([((0,10),1/ceil(x)),([10,20],0)])
+        jumps = [i for i in range(end_point+1)]
+
+        g_plot = plot(g,(0,end_point),exclude=jumps, color="blue", thickness=2, legend_label=r"$\phi_{10}$")
+        f_plot = plot(f, (0,end_point), color="red", legend_label = r"$f(x)=\frac{1}{x}$")
+
+        plt = f_plot + g_plot
+        plt.set_axes_range(0,end_point,0,4)
+        plt
+    </sageplot>
+</image>
+</figure>
+</p>
+
+<p>For each <m>n</m> we have
+<md> \int_{(0,\infty)} \phi_n\,dm =\sum_{k=1}^n \frac{1}{k},</md>
+Thus, for each <m>n</m>,
+<md> \int_{(0,\infty)}f \,dm \geq \sum_{k=1}^n \frac{1}{k}</md>
+and so
+<md> \int_{(0,\infty)}f \,dm \geq \sum_{k=1}^\infty \frac{1}{k}.</md>
+As the harmonic series <m>\sum_k \frac{1}{k}</m> is not convergent, it follows that
+<md>\int_{(0,\infty)} f\,d\mu = \infty.</md>
+</p>
+</example>
+
+<p>If <m>f</m> is integrable, then <m>f</m> will be, in some sense, well-behaved. We make this explicit in <xref ref="thm-f-integrable"/> after the following important lemma.</p>
+
+<lemma xml:id="lem-chenyshev">
+<title>Chebyshev's Inequality</title>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be a non-negative measurable function.
+        Then, for each real number <m>\lambda &gt; 0</m>,
+        <md> \mu(\{x \in X \colon f(x) \geq \lambda\}) \leq \frac{1}{\lambda} \int_X f d\mu.</md>
+        <idx><h>Chebyshev's Inequality</h></idx>
+    </p>
+</statement>
+<proof>
+<p>Fix <m>\lambda &gt;0</m> and let
+<md> X_\lambda = \{x \in X \colon f(x) \geq \lambda \}.</md>
+Note that, since <m>f</m> is measurable, <m>X_\lambda</m> is measurable.
+    Let <m>\varphi = \lambda \chi_{X_\lambda}</m>. 
+    Then <m>\varphi</m> is simple and <m>\varphi \leq f</m>.
+    Further <m>\int_X \varphi\,d\mu = \lambda \mu(X_\lambda)</m>.
+    Thus
+<md> \lambda \mu(X_\lambda) \leq \int_X f\, d\mu.</md>
+Dividing the above inequality by <m>\lambda</m> gives the desired result.</p>
+</proof>
+</lemma>
+
+<theorem xml:id="thm-f-integrable">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be a non-negative measurable function such that <m>\int_X f\, d\mu &lt; \infty</m>.
+            Then <m>f</m> is finite almost everywhere and the set
+            <md> \{x \in X \colon f(x)&gt;0 \}</md>
+            is <m>\sigma</m>-finite.
+        </p>
+    </statement>
+<proof>
+<p>Let <m>X_\infty = \{x \in X \colon f(x) = \infty\}</m>.
+    To show that <m>f</m> is finite a.e. we must show that <m>\mu(X_\infty) = 0</m>.
+    For each <m>n</m>, let <m>X_n = \{x \in X \colon f(x) \geq n\}</m> and let <m>\phi_n = n \chi_{X_n}</m>.
+    Then <m>\phi_n \leq f</m> and so
+<md> n \mu(X_n) = \int_X \phi_n\,d\mu \leq \int_X f\, d\mu&lt;\infty.</md>
+Thus
+<md> \mu(X_n) \leq \frac{1}{n}\int_X f\,d\mu</md>
+and so <m>\lim_n \mu(X_n) = 0</m>.
+    Note that <m>X_\infty = \bigcap_n X_n</m>, and so by the continuity of measure
+<md> \mu(X_\infty) = \lim_{n\rightarrow \infty} \mu(X_n) = 0,</md>
+and hence <m>f</m> is finite a.e.</p>
+<p>Let <m>X_{&gt;0} = \{x \in X \colon f(x) &gt; 0\}</m>
+    Note that
+<md> X_{&gt;0} = \bigcup_{n=1}^\infty \{x \in X \colon f(x) \geq \frac{1}{n}\}.</md>
+By Chebshev's Inequality,
+<md> \mu\left(\left\{x \in X \colon f(x) \geq \frac{1}{n}\right\}\right)\leq n \int_X f\,d\mu&lt;\infty.</md>
+Thus <m>X_{&gt;0}</m> is a countable union of sets of finite measure. That is, <m>X_{&gt;0}</m> is <m>\sigma</m>-finite.</p>
+</proof>
+</theorem>
+
+<p>In <xref ref="sec-why-else"/> we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if <m>(f_n)_n</m> is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function <m>f</m>, do we have
+<md number="yes" xml:id="eq-int-and-limit">
+\lim_{n\rightarrow \infty} \int_X f_n \,d\mu = \int_X f \,d\mu?
+</md>
+The answer is, of course: not necessarily. We give some counter examples here.</p>
+
+<example xml:id="ex-pw-int-not-convergent">
+<p>Let <m>f = 0</m> on <m>\mathbb{R}</m> and let <m>m</m> be the Lebesgue measure..
+    Then <m>\int_{\mathbb{R}}f\,dm = 0.</m>
+    We define sequences <m>(f_n)_n</m>, <m>(g_n)_n</m> and <m>(h_n)_n</m> on <m>\mathbb{R}</m> by
+<md>
+\begin{aligned}
+f_n &amp;= \chi_{[n,n+1]}; \\
+        g_n &amp;= 2^{n(\bmod 2)}\chi_{[n,n+1]};\text{ and}\\
+        h_n &amp;= n \chi_{[n,n+1]}.
+\end{aligned}
+</md>
+</p>
+<p>Each of the sequences <m>(f_n)_n</m>, <m>(g_n)_n</m> and <m>(h_n)_n</m> converge pointwise to <m>f = 0</m>.
+    Further
+<md>
+\begin{aligned}
+\int_{\mathbb{R}} f_n\,dm &amp;= 1;\\
+     \int_{\mathbb{R}} g_n\,dm &amp;= \begin{cases} 1 &amp; n\text{ even},\\
+     2 &amp; n\text{ odd};\end{cases}\text{ and}\\
+     \int_{\mathbb{R}} h_n\,dm &amp;= n.
+\end{aligned}
+</md>
+Hence
+<md>
+\begin{aligned}
+\lim_{n\rightarrow \infty}\int_{\mathbb{R}} f_n\,dm &amp;= 1; \\
+        \lim_{n\rightarrow \infty}\int_{\mathbb{R}} g_n\,dm &amp; \text{ does not exist; and}\\
+        \lim_{n\rightarrow \infty}\int_{\mathbb{R}} h_n\,dm &amp;= \infty.
+\end{aligned}
+</md>
+In conclusion, the answer to  <xref ref="eq-int-and-limit"/> can be no, for a variety of reasons.
+    The limit on the left-hand side can be finite, it may not exist, or it may be infinite.
+    In each of these cases,  <xref ref="eq-int-and-limit"/> may not hold.</p>
+</example>
+
+<p>
+    <notation>
+        <usage><m>\liminf_n x_n</m></usage>
+      <description>limit inferior of the sequence <m>(x_n)_n</m></description>
+    </notation>
+
+    <notation>
+        <usage><m>\limsup_n x_n</m></usage>
+      <description>limit superior of the sequence <m>(x_n)_n</m></description>
+    </notation>
+    
+    The obvious moral to take away from <xref ref="ex-pw-int-not-convergent"/> is that, in order for there to be a positive answer to  <xref ref="eq-int-and-limit"/> we need some additional conditions on the functions <m>(f_n)_n</m> and <m>f</m>. There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let <m>(x_n)_n</m> be a sequence of real numbers. The <term>limit superior</term><idx><h>limit inferior</h></idx><idx><h>liminf</h><see>limit inferior</see></idx> of <m>(x_n)_n</m> is defined as
+<md> \liminf_n x_n = \lim_n \inf\{x_k \colon k \geq n\} = \sup_n\{ \inf\{x_k \colon k \geq n\}\}</md>
+and the <term>limit superior</term><idx><h>limit superior</h></idx><idx><h>limsup</h><see>limit superior</see></idx> is defined as
+<md> \limsup_n x_n = \lim_n \sup\{x_k \colon k \geq n\} = \inf_n\{ \sup\{x_k \colon k \geq n\}\}.</md>
+The limit inferior and limit superior always exist (with <m>-\infty</m> and <m>\infty</m> as possible values). It is always the case that
+<md> \liminf x_n \leq \limsup x_n.</md>
+Further <m>\liminf x_n = \limsup x_n</m> if and only if <m>(x_n)</m> is a convergent sequence, in which case
+<md> \liminf x_n = \lim x_n = \limsup x_n.</md>
+Returning to <xref ref="ex-pw-int-not-convergent"/>. Whilst we do not have that <m>\int_{\mathbb{R}} f \,dm</m> is a limit of the integrals of the functions which converge pointwise to <m>f</m>, we do have the following inequalities:
+<md>
+\begin{aligned}
+0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} f_n \,dm =1 \\
+    0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} g_n \,dm =1 \\
+    0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} h_n \,dm =\infty.
+\end{aligned}
+</md>
+That these inequalities hold for each of our sequences is not a coincidence.</p>
+
+<lemma xml:id="lem-fatou">
+<title>Fatou's Lemma</title>
+<statement>
+    <p>    
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space, and let <m>(f_n)_n</m> be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function <m>f</m>.
+        Then
+        <md> \int_X f\,d\mu \leq \liminf \int_X f_n\,d\mu.</md>
+        <idx><h>Fatou's Lemma</h></idx>
+    </p>
+</statement>    
+<proof>
+<p>Let <m>E \subseteq X</m> be a measure <m>0</m> set such that <m>(f_n)_n</m> converges to <m>f</m> pointwise on <m>X \backslash E</m>.
+    By <xref ref="prop-int-remove-zero-set-non-neg"/>, replacing <m>X</m> with <m>X \backslash E</m> does not change the value of any integrals.
+    We can thus assume that <m>(f_n)_n</m> converges pointwise to <m>f</m> everywhere on <m>X</m>.</p>
+<p>Let <m>\varphi</m> be a simple function satisfying <m>0 \leq \varphi \leq f</m>.
+    We will show that
+<md>
+\int_X \varphi\,d\mu \leq \liminf \int_X f_n\, d\mu.
+</md>
+First, assume that <m>\int_X \varphi\,d\mu = \infty</m>.
+    In this case, there is a measurable set <m>E \subseteq X</m> and a real number <m>a &gt; 0</m> such that <m>\mu(E) = \infty</m> and <m>\varphi(x) = a</m> for all <m>x \in E</m>.
+    For each <m>n</m> let
+<md> E_n = \left\{x \in X \colon f_k(x) \geq \frac{a}{2} \text{ for }k\geq n\right\}.</md>
+Note that <m>E \subseteq \bigcup_n E_n</m> since, for <m>x \in E</m>, <m>\lim_n f_n(x) = f(x) \geq a</m>.</p>
+<p>As the sets <m>\{E_n\}_n</m> are ascending (and measurable) we have, by the continuity of measure,
+<md> \infty = \mu(E) \leq \lim_n \mu(E_n).</md>
+By Chebyshev's Inequality,
+<md> \mu(E_n)) \leq \frac{2}{a} \int_X f_n\,d\mu </md>
+and hence 
+    <m> \lim_n \int_X f_n\, d\mu = \infty.</m>
+    Thus
+<md> \int_X f\, d\mu\geq \int_X \varphi\, d\mu = \infty = \lim_n \int_X f_n\, d\mu = \liminf_n \int_X f_n\, d\mu.</md>
+Thus
+    <m> \int_X f \,d\mu = \liminf_n \int_X f_n\, d\mu.</m></p>
+<p>Assume now that <m>\int_X \varphi \, d\mu &lt; \infty</m>.
+    Let <m>P = \{x \in E \colon \varphi(x) &gt; 0\}.</m>
+    Since <m>\varphi</m> is simple and <m>\int_X \varphi\,d\mu &lt; \infty</m> we must have that <m>\mu(P)&lt;\infty</m>.
+    Fix <m>\varepsilon &gt;0</m>.
+    For each <m>n</m>, let
+<md> P_n = \{x \in P \colon f_k(x) &gt; (1-\varepsilon)\varphi(x)\text{ for }k\geq n\}.</md>
+The sequence <m>\{P_n\}_n</m> is an ascending sequence of measurable sets with <m>P = \bigcup_n P_n</m>.
+    Hence <m>\{P\backslash P_n\}_n</m> is a descending sequence of measurable sets with intersection <m>\emptyset</m>.
+    By the continuity of measure, since <m>\mu(P)&lt;\infty</m>,
+<md> \lim_n \mu(P \backslash P_n) = 0.</md>
+Choose <m>N</m> such that <m>\mu(P\backslash P_n) &lt; \varepsilon</m> for all <m>n \geq N</m>.
+    Let <m>M</m> be the maximum value <m>\varphi</m> takes.
+    For any <m>n \geq N</m> we have that
+<md>
+\begin{aligned}
+\int_X f_n \, d\mu
+        &amp;\geq \int_{P_n} f_n \, d\mu \\
+        &amp;\geq \int_{P_n}(1-\varepsilon) \varphi\, d\mu \\
+        &amp;= (1-\varepsilon) \left[\int_P \varphi\,d\mu - \int_{P\backslash P_n} \varphi\, d\mu\right] \\
+        &amp;\geq (1-\varepsilon)\int_P \varphi\,d\mu -\int_{P\backslash P_n} \varphi\, d\mu\\
+        &amp;= (1-\varepsilon)\int_X \varphi\,d\mu -\int_{P\backslash P_n} \varphi\, d\mu\\
+        &amp;\geq (1-\varepsilon)\int_X \varphi\,d\mu -M\mu(P\backslash P_n)\\
+        &amp;&gt;(1-\varepsilon)\int_X \varphi\,d\mu -M\varepsilon \\
+        &amp;= \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).
+\end{aligned}
+</md>
+Summarizing the above, for <m>n\geq N</m>, we have
+<md> \int_X f_n \,d\mu \geq \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).</md>
+Hence
+<md> \liminf_n \int_X f_n \,d\mu \geq \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).</md>
+Since <m>\varepsilon&gt;0</m> is arbitrary, and since <m>\int_X \varphi\,d\mu&lt;\infty</m> and <m>M&lt; \infty</m>, it follows that
+<md> \int_X \varphi\,d\mu \leq \liminf_n \int_X f_n \,d\mu.</md>
+Now, taking a supremum over all simple <m>\varphi</m> with <m>0 \leq \varphi \leq f</m> gives the desired result.</p>
+</proof>
+</lemma>
+
+<p>Fatou's Lemma will prove to be a powerful tool. We give now our first application of Fatou's Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.</p>
+
+<theorem xml:id="thm-MCT">
+<title>Monotone Convergence Theorem</title>
+<statement>
+    <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>(f_n)_n</m> be an increasing sequence of non-negative measurable functions on <m>X</m>.
+        Define a function <m>f</m> on <m>X</m> by <m>f(x) = \lim_n f_n(x).</m>
+        Then <m>f</m> is measurable and
+        <md> \lim_n \int_X f_n\,d\mu = \int_X f\,d\mu.</md>
+        <idx><h>Monotone Convergence Theorem</h></idx>
+    </p>
+</statement>    
+<proof>
+<p>Note that <m>\lim_n f_n(x)</m> exists for all <m>x</m> since the sequence <m>(f_n)_n</m> is increasing.
+    Thus <m>f</m> is a well-defined function on <m>X</m>.
+    Further <m>f</m> is measurable by <xref ref="prop-pw-lim"/> and <m>f</m> is non-negative since each <m>f_n</m> is non-negative.</p>
+<p>By the monotonicity of integration, we have that <m>(\int_X f_n\,d\mu)_n</m> is an increasing sequence, and hence convergent.
+    Further, since <m>f_n \leq f</m> for each <m>n</m>,
+<md> \lim_n \int_X f_n\,d\mu \leq \int_X f\,d\mu.</md>
+By Fatou's Lemma, <xref ref="lem-fatou"/>,
+<md> \int_X f\,d\mu \leq \liminf_n \int_X f_n \,d\mu = \lim_n \int_Xf_n\,d\mu.</md>
+Thus
+<md>\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu.</md>
+</p>
+</proof>
+</theorem>
+
+<p>It is reasonable to ask whether `increasing' can be replaced by `decreasing' in the Monotone Convergence Theorem. That is, if <m>(f_n)_n</m> is a decreasing sequence of non-negative measurable functions converging pointwise to <m>f</m>, is it true that
+<md> \lim_n \int_X f_n\,d\mu = \int_X f\,d\mu?</md>
+The following example shows that we cannot expect the statement to hold for decreasing sequences.<fn>You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.</fn></p>
+
+<example>
+<p>Consider the sequence of measurable functions <m>(f_n)_n = (\chi_{[n,\infty)})_n</m> on the real line.
+    The sequence <m>(f_n)_n</m> is decreasing, and converges pointwise to the function <m>f = 0</m>.
+    However, for each <m>n</m>,
+<md> \int_\mathbb{R} f_n\,dm = m(([n,\infty)) = \infty,</md>
+and so
+<md> \infty = \lim_n \int_\mathbb{R} f_n\,dm \neq \int_\mathbb{R} f\,dm = 0.</md>
+</p>
+</example>
+
+<p>The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, <xref ref="exer-MCT-series"/>.</p>
+
+<corollary xml:id="cor-MCT-series">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>(f_n)_n</m> be a sequence of non-negative measurable functions, and let <m>f = \sum_{n=1}^\infty f_n.</m>
+            Then
+            <md> \int_X f \, d\mu = \sum_{k=1}^\infty \int_X f_n\, d\mu.</md>
+        </p>
+    </statement>
+</corollary>
+
+<remark>
+<p>Let <m>f</m> be a non-negative measurable function on a measure space <m>(X,\mathcal{F},\mu)</m>.
+    By the definition of the integral, <m>\int_X f\,d\mu</m> can be approximated by integrals of simple functions below <m>f</m>.
+    By the Simple Approximation Theorem, <m>f</m> can be (pointwise) approximated by simple functions below <m>f</m>.
+    The Monotone Convergence Theorem allows us to put these two approximations together.
+    Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions <m>(\phi_n)_n</m>, <m>0\leq \phi_n \leq f</m>, which converge pointwise to <m>f</m>.
+    By the Monotone Convergence Theorem
+<md> \lim_n \int_X \phi_n\,d\mu = \int_X f\,d\mu.</md>
+</p>
+</remark>
+
+<p>We end this subsection by showing that integration is linear.</p>
+
+<theorem xml:id="thm-pos-int-linear">
+    <statement>
+        <p>        
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space, let <m>f</m> and <m>g</m> be non-negative measurable functions, and let <m>\alpha</m>, <m>\beta</m> be non-negative real-numbers.
+            Then
+            <md> \int_X(\alpha f + \beta g)\,d\mu = \alpha \int_X f\,d\mu + \beta \int_X g\,d\mu.</md>
+            <idx><h>linearity of integration</h><h>non-negative functions</h></idx>
+        </p>
+    </statement>
+<proof>
+<p>By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions <m>(\phi_n)_n</m> and <m>(\psi_n)_n</m> such that <m>(\phi_n)_n</m> converges to <m>f</m> pointwise and <m>(\psi_n)_n</m> converges to <m>g</m> pointwise.
+    Thus <m>(\alpha\phi_n + \beta\psi_n)_n</m> is an increasing sequence of non-negative simple functions which converge pointwise to <m>\alpha f +\beta g</m>.
+    Using the Monotone Covergence Theorem and <xref ref="thm-simple-int-linear"/>  and the Monotone Convergence Theorem again we get
+<md>
+\begin{aligned}
+\int_X (\alpha f + \beta g)\,d\mu &amp;= \lim_n \int_X(\alpha \phi_n + \beta \psi_n)\,d\mu \\
+        &amp;= \alpha \lim_n\int_X \phi_n\,d\mu + \beta \lim_n \int_X \psi_n \,d\mu \\
+        &amp;= \alpha \int_X f\,d\mu + \beta \int_X g\, d\mu.
+\end{aligned}
+</md>
+</p>
+</proof>
+</theorem>
+
+</section>

@@ -1,0 +1,222 @@
+<section>
+<title>Approximations of measurable functions</title>
+<p>Equivalently, there are several ways we can say that a sequence <m>(f_n)_n</m> of functions converges to a function <m>f</m>. You will already be familiar with the concept of pointwise convergence of functions and, at least for functions from <m>\mathbb{R}</m> to <m>\mathbb{R}</m>, uniform convergence. We recall these definitions below, together with an unfamiliar form of convergence: convergence pointwise almost everywhere.</p>
+
+<definition>
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a  measure space, let <m>(f_n)_n</m> be a sequence of extended real-valued functions on <m>X</m>, and let <m>f</m> be an extended real-valued function on <m>X</m>.</p>
+            <p>The sequence <m>(f_n)</m> <em>converges to <m>f</m> pointwise almost everywhere</em><idx><h>convergence</h><h>pointwise almost everywhere</h></idx><fn>often abbreviated to <em>pointwise a.e.</em></fn> if there is an <m>E \subseteq X</m> with <m>\mu(E) = 0</m>, such that
+            <md> \lim_{n \rightarrow \infty} f_n(x) = f(x)</md>
+            for all <m>x \in X \backslash E</m>.</p>
+
+            <p>If
+            <md> \lim_{n \rightarrow \infty} f_n(x) = f(x)</md>
+            for all <m>x \in X</m> then we say that the sequence <m>(f_n)_n</m> <em>converges pointwise to <m>f</m>.</em><idx><h>convergence</h><h>pointwise</h></idx></p>
+
+            <p>The sequence <m>(f_n)_n</m> converges <em>uniformly</em><idx><h>convergence</h><h>uniform</h></idx> if for all <m>\varepsilon &gt;0</m> there exists an <m>N \geq 0</m> such that
+            <md> |f_n(x) - f(x)| &lt; \varepsilon</md>
+            for all <m>x \in X</m> and <m>n \geq N</m>.
+        </p>
+    </statement>
+</definition>
+
+<remark xml:id="rem-types-of-convergence">
+<p>The relationship between these three forms of convergence is:
+<md> \text{uniform}\implies \text{pointwise} \implies \text{pointwise a.e.}.</md>
+Neither of the implications go the opposite way, however.
+Recall that the sequence <m>(x^n)_n</m> on <m>[0,1]</m> converges pointwise to the function
+<md> f(x) = \begin{cases}
+    0 &amp; x \in [0,1)\\
+    1 &amp; x = 1,
+\end{cases}</md>
+but <m>(x^n)_n</m> does not converge uniformly to <m>f</m>.</p>
+<p>Suppose <m>A \subseteq \mathbb{R}</m> is a non-empty Lebesgue measurable set with <m>m(A) = 0</m>.
+Define functions
+<md> f_n(x) = \begin{cases} 0&amp; x \in \mathbb{R} \backslash A, \\
+(-1)^n &amp; x \in A.\end{cases}</md>
+Then <m>f_n</m> converges pointwise a.e. to the zero function <m>0</m>,
+whilst <m>f_n</m> does not converge pointwise to any function.</p>
+</remark>
+
+<p>Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, <xref ref="thm-simple-approx"/>, which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, <xref ref="thm-ergoroff"/>, which says that if <m>(f_n)_n</m> converge pointwise to <m>f</m>, then there is a large set on which the convergence is uniform.</p>
+
+<p>We first establish that a pointwise limit of measurable functions is measurable.</p>
+
+<proposition xml:id="prop-pw-lim">
+    <statement>
+        <p>
+            Let <m>(X,\mathcal{F},\mu)</m> be a measure space. 
+            Suppose <m>(f_n)_n</m> is a sequence of measurable functions on <m>X</m> that converge pointwise almost everywhere to a function <m>f</m>.
+            Then, if either
+            <ol>
+            <li><m>(X,\mathcal{F},\mu)</m> is a complete measure space; or
+            </li>
+            <li>the sequence <m>(f_n)_n</m> converges pointwise to <m>f</m>,
+            </li>
+            </ol>
+            then <m>f</m> is a measurable function.
+        </p>
+    </statement>
+    <proof>
+<p>Let <m>E</m> be a measurable set with <m>\mu(E) = 0</m> such that <m>(f_n(x))_n</m> converges to <m>f(x)</m> for all <m>x \in X \backslash E</m>.
+    If <m>(X,\mathcal{F},\mu)</m> is complete, then <m>f</m> is measurable if and only if <m>f|_{X \backslash E}</m> is measurable, by <xref ref="prop-f-g-a-e"/>.
+    Thus, by excising <m>E</m> if necessary, we can assume that <m>(f_n)_n</m> converges pointwise to <m>f</m>.</p>
+<p>Fix <m>c \in \mathbb{R}</m> and let
+<md> A = \{x \in X \colon f(x) &gt; c\}.</md>
+Our goal is to show that <m>A</m> is a measurable set.
+    Note that, if <m>x_0 \in A</m>, then there exists an <m>n, N &gt;0</m> such that
+<md> x_0 \in \bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+Conversely, suppose <m>x_0 \in X</m> satisfies
+<md> x_0 \in \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+Then <m>f(x_0) \geq c + \frac{1}{n} &gt; c</m>, and hence <m>x_0 \in A</m>.
+    Thus
+<md> A = \bigcup_{(n,K) \in \mathbb{N}^2}\bigcap_{k\geq K} \left\{x \in X \colon f_k(x) &gt; c+\frac{1}{n} \right\}.</md>
+Thus, since each <m>f_k</m> is a measurable function, <m>A</m> is a countable union of a countable intersection of measurable sets.
+    Thus <m>A</m> is measurable.
+    As <m>c \in \mathbb{R}</m> was chosen arbitrarily, <m>f</m> is a measurable function.</p>
+</proof>
+</proposition>
+
+<theorem xml:id="thm-simple-approx">
+<title>The Simple Approximation Theorem</title>
+<statement>
+    <p>
+    Let <m>(X,\mathcal{F},\mu)</m> be a measure space and let <m>f</m> be an extended real-valued function on <m>X</m>.
+    Then <m>f</m> is measurable if and only <m>f</m> is the pointwise limit of a sequence of simple functions <m>(\phi_n)_n</m> satisfying <m>|\phi_n|\leq |f|</m> for all <m>n</m>.</p>
+    <p>If <m>f</m> is a non-negative function, the sequence <m>(\phi_n)_n</m> can be chosen to be increasing.</p>
+    <p>If <m>(X,\mathcal{F},\mu)</m> is <m>\sigma</m>-finite, then the simple functions <m>(\phi_n)_n</m> can each be chosen to be of finite support.
+    <idx><h>Simple Approximation Theorem</h></idx></p>
+</statement>
+
+<proof>
+<p>If <m>f</m> is a pointwise limit of simple functions, then <m>f</m> is measurable by <xref ref="prop-pw-lim"/>.</p>
+<p>Suppose now that <m>f</m> is measurable.
+    Assume first that <m>f\geq 0</m>.
+    For each <m>n</m>, and <m>k = 1,\ldots, n^2</m>, let
+<md> E^n_k = f^{-1}\left(\left[\frac{k-1}{n},\frac{k}{n}\right)\right)</md>
+For each <m>n</m>, the sets <m>\{E^n_k\}_{k=1}^{n^2}</m> are disjoint measurable sets.
+    Define scalars <m>(a^n_k)_{n,k}</m> by
+<md> a^n_k = \frac{k-1}{n}</md>
+For each <m>n</m> define a simple function <m>\phi_n</m> by
+<md> \phi_n(x) = \begin{cases}
+    a_n^k &amp; x \in E_n^k\\
+        n&amp;  f(x) \geq n.
+    \end{cases}</md>
+Note <m>\phi_n\leq f</m>.</p>
+<p>We claim that <m>(\phi_n)_n</m> converge pointwise to <m>f</m>.
+    First, suppose <m>f(x) &lt; \infty</m>.
+    Fix <m>\varepsilon &gt;0</m>
+    Choose an integer <m>N</m> such that <m>f(x) &lt; N</m> and <m>\frac{1}{N}&lt; \varepsilon</m>.
+    Then, if <m>n \geq N</m>, there is a <m>k</m> such that <m>x \in E^n_k</m>.
+    Thus,
+<md> |f(x) - \phi_n(x)| = |f(x) - a^n_k| &lt; \frac{1}{n} &lt; \varepsilon.</md>
+Thus <m>\lim_n \phi_n(x) = f(x)</m>.</p>
+<p>If <m>f(x) = \infty</m>, then <m>\phi_n(x) = n</m> for all <m>n</m>.
+    Thus
+<md> \lim_n \phi_n(x) = \lim_n n = \infty = f(x).</md>
+Hence <m>(\phi_n)_n</m> converges pointwise to <m>f</m>.</p>
+<p>By replacing <m>\phi_n</m> with <m>\max\{\phi_1,\ldots,\phi_n\}</m> we can make sure the sequence <m>(\phi_n)_n</m> is increasing.</p>
+<p>For an arbitrary measurable function <m>f</m> we can find a sequences <m>(\phi_n)_n</m> and <m>(\psi_n)_n</m> of simple functions which converge pointwise to <m>f_+</m> and <m>f_-</m> respectively, with <m>\phi_n \leq f_+</m> and <m>\psi_n \leq f_-</m>.
+    Then <m>(\phi_n-\psi_n)_n</m> is a sequence of simple functions which  converge pointwise to <m>f</m>.
+    Further
+<md> |\phi_n - \psi_n| \leq \phi_n + \psi_n \leq f_+ + f_- = |f|.</md>
+Finally, suppose that <m>(X,\mathcal{F},\mu)</m> is a <m>\sigma</m>-finite measure space and <m>(\phi_n)_n</m> is a sequence of simple functions that converge pointwise to a measurable function <m>f</m>.
+    Let <m>\{E_n\}_{n=1}^\infty</m> be an increasing sequence of measurable sets such that <m>\mu(E_n) &lt; \infty</m> for all <m>n\geq 1</m>, and <m>X = \bigcup_{n\in\mathbb{N}}E_n</m>.
+    For each <m>n</m> define the function
+<md> \psi_n = \phi_n \chi_{E_n}.</md>
+Then <m>(\psi_n)_n</m> is a sequence of finitely supported simple functions which converge pointwise to <m>f</m>.</p>
+</proof>
+</theorem>
+
+<p>As noted in <xref ref="rem-types-of-convergence"/>, pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.</p>
+
+<theorem xml:id="thm-ergoroff">
+<title>Ergoroff's Theorem</title>
+    <statement>
+        <p>
+        Let <m>(X,\mathcal{F},\mu)</m> be a finite measure space and let <m>(f_n)_n</m> be a sequence of measurable functions on <m>X</m> which converge pointwise a.e. to a finite a.e. function <m>f</m>.
+        Then for all <m>\varepsilon &gt;0</m> there is a measurable set <m>X_\varepsilon \subseteq X</m> such that
+        <ol>
+        <li><m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>X_\varepsilon</m>;
+        </li>
+        <li><m>\mu(X \backslash X_\varepsilon) &lt; \varepsilon</m>.
+        </li>
+        </ol>
+        <idx><h>Ergoroff's Theorem</h></idx>
+        </p>
+    </statement>
+
+    <proof>
+<p>By removing a set of measure <m>0</m> if necessary, we can assume that <m>(f_n)_n</m> converges pointwise to <m>f</m> on <m>E</m>.
+    By removing another measure <m>0</m> set, we can assume that <m>f</m> is real-valued.</p>
+<p>Fix <m>\eta &gt;0</m>.
+    For each <m>k</m>, the function <m>|f-f_k|</m> is measurable, and hence the set
+<md> \{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}</md>
+
+    is a measurable set.
+    For each <m>n</m> let <m>E_n</m> be the measurable set
+<md>
+\begin{aligned}
+E_n &amp;= \{x \in E \colon |f(x) - f_k(x)|&lt; \eta,\ k\geq n\} \\
+    &amp;= \bigcap_{k \geq n}\{x \in X \colon |f(x)-f_k(x)| &lt; \eta\}.
+\end{aligned}
+</md>
+Then <m>\{E_n\}_n</m> is an increasing sequence of measurable sets and <m>X = \bigcup_n E_n</m>, since <m>(f_n)_n</m> converges pointwise to <m>f</m> on <m>X</m>.
+    By the continuity of measure,
+<md> \lim_{n\rightarrow \infty} \mu(E_n) = \mu(X).</md>
+Thus, for any <m>\delta &gt;0</m> there is an <m>K</m> such that
+<fn>Note that <m>\mu(X) &lt; \infty</m> is being used here to apply the excision property</fn>
+<md> \mu(X \backslash E_N) =\mu(X) - \mu(E_K) &lt; \delta.</md>
+Note that <m>|f_k - f|&lt; \eta</m> on <m>E_K</m> for <m>k \geq K</m>.</p>
+<p>Fix <m>\varepsilon &gt; 0</m>.
+    For each <m>n</m>, apply the above argument with <m>\eta = \frac{1}{n}</m> and <m>\delta = \frac{\varepsilon}{2^{n}}</m> to find a measurable set <m>A_n</m> and an index <m>K_n</m> such that
+<md> \mu(X \backslash A_n) &lt; \frac{\varepsilon}{2^{n}}</md>
+and
+<md> |f_k(x) - f(x)| &lt; \frac{1}{n}</md>
+for all <m>x \in A_n</m> and <m>k \geq K_n</m>.</p>
+<p>Let <m>A = \bigcap_n A_n</m>.
+    We will show that <m>\mu(X \backslash A) &lt; \varepsilon</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
+    First note that
+<md>
+\begin{aligned}
+\mu(X\backslash A) &amp;= \mu\left(X \backslash \bigcap_n A_n\right) \\
+        &amp;= \mu\left(\bigcup_n X \backslash A_n \right) \\
+        &amp;\leq \sum_{n=1}^\infty \mu(X \backslash A_n)\\
+        &amp;&lt; \sum_{k=1}^\infty \frac{\varepsilon}{2^{n}}=\varepsilon.
+\end{aligned}
+</md>
+Take any <m>\zeta &gt; 0</m>. Choose integer <m>n</m> such that <m>\frac{1}{n}&lt;\zeta</m>.
+    Then, if <m>k \geq K_n</m>,
+<md> |f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta</md>
+for all <m>x \in A_n</m>.
+    As <m>A \subseteq A_n</m>, it follows that
+<md> |f_k(x) - f(x)|&lt; \frac{1}{n}&lt; \zeta</md>
+for all <m>x \in A</m> and <m>k \geq K_n</m>.
+    Thus <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m> and <m>\mu(X\backslash A)&lt; \varepsilon.</m></p>
+</proof>
+</theorem>
+
+<corollary xml:id="cor-ergoroff">
+<title>Ergoroff's Theorem on <m>\mathbb{R}</m></title>
+
+<statement>
+    <p>
+        Let <m>E \subseteq \mathbb{R}</m> be a Lebesegue measurable set with <m>m(E)&lt; \infty</m>.
+        Let <m>(f_n)_n</m> be a sequence of measurable functions on <m>E</m> which converge a.e. to a finite a.e. function <m>f</m>.</p>
+        <p>For each <m>\varepsilon &gt; 0</m> there is a closed set <m>F \subseteq E</m> such that <m>m(E \backslash F)&lt; \varepsilon</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>F</m>.
+        <idx><h>Ergoroff's Theorem</h><h>on the real line</h></idx>
+    </p>
+</statement>
+<proof>
+<p>Fix <m>\varepsilon &gt;0</m>.
+    By <xref ref="thm-ergoroff" /> there is a measurable set <m>A \subseteq E</m> such that <m>\mu(E \backslash A)&lt; \varepsilon/2</m> and <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>A</m>.
+    By <xref ref="thm-Leb-meas-sets-G-delta-F-sigma" />, there is a closed set <m>F \subseteq A</m> such that <m>m(A\backslash F)&lt; \varepsilon /2</m>.</p>
+<p>As <m>F \subseteq A</m>, <m>(f_n)_n</m> converges uniformly to <m>f</m> on <m>F</m>.
+    Also
+<md> m(E\backslash F) = m(A\backslash F) + m(E\backslash A) &lt; \varepsilon, </md>
+completing the proof.</p>
+</proof>
+</corollary>
+
+</section>
