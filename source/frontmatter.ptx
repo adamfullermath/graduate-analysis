@@ -35,5 +35,7 @@
   <colophon xml:id="front-colophon">
     <colophon-items/>
   </colophon>
+
+  <xi:include href="./intro.ptx" />
 </frontmatter>
 

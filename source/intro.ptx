@@ -1,0 +1,25 @@
+<preface>
+    <p>
+        The following notes were written over several years of teaching graduate analysis courses at the University of Ohio. 
+        The notes are designed to cover two semesters worth of material in the field of measure theory.
+        The notes are split into three parts. The first part introduces the basic concepts of measure and integration. Special attention is paid to the Lebesgue measure and Borel measures on the real line. The second part is an introduction to functional analysis, from a measure theoretic perspective. Here <m>L^p</m>-spaces and their duals are introduced. The Riesz-Markov-Kakutani representation theorem is also covered. 
+        The notes do not serve for a full course in functional analysis. 
+        Abstract Banach spaces and Hilbert spaces are mentioned, but the focus is on specific examples: <m>L^p</m>-spaces, and continuous functions on compact Hausdorff spaces.
+        Many important functional analytic results, such as the Hahn-Banach theorem, are not covered in these notes.
+        The third part of the notes gives further examples of measures, including product measures, Haar measure, Hausdorff measure, and probability measures.
+        Part 1 can be covered in a single semester, parts 2 and 3 can be covered in a second semester.
+    </p>
+    <p>
+        There are a number of appendices. Two give some prerequisite material: prerequisites in set theory, and prerequisites in topology. There is also an appendix which gives details of some important examples of continuous functions, relevant to the current notes and the history of real analysis from which measure theory developed.
+    </p>
+    <p>
+        The notes owe a lot to the treatment of the topics in Royden's <q>Real Analysis</q> <xref ref="Roy"/> and Folland's <q>Real Analysis: Modern Techniques and Their Applications</q> <xref ref="Folland"/>.
+        Other sources were used. Several are listed in the text at relevant times. A list is given in the References section.
+    </p>
+    <p>
+        The notes are written in <pretext/>. They have been made available to students online and as a pdf file. In theory, other formats can be generated from the source files if a student needs them.
+        There are several figures in the notes. 
+        All figures are generated in SageMath. For most of the figures, the SageMath code is included in the source files, though there are a few figures for which code is not included. Some figures are interactive or animated for those viewing the html version of the notes. For the pdf version, a static image is given; for the interactive components a QR code is given which links to the interactive element.
+    </p>
+
+</preface>
