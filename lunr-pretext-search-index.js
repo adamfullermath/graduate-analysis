@@ -826,7 +826,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Borel measures on <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>",
-  "body": " Borel measures on  The Lebesgue measure is induced by the length function on intervals: . Given an increasing function on we can define a weighted length on intervals by . In this section we show how, with some reasonable constraints on , this gives rise to a Borel measure. Conversely, we show how Borel measures on give rise to functions. These processes will be, up to the addition of a constant, inverses of each other.  We will begin with constructing functions from Borel measures.   Let be a closed interval in . Let be a finite Borel measure on . Define a function by   The function is called the cumulative distribution function for . cumulative distribution function    The term cumulative distribution function is borrowed from probability theory.    distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function   Belljar curve and its cumulative distribution function       A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in .   Let be a closed interval. A function is right-continuous on continuous function right-continuous if given such that there exists such that (i.e. is not a right end-point of ), then     cumulative distribution function Let be a closed interval and let be a finite Borel measure on . Then the cumulative distribution function for is increasing and right-continuous.    Let be a finite Borel measure on and let be the corresponding cumulative distribution function. Note that, if with then   Thus, is an increasing function.  We will now show that is right-continuous. Take , such that there is a such that . Let be a sequence in converging to , with for each . Then   Hence, since is a finite measure, continuity of measure, , gives   Hence is right-continuous.   We will now show how a Borel measure can be recovered from its cumulative distribution function. More generally, we show that any increasing, right-continuous function defines a Borel measure.   Let be a closed interval, and let be a non-negative, increasing, right-continuous function. If has a minimal element we will also assume that is non-negative. Then there is a unique Borel measure on satisfying    First assume that does not have a minimal element. That is, assume for some , or . Let be the semiring of subsets of ,   Define on by and We will show that is a premeasure on . It is straightforward to show that   if are disjoint intervals in with .  It remains to show that is countably monotonic. Suppose and are in and satisfy   Fix such that . For each , choose such that and   (if is the end-point of for some we can extend so that for ). Note that we can by the right continuity of . We now have the following inclusions   Thus, is an open cover of . By the Heine-Borel Theorem, is compact, thus there is a finite subcover of . We (relabelling if necessary) denote the sets in this subcover by As is increasing, it follows that   Taking a limit as goes to (from above), the right continuity of gives that   and so is countably monotonic. Hence is a premeasure on .  When has a minimal element , so that or we define to be   We define as above with the extra condition . Again, will be a premeasure on the semiring .  In both cases, the Carathéodory-Hahn Theorem says that extends to a measure on , which we will still denote by . The uniqueness of follows again from the Carathéodory-Hahn Theorem, and the fact that is -finite on . As the sets in will be -measurable, the Borel sets will be measurable with respect to . If is a closed interval in , then . It follows that for any compact set , and thus defines a Borel measure on .    When and , the measure constructed by is the Lebesgue measure.    Let be a closed interval in and let be a non-negative, increasing, right-continuous function on . If is not bounded below, further assume . Let be the Borel measure on satisfying constructed in .  If is a finite Borel measure then is the cumulative distribution function for .    Suppose is the minimal element of . Then, for each , the construction of in gives   Thus, is the cumulative distribution function for .  Now suppose is not bounded below and that Fix . Then   and hence is the cumulative distribution function for .    Let be a closed bounded interval in . Every Borel measure on is uniquely determined by its cumulative distribution function.   "
+  "body": " Borel measures on  The Lebesgue measure is induced by the length function on intervals: . Given an increasing function on we can define a weighted length on intervals by . In this section we show how, with some reasonable constraints on , this gives rise to a Borel measure. Conversely, we show how Borel measures on give rise to functions. These processes will be, up to the addition of a constant, inverses of each other.  We will begin with constructing functions from Borel measures.   Let be a closed interval in . Let be a finite Borel measure on . Define a function by   The function is called the cumulative distribution function for . cumulative distribution function    The term cumulative distribution function is borrowed from probability theory.    distribution Gaussian distribution Let . Define a function on intervals by taking the Riemann integral of over That is, One can show that is a premeasure on the semiring of intervals of the form . Thus, by the Carathéodory-Hahn Theorem , extends to a Borel measure on In statistics and probabilty theoery, the measure is called the Gaussian distribution , or the normal distribution . The cumulative distribution function of the Gaussian distribution is usually denoted by . By definition is given by Note that is continuous on every closed interval in . Further,    Bell jar curve and its cumulative distribution function   Belljar curve and its cumulative distribution function       A cumulative distribution functions need not be continuous, but they will satisfy a one-sided version of continuity. We define this formally now, before showing all cumulative distribution functions satisfy it in .   Let be a closed interval. A function is right-continuous on continuous function right-continuous if given such that there exists such that (i.e. is not a right end-point of ), then     cumulative distribution function Let be a closed interval and let be a finite Borel measure on . Then the cumulative distribution function for is increasing and right-continuous.    Let be a finite Borel measure on and let be the corresponding cumulative distribution function. Note that, if with then   Thus, is an increasing function.  We will now show that is right-continuous. Take , such that there is a such that . Let be a sequence in converging to , with for each . Then   Hence, since is a finite measure, continuity of measure, , gives   Hence is right-continuous.   We will now show how a Borel measure can be recovered from its cumulative distribution function. More generally, we show that any increasing, right-continuous function defines a Borel measure.   Let be a closed interval, and let be a non-negative, increasing, right-continuous function. If has a minimal element we will also assume that is non-negative. Then there is a unique Borel measure on satisfying    First assume that does not have a minimal element. That is, assume for some , or . Let be the semiring of subsets of ,   Define on by and We will show that is a premeasure on . It is straightforward to show that   if are disjoint intervals in with .  It remains to show that is countably monotonic. Suppose and are in and satisfy   Fix such that . For each , choose such that and   (if is the end-point of for some we can extend so that for ). Note that we can by the right continuity of . We now have the following inclusions   Thus, is an open cover of . By the Heine-Borel Theorem, is compact, thus there is a finite subcover of . We (relabelling if necessary) denote the sets in this subcover by As is increasing, it follows that   Taking a limit as goes to (from above), the right continuity of gives that   and so is countably monotonic. Hence is a premeasure on .  When has a minimal element , so that or we define to be   We define as above with the extra condition . Again, will be a premeasure on the semiring .  In both cases, the Carathéodory-Hahn Theorem says that extends to a measure on , which we will still denote by . The uniqueness of follows again from the Carathéodory-Hahn Theorem, and the fact that is -finite on . As the sets in will be -measurable, the Borel sets will be measurable with respect to . If is a closed interval in , then . It follows that for any compact set , and thus defines a Borel measure on .    When and , the measure constructed by is the Lebesgue measure.    Let be a closed interval in and let be a non-negative, increasing, right-continuous function on . If is not bounded below, further assume . Let be the Borel measure on satisfying constructed in .  If is a finite Borel measure then is the cumulative distribution function for .    Suppose is the minimal element of . Then, for each , the construction of in gives   Thus, is the cumulative distribution function for .  Now suppose is not bounded below and that Fix . Then   and hence is the cumulative distribution function for .    Let be a closed bounded interval in . Every Borel measure on is uniquely determined by its cumulative distribution function.   We end by noting that Borel measures on the real line have regularity properties similar to those of the Lebesgue measure.    Let be a Borel measure on the real line. We say that is outer regular if  regularity of a measure Borel measures on       Let be a Borel measure on a closed interval , then for all Borel sets . That is, Borel measures on closed intervals are outer regular.    Take any Borel set . By the monotonicity of the measure  Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and By the continuity of measure, for each , Thus, for each , we can choose such that Let . Then It follows that It is a relatively straightforward exercise to show that which completes the proof.    "
 },
 {
   "id": "def-cumulative-dist",
@@ -937,6 +937,24 @@ var ptx_lunr_docs = [
   "body": " Let be a closed bounded interval in . Every Borel measure on is uniquely determined by its cumulative distribution function.  "
 },
 {
+  "id": "sec-borel-on-R-19",
+  "level": "2",
+  "url": "sec-borel-on-R.html#sec-borel-on-R-19",
+  "type": "Definition",
+  "number": "3.3.11",
+  "title": "",
+  "body": "  Let be a Borel measure on the real line. We say that is outer regular if  regularity of a measure Borel measures on    "
+},
+{
+  "id": "lem-regular-borel",
+  "level": "2",
+  "url": "sec-borel-on-R.html#lem-regular-borel",
+  "type": "Lemma",
+  "number": "3.3.12",
+  "title": "",
+  "body": "  Let be a Borel measure on a closed interval , then for all Borel sets . That is, Borel measures on closed intervals are outer regular.    Take any Borel set . By the monotonicity of the measure  Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and By the continuity of measure, for each , Thus, for each , we can choose such that Let . Then It follows that It is a relatively straightforward exercise to show that which completes the proof.   "
+},
+{
   "id": "chap-lebesgue-measure-6",
   "level": "1",
   "url": "chap-lebesgue-measure-6.html",
@@ -1045,175 +1063,148 @@ var ptx_lunr_docs = [
   "body": "  Let be the Cantor set; let ; and let . Let be the Borel measure on induced by (using ). Show that ; and .   "
 },
 {
-  "id": "real-analysis-4-5-3",
+  "id": "sec-signed-measure",
   "level": "1",
-  "url": "real-analysis-4-5-3.html",
+  "url": "sec-signed-measure.html",
   "type": "Section",
   "number": "4.1",
   "title": "Signed measures",
-  "body": " Signed measures  We have defined measures to only take non-negative values. However, there are some points where it is beneficial to extend the definition of a measure to include negative values (and we will see more as we proceed). For example, shows that the collection of measures on is closed under addition and multiplying by non-negative scalars. The set of measures on is almost a vector space; we just can't multiply be negative scalars. Allowing for measures which take positive and negative values would allow us to create a vector space (which may, or may not, be useful).  Less abstractly, in Section~\\ref{sec: borel on R}, we showed that if is a Borel measure on then the cumulative distribution function for , , is an increasing, right-continuous function, Thereom~\\ref{thm: cdf}. Conversely, given an increasing, right-continuous function on , uniquely determines a Borel measure on , . Cumulative distribution functions are increasing precisely because measures take non-negative values. In , we need an increasing function in order to define a measure. If we want to use measure theory to study real functions, other than increasing functions, we will need to allow for measures which allow for possibly negative values. This leads us to the following definition.   signed measure Let be a measurable space. A function   is a signed measure if   takes at most value from ;   ; and   if are disjoint sets in , then     The elements of are called the measurable sets measurable set for a signed measure , or -measurable sets . A signed measure on is finite if . signed measure finite   The definition of a signed measure is very similar to that of a measure, but a couple of points are worth discussing. Firstly, the condition that takes at most one value from is necessary in order for the third condition (countable additivity) to make sense. Suppose is a function on a -algebra satisfying conditions (ii) and (iii) of a signed measure. Suppose and . Condition (iii) then says that   Hence, . Further   Since , it follows that . Thus   As is not defined, cannot defined to take both of the values and . In particular, we could have defined signed measures to only satisfy (ii) and (iii); the above argument shows that condition (i) follows from condition (iii). We include condition (i) for clarity.  Secondly, there is room for some misunderstandings in condition (iii). Suppose are disjoint measurable sets, and , and that . Then   \\ That is, is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set is independent on the order of the sets , and so is independent of the order of the sets . As , it follows that the (finite) value of is independent of the order of the terms . It follows that the series converges absolutely .  says that the difference of two measures is a signed measure. In this section we will show that all signed measures are of this form. We need some preliminary definitions and results first.   Let be a signed measure on a measurable space and let be a measurable set.   The set is positive (or -positive positive set if there is room for confusion) if is measurable, then ;   the set is negative (or -negative negative set if there is room for confusion) if is measurable, then ; and   the set is a null set (or -null null set if there is room for confusion) if is measurable, then .      Note that null sets are both positive and negative.    Hahn  Let be a signed measure on a measurable space . Suppose , with . Then there is a positive set such that .    If is positive, then we are done. Otherwise, there are subsets with . Let be the smallest natural number such that there is a measurable such that   Continuing, choose minimal natural number such that there is a   with   If this process ends after steps, let   Then is positive, since it contains no subsets such that . Further,   Since and , it follows that .  If the process does not end, we get a sequence of sets Let and let Since , it follows from that . Thus   Thus .  We will show that is positive. Suppose and Then for each we have   Thus, by the choice of ,   As this holds for all , and , it follows that . Hene is a positive set.  To show that we note that   Since and , it follows that .    Hahn Decomposition Theorem  Hahn Decomposition Theorem Let be a signed measure on a measurable space . Then there are disjoint measurable subsets such that , is positive, and is negative.  If are also disjoint measurable sets with positive, negative, and , then the sets   The set is called the symmetric difference of and . are null sets.    Assume that does not take the value (replace with if it does). Let be the collection of all positive sets. Note that is non-empty since . Let   We will show that is attained, i.e. is the maximum value in . Choose a sequence such that   Let . Note that is positive by . Thus . Also, since is positive, , and   Taking the limit as , we get . Thus .  Let . We will show that is negative. If is not negative, then there is a measurable set with . Since, by assumption, does not take the value , we have   It follows from that there is a positive set with . The set is positive with   This contradicts the definition of . Thus is negative.  Suppose and are another pair of disjoint measurable sets, with , positive, and negative. Then and . Hence is both positive and negative. Thus, is a null set. Similar arguments show that , , and are null sets.    Let be a signed measure on a measurable space . If and are disjoint measurable sets satisfying for disjoint sets and , with positive and negative, we call and a Hahn decomposition for . Hahn decomposition   The Hahn Decomposition, , says that Hahn decompositions exist for all signed measures.  We can now, as promised, decompose signed measures as the difference of two measures. Before we do this we introduce just one more definition.   Let be a measurable space, and let and be two measures on . The measures and are mutually singular , singular measures mutually singular denoted , if there are disjoint measurable sets with satisfying , , , and .    Let be the Lebesgue measure on the Borel sets of , and let be the Borel measure on the Borel sets of whose cumulative distribution function is the Cantor-Lebesgue function (see ). It follows from that and are mutually singular.    The Jordan Decomposition Theorem  Jordan Decomposition Theorem for signed measures Let be a signed measure on a measurable space . Then there are mutually orthogonal measures on and on such that , i.e.   for all .  Further, and are unique mutually orthogonal measures satisfying .    Let be a Hahn decomposition for , with positive and negative. For each , define   That is a measure follows from . That is a measure can be proved similarly. That and are mutually orthogonal follows from the fact that and are disjoint.  Suppose now that and are mutually orthogonal measures satisfying . Since and are mutually orthogonal, there are disjoint measurable sets and satisfying , , , , and . We will show that and give a Hahn decomposition for . That is, we will show that is -positive and is -negative. Take any . Since , , thus   Similarly, if , then and so   Since and are a Hahn decompoistion for , and and are a Hahn decompoistion for , it follows from that and are null sets. Take any , then   and   and so   Take any . Then   where the penultimate equality comes from . Hence . We can show that in a similar fashion.    Let be a signed measure on a measurable space . Let and be mutually orthogonal measures on satisfying   We call and the Jordan decomposition of . Jordan decomposition of a signed measure  We call the measure the positive part of , and call the measure the negative part of .    Let be a signed measure and let be the Jordan decomposition of . The measure defined by   is called the measure of total variation of . measure of total variation The value is the total variation of . total variation of a signed measure. When is finite then is of bounded variation . bounded variation for a signed measure    Let be a signed measure. Then , measure of total variation of , is indeed a measure by .  It is worth noting that, when is a signed measure, in general it is not true that   for a -measurable set. That is, the placement of the lines is important.  In general, there is no reason to expect the function to be a measure. Can you see why not?   Note that is finite if and only if is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to   Let be a signed measure on a measurable space . Then the total variation is given by    We end this section with another characterization of for finite signed measures.   Let be a signed measure on a measurable space with finite total variation . Suppose and are measures on satisfying . Then .  Further, if and only if and .    Let be a Hahn decomposition for so that   and   Take any measurable , then   Similarly, if is measurable then   We have then that   Now suppose that . If or then, by the same reasoning as earlier in this proof,   Thus and .  Take any measurable . We have shown that . If then   As , it follows that for all measurable .  Suppose satisfies . Then   Hence, if , then .  We can similarly show that for all measurable , and that if then .  Thus, if or , we have   This contradicts the definition of the total variation . Hence and .   "
+  "body": " Signed measures  The definition of a signed measure is much like that of a measure. You may be able to guess how it is defined.    Let be a measurable space. A function is a signed measure if  takes at most value from ;  ; and  if are disjoint sets in , then   The elements of are called the measurable sets , or -measurable sets . signed measure  measurable set for a signed measure   A signed measure on is finite if . signed measure finite      Though the definition of a signed measure is very similar to that of a measure, a couple of points are worth discussing. Firstly, the condition that takes at most one value from is necessary in order for the third condition (countable additivity) to make sense. Suppose is a function on a -algebra satisfying conditions (ii) and (iii) of a signed measure. Suppose and . Condition (iii) then says that Hence, . Further Since , it follows that . Thus As is not defined, cannot defined to take both of the values and . In particular, we could have defined signed measures to only satisfy (ii) and (iii); the above argument shows that condition (i) follows from condition (iii). We include condition (i) for clarity.  Secondly, there is room for some misunderstandings in condition (iii). Suppose are disjoint measurable sets, and , and that . Then That is, is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set is independent on the order of the sets , and so is independent of the order of the sets . As , it follows that the (finite) value of is independent of the order of the terms . It follows that the series converges absolutely .   says that the difference of two measures is a signed measure. We will show that all signed measures are of this form. We need some preliminary definitions and results first.    Let be a signed measure on a measurable space and let be a measurable set.  The set is positive (or -positive positive set if there is room for confusion) if is measurable, then ;  the set is negative (or -negative negative set if there is room for confusion) if is measurable, then ; and  the set is a null set (or -null null set if there is room for confusion) if is measurable, then .       Note that null sets are both positive and negative.    Hahn's Lemma   Let be a signed measure on a measurable space . Suppose , with . Then there is a positive set such that .    If is positive, then we are done. Otherwise, there are subsets with . Let be the smallest natural number such that there is a measurable such that Continuing, choose minimal natural number such that there is a with If this process ends after steps, let Then is positive, since it contains no subsets such that . Further, Since and , it follows that .  If the process does not end, we get a sequence of sets Let and let Since , it follows from that . Thus Thus .  We will show that is positive. Suppose and Then for each we have Thus, by the choice of , As this holds for all , and , it follows that . Hene is a positive set.  To show that we note that Since and , it follows that .     Hahn Decomposition Theorem   Let be a signed measure on a measurable space . Then there are disjoint measurable subsets such that , is positive, and is negative.  If are also disjoint measurable sets with positive, negative, and , then the sets are null sets. The set is called the symmetric difference of and .  Hahn Decomposition Theorem     Assume that does not take the value (replace with if it does). Let be the collection of all positive sets. Note that is non-empty since . Let We will show that is attained, i.e. is the maximum value in . Choose a sequence such that Let . Note that is positive by . Thus . Also, since is positive, , and Taking the limit as , we get . Thus .  Let . We will show that is negative. If is not negative, then there is a measurable set with . Since, by assumption, does not take the value , we have It follows from that there is a positive set with . The set is positive with This contradicts the definition of . Thus is negative.  Suppose and are another pair of disjoint measurable sets, with , positive, and negative. Then and . Hence is both positive and negative. Thus, is a null set. Similar arguments show that , , and are null sets.      Let be a signed measure on a measurable space . If and are disjoint measurable sets satisfying for disjoint sets and , with positive and negative, we call and a Hahn decomposition for . Hahn decomposition     The Hahn Decomposition, , says that Hahn decompositions exist for all signed measures. We can now, as promised, decompose signed measures as the difference of two measures. Before we do this we introduce just one more definition.     mutually singular measures    Let be a measurable space, and let and be two measures on . The measures and are mutually singular , denoted , if there are disjoint measurable sets with satisfying , , , and . singular measures mutually singular      Let be the Lebesgue measure on the Borel sets of , and let be the Borel measure on the Borel sets of whose cumulative distribution function is the Cantor-Lebesgue function (see ). It follows from that and are mutually singular.    The Jordan Decomposition Theorem   Let be a signed measure on a measurable space . Then there are mutually orthogonal measures on and on such that , i.e. for all .  Further, and are unique mutually orthogonal measures satisfying . Jordan Decomposition Theorem for signed measures     Let be a Hahn decomposition for , with positive and negative. For each , define   That is a measure follows from . That is a measure can be proved similarly. That and are mutually orthogonal follows from the fact that and are disjoint.  Suppose now that and are mutually orthogonal measures satisfying . Since and are mutually orthogonal, there are disjoint measurable sets and satisfying , , , , and . We will show that and give a Hahn decomposition for . That is, we will show that is -positive and is -negative. Take any . Since , , thus Similarly, if , then and so Since and are a Hahn decompoistion for , and and are a Hahn decompoistion for , it follows from that and are null sets. Take any , then and and so Take any . Then where the penultimate equality comes from . Hence . We can show that in a similar fashion.       Jordan decomposition of a signed measure    Let be a signed measure on a measurable space . Let and be mutually orthogonal measures on satisfying We call and the Jordan decomposition of . We call the measure the positive part of , and call the measure the negative part of . Jordan decomposition of a signed measure        measure of total variation of a signed measure     total variation of a signed measure    Let be a signed measure and let be the Jordan decomposition of . The measure defined by is called the measure of total variation of . measure of total variation The value is the total variation of . When is finite then is of bounded variation . bounded variation for a signed measure  total variation of a signed measure.      Let be a signed measure. Then , measure of total variation of , is indeed a measure by .  It is worth noting that, when is a signed measure, in general it is not true that for a -measurable set. That is, the placement of the lines is important.  In general, there is no reason to expect the function to be a measure. Can you see why not?   Note that is finite if and only if is a finite signed measure. The following characterization of total variation will be useful in the sequel. We leave the proof to    Let be a signed measure on a measurable space . Then the total variation is given by     We end this section with another characterization of for finite signed measures.    Let be a signed measure on a measurable space with finite total variation . Suppose and are measures on satisfying . Then .  Further, if and only if and .    Let be a Hahn decomposition for so that and Take any measurable , then Similarly, if is measurable then We have then that  Now suppose that . If or then, by the same reasoning as earlier in this proof, Thus and .  Take any measurable . We have shown that . If then As , it follows that for all measurable .  Suppose satisfies . Then Hence, if , then .  We can similarly show that for all measurable , and that if then .  Thus, if or , we have This contradicts the definition of the total variation . Hence and .    "
 },
 {
   "id": "def-signed-measure",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#def-signed-measure",
+  "url": "sec-signed-measure.html#def-signed-measure",
   "type": "Definition",
   "number": "4.1.1",
   "title": "",
-  "body": " signed measure Let be a measurable space. A function   is a signed measure if   takes at most value from ;   ; and   if are disjoint sets in , then     The elements of are called the measurable sets measurable set for a signed measure , or -measurable sets . A signed measure on is finite if . signed measure finite  "
+  "body": "  Let be a measurable space. A function is a signed measure if  takes at most value from ;  ; and  if are disjoint sets in , then   The elements of are called the measurable sets , or -measurable sets . signed measure  measurable set for a signed measure   A signed measure on is finite if . signed measure finite    "
 },
 {
-  "id": "real-analysis-4-5-3-16",
+  "id": "sec-signed-measure-4",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-16",
-  "type": "Definition",
+  "url": "sec-signed-measure.html#sec-signed-measure-4",
+  "type": "Remark",
   "number": "4.1.2",
   "title": "",
-  "body": " Let be a signed measure on a measurable space and let be a measurable set.   The set is positive (or -positive positive set if there is room for confusion) if is measurable, then ;   the set is negative (or -negative negative set if there is room for confusion) if is measurable, then ; and   the set is a null set (or -null null set if there is room for confusion) if is measurable, then .    "
+  "body": " Though the definition of a signed measure is very similar to that of a measure, a couple of points are worth discussing. Firstly, the condition that takes at most one value from is necessary in order for the third condition (countable additivity) to make sense. Suppose is a function on a -algebra satisfying conditions (ii) and (iii) of a signed measure. Suppose and . Condition (iii) then says that Hence, . Further Since , it follows that . Thus As is not defined, cannot defined to take both of the values and . In particular, we could have defined signed measures to only satisfy (ii) and (iii); the above argument shows that condition (i) follows from condition (iii). We include condition (i) for clarity.  Secondly, there is room for some misunderstandings in condition (iii). Suppose are disjoint measurable sets, and , and that . Then That is, is a convergent series. There is more than one way a series can converge: absolutely or conditionally. Note that the set is independent on the order of the sets , and so is independent of the order of the sets . As , it follows that the (finite) value of is independent of the order of the terms . It follows that the series converges absolutely .  "
 },
 {
-  "id": "real-analysis-4-5-3-17",
+  "id": "sec-signed-measure-6",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-17",
-  "type": "Remark",
+  "url": "sec-signed-measure.html#sec-signed-measure-6",
+  "type": "Definition",
   "number": "4.1.3",
+  "title": "",
+  "body": "  Let be a signed measure on a measurable space and let be a measurable set.  The set is positive (or -positive positive set if there is room for confusion) if is measurable, then ;  the set is negative (or -negative negative set if there is room for confusion) if is measurable, then ; and  the set is a null set (or -null null set if there is room for confusion) if is measurable, then .     "
+},
+{
+  "id": "sec-signed-measure-7",
+  "level": "2",
+  "url": "sec-signed-measure.html#sec-signed-measure-7",
+  "type": "Remark",
+  "number": "4.1.4",
   "title": "",
   "body": " Note that null sets are both positive and negative.  "
 },
 {
   "id": "lem-hahn-lemma",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#lem-hahn-lemma",
+  "url": "sec-signed-measure.html#lem-hahn-lemma",
   "type": "Lemma",
-  "number": "4.1.4",
-  "title": "Hahn.",
-  "body": " Hahn  Let be a signed measure on a measurable space . Suppose , with . Then there is a positive set such that .  "
-},
-{
-  "id": "real-analysis-4-5-3-19",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-19",
-  "type": "Proof",
-  "number": "4.1.1",
-  "title": "",
-  "body": " If is positive, then we are done. Otherwise, there are subsets with . Let be the smallest natural number such that there is a measurable such that   Continuing, choose minimal natural number such that there is a   with   If this process ends after steps, let   Then is positive, since it contains no subsets such that . Further,   Since and , it follows that .  If the process does not end, we get a sequence of sets Let and let Since , it follows from that . Thus   Thus .  We will show that is positive. Suppose and Then for each we have   Thus, by the choice of ,   As this holds for all , and , it follows that . Hene is a positive set.  To show that we note that   Since and , it follows that .  "
+  "number": "4.1.5",
+  "title": "Hahn’s Lemma.",
+  "body": " Hahn's Lemma   Let be a signed measure on a measurable space . Suppose , with . Then there is a positive set such that .    If is positive, then we are done. Otherwise, there are subsets with . Let be the smallest natural number such that there is a measurable such that Continuing, choose minimal natural number such that there is a with If this process ends after steps, let Then is positive, since it contains no subsets such that . Further, Since and , it follows that .  If the process does not end, we get a sequence of sets Let and let Since , it follows from that . Thus Thus .  We will show that is positive. Suppose and Then for each we have Thus, by the choice of , As this holds for all , and , it follows that . Hene is a positive set.  To show that we note that Since and , it follows that .   "
 },
 {
   "id": "thm-Hahn-decomp",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#thm-Hahn-decomp",
+  "url": "sec-signed-measure.html#thm-Hahn-decomp",
   "type": "Theorem",
-  "number": "4.1.5",
-  "title": "Hahn Decomposition Theorem.",
-  "body": " Hahn Decomposition Theorem  Hahn Decomposition Theorem Let be a signed measure on a measurable space . Then there are disjoint measurable subsets such that , is positive, and is negative.  If are also disjoint measurable sets with positive, negative, and , then the sets   The set is called the symmetric difference of and . are null sets.  "
-},
-{
-  "id": "real-analysis-4-5-3-21",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-21",
-  "type": "Proof",
-  "number": "4.1.2",
-  "title": "",
-  "body": " Assume that does not take the value (replace with if it does). Let be the collection of all positive sets. Note that is non-empty since . Let   We will show that is attained, i.e. is the maximum value in . Choose a sequence such that   Let . Note that is positive by . Thus . Also, since is positive, , and   Taking the limit as , we get . Thus .  Let . We will show that is negative. If is not negative, then there is a measurable set with . Since, by assumption, does not take the value , we have   It follows from that there is a positive set with . The set is positive with   This contradicts the definition of . Thus is negative.  Suppose and are another pair of disjoint measurable sets, with , positive, and negative. Then and . Hence is both positive and negative. Thus, is a null set. Similar arguments show that , , and are null sets.  "
-},
-{
-  "id": "real-analysis-4-5-3-22",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-22",
-  "type": "Definition",
   "number": "4.1.6",
-  "title": "",
-  "body": " Let be a signed measure on a measurable space . If and are disjoint measurable sets satisfying for disjoint sets and , with positive and negative, we call and a Hahn decomposition for . Hahn decomposition  "
+  "title": "Hahn Decomposition Theorem.",
+  "body": " Hahn Decomposition Theorem   Let be a signed measure on a measurable space . Then there are disjoint measurable subsets such that , is positive, and is negative.  If are also disjoint measurable sets with positive, negative, and , then the sets are null sets. The set is called the symmetric difference of and .  Hahn Decomposition Theorem     Assume that does not take the value (replace with if it does). Let be the collection of all positive sets. Note that is non-empty since . Let We will show that is attained, i.e. is the maximum value in . Choose a sequence such that Let . Note that is positive by . Thus . Also, since is positive, , and Taking the limit as , we get . Thus .  Let . We will show that is negative. If is not negative, then there is a measurable set with . Since, by assumption, does not take the value , we have It follows from that there is a positive set with . The set is positive with This contradicts the definition of . Thus is negative.  Suppose and are another pair of disjoint measurable sets, with , positive, and negative. Then and . Hence is both positive and negative. Thus, is a null set. Similar arguments show that , , and are null sets.   "
 },
 {
-  "id": "real-analysis-4-5-3-25",
+  "id": "sec-signed-measure-10",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-25",
+  "url": "sec-signed-measure.html#sec-signed-measure-10",
   "type": "Definition",
   "number": "4.1.7",
   "title": "",
-  "body": " Let be a measurable space, and let and be two measures on . The measures and are mutually singular , singular measures mutually singular denoted , if there are disjoint measurable sets with satisfying , , , and .  "
+  "body": "  Let be a signed measure on a measurable space . If and are disjoint measurable sets satisfying for disjoint sets and , with positive and negative, we call and a Hahn decomposition for . Hahn decomposition    "
 },
 {
-  "id": "real-analysis-4-5-3-26",
+  "id": "sec-signed-measure-12",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-26",
-  "type": "Example",
+  "url": "sec-signed-measure.html#sec-signed-measure-12",
+  "type": "Definition",
   "number": "4.1.8",
+  "title": "",
+  "body": "   mutually singular measures    Let be a measurable space, and let and be two measures on . The measures and are mutually singular , denoted , if there are disjoint measurable sets with satisfying , , , and . singular measures mutually singular    "
+},
+{
+  "id": "sec-signed-measure-13",
+  "level": "2",
+  "url": "sec-signed-measure.html#sec-signed-measure-13",
+  "type": "Example",
+  "number": "4.1.9",
   "title": "",
   "body": " Let be the Lebesgue measure on the Borel sets of , and let be the Borel measure on the Borel sets of whose cumulative distribution function is the Cantor-Lebesgue function (see ). It follows from that and are mutually singular.  "
 },
 {
   "id": "thm-jordan-decomp-measure",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#thm-jordan-decomp-measure",
+  "url": "sec-signed-measure.html#thm-jordan-decomp-measure",
   "type": "Theorem",
-  "number": "4.1.9",
-  "title": "The Jordan Decomposition Theorem.",
-  "body": " The Jordan Decomposition Theorem  Jordan Decomposition Theorem for signed measures Let be a signed measure on a measurable space . Then there are mutually orthogonal measures on and on such that , i.e.   for all .  Further, and are unique mutually orthogonal measures satisfying .  "
-},
-{
-  "id": "real-analysis-4-5-3-28",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-28",
-  "type": "Proof",
-  "number": "4.1.3",
-  "title": "",
-  "body": " Let be a Hahn decomposition for , with positive and negative. For each , define   That is a measure follows from . That is a measure can be proved similarly. That and are mutually orthogonal follows from the fact that and are disjoint.  Suppose now that and are mutually orthogonal measures satisfying . Since and are mutually orthogonal, there are disjoint measurable sets and satisfying , , , , and . We will show that and give a Hahn decomposition for . That is, we will show that is -positive and is -negative. Take any . Since , , thus   Similarly, if , then and so   Since and are a Hahn decompoistion for , and and are a Hahn decompoistion for , it follows from that and are null sets. Take any , then   and   and so   Take any . Then   where the penultimate equality comes from . Hence . We can show that in a similar fashion.  "
-},
-{
-  "id": "real-analysis-4-5-3-29",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-29",
-  "type": "Definition",
   "number": "4.1.10",
-  "title": "",
-  "body": " Let be a signed measure on a measurable space . Let and be mutually orthogonal measures on satisfying   We call and the Jordan decomposition of . Jordan decomposition of a signed measure  We call the measure the positive part of , and call the measure the negative part of .  "
+  "title": "The Jordan Decomposition Theorem.",
+  "body": " The Jordan Decomposition Theorem   Let be a signed measure on a measurable space . Then there are mutually orthogonal measures on and on such that , i.e. for all .  Further, and are unique mutually orthogonal measures satisfying . Jordan Decomposition Theorem for signed measures     Let be a Hahn decomposition for , with positive and negative. For each , define   That is a measure follows from . That is a measure can be proved similarly. That and are mutually orthogonal follows from the fact that and are disjoint.  Suppose now that and are mutually orthogonal measures satisfying . Since and are mutually orthogonal, there are disjoint measurable sets and satisfying , , , , and . We will show that and give a Hahn decomposition for . That is, we will show that is -positive and is -negative. Take any . Since , , thus Similarly, if , then and so Since and are a Hahn decompoistion for , and and are a Hahn decompoistion for , it follows from that and are null sets. Take any , then and and so Take any . Then where the penultimate equality comes from . Hence . We can show that in a similar fashion.   "
 },
 {
-  "id": "real-analysis-4-5-3-30",
+  "id": "def-jordan-decomp",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-30",
+  "url": "sec-signed-measure.html#def-jordan-decomp",
   "type": "Definition",
   "number": "4.1.11",
   "title": "",
-  "body": " Let be a signed measure and let be the Jordan decomposition of . The measure defined by   is called the measure of total variation of . measure of total variation The value is the total variation of . total variation of a signed measure. When is finite then is of bounded variation . bounded variation for a signed measure  "
+  "body": "   Jordan decomposition of a signed measure    Let be a signed measure on a measurable space . Let and be mutually orthogonal measures on satisfying We call and the Jordan decomposition of . We call the measure the positive part of , and call the measure the negative part of . Jordan decomposition of a signed measure    "
 },
 {
-  "id": "real-analysis-4-5-3-31",
+  "id": "sec-signed-measure-16",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-31",
-  "type": "Remark",
+  "url": "sec-signed-measure.html#sec-signed-measure-16",
+  "type": "Definition",
   "number": "4.1.12",
   "title": "",
-  "body": " Let be a signed measure. Then , measure of total variation of , is indeed a measure by .  It is worth noting that, when is a signed measure, in general it is not true that   for a -measurable set. That is, the placement of the lines is important.  In general, there is no reason to expect the function to be a measure. Can you see why not?  "
+  "body": "   measure of total variation of a signed measure     total variation of a signed measure    Let be a signed measure and let be the Jordan decomposition of . The measure defined by is called the measure of total variation of . measure of total variation The value is the total variation of . When is finite then is of bounded variation . bounded variation for a signed measure  total variation of a signed measure.    "
+},
+{
+  "id": "sec-signed-measure-17",
+  "level": "2",
+  "url": "sec-signed-measure.html#sec-signed-measure-17",
+  "type": "Remark",
+  "number": "4.1.13",
+  "title": "",
+  "body": " Let be a signed measure. Then , measure of total variation of , is indeed a measure by .  It is worth noting that, when is a signed measure, in general it is not true that for a -measurable set. That is, the placement of the lines is important.  In general, there is no reason to expect the function to be a measure. Can you see why not?  "
 },
 {
   "id": "prop-bv-signed-meas-as-sup",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#prop-bv-signed-meas-as-sup",
+  "url": "sec-signed-measure.html#prop-bv-signed-meas-as-sup",
   "type": "Proposition",
-  "number": "4.1.13",
+  "number": "4.1.14",
   "title": "",
-  "body": " Let be a signed measure on a measurable space . Then the total variation is given by   "
+  "body": "  Let be a signed measure on a measurable space . Then the total variation is given by    "
 },
 {
   "id": "prop-total-variation",
   "level": "2",
-  "url": "real-analysis-4-5-3.html#prop-total-variation",
+  "url": "sec-signed-measure.html#prop-total-variation",
   "type": "Proposition",
-  "number": "4.1.14",
+  "number": "4.1.15",
   "title": "",
-  "body": " Let be a signed measure on a measurable space with finite total variation . Suppose and are measures on satisfying . Then .  Further, if and only if and .  "
-},
-{
-  "id": "real-analysis-4-5-3-36",
-  "level": "2",
-  "url": "real-analysis-4-5-3.html#real-analysis-4-5-3-36",
-  "type": "Proof",
-  "number": "4.1.4",
-  "title": "",
-  "body": " Let be a Hahn decomposition for so that   and   Take any measurable , then   Similarly, if is measurable then   We have then that   Now suppose that . If or then, by the same reasoning as earlier in this proof,   Thus and .  Take any measurable . We have shown that . If then   As , it follows that for all measurable .  Suppose satisfies . Then   Hence, if , then .  We can similarly show that for all measurable , and that if then .  Thus, if or , we have   This contradicts the definition of the total variation . Hence and .  "
+  "body": "  Let be a signed measure on a measurable space with finite total variation . Suppose and are measures on satisfying . Then .  Further, if and only if and .    Let be a Hahn decomposition for so that and Take any measurable , then Similarly, if is measurable then We have then that  Now suppose that . If or then, by the same reasoning as earlier in this proof, Thus and .  Take any measurable . We have shown that . If then As , it follows that for all measurable .  Suppose satisfies . Then Hence, if , then .  We can similarly show that for all measurable , and that if then .  Thus, if or , we have This contradicts the definition of the total variation . Hence and .   "
 },
 {
   "id": "sec-signed-borel",
@@ -1222,7 +1213,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.2",
   "title": "Signed Borel measures on <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span> and functions of bounded variation",
-  "body": " Signed Borel measures on and functions of bounded variation  In Section~\\ref{sec: borel on R} we studied the Borel measures on closed intervals in . In particular, we showed that if is a Borel measure on closed interval then the cumulative distribution function for is non-negative, increasing, and right-continuous, Conversely, if is a non-negative, increasing, right-continuous function on then uniquely determines a Borel measure on whose cumulative distribution function is , . In this section we want to study the relationship between signed Borel measures on closed intervals and functionso on .  We begin with a definition to formalize our language.   Let be a topological space and let be the -algebra of Borel sets of . A signed measure on is a signed Borel measure signed measure signed Borel measure if for all compact sets .    If is a signed Borel measure on and is compact, then . It follows that . In particular, if is a signed Borel measure on the closed interval then is of bounded variation.   When studying Borel measures on , the functions that arose were increasing. For signed measures, the functions that we will need to study are functions of bounded variation. We define the necessary terms now.   Let be a function. If is a partition of the variation of over variation is   The total variation of total variation of a function is defined as   When then is of bounded variation . bounded variation for a function   The next example, whilst simple, is very important.   If is monotone (i.e. is increasing or decreasing), then is of bounded variation. Indeed, if is increasing and is any partition of then   Thus, . If is decreasing then we can show that    Intuitively, the total variation of a function can be seen as a measure of the oscillation of : the more oscillation the higher the value of . Monotone functions, as in do not oscillate and so have bounded variation. To find examples of functions which are not of bounded variation we look at functions with a lot of oscillation.   Define on by   Then is not of bounded variation. See .    Define on by   Then is not of bounded variation. See .   Note that shows that there are continuous functions which are not of bounded variation, see . However the continuous functions which are of bounded variation are bountiful, as the next proposition shows.   Let be a closed interval in . If are functions of bounded variation then   is of bounded variation for all .    Let be a partition of . Then   Thus   Thus is of bounded variation.  Take any scalar . Then   Thus . The result follows.   Knowing that increasing functions have bounded variation ( ) and that the functions of bounded variation form a vector space ( ), gives many functions which are of bounded variation. Examples include the sine function ( ), the cosine function ( ), and polynomials ( ).  The following lemma gives a partial relationship between Borel signed measures and functions of bounded variation.   Let be a Borel signed measure on the closed interval . Define a function   Then is the difference of two increasing functions right-continuous. In particular, is right-continuous and of bounded variation.    Let be the Jordan decomposition of . Let be the cumulative distribution of , and let be the cumulative distribution function for . Then   By , and are increasing, right-continuous functions. By  and are of bounded variation, and so is of bounded variation by .    An alternate way to prove is of bounded variation in would be to invoke directly.   To complete the picture of the relationship between functions of bounded variation and Borel measures of bounded variation, we need another description of functions of functions of bounded variation.  Let be a function of bounded variation on . Then, for each , the restriction of to is also of bounded variation. Define the function on by   We call the function of total variation for . function of total variation It is straightforward to see that is a non-negative, increasing function.   Jordan Decomposition Theorem  Jordan Decomposition Theorem for functions Let be a function of bounded variation on the interval . Then there are increasing functions on such that .    Take . Note that   Thus   and   Hence, the functions and are increasing functions. Let   Then , and so is the difference of two increasing functions.    Let be a function of bounded variation. Let and . Then is called the Jordan decomposition of . Jordan decomposition of a function    Note that for a function of bounded variation   Thus, the total variation of is given by the sum of the total variations of the Jordan decomposition of .  Recall that for a signed measure , the total variation of is given by , where is the Jordan decomposition of .    Let be a function of bounded variation on a closed interval . If is a right-continuous function then is right-continuous. In particular, there are right-continuous increasing functions such that .    Suppose that is right-continuous. Take . Let . Since is increasing, . We want to show that .  Fix . By the right-continuity of and definition of , there exists such that   and   when .  Fix with . Choose a partition   so that   Thus,   Now take a partition of ,   such that   Then   Noting that is a partition of , we have that   Hence , or . As this holds for all , it follows that and so is right-continuous.  The Jordan decomposition of ,   shows that is the difference of two increasing, right-continuous functions.    Let be a signed Borel measure on be a signed Borel measure on . Then is a right-continuous function of bounded variation.  Conversely, if is a right-continuous function of bounded variation on , then there is a unique Borel signed measure on such that for all .    The first part of the theorem is dealt with in .  Let be a right-continuous function of bounded variation on . Let be the Jordan decomposition of . By , and are right-continuous. By , there are Borel measures and on so that is the cumulative distribution function for and is the cumulative distribution function for . Let . Then is a signed Borel measure on , and for any    gives a correspondence between right-continuous functions of bounded variation, and signed Borel measures on . We have a Jordan decomposition for functions of bounded variation, and we have a Jordan decomposition for signed measures. We will now show that the correspondence given in sends the Jordan decomposition for functions to the Jordan decomposition for the signed measures, and vice versa.   Let be a right-continuous function of bounded variation on the closed interval , and let be the signed Borel measure satisfying from . Let be the Jordan decomposition for and be the Jordan decomposition for . Then is the cumulative distribution function for and is the cumulative distribution function for .  Conversely, if is a signed measure on with Jordan decomposition . If is the cumulative distribution function for and is the cumulative distribution function for , then, up to the addition of a constant to and , is the Jordan decomposition of the function .  In both cases, we get that the total variation of is equal to the total variation of , i.e. ,    Let be a right-continuous function of bounded variation and let be the signed Borel measure satisfying (which exists by ). Let be the Jordan decomposition of , and be the Jordan decomposition of . By , there are Borel measures and on so that and for intervals .  Note that and so, by ,   Let be a partition of , by ,   Thus . Hence .  Let be a signed Borel measure on , and define for . Then is right-continuous and of bounded variation by , Let be the Jordan decomposition of . Define functions and on by and . By , and are increasing, right continuous functions. Since , it follows that . Let and be the Jordan decomposition of . By , there are Borel measures and whose cumulative distribution functions are and , respectively.  Note that . By for each   By , for all , and thus   We have now,   Hence   where . It follows that    "
+  "body": " Signed Borel measures on and functions of bounded variation  In we studied the Borel measures on closed intervals in . In particular, we showed that if is a Borel measure on closed interval then the cumulative distribution function for is non-negative, increasing, and right-continuous, Conversely, if is a non-negative, increasing, right-continuous function on then uniquely determines a Borel measure on whose cumulative distribution function is , . In this section we want to study the relationship between signed Borel measures on closed intervals and functions on .  We begin with a definition to formalize our language.    Let be a topological space and let be the -algebra of Borel sets of . A signed measure on is a signed Borel measure if for all compact sets . signed measure signed Borel measure      If is a signed Borel measure on and is compact, then . It follows that . In particular, if is a signed Borel measure on the closed interval then is of bounded variation.   When studying Borel measures on , the functions that arose were increasing. For signed measures, the functions that we will need to study are functions of bounded variation. We define the necessary terms now.     The variation of a function over a partition     The total variation of a function    Let be a function. If is a partition of the variation of over variation is The total variation of is defined as When then is of bounded variation . total variation of a function  bounded variation for a function     The next example, whilst simple, is very important.   If is monotone (i.e. is increasing or decreasing), then is of bounded variation. Indeed, if is increasing and is any partition of then Thus, . If is decreasing then we can show that    Intuitively, the total variation of a function can be seen as a measure of the oscillation of : the more oscillation the higher the value of . Monotone functions, as in do not oscillate and so have bounded variation. To find examples of functions which are not of bounded variation we look at functions with a lot of oscillation.   Define on by Then is not of bounded variation. See .    Define on by Then is not of bounded variation. See .   Note that shows that there are continuous functions which are not of bounded variation, see . However the continuous functions which are of bounded variation are bountiful, as the next proposition shows.    Let be a closed interval in . If are functions of bounded variation then is of bounded variation for all .    Let be a partition of . Then Thus Thus is of bounded variation.  Take any scalar . Then Thus . The result follows.    Knowing that increasing functions have bounded variation ( ) and that the functions of bounded variation form a vector space ( ), gives many functions which are of bounded variation. Examples include the sine function ( ), the cosine function ( ), and polynomials ( ).  The following lemma gives a partial relationship between Borel signed measures and functions of bounded variation.    Let be a Borel signed measure on the closed interval . Define a function Then is the difference of two increasing functions right-continuous. In particular, is right-continuous and of bounded variation.    Let be the Jordan decomposition of . Let be the cumulative distribution of , and let be the cumulative distribution function for . Then By , and are increasing, right-continuous functions. By  and are of bounded variation, and so is of bounded variation by .     An alternate way to prove is of bounded variation in would be to invoke directly.   To complete the picture of the relationship between functions of bounded variation and Borel measures of bounded variation, we need another description of functions of functions of bounded variation.  Let be a function of bounded variation on . Then, for each , the restriction of to is also of bounded variation. Define the function on by We call the function of total variation for . It is straightforward to see that is a non-negative, increasing function. function of total variation   Jordan Decomposition Theorem   Let be a function of bounded variation on the interval . Then there are increasing functions on such that . Jordan Decomposition Theorem for functions     Take . Note that Thus and Hence, the functions and are increasing functions. Let Then , and so is the difference of two increasing functions.      Let be a function of bounded variation. Let and . Then is called the Jordan decomposition of . Jordan decomposition of a function      Note that for a function of bounded variation Thus, the total variation of is given by the sum of the total variations of the Jordan decomposition of .  Recall that for a signed measure , the total variation of is given by , where is the Jordan decomposition of .     Let be a function of bounded variation on a closed interval . If is a right-continuous function then is right-continuous. In particular, there are right-continuous increasing functions such that .    Suppose that is right-continuous. Take . Let . Since is increasing, . We want to show that .  Fix . By the right-continuity of and definition of , there exists such that and when . Fix with . Choose a partition so that Thus, Now take a partition of , such that Then Noting that is a partition of , we have that Hence , or . As this holds for all , it follows that and so is right-continuous.  The Jordan decomposition of , shows that is the difference of two increasing, right-continuous functions.      Let be a signed Borel measure on be a signed Borel measure on . Then is a right-continuous function of bounded variation.  Conversely, if is a right-continuous function of bounded variation on , then there is a unique Borel signed measure on such that for all .    The first part of the theorem is dealt with in .  Let be a right-continuous function of bounded variation on . Let be the Jordan decomposition of . By , and are right-continuous. By , there are Borel measures and on so that is the cumulative distribution function for and is the cumulative distribution function for . Let . Then is a signed Borel measure on , and for any     gives a correspondence between right-continuous functions of bounded variation, and signed Borel measures on . We have a Jordan decomposition for functions of bounded variation, and we have a Jordan decomposition for signed measures. We will now show that the correspondence given in sends the Jordan decomposition for functions to the Jordan decomposition for the signed measures, and vice versa.    Let be a right-continuous function of bounded variation on the closed interval , and let be the signed Borel measure satisfying from . Let be the Jordan decomposition for and be the Jordan decomposition for . Then is the cumulative distribution function for and is the cumulative distribution function for .  Conversely, if is a signed measure on with Jordan decomposition . If is the cumulative distribution function for and is the cumulative distribution function for , then, up to the addition of a constant to and , is the Jordan decomposition of the function .  In both cases, we get that the total variation of is equal to the total variation of , i.e. .    Let be a right-continuous function of bounded variation and let be the signed Borel measure satisfying (which exists by ). Let be the Jordan decomposition of , and be the Jordan decomposition of . By , there are Borel measures and on so that and for intervals .  Note that and so, by , Let be a partition of , by , Thus . Hence .  Let be a signed Borel measure on , and define for . Then is right-continuous and of bounded variation by , Let be the Jordan decomposition of . Define functions and on by and . By , and are increasing, right continuous functions. Since , it follows that . Let and be the Jordan decomposition of . By , there are Borel measures and whose cumulative distribution functions are and , respectively.  Note that . By for each  By , for all , and thus We have now, Hence where . It follows that     "
 },
 {
   "id": "sec-signed-borel-4",
@@ -1231,7 +1222,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "4.2.1",
   "title": "",
-  "body": " Let be a topological space and let be the -algebra of Borel sets of . A signed measure on is a signed Borel measure signed measure signed Borel measure if for all compact sets .  "
+  "body": "  Let be a topological space and let be the -algebra of Borel sets of . A signed measure on is a signed Borel measure if for all compact sets . signed measure signed Borel measure    "
 },
 {
   "id": "sec-signed-borel-5",
@@ -1249,7 +1240,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "4.2.3",
   "title": "",
-  "body": " Let be a function. If is a partition of the variation of over variation is   The total variation of total variation of a function is defined as   When then is of bounded variation . bounded variation for a function  "
+  "body": "   The variation of a function over a partition     The total variation of a function    Let be a function. If is a partition of the variation of over variation is The total variation of is defined as When then is of bounded variation . total variation of a function  bounded variation for a function    "
 },
 {
   "id": "ex-inc-has-bounded-variation",
@@ -1258,7 +1249,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.4",
   "title": "",
-  "body": " If is monotone (i.e. is increasing or decreasing), then is of bounded variation. Indeed, if is increasing and is any partition of then   Thus, . If is decreasing then we can show that   "
+  "body": " If is monotone (i.e. is increasing or decreasing), then is of bounded variation. Indeed, if is increasing and is any partition of then Thus, . If is decreasing then we can show that   "
 },
 {
   "id": "ex-not-tv-1",
@@ -1267,7 +1258,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.5",
   "title": "",
-  "body": " Define on by   Then is not of bounded variation. See .  "
+  "body": " Define on by Then is not of bounded variation. See .  "
 },
 {
   "id": "ex-not-tv-2",
@@ -1276,7 +1267,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.2.6",
   "title": "",
-  "body": " Define on by   Then is not of bounded variation. See .  "
+  "body": " Define on by Then is not of bounded variation. See .  "
 },
 {
   "id": "prop-bv-vec-sp",
@@ -1285,16 +1276,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "4.2.7",
   "title": "",
-  "body": " Let be a closed interval in . If are functions of bounded variation then   is of bounded variation for all .  "
-},
-{
-  "id": "sec-signed-borel-15",
-  "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-15",
-  "type": "Proof",
-  "number": "4.2.1",
-  "title": "",
-  "body": " Let be a partition of . Then   Thus   Thus is of bounded variation.  Take any scalar . Then   Thus . The result follows.  "
+  "body": "  Let be a closed interval in . If are functions of bounded variation then is of bounded variation for all .    Let be a partition of . Then Thus Thus is of bounded variation.  Take any scalar . Then Thus . The result follows.   "
 },
 {
   "id": "lem-signed-meas-to-bv",
@@ -1303,25 +1285,25 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "4.2.8",
   "title": "",
-  "body": " Let be a Borel signed measure on the closed interval . Define a function   Then is the difference of two increasing functions right-continuous. In particular, is right-continuous and of bounded variation.  "
+  "body": "  Let be a Borel signed measure on the closed interval . Define a function Then is the difference of two increasing functions right-continuous. In particular, is right-continuous and of bounded variation.    Let be the Jordan decomposition of . Let be the cumulative distribution of , and let be the cumulative distribution function for . Then By , and are increasing, right-continuous functions. By  and are of bounded variation, and so is of bounded variation by .   "
 },
 {
-  "id": "sec-signed-borel-19",
+  "id": "sec-signed-borel-18",
   "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-19",
-  "type": "Proof",
-  "number": "4.2.2",
+  "url": "sec-signed-borel.html#sec-signed-borel-18",
+  "type": "Remark",
+  "number": "4.2.9",
   "title": "",
-  "body": " Let be the Jordan decomposition of . Let be the cumulative distribution of , and let be the cumulative distribution function for . Then   By , and are increasing, right-continuous functions. By  and are of bounded variation, and so is of bounded variation by .  "
+  "body": " An alternate way to prove is of bounded variation in would be to invoke directly.  "
 },
 {
   "id": "sec-signed-borel-20",
   "level": "2",
   "url": "sec-signed-borel.html#sec-signed-borel-20",
-  "type": "Remark",
-  "number": "4.2.9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": " An alternate way to prove is of bounded variation in would be to invoke directly.  "
+  "body": "function of total variation for "
 },
 {
   "id": "thm-jordan-decomp-function",
@@ -1330,34 +1312,25 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "4.2.10",
   "title": "Jordan Decomposition Theorem.",
-  "body": " Jordan Decomposition Theorem  Jordan Decomposition Theorem for functions Let be a function of bounded variation on the interval . Then there are increasing functions on such that .  "
+  "body": " Jordan Decomposition Theorem   Let be a function of bounded variation on the interval . Then there are increasing functions on such that . Jordan Decomposition Theorem for functions     Take . Note that Thus and Hence, the functions and are increasing functions. Let Then , and so is the difference of two increasing functions.   "
 },
 {
-  "id": "sec-signed-borel-26",
+  "id": "sec-signed-borel-22",
   "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-26",
-  "type": "Proof",
-  "number": "4.2.3",
-  "title": "",
-  "body": " Take . Note that   Thus   and   Hence, the functions and are increasing functions. Let   Then , and so is the difference of two increasing functions.  "
-},
-{
-  "id": "sec-signed-borel-27",
-  "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-27",
+  "url": "sec-signed-borel.html#sec-signed-borel-22",
   "type": "Definition",
   "number": "4.2.11",
   "title": "",
-  "body": " Let be a function of bounded variation. Let and . Then is called the Jordan decomposition of . Jordan decomposition of a function  "
+  "body": "  Let be a function of bounded variation. Let and . Then is called the Jordan decomposition of . Jordan decomposition of a function    "
 },
 {
-  "id": "sec-signed-borel-28",
+  "id": "sec-signed-borel-23",
   "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-28",
+  "url": "sec-signed-borel.html#sec-signed-borel-23",
   "type": "Remark",
   "number": "4.2.12",
   "title": "",
-  "body": " Note that for a function of bounded variation   Thus, the total variation of is given by the sum of the total variations of the Jordan decomposition of .  Recall that for a signed measure , the total variation of is given by , where is the Jordan decomposition of .  "
+  "body": " Note that for a function of bounded variation Thus, the total variation of is given by the sum of the total variations of the Jordan decomposition of .  Recall that for a signed measure , the total variation of is given by , where is the Jordan decomposition of .  "
 },
 {
   "id": "prop-total-var-cont",
@@ -1366,16 +1339,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "4.2.13",
   "title": "",
-  "body": " Let be a function of bounded variation on a closed interval . If is a right-continuous function then is right-continuous. In particular, there are right-continuous increasing functions such that .  "
-},
-{
-  "id": "sec-signed-borel-30",
-  "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-30",
-  "type": "Proof",
-  "number": "4.2.4",
-  "title": "",
-  "body": " Suppose that is right-continuous. Take . Let . Since is increasing, . We want to show that .  Fix . By the right-continuity of and definition of , there exists such that   and   when .  Fix with . Choose a partition   so that   Thus,   Now take a partition of ,   such that   Then   Noting that is a partition of , we have that   Hence , or . As this holds for all , it follows that and so is right-continuous.  The Jordan decomposition of ,   shows that is the difference of two increasing, right-continuous functions.  "
+  "body": "  Let be a function of bounded variation on a closed interval . If is a right-continuous function then is right-continuous. In particular, there are right-continuous increasing functions such that .    Suppose that is right-continuous. Take . Let . Since is increasing, . We want to show that .  Fix . By the right-continuity of and definition of , there exists such that and when . Fix with . Choose a partition so that Thus, Now take a partition of , such that Then Noting that is a partition of , we have that Hence , or . As this holds for all , it follows that and so is right-continuous.  The Jordan decomposition of , shows that is the difference of two increasing, right-continuous functions.   "
 },
 {
   "id": "thm-signed-meas-1-1-bv",
@@ -1384,16 +1348,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "4.2.14",
   "title": "",
-  "body": " Let be a signed Borel measure on be a signed Borel measure on . Then is a right-continuous function of bounded variation.  Conversely, if is a right-continuous function of bounded variation on , then there is a unique Borel signed measure on such that for all .  "
-},
-{
-  "id": "sec-signed-borel-32",
-  "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-32",
-  "type": "Proof",
-  "number": "4.2.5",
-  "title": "",
-  "body": " The first part of the theorem is dealt with in .  Let be a right-continuous function of bounded variation on . Let be the Jordan decomposition of . By , and are right-continuous. By , there are Borel measures and on so that is the cumulative distribution function for and is the cumulative distribution function for . Let . Then is a signed Borel measure on , and for any   "
+  "body": "  Let be a signed Borel measure on be a signed Borel measure on . Then is a right-continuous function of bounded variation.  Conversely, if is a right-continuous function of bounded variation on , then there is a unique Borel signed measure on such that for all .    The first part of the theorem is dealt with in .  Let be a right-continuous function of bounded variation on . Let be the Jordan decomposition of . By , and are right-continuous. By , there are Borel measures and on so that is the cumulative distribution function for and is the cumulative distribution function for . Let . Then is a signed Borel measure on , and for any    "
 },
 {
   "id": "prop-jordan-decomp-measure-and-function",
@@ -1402,178 +1357,178 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "4.2.15",
   "title": "",
-  "body": " Let be a right-continuous function of bounded variation on the closed interval , and let be the signed Borel measure satisfying from . Let be the Jordan decomposition for and be the Jordan decomposition for . Then is the cumulative distribution function for and is the cumulative distribution function for .  Conversely, if is a signed measure on with Jordan decomposition . If is the cumulative distribution function for and is the cumulative distribution function for , then, up to the addition of a constant to and , is the Jordan decomposition of the function .  In both cases, we get that the total variation of is equal to the total variation of , i.e. ,  "
+  "body": "  Let be a right-continuous function of bounded variation on the closed interval , and let be the signed Borel measure satisfying from . Let be the Jordan decomposition for and be the Jordan decomposition for . Then is the cumulative distribution function for and is the cumulative distribution function for .  Conversely, if is a signed measure on with Jordan decomposition . If is the cumulative distribution function for and is the cumulative distribution function for , then, up to the addition of a constant to and , is the Jordan decomposition of the function .  In both cases, we get that the total variation of is equal to the total variation of , i.e. .    Let be a right-continuous function of bounded variation and let be the signed Borel measure satisfying (which exists by ). Let be the Jordan decomposition of , and be the Jordan decomposition of . By , there are Borel measures and on so that and for intervals .  Note that and so, by , Let be a partition of , by , Thus . Hence .  Let be a signed Borel measure on , and define for . Then is right-continuous and of bounded variation by , Let be the Jordan decomposition of . Define functions and on by and . By , and are increasing, right continuous functions. Since , it follows that . Let and be the Jordan decomposition of . By , there are Borel measures and whose cumulative distribution functions are and , respectively.  Note that . By for each  By , for all , and thus We have now, Hence where . It follows that    "
 },
 {
-  "id": "sec-signed-borel-35",
-  "level": "2",
-  "url": "sec-signed-borel.html#sec-signed-borel-35",
-  "type": "Proof",
-  "number": "4.2.6",
-  "title": "",
-  "body": " Let be a right-continuous function of bounded variation and let be the signed Borel measure satisfying (which exists by ). Let be the Jordan decomposition of , and be the Jordan decomposition of . By , there are Borel measures and on so that and for intervals .  Note that and so, by ,   Let be a partition of , by ,   Thus . Hence .  Let be a signed Borel measure on , and define for . Then is right-continuous and of bounded variation by , Let be the Jordan decomposition of . Define functions and on by and . By , and are increasing, right continuous functions. Since , it follows that . Let and be the Jordan decomposition of . By , there are Borel measures and whose cumulative distribution functions are and , respectively.  Note that . By for each   By , for all , and thus   We have now,   Hence   where . It follows that   "
-},
-{
-  "id": "real-analysis-4-5-5",
+  "id": "chap-signed-measures-5",
   "level": "1",
-  "url": "real-analysis-4-5-5.html",
+  "url": "chap-signed-measures-5.html",
   "type": "Exercises",
   "number": "4.3",
   "title": "Exercises",
-  "body": "  Let and be measures on a measurable space .   For a real number , define on by for all . Show that is a measure on .   Define on by  Show that is a measure on . We denote by .       Suppose and are measures on a measurable space and (i.e. for all ). Define on by    Show that is a measure on .   Show that (where is defined by ).   Show that if is -finite then the is the unique measure satisfying . (Hint: Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.)      Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .    Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by   for all and all ; and define scalar multiplication on by   for all , , and   Show that for all .   Show that for all and .   Show that is a vector space under the given operations of addition and scalar multiplication.      Let be a signed measure on a measurable space . Suppose with . Show that if , then .    Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.    Let be a signed measure on a measurable space . and let be a positive set. Define a function on by for all . Show that is a measure on .    Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by     Let be a measurable space and let the vector space of finite signed measures on , see . For , define by   Show that defines a norm on . norm norm on the space of finite signed measures That is, show that   if and only if , the zero measure in ;   for all ; and   for all . I.e. show that satisfies the triangle inequality . triangle inequality for norms       Let be a continuous function on a closed interval . For a partition of define as and define the arc length  of on as arc length Show that is of bounded variation if and only if .     Define on by   Show that is not of bounded variation.    Define on by   Show that is continuous. Show that is not of bounded variation.    Let for . Write as the difference of two increasing, continuous functions.    Let for . Write as the difference of two increasing, continuous functions.    Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.    Let be a function of bounded variation on an interval . Show that, if , then     Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that   Show that   if and only if there is a constant such that and . (HINT: Compare this question to ).   "
+  "body": "   Let and be measures on a measurable space .     For a real number , define on by for all . Show that is a measure on .      Define on by Show that is a measure on . We denote by .       Suppose and are measures on a measurable space and (i.e. for all ). Define on by      Show that is a measure on .      Show that (where is defined by ).      Show that if is -finite then the is the unique measure satisfying .    Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.       Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .      Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by for all and all ; and define scalar multiplication on by for all , , and      Show that for all .      Show that for all and .      Show that is a vector space under the given operations of addition and scalar multiplication.       Let be a signed measure on a measurable space . Suppose with . Show that if , then .      Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.      Let be a signed measure on a measurable space , and let be a positive set. Define a function on by for all . Show that is a measure on .      Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by       Let be a measurable space and let the vector space of finite signed measures on , see . For , define by Show that defines a norm on . norm norm on the space of finite signed measures That is, show that      if and only if , the zero measure in ;       for all ; and       for all . I.e. show that satisfies the triangle inequality .  triangle inequality for norms        Let be a Lipschitz function on a closed interval . That is, assume there there is a constant such that for all . Show that is of bounded variation on .      Let be a continuous function on a closed interval . For a partition of define as and define the arc length  of on as arc length Show that is of bounded variation if and only if .      Define on by Show that is not of bounded variation.      Define on by Show that is continuous. Show that is not of bounded variation.      Let for . Write as the difference of two increasing, continuous functions.      Let for . Write as the difference of two increasing, continuous functions.      Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.      Let be a function of bounded variation on an interval . Show that, if , then       Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that Show that if and only if there is a constant such that and .    Compare this question to .    "
 },
 {
   "id": "exer-measures-vec-space",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-measures-vec-space",
+  "url": "chap-signed-measures-5.html#exer-measures-vec-space",
   "type": "Exercise",
   "number": "4.3.1",
   "title": "",
-  "body": " Let and be measures on a measurable space .   For a real number , define on by for all . Show that is a measure on .   Define on by  Show that is a measure on . We denote by .     "
+  "body": "  Let and be measures on a measurable space .     For a real number , define on by for all . Show that is a measure on .      Define on by Show that is a measure on . We denote by .    "
 },
 {
-  "id": "real-analysis-4-5-5-2",
+  "id": "chap-signed-measures-5-2",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-2",
+  "url": "chap-signed-measures-5.html#chap-signed-measures-5-2",
   "type": "Exercise",
   "number": "4.3.2",
   "title": "",
-  "body": " Suppose and are measures on a measurable space and (i.e. for all ). Define on by    Show that is a measure on .   Show that (where is defined by ).   Show that if is -finite then the is the unique measure satisfying . (Hint: Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.)    "
+  "body": "  Suppose and are measures on a measurable space and (i.e. for all ). Define on by      Show that is a measure on .      Show that (where is defined by ).      Show that if is -finite then the is the unique measure satisfying .    Assume there are two such measures and and show they have to be equal on sets with . Then move to general measurable sets.    "
 },
 {
   "id": "exer-diff-of-measures",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-diff-of-measures",
+  "url": "chap-signed-measures-5.html#exer-diff-of-measures",
   "type": "Exercise",
   "number": "4.3.3",
   "title": "",
-  "body": " Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .  "
+  "body": "  Let be a measurable space. Let and be measures on . Further assume that one or both of and are finite measures. Define , i.e. for all . Show that is a signed measure on .   "
 },
 {
   "id": "exer-signed-meas-vec-sp",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-signed-meas-vec-sp",
+  "url": "chap-signed-measures-5.html#exer-signed-meas-vec-sp",
   "type": "Exercise",
   "number": "4.3.4",
   "title": "",
-  "body": " Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by   for all and all ; and define scalar multiplication on by   for all , , and   Show that for all .   Show that for all and .   Show that is a vector space under the given operations of addition and scalar multiplication.    "
+  "body": "  Let be a measurable space. Let be the set of all finite signed measures on . Define addition on by for all and all ; and define scalar multiplication on by for all , , and      Show that for all .      Show that for all and .      Show that is a vector space under the given operations of addition and scalar multiplication.    "
 },
 {
   "id": "exer-finite-signed-measures",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-finite-signed-measures",
+  "url": "chap-signed-measures-5.html#exer-finite-signed-measures",
   "type": "Exercise",
   "number": "4.3.5",
   "title": "",
-  "body": " Let be a signed measure on a measurable space . Suppose with . Show that if , then .  "
+  "body": "  Let be a signed measure on a measurable space . Suppose with . Show that if , then .   "
 },
 {
   "id": "exer-positive-union",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-positive-union",
+  "url": "chap-signed-measures-5.html#exer-positive-union",
   "type": "Exercise",
   "number": "4.3.6",
   "title": "",
-  "body": " Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.  "
+  "body": "  Let be a signed measure on a measurable space . Suppose are positive sets. Show that is a positive set.   "
 },
 {
   "id": "exer-signed-meas-to-meas",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-signed-meas-to-meas",
+  "url": "chap-signed-measures-5.html#exer-signed-meas-to-meas",
   "type": "Exercise",
   "number": "4.3.7",
   "title": "",
-  "body": " Let be a signed measure on a measurable space . and let be a positive set. Define a function on by for all . Show that is a measure on .  "
+  "body": "  Let be a signed measure on a measurable space , and let be a positive set. Define a function on by for all . Show that is a measure on .   "
 },
 {
   "id": "exer-total-variation",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-total-variation",
+  "url": "chap-signed-measures-5.html#exer-total-variation",
   "type": "Exercise",
   "number": "4.3.8",
   "title": "",
-  "body": " Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by   "
+  "body": "  Prove : Let be a signed measure on a measurable space . Show that that the total variation of can be calculated by    "
 },
 {
   "id": "exer-signed-measure-space-with-norm",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-signed-measure-space-with-norm",
+  "url": "chap-signed-measures-5.html#exer-signed-measure-space-with-norm",
   "type": "Exercise",
   "number": "4.3.9",
   "title": "",
-  "body": " Let be a measurable space and let the vector space of finite signed measures on , see . For , define by   Show that defines a norm on . norm norm on the space of finite signed measures That is, show that   if and only if , the zero measure in ;   for all ; and   for all . I.e. show that satisfies the triangle inequality . triangle inequality for norms    "
+  "body": "  Let be a measurable space and let the vector space of finite signed measures on , see . For , define by Show that defines a norm on . norm norm on the space of finite signed measures That is, show that      if and only if , the zero measure in ;       for all ; and       for all . I.e. show that satisfies the triangle inequality .  triangle inequality for norms     "
+},
+{
+  "id": "exer-lipschitz-bv",
+  "level": "2",
+  "url": "chap-signed-measures-5.html#exer-lipschitz-bv",
+  "type": "Exercise",
+  "number": "4.3.10",
+  "title": "",
+  "body": "  Let be a Lipschitz function on a closed interval . That is, assume there there is a constant such that for all . Show that is of bounded variation on .   "
 },
 {
   "id": "exer-bv-arc-length",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-bv-arc-length",
+  "url": "chap-signed-measures-5.html#exer-bv-arc-length",
   "type": "Exercise",
-  "number": "4.3.10",
+  "number": "4.3.11",
   "title": "",
   "body": "  Let be a continuous function on a closed interval . For a partition of define as and define the arc length  of on as arc length Show that is of bounded variation if and only if .   "
 },
 {
   "id": "exer-not-tv-1",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-not-tv-1",
+  "url": "chap-signed-measures-5.html#exer-not-tv-1",
   "type": "Exercise",
-  "number": "4.3.11",
+  "number": "4.3.12",
   "title": "",
-  "body": " Define on by   Show that is not of bounded variation.  "
+  "body": "  Define on by Show that is not of bounded variation.   "
 },
 {
   "id": "exer-not-tv-2",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-not-tv-2",
+  "url": "chap-signed-measures-5.html#exer-not-tv-2",
   "type": "Exercise",
-  "number": "4.3.12",
+  "number": "4.3.13",
   "title": "",
-  "body": " Define on by   Show that is continuous. Show that is not of bounded variation.  "
+  "body": "  Define on by Show that is continuous. Show that is not of bounded variation.   "
 },
 {
   "id": "exer-sin-bv",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-sin-bv",
+  "url": "chap-signed-measures-5.html#exer-sin-bv",
   "type": "Exercise",
-  "number": "4.3.13",
+  "number": "4.3.14",
   "title": "",
-  "body": " Let for . Write as the difference of two increasing, continuous functions.  "
+  "body": "  Let for . Write as the difference of two increasing, continuous functions.   "
 },
 {
   "id": "exer-cos-bv",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-cos-bv",
+  "url": "chap-signed-measures-5.html#exer-cos-bv",
   "type": "Exercise",
-  "number": "4.3.14",
+  "number": "4.3.15",
   "title": "",
-  "body": " Let for . Write as the difference of two increasing, continuous functions.  "
+  "body": "  Let for . Write as the difference of two increasing, continuous functions.   "
 },
 {
   "id": "exer-poly-bv",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#exer-poly-bv",
-  "type": "Exercise",
-  "number": "4.3.15",
-  "title": "",
-  "body": " Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.  "
-},
-{
-  "id": "real-analysis-4-5-5-16",
-  "level": "2",
-  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-16",
+  "url": "chap-signed-measures-5.html#exer-poly-bv",
   "type": "Exercise",
   "number": "4.3.16",
   "title": "",
-  "body": " Let be a function of bounded variation on an interval . Show that, if , then   "
+  "body": "  Let be a polynomial on the closed interval . Show that is the difference of two increasing, continuous functions.   "
 },
 {
-  "id": "real-analysis-4-5-5-17",
+  "id": "chap-signed-measures-5-17",
   "level": "2",
-  "url": "real-analysis-4-5-5.html#real-analysis-4-5-5-17",
+  "url": "chap-signed-measures-5.html#chap-signed-measures-5-17",
   "type": "Exercise",
   "number": "4.3.17",
   "title": "",
-  "body": " Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that   Show that   if and only if there is a constant such that and . (HINT: Compare this question to ).  "
+  "body": "  Let be a function of bounded variation on an interval . Show that, if , then    "
+},
+{
+  "id": "chap-signed-measures-5-18",
+  "level": "2",
+  "url": "chap-signed-measures-5.html#chap-signed-measures-5-18",
+  "type": "Exercise",
+  "number": "4.3.18",
+  "title": "",
+  "body": "  Let be a function of bounded variation on the closed interval . Suppose where and are increasing functions. Show that Show that if and only if there is a constant such that and .    Compare this question to .   "
 },
 {
   "id": "chap-meas-fun-3",
@@ -1582,7 +1537,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Measurable functions",
-  "body": " Measurable functions  We first need to decide on what class of functions it makes sense to consider. These will be called measurable functions. Given a set , a function from to is called a real-valued function ; a function from to the extended reals  extended real line is an extended real-valued function . real-valued function extended real-valued function We will be interested in extended real-valued functions. The following theorem is necessary before the definition of a measurable function.   measurable function Let be a measurable space. Let and let be an extended real-valued function with domain . Then the following are equivalent:   for all , ;   for all , ;   for all , ; and   for all , .      Note that   and   As the -algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).  Assume that (i) holds and take any . For each , the set is in . As a countable intersection of measurable sets is measurable it follows that   is measurable. Hence (ii) holds.  Finally, assume (ii) holds and take any . For each , the set is in . As a countable union of measurable sets is measurable it follows that   is measurable. Hence (i) holds.    measurable function Let be a measurable space, , and be an extended real-valued function. Then is a measurable function with respect to if satisfies any of the equivalent conditions from . If there is no chance of confusion on what the -algebra is, we will simply say that is a measurable function.  If is a measure space, and is measurable with respect to we also say is measurable with respect to , or -measurable.  If is a measurable function with domain , and there is a measurable set such that and for all , then is finitely supported. measurable function of finite support   Over the next several results we will examples of functions which are measurable. We begin with a simple example. Let be a set and let . We define the characteristic function of , , by characteristic function   Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, .   Let be a measurable space, and take . The characteristic function is a measurable function if and only if is a measurable set.   We now give an alternative characterization of a measurable real-valued function.   Let be a measurable space.  If is an extended real-valued measurable function on , then is measurable for all open .  If is a real-valued function and is measurable for all open , then is a measurable function.    Let be a measurable extended real-valued function on . Then and are measurable sets for all Thus, if , then   is the intersection of two measurable sets, and hence measurable. That is, if is an open interval, then is measurable. If is open, then where are disjoint open intervals. Thus   is a countable union of measurable sets, and thus is measurable.  If is a real-valued function on an is measurable for open then for all   is measurable. Hence is a measurable function.   immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.   Let be a topological space, let be the -algebra of Borel sets in , and let be a -algebra with . Let be a continuous function. Then is measurable with respect to .    Since is continuous, is open in for all open sets . Hence, by , if is an open set in ,   Thus is measurable with respect to .   Recall that two functions and on a measure space are equal almost everywhere if there is a measurable with so that that for all .   Let be a complete measure space. Let be functions from a measurable set to . If almost everywhere and is a measurable function, then is a measurable function.    Let be a measurable set with such that for all . Fix any . Then   Note that   is the intersection of two measurable sets, and thus is measurable. Further   thus is measurable, since is complete. Thus is the union of two measurable sets, and hence is measurable.    The completeness of the measure space is necessary in , see .   The following theorem gives some simple ways of creating measurable functions from measurable functions: by linear combinations and products. Before we start we need to do some mild bookkeeping. If and are measurable functions, with the same measurable domain , we want to consider their sum, . However, if there is an such that and , then is undefined. One way to circumvent this issue would be to only consider real-valued measurable functions. However, there will be times when considering functions with infinite values is either unavoidable or desirable.  Instead, we will focus on measurable that are finite almost everywhere . Let be a measure space. A function on is finite almost everywhere , finite almost eveywhere if there is a with such that for all . If and are two measurable functions with common domain , and and are finite almost everywhere, then there is a measurable set such that for all , and there is a set such that for all . Note that . We can thus, define on by   For we will assign arbitrary values to We thus are not uniquely defining the function , we are instead defining up the equivalence class of equality almost everywhere. That equal almost everywhere forms an equivalence class in functions is covered by .   Let be a measure space. Let and be measurable functions with the same domain which are finite almost everywhere. Then   for all , there is a with such that is measurable on ; and   there is a with , is measurable on .    If or are real-valued, or if is complete, then we can take in both (i) and (ii).    That is a measurable function for when is a measurable function is left to .  Let and be measurable functions on a measurable set , where both and are finite almost everywhere. Then there is a measurable set such that and and are finite on . Fix . We want to show that   is a measurable set. Take . Then . By the density of the rationals in , there is a such that   Thus   Conversely, if and there is such that   then   Thus   Since and are measurable the sets and are measurable for every . Hence is a measurable set. It follows that is a measurable function on .  Note that   Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable. Let be a measurable on and take . Then   is a measurable set. If then is also measurable. Thus is a measurable function.  If is a complete measure space we can take in the above cases, by .   We now introduce an important class of measurable functions: simple functions.   Let be a measurable space, and let be a real-valued measurable function on . The function is simple simple function if is a finite set.    Let be a simple function on a measurable space and let . For each let   By , each set is a measurable set. Thus   Conversely, if are measurable sets, and are real numbers then if   is a measurable function by . Further, as takes finitely many values Note the sets are not necessarily disjoint, so may take values other than the values . , is a simple function.   The following few results give further ways of constructing measurable functions from measurable functions.   Let be a complete measure space and let be measurable functions on . Then   is measurable; and   is measurable.      Let be measurable functions, and let Take any . Then   Thus is a measurable set, and hence is a measurale function.  Note that   Hence, is a measurable function.    For a measurable function on a measurable space , is the positive part of positive part of a function and is the negative part of . negative part of a function   Note that, shows that if is a measurable function, then and is a measurable function. Further, note that . That is, is the difference of two non-negative measurable functions. This decomposition, will be used frequently when studying integration.   Let be a measurable function on a measurable space . The the function is measurable.    Note that Both and are measurable, by . As and are both non-negative functions, is defined (possibly infinite) for all . It follows from the same argument as in , that is a measurable function.   The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, However, there are circumstances where measurability of a composition is guaranteed, .   In the proof of , we prove the existence of a non-Lebesgue measurable set and a bijective continuous function such that is Lebesgue measurable. By a simple adjustment, we can assume that We extend to a continuous function on all of by setting for and for . Let .  Consider the measure space , where is all Lebesgue measurable sets in . The function is a measurable function since is measurable, , and is measurable since it is continuous, . However the function is not measurable. Indeed   is not Lebesgue measurable, and hence is not a measurable function.    Let be a measurable space, let be a real-valued measurable function on , and let be a continuous function. Then is continuous.    Take any open set , and let . Then is an open subset of , since is continuous. By, , is a measurable set. Thus,   is measurable for all open sets . Hence is a measurable function, by .    We have only considered extended real-valued measurable functions. This is what we will be interested in for the majority of these notes. In more generality, if and are two measurable spaces, a function is measurable with respect to and measurable function between two measure spaces if for all . This definition is consistent with when and , the Borel sets in the extended real line. See for more on . This fact almost follows from . The full details are left to .  When we study measurable functions from to , we study measurable functions from with respect to and , is the Lebesgue measurable sets on and is the Borel sets on . I.e. we study measurable functions from the measure space to the measure space . The lopsidedness of this naturally raises questions. Firstly, the advantage of the domain being is that is a complete measure space. See, e.g., for an advantage of having a complete measure space in the domain.  One reason for taking the Borel sets in the range, instead of all Lebesgue measurable sets, is the following. As described in the proof of and , there is a continuous function and a set which is not Lebesgue measurable, such that is Lebesgue measurable but is not a Borel set, and . I.e. there is a continuous function and a Lebesgue measurable set such that is not Lebesgue measurable. In conclusion, the measurable functions from to do not include all continuous functions. We do, however, want to study the continuous functions. Hence the measurable functions from to is not the right class to study.   "
+  "body": " Measurable functions  We first need to decide on what class of functions it makes sense to consider. These will be called measurable functions. Given a set , a function from to is called a real-valued function ; a function from to the extended reals is an extended real-valued function . real-valued function extended real-valued function We will be interested in extended real-valued functions. The following theorem is necessary before the definition of a measurable function.    Let be a measurable space. Let and let be an extended real-valued function with domain . Then the following are equivalent:  for all , ;  for all , ;  for all , ; and  for all , .      Note that and As the -algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).  Assume that (i) holds and take any . For each , the set is in . As a countable intersection of measurable sets is measurable it follows that is measurable. Hence (ii) holds.  Finally, assume (ii) holds and take any . For each , the set is in . As a countable union of measurable sets is measurable it follows that is measurable. Hence (i) holds.      Let be a measurable space, , and be an extended real-valued function. Then is a measurable function with respect to if satisfies any of the equivalent conditions from . If there is no chance of confusion on what the -algebra is, we will simply say that is a measurable function. measurable function  If is a measure space, and is measurable with respect to we also say is measurable with respect to , or -measurable.  If is a measurable function with domain , and there is a measurable set such that and for all , then is finitely supported. or of finite support . measurable function of finite support       The characteristic function of a set  Over the next several results we will examples of functions which are measurable. We begin with a simple example. Let be a set and let . We define the characteristic function of , , by characteristic function  Characteristic functions will play an important role in our study of measurable functions. The proof of the following proposition is left as an exercise, .   Let be a measurable space, and take . The characteristic function is a measurable function if and only if is a measurable set.   We now give an alternative characterization of a measurable real-valued function.    Let be a measurable space.  If is an extended real-valued measurable function on , then is measurable for all open .  If is a real-valued function and is measurable for all open , then is a measurable function.    Let be a measurable extended real-valued function on . Then and are measurable sets for all Thus, if , then is the intersection of two measurable sets, and hence measurable. That is, if is an open interval, then is measurable. If is open, then where are disjoint open intervals. Thus is a countable union of measurable sets, and thus is measurable.  If is a real-valued function on an is measurable for open then for all  is measurable. Hence is a measurable function.    immediately gives the following corollary telling us that (in the right settings) continuous functions are measurable functions.    Let be a topological space, let be the -algebra of Borel sets in , and let be a -algebra with . Let be a continuous function. Then is measurable with respect to .    Since is continuous, is open in for all open sets . Hence, by , if is an open set in , Thus is measurable with respect to .    Recall that two functions and on a measure space are equal almost everywhere if there is a measurable with so that that for all .    Let be a complete measure space. Let be functions from a measurable set to . If almost everywhere and is a measurable function, then is a measurable function.    Let be a measurable set with such that for all . Fix any . Then Note tha  is the intersection of two measurable sets, and thus is measurable. Further  thus is measurable, since is complete. Thus is the union of two measurable sets, and hence is measurable.     The completeness of the measure space is necessary in , see .   The following theorem gives some simple ways of creating measurable functions from measurable functions: by linear combinations and products. Before we start we need to do some mild bookkeeping. If and are measurable functions, with the same measurable domain , we want to consider their sum, . However, if there is an such that and , then is undefined. One way to circumvent this issue would be to only consider real-valued measurable functions. However, there will be times when considering functions with infinite values is either unavoidable or desirable.  Instead, we will focus on measurable that are finite almost everywhere . Let be a measure space. A function on is finite almost everywhere , finite almost eveywhere if there is a with such that for all . If and are two measurable functions with common domain , and and are finite almost everywhere, then there is a measurable set such that for all , and there is a set such that for all . Note that . We can thus, define on by For we will assign arbitrary values to We thus are not uniquely defining the function , we are instead defining up the equivalence class of equality almost everywhere. That equal almost everywhere forms an equivalence class in functions is covered by .    Let be a measure space. Let and be measurable functions with the same domain which are finite almost everywhere. Then  for all , there is a with such that is measurable on ; and  there is a with , is measurable on .  If or are real-valued, or if is complete, then we can take in both (i) and (ii).    That is a measurable function for when is a measurable function is left to .  Let and be measurable functions on a measurable set , where both and are finite almost everywhere. Then there is a measurable set such that and and are finite on . Fix . We want to show that is a measurable set. Take . Then . By the density of the rationals in , there is a such that Thus Conversely, if and there is such that then Thus Since and are measurable the sets and are measurable for every . Hence is a measurable set. It follows that is a measurable function on .  Note that Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable. Let be a measurable on and take . Then is a measurable set. If then is also measurable. Thus is a measurable function.  If is a complete measure space we can take in the above cases, by .    We now introduce an important class of measurable functions: simple functions.    Let be a measurable space, and let be a real-valued measurable function on . The function is simple if is a finite set. simple function      Let be a simple function on a measurable space and let . For each let By , each set is a measurable set. Thus Conversely, if are measurable sets, and are real numbers then if  is a measurable function by . Further, as takes finitely many values Note the sets are not necessarily disjoint, so may take values other than the values . , is a simple function.   The following few results give further ways of constructing measurable functions from measurable functions.    Let be a complete measure space and let be measurable functions on . Then  is measurable; and  is measurable.      Let be measurable functions, and let Take any . Then Thus is a measurable set, and hence is a measurale function.  Note that Hence, is a measurable function.       positive part of a function     negative part of a function    For a measurable function on a measurable space , is the positive part of positive part of a function and is the negative part of . negative part of a function     Note that, shows that if is a measurable function, then and is a measurable function. Further, note that . That is, is the difference of two non-negative measurable functions. This decomposition, will be used frequently when studying integration.    Let be a measurable function on a measurable space . The the function is measurable.    Note that Both and are measurable, by . As and are both non-negative functions, is defined (possibly infinite) for all . It follows from the same argument as in , that is a measurable function.    The question of whether the composition of measurable functions is measurable is complicated. In general, the answer is no, However, there are circumstances where measurability of a composition is guaranteed, .   In the proof of , we prove the existence of a non-Lebesgue measurable set and a bijective continuous function such that is Lebesgue measurable. By a simple adjustment, we can assume that We extend to a continuous function on all of by setting for and for . Let .  Consider the measure space , where is all Lebesgue measurable sets in . The function is a measurable function since is measurable, , and is measurable since it is continuous, . However the function is not measurable. Indeed is not Lebesgue measurable, and hence is not a measurable function.     Let be a measurable space, let be a real-valued measurable function on , and let be a continuous function. Then is continuous.    Take any open set , and let . Then is an open subset of , since is continuous. By, , is a measurable set. Thus, is measurable for all open sets . Hence is a measurable function, by .     We have only considered extended real-valued measurable functions. This is what we will be interested in for the majority of these notes. In more generality, if and are two measurable spaces, a function is measurable with respect to and measurable function between two measure spaces if for all . This definition is consistent with when and , the Borel sets in the extended real line. See for more on . This fact almost follows from . The full details are left to .  When we study measurable functions from to , we study measurable functions from with respect to and , is the Lebesgue measurable sets on and is the Borel sets on . I.e. we study measurable functions from the measure space to the measure space . The lopsidedness of this naturally raises questions. Firstly, the advantage of the domain being is that is a complete measure space. See, e.g., for an advantage of having a complete measure space in the domain.  One reason for taking the Borel sets in the range, instead of all Lebesgue measurable sets, is the following. As described in the proof of and , there is a continuous function and a set which is not Lebesgue measurable, such that is Lebesgue measurable but is not a Borel set, and . I.e. there is a continuous function and a Lebesgue measurable set such that is not Lebesgue measurable. In conclusion, the measurable functions from to do not include all continuous functions. We do, however, want to study the continuous functions. Hence the measurable functions from to is not the right class to study.   "
+},
+{
+  "id": "chap-meas-fun-3-2",
+  "level": "2",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "real-valued function extended real-valued function "
 },
 {
   "id": "thm-measurable-function-equiv",
@@ -1591,16 +1555,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.1.1",
   "title": "",
-  "body": " measurable function Let be a measurable space. Let and let be an extended real-valued function with domain . Then the following are equivalent:   for all , ;   for all , ;   for all , ; and   for all , .    "
-},
-{
-  "id": "chap-meas-fun-3-4",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-4",
-  "type": "Proof",
-  "number": "5.1.1",
-  "title": "",
-  "body": " Note that   and   As the -algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).  Assume that (i) holds and take any . For each , the set is in . As a countable intersection of measurable sets is measurable it follows that   is measurable. Hence (ii) holds.  Finally, assume (ii) holds and take any . For each , the set is in . As a countable union of measurable sets is measurable it follows that   is measurable. Hence (i) holds.  "
+  "body": "  Let be a measurable space. Let and let be an extended real-valued function with domain . Then the following are equivalent:  for all , ;  for all , ;  for all , ; and  for all , .      Note that and As the -algebra is closed under taking complements, (i) is equivalent to (iv), and (ii) is equivalent to (iii).  Assume that (i) holds and take any . For each , the set is in . As a countable intersection of measurable sets is measurable it follows that is measurable. Hence (ii) holds.  Finally, assume (ii) holds and take any . For each , the set is in . As a countable union of measurable sets is measurable it follows that is measurable. Hence (i) holds.   "
 },
 {
   "id": "def-meas-func",
@@ -1609,7 +1564,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "5.1.2",
   "title": "",
-  "body": " measurable function Let be a measurable space, , and be an extended real-valued function. Then is a measurable function with respect to if satisfies any of the equivalent conditions from . If there is no chance of confusion on what the -algebra is, we will simply say that is a measurable function.  If is a measure space, and is measurable with respect to we also say is measurable with respect to , or -measurable.  If is a measurable function with domain , and there is a measurable set such that and for all , then is finitely supported. measurable function of finite support  "
+  "body": "  Let be a measurable space, , and be an extended real-valued function. Then is a measurable function with respect to if satisfies any of the equivalent conditions from . If there is no chance of confusion on what the -algebra is, we will simply say that is a measurable function. measurable function  If is a measure space, and is measurable with respect to we also say is measurable with respect to , or -measurable.  If is a measurable function with domain , and there is a measurable set such that and for all , then is finitely supported. or of finite support . measurable function of finite support   "
+},
+{
+  "id": "chap-meas-fun-3-5",
+  "level": "2",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "characteristic function of "
 },
 {
   "id": "prop-char-measurable",
@@ -1627,16 +1591,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.1.4",
   "title": "",
-  "body": " Let be a measurable space.  If is an extended real-valued measurable function on , then is measurable for all open .  If is a real-valued function and is measurable for all open , then is a measurable function.  "
-},
-{
-  "id": "chap-meas-fun-3-12",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-12",
-  "type": "Proof",
-  "number": "5.1.2",
-  "title": "",
-  "body": " Let be a measurable extended real-valued function on . Then and are measurable sets for all Thus, if , then   is the intersection of two measurable sets, and hence measurable. That is, if is an open interval, then is measurable. If is open, then where are disjoint open intervals. Thus   is a countable union of measurable sets, and thus is measurable.  If is a real-valued function on an is measurable for open then for all   is measurable. Hence is a measurable function.  "
+  "body": "  Let be a measurable space.  If is an extended real-valued measurable function on , then is measurable for all open .  If is a real-valued function and is measurable for all open , then is a measurable function.    Let be a measurable extended real-valued function on . Then and are measurable sets for all Thus, if , then is the intersection of two measurable sets, and hence measurable. That is, if is an open interval, then is measurable. If is open, then where are disjoint open intervals. Thus is a countable union of measurable sets, and thus is measurable.  If is a real-valued function on an is measurable for open then for all  is measurable. Hence is a measurable function.   "
 },
 {
   "id": "cor-Cont-are-meas",
@@ -1645,16 +1600,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "5.1.5",
   "title": "",
-  "body": " Let be a topological space, let be the -algebra of Borel sets in , and let be a -algebra with . Let be a continuous function. Then is measurable with respect to .  "
-},
-{
-  "id": "chap-meas-fun-3-15",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-15",
-  "type": "Proof",
-  "number": "5.1.3",
-  "title": "",
-  "body": " Since is continuous, is open in for all open sets . Hence, by , if is an open set in ,   Thus is measurable with respect to .  "
+  "body": "  Let be a topological space, let be the -algebra of Borel sets in , and let be a -algebra with . Let be a continuous function. Then is measurable with respect to .    Since is continuous, is open in for all open sets . Hence, by , if is an open set in , Thus is measurable with respect to .   "
 },
 {
   "id": "prop-f-g-a-e",
@@ -1663,25 +1609,25 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.1.6",
   "title": "",
-  "body": " Let be a complete measure space. Let be functions from a measurable set to . If almost everywhere and is a measurable function, then is a measurable function.  "
+  "body": "  Let be a complete measure space. Let be functions from a measurable set to . If almost everywhere and is a measurable function, then is a measurable function.    Let be a measurable set with such that for all . Fix any . Then Note tha  is the intersection of two measurable sets, and thus is measurable. Further  thus is measurable, since is complete. Thus is the union of two measurable sets, and hence is measurable.   "
 },
 {
-  "id": "chap-meas-fun-3-18",
+  "id": "chap-meas-fun-3-13",
   "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-18",
-  "type": "Proof",
-  "number": "5.1.4",
-  "title": "",
-  "body": " Let be a measurable set with such that for all . Fix any . Then   Note that   is the intersection of two measurable sets, and thus is measurable. Further   thus is measurable, since is complete. Thus is the union of two measurable sets, and hence is measurable.  "
-},
-{
-  "id": "chap-meas-fun-3-19",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-19",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-13",
   "type": "Remark",
   "number": "5.1.7",
   "title": "",
   "body": " The completeness of the measure space is necessary in , see .  "
+},
+{
+  "id": "chap-meas-fun-3-15",
+  "level": "2",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-15",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "finite almost everywhere "
 },
 {
   "id": "thm-meas-fnc-vec-sp",
@@ -1690,34 +1636,25 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.1.8",
   "title": "",
-  "body": " Let be a measure space. Let and be measurable functions with the same domain which are finite almost everywhere. Then   for all , there is a with such that is measurable on ; and   there is a with , is measurable on .    If or are real-valued, or if is complete, then we can take in both (i) and (ii).  "
+  "body": "  Let be a measure space. Let and be measurable functions with the same domain which are finite almost everywhere. Then  for all , there is a with such that is measurable on ; and  there is a with , is measurable on .  If or are real-valued, or if is complete, then we can take in both (i) and (ii).    That is a measurable function for when is a measurable function is left to .  Let and be measurable functions on a measurable set , where both and are finite almost everywhere. Then there is a measurable set such that and and are finite on . Fix . We want to show that is a measurable set. Take . Then . By the density of the rationals in , there is a such that Thus Conversely, if and there is such that then Thus Since and are measurable the sets and are measurable for every . Hence is a measurable set. It follows that is a measurable function on .  Note that Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable. Let be a measurable on and take . Then is a measurable set. If then is also measurable. Thus is a measurable function.  If is a complete measure space we can take in the above cases, by .   "
 },
 {
-  "id": "chap-meas-fun-3-25",
+  "id": "chap-meas-fun-3-18",
   "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-25",
-  "type": "Proof",
-  "number": "5.1.5",
-  "title": "",
-  "body": " That is a measurable function for when is a measurable function is left to .  Let and be measurable functions on a measurable set , where both and are finite almost everywhere. Then there is a measurable set such that and and are finite on . Fix . We want to show that   is a measurable set. Take . Then . By the density of the rationals in , there is a such that   Thus   Conversely, if and there is such that   then   Thus   Since and are measurable the sets and are measurable for every . Hence is a measurable set. It follows that is a measurable function on .  Note that   Thus, to show that the product of two measurable functions is measurable, it suffices to show that the square of a measurable function is measurable. Let be a measurable on and take . Then   is a measurable set. If then is also measurable. Thus is a measurable function.  If is a complete measure space we can take in the above cases, by .  "
-},
-{
-  "id": "chap-meas-fun-3-27",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-27",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-18",
   "type": "Definition",
   "number": "5.1.9",
   "title": "",
-  "body": " Let be a measurable space, and let be a real-valued measurable function on . The function is simple simple function if is a finite set.  "
+  "body": "  Let be a measurable space, and let be a real-valued measurable function on . The function is simple if is a finite set. simple function    "
 },
 {
-  "id": "chap-meas-fun-3-28",
+  "id": "chap-meas-fun-3-19",
   "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-28",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-19",
   "type": "Remark",
   "number": "5.1.10",
   "title": "",
-  "body": " Let be a simple function on a measurable space and let . For each let   By , each set is a measurable set. Thus   Conversely, if are measurable sets, and are real numbers then if   is a measurable function by . Further, as takes finitely many values Note the sets are not necessarily disjoint, so may take values other than the values . , is a simple function.  "
+  "body": " Let be a simple function on a measurable space and let . For each let By , each set is a measurable set. Thus Conversely, if are measurable sets, and are real numbers then if  is a measurable function by . Further, as takes finitely many values Note the sets are not necessarily disjoint, so may take values other than the values . , is a simple function.  "
 },
 {
   "id": "prop-max-min-meas",
@@ -1726,25 +1663,16 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.1.11",
   "title": "",
-  "body": " Let be a complete measure space and let be measurable functions on . Then   is measurable; and   is measurable.    "
+  "body": "  Let be a complete measure space and let be measurable functions on . Then  is measurable; and  is measurable.      Let be measurable functions, and let Take any . Then Thus is a measurable set, and hence is a measurale function.  Note that Hence, is a measurable function.   "
 },
 {
-  "id": "chap-meas-fun-3-31",
+  "id": "chap-meas-fun-3-22",
   "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-31",
-  "type": "Proof",
-  "number": "5.1.6",
-  "title": "",
-  "body": " Let be measurable functions, and let Take any . Then   Thus is a measurable set, and hence is a measurale function.  Note that   Hence, is a measurable function.  "
-},
-{
-  "id": "chap-meas-fun-3-32",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-32",
+  "url": "chap-meas-fun-3.html#chap-meas-fun-3-22",
   "type": "Definition",
   "number": "5.1.12",
   "title": "",
-  "body": " For a measurable function on a measurable space , is the positive part of positive part of a function and is the negative part of . negative part of a function  "
+  "body": "   positive part of a function     negative part of a function    For a measurable function on a measurable space , is the positive part of positive part of a function and is the negative part of . negative part of a function    "
 },
 {
   "id": "cor-abs-val",
@@ -1753,16 +1681,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "5.1.13",
   "title": "",
-  "body": " Let be a measurable function on a measurable space . The the function is measurable.  "
-},
-{
-  "id": "chap-meas-fun-3-35",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-35",
-  "type": "Proof",
-  "number": "5.1.7",
-  "title": "",
-  "body": " Note that Both and are measurable, by . As and are both non-negative functions, is defined (possibly infinite) for all . It follows from the same argument as in , that is a measurable function.  "
+  "body": "  Let be a measurable function on a measurable space . The the function is measurable.    Note that Both and are measurable, by . As and are both non-negative functions, is defined (possibly infinite) for all . It follows from the same argument as in , that is a measurable function.   "
 },
 {
   "id": "ex-comp-not-meas",
@@ -1771,7 +1690,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.1.14",
   "title": "",
-  "body": " In the proof of , we prove the existence of a non-Lebesgue measurable set and a bijective continuous function such that is Lebesgue measurable. By a simple adjustment, we can assume that We extend to a continuous function on all of by setting for and for . Let .  Consider the measure space , where is all Lebesgue measurable sets in . The function is a measurable function since is measurable, , and is measurable since it is continuous, . However the function is not measurable. Indeed   is not Lebesgue measurable, and hence is not a measurable function.  "
+  "body": " In the proof of , we prove the existence of a non-Lebesgue measurable set and a bijective continuous function such that is Lebesgue measurable. By a simple adjustment, we can assume that We extend to a continuous function on all of by setting for and for . Let .  Consider the measure space , where is all Lebesgue measurable sets in . The function is a measurable function since is measurable, , and is measurable since it is continuous, . However the function is not measurable. Indeed is not Lebesgue measurable, and hence is not a measurable function.  "
 },
 {
   "id": "prop-comp-meas",
@@ -1780,16 +1699,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.1.15",
   "title": "",
-  "body": " Let be a measurable space, let be a real-valued measurable function on , and let be a continuous function. Then is continuous.  "
-},
-{
-  "id": "chap-meas-fun-3-39",
-  "level": "2",
-  "url": "chap-meas-fun-3.html#chap-meas-fun-3-39",
-  "type": "Proof",
-  "number": "5.1.8",
-  "title": "",
-  "body": " Take any open set , and let . Then is an open subset of , since is continuous. By, , is a measurable set. Thus,   is measurable for all open sets . Hence is a measurable function, by .  "
+  "body": "  Let be a measurable space, let be a real-valued measurable function on , and let be a continuous function. Then is continuous.    Take any open set , and let . Then is an open subset of , since is continuous. By, , is a measurable set. Thus, is measurable for all open sets . Hence is a measurable function, by .   "
 },
 {
   "id": "rem-morphisms",
@@ -1807,7 +1717,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Approximations of measurable functions",
-  "body": " Approximations of measurable functions  Equivalently, there are several ways we can say that a sequence of functions converges to a function . You will already be familiar with the concept of pointwise convergence of functions and, at least for functions from to , uniform convergence. We recall these definitions below, together with an unfamiliar form of convergence: convergence pointwise almost everywhere.   Let be a measure space, let be a sequence of extended real-valued functions on , and let be an extended real-valued function on .  The sequence  converges to pointwise almost everywhere convergence pointwise almost everywhere often abbreviated to pointwise a.e. if there is an with , such that   for all .  If   for all then we say that the sequence  converges pointwise to . convergence pointwise  The sequence converges uniformly convergence uniform if for all there exists an such that   for all and .    The relationship between these three forms of convergence is:   Neither of the implications go the opposite way, however. Recall that the sequence on converges pointwise to the function   but does not converge uniformly to .  Suppose is a non-empty Lebesgue measurable set with . Define functions   Then converges pointwise a.e. to the zero function , whilst does not converge pointwise to any function.   Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, , which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, , which says that if converge pointwise to , then there is a large set on which the convergence is uniform.  We first establish that a pointwise limit of measurable functions is measurable.   Let be a measure space. Suppose is a sequence of measurable functions on that converge pointwise almost everywhere to a function . Then, if either   is a complete measure space; or   the sequence converges pointwise to ,    then is a measurable function.    Let be a measurable set with such that converges to for all . If is complete, then is measurable if and only if is measurable, by . Thus, by excising if necessary, we can assume that converges pointwise to .  Fix and let   Our goal is to show that is a measurable set. Note that, if , then there exists an such that   Conversely, suppose satisfies   Then , and hence . Thus   Thus, since each is a measurable function, is a countable union of a countable intersection of measurable sets. Thus is measurable. As was chosen arbitrarily, is a measurable function.    The Simple Approximation Theorem  Simple Approximation Theorem Let be a measure space and let be an extended real-valued function on . Then is measurable if and only is the pointwise limit of a sequence of simple functions satisfying for all .  If is a non-negative function, the sequence can be chosen to be increasing.  If is -finite, then the simple functions can each be chosen to be of finite support.    If is a pointwise limit of simple functions, then is measurable by .  Suppose now that is measurable. Assume first that . For each , and , let   For each , the sets are disjoint measurable sets. Define scalars by   For each define a simple function by   Note .  We claim that converge pointwise to . First, suppose . Fix Choose an integer such that and . Then, if , there is a such that . Thus,   Thus .  If , then for all . Thus   Hence converges pointwise to .  By replacing with we can make sure the sequence is increasing.  For an arbitrary measurable function we can find a sequences and of simple functions which converge pointwise to and respectively, with and . Then is a sequence of simple functions which converge pointwise to . Further   Finally, suppose that is a -finite measure space and is a sequence of simple functions that converge pointwise to a measurable function . Let be an increasing sequence of measurable sets such that for all , and . For each define the function   Then is a sequence of finitely supported simple functions which converge pointwise to .   As noted in , pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.   Ergoroff's Theorem  Ergoroff's Theorem Let be a finite measure space and let be a sequence of measurable functions on which converge pointwise a.e. to a finite a.e. function . Then for all there is a measurable set such that   converges uniformly to on ;   .      By removing a set of measure if necessary, we can assume that converges pointwise to on . By removing another measure set, we can assume that is real-valued.  Fix . For each , the function is measurable, and hence the set   \\ is a measurable set. For each let be the measurable set   Then is an increasing sequence of measurable sets and , since converges pointwise to on . By the continuity of measure,   Thus, for any there is an such that   Note that on for .  Fix . For each , apply the above argument with and to find a measurable set and an index such that   and   for all and .  Let . We will show that and converges uniformly to on . First note that   Take any . Choose integer such that . Then, if ,   for all . As , it follows that   for all and . Thus converges uniformly to on and    Ergoroff's Theorem on  Ergoroff's Theorem on the real line Let be a Lebesegue measurable set with . Let be a sequence of measurable functions on which converge a.e. to a finite a.e. function .  For each there is a closed set such that and converges uniformly to on .    Fix . By there is a measurable set such that and converges uniformly to on . By , there is a closed set such that .  As , converges uniformly to on . Also   completing the proof.   "
+  "body": " Approximations of measurable functions  Equivalently, there are several ways we can say that a sequence of functions converges to a function . You will already be familiar with the concept of pointwise convergence of functions and, at least for functions from to , uniform convergence. We recall these definitions below, together with an unfamiliar form of convergence: convergence pointwise almost everywhere.    Let be a measure space, let be a sequence of extended real-valued functions on , and let be an extended real-valued function on .  The sequence  converges to pointwise almost everywhere convergence pointwise almost everywhere often abbreviated to pointwise a.e. if there is an with , such that for all .  If for all then we say that the sequence  converges pointwise to . convergence pointwise  The sequence converges uniformly convergence uniform if for all there exists an such that for all and .     The relationship between these three forms of convergence is: Neither of the implications go the opposite way, however. Recall that the sequence on converges pointwise to the function but does not converge uniformly to .  Suppose is a non-empty Lebesgue measurable set with . Define functions Then converges pointwise a.e. to the zero function , whilst does not converge pointwise to any function.   Our main goal in this section is two prove two theorems: The Simple Approximation Theorem, , which says that any measurable function is a pointwise limit of simple functions; and Ergoroff's Theorem, , which says that if converge pointwise to , then there is a large set on which the convergence is uniform.  We first establish that a pointwise limit of measurable functions is measurable.    Let be a measure space. Suppose is a sequence of measurable functions on that converge pointwise almost everywhere to a function . Then, if either  is a complete measure space; or  the sequence converges pointwise to ,  then is a measurable function.    Let be a measurable set with such that converges to for all . If is complete, then is measurable if and only if is measurable, by . Thus, by excising if necessary, we can assume that converges pointwise to .  Fix and let Our goal is to show that is a measurable set. Note that, if , then there exists an such that Conversely, suppose satisfies Then , and hence . Thus Thus, since each is a measurable function, is a countable union of a countable intersection of measurable sets. Thus is measurable. As was chosen arbitrarily, is a measurable function.     The Simple Approximation Theorem   Let be a measure space and let be an extended real-valued function on . Then is measurable if and only is the pointwise limit of a sequence of simple functions satisfying for all .  If is a non-negative function, the sequence can be chosen to be increasing.  If is -finite, then the simple functions can each be chosen to be of finite support. Simple Approximation Theorem    If is a pointwise limit of simple functions, then is measurable by .  Suppose now that is measurable. Assume first that . For each , and , let For each , the sets are disjoint measurable sets. Define scalars by For each define a simple function by Note .  We claim that converge pointwise to . First, suppose . Fix Choose an integer such that and . Then, if , there is a such that . Thus, Thus .  If , then for all . Thus Hence converges pointwise to .  By replacing with we can make sure the sequence is increasing.  For an arbitrary measurable function we can find a sequences and of simple functions which converge pointwise to and respectively, with and . Then is a sequence of simple functions which converge pointwise to . Further Finally, suppose that is a -finite measure space and is a sequence of simple functions that converge pointwise to a measurable function . Let be an increasing sequence of measurable sets such that for all , and . For each define the function Then is a sequence of finitely supported simple functions which converge pointwise to .    As noted in , pointwise a.e. convergence is weaker than pointwise convergence which is weaker than uniform convergence. Our goal is to prove Ergoroff's Theorem, which states that, in certain cases, pointwise a.e. convergence implies uniform convergence on a large set.   Ergoroff's Theorem   Let be a finite measure space and let be a sequence of measurable functions on which converge pointwise a.e. to a finite a.e. function . Then for all there is a measurable set such that  converges uniformly to on ;  .   Ergoroff's Theorem     By removing a set of measure if necessary, we can assume that converges pointwise to on . By removing another measure set, we can assume that is real-valued.  Fix . For each , the function is measurable, and hence the set is a measurable set. For each let be the measurable set Then is an increasing sequence of measurable sets and , since converges pointwise to on . By the continuity of measure, Thus, for any there is an such that Note that is being used here to apply the excision property  Note that on for .  Fix . For each , apply the above argument with and to find a measurable set and an index such that and for all and .  Let . We will show that and converges uniformly to on . First note that Take any . Choose integer such that . Then, if , for all . As , it follows that for all and . Thus converges uniformly to on and     Ergoroff's Theorem on   Let be a Lebesegue measurable set with . Let be a sequence of measurable functions on which converge a.e. to a finite a.e. function .  For each there is a closed set such that and converges uniformly to on . Ergoroff's Theorem on the real line     Fix . By there is a measurable set such that and converges uniformly to on . By , there is a closed set such that .  As , converges uniformly to on . Also completing the proof.    "
 },
 {
   "id": "chap-meas-fun-4-3",
@@ -1816,7 +1726,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "5.2.1",
   "title": "",
-  "body": " Let be a measure space, let be a sequence of extended real-valued functions on , and let be an extended real-valued function on .  The sequence  converges to pointwise almost everywhere convergence pointwise almost everywhere often abbreviated to pointwise a.e. if there is an with , such that   for all .  If   for all then we say that the sequence  converges pointwise to . convergence pointwise  The sequence converges uniformly convergence uniform if for all there exists an such that   for all and .  "
+  "body": "  Let be a measure space, let be a sequence of extended real-valued functions on , and let be an extended real-valued function on .  The sequence  converges to pointwise almost everywhere convergence pointwise almost everywhere often abbreviated to pointwise a.e. if there is an with , such that for all .  If for all then we say that the sequence  converges pointwise to . convergence pointwise  The sequence converges uniformly convergence uniform if for all there exists an such that for all and .   "
 },
 {
   "id": "rem-types-of-convergence",
@@ -1825,7 +1735,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "5.2.2",
   "title": "",
-  "body": " The relationship between these three forms of convergence is:   Neither of the implications go the opposite way, however. Recall that the sequence on converges pointwise to the function   but does not converge uniformly to .  Suppose is a non-empty Lebesgue measurable set with . Define functions   Then converges pointwise a.e. to the zero function , whilst does not converge pointwise to any function.  "
+  "body": " The relationship between these three forms of convergence is: Neither of the implications go the opposite way, however. Recall that the sequence on converges pointwise to the function but does not converge uniformly to .  Suppose is a non-empty Lebesgue measurable set with . Define functions Then converges pointwise a.e. to the zero function , whilst does not converge pointwise to any function.  "
 },
 {
   "id": "prop-pw-lim",
@@ -1834,16 +1744,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "5.2.3",
   "title": "",
-  "body": " Let be a measure space. Suppose is a sequence of measurable functions on that converge pointwise almost everywhere to a function . Then, if either   is a complete measure space; or   the sequence converges pointwise to ,    then is a measurable function.  "
-},
-{
-  "id": "chap-meas-fun-4-8",
-  "level": "2",
-  "url": "chap-meas-fun-4.html#chap-meas-fun-4-8",
-  "type": "Proof",
-  "number": "5.2.1",
-  "title": "",
-  "body": " Let be a measurable set with such that converges to for all . If is complete, then is measurable if and only if is measurable, by . Thus, by excising if necessary, we can assume that converges pointwise to .  Fix and let   Our goal is to show that is a measurable set. Note that, if , then there exists an such that   Conversely, suppose satisfies   Then , and hence . Thus   Thus, since each is a measurable function, is a countable union of a countable intersection of measurable sets. Thus is measurable. As was chosen arbitrarily, is a measurable function.  "
+  "body": "  Let be a measure space. Suppose is a sequence of measurable functions on that converge pointwise almost everywhere to a function . Then, if either  is a complete measure space; or  the sequence converges pointwise to ,  then is a measurable function.    Let be a measurable set with such that converges to for all . If is complete, then is measurable if and only if is measurable, by . Thus, by excising if necessary, we can assume that converges pointwise to .  Fix and let Our goal is to show that is a measurable set. Note that, if , then there exists an such that Conversely, suppose satisfies Then , and hence . Thus Thus, since each is a measurable function, is a countable union of a countable intersection of measurable sets. Thus is measurable. As was chosen arbitrarily, is a measurable function.   "
 },
 {
   "id": "thm-simple-approx",
@@ -1852,16 +1753,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.2.4",
   "title": "The Simple Approximation Theorem.",
-  "body": " The Simple Approximation Theorem  Simple Approximation Theorem Let be a measure space and let be an extended real-valued function on . Then is measurable if and only is the pointwise limit of a sequence of simple functions satisfying for all .  If is a non-negative function, the sequence can be chosen to be increasing.  If is -finite, then the simple functions can each be chosen to be of finite support.  "
-},
-{
-  "id": "chap-meas-fun-4-10",
-  "level": "2",
-  "url": "chap-meas-fun-4.html#chap-meas-fun-4-10",
-  "type": "Proof",
-  "number": "5.2.2",
-  "title": "",
-  "body": " If is a pointwise limit of simple functions, then is measurable by .  Suppose now that is measurable. Assume first that . For each , and , let   For each , the sets are disjoint measurable sets. Define scalars by   For each define a simple function by   Note .  We claim that converge pointwise to . First, suppose . Fix Choose an integer such that and . Then, if , there is a such that . Thus,   Thus .  If , then for all . Thus   Hence converges pointwise to .  By replacing with we can make sure the sequence is increasing.  For an arbitrary measurable function we can find a sequences and of simple functions which converge pointwise to and respectively, with and . Then is a sequence of simple functions which converge pointwise to . Further   Finally, suppose that is a -finite measure space and is a sequence of simple functions that converge pointwise to a measurable function . Let be an increasing sequence of measurable sets such that for all , and . For each define the function   Then is a sequence of finitely supported simple functions which converge pointwise to .  "
+  "body": " The Simple Approximation Theorem   Let be a measure space and let be an extended real-valued function on . Then is measurable if and only is the pointwise limit of a sequence of simple functions satisfying for all .  If is a non-negative function, the sequence can be chosen to be increasing.  If is -finite, then the simple functions can each be chosen to be of finite support. Simple Approximation Theorem    If is a pointwise limit of simple functions, then is measurable by .  Suppose now that is measurable. Assume first that . For each , and , let For each , the sets are disjoint measurable sets. Define scalars by For each define a simple function by Note .  We claim that converge pointwise to . First, suppose . Fix Choose an integer such that and . Then, if , there is a such that . Thus, Thus .  If , then for all . Thus Hence converges pointwise to .  By replacing with we can make sure the sequence is increasing.  For an arbitrary measurable function we can find a sequences and of simple functions which converge pointwise to and respectively, with and . Then is a sequence of simple functions which converge pointwise to . Further Finally, suppose that is a -finite measure space and is a sequence of simple functions that converge pointwise to a measurable function . Let be an increasing sequence of measurable sets such that for all , and . For each define the function Then is a sequence of finitely supported simple functions which converge pointwise to .   "
 },
 {
   "id": "thm-ergoroff",
@@ -1870,16 +1762,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.2.5",
   "title": "Ergoroff’s Theorem.",
-  "body": " Ergoroff's Theorem  Ergoroff's Theorem Let be a finite measure space and let be a sequence of measurable functions on which converge pointwise a.e. to a finite a.e. function . Then for all there is a measurable set such that   converges uniformly to on ;   .    "
-},
-{
-  "id": "chap-meas-fun-4-13",
-  "level": "2",
-  "url": "chap-meas-fun-4.html#chap-meas-fun-4-13",
-  "type": "Proof",
-  "number": "5.2.3",
-  "title": "",
-  "body": " By removing a set of measure if necessary, we can assume that converges pointwise to on . By removing another measure set, we can assume that is real-valued.  Fix . For each , the function is measurable, and hence the set   \\ is a measurable set. For each let be the measurable set   Then is an increasing sequence of measurable sets and , since converges pointwise to on . By the continuity of measure,   Thus, for any there is an such that   Note that on for .  Fix . For each , apply the above argument with and to find a measurable set and an index such that   and   for all and .  Let . We will show that and converges uniformly to on . First note that   Take any . Choose integer such that . Then, if ,   for all . As , it follows that   for all and . Thus converges uniformly to on and  "
+  "body": " Ergoroff's Theorem   Let be a finite measure space and let be a sequence of measurable functions on which converge pointwise a.e. to a finite a.e. function . Then for all there is a measurable set such that  converges uniformly to on ;  .   Ergoroff's Theorem     By removing a set of measure if necessary, we can assume that converges pointwise to on . By removing another measure set, we can assume that is real-valued.  Fix . For each , the function is measurable, and hence the set is a measurable set. For each let be the measurable set Then is an increasing sequence of measurable sets and , since converges pointwise to on . By the continuity of measure, Thus, for any there is an such that Note that is being used here to apply the excision property  Note that on for .  Fix . For each , apply the above argument with and to find a measurable set and an index such that and for all and .  Let . We will show that and converges uniformly to on . First note that Take any . Choose integer such that . Then, if , for all . As , it follows that for all and . Thus converges uniformly to on and   "
 },
 {
   "id": "cor-ergoroff",
@@ -1888,16 +1771,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "5.2.6",
   "title": "Ergoroff’s Theorem on <span class=\"process-math\">\\(\\mathbb{R}\\)<\/span>.",
-  "body": " Ergoroff's Theorem on  Ergoroff's Theorem on the real line Let be a Lebesegue measurable set with . Let be a sequence of measurable functions on which converge a.e. to a finite a.e. function .  For each there is a closed set such that and converges uniformly to on .  "
-},
-{
-  "id": "chap-meas-fun-4-15",
-  "level": "2",
-  "url": "chap-meas-fun-4.html#chap-meas-fun-4-15",
-  "type": "Proof",
-  "number": "5.2.4",
-  "title": "",
-  "body": " Fix . By there is a measurable set such that and converges uniformly to on . By , there is a closed set such that .  As , converges uniformly to on . Also   completing the proof.  "
+  "body": " Ergoroff's Theorem on   Let be a Lebesegue measurable set with . Let be a sequence of measurable functions on which converge a.e. to a finite a.e. function .  For each there is a closed set such that and converges uniformly to on . Ergoroff's Theorem on the real line     Fix . By there is a measurable set such that and converges uniformly to on . By , there is a closed set such that .  As , converges uniformly to on . Also completing the proof.   "
 },
 {
   "id": "chap-meas-fun-5",
@@ -1906,7 +1780,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "5.3",
   "title": "Exercises",
-  "body": "  Let be a measurable space, and let be a measurable extended real-valued function with measurable domain . Show that the set   is measurable for all (HINT: you will need to treat the values and differently than ).    Give an example of a measurable space and an extended real-valued function with measurable domain which satisfies   is measurable for all , but is not a measurable function.    Let be a measurable space. Let and let be the characteristic function on . Show that is a measurable function if and only if is a measurable set.    Let be a measure space which is not complete. Show that there is a measurable function on , and a function on such that almost everywhere, but is not a measurable function.    Let be two continuous functions on . Show that if almost everywhere, then .    Let be a measure space and let be the collection of all extended real-valued functions on . Define a relation on by   Show that is an equivalence relation on .    Let be a measurable space, and let be a measurable function with measurable domain . Show that is a measurable function for all .    Let be a measurable space and let   where are measurable sets, and . Show that there are disjoint measurable sets and distinct real numbers such that     Let be a measurable space, and let be a sequence of measurable functions on . Show that the functions   ;   ;   ; and      are all measurable functions.    Let be a measure space and let be a bounded measurable function. Show that, for all there exist simple functions and such that and on .    Let be a measure space and let be a bounded measurable function. Show that there is a sequence of simple functions with for all, such that converges uniformly to . (HINT: Use )    Let be a measurable space. Let be the extended real-line and let be the Borel sets in , with respect to the topology defined in (see also ).  Let be a function. Show that is a measurable function if and only if for all .   "
+  "body": "   Let be a measurable space, and let be a measurable extended real-valued function with measurable domain . Show that the set is measurable for all     You will need to treat the values and differently than       Give an example of a measurable space and an extended real-valued function with measurable domain which satisfies is measurable for all , but is not a measurable function.      Let be a measurable space. Let and let be the characteristic function on . Show that is a measurable function if and only if is a measurable set.      Let be a measure space which is not complete. Show that there is a measurable function on , and a function on such that almost everywhere, but is not a measurable function.      Let be two continuous functions on . Show that if almost everywhere, then .      Let be a measure space and let be the collection of all extended real-valued functions on . Define a relation on by Show that is an equivalence relation on .      Let be a measurable space, and let be a measurable function with measurable domain . Show that is a measurable function for all .      Let be a measurable space and let where are measurable sets, and . Show that there are disjoint measurable sets and distinct real numbers such that       Let be a measurable space, and let be a sequence of measurable functions on . Show that the functions  ;  ;  ; and    are all measurable functions.      Let be a measure space and let be a bounded measurable function. Show that, for all there exist simple functions and such that and on .      Let be a measure space and let be a bounded measurable function. Show that there is a sequence of simple functions with for all, such that converges uniformly to .    Use .      Let be a measurable space. Let be the extended real-line and let be the Borel sets in , with respect to the topology defined in (see also ).  Let be a function. Show that is a measurable function if and only if for all .    "
 },
 {
   "id": "exer-f-c-meas",
@@ -1915,7 +1789,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.1",
   "title": "",
-  "body": " Let be a measurable space, and let be a measurable extended real-valued function with measurable domain . Show that the set   is measurable for all (HINT: you will need to treat the values and differently than ).  "
+  "body": "  Let be a measurable space, and let be a measurable extended real-valued function with measurable domain . Show that the set is measurable for all     You will need to treat the values and differently than    "
 },
 {
   "id": "exer-f-c-not-meas",
@@ -1924,7 +1798,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.2",
   "title": "",
-  "body": " Give an example of a measurable space and an extended real-valued function with measurable domain which satisfies   is measurable for all , but is not a measurable function.  "
+  "body": "  Give an example of a measurable space and an extended real-valued function with measurable domain which satisfies is measurable for all , but is not a measurable function.   "
 },
 {
   "id": "exer-char-measurable",
@@ -1933,7 +1807,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.3",
   "title": "",
-  "body": " Let be a measurable space. Let and let be the characteristic function on . Show that is a measurable function if and only if is a measurable set.  "
+  "body": "  Let be a measurable space. Let and let be the characteristic function on . Show that is a measurable function if and only if is a measurable set.   "
 },
 {
   "id": "exer-f-g-a-e",
@@ -1942,7 +1816,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.4",
   "title": "",
-  "body": " Let be a measure space which is not complete. Show that there is a measurable function on , and a function on such that almost everywhere, but is not a measurable function.  "
+  "body": "  Let be a measure space which is not complete. Show that there is a measurable function on , and a function on such that almost everywhere, but is not a measurable function.   "
 },
 {
   "id": "exer-cont-ae",
@@ -1951,7 +1825,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.5",
   "title": "",
-  "body": " Let be two continuous functions on . Show that if almost everywhere, then .  "
+  "body": "  Let be two continuous functions on . Show that if almost everywhere, then .   "
 },
 {
   "id": "exer-meas-func-equiv",
@@ -1960,7 +1834,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.6",
   "title": "",
-  "body": " Let be a measure space and let be the collection of all extended real-valued functions on . Define a relation on by   Show that is an equivalence relation on .  "
+  "body": "  Let be a measure space and let be the collection of all extended real-valued functions on . Define a relation on by Show that is an equivalence relation on .   "
 },
 {
   "id": "exer-scale-meas",
@@ -1969,7 +1843,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.7",
   "title": "",
-  "body": " Let be a measurable space, and let be a measurable function with measurable domain . Show that is a measurable function for all .  "
+  "body": "  Let be a measurable space, and let be a measurable function with measurable domain . Show that is a measurable function for all .   "
 },
 {
   "id": "exer-simple-disjiont",
@@ -1978,7 +1852,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.8",
   "title": "",
-  "body": " Let be a measurable space and let   where are measurable sets, and . Show that there are disjoint measurable sets and distinct real numbers such that   "
+  "body": "  Let be a measurable space and let where are measurable sets, and . Show that there are disjoint measurable sets and distinct real numbers such that    "
 },
 {
   "id": "exer-sup-inf-liminf-limsup",
@@ -1987,7 +1861,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.9",
   "title": "",
-  "body": " Let be a measurable space, and let be a sequence of measurable functions on . Show that the functions   ;   ;   ; and      are all measurable functions.  "
+  "body": "  Let be a measurable space, and let be a sequence of measurable functions on . Show that the functions  ;  ;  ; and    are all measurable functions.   "
 },
 {
   "id": "exer-simple-approx-lemma",
@@ -1996,7 +1870,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.10",
   "title": "",
-  "body": " Let be a measure space and let be a bounded measurable function. Show that, for all there exist simple functions and such that and on .  "
+  "body": "  Let be a measure space and let be a bounded measurable function. Show that, for all there exist simple functions and such that and on .   "
 },
 {
   "id": "exer-uniform-convergence",
@@ -2005,7 +1879,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.11",
   "title": "",
-  "body": " Let be a measure space and let be a bounded measurable function. Show that there is a sequence of simple functions with for all, such that converges uniformly to . (HINT: Use )  "
+  "body": "  Let be a measure space and let be a bounded measurable function. Show that there is a sequence of simple functions with for all, such that converges uniformly to .    Use .   "
 },
 {
   "id": "exer-Borel-meas-functions",
@@ -2014,228 +1888,183 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.3.12",
   "title": "",
-  "body": " Let be a measurable space. Let be the extended real-line and let be the Borel sets in , with respect to the topology defined in (see also ).  Let be a function. Show that is a measurable function if and only if for all .  "
+  "body": "  Let be a measurable space. Let be the extended real-line and let be the Borel sets in , with respect to the topology defined in (see also ).  Let be a function. Show that is a measurable function if and only if for all .   "
 },
 {
-  "id": "chap-integration-3",
+  "id": "sec-int-non-neg",
   "level": "1",
-  "url": "chap-integration-3.html",
+  "url": "sec-int-non-neg.html",
   "type": "Section",
   "number": "6.1",
   "title": "Integration of non-negative functions",
-  "body": " Integration of non-negative functions   Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , integral of a non-negative simple function denote as   If is a measurable set we define the integral of over as    Note that, the condition that is non-negative is necessary in order to guarantee that is defined. If and then   is not defined.   Let be a measure space and let be a non-negative simple function. If   where are (not necessarily distinct) scalars and are disjoint measurable sets, then     Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for   Hence   Hence     linearity of integration non-negative simple functions Let be a measure space and let and be non-negative simple functions on . Then, for any scalars ,   Further, integration is monotonic: monotonicity of integration non-negative simple functions if then     That is straightforward.  Let and be simple functions. Let , , for , and . Then   By ,   Now suppose that and are non-negative simple functions with . Then . It follows that   Hence .    Let be a collection of measurable sets, let be non-negative real numbers, and let By ,   That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate   The following corollary is immediate on noting that   for disjoint sets and .   If non-negative simple function on a measure space and are disjoint sets, then    The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure does not affect the integral.   If is a simple function on a measure space and satisfies then    We will now define the integral of non-negative measurable functions.   Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by   If is a measurable set we define the integral of over as   A non-negative measurable function on is integrable integrable non-negative functions if   When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable. integrable Lebesgue integrable   The proof of the following two propositions are left to and , respectively.   Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then     Monotonicity of integration  monotonicity of integration non-negative functions Let be a measure space, and let and be non-negative measurable functions on . If then    Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is does not need to integrable in order to calculate . If is a simple function (where are measurable sets), then if and only if for some . If , it is possible to have even if for all simple function . The following example illustrates this point.   Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .   The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.      For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that    If is integrable, then will be, in some sense, well-behaved. We make this explicit in after the following important lemma.   Chebyshev's Inequality  Chebyshev's Inequality Let be a measure space and let be a non-negative measurable function. Then, for each real number ,     Fix and let   Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus   Dividing the above inequality by gives the desired result.    Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set   is -finite.    Let . To show that is finite a.e. we must show that . For each , let and let . Then and so   Thus   and so . Note that , and so by the continuity of measure   and hence is finite a.e.  Let Note that   By Chebshev's Inequality,   Thus is a countable union of sets of finite measure. That is, is -finite.   In Section~\\ref{sec: int lim swap} we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function , do we have   The answer is, of course: not necessarily. We give some counter examples here.   Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further   Hence   In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.   The obvious moral to take away from is that, in order for there to be a positive answer to we need some additional conditions on the functions and . There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let be a sequence of real numbers. The limit superior limit inferior liminf limit inferior of is defined as   and the limit superior limit superior limsup limit superior is defined as   The limit inferior and limit superior always exist (with and as possible values). It is always the case that   Further if and only if is a convergent sequence, in which case   Returning to . Whilst we do not have that is a limit of the integrals of the functions which converge pointwise to , we do have the following inequalities:   That these inequalities hold for each of our sequences is not a coincidence.   Fatou's Lemma  Fatou's Lemma Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then     Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that   First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let   Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure,   By Chebyshev's Inequality,   and hence Thus   Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let   The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since ,   Choose such that for all . Let be the maximum value takes. For any we have that   Summarizing the above, for , we have   Hence   Since is arbitrary, and since and , it follows that   Now, taking a supremum over all simple with gives the desired result.   Fatou's Lemma will prove to be a powerful tool. We give now our first application of Fatou's Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.   Monotone Convergence Theorem  Monotone Convergence Theorem Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and     Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each ,   By Fatou's Lemma, ,   Thus    It is reasonable to ask whether `increasing' can be replaced by `decreasing' in the Monotone Convergence Theorem. That is, if is a decreasing sequence of non-negative measurable functions converging pointwise to , is it true that   The following example shows that we cannot expect the statement to hold for decreasing sequences. You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.   Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each ,   and so    The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, .   Let be a measure space, let be a sequence of non-negative measurable functions, and let Then     Let be a non-negative measurable function on a measure space . By the definition of the integral, can be approximated by integrals of simple functions below . By the Simple Approximation Theorem, can be (pointwise) approximated by simple functions below . The Monotone Convergence Theorem allows us to put these two approximations together. Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions , , which converge pointwise to . By the Monotone Convergence Theorem    We end this subsection by showing that integration is linear.   linearity of integration non-negative functions Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then     By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get    "
+  "body": " Integration of non-negative functions  In this section we will define the integral of non-negative measurable functions. We begin with the integral of non-negative simple functions.    Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , denote as If is a measurable set we define the integral of over as  integral of a non-negative simple function     Note that, the condition that is non-negative is necessary in order to guarantee that is defined. If and then is not defined.    Let be a measure space and let be a non-negative simple function. If where are (not necessarily distinct) scalars and are disjoint measurable sets, then     Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for  Hence Hence       Let be a measure space and let and be non-negative simple functions on . Then, for any scalars , Further, integration is monotonic: monotonicity of integration non-negative simple functions if then  linearity of integration non-negative simple functions     That is straightforward.  Let and be simple functions. Let , , for , and . Then By , Now suppose that and are non-negative simple functions with . Then . It follows that Hence .     Let be a collection of measurable sets, let be non-negative real numbers, and let By , That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate   The following corollary is immediate on noting that for disjoint sets and .    If non-negative simple function on a measure space and are disjoint sets, then     The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure does not affect the integral.    If is a simple function on a measure space and satisfies then     We will now define the integral of non-negative measurable functions.    Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by If is a measurable set we define the integral of over as A non-negative measurable function on is integrable integrable non-negative functions if When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable.  integrable Lebesgue integrable     The proof of the following two propositions are left to and , respectively.    Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then      Monotonicity of integration   Let be a measure space, and let and be non-negative measurable functions on . If then  monotonicity of integration non-negative functions     Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is does not need to integrable in order to calculate . If is a simple function (where are measurable sets), then if and only if for some . If , it is possible to have even if for all simple function . The following example illustrates this point.   Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .  The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.       For each we have Thus, for each , and so As the harmonic series is not convergent, it follows that    If is integrable, then will be, in some sense, well-behaved. We make this explicit in after the following important lemma.   Chebyshev's Inequality   Let be a measure space and let be a non-negative measurable function. Then, for each real number ,  Chebyshev's Inequality     Fix and let Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus Dividing the above inequality by gives the desired result.      Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set is -finite.    Let . To show that is finite a.e. we must show that . For each , let and let . Then and so Thus and so . Note that , and so by the continuity of measure and hence is finite a.e.  Let Note that By Chebshev's Inequality, Thus is a countable union of sets of finite measure. That is, is -finite.    In we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function , do we have The answer is, of course: not necessarily. We give some counter examples here.   Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further Hence In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.      limit inferior of the sequence     limit superior of the sequence  The obvious moral to take away from is that, in order for there to be a positive answer to we need some additional conditions on the functions and . There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let be a sequence of real numbers. The limit superior limit inferior liminf limit inferior of is defined as and the limit superior limit superior limsup limit superior is defined as The limit inferior and limit superior always exist (with and as possible values). It is always the case that Further if and only if is a convergent sequence, in which case Returning to . Whilst we do not have that is a limit of the integrals of the functions which converge pointwise to , we do have the following inequalities: That these inequalities hold for each of our sequences is not a coincidence.   Fatou's Lemma   Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then  Fatou's Lemma     Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure, By Chebyshev's Inequality, and hence Thus Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since , Choose such that for all . Let be the maximum value takes. For any we have that Summarizing the above, for , we have Hence Since is arbitrary, and since and , it follows that Now, taking a supremum over all simple with gives the desired result.    Fatou's Lemma will prove to be a powerful tool. We give now our first application of Fatou's Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.   Monotone Convergence Theorem   Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and  Monotone Convergence Theorem     Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each , By Fatou's Lemma, , Thus     It is reasonable to ask whether `increasing' can be replaced by `decreasing' in the Monotone Convergence Theorem. That is, if is a decreasing sequence of non-negative measurable functions converging pointwise to , is it true that The following example shows that we cannot expect the statement to hold for decreasing sequences. You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.   Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each , and so    The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, .    Let be a measure space, let be a sequence of non-negative measurable functions, and let Then      Let be a non-negative measurable function on a measure space . By the definition of the integral, can be approximated by integrals of simple functions below . By the Simple Approximation Theorem, can be (pointwise) approximated by simple functions below . The Monotone Convergence Theorem allows us to put these two approximations together. Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions , , which converge pointwise to . By the Monotone Convergence Theorem    We end this subsection by showing that integration is linear.    Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then  linearity of integration non-negative functions     By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get     "
 },
 {
-  "id": "chap-integration-3-2",
+  "id": "sec-int-non-neg-3",
   "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-2",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-3",
   "type": "Definition",
   "number": "6.1.1",
   "title": "",
-  "body": " Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , integral of a non-negative simple function denote as   If is a measurable set we define the integral of over as   "
+  "body": "  Let be a measure space. Let be a non-negative simple function on where are distinct scalars and are disjoint measurable functions. We define the integral of with respect to , denote as If is a measurable set we define the integral of over as  integral of a non-negative simple function    "
 },
 {
   "id": "lem-simp-int",
   "level": "2",
-  "url": "chap-integration-3.html#lem-simp-int",
+  "url": "sec-int-non-neg.html#lem-simp-int",
   "type": "Lemma",
   "number": "6.1.2",
   "title": "",
-  "body": " Let be a measure space and let be a non-negative simple function. If   where are (not necessarily distinct) scalars and are disjoint measurable sets, then   "
-},
-{
-  "id": "chap-integration-3-7",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-7",
-  "type": "Proof",
-  "number": "6.1.1",
-  "title": "",
-  "body": " Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for   Hence   Hence   "
+  "body": "  Let be a measure space and let be a non-negative simple function. If where are (not necessarily distinct) scalars and are disjoint measurable sets, then     Let be distinct scalars and be disjoint sets such that . Assume , (by adding to and to if necessary).  Note that for each , . Thus, for  Hence Hence    "
 },
 {
   "id": "thm-simple-int-linear",
   "level": "2",
-  "url": "chap-integration-3.html#thm-simple-int-linear",
+  "url": "sec-int-non-neg.html#thm-simple-int-linear",
   "type": "Theorem",
   "number": "6.1.3",
   "title": "",
-  "body": " linearity of integration non-negative simple functions Let be a measure space and let and be non-negative simple functions on . Then, for any scalars ,   Further, integration is monotonic: monotonicity of integration non-negative simple functions if then   "
+  "body": "  Let be a measure space and let and be non-negative simple functions on . Then, for any scalars , Further, integration is monotonic: monotonicity of integration non-negative simple functions if then  linearity of integration non-negative simple functions     That is straightforward.  Let and be simple functions. Let , , for , and . Then By , Now suppose that and are non-negative simple functions with . Then . It follows that Hence .   "
 },
 {
-  "id": "chap-integration-3-9",
+  "id": "sec-int-non-neg-7",
   "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-9",
-  "type": "Proof",
-  "number": "6.1.2",
-  "title": "",
-  "body": " That is straightforward.  Let and be simple functions. Let , , for , and . Then   By ,   Now suppose that and are non-negative simple functions with . Then . It follows that   Hence .  "
-},
-{
-  "id": "chap-integration-3-10",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-10",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-7",
   "type": "Remark",
   "number": "6.1.4",
   "title": "",
-  "body": " Let be a collection of measurable sets, let be non-negative real numbers, and let By ,   That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate  "
+  "body": " Let be a collection of measurable sets, let be non-negative real numbers, and let By , That is, if is a simple function we do not need the sets to be disjoint in order to easily calculate  "
 },
 {
   "id": "cor-simp-A-union-B",
   "level": "2",
-  "url": "chap-integration-3.html#cor-simp-A-union-B",
+  "url": "sec-int-non-neg.html#cor-simp-A-union-B",
   "type": "Corollary",
   "number": "6.1.5",
   "title": "",
-  "body": " If non-negative simple function on a measure space and are disjoint sets, then   "
+  "body": "  If non-negative simple function on a measure space and are disjoint sets, then    "
 },
 {
   "id": "cor-remove-meas-0-simp",
   "level": "2",
-  "url": "chap-integration-3.html#cor-remove-meas-0-simp",
+  "url": "sec-int-non-neg.html#cor-remove-meas-0-simp",
   "type": "Corollary",
   "number": "6.1.6",
   "title": "",
-  "body": " If is a simple function on a measure space and satisfies then   "
+  "body": "  If is a simple function on a measure space and satisfies then    "
 },
 {
-  "id": "chap-integration-3-18",
+  "id": "sec-int-non-neg-13",
   "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-18",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-13",
   "type": "Definition",
   "number": "6.1.7",
   "title": "",
-  "body": " Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by   If is a measurable set we define the integral of over as   A non-negative measurable function on is integrable integrable non-negative functions if   When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable. integrable Lebesgue integrable  "
+  "body": "  Let be a measure space and let be a non-negative measurable function on . Define the integral of with respect to integral of a non-negative function by If is a measurable set we define the integral of over as A non-negative measurable function on is integrable integrable non-negative functions if When is a Lebesgue measurable set, is the Lebesgue measurable subsets of , and is the Lebesgue measure, we refer to the integral with respect to as the Lebesgue integral . integral Lebesgue integral If is an integrable function with respect to we say that is Lebesgue integrable.  integrable Lebesgue integrable    "
 },
 {
   "id": "prop-int-remove-zero-set-non-neg",
   "level": "2",
-  "url": "chap-integration-3.html#prop-int-remove-zero-set-non-neg",
+  "url": "sec-int-non-neg.html#prop-int-remove-zero-set-non-neg",
   "type": "Proposition",
   "number": "6.1.8",
   "title": "",
-  "body": " Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then   "
+  "body": "  Let be a measure space, let be non-negative measurable function on , and let be a measurable set with . Then    "
 },
 {
   "id": "prop-int-mono-non-neg",
   "level": "2",
-  "url": "chap-integration-3.html#prop-int-mono-non-neg",
+  "url": "sec-int-non-neg.html#prop-int-mono-non-neg",
   "type": "Proposition",
   "number": "6.1.9",
   "title": "Monotonicity of integration.",
-  "body": " Monotonicity of integration  monotonicity of integration non-negative functions Let be a measure space, and let and be non-negative measurable functions on . If then   "
+  "body": " Monotonicity of integration   Let be a measure space, and let and be non-negative measurable functions on . If then  monotonicity of integration non-negative functions    "
 },
 {
   "id": "exam-integral-1-x",
   "level": "2",
-  "url": "chap-integration-3.html#exam-integral-1-x",
+  "url": "sec-int-non-neg.html#exam-integral-1-x",
   "type": "Example",
   "number": "6.1.10",
   "title": "",
-  "body": " Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function   where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .   The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.      For each we have    Thus, for each ,   and so   As the harmonic series is not convergent, it follows that   "
+  "body": " Consider the function on the interval . Let be the Lebesgue measure on . We will show whilst for all simple .  First, suppose is a simple function with . For each , for all . Since , it follows that if , then is a bounded set. Thus for each when , and so .  For each define a simple function where denotes the ceiling function (i.e. round to the nearest integer above). Then for each .  The functions (red) and (blue) from    The curve of the function 1\/x, for positive x, is shown in red. A simple\/step function below 1\/x is shown in red.   The function for positive is shown, together with the step function , as described in . The function is a simple function satisfying for , when , and otherwise.       For each we have Thus, for each , and so As the harmonic series is not convergent, it follows that   "
 },
 {
   "id": "lem-chenyshev",
   "level": "2",
-  "url": "chap-integration-3.html#lem-chenyshev",
+  "url": "sec-int-non-neg.html#lem-chenyshev",
   "type": "Lemma",
   "number": "6.1.12",
   "title": "Chebyshev’s Inequality.",
-  "body": " Chebyshev's Inequality  Chebyshev's Inequality Let be a measure space and let be a non-negative measurable function. Then, for each real number ,   "
-},
-{
-  "id": "chap-integration-3-26",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-26",
-  "type": "Proof",
-  "number": "6.1.3",
-  "title": "",
-  "body": " Fix and let   Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus   Dividing the above inequality by gives the desired result.  "
+  "body": " Chebyshev's Inequality   Let be a measure space and let be a non-negative measurable function. Then, for each real number ,  Chebyshev's Inequality     Fix and let Note that, since is measurable, is measurable. Let . Then is simple and . Further . Thus Dividing the above inequality by gives the desired result.   "
 },
 {
   "id": "thm-f-integrable",
   "level": "2",
-  "url": "chap-integration-3.html#thm-f-integrable",
+  "url": "sec-int-non-neg.html#thm-f-integrable",
   "type": "Theorem",
   "number": "6.1.13",
   "title": "",
-  "body": " Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set   is -finite.  "
-},
-{
-  "id": "chap-integration-3-28",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-28",
-  "type": "Proof",
-  "number": "6.1.4",
-  "title": "",
-  "body": " Let . To show that is finite a.e. we must show that . For each , let and let . Then and so   Thus   and so . Note that , and so by the continuity of measure   and hence is finite a.e.  Let Note that   By Chebshev's Inequality,   Thus is a countable union of sets of finite measure. That is, is -finite.  "
+  "body": "  Let be a measure space and let be a non-negative measurable function such that . Then is finite almost everywhere and the set is -finite.    Let . To show that is finite a.e. we must show that . For each , let and let . Then and so Thus and so . Note that , and so by the continuity of measure and hence is finite a.e.  Let Note that By Chebshev's Inequality, Thus is a countable union of sets of finite measure. That is, is -finite.   "
 },
 {
   "id": "ex-pw-int-not-convergent",
   "level": "2",
-  "url": "chap-integration-3.html#ex-pw-int-not-convergent",
+  "url": "sec-int-non-neg.html#ex-pw-int-not-convergent",
   "type": "Example",
   "number": "6.1.14",
   "title": "",
-  "body": " Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further   Hence   In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.  "
+  "body": " Let on and let be the Lebesgue measure.. Then We define sequences , and on by   Each of the sequences , and converge pointwise to . Further Hence In conclusion, the answer to can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases, may not hold.  "
+},
+{
+  "id": "sec-int-non-neg-24",
+  "level": "2",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-24",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "limit superior limit superior "
 },
 {
   "id": "lem-fatou",
   "level": "2",
-  "url": "chap-integration-3.html#lem-fatou",
+  "url": "sec-int-non-neg.html#lem-fatou",
   "type": "Lemma",
   "number": "6.1.15",
   "title": "Fatou’s Lemma.",
-  "body": " Fatou's Lemma  Fatou's Lemma Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then   "
-},
-{
-  "id": "chap-integration-3-45",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-45",
-  "type": "Proof",
-  "number": "6.1.5",
-  "title": "",
-  "body": " Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that   First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let   Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure,   By Chebyshev's Inequality,   and hence Thus   Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let   The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since ,   Choose such that for all . Let be the maximum value takes. For any we have that   Summarizing the above, for , we have   Hence   Since is arbitrary, and since and , it follows that   Now, taking a supremum over all simple with gives the desired result.  "
+  "body": " Fatou's Lemma   Let be a measure space, and let be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function . Then  Fatou's Lemma     Let be a measure set such that converges to pointwise on . By , replacing with does not change the value of any integrals. We can thus assume that converges pointwise to everywhere on .  Let be a simple function satisfying . We will show that First, assume that . In this case, there is a measurable set and a real number such that and for all . For each let Note that since, for , .  As the sets are ascending (and measurable) we have, by the continuity of measure, By Chebyshev's Inequality, and hence Thus Thus  Assume now that . Let Since is simple and we must have that . Fix . For each , let The sequence is an ascending sequence of measurable sets with . Hence is a descending sequence of measurable sets with intersection . By the continuity of measure, since , Choose such that for all . Let be the maximum value takes. For any we have that Summarizing the above, for , we have Hence Since is arbitrary, and since and , it follows that Now, taking a supremum over all simple with gives the desired result.   "
 },
 {
   "id": "thm-MCT",
   "level": "2",
-  "url": "chap-integration-3.html#thm-MCT",
+  "url": "sec-int-non-neg.html#thm-MCT",
   "type": "Theorem",
   "number": "6.1.16",
   "title": "Monotone Convergence Theorem.",
-  "body": " Monotone Convergence Theorem  Monotone Convergence Theorem Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and   "
+  "body": " Monotone Convergence Theorem   Let be a measure space and let be an increasing sequence of non-negative measurable functions on . Define a function on by Then is measurable and  Monotone Convergence Theorem     Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each , By Fatou's Lemma, , Thus    "
 },
 {
-  "id": "chap-integration-3-48",
+  "id": "sec-int-non-neg-29",
   "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-48",
-  "type": "Proof",
-  "number": "6.1.6",
-  "title": "",
-  "body": " Note that exists for all since the sequence is increasing. Thus is a well-defined function on . Further is measurable by and is non-negative since each is non-negative.  By the monotonicity of integration, we have that is an increasing sequence, and hence convergent. Further, since for each ,   By Fatou's Lemma, ,   Thus   "
-},
-{
-  "id": "chap-integration-3-52",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-52",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-29",
   "type": "Example",
   "number": "6.1.17",
   "title": "",
-  "body": " Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each ,   and so   "
+  "body": " Consider the sequence of measurable functions on the real line. The sequence is decreasing, and converges pointwise to the function . However, for each , and so   "
 },
 {
   "id": "cor-MCT-series",
   "level": "2",
-  "url": "chap-integration-3.html#cor-MCT-series",
+  "url": "sec-int-non-neg.html#cor-MCT-series",
   "type": "Corollary",
   "number": "6.1.18",
   "title": "",
-  "body": " Let be a measure space, let be a sequence of non-negative measurable functions, and let Then   "
+  "body": "  Let be a measure space, let be a sequence of non-negative measurable functions, and let Then    "
 },
 {
-  "id": "chap-integration-3-55",
+  "id": "sec-int-non-neg-32",
   "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-55",
+  "url": "sec-int-non-neg.html#sec-int-non-neg-32",
   "type": "Remark",
   "number": "6.1.19",
   "title": "",
@@ -2244,214 +2073,151 @@ var ptx_lunr_docs = [
 {
   "id": "thm-pos-int-linear",
   "level": "2",
-  "url": "chap-integration-3.html#thm-pos-int-linear",
+  "url": "sec-int-non-neg.html#thm-pos-int-linear",
   "type": "Theorem",
   "number": "6.1.20",
   "title": "",
-  "body": " linearity of integration non-negative functions Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then   "
+  "body": "  Let be a measure space, let and be non-negative measurable functions, and let , be non-negative real-numbers. Then  linearity of integration non-negative functions     By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get    "
 },
 {
-  "id": "chap-integration-3-58",
-  "level": "2",
-  "url": "chap-integration-3.html#chap-integration-3-58",
-  "type": "Proof",
-  "number": "6.1.7",
-  "title": "",
-  "body": " By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions and such that converges to pointwise and converges to pointwise. Thus is an increasing sequence of non-negative simple functions which converge pointwise to . Using the Monotone Covergence Theorem and and the Monotone Convergence Theorem again we get   "
-},
-{
-  "id": "chap-integration-4",
+  "id": "sec-integration",
   "level": "1",
-  "url": "chap-integration-4.html",
+  "url": "sec-integration.html",
   "type": "Section",
   "number": "6.2",
   "title": "Integration of measurable functions",
-  "body": " Integration of measurable functions  Recall that if is a measurable function on a measure space then where is the positive part of and is the negative part of . Further, . As , and are non-negative measurable functions we can use to get   Thus is integrable if and only if and are integrable.   Let be a measure space and let be a measurable function on with positive part and negative part . The function is integrable with respect to integrable if is integrable. That is, is integrable if . If is integrable we define the integral of over with respect to integral by   If is integrable and is measurable, we define the integral of over with respect to as   When is Lebesgue measurable, is the Lebesgue measurable subsets of , and is the Lebesgue measure, an integrable function is called Lebesgue integrable integrable Lebesgue integrable and the integral is called the Lebesgue integral . integral Lebesgue integral   We first note the following important property relating the integral of and the integral of .   Let be a measure space and let be an integrable function on . Then     Let be the decomposition of into its positive and negative parts. Then     Linearity and Monotonicity of Integration  monotonicty of integration linearity of integration Let be a measure space, let and be integrable functions on , and let . Then is integrable and   Further, it then     It is straightforward to show that . We will show . First note that by , and being integrable implies and are finite a.e. Thus is defined. Note that . By the monotonicity of integration of non-negative measurable functions, it follows that is integrable.  As , , and , it follows that   and so   By , we have then that   Thus   and hence   If , then and so   Thus .   Several results can now be stated which follow readily from and what we have already proved for integrals of non-negative linear functions.   If and are disjoint measurable subsets in a measure space and is integrable, then     If is a measure space, is a sequence of integrable functions on , and is integrable, then     Apply and the linearity of integration.   In it is shown that defines a measure when . The following proposition is a straightforward application of , the linearity of integration, and the continuity of measure.   Continuity of Integration  integral continuity Let be a measure space and let be an integrable function on .   If is an ascending sequence of measurable sets in with then    If is a descending sequence of measurable sets in with then      The following theorem continues our theme of results which ask when a limit of integrals is the integral of the pointwise limit.   Lebesgue Dominated Convergence Theorem  Lebesgue Dominated Convergence Theorem Dominated Convergence Theorem Lebesgue Dominated Convergence Theorem Let be a measure space and let be a sequence of measurable functions which converge pointwise a.e. to a measurable function . If there is an integrable non-negative function on such that a.e. for all , then is integrable over and     By removing a set of measure , we will assume that the sequence converges pointwise to and everywhere. Note that each is integrable since and is integrable. It follows that , and so is integrable as well.  The sequence is a sequence of non-negative measurable functions which converges pointwise to . Thus, by Fatou's Lemma,   The linearity of integration thus gives that   The sequence is also a sequence of non-negative measurable functions. This sequence converges pointwise to . Applying Fatou's Lemma and the linearity of integration we have   Thus   By and we have that   It follows that is a convergent sequence and    Note that the Lebesgue Dominated Convergence Theorem is not a generalization of the Monotone Convergence Theorem. The Lebesgue Dominated Convergence Theorem only deals with integrable functions, whilst the Monotone Convergence Theorem allows for possibly infinite integrals.  However, if we restrict the Monotone convergence theorem to an increasing sequence of integrable non-negative functions which converge pointwise a.e. to an integrable function , then this is a special case of the Lebesgue Decomposition Theorem.   "
+  "body": " Integration of measurable functions  Recall that if is a measurable function on a measure space then where is the positive part of and is the negative part of . Further, . As , and are non-negative measurable functions we can use to get Thus is integrable if and only if and are integrable. This leads us to the following definition.     The integral of over the set with respect to the measure    Let be a measure space and let be a measurable function on with positive part and negative part . The function is integrable with respect to if is integrable. That is, is integrable if . If is integrable we define the integral of over with respect to by If is integrable and is measurable, we define the integral of over with respect to as  integrable integral   When is Lebesgue measurable, is the Lebesgue measurable subsets of , and is the Lebesgue measure, an integrable function is called Lebesgue integrable and the integral is called the Lebesgue integral . integral Lebesgue integral integrable Lebesgue integrable     We first note the following important property relating the integral of and the integral of .    Let be a measure space and let be an integrable function on . Then     Let be the decomposition of into its positive and negative parts. Then      Linearity and Monotonicity of Integration   Let be a measure space, let and be integrable functions on , and let . Then is integrable and Further, it then  monotonicty of integration linearity of integration     It is straightforward to show that . We will show . First note that by , and being integrable implies and are finite a.e. Thus is defined. Note that . By the monotonicity of integration of non-negative measurable functions, it follows that is integrable.  As , , and , it follows that and so By , we have then that Thus, and hence If , then and so Thus .    Several results can now be stated which follow readily from and what we have already proved for integrals of non-negative linear functions.    If and are disjoint measurable subsets in a measure space and is integrable, then       If is a measure space, is a sequence of integrable functions on , and is integrable, then     Apply and the linearity of integration.    In it is shown that defines a measure when . The following proposition is a straightforward application of , the linearity of integration, and the continuity of measure.   Continuity of Integration   Let be a measure space and let be an integrable function on .  If is an ascending sequence of measurable sets in with then   If is a descending sequence of measurable sets in with then    integral continuity     The following theorem continues our theme of results which ask when a limit of integrals is the integral of the pointwise limit.   Lebesgue Dominated Convergence Theorem   Let be a measure space and let be a sequence of measurable functions which converge pointwise a.e. to a measurable function . If there is an integrable non-negative function on such that a.e. for all , then is integrable over and  Lebesgue Dominated Convergence Theorem Dominated Convergence Theorem Lebesgue Dominated Convergence Theorem     By removing a set of measure , we will assume that the sequence converges pointwise to and everywhere. Note that each is integrable since and is integrable. It follows that , and so is integrable as well.  The sequence is a sequence of non-negative measurable functions which converges pointwise to . Thus, by Fatou's Lemma , The linearity of integration thus gives that   The sequence is also a sequence of non-negative measurable functions. This sequence converges pointwise to . Applying Fatou's Lemma and the linearity of integration we have Thus By and we have that It follows that is a convergent sequence and     Note that the Lebesgue Dominated Convergence Theorem is not a generalization of the Monotone Convergence Theorem. The Lebesgue Dominated Convergence Theorem only deals with integrable functions, whilst the Monotone Convergence Theorem allows for possibly infinite integrals.  However, if we restrict the Monotone convergence theorem to an increasing sequence of integrable non-negative functions which converge pointwise a.e. to an integrable function , then this is a special case of the Lebesgue Decomposition Theorem.   "
 },
 {
-  "id": "chap-integration-4-5",
+  "id": "sec-integration-3",
   "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-5",
+  "url": "sec-integration.html#sec-integration-3",
   "type": "Definition",
   "number": "6.2.1",
   "title": "",
-  "body": " Let be a measure space and let be a measurable function on with positive part and negative part . The function is integrable with respect to integrable if is integrable. That is, is integrable if . If is integrable we define the integral of over with respect to integral by   If is integrable and is measurable, we define the integral of over with respect to as   When is Lebesgue measurable, is the Lebesgue measurable subsets of , and is the Lebesgue measure, an integrable function is called Lebesgue integrable integrable Lebesgue integrable and the integral is called the Lebesgue integral . integral Lebesgue integral  "
+  "body": "   The integral of over the set with respect to the measure    Let be a measure space and let be a measurable function on with positive part and negative part . The function is integrable with respect to if is integrable. That is, is integrable if . If is integrable we define the integral of over with respect to by If is integrable and is measurable, we define the integral of over with respect to as  integrable integral   When is Lebesgue measurable, is the Lebesgue measurable subsets of , and is the Lebesgue measure, an integrable function is called Lebesgue integrable and the integral is called the Lebesgue integral . integral Lebesgue integral integrable Lebesgue integrable    "
 },
 {
-  "id": "chap-integration-4-7",
+  "id": "sec-integration-5",
   "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-7",
+  "url": "sec-integration.html#sec-integration-5",
   "type": "Proposition",
   "number": "6.2.2",
   "title": "",
-  "body": " Let be a measure space and let be an integrable function on . Then   "
-},
-{
-  "id": "chap-integration-4-8",
-  "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-8",
-  "type": "Proof",
-  "number": "6.2.1",
-  "title": "",
-  "body": " Let be the decomposition of into its positive and negative parts. Then   "
+  "body": "  Let be a measure space and let be an integrable function on . Then     Let be the decomposition of into its positive and negative parts. Then    "
 },
 {
   "id": "thm-int-liner",
   "level": "2",
-  "url": "chap-integration-4.html#thm-int-liner",
+  "url": "sec-integration.html#thm-int-liner",
   "type": "Theorem",
   "number": "6.2.3",
   "title": "Linearity and Monotonicity of Integration.",
-  "body": " Linearity and Monotonicity of Integration  monotonicty of integration linearity of integration Let be a measure space, let and be integrable functions on , and let . Then is integrable and   Further, it then   "
+  "body": " Linearity and Monotonicity of Integration   Let be a measure space, let and be integrable functions on , and let . Then is integrable and Further, it then  monotonicty of integration linearity of integration     It is straightforward to show that . We will show . First note that by , and being integrable implies and are finite a.e. Thus is defined. Note that . By the monotonicity of integration of non-negative measurable functions, it follows that is integrable.  As , , and , it follows that and so By , we have then that Thus, and hence If , then and so Thus .   "
 },
 {
-  "id": "chap-integration-4-10",
+  "id": "sec-integration-8",
   "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-10",
-  "type": "Proof",
-  "number": "6.2.2",
-  "title": "",
-  "body": " It is straightforward to show that . We will show . First note that by , and being integrable implies and are finite a.e. Thus is defined. Note that . By the monotonicity of integration of non-negative measurable functions, it follows that is integrable.  As , , and , it follows that   and so   By , we have then that   Thus   and hence   If , then and so   Thus .  "
-},
-{
-  "id": "chap-integration-4-12",
-  "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-12",
+  "url": "sec-integration.html#sec-integration-8",
   "type": "Corollary",
   "number": "6.2.4",
   "title": "",
-  "body": " If and are disjoint measurable subsets in a measure space and is integrable, then   "
+  "body": "  If and are disjoint measurable subsets in a measure space and is integrable, then    "
 },
 {
-  "id": "chap-integration-4-13",
+  "id": "sec-integration-9",
   "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-13",
+  "url": "sec-integration.html#sec-integration-9",
   "type": "Proposition",
   "number": "6.2.5",
   "title": "",
-  "body": " If is a measure space, is a sequence of integrable functions on , and is integrable, then   "
-},
-{
-  "id": "chap-integration-4-14",
-  "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-14",
-  "type": "Proof",
-  "number": "6.2.3",
-  "title": "",
-  "body": " Apply and the linearity of integration.  "
+  "body": "  If is a measure space, is a sequence of integrable functions on , and is integrable, then     Apply and the linearity of integration.   "
 },
 {
   "id": "prop-integral-cont",
   "level": "2",
-  "url": "chap-integration-4.html#prop-integral-cont",
+  "url": "sec-integration.html#prop-integral-cont",
   "type": "Proposition",
   "number": "6.2.6",
   "title": "Continuity of Integration.",
-  "body": " Continuity of Integration  integral continuity Let be a measure space and let be an integrable function on .   If is an ascending sequence of measurable sets in with then    If is a descending sequence of measurable sets in with then     "
+  "body": " Continuity of Integration   Let be a measure space and let be an integrable function on .  If is an ascending sequence of measurable sets in with then   If is a descending sequence of measurable sets in with then    integral continuity    "
 },
 {
   "id": "thm-LDC",
   "level": "2",
-  "url": "chap-integration-4.html#thm-LDC",
+  "url": "sec-integration.html#thm-LDC",
   "type": "Theorem",
   "number": "6.2.7",
   "title": "Lebesgue Dominated Convergence Theorem.",
-  "body": " Lebesgue Dominated Convergence Theorem  Lebesgue Dominated Convergence Theorem Dominated Convergence Theorem Lebesgue Dominated Convergence Theorem Let be a measure space and let be a sequence of measurable functions which converge pointwise a.e. to a measurable function . If there is an integrable non-negative function on such that a.e. for all , then is integrable over and   "
+  "body": " Lebesgue Dominated Convergence Theorem   Let be a measure space and let be a sequence of measurable functions which converge pointwise a.e. to a measurable function . If there is an integrable non-negative function on such that a.e. for all , then is integrable over and  Lebesgue Dominated Convergence Theorem Dominated Convergence Theorem Lebesgue Dominated Convergence Theorem     By removing a set of measure , we will assume that the sequence converges pointwise to and everywhere. Note that each is integrable since and is integrable. It follows that , and so is integrable as well.  The sequence is a sequence of non-negative measurable functions which converges pointwise to . Thus, by Fatou's Lemma , The linearity of integration thus gives that   The sequence is also a sequence of non-negative measurable functions. This sequence converges pointwise to . Applying Fatou's Lemma and the linearity of integration we have Thus By and we have that It follows that is a convergent sequence and   "
 },
 {
-  "id": "chap-integration-4-19",
+  "id": "sec-integration-14",
   "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-19",
-  "type": "Proof",
-  "number": "6.2.4",
-  "title": "",
-  "body": " By removing a set of measure , we will assume that the sequence converges pointwise to and everywhere. Note that each is integrable since and is integrable. It follows that , and so is integrable as well.  The sequence is a sequence of non-negative measurable functions which converges pointwise to . Thus, by Fatou's Lemma,   The linearity of integration thus gives that   The sequence is also a sequence of non-negative measurable functions. This sequence converges pointwise to . Applying Fatou's Lemma and the linearity of integration we have   Thus   By and we have that   It follows that is a convergent sequence and  "
-},
-{
-  "id": "chap-integration-4-20",
-  "level": "2",
-  "url": "chap-integration-4.html#chap-integration-4-20",
+  "url": "sec-integration.html#sec-integration-14",
   "type": "Remark",
   "number": "6.2.8",
   "title": "",
   "body": " Note that the Lebesgue Dominated Convergence Theorem is not a generalization of the Monotone Convergence Theorem. The Lebesgue Dominated Convergence Theorem only deals with integrable functions, whilst the Monotone Convergence Theorem allows for possibly infinite integrals.  However, if we restrict the Monotone convergence theorem to an increasing sequence of integrable non-negative functions which converge pointwise a.e. to an integrable function , then this is a special case of the Lebesgue Decomposition Theorem.  "
 },
 {
-  "id": "chap-integration-5",
+  "id": "sec-int-Riemann",
   "level": "1",
-  "url": "chap-integration-5.html",
+  "url": "sec-int-Riemann.html",
   "type": "Section",
   "number": "6.3",
   "title": "Lebesgue integration and Riemann integration",
-  "body": " Lebesgue integration and Riemann integration  In Chapter~1 we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals that the answer is yes.  When is Riemann integrable on an interval we denote the Riemann integral of by . We first establish precisely, what functions are Riemann integrable. Riemann integration  Let be a closed interval in , and let be a bounded function. Let be a partition of , where   We define as   The function is Riemann integrable integrable Riemann integrable if for all there exists a partition of such that . You may have seen other definitions of Riemann integrable . Can you prove that your definition of Riemann integrable is equivalent to the definition given here?   integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .    Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.    Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.    Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.   We have defined the Lebesgue integral in terms of integrals of simple functions. The Riemann integral is usually defined in terms of Riemann sums. The following definition allows us to describe Riemann sums by integrals of simple functions.   A simple function on a closed interval is a step function step function if   for some partition of .   Let be a bounded function on and let be a partition of . For , let . Then the lower Darboux sum Darboux sum lower of with respect to is   If we let be the step function then   Similarly, if . Then the upper Darboux sum Darboux sum upper of with respect to is   If we let be the step function then   That is, the upper and lower Riemann sums are equal to the integrals of step functions.   Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and     Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then   Thus is Lebesgue integrable.  For each partition let be a step function such and   and let be a step function such and   Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that   Since, for every partition , , the monotonicity of Lebesgue integral tell us   Hence .    Let be a closed interval. We have shown that the set of bounded Riemann integrable functions on is contained in the set of bounded Lebesgue integrable functions on . When is not a singleton (i.e. when ), this inclusion is strict. If then is a Lebesgue integrable function on , but is not Riemann integrable.   The following example shows that the statements analogous to the Monotone Convergence Theorem and the Lebesgue Dominated Convergence Theorem for Riemann integration do not hold.   Let and let . The set is countable and so can be enumerated as   For each let   and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have   since is not defined. Of course, using Lebesgue integration, we get   Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.   Recall that Riemann integrals can be extended beyond closed intervals by improper Riemann integrals. integral Riemann integral improper That is we define   The following examples show that it is possible for a function to have a finite improper Riemann integral but not be Lebesgue integrable.   Define a function on by when .    The function from     Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.    Let on the real line.    The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.    and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then   For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then   for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of   Thus, the series is not only convergent, but absolutely convergent. In and   are conditionally convergent, not absolutely convergent.   "
+  "body": " Lebesgue integration and Riemann integration     The Riemann integral of over  In we argued for the need of a form of integration more robust than Riemann integration. Have we achieved that? We will see that for integrals of bounded functions over closed intervals that the answer is yes.  When is Riemann integrable on an interval we denote the Riemann integral of by . We first establish precisely, what functions are Riemann integrable. Riemann integration  Let be a closed interval in , and let be a bounded function. Let be a partition of , where We define as The function is Riemann integrable if for all there exists a partition of such that . You may have seen other definitions of Riemann integrable . Can you prove that your definition of Riemann integrable is equivalent to the definition given here? integrable Riemann integrable    Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure . integrable Riemann integrable     Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set then That that, if , then Thus, we can write as a countable union Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition such that . Let Then Since it follows that The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that Let The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by Note that, if there are and such that then . Let and Note, if , and then for some , by the choice of . Further and so Let . Then Hence is Riemann integrable.      Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.    Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.    We have defined the Lebesgue integral in terms of integrals of simple functions. The Riemann integral is usually defined in terms of Riemann sums. The following definition allows us to describe Riemann sums by integrals of simple functions.    A simple function on a closed interval is a step function step function if for some partition of .       Lower Darboux sum of with respect to     Upper Darboux sum of with respect to  Let be a bounded function on and let be a partition of . For , let . Then the lower Darboux sum of with respect to is If we let be the step function then Similarly, if . Then the upper Darboux sum of with respect to is If we let be the step function then That is, the upper and lower Riemann sums are equal to the integrals of step functions. Darboux sum lower  Darboux sum upper     Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and     Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then Thus is Lebesgue integrable.  For each partition let be a step function such and and let be a step function such and Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that Since, for every partition , , the monotonicity of Lebesgue integral tells us Hence .     Let be a closed interval. We have shown that the set of bounded Riemann integrable functions on is contained in the set of bounded Lebesgue integrable functions on . When is not a singleton (i.e. when ), this inclusion is strict. If then is a Lebesgue integrable function on , but is not Riemann integrable.   The following example shows that the statements analogous to the Monotone Convergence Theorem and the Lebesgue Dominated Convergence Theorem for Riemann integration do not hold.   Let and let . The set is countable and so can be enumerated as For each let and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have since is not defined. Of course, using Lebesgue integration, we get Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.   Recall that Riemann integrals can be extended beyond closed intervals by improper Riemann integrals. That is we define The following examples show that it is possible for a function to have a finite improper Riemann integral but not be Lebesgue integrable. integral Riemann integral improper    Define a function on by when .   The function from    Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.    Let on the real line.   The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.  Note for every integer  Hence Thus and so is not Lebesgue integrable.    and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of Thus, the series is not only convergent, but absolutely convergent. In and  are conditionally convergent, not absolutely convergent.   "
+},
+{
+  "id": "sec-int-Riemann-4",
+  "level": "2",
+  "url": "sec-int-Riemann.html#sec-int-Riemann-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Riemann integrable "
 },
 {
   "id": "thm-Riemann-int",
   "level": "2",
-  "url": "chap-integration-5.html#thm-Riemann-int",
+  "url": "sec-int-Riemann.html#thm-Riemann-int",
   "type": "Theorem",
   "number": "6.3.1",
   "title": "",
-  "body": " integrable Riemann integrable Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure .  "
-},
-{
-  "id": "chap-integration-5-10",
-  "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-10",
-  "type": "Proof",
-  "number": "6.3.1",
-  "title": "",
-  "body": " Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set   then   That that, if , then Thus, we can write as a countable union   Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition   such that . Let Then   Since it follows that   The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that   and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that   Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that   Let   The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by   Note that, if there are and such that then . Let   and   Note, if , and then   for some , by the choice of . Further   and so   Let . Then   Hence is Riemann integrable.  "
+  "body": "  Let be a bounded function on the closed interval , and let . Then is Riemann integrable if and only if has Lebesgue measure . integrable Riemann integrable     Suppose that is Riemann integrable. Take . The function is not continuous at , if there exists such that for all there exists such that . Thus, if we set then That that, if , then Thus, we can write as a countable union Fix . We will show that . Take any . Since is Riemann integrable, there exists a partition such that . Let Then Since it follows that The above inequality holds for all , and so . It follows that is Lebesgue measurable and (see ). We have now that and so is also Lebesgue measurable with .  Suppose now that has Lebesgue measure . Given , there exists open intervals such that Let and . The set is a union of open intervals, and so is open in . Thus, is closed. As , is both closed and bounded, and so is compact by the Heine-Borel Theorem, .  The function is continuous on .  Hence, for each there exists such that, for if and then . The open intervals form an open cover of . Since is compact, there are is a finite set such that Let The set is finite, and contains both and , we can thus order and view as a partition of . Let the ordered elements of be denoted by Note that, if there are and such that then . Let and Note, if , and then for some , by the choice of . Further and so Let . Then Hence is Riemann integrable.   "
 },
 {
   "id": "lem-riemann-meas",
   "level": "2",
-  "url": "chap-integration-5.html#lem-riemann-meas",
+  "url": "sec-int-Riemann.html#lem-riemann-meas",
   "type": "Lemma",
   "number": "6.3.2",
   "title": "",
-  "body": " Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.  "
+  "body": "  Let be a bounded function on the closed interval . If is Riemann integrable, then is measurable.    Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.   "
 },
 {
-  "id": "chap-integration-5-12",
+  "id": "sec-int-Riemann-8",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-12",
-  "type": "Proof",
-  "number": "6.3.2",
-  "title": "",
-  "body": " Let , and let . Since is continuous on , we have that is a measurable function by . By , . Since is a complete measure on , is a measurable function. Thus is measurable.  "
-},
-{
-  "id": "chap-integration-5-14",
-  "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-14",
+  "url": "sec-int-Riemann.html#sec-int-Riemann-8",
   "type": "Definition",
   "number": "6.3.3",
   "title": "",
-  "body": " A simple function on a closed interval is a step function step function if   for some partition of .  "
+  "body": "  A simple function on a closed interval is a step function step function if for some partition of .   "
 },
 {
   "id": "thm-Riemann-is-Lebesgue",
   "level": "2",
-  "url": "chap-integration-5.html#thm-Riemann-is-Lebesgue",
+  "url": "sec-int-Riemann.html#thm-Riemann-is-Lebesgue",
   "type": "Theorem",
   "number": "6.3.4",
   "title": "",
-  "body": " Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and   "
+  "body": "  Let be a bounded function on a closed interval . If is Riemann integrable then is Lebesgue integrable and     Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then Thus is Lebesgue integrable.  For each partition let be a step function such and and let be a step function such and Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that Since, for every partition , , the monotonicity of Lebesgue integral tells us Hence .   "
 },
 {
-  "id": "chap-integration-5-25",
+  "id": "sec-int-Riemann-11",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-25",
-  "type": "Proof",
-  "number": "6.3.3",
-  "title": "",
-  "body": " Assume is Riemann integrable. By , is measurable. Let be an upper bound for . Then   Thus is Lebesgue integrable.  For each partition let be a step function such and   and let be a step function such and   Note that such a step functions and exist by the argument preceding this theorem.  Since is Riemann integrable we have that   Since, for every partition , , the monotonicity of Lebesgue integral tell us   Hence .  "
-},
-{
-  "id": "chap-integration-5-26",
-  "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-26",
+  "url": "sec-int-Riemann.html#sec-int-Riemann-11",
   "type": "Remark",
   "number": "6.3.5",
   "title": "",
@@ -2460,38 +2226,38 @@ var ptx_lunr_docs = [
 {
   "id": "exam-MCT-DCT-failure-for-Riemann",
   "level": "2",
-  "url": "chap-integration-5.html#exam-MCT-DCT-failure-for-Riemann",
+  "url": "sec-int-Riemann.html#exam-MCT-DCT-failure-for-Riemann",
   "type": "Example",
   "number": "6.3.6",
   "title": "",
-  "body": " Let and let . The set is countable and so can be enumerated as   For each let   and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have   since is not defined. Of course, using Lebesgue integration, we get   Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.  "
+  "body": " Let and let . The set is countable and so can be enumerated as For each let and let . Then is an increasing sequence of non-negative Riemann-integrable functions which converge pointwise to . The Riemann integral of each is . However, as noted in , is not Riemann integrable.  We do not have since is not defined. Of course, using Lebesgue integration, we get Indeed this is an easy calculation to do directly. Alternatively it follows from either the Monotone Convergence Theorem or the Lebesgue Dominated Convergence Theorem.  "
 },
 {
   "id": "ex-not-lebesgue-int-1",
   "level": "2",
-  "url": "chap-integration-5.html#ex-not-lebesgue-int-1",
+  "url": "sec-int-Riemann.html#ex-not-lebesgue-int-1",
   "type": "Example",
   "number": "6.3.7",
   "title": "",
-  "body": " Define a function on by when .    The function from     Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.  "
+  "body": " Define a function on by when .   The function from    Visualization of the function on the poisitve reals that takes the (alternating) value plus or minus 1\/n between (n-1) and (n).   Visualization of the function and its (Riemann) integral. Image graphs a sequence of rectangles of height with base between and in light blue.      Then The exact value this alternating series takes can be shown to be , but that is finite is enough for us here.  However and hence is not Lebesgue integrable.  "
 },
 {
   "id": "ex-not-lebesgue-int-2",
   "level": "2",
-  "url": "chap-integration-5.html#ex-not-lebesgue-int-2",
+  "url": "sec-int-Riemann.html#ex-not-lebesgue-int-2",
   "type": "Example",
   "number": "6.3.9",
   "title": "",
-  "body": " Let on the real line.    The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.   Note for every integer   Hence   Thus   and so is not Lebesgue integrable.  "
+  "body": " Let on the real line.   The function from    THe curve of sin(x)\/x   Visualization of the curve for between and . The curve shows decreasing waves as goes farther from . The curve peaks at where approaches .      It can be shown that Showing this takes some work, but it can be done using complex integration tricks or double integral tricks.  Note for every integer  Hence Thus and so is not Lebesgue integrable.  "
 },
 {
-  "id": "chap-integration-5-34",
+  "id": "sec-int-Riemann-17",
   "level": "2",
-  "url": "chap-integration-5.html#chap-integration-5-34",
+  "url": "sec-int-Riemann.html#sec-int-Riemann-17",
   "type": "Remark",
   "number": "6.3.11",
   "title": "",
-  "body": " and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then   For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then   for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of   Thus, the series is not only convergent, but absolutely convergent. In and   are conditionally convergent, not absolutely convergent.  "
+  "body": " and highlight an important difference between Lebesgue integrals and improper Riemann integrals. Let be a function on the non-negative real line . Then has a finite improper Riemann integral if and only if is Riemann integrable on every each interval and the series . Then For Lebesgue integration, convergence of the series is not sufficient. If is Lebesgue integrable on then for any collection of disjoint measurable sets with . Thus, reordering the collection does not affect the value of Thus, the series is not only convergent, but absolutely convergent. In and  are conditionally convergent, not absolutely convergent.  "
 },
 {
   "id": "chap-integration-6",
@@ -2500,7 +2266,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "6.4",
   "title": "Exercises",
-  "body": "  Let be a non-negative function on a measure space , and let be a measurable set with . Prove     Let be a measure space, and let and be non-negative measurable functions on . If then     Let be a measurable space. Fix and let be the Dirac measure at . If is a non-negative measurable function on , what is the value of ?    Let be the counting measure on the subsets of , and let be a (necessarily measurable) function from to .  Show that is integrable with respect to if and only if the series converges absolutely to a finite number. Further show that if is integrable then     Let be a measure space, and let be a non-negative measurable function on . Let be a measurable set such that for all . Show that, if then     Prove : Let be a measure space, let be a sequence of non-negative measurable functions, and let Prove     Let be a measure space. Suppose and are integrable functions such that   for all measurable sets . Show that almost everywhere with respect to . (HINT: for show that if and for all then a.e.).    Let be a measure space.   Let be a non-negative measurable function on . Define by  Show that is a measure on satisfying when .    Let an integrable function on with respect to . Define by  Show that is a signed-measure on satisfying when .      "
+  "body": "   Let be a non-negative function on a measure space , and let be a measurable set with . Prove       Let be a measure space, and let and be non-negative measurable functions on . If then       Let be a measurable space. Fix and let be the Dirac measure at . If is a non-negative measurable function on , what is the value of ?      Let be the counting measure on the subsets of , and let be a (necessarily measurable) function from to .  Show that is integrable with respect to if and only if the series converges absolutely to a finite number. Further show that if is integrable then       Let be a measure space, and let be a non-negative measurable function on . Let be a measurable set such that for all . Show that, if then       Prove : Let be a measure space, let be a sequence of non-negative measurable functions, and let Prove       Let be a measure space. Suppose and are integrable functions such that for all measurable sets . Show that almost everywhere with respect to .    First show that if and for all then a.e.      Let be a measure space.     Let be a non-negative measurable function on . Define by Show that is a measure on satisfying when .      Let an integrable function on with respect to . Define by Show that is a signed-measure on satisfying when .     "
 },
 {
   "id": "exer-int-a-e",
@@ -2509,7 +2275,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.1",
   "title": "",
-  "body": " Let be a non-negative function on a measure space , and let be a measurable set with . Prove   "
+  "body": "  Let be a non-negative function on a measure space , and let be a measurable set with . Prove    "
 },
 {
   "id": "exer-int-mono-non-neg",
@@ -2518,7 +2284,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.2",
   "title": "",
-  "body": " Let be a measure space, and let and be non-negative measurable functions on . If then   "
+  "body": "  Let be a measure space, and let and be non-negative measurable functions on . If then    "
 },
 {
   "id": "exer-dirac-integration",
@@ -2527,7 +2293,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.3",
   "title": "",
-  "body": " Let be a measurable space. Fix and let be the Dirac measure at . If is a non-negative measurable function on , what is the value of ?  "
+  "body": "  Let be a measurable space. Fix and let be the Dirac measure at . If is a non-negative measurable function on , what is the value of ?   "
 },
 {
   "id": "chap-integration-6-4",
@@ -2536,7 +2302,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.4",
   "title": "",
-  "body": " Let be the counting measure on the subsets of , and let be a (necessarily measurable) function from to .  Show that is integrable with respect to if and only if the series converges absolutely to a finite number. Further show that if is integrable then   "
+  "body": "  Let be the counting measure on the subsets of , and let be a (necessarily measurable) function from to .  Show that is integrable with respect to if and only if the series converges absolutely to a finite number. Further show that if is integrable then    "
 },
 {
   "id": "exer-positive-integral",
@@ -2545,7 +2311,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.5",
   "title": "",
-  "body": " Let be a measure space, and let be a non-negative measurable function on . Let be a measurable set such that for all . Show that, if then   "
+  "body": "  Let be a measure space, and let be a non-negative measurable function on . Let be a measurable set such that for all . Show that, if then    "
 },
 {
   "id": "exer-MCT-series",
@@ -2554,7 +2320,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.6",
   "title": "",
-  "body": " Prove : Let be a measure space, let be a sequence of non-negative measurable functions, and let Prove   "
+  "body": "  Prove : Let be a measure space, let be a sequence of non-negative measurable functions, and let Prove    "
 },
 {
   "id": "exer-same-int-same-func",
@@ -2563,7 +2329,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.7",
   "title": "",
-  "body": " Let be a measure space. Suppose and are integrable functions such that   for all measurable sets . Show that almost everywhere with respect to . (HINT: for show that if and for all then a.e.).  "
+  "body": "  Let be a measure space. Suppose and are integrable functions such that for all measurable sets . Show that almost everywhere with respect to .    First show that if and for all then a.e.   "
 },
 {
   "id": "exer-integration-measure",
@@ -2572,7 +2338,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.4.8",
   "title": "",
-  "body": " Let be a measure space.   Let be a non-negative measurable function on . Define by  Show that is a measure on satisfying when .    Let an integrable function on with respect to . Define by  Show that is a signed-measure on satisfying when .     "
+  "body": "  Let be a measure space.     Let be a non-negative measurable function on . Define by Show that is a measure on satisfying when .      Let an integrable function on with respect to . Define by Show that is a signed-measure on satisfying when .    "
 },
 {
   "id": "chap-differentation-3",
@@ -2581,7 +2347,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "The Radon-Nikodym Theorem",
-  "body": " The Radon-Nikodym Theorem  In we saw how integration against a non-negative measurable function with respect to a measure gave gives rise to a new measure . In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.  We begin by recalling the definition of mutually singular measures, and extending this definition to signed-measures.   Let be a measurable space, and let and be two signed-measures on . The measures and are mutually singular , singular measures mutually singular signed-measures denoted , if there are disjoint measurable sets with such that is a null set for , and is a null set for .    Let be the Cantor-Lebesgue function on , let be the Cantor set in and let . Let be the Borel measure on which is the Carathéodory extension of the premeasure   By , and , and by , and . Thus and are mutually singular.   Mutually singular measures are, in some sense, very different from eachother. We now introduce a comparison between measures.   Let be a measure space and let be a measure on . Then is absolutely continuous with respect to absolutely continuous measures , written , if for , if .  If is a signed-measure on , then is absolutely continuous with respect to absolutely continuous measures , written , if .   Let and be two non-zero measures on the same measure space. If then and . Conversely, if or , then . Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures and , we can always write where and , (The Lebesgue Decomposition Theorem, ). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.  Given a measure , the next example shows that it is easy to create measures which are absolutely continuous with respect to . We will see, with some reasonable conditions on , all measures which are absolutely continuous with respect to will be of this form.   Let be a measure space. Let be a non-negative measurable function on , and let be an integrable function on . Then   defines a measure on , and   defines a signed measure on ( ). Then and .   We can also get examples of absolutely continuous measures (with respect to the Lebesgue measure) using what we have learnt about Borel measures on . Below is one such example.   Let on . Let be the Borel measure on induced by . That is, is the Borel measure which is the Carathéodory extension of the premeasure   as described in . We will show that .  Take Borel set such that . We want to show that . Fix . We will assume (removing does not change or ). By , there is a countable collection of subsets of such that   and Now   As for all , it follows that . Thus is absolutely continuous with respect to .    Radon-Nikodym Theorem  Radon-Nikodym Theorem Let be a -finite measure space, and let be a -finite measure on such that . Then there is a non-negative measurable function on such that   for all . Further, if and are both non-negative functions satisfying , then a.e.    First assume that both and are finite measures. If for all , then we can take for to hold. Thus suppose that is not the zero measure.  Let be the collection of non-negative measurable functions with   for all . Since the zero function is in , is non-empty. Let . Note that, since is finite, is finite with .  Clearly, . We claim that . Consider, for each real , the signed measure . For each let be a Hahn-Decomposition of for . That is is a positive set for , and is a negative set for . If for all , then   for all and . Hence, if then . Since we also have implies , and so is the measure. This contradicts the assumption that is non-zero. Hence there is some for which . Let   Then, for any   Thus, . As , we must have .  We will show that is attained by a function . Let be a sequence of functions in so that   Note also that if and then . Indeed, if and then   We can thus assume that the sequence is increasing, by replacing each with if necessary. Let for all . By the Monotone Convergence Theorem   \\ for all . Thus . Setting we have   Our goal now is to show that satisfies . That is, we will show that for all   Define a measure on by   (Note that is indeed a measure, and not just a signed-measure, since ).  Since is absolutely continuous with respect to , and is absolutely continuous with respect to , is absolutely continuous with respect to . Applying the above argument to (in place of ), if is a non-zero measure, then there is a non-negative measurable function such that and   for all .  Taking any we have   Thus   Hence . However   contradicting the definition of . Hence for all , and thus   as desired.  Now suppose that and are both -finite. There are disjoint sets and disjoint sets such that   and for all . Let be the countable collection of disjoint sets . Then , and for all , and .  For each there is a non-negative measurable function such that   for all measurable . Extend to all of by setting for . Let . Take any . Applying , we get   The uniqueness (almost everywhere) follows from .   The following corollary to the Radon-Nikodym Theorem is immediate on taking the Jordan decomposition of a signed-measure and applying the Radon-Nikodym Theorem.   Let be a -finite measure space and let be a finite signed-measure on such that . Then there is a measurable function which is integrable with respect to such that, for all ,   Further, the function is unique up to almost everywhere equivalence.    Radon-Nikodym derivative Let be a -finite measure space and let be a -finite measure or a finite signed measure on such that . Let be the measurable function on such that   for all . The function is called the Radon-Nikodym derivative of with respect to . Radon-Nikodym derivative The Radon-Nikodym derivative is denotated as    The word derivative in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? Section~\\ref{sec: ftoc}, in particular , goes some way to justify the term. We will satiate ourselves with a simple example now.   Let on . Let be the Carathéodory extension of the premeasure   on . We saw in that is absolutely continuous with respect to . Hence, by the Radon-Nikodym theorem there is a non-negative measurable function on such that   In particular, for we have   By the Fundamental Theorem of Calculus we also have We can comfortably apply the Fundamental Theorem of Calculus since and are continuous on , and thus are Riemann integrable.   By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that   for all Borel sets . It follows from , that . Technically, it means that almost everywhere, but can be chosen so that . Thus, the Radon-Nikodym derivative of is the derivative of . That is    We end this section with an important decomposition theorem due to Lebesgue.   Lebesgue Decomposition Theorem  Lebesgue Decomposition Theorem Let be a -finite measure space and let be a -finite measure on . Then there are mutually orthogonal measures and such that   , and   .      Let . Then is a -finite measure and . By the Radon-Nikodym Theorem, there is a non-negative measurable function such that, for all   with the last equality following from . Let   and   Define measures and by   Then and are mutually singular, with .  That and are mutually singular is clear. It remains to show . Take such that . Then   Thus   Since on , it follows that ( ). Thus , and hence .   The following corollary follows by applying the applying the Lebesgue Decomposition Theorem to each of the measures in the Jordan decomposition of the signed-measure.   Let be a -finite measure space and let be a finite signed-measure on . Then there are mutually orthogonal signed-measures and such that   , and   .      Let be a -finite measure space, let be a -finite measure or a finite signed-measure, and let and are mutually orthogonal measures such that , , and . The measures and are called the Lebesgue decomposition of with respect to . Lebesgue decomposition of a measure We call the Radon-Nikodym derivative of witrh respect to the Radon-Nikodym derivative on with respect to and denote the it by . Radon-Nikodym derivative   "
+  "body": " The Radon-Nikodym Theorem  In we saw how integration against a non-negative measurable function with respect to a measure gave gives rise to a new measure . In this section we will study measures of that type in detail, cumulating in two famed theorems: the Radon-Nikodym Theorem and the Lebesgue Decomposition Theorem.  We begin by recalling the definition of mutually singular measures, and extending this definition to signed-measures.    Let be a measurable space, and let and be two signed-measures on . The measures and are mutually singular , denoted , if there are disjoint measurable sets with such that is a null set for , and is a null set for . singular measures mutually singular signed-measures      Let be the Cantor-Lebesgue function on , let be the Cantor set in and let . Let be the Borel measure on which is the Carathéodory extension of the premeasure By , and , and by , and . Thus and are mutually singular.   Mutually singular measures are, in some sense, very different from eachother. We now introduce a comparison between measures.     is absolutely continuous with respect to    Let be a measure space and let be a measure on . Then is absolutely continuous with respect to absolutely continuous measures , written , if for , if .  If is a signed-measure on , then is absolutely continuous with respect to absolutely continuous measures , written , if .    Let and be two non-zero measures on the same measure space. If then and . Conversely, if or , then . Mutually orthogonality and absolute continuity are mutually exclusive. We will see, that given measures and , we can always write where and , (The Lebesgue Decomposition Theorem, ). Thus, mutual singularity and absolute continuity are two extremes. We first explore absolute continuity further.  Given a measure , the next example shows that it is easy to create measures which are absolutely continuous with respect to . We will see, with some reasonable conditions on , all measures which are absolutely continuous with respect to will be of this form.   Let be a measure space. Let be a non-negative measurable function on , and let be an integrable function on . Then defines a measure on , and defines a signed measure on ( ). Then and .   We can also get examples of absolutely continuous measures (with respect to the Lebesgue measure) using what we have learnt about Borel measures on . Below is one such example.   Let on . Let be the Borel measure on induced by . That is, is the Borel measure which is the Carathéodory extension of the premeasure as described in . We will show that .  Take a Borel set such that . We want to show that . Fix . We will assume (removing does not change or ). By , there is a countable collection of subsets of such that and Now As for all , it follows that . Thus is absolutely continuous with respect to .    Radon-Nikodym Theorem   Let be a -finite measure space, and let be a -finite measure on such that . Then there is a non-negative measurable function on such that for all . Further, if and are both non-negative functions satisfying , then a.e. Radon-Nikodym Theorem     First assume that both and are finite measures. If for all , then we can take for to hold. Thus suppose that is not the zero measure.  Let be the collection of non-negative measurable functions with for all . Since the zero function is in , is non-empty. Let . Note that, since is finite, is finite with .  Clearly, . We claim that . Consider, for each real , the signed measure . For each let be a Hahn-Decomposition of for . That is is a positive set for , and is a negative set for . If for all , then for all and . Hence, if then . Since we also have implies , and so is the measure. This contradicts the assumption that is non-zero. Hence there is some for which . Let Then, for any  Thus, . As , we must have .  We will show that is attained by a function . Let be a sequence of functions in so that Note also that if and then . Indeed, if and then We can thus assume that the sequence is increasing, by replacing each with if necessary. Let for all . By the Monotone Convergence Theorem for all . Thus . Setting we have   Our goal now is to show that satisfies . That is, we will show that for all  Define a measure on by (Note that is indeed a measure, and not just a signed-measure, since ).  Since is absolutely continuous with respect to , and is absolutely continuous with respect to , is absolutely continuous with respect to . Applying the above argument to (in place of ), if is a non-zero measure, then there is a non-negative measurable function such that and for all .  Taking any we have Thus Hence . However, contradicting the definition of . Hence for all , and thus as desired.  Now suppose that and are both -finite. There are disjoint sets and disjoint sets such that  and for all . Let be the countable collection of disjoint sets . Then , and for all , and .  For each there is a non-negative measurable function such that for all measurable . Extend to all of by setting for . Let . Take any . Applying , we get The uniqueness (almost everywhere) follows from .    The following corollary to the Radon-Nikodym Theorem is immediate on taking the Jordan decomposition of a signed-measure and applying the Radon-Nikodym Theorem.    Let be a -finite measure space and let be a finite signed-measure on such that . Then there is a measurable function which is integrable with respect to such that, for all , Further, the function is unique up to almost everywhere equivalence.       Radon-Nikodym derivative     Radon-Nikodym derivative Let be a -finite measure space and let be a -finite measure or a finite signed measure on such that . Let be the measurable function on such that for all . The function is called the Radon-Nikodym derivative of with respect to . Radon-Nikodym derivative The Radon-Nikodym derivative is denotated as     The word derivative in Radon-Nikodym will perhaps raise some eyebrows. What is being derivated here? , in particular , goes some way to justify the term. We will satiate ourselves with a simple example now.   Let on . Let be the Carathéodory extension of the premeasure on . We saw in that is absolutely continuous with respect to . Hence, by the Radon-Nikodym theorem there is a non-negative measurable function on such that In particular, for we have By the Fundamental Theorem of Calculus we also have We can comfortably apply the Fundamental Theorem of Calculus since and are continuous on , and thus are Riemann integrable.  By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that for all Borel sets . It follows from , that . Technically, it means that almost everywhere, but can be chosen so that . Thus, the Radon-Nikodym derivative of is the derivative of . That is    We end this section with an important decomposition.   Lebesgue Decomposition Theorem   Let be a -finite measure space and let be a -finite measure on . Then there are mutually orthogonal measures and such that   , and  .   Lebesgue Decomposition Theorem     Let . Then is a -finite measure and . By the Radon-Nikodym Theorem, there is a non-negative measurable function such that, for all  with the last equality following from . Let and Define measures and by Then and are mutually singular, with .  That and are mutually singular is clear. It remains to show . Take such that . Then Thus Since on , it follows that ( ). Thus , and hence .    The following corollary follows by applying the applying the Lebesgue Decomposition Theorem to each of the measures in the Jordan decomposition of the signed-measure.    Let be a -finite measure space and let be a finite signed-measure on . Then there are mutually orthogonal signed-measures and such that   , and  .         Lebesgue decomposition of    Let be a -finite measure space, let be a -finite measure or a finite signed-measure, and let and are mutually orthogonal measures such that , , and . The measures and are called the Lebesgue decomposition of with respect to . Lebesgue decomposition of a measure We call the Radon-Nikodym derivative of witrh respect to the Radon-Nikodym derivative on with respect to and denote the it by . Radon-Nikodym derivative     "
 },
 {
   "id": "chap-differentation-3-4",
@@ -2590,7 +2356,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.1.1",
   "title": "",
-  "body": " Let be a measurable space, and let and be two signed-measures on . The measures and are mutually singular , singular measures mutually singular signed-measures denoted , if there are disjoint measurable sets with such that is a null set for , and is a null set for .  "
+  "body": "  Let be a measurable space, and let and be two signed-measures on . The measures and are mutually singular , denoted , if there are disjoint measurable sets with such that is a null set for , and is a null set for . singular measures mutually singular signed-measures    "
 },
 {
   "id": "ex-Cantor-Lebesgue-not-abs-cont",
@@ -2599,7 +2365,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.2",
   "title": "",
-  "body": " Let be the Cantor-Lebesgue function on , let be the Cantor set in and let . Let be the Borel measure on which is the Carathéodory extension of the premeasure   By , and , and by , and . Thus and are mutually singular.  "
+  "body": " Let be the Cantor-Lebesgue function on , let be the Cantor set in and let . Let be the Borel measure on which is the Carathéodory extension of the premeasure By , and , and by , and . Thus and are mutually singular.  "
 },
 {
   "id": "chap-differentation-3-7",
@@ -2608,7 +2374,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.1.3",
   "title": "",
-  "body": " Let be a measure space and let be a measure on . Then is absolutely continuous with respect to absolutely continuous measures , written , if for , if .  If is a signed-measure on , then is absolutely continuous with respect to absolutely continuous measures , written , if .  "
+  "body": "   is absolutely continuous with respect to    Let be a measure space and let be a measure on . Then is absolutely continuous with respect to absolutely continuous measures , written , if for , if .  If is a signed-measure on , then is absolutely continuous with respect to absolutely continuous measures , written , if .   "
 },
 {
   "id": "ex-integration-measure-abs-cont",
@@ -2617,7 +2383,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.4",
   "title": "",
-  "body": " Let be a measure space. Let be a non-negative measurable function on , and let be an integrable function on . Then   defines a measure on , and   defines a signed measure on ( ). Then and .  "
+  "body": " Let be a measure space. Let be a non-negative measurable function on , and let be an integrable function on . Then defines a measure on , and defines a signed measure on ( ). Then and .  "
 },
 {
   "id": "ex-x-2-is-abs-cont",
@@ -2626,7 +2392,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.5",
   "title": "",
-  "body": " Let on . Let be the Borel measure on induced by . That is, is the Borel measure which is the Carathéodory extension of the premeasure   as described in . We will show that .  Take Borel set such that . We want to show that . Fix . We will assume (removing does not change or ). By , there is a countable collection of subsets of such that   and Now   As for all , it follows that . Thus is absolutely continuous with respect to .  "
+  "body": " Let on . Let be the Borel measure on induced by . That is, is the Borel measure which is the Carathéodory extension of the premeasure as described in . We will show that .  Take a Borel set such that . We want to show that . Fix . We will assume (removing does not change or ). By , there is a countable collection of subsets of such that and Now As for all , it follows that . Thus is absolutely continuous with respect to .  "
 },
 {
   "id": "thm-Radon-Nikodym",
@@ -2635,16 +2401,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.1.6",
   "title": "Radon-Nikodym Theorem.",
-  "body": " Radon-Nikodym Theorem  Radon-Nikodym Theorem Let be a -finite measure space, and let be a -finite measure on such that . Then there is a non-negative measurable function on such that   for all . Further, if and are both non-negative functions satisfying , then a.e.  "
-},
-{
-  "id": "chap-differentation-3-14",
-  "level": "2",
-  "url": "chap-differentation-3.html#chap-differentation-3-14",
-  "type": "Proof",
-  "number": "7.1.1",
-  "title": "",
-  "body": " First assume that both and are finite measures. If for all , then we can take for to hold. Thus suppose that is not the zero measure.  Let be the collection of non-negative measurable functions with   for all . Since the zero function is in , is non-empty. Let . Note that, since is finite, is finite with .  Clearly, . We claim that . Consider, for each real , the signed measure . For each let be a Hahn-Decomposition of for . That is is a positive set for , and is a negative set for . If for all , then   for all and . Hence, if then . Since we also have implies , and so is the measure. This contradicts the assumption that is non-zero. Hence there is some for which . Let   Then, for any   Thus, . As , we must have .  We will show that is attained by a function . Let be a sequence of functions in so that   Note also that if and then . Indeed, if and then   We can thus assume that the sequence is increasing, by replacing each with if necessary. Let for all . By the Monotone Convergence Theorem   \\ for all . Thus . Setting we have   Our goal now is to show that satisfies . That is, we will show that for all   Define a measure on by   (Note that is indeed a measure, and not just a signed-measure, since ).  Since is absolutely continuous with respect to , and is absolutely continuous with respect to , is absolutely continuous with respect to . Applying the above argument to (in place of ), if is a non-zero measure, then there is a non-negative measurable function such that and   for all .  Taking any we have   Thus   Hence . However   contradicting the definition of . Hence for all , and thus   as desired.  Now suppose that and are both -finite. There are disjoint sets and disjoint sets such that   and for all . Let be the countable collection of disjoint sets . Then , and for all , and .  For each there is a non-negative measurable function such that   for all measurable . Extend to all of by setting for . Let . Take any . Applying , we get   The uniqueness (almost everywhere) follows from .  "
+  "body": " Radon-Nikodym Theorem   Let be a -finite measure space, and let be a -finite measure on such that . Then there is a non-negative measurable function on such that for all . Further, if and are both non-negative functions satisfying , then a.e. Radon-Nikodym Theorem     First assume that both and are finite measures. If for all , then we can take for to hold. Thus suppose that is not the zero measure.  Let be the collection of non-negative measurable functions with for all . Since the zero function is in , is non-empty. Let . Note that, since is finite, is finite with .  Clearly, . We claim that . Consider, for each real , the signed measure . For each let be a Hahn-Decomposition of for . That is is a positive set for , and is a negative set for . If for all , then for all and . Hence, if then . Since we also have implies , and so is the measure. This contradicts the assumption that is non-zero. Hence there is some for which . Let Then, for any  Thus, . As , we must have .  We will show that is attained by a function . Let be a sequence of functions in so that Note also that if and then . Indeed, if and then We can thus assume that the sequence is increasing, by replacing each with if necessary. Let for all . By the Monotone Convergence Theorem for all . Thus . Setting we have   Our goal now is to show that satisfies . That is, we will show that for all  Define a measure on by (Note that is indeed a measure, and not just a signed-measure, since ).  Since is absolutely continuous with respect to , and is absolutely continuous with respect to , is absolutely continuous with respect to . Applying the above argument to (in place of ), if is a non-zero measure, then there is a non-negative measurable function such that and for all .  Taking any we have Thus Hence . However, contradicting the definition of . Hence for all , and thus as desired.  Now suppose that and are both -finite. There are disjoint sets and disjoint sets such that  and for all . Let be the countable collection of disjoint sets . Then , and for all , and .  For each there is a non-negative measurable function such that for all measurable . Extend to all of by setting for . Let . Take any . Applying , we get The uniqueness (almost everywhere) follows from .   "
 },
 {
   "id": "cor-signed-Radon-Nikodym",
@@ -2653,16 +2410,16 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "7.1.7",
   "title": "",
-  "body": " Let be a -finite measure space and let be a finite signed-measure on such that . Then there is a measurable function which is integrable with respect to such that, for all ,   Further, the function is unique up to almost everywhere equivalence.  "
+  "body": "  Let be a -finite measure space and let be a finite signed-measure on such that . Then there is a measurable function which is integrable with respect to such that, for all , Further, the function is unique up to almost everywhere equivalence.   "
 },
 {
-  "id": "chap-differentation-3-17",
+  "id": "chap-differentation-3-16",
   "level": "2",
-  "url": "chap-differentation-3.html#chap-differentation-3-17",
+  "url": "chap-differentation-3.html#chap-differentation-3-16",
   "type": "Definition",
   "number": "7.1.8",
   "title": "",
-  "body": " Radon-Nikodym derivative Let be a -finite measure space and let be a -finite measure or a finite signed measure on such that . Let be the measurable function on such that   for all . The function is called the Radon-Nikodym derivative of with respect to . Radon-Nikodym derivative The Radon-Nikodym derivative is denotated as   "
+  "body": "   Radon-Nikodym derivative     Radon-Nikodym derivative Let be a -finite measure space and let be a -finite measure or a finite signed measure on such that . Let be the measurable function on such that for all . The function is called the Radon-Nikodym derivative of with respect to . Radon-Nikodym derivative The Radon-Nikodym derivative is denotated as    "
 },
 {
   "id": "ex-x-2-Radon-Nikodym-derivative",
@@ -2671,7 +2428,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.1.9",
   "title": "",
-  "body": " Let on . Let be the Carathéodory extension of the premeasure   on . We saw in that is absolutely continuous with respect to . Hence, by the Radon-Nikodym theorem there is a non-negative measurable function on such that   In particular, for we have   By the Fundamental Theorem of Calculus we also have We can comfortably apply the Fundamental Theorem of Calculus since and are continuous on , and thus are Riemann integrable.   By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that   for all Borel sets . It follows from , that . Technically, it means that almost everywhere, but can be chosen so that . Thus, the Radon-Nikodym derivative of is the derivative of . That is   "
+  "body": " Let on . Let be the Carathéodory extension of the premeasure on . We saw in that is absolutely continuous with respect to . Hence, by the Radon-Nikodym theorem there is a non-negative measurable function on such that In particular, for we have By the Fundamental Theorem of Calculus we also have We can comfortably apply the Fundamental Theorem of Calculus since and are continuous on , and thus are Riemann integrable.  By the uniqueness of the Carathéodory Extension, from the Carathéodory-Hahn Theorem, it follows that for all Borel sets . It follows from , that . Technically, it means that almost everywhere, but can be chosen so that . Thus, the Radon-Nikodym derivative of is the derivative of . That is   "
 },
 {
   "id": "thm-lebesegue-decomposition",
@@ -2680,34 +2437,25 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.1.10",
   "title": "Lebesgue Decomposition Theorem.",
-  "body": " Lebesgue Decomposition Theorem  Lebesgue Decomposition Theorem Let be a -finite measure space and let be a -finite measure on . Then there are mutually orthogonal measures and such that   , and   .    "
+  "body": " Lebesgue Decomposition Theorem   Let be a -finite measure space and let be a -finite measure on . Then there are mutually orthogonal measures and such that   , and  .   Lebesgue Decomposition Theorem     Let . Then is a -finite measure and . By the Radon-Nikodym Theorem, there is a non-negative measurable function such that, for all  with the last equality following from . Let and Define measures and by Then and are mutually singular, with .  That and are mutually singular is clear. It remains to show . Take such that . Then Thus Since on , it follows that ( ). Thus , and hence .   "
 },
 {
   "id": "chap-differentation-3-22",
   "level": "2",
   "url": "chap-differentation-3.html#chap-differentation-3-22",
-  "type": "Proof",
-  "number": "7.1.2",
-  "title": "",
-  "body": " Let . Then is a -finite measure and . By the Radon-Nikodym Theorem, there is a non-negative measurable function such that, for all   with the last equality following from . Let   and   Define measures and by   Then and are mutually singular, with .  That and are mutually singular is clear. It remains to show . Take such that . Then   Thus   Since on , it follows that ( ). Thus , and hence .  "
-},
-{
-  "id": "chap-differentation-3-24",
-  "level": "2",
-  "url": "chap-differentation-3.html#chap-differentation-3-24",
   "type": "Corollary",
   "number": "7.1.11",
   "title": "",
-  "body": " Let be a -finite measure space and let be a finite signed-measure on . Then there are mutually orthogonal signed-measures and such that   , and   .    "
+  "body": "  Let be a -finite measure space and let be a finite signed-measure on . Then there are mutually orthogonal signed-measures and such that   , and  .     "
 },
 {
-  "id": "chap-differentation-3-25",
+  "id": "chap-differentation-3-23",
   "level": "2",
-  "url": "chap-differentation-3.html#chap-differentation-3-25",
+  "url": "chap-differentation-3.html#chap-differentation-3-23",
   "type": "Definition",
   "number": "7.1.12",
   "title": "",
-  "body": " Let be a -finite measure space, let be a -finite measure or a finite signed-measure, and let and are mutually orthogonal measures such that , , and . The measures and are called the Lebesgue decomposition of with respect to . Lebesgue decomposition of a measure We call the Radon-Nikodym derivative of witrh respect to the Radon-Nikodym derivative on with respect to and denote the it by . Radon-Nikodym derivative  "
+  "body": "   Lebesgue decomposition of    Let be a -finite measure space, let be a -finite measure or a finite signed-measure, and let and are mutually orthogonal measures such that , , and . The measures and are called the Lebesgue decomposition of with respect to . Lebesgue decomposition of a measure We call the Radon-Nikodym derivative of witrh respect to the Radon-Nikodym derivative on with respect to and denote the it by . Radon-Nikodym derivative    "
 },
 {
   "id": "chap-differentation-4",
@@ -2716,7 +2464,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Absolutely continuous functions",
-  "body": " Absolutely continuous functions  Let be closed interval in and let be the Lebesgue measure on . In this section we want to compare Borel measures on with the Lebesgue measure. If is a Borel measure on , when is ? When is ? What can we learn from the Radon-Nikodym Theorem and the Lebesgue decomposition theorem?  We first give a quantitative description of absolute continuity.   Let be a measure space. Suppose is a finite signed-measure on . Then if and only if for all there exists a such that given , if then    First, assume the criterion does not hold. That is, we will assume that there is an such that for all there is a set with and There is thus a sequence of sets such that   For each , let . Then is a descending sequence of sets with   Let . Since for all ,   for all . Hence . By the continuity of measure (since is a finite measure)   Hence is not absolutely continuous with respect to .  Conversely, suppose that criterion holds. Suppose . Then, for all , . Hence . Thus . Note that we did not use the was finite for this direction of the proof. That was finite was only used in the first paragraph to apply the continuity of measure for intersections.    Let be a closed interval, let be the Lebesgue measure on the Borel sets in , and let be a Borel signed-measure on . We say that is absolutely continuous if . absolutely continuous measure We say the is singular singular measures Borel measure if and , where is the Jordan decomposition of .   We know that any Borel measure on determines a right-continuous function of bounded variation on ; and any right-continuous function on determines a Borel measure, . shows that we can get singular measures this way; shows that we can absolutely continuous measures this way. The following definition is clearly leading to what functions give what types of measures.   Let be a closed interval and let be a function. The function is absolutely continuous absolutely continuous function if for all there is a such that if are disjoint open intervals with   then    It should be clear that an absolutely continuous function is continuous. The following example shows that all Lipschitz functions are absolutely continuous.   Let be a Lipschitz function on Lipschitz function . That is, assume there is a constant such that for all . Take any and let . Let be a collection of disjoint open intervals such that . Then   Thus, is absolutely continuous.  Assume now that . Let be the Borel signed-measure on induced by , from . That is, if is the Jordan decomposition of , then where is the Carathéodory extension of the premeasure and is the Carathéodory extension of the premeasure , for . Following a similar argument as in , we can show that is absolutely continuous.   The following theorem has a similar proof to the analogous statements for continuous functions and is left as an exercise.   Let and be absolutely continuous functions on a closed interval , then   is absolutely continuous for all ;   is absolutely continuous;   if for all , is absolutely continuous.     If we want to talk about Borel signed-measures constructed from absolutely continuous functions, we must first show that absolutely continuous functions have bounded variation.   Let be an absolutely continuous function on a closed interval , then is of bounded variation.  Further, if is the Jordan decomposition of , then and are absolutely continuous.    Let satisfy   whenever are disjoint open intervals in with   Let be an integer greater than . Then, for any partition of   Thus, has bounded variation, with total variation .  Let be the Jordan decomposition of . Recall   where is the function of total variation for . Fix . Fix such that if are disjoint open intervals such that then   Fix disjoint open intervals with . For each , let be a partition of . Then   Thus   Hence is absolutely continuous. It follows that and are absolutely continuous.   The following proposition shows that what we have just found Lipschitz functions is not a happy coincidence. We have a one-to-one correspondence with absolutely continuous sign-measures and absolutely continuous functions.   Let be a closed interval in . Let be a signed Borel measure on , and let . Then is absolutely continuous with respect to the Lebesgue measure , if and only if is an absolutely continuous function and .    Suppose . First suppose that is a measure, i.e. for all Borel sets . Fix . By , there exists such that, if is a Borel set with , then . Let be a family of disjoint intervals in such that . Note that, since ,   for any Thus   Hence is an absolutely continuous function.  Suppose now that is a signed Borel measure. Let be the Jordan decomposition of ( ). Then, by , the Jordan decomposition of is given by where is the cumulative distribution function of and is the cumulative distribution function of . If then, by definition, is absolutely continuous with respect to . Hence, and . It follows by the above argument that and are absolutely continuous, and hence is absolutely continuous.  Suppose now that is absolutely continuous and . Again, first assume that is a measure, so that is an increasing function. By the continuity of and the continuity of measure, for any ,   Fix . Fix so that if are disjoint open intervals in with , then   Let be an open set with . There are disjoint intervals such that . Hence   Thus, for any ,   Hence .  Take now any Borel set with . By the outer regularity of the Lebesgue measure, there is an open set with and . Hence Hence, by , is absolutely continuous with respect to .  Now suppose is a Borel signed measure, such that is absolutely continuous. As before, let and be the cumulative distribution functions of and , respectively. As is absolutely continuous, and are absolutely continuous by . By the above argument, it follows that and . Hence, we have that is absolutely continuous with respect to .   "
+  "body": " Absolutely continuous functions  Let be closed interval in and let be the Lebesgue measure on . In this section we want to compare Borel measures on with the Lebesgue measure. If is a Borel measure on , when is ? When is ? What can we learn from the Radon-Nikodym Theorem and the Lebesgue decomposition theorem ?  We first give a quantitative description of absolute continuity.    Let be a measure space. Suppose is a finite signed-measure on . Then if and only if for all there exists a such that given , if then     First, assume the criterion does not hold. That is, we will assume that there is an such that for all there is a set with and There is thus a sequence of sets such that For each , let . Then is a descending sequence of sets with Let . Since for all , for all . Hence . By the continuity of measure (since is a finite measure) Hence is not absolutely continuous with respect to .  Conversely, suppose that criterion holds. Suppose . Then, for all , . Hence . Thus . Note that we did not use the was finite for this direction of the proof. That was finite was only used in the first paragraph to apply the continuity of measure for intersections.      Let be a closed interval, let be the Lebesgue measure on the Borel sets in , and let be a Borel signed-measure on . We say that is absolutely continuous if . We say the is singular if and , where is the Jordan decomposition of . absolutely continuous Borel measure  singular measures Borel measure     We know that any Borel measure on determines a right-continuous function of bounded variation on ; and any right-continuous function on determines a Borel measure, . shows that we can get singular measures this way; shows that we can absolutely continuous measures this way. The following definition is clearly leading to what functions give what types of measures.    Let be a closed interval and let be a function. The function is absolutely continuous if for all there is a such that if are disjoint open intervals with then  absolutely continuous function     It should be clear that an absolutely continuous function is continuous. The following example shows that all Lipschitz functions are absolutely continuous, and induce absolutely continuous Borel signed measures.   Let be a Lipschitz function on Lipschitz function . That is, assume there is a constant such that for all . Take any and let . Let be a collection of disjoint open intervals such that . Then Thus, is absolutely continuous.  Assume now that . By , is of bounded variation. Thus, induces a Borel signed measure on by . That is, if is the Jordan decomposition of , then where is the Carathéodory extension of the premeasure and is the Carathéodory extension of the premeasure , for . Following a similar argument as in , we can show that is absolutely continuous.   The following theorem has a similar proof to the analogous statements for continuous functions and is left as an exercise.    Let and be absolutely continuous functions on a closed interval , then  is absolutely continuous for all ;  is absolutely continuous;  if for all , is absolutely continuous.      If we want to talk about Borel signed-measures constructed from absolutely continuous functions in general, we must first show that absolutely continuous functions have bounded variation.    Let be an absolutely continuous function on a closed interval , then is of bounded variation.  Further, if is the Jordan decomposition of , then and are absolutely continuous.    Let satisfy whenever are disjoint open intervals in with Let be an integer greater than . Then, for any partition of  Thus, has bounded variation, with total variation .  Let be the Jordan decomposition of . Recall where is the function of total variation for . Fix . Fix such that if are disjoint open intervals such that then Fix disjoint open intervals with . For each , let be a partition of . Then Thus Hence is absolutely continuous. It follows that and are absolutely continuous.    The following proposition shows that what we have just found Lipschitz functions in is not just a happy coincidence. We have a correspondence between absolutely continuous sign-measures and absolutely continuous functions.    Let be a closed interval in . Let be a signed Borel measure on , and let . Then is absolutely continuous with respect to the Lebesgue measure , if and only if is an absolutely continuous function and .    Suppose . First suppose that is a measure, i.e. for all Borel sets . Fix . By , there exists such that, if is a Borel set with , then . Let be a family of disjoint intervals in such that . Note that, since , for any Thus Hence is an absolutely continuous function.  Suppose now that is a signed Borel measure. Let be the Jordan decomposition of . Then, by , the Jordan decomposition of is given by where is the cumulative distribution function of and is the cumulative distribution function of . If then, by definition, is absolutely continuous with respect to . Hence, and . It follows by the above argument that and are absolutely continuous, and hence is absolutely continuous.  Suppose now that is absolutely continuous and . Again, first assume that is a measure, so that is an increasing function. By the continuity of and the continuity of measure, for any , Fix . Fix so that if are disjoint open intervals in with , then Let be an open set with . There are disjoint intervals such that . Hence Thus, for any , Hence .  Take now any Borel set with . By the outer regularity of the Lebesgue measure, there is an open set with and . Hence Hence, by , is absolutely continuous with respect to .  Now suppose is a Borel signed measure, such that is absolutely continuous. As before, let and be the cumulative distribution functions of and , respectively. As is absolutely continuous, and are absolutely continuous by . By the above argument, it follows that and . Hence, we have that is absolutely continuous with respect to .    "
 },
 {
   "id": "prop-abs-cont-eps-delta",
@@ -2725,34 +2473,25 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.2.1",
   "title": "",
-  "body": " Let be a measure space. Suppose is a finite signed-measure on . Then if and only if for all there exists a such that given , if then  "
+  "body": "  Let be a measure space. Suppose is a finite signed-measure on . Then if and only if for all there exists a such that given , if then     First, assume the criterion does not hold. That is, we will assume that there is an such that for all there is a set with and There is thus a sequence of sets such that For each , let . Then is a descending sequence of sets with Let . Since for all , for all . Hence . By the continuity of measure (since is a finite measure) Hence is not absolutely continuous with respect to .  Conversely, suppose that criterion holds. Suppose . Then, for all , . Hence . Thus . Note that we did not use the was finite for this direction of the proof. That was finite was only used in the first paragraph to apply the continuity of measure for intersections.   "
 },
 {
   "id": "chap-differentation-4-5",
   "level": "2",
   "url": "chap-differentation-4.html#chap-differentation-4-5",
-  "type": "Proof",
-  "number": "7.2.1",
-  "title": "",
-  "body": " First, assume the criterion does not hold. That is, we will assume that there is an such that for all there is a set with and There is thus a sequence of sets such that   For each , let . Then is a descending sequence of sets with   Let . Since for all ,   for all . Hence . By the continuity of measure (since is a finite measure)   Hence is not absolutely continuous with respect to .  Conversely, suppose that criterion holds. Suppose . Then, for all , . Hence . Thus . Note that we did not use the was finite for this direction of the proof. That was finite was only used in the first paragraph to apply the continuity of measure for intersections.  "
-},
-{
-  "id": "chap-differentation-4-6",
-  "level": "2",
-  "url": "chap-differentation-4.html#chap-differentation-4-6",
   "type": "Definition",
   "number": "7.2.2",
   "title": "",
-  "body": " Let be a closed interval, let be the Lebesgue measure on the Borel sets in , and let be a Borel signed-measure on . We say that is absolutely continuous if . absolutely continuous measure We say the is singular singular measures Borel measure if and , where is the Jordan decomposition of .  "
+  "body": "  Let be a closed interval, let be the Lebesgue measure on the Borel sets in , and let be a Borel signed-measure on . We say that is absolutely continuous if . We say the is singular if and , where is the Jordan decomposition of . absolutely continuous Borel measure  singular measures Borel measure    "
 },
 {
-  "id": "chap-differentation-4-8",
+  "id": "chap-differentation-4-7",
   "level": "2",
-  "url": "chap-differentation-4.html#chap-differentation-4-8",
+  "url": "chap-differentation-4.html#chap-differentation-4-7",
   "type": "Definition",
   "number": "7.2.3",
   "title": "",
-  "body": " Let be a closed interval and let be a function. The function is absolutely continuous absolutely continuous function if for all there is a such that if are disjoint open intervals with   then   "
+  "body": "  Let be a closed interval and let be a function. The function is absolutely continuous if for all there is a such that if are disjoint open intervals with then  absolutely continuous function    "
 },
 {
   "id": "exam-Lipschitz-abs-cont",
@@ -2761,16 +2500,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "7.2.4",
   "title": "",
-  "body": " Let be a Lipschitz function on Lipschitz function . That is, assume there is a constant such that for all . Take any and let . Let be a collection of disjoint open intervals such that . Then   Thus, is absolutely continuous.  Assume now that . Let be the Borel signed-measure on induced by , from . That is, if is the Jordan decomposition of , then where is the Carathéodory extension of the premeasure and is the Carathéodory extension of the premeasure , for . Following a similar argument as in , we can show that is absolutely continuous.  "
+  "body": " Let be a Lipschitz function on Lipschitz function . That is, assume there is a constant such that for all . Take any and let . Let be a collection of disjoint open intervals such that . Then Thus, is absolutely continuous.  Assume now that . By , is of bounded variation. Thus, induces a Borel signed measure on by . That is, if is the Jordan decomposition of , then where is the Carathéodory extension of the premeasure and is the Carathéodory extension of the premeasure , for . Following a similar argument as in , we can show that is absolutely continuous.  "
 },
 {
-  "id": "chap-differentation-4-12",
+  "id": "chap-differentation-4-11",
   "level": "2",
-  "url": "chap-differentation-4.html#chap-differentation-4-12",
+  "url": "chap-differentation-4.html#chap-differentation-4-11",
   "type": "Theorem",
   "number": "7.2.5",
   "title": "",
-  "body": " Let and be absolutely continuous functions on a closed interval , then   is absolutely continuous for all ;   is absolutely continuous;   if for all , is absolutely continuous.    "
+  "body": "  Let and be absolutely continuous functions on a closed interval , then  is absolutely continuous for all ;  is absolutely continuous;  if for all , is absolutely continuous.     "
 },
 {
   "id": "prop-abs-cont-jordan-decomp",
@@ -2779,16 +2518,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.2.6",
   "title": "",
-  "body": " Let be an absolutely continuous function on a closed interval , then is of bounded variation.  Further, if is the Jordan decomposition of , then and are absolutely continuous.  "
-},
-{
-  "id": "chap-differentation-4-15",
-  "level": "2",
-  "url": "chap-differentation-4.html#chap-differentation-4-15",
-  "type": "Proof",
-  "number": "7.2.2",
-  "title": "",
-  "body": " Let satisfy   whenever are disjoint open intervals in with   Let be an integer greater than . Then, for any partition of   Thus, has bounded variation, with total variation .  Let be the Jordan decomposition of . Recall   where is the function of total variation for . Fix . Fix such that if are disjoint open intervals such that then   Fix disjoint open intervals with . For each , let be a partition of . Then   Thus   Hence is absolutely continuous. It follows that and are absolutely continuous.  "
+  "body": "  Let be an absolutely continuous function on a closed interval , then is of bounded variation.  Further, if is the Jordan decomposition of , then and are absolutely continuous.    Let satisfy whenever are disjoint open intervals in with Let be an integer greater than . Then, for any partition of  Thus, has bounded variation, with total variation .  Let be the Jordan decomposition of . Recall where is the function of total variation for . Fix . Fix such that if are disjoint open intervals such that then Fix disjoint open intervals with . For each , let be a partition of . Then Thus Hence is absolutely continuous. It follows that and are absolutely continuous.   "
 },
 {
   "id": "prop-abs-cont-meas-and-func",
@@ -2797,16 +2527,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.2.7",
   "title": "",
-  "body": " Let be a closed interval in . Let be a signed Borel measure on , and let . Then is absolutely continuous with respect to the Lebesgue measure , if and only if is an absolutely continuous function and .  "
-},
-{
-  "id": "chap-differentation-4-18",
-  "level": "2",
-  "url": "chap-differentation-4.html#chap-differentation-4-18",
-  "type": "Proof",
-  "number": "7.2.3",
-  "title": "",
-  "body": " Suppose . First suppose that is a measure, i.e. for all Borel sets . Fix . By , there exists such that, if is a Borel set with , then . Let be a family of disjoint intervals in such that . Note that, since ,   for any Thus   Hence is an absolutely continuous function.  Suppose now that is a signed Borel measure. Let be the Jordan decomposition of ( ). Then, by , the Jordan decomposition of is given by where is the cumulative distribution function of and is the cumulative distribution function of . If then, by definition, is absolutely continuous with respect to . Hence, and . It follows by the above argument that and are absolutely continuous, and hence is absolutely continuous.  Suppose now that is absolutely continuous and . Again, first assume that is a measure, so that is an increasing function. By the continuity of and the continuity of measure, for any ,   Fix . Fix so that if are disjoint open intervals in with , then   Let be an open set with . There are disjoint intervals such that . Hence   Thus, for any ,   Hence .  Take now any Borel set with . By the outer regularity of the Lebesgue measure, there is an open set with and . Hence Hence, by , is absolutely continuous with respect to .  Now suppose is a Borel signed measure, such that is absolutely continuous. As before, let and be the cumulative distribution functions of and , respectively. As is absolutely continuous, and are absolutely continuous by . By the above argument, it follows that and . Hence, we have that is absolutely continuous with respect to .  "
+  "body": "  Let be a closed interval in . Let be a signed Borel measure on , and let . Then is absolutely continuous with respect to the Lebesgue measure , if and only if is an absolutely continuous function and .    Suppose . First suppose that is a measure, i.e. for all Borel sets . Fix . By , there exists such that, if is a Borel set with , then . Let be a family of disjoint intervals in such that . Note that, since , for any Thus Hence is an absolutely continuous function.  Suppose now that is a signed Borel measure. Let be the Jordan decomposition of . Then, by , the Jordan decomposition of is given by where is the cumulative distribution function of and is the cumulative distribution function of . If then, by definition, is absolutely continuous with respect to . Hence, and . It follows by the above argument that and are absolutely continuous, and hence is absolutely continuous.  Suppose now that is absolutely continuous and . Again, first assume that is a measure, so that is an increasing function. By the continuity of and the continuity of measure, for any , Fix . Fix so that if are disjoint open intervals in with , then Let be an open set with . There are disjoint intervals such that . Hence Thus, for any , Hence .  Take now any Borel set with . By the outer regularity of the Lebesgue measure, there is an open set with and . Hence Hence, by , is absolutely continuous with respect to .  Now suppose is a Borel signed measure, such that is absolutely continuous. As before, let and be the cumulative distribution functions of and , respectively. As is absolutely continuous, and are absolutely continuous by . By the above argument, it follows that and . Hence, we have that is absolutely continuous with respect to .   "
 },
 {
   "id": "sec-ftoc",
@@ -2815,7 +2536,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.3",
   "title": "The fundamental theorem of calculus",
-  "body": " The fundamental theorem of calculus  The main reference for the rest of this chapter is , though we present the results in less generality than what is done in . We begin with a result which has nothing at all to do with differentiation, but will be useful.   Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that     We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and    For each and , denote by the open interval of length centred at . That is . The in this definition stands for `ball'. That term makes more sense when working in , but we will stick with the notation here, even though we are working in .   Suppose is an integrable function on . For each and , we define as   average value function We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by Hardy-Littlewood maximal function     Let is an integrable function on some closed interval . The function is jointly continuous in and .    Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then   Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then   It follows now from the Lebesgue Dominated Convergence Theorem that   is jointly continuous in and . It follows that is jointly continuous in and .    Let be an integrable function, then Hardy-Littlewood maximal function is measurable and   is open for all .    For any ,   Since is continuous for all , is an open set. Thus is measurable.    The Hardy-Littlewood Maximal Theorem  For all integrable on and ,   Hardy-Littlewood Maximal Theorem    Fix and let . By , is an open set. By the continuity of , for each there is an such that   for all . Note that   Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that   Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that   Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have   where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.   For Fatou's Lemma we needed the concept of a limit inferior, , for a sequence. For what follows we will need to consider the limit superior of a function. If is a real-valued function we define the limit superior limit superior of a function of as approaches as   and we define the limit inferior limit inferior of a function of as approaches as   The limit if and only if   Further, by the definition of the Hardy-Littlewood maximal function,    Let be a Lebesgue integrable function on , then   for almost all .    Fix . By , there is an integrable continuous function such that   Take and . By the continuity of there is an , such that if , then . Thus, if then   Hence, as , .  Take any , then   For let   Then   By Chebyshev's inequality, and the choice of ,   By the Hardy-Littlewood Maximal Theorem, and the choice of ,   Thus   As this holds for all , it follows that for all .  Let . Then, , and if ,   Thus, for all .   This brings us now to an important theorem: The Lebesgue Differentiation Theorem. Lebesgue Differentiation Theorem   Lebesgue Differentiation Theorem  Lebesgue Differentiation Theorem Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all ,   and   where , or .    Let   For each , let By , there is a Lebesgue measurable set , such that , and if , then   Let   Then , since is countable. Take and . By the density of in , there is a such that   For any ,   Thus, since ,   As is arbitrary, it follows that . Hence .  Now, for all , if or   Thus the first equality holds for all . The second equality follows from .   We are almost ready to give a concrete description of the Radon-Nikodym derivative of a Borel measure on . We first need to understand which Borel measures have continuous cumulative distribution functions.   Let be a Borel measure on the real line. We say that is outer regular regularity of a measure Borel measureson if     Let be a Borel measure on a closed interval , then   for all Borel sets .    Take any Borel set . By the monotonicity of the measure   Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and   By the continuity of measure, for each ,   Thus, for each , we can choose such that   Let . Then   It follows that   It is a relatively straightforward exercise to show that   which completes the proof.    Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then,   for almost all .    Note that   Similarly   Thus, to prove the result we can assume is a measure, and we need only need to show that   for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let   Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and   Taking the supremum over all we get for all . Hence . Let . Then , and if   and hence   Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case   By the Lebesgue Differentiation Theorem, and the Radon-Nikodym Theorem,   Hence   for almost all .    Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.    If then   It follows from   for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.    Fundamental Theorem of Calculus for Lebesgue Integrals  Fundamental Theorem of Calculus Lebesgue integration Let be a function on a closed interval . Then the following are equivalent   is absolutely continuous on ;\\   for , for some integrable function on ;   is differentiable almost everywhere on , is integrable on , and for        By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by   Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that   for . Let be the Borel signed-measure   for Borel sets . Then is absolutely continuous, and   By , is absolutely continuous.   "
+  "body": " The fundamental theorem of calculus  The main reference for the rest of this chapter is , though we present the results in less generality than what is done in . We begin with a result which has nothing at all to do with differentiation. It could have appeared in , but we include here, because we need it here.    Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that     We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then, Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by , Let be a step function such that and Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , , Let . Then is a continuous function and     For each and , denote by the open interval of length centred at . That is . The in this definition stands for `ball'. That term makes more sense when working in , but we will stick with the notation here, even though we are working in .     average value function     Hardy-Littlewood maximal function    Suppose is an integrable function on . For each and , we define as We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by  average value function  Hardy-Littlewood maximal function       Let is an integrable function on some closed interval . The function is jointly continuous in and .    Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then It follows now from the Lebesgue Dominated Convergence Theorem that is jointly continuous in and . It follows that is jointly continuous in and .      Let be an integrable function, then Hardy-Littlewood maximal function is measurable and is open for all .    For any , Since is continuous for all , is an open set. Thus is measurable.     The Hardy-Littlewood Maximal Theorem   For all integrable on and ,  Hardy-Littlewood Maximal Theorem     Fix and let . By , is an open set. By the continuity of , for each there is an such that for all . Note that Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.    For Fatou's Lemma we needed the concept of a limit inferior, , for a sequence. For what follows we will need to consider the limit superior of a function. If is a real-valued function we define the limit superior limit superior of a function of as approaches as and we define the limit inferior limit inferior of a function of as approaches as The limit if and only if Further, by the definition of the Hardy-Littlewood maximal function,     Let be a Lebesgue integrable function on , then for almost all .    Fix . By , there is an integrable continuous function such that Take and . By the continuity of there is an , such that if , then . Thus, if then Hence, as , .  Take any , then For let Then By Chebyshev's inequality , and the choice of , By the Hardy-Littlewood Maximal Theorem, and the choice of , Thus As this holds for all , it follows that for all .  Let . Then, , and if , Thus, for all .    This brings us now to an important theorem: The Lebesgue Differentiation Theorem. Lebesgue Differentiation Theorem   Lebesgue Differentiation Theorem   Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all , and where , or . Lebesgue Differentiation Theorem     Let For each , let By , there is a Lebesgue measurable set , such that , and if , then Let Then , since is countable. Take and . By the density of in , there is a such that For any , Thus, since , As is arbitrary, it follows that . Hence .  Now, for all , if or  Thus the first equality holds for all . The second equality follows from .      Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then, for almost all .    Note that Similarly Thus, to prove the result we can assume is a measure, and we need only need to show that for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and Taking the supremum over all we get for all . Hence . Let . Then , and if  and hence Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case By the Lebesgue Differentiation Theorem and the Radon-Nikodym Theorem , Hence for almost all .      Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.    If then> It follows from  for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.     Fundamental Theorem of Calculus for Lebesgue Integrals   Let be a function on a closed interval . Then the following are equivalent  is absolutely continuous on ;  for , for some integrable function on ;  is differentiable almost everywhere on , is integrable on , and for     Fundamental Theorem of Calculus Lebesgue integration     By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by  Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that for . Let be the Borel signed-measure for Borel sets . Then is absolutely continuous, and By , is absolutely continuous.    "
 },
 {
   "id": "thm-integrable-close-to-cont",
@@ -2824,25 +2545,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.3.1",
   "title": "",
-  "body": " Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that   "
+  "body": "  Let be a Lebesgue integrable function on . For all there exists a continuous Lebesgue integrable function on such that     We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then, Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by , Let be a step function such that and Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , , Let . Then is a continuous function and    "
 },
 {
-  "id": "sec-ftoc-4",
+  "id": "sec-ftoc-5",
   "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-4",
-  "type": "Proof",
-  "number": "7.3.1",
-  "title": "",
-  "body": " We will deal first with the non-negative case. Fix . Since is integrable, Hence, there is an such that   Suppose is a non-negative continuous function on such that     An example of defined in the proof of .    Visualization of a positive polynomial g on an interval [-N,N] extended to a function g_n on the entire real line.   Visualization of a positive polynomial on an interval extended to a function on all of by drawing straight lines from to and from to , and setting outside of .      For each , we define by for ; for ; is the straight line from the point to on ; and is the straight line from the point to on (see Figure~\\ref{fig: integrable close to cont}). Choose so that and . Then,   Hence, to prove the result for , it suffice to show that the result holds when is restricted to a closed interval. We can thus assume that is a non-negative integrable function on a closed interval .  By the definition of and by ,   Let be a step function such that and   Suppose where are disjoint intervals. Without loss of generalization, assume for each . For each , let be a continuous function with such that   Let . Then is a continuous function with , and   If is a (not necessarily non-negative) integrable function, then , where and are the positive and negative parts of , respectively. By the above argument, there are continuous functions and such that , ,   Let . Then is a continuous function and   "
-},
-{
-  "id": "sec-ftoc-6",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-6",
+  "url": "sec-ftoc.html#sec-ftoc-5",
   "type": "Definition",
   "number": "7.3.3",
   "title": "",
-  "body": " Suppose is an integrable function on . For each and , we define as   average value function We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by Hardy-Littlewood maximal function   "
+  "body": "   average value function     Hardy-Littlewood maximal function    Suppose is an integrable function on . For each and , we define as We will call the average value function for with radius .  Define the Hardy-Littlewood maximal function , for by  average value function  Hardy-Littlewood maximal function    "
 },
 {
   "id": "lem-avg-cont",
@@ -2851,16 +2563,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "7.3.4",
   "title": "",
-  "body": " Let is an integrable function on some closed interval . The function is jointly continuous in and .  "
-},
-{
-  "id": "sec-ftoc-8",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-8",
-  "type": "Proof",
-  "number": "7.3.2",
-  "title": "",
-  "body": " Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then   Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then   It follows now from the Lebesgue Dominated Convergence Theorem that   is jointly continuous in and . It follows that is jointly continuous in and .  "
+  "body": "  Let is an integrable function on some closed interval . The function is jointly continuous in and .    Fix and . Let be a sequence in converging to , and let be a sequence of positive real numbers converging to . Take any , then Thus the sequence converges pointwise a.e. to . Hence converges pointwise a.e. to . Further, if and then It follows now from the Lebesgue Dominated Convergence Theorem that is jointly continuous in and . It follows that is jointly continuous in and .   "
 },
 {
   "id": "cor-Hardy-Littlewood",
@@ -2869,16 +2572,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "7.3.5",
   "title": "",
-  "body": " Let be an integrable function, then Hardy-Littlewood maximal function is measurable and   is open for all .  "
-},
-{
-  "id": "sec-ftoc-10",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-10",
-  "type": "Proof",
-  "number": "7.3.3",
-  "title": "",
-  "body": " For any ,   Since is continuous for all , is an open set. Thus is measurable.  "
+  "body": "  Let be an integrable function, then Hardy-Littlewood maximal function is measurable and is open for all .    For any , Since is continuous for all , is an open set. Thus is measurable.   "
 },
 {
   "id": "thm-maximal-theorem",
@@ -2887,16 +2581,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.3.6",
   "title": "The Hardy-Littlewood Maximal Theorem.",
-  "body": " The Hardy-Littlewood Maximal Theorem  For all integrable on and ,   Hardy-Littlewood Maximal Theorem  "
-},
-{
-  "id": "sec-ftoc-12",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-12",
-  "type": "Proof",
-  "number": "7.3.4",
-  "title": "",
-  "body": " Fix and let . By , is an open set. By the continuity of , for each there is an such that   for all . Note that   Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that   Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that   Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have   where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.  "
+  "body": " The Hardy-Littlewood Maximal Theorem   For all integrable on and ,  Hardy-Littlewood Maximal Theorem     Fix and let . By , is an open set. By the continuity of , for each there is an such that for all . Note that Take any with . By the inner regularity of Lebesgue measure, , there is a compact set such that Note that the sets form and open cover of , since they are an open cover of . As is compact, there are sets such that Choose such that is maximal. Choose such that is maximal in the sets disjoint from . Choose such that is maximal in the sets disjoint from and . Proceed in this way to get sets until we exhaust all of the sets in . Let be the center point of the interval for . For any , there is a , such that Fixing such that and that is maximal. Let be the open interval with the center as with Then . Thus is an open cover of . We thus have where the penultimate inequality comes from the fact that , and the final inequality comes from the fact that are disjoint. Taking the supremum over all gives the desired inequality.   "
 },
 {
   "id": "thm-lim-avg-f-f",
@@ -2905,16 +2590,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.3.7",
   "title": "",
-  "body": " Let be a Lebesgue integrable function on , then   for almost all .  "
-},
-{
-  "id": "sec-ftoc-22",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-22",
-  "type": "Proof",
-  "number": "7.3.5",
-  "title": "",
-  "body": " Fix . By , there is an integrable continuous function such that   Take and . By the continuity of there is an , such that if , then . Thus, if then   Hence, as , .  Take any , then   For let   Then   By Chebyshev's inequality, and the choice of ,   By the Hardy-Littlewood Maximal Theorem, and the choice of ,   Thus   As this holds for all , it follows that for all .  Let . Then, , and if ,   Thus, for all .  "
+  "body": "  Let be a Lebesgue integrable function on , then for almost all .    Fix . By , there is an integrable continuous function such that Take and . By the continuity of there is an , such that if , then . Thus, if then Hence, as , .  Take any , then For let Then By Chebyshev's inequality , and the choice of , By the Hardy-Littlewood Maximal Theorem, and the choice of , Thus As this holds for all , it follows that for all .  Let . Then, , and if , Thus, for all .   "
 },
 {
   "id": "thm-Lebesgue-differentiation",
@@ -2923,97 +2599,34 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.3.8",
   "title": "Lebesgue Differentiation Theorem.",
-  "body": " Lebesgue Differentiation Theorem  Lebesgue Differentiation Theorem Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all ,   and   where , or .  "
-},
-{
-  "id": "sec-ftoc-25",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-25",
-  "type": "Proof",
-  "number": "7.3.6",
-  "title": "",
-  "body": " Let   For each , let By , there is a Lebesgue measurable set , such that , and if , then   Let   Then , since is countable. Take and . By the density of in , there is a such that   For any ,   Thus, since ,   As is arbitrary, it follows that . Hence .  Now, for all , if or   Thus the first equality holds for all . The second equality follows from .  "
-},
-{
-  "id": "sec-ftoc-27",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-27",
-  "type": "Definition",
-  "number": "7.3.9",
-  "title": "",
-  "body": " Let be a Borel measure on the real line. We say that is outer regular regularity of a measure Borel measureson if   "
-},
-{
-  "id": "lem-regular-borel",
-  "level": "2",
-  "url": "sec-ftoc.html#lem-regular-borel",
-  "type": "Lemma",
-  "number": "7.3.10",
-  "title": "",
-  "body": " Let be a Borel measure on a closed interval , then   for all Borel sets .  "
-},
-{
-  "id": "sec-ftoc-29",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-29",
-  "type": "Proof",
-  "number": "7.3.7",
-  "title": "",
-  "body": " Take any Borel set . By the monotonicity of the measure   Fix and let be the cumulative distribution function for . Assume first that . By , there is a countable collection of intervals in such that and   By the continuity of measure, for each ,   Thus, for each , we can choose such that   Let . Then   It follows that   It is a relatively straightforward exercise to show that   which completes the proof.  "
+  "body": " Lebesgue Differentiation Theorem   Let be a Lebesgue integrable function on . For each and , let and . Then, for almost all , and where , or . Lebesgue Differentiation Theorem     Let For each , let By , there is a Lebesgue measurable set , such that , and if , then Let Then , since is countable. Take and . By the density of in , there is a such that For any , Thus, since , As is arbitrary, it follows that . Hence .  Now, for all , if or  Thus the first equality holds for all . The second equality follows from .   "
 },
 {
   "id": "thm-Borel-radon-nikodym-derivative",
   "level": "2",
   "url": "sec-ftoc.html#thm-Borel-radon-nikodym-derivative",
   "type": "Theorem",
-  "number": "7.3.11",
+  "number": "7.3.9",
   "title": "",
-  "body": " Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then,   for almost all .  "
-},
-{
-  "id": "sec-ftoc-31",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-31",
-  "type": "Proof",
-  "number": "7.3.8",
-  "title": "",
-  "body": " Note that   Similarly   Thus, to prove the result we can assume is a measure, and we need only need to show that   for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let   Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and   Taking the supremum over all we get for all . Hence . Let . Then , and if   and hence   Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case   By the Lebesgue Differentiation Theorem, and the Radon-Nikodym Theorem,   Hence   for almost all .  "
+  "body": "  Let be a Borel signed-measure on . Let be the Radon-Nikodym derivative of with respect to the Lebesgue measure . Then, for almost all .    Note that Similarly Thus, to prove the result we can assume is a measure, and we need only need to show that for almost all .  Assume first that . In this case . By the assumption that , there are Borel sets and so that and . For each , let Fix . We will show that . The argument is similar to that in the Hardy-Littlewood Maximal Theorem, .  Since is outer regular, , for each there is an open set , such that For each , there is a , so that Arguing as in , if then there is a finite collection so that are disjoint and Taking the supremum over all we get for all . Hence . Let . Then , and if  and hence Now let be an arbitrary Borel measure on . Applying the Lebesgue Decomposition Theorem to , we have where and . In this case By the Lebesgue Differentiation Theorem and the Radon-Nikodym Theorem , Hence for almost all .   "
 },
 {
   "id": "cor-f-integrable",
   "level": "2",
   "url": "sec-ftoc.html#cor-f-integrable",
   "type": "Corollary",
-  "number": "7.3.12",
+  "number": "7.3.10",
   "title": "",
-  "body": " Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.  "
-},
-{
-  "id": "sec-ftoc-33",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-33",
-  "type": "Proof",
-  "number": "7.3.9",
-  "title": "",
-  "body": " If then   It follows from   for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.  "
+  "body": "  Let be a right-continuous function of bounded variation on a closed interval and let be the signed Borel-measure on extending the premeasure and . Then is defined for almost all and is integrable.    If then> It follows from  for a.a. . As the Radon-Nikodym derivative is integrable, is integrable.   "
 },
 {
   "id": "thm-Lebesgue-FToC",
   "level": "2",
   "url": "sec-ftoc.html#thm-Lebesgue-FToC",
   "type": "Theorem",
-  "number": "7.3.13",
+  "number": "7.3.11",
   "title": "Fundamental Theorem of Calculus for Lebesgue Integrals.",
-  "body": " Fundamental Theorem of Calculus for Lebesgue Integrals  Fundamental Theorem of Calculus Lebesgue integration Let be a function on a closed interval . Then the following are equivalent   is absolutely continuous on ;\\   for , for some integrable function on ;   is differentiable almost everywhere on , is integrable on , and for      "
-},
-{
-  "id": "sec-ftoc-35",
-  "level": "2",
-  "url": "sec-ftoc.html#sec-ftoc-35",
-  "type": "Proof",
-  "number": "7.3.10",
-  "title": "",
-  "body": " By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by   Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that   for . Let be the Borel signed-measure   for Borel sets . Then is absolutely continuous, and   By , is absolutely continuous.  "
+  "body": " Fundamental Theorem of Calculus for Lebesgue Integrals   Let be a function on a closed interval . Then the following are equivalent  is absolutely continuous on ;  for , for some integrable function on ;  is differentiable almost everywhere on , is integrable on , and for     Fundamental Theorem of Calculus Lebesgue integration     By replacing with we can assume . Assume is absolutely continuous. By , is of bounded variation. Thus exists a.e. and is integrable by . Let be the signed-Borel measure such that is the cumulative distribution function for . Then, by , is absolutely continuous. Thus, by  Hence (i) implies (iii). That (iii) implies (ii) is clear by setting .  Finally, suppose (ii) holds. Let be an integrable function on such that for . Let be the Borel signed-measure for Borel sets . Then is absolutely continuous, and By , is absolutely continuous.   "
 },
 {
   "id": "chap-differentation-6",
@@ -3022,7 +2635,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.4",
   "title": "The Lebesgue Decomposition of function",
-  "body": " The Lebesgue Decomposition of function  By the Lebesgue Decomposition Theorem , where and . Let be the cumulative distribution function for , and let be the cumulative distribution function for . By , is absolutely continuous. In this section we will further study .   Let be a continuous function on a closed interval . Then is a continuous singular function singular function if a.e.    Let be the Cantor-Lebesgue function on (see ), let be the Cantor set in and let By the definition of , there are disjoint open intervals such that such that is constant on each . It follows that for all . By , . Hence a.e., and so is a continuous singular function.  Recall that, by , if is the Borel measure on satisfying , then is a singular measure.   gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.   Let be a right-continuous function of bounded variation on a closed interval and let be the Borel signed-measure defined by Then is singular if and only if a.e.    Note that, as argued in ,   where is or . From , is singular if and only if, for almost all ,   Thus if and only if a.e.    Lebesgue Decomposition Theorem  Lebesgue Decomposition Theorem for functions Let be a continuous function of bounded variation on a closed interval , then there are unique continuous functions and on satisying , such that   is absolutely continuous; and   is singular.      The result follows immediately from , , and .    Let be the Dirac measure on the Borel sets of , centered at . I.e. if , and otherwise. If is the cumulative distribution function of , then is not continuous, see . Thus , does not apply to .    Let be a Borel measure on , with cumulative distribution function . If is continuous, then applying to gives the same decomposition as applying to .  If is not continuous, we can still apply to and decompose , where is absolutely continuous, and a.e. In this case will not be continuous.  This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If is right-continuous and of bounded variation, how discontinuous can it be?    Let be a Borel signed-measure on a closed interval . Then is a continuous Borel signed-measure is for all . measure continuous signed-measure continuous    Let be a Borel signed-measure on a closed interval , and let . Then is continuous if and only if is continuous and .    By , is right continuous. Assume that is continuous and . Since , . Take any . Then   by the (left) continuity of .  Conversely, suppose for all . Then . If then   Hence is left-continuous, and therefore continuous, at .   In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).  Let be an index set, and let be a collection of real numbers indexed by . Let be the collection of all finite subsets of . convergence of uncountable series Let be a real number. We say the series converges to some if for all there is an such that if with then   In this case we write .\\footnote{If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums .}  If each , and then   Further, if is the set of natural numbers, then if and only if converges absolutely.   convergence of uncountable series Let be an index set, and let be a collection of real numbers indexed by . If is convergent, then is countable.    Let and . Note that is convergent if and only if and are both convergent. We will thus assume that for all .  Suppose the set is uncountable. Let For each , choose such that   Let Then   As is uncountable, it follows that is countable for some . Let be such that and the set is uncountable.  For each , choose a finite set with elements. Then   Hence   and therefore     Let be a function of bounded variation on . Then the set of discontinuities of is countable.    Assume that is increasing. The general result follows from the increasing case by the Jordan Decomposition Theorem. For each , let   Since is continuous at if and only if . Further, since is increasing, when . The collection of open intervals is therefore a disjoint collection (viewing as the empty set when ); and   By it follows that for all but at most countably many points. Thus the set of discontinuities of is countable.   The following result offers a sort of converse to : for every countable set there is an increasing function whose set of discontinuities is .   Let be a closed interval, and let be a countable set. There is an increasing function on where is continuous on and discontinuous on . Further, can be chosen to be right-continuous.    We will assume that is countably infinite. The case when is finite is straightforward. Enumerate the points in by   Let be a sequence of positive real numbers such that . Define a function on by   We will show that is right-continuous; is discontinuous at every point in ; and is continuous on .  We will first prove right-continuity. Take any and fix . Suppose there exists such that . If and , then . Thus is right-continuous at . Otherwise, for each the set is infinite. Fix . The series   Hence, there is a finite set such that   Fix such that   Take with Then   Hence is right-continuous at .  Take any , and . Then   Hence is not continuous at .  The argument that is (left) continuous on follows similar reasoning as the argument that is right-continuous and is left as an exercise ( ).   What do non-continuous Borel signed-measures look like? Let be a closed interval and let be any point. The Dirac measure at , , is not a continuous Borel measure, since . Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.   A non-zero Borel signed-measure on a closed interval is discrete measure discrete Borel signed-measure discrete Borel if there is a countable collection of points and a sequence of real numbers such that   where is the Dirac measure at the point .    Note that, if is a discrete Borel signed-measure, then the series is absolutely convergent.  Conversely, if is an absolutely convergent series, and is a countable collection of points in a closed interval , then is a discrete Borel signed-measure on , ( ).   It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.   Lebesgue decomposition function If is a Borel signed-measure on then there are mutually singular signed Borel measures , and such that   ;   is a discrete Borel signed-measure;   is a singular continuous Borel signed-measure; and   is an absolutely continuous Borel signed-measure.      By the Lebesgue decomposition, , there are mutually singular measures and where is singular, is absolutely continuous, and . It remains to show that we can decompose into a discrete part and a continuous part. We will thus assume that is singular.  First, assume is a measure. Let be the cumulative distribution function for . Then is a right-continuous increasing function on . By the set of discontinuities of is countable. For each , let   Note that the sequence is absolutely convergent, since is of bounded variation. Let be the discrete Borel signed-measure   and let .  For any , , and hence If , then   Hence is continuous, completing the proof   Let be the Heaviside function Heaviside function on . That is   The Heaviside function is the cumulative distribution function for the Dirac measure at , (see ). Thus, if , then the cumulative distribution function for the Dirac measure is   Let be a right-continuous function of bounded variation on a closed interval . Then there are functions , , and on such that   ;   is absolutely continuous on ;   is continuous and singular;   there are points in and a sequence of real numbers such that  for all .       Let be a discrete Borel signed-measure on . The result follows from , on noting that if , then    "
+  "body": " The Lebesgue Decomposition of function  Let be a Borel measure on a closed interval . By the Lebesgue Decomposition Theorem , , where and . Let be the cumulative distribution function for , and let be the cumulative distribution function for . By , is absolutely continuous. In this section we will further study .    Let be a continuous function on a closed interval . Then is a continuous singular function singular function if a.e.     Let be the Cantor-Lebesgue function on (see ), let be the Cantor set in and let By the definition of , there are disjoint open intervals such that such that is constant on each . It follows that for all . By , . Hence a.e., and so is a continuous singular function.  Recall that, by , if is the Borel measure on satisfying , then is a singular measure.   gives an example of a singular function which gives rise to a singular measure. The following theorem shows that this is not a coincidence.    Let be a right-continuous function of bounded variation on a closed interval and let be the Borel signed-measure defined by Then is singular if and only if a.e.    Note that, as argued in , where is or . From , is singular if and only if, for almost all , Thus if and only if a.e.     Lebesgue Decomposition Theorem    Lebesgue Decomposition Theorem for functions Let be a continuous function of bounded variation on a closed interval , then there are unique continuous functions and on satisying , such that  is absolutely continuous; and  is singular.      The result follows immediately from , , and .     Let be the Dirac measure on the Borel sets of , centered at . I.e. if , and otherwise. If is the cumulative distribution function of , then is not continuous, see . Thus , does not apply to .    Let be a Borel measure on , with cumulative distribution function . If is continuous, then applying to gives the same decomposition as applying to .  If is not continuous, we can still apply to and decompose , where is absolutely continuous, and a.e. In this case will not be continuous.  This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If is right-continuous and of bounded variation, how discontinuous can it be?     Let be a Borel signed-measure on a closed interval . Then is a continuous Borel signed-measure is for all . measure continuous signed-measure continuous       Let be a Borel signed-measure on a closed interval , and let . Then is continuous if and only if is continuous and .    By , is right continuous. Assume that is continuous and . Since , . Take any . Then by the (left) continuity of .  Conversely, suppose for all . Then . If then Hence is left-continuous, and therefore continuous, at .    In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).  Let be an index set, and let be a collection of real numbers indexed by . Let be the collection of all finite subsets of . convergence of uncountable series Let be a real number. We say the series converges to some if for all there is an such that if with then In this case we write .\\footnote{If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums .}  If each , and then Further, if is the set of natural numbers, then if and only if converges absolutely.    Let be an index set, and let be a collection of real numbers indexed by . If is convergent, then is countable. convergence of uncountable series     Let and . Note that is convergent if and only if and are both convergent. We will thus assume that for all .  Suppose the set is uncountable. Let For each , choose such that Let Then As is uncountable, it follows that is countable for some . Let be such that and the set is uncountable.  For each , choose a finite set with elements. Then Hence and therefore       Let be a function of bounded variation on . Then the set of discontinuities of is countable.    Assume that is increasing. The general result follows from the increasing case by the Jordan Decomposition Theorem . For each , let Since is continuous at if and only if . Further, since is increasing, when . The collection of open intervals is therefore a disjoint collection (viewing as the empty set when ); and> By it follows that for all but at most countably many points. Thus the set of discontinuities of is countable.    The following result offers a sort of converse to : for every countable set there is an increasing function whose set of discontinuities is .    Let be a closed interval, and let be a countable set. There is an increasing function on where is continuous on and discontinuous on . Further, can be chosen to be right-continuous.    We will assume that is countably infinite. The case when is finite is straightforward. Enumerate the points in by Let be a sequence of positive real numbers such that . Define a function on by We will show that is right-continuous; is discontinuous at every point in ; and is continuous on .  We will first prove right-continuity. Take any and fix . Suppose there exists such that . If and , then . Thus is right-continuous at . Otherwise, for each the set is infinite. Fix . The series Hence, there is a finite set such that Fix such that Take with Then Hence is right-continuous at .  Take any , and . Then Hence is not continuous at .  The argument that is (left) continuous on follows similar reasoning as the argument that is right-continuous and is left as an exercise ( ).    What do non-continuous Borel signed-measures look like? Let be a closed interval and let be any point. The Dirac measure at , , is not a continuous Borel measure, since . Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.    A non-zero Borel signed-measure on a closed interval is discrete if there is a countable collection of points and a sequence of real numbers such that where is the Dirac measure at the point . measure discrete Borel signed-measure discrete Borel      Note that, if is a discrete Borel signed-measure, then the series is absolutely convergent.  Conversely, if is an absolutely convergent series, and is a countable collection of points in a closed interval , then is a discrete Borel signed-measure on , ( ).   It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.    If is a Borel signed-measure on then there are mutually singular signed Borel measures , and such that  ;  is a discrete Borel signed-measure;  is a singular continuous Borel signed-measure; and  is an absolutely continuous Borel signed-measure.   Lebesgue decomposition function     By the Lebesgue decomposition, , there are mutually singular measures and where is singular, is absolutely continuous, and . It remains to show that we can decompose into a discrete part and a continuous part. We will thus assume that is singular.  First, assume is a measure. Let be the cumulative distribution function for . Then is a right-continuous increasing function on . By the set of discontinuities of is countable. For each , let Note that the sequence is absolutely convergent, since is of bounded variation. Let be the discrete Borel signed-measure and let .  For any , , and hence If , then Hence is continuous, completing the proof    Let be the Heaviside function Heaviside function on . That is The Heaviside function is the cumulative distribution function for the Dirac measure at , (see ). Thus, if , then the cumulative distribution function for the Dirac measure is    Let be a right-continuous function of bounded variation on a closed interval . Then there are functions , , and on such that  ;  is absolutely continuous on ;  is continuous and singular;  there are points in and a sequence of real numbers such that for all .      Let be a discrete Borel signed-measure on . The result follows from , on noting that if , then     "
 },
 {
   "id": "chap-differentation-6-3",
@@ -3031,7 +2644,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "7.4.1",
   "title": "",
-  "body": " Let be a continuous function on a closed interval . Then is a continuous singular function singular function if a.e.  "
+  "body": "  Let be a continuous function on a closed interval . Then is a continuous singular function singular function if a.e.   "
 },
 {
   "id": "ex-Cantor-Lebesgue-singular-function",
@@ -3049,16 +2662,7 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.4.3",
   "title": "",
-  "body": " Let be a right-continuous function of bounded variation on a closed interval and let be the Borel signed-measure defined by Then is singular if and only if a.e.  "
-},
-{
-  "id": "chap-differentation-6-7",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-7",
-  "type": "Proof",
-  "number": "7.4.1",
-  "title": "",
-  "body": " Note that, as argued in ,   where is or . From , is singular if and only if, for almost all ,   Thus if and only if a.e.  "
+  "body": "  Let be a right-continuous function of bounded variation on a closed interval and let be the Borel signed-measure defined by Then is singular if and only if a.e.    Note that, as argued in , where is or . From , is singular if and only if, for almost all , Thus if and only if a.e.   "
 },
 {
   "id": "thm-Lebesgue-decomp-function",
@@ -3067,61 +2671,52 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.4.4",
   "title": "Lebesgue Decomposition Theorem.",
-  "body": " Lebesgue Decomposition Theorem  Lebesgue Decomposition Theorem for functions Let be a continuous function of bounded variation on a closed interval , then there are unique continuous functions and on satisying , such that   is absolutely continuous; and   is singular.    "
+  "body": " Lebesgue Decomposition Theorem    Lebesgue Decomposition Theorem for functions Let be a continuous function of bounded variation on a closed interval , then there are unique continuous functions and on satisying , such that  is absolutely continuous; and  is singular.      The result follows immediately from , , and .   "
 },
 {
-  "id": "chap-differentation-6-9",
+  "id": "chap-differentation-6-8",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-9",
-  "type": "Proof",
-  "number": "7.4.2",
-  "title": "",
-  "body": " The result follows immediately from , , and .  "
-},
-{
-  "id": "chap-differentation-6-10",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-10",
+  "url": "chap-differentation-6.html#chap-differentation-6-8",
   "type": "Example",
   "number": "7.4.5",
   "title": "",
   "body": " Let be the Dirac measure on the Borel sets of , centered at . I.e. if , and otherwise. If is the cumulative distribution function of , then is not continuous, see . Thus , does not apply to .  "
 },
 {
-  "id": "chap-differentation-6-11",
+  "id": "chap-differentation-6-9",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-11",
+  "url": "chap-differentation-6.html#chap-differentation-6-9",
   "type": "Remark",
   "number": "7.4.6",
   "title": "",
   "body": " Let be a Borel measure on , with cumulative distribution function . If is continuous, then applying to gives the same decomposition as applying to .  If is not continuous, we can still apply to and decompose , where is absolutely continuous, and a.e. In this case will not be continuous.  This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If is right-continuous and of bounded variation, how discontinuous can it be?  "
 },
 {
-  "id": "chap-differentation-6-12",
+  "id": "chap-differentation-6-10",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-12",
+  "url": "chap-differentation-6.html#chap-differentation-6-10",
   "type": "Definition",
   "number": "7.4.7",
   "title": "",
-  "body": " Let be a Borel signed-measure on a closed interval . Then is a continuous Borel signed-measure is for all . measure continuous signed-measure continuous  "
+  "body": "  Let be a Borel signed-measure on a closed interval . Then is a continuous Borel signed-measure is for all . measure continuous signed-measure continuous    "
+},
+{
+  "id": "chap-differentation-6-11",
+  "level": "2",
+  "url": "chap-differentation-6.html#chap-differentation-6-11",
+  "type": "Proposition",
+  "number": "7.4.8",
+  "title": "",
+  "body": "  Let be a Borel signed-measure on a closed interval , and let . Then is continuous if and only if is continuous and .    By , is right continuous. Assume that is continuous and . Since , . Take any . Then by the (left) continuity of .  Conversely, suppose for all . Then . If then Hence is left-continuous, and therefore continuous, at .   "
 },
 {
   "id": "chap-differentation-6-13",
   "level": "2",
   "url": "chap-differentation-6.html#chap-differentation-6-13",
-  "type": "Proposition",
-  "number": "7.4.8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": " Let be a Borel signed-measure on a closed interval , and let . Then is continuous if and only if is continuous and .  "
-},
-{
-  "id": "chap-differentation-6-14",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-14",
-  "type": "Proof",
-  "number": "7.4.3",
-  "title": "",
-  "body": " By , is right continuous. Assume that is continuous and . Since , . Take any . Then   by the (left) continuity of .  Conversely, suppose for all . Then . If then   Hence is left-continuous, and therefore continuous, at .  "
+  "body": "the series converges to some "
 },
 {
   "id": "lem-uncountable-series",
@@ -3130,16 +2725,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "7.4.9",
   "title": "",
-  "body": " convergence of uncountable series Let be an index set, and let be a collection of real numbers indexed by . If is convergent, then is countable.  "
-},
-{
-  "id": "chap-differentation-6-23",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-23",
-  "type": "Proof",
-  "number": "7.4.4",
-  "title": "",
-  "body": " Let and . Note that is convergent if and only if and are both convergent. We will thus assume that for all .  Suppose the set is uncountable. Let For each , choose such that   Let Then   As is uncountable, it follows that is countable for some . Let be such that and the set is uncountable.  For each , choose a finite set with elements. Then   Hence   and therefore   "
+  "body": "  Let be an index set, and let be a collection of real numbers indexed by . If is convergent, then is countable. convergence of uncountable series     Let and . Note that is convergent if and only if and are both convergent. We will thus assume that for all .  Suppose the set is uncountable. Let For each , choose such that Let Then As is uncountable, it follows that is countable for some . Let be such that and the set is uncountable.  For each , choose a finite set with elements. Then Hence and therefore    "
 },
 {
   "id": "thm-bv-countable-discont",
@@ -3148,16 +2734,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.4.10",
   "title": "",
-  "body": " Let be a function of bounded variation on . Then the set of discontinuities of is countable.  "
-},
-{
-  "id": "chap-differentation-6-25",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-25",
-  "type": "Proof",
-  "number": "7.4.5",
-  "title": "",
-  "body": " Assume that is increasing. The general result follows from the increasing case by the Jordan Decomposition Theorem. For each , let   Since is continuous at if and only if . Further, since is increasing, when . The collection of open intervals is therefore a disjoint collection (viewing as the empty set when ); and   By it follows that for all but at most countably many points. Thus the set of discontinuities of is countable.  "
+  "body": "  Let be a function of bounded variation on . Then the set of discontinuities of is countable.    Assume that is increasing. The general result follows from the increasing case by the Jordan Decomposition Theorem . For each , let Since is continuous at if and only if . Further, since is increasing, when . The collection of open intervals is therefore a disjoint collection (viewing as the empty set when ); and> By it follows that for all but at most countably many points. Thus the set of discontinuities of is countable.   "
 },
 {
   "id": "prop-countable-discont",
@@ -3166,30 +2743,21 @@ var ptx_lunr_docs = [
   "type": "Proposition",
   "number": "7.4.11",
   "title": "",
-  "body": " Let be a closed interval, and let be a countable set. There is an increasing function on where is continuous on and discontinuous on . Further, can be chosen to be right-continuous.  "
+  "body": "  Let be a closed interval, and let be a countable set. There is an increasing function on where is continuous on and discontinuous on . Further, can be chosen to be right-continuous.    We will assume that is countably infinite. The case when is finite is straightforward. Enumerate the points in by Let be a sequence of positive real numbers such that . Define a function on by We will show that is right-continuous; is discontinuous at every point in ; and is continuous on .  We will first prove right-continuity. Take any and fix . Suppose there exists such that . If and , then . Thus is right-continuous at . Otherwise, for each the set is infinite. Fix . The series Hence, there is a finite set such that Fix such that Take with Then Hence is right-continuous at .  Take any , and . Then Hence is not continuous at .  The argument that is (left) continuous on follows similar reasoning as the argument that is right-continuous and is left as an exercise ( ).   "
 },
 {
-  "id": "chap-differentation-6-28",
+  "id": "chap-differentation-6-20",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-28",
-  "type": "Proof",
-  "number": "7.4.6",
-  "title": "",
-  "body": " We will assume that is countably infinite. The case when is finite is straightforward. Enumerate the points in by   Let be a sequence of positive real numbers such that . Define a function on by   We will show that is right-continuous; is discontinuous at every point in ; and is continuous on .  We will first prove right-continuity. Take any and fix . Suppose there exists such that . If and , then . Thus is right-continuous at . Otherwise, for each the set is infinite. Fix . The series   Hence, there is a finite set such that   Fix such that   Take with Then   Hence is right-continuous at .  Take any , and . Then   Hence is not continuous at .  The argument that is (left) continuous on follows similar reasoning as the argument that is right-continuous and is left as an exercise ( ).  "
-},
-{
-  "id": "chap-differentation-6-30",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-30",
+  "url": "chap-differentation-6.html#chap-differentation-6-20",
   "type": "Definition",
   "number": "7.4.12",
   "title": "",
-  "body": " A non-zero Borel signed-measure on a closed interval is discrete measure discrete Borel signed-measure discrete Borel if there is a countable collection of points and a sequence of real numbers such that   where is the Dirac measure at the point .  "
+  "body": "  A non-zero Borel signed-measure on a closed interval is discrete if there is a countable collection of points and a sequence of real numbers such that where is the Dirac measure at the point . measure discrete Borel signed-measure discrete Borel    "
 },
 {
-  "id": "chap-differentation-6-31",
+  "id": "chap-differentation-6-21",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-31",
+  "url": "chap-differentation-6.html#chap-differentation-6-21",
   "type": "Remark",
   "number": "7.4.13",
   "title": "",
@@ -3202,34 +2770,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "7.4.14",
   "title": "",
-  "body": " Lebesgue decomposition function If is a Borel signed-measure on then there are mutually singular signed Borel measures , and such that   ;   is a discrete Borel signed-measure;   is a singular continuous Borel signed-measure; and   is an absolutely continuous Borel signed-measure.    "
+  "body": "  If is a Borel signed-measure on then there are mutually singular signed Borel measures , and such that  ;  is a discrete Borel signed-measure;  is a singular continuous Borel signed-measure; and  is an absolutely continuous Borel signed-measure.   Lebesgue decomposition function     By the Lebesgue decomposition, , there are mutually singular measures and where is singular, is absolutely continuous, and . It remains to show that we can decompose into a discrete part and a continuous part. We will thus assume that is singular.  First, assume is a measure. Let be the cumulative distribution function for . Then is a right-continuous increasing function on . By the set of discontinuities of is countable. For each , let Note that the sequence is absolutely convergent, since is of bounded variation. Let be the discrete Borel signed-measure and let .  For any , , and hence If , then Hence is continuous, completing the proof   "
 },
 {
-  "id": "chap-differentation-6-34",
+  "id": "chap-differentation-6-25",
   "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-34",
-  "type": "Proof",
-  "number": "7.4.7",
-  "title": "",
-  "body": " By the Lebesgue decomposition, , there are mutually singular measures and where is singular, is absolutely continuous, and . It remains to show that we can decompose into a discrete part and a continuous part. We will thus assume that is singular.  First, assume is a measure. Let be the cumulative distribution function for . Then is a right-continuous increasing function on . By the set of discontinuities of is countable. For each , let   Note that the sequence is absolutely convergent, since is of bounded variation. Let be the discrete Borel signed-measure   and let .  For any , , and hence If , then   Hence is continuous, completing the proof  "
-},
-{
-  "id": "chap-differentation-6-38",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-38",
+  "url": "chap-differentation-6.html#chap-differentation-6-25",
   "type": "Corollary",
   "number": "7.4.15",
   "title": "",
-  "body": " Let be a right-continuous function of bounded variation on a closed interval . Then there are functions , , and on such that   ;   is absolutely continuous on ;   is continuous and singular;   there are points in and a sequence of real numbers such that  for all .     "
-},
-{
-  "id": "chap-differentation-6-39",
-  "level": "2",
-  "url": "chap-differentation-6.html#chap-differentation-6-39",
-  "type": "Proof",
-  "number": "7.4.8",
-  "title": "",
-  "body": " Let be a discrete Borel signed-measure on . The result follows from , on noting that if , then   "
+  "body": "  Let be a right-continuous function of bounded variation on a closed interval . Then there are functions , , and on such that  ;  is absolutely continuous on ;  is continuous and singular;  there are points in and a sequence of real numbers such that for all .      Let be a discrete Borel signed-measure on . The result follows from , on noting that if , then    "
 },
 {
   "id": "chap-differentation-7",
@@ -6253,7 +5803,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "B.2",
   "title": "Metric spaces and General topology",
-  "body": " Metric spaces and General topology  The definition of open sets in and relies on being able to define a distance between between: for , for . If we have a distance (which is called a metric ) on a set then we can define open sets in .     metric     metric space    Let be a non-empty set. A function is a metric if    for all , and if and only if ;     for all ; and     for all ( triangle inequality ). triangle inequality     metric  metric space If is a metric on , the pair is called a metric space . When the metric is clear, we often simply call a metric space.      Let be a metric space. A set is open if for all there exists such that A set is closed if is open. open set closed set     Let be a topological space. If , the closure of , denoted by , is the smallest closed set containing ; and the interior of , denoted by , is the largest open set contained in . A set is dense if . A set is dense in if . closed set closure  open set interior  dense set   In a metric space, open sets have many of the same properties that open sets in have.    Let be a metric space. The open sets in have the following properties:  are open;  if is any collection of open sets then   if are open then        The absolute value function on defines a metric: the distance between two numbers and is . For , the Euclidean distance between two points and is . This defines a metric on . That triangle inequality is satisfied is not immediate; it follows from .   In a topological space, we look at open sets in a set without reference to a distance. and inspire the following definition     topological space    A topology on a non-empty set is a collection of subsets of with the properties  , ;  if is a collection of sets in then ;  if then .  We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space . topology  topological space  open set  closed set       Let be a topological space, and let . The closure of , denoted , is the smallest closed set containing ; and the interior of , denoted , is the largest open set containing .     Let be a metric space, and let be all open sets in (with respect to the metric ). Then is a topology on by .    Let be any non-empty set and let Then is a topological space. We call the discrete topology on . topology discrete topology     Let be any non-empty set and let Then is a topological space. We call the trivial topology on . The trivial topology is also refered to as the indiscrete topology.  topology trivial topology  topology indiscrete topology trivial topology    Let be a topological space, and let be a non-empty subset. Define Then is a topological space. This topology on is called the induced topology or relative topology on . topology induced topology  topology relative topology induced topology     A topological space is Hausdorff if given with , there are disjoint open sets with and . topology Hausdorff      Every metric space is a Hausdorff topological space.    If is a set with more than one point, and is the trivial topology on , then is not a Hausdorff topological space.    The property of being Hausdorff is an example of a separation axiom on a topological space. The Hausdorff property is sometimes denoted by . There are several other separation axioms, but we will not concern ourselves with them.     Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact given any open cover of , has a finite subcover of . compact  open cover  open cover subcover    The following theorem gives an easy characterization of compact sets in . Proofs are easy to find. The wikipedia page for the result provides several .   Heine-Borel Theorem    Heine-Borel Theorem A subset is compact if and only if is closed and bounded.       In a general metric space, a set being closed and bounded is not necessarily equivalent to being compact. If you study a proof of the Heine-Borel theorem in , it will rely on the fact that is finite. In infinite dimensional normed vector spaces there are closed and bounded sets which are not compact.   "
+  "body": " Metric spaces and General topology  The definition of open sets in and relies on being able to define a distance between between: for , for . If we have a distance (which is called a metric ) on a set then we can define open sets in .     metric     metric space    Let be a non-empty set. A function is a metric if    for all , and if and only if ;     for all ; and     for all ( triangle inequality ). triangle inequality     metric  metric space If is a metric on , the pair is called a metric space . When the metric is clear, we often simply call a metric space.      Let be a metric space. A set is open if for all there exists such that A set is closed if is open. open set closed set     Let be a topological space. If , the closure of , denoted by , is the smallest closed set containing ; and the interior of , denoted by , is the largest open set contained in . A set is dense if . A set is dense in if . closed set closure  open set interior  dense set   In a metric space, open sets have many of the same properties that open sets in have.    Let be a metric space. The open sets in have the following properties:  are open;  if is any collection of open sets then   if are open then        The absolute value function on defines a metric: the distance between two numbers and is . For , the Euclidean distance between two points and is . This defines a metric on . That triangle inequality is satisfied is not immediate; it follows from .   In a topological space, we look at open sets in a set without reference to a distance. and inspire the following definition     topological space    A topology on a non-empty set is a collection of subsets of with the properties  , ;  if is a collection of sets in then ;  if then .  We call the elements of  open sets . If is open, we call  closed . We call , or simply if the topology is clear, a topological space . topology  topological space  open set  closed set       Let be a topological space, and let . The closure of , denoted , is the smallest closed set containing ; and the interior of , denoted , is the largest open set containing .     Let be a metric space, and let be all open sets in (with respect to the metric ). Then is a topology on by .    Let be any non-empty set and let Then is a topological space. We call the discrete topology on . topology discrete topology     Let be any non-empty set and let Then is a topological space. We call the trivial topology on . The trivial topology is also refered to as the indiscrete topology.  topology trivial topology  topology indiscrete topology trivial topology    Let be a topological space, and let be a non-empty subset. Define Then is a topological space. This topology on is called the induced topology or relative topology on . topology induced topology  topology relative topology induced topology     A topological space is Hausdorff if given with , there are disjoint open sets with and . topology Hausdorff      Every metric space is a Hausdorff topological space.    If is a set with more than one point, and is the trivial topology on , then is not a Hausdorff topological space.    The property of being Hausdorff is an example of a separation axiom on a topological space. The Hausdorff property is sometimes denoted by . There are several other separation axioms, but we will not concern ourselves with them.     Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact if given any open cover of , has a finite subcover of . compact  open cover  open cover subcover    The following theorem gives an easy characterization of compact sets in . Proofs are easy to find. The wikipedia page for the result provides several .   Heine-Borel Theorem    Heine-Borel Theorem A subset is compact if and only if is closed and bounded.       In a general metric space, a set being closed and bounded is not necessarily equivalent to being compact. If you study a proof of the Heine-Borel theorem in , it will rely on the fact that is finite. In infinite dimensional normed vector spaces there are closed and bounded sets which are not compact.   "
 },
 {
   "id": "appendix-prereqs-top-4-2",
@@ -6406,7 +5956,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "B.2.14",
   "title": "",
-  "body": " Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact given any open cover of , has a finite subcover of . compact  open cover  open cover subcover   "
+  "body": " Let be a topological space and let . An open cover of is a collection of open sets such that An open cover of has a finite subcover of if there is a finite subset such that A set is called compact if given any open cover of , has a finite subcover of . compact  open cover  open cover subcover   "
 },
 {
   "id": "thm-heine-borel",
@@ -6433,7 +5983,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "B.3",
   "title": "Continuity and convergence",
-  "body": "Continuity and convergence  Recall the following definitions from a first course in real analysis. Let be a non-empty set and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is continuous if is continuous at every point in . The function is uniformly continuous if for all there is a such that if and then . Note that uniform continuity is a stronger condition than continuity. continuous function at a point in  continuous function  continuous function uniformly continuous   All of these definitions can be easily adapted to apply to general metric spaces.     limit of a sequence    Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . When converges to we call the limit of the sequence . We denote this by , , or  continuous function on a metric space  continuous function uniformly continuous on a metric space  limit     Similarly, the usual definition of convergence in is easily adapted to the metric space case.    Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when .    We record two other characterizations of continuity, one based on open sets, and one based on sequences.    Let and be two metric spaces, and let be a function. The function is continuous if and only if whenever is a sequence in converging to , the sequence in converges to       Let and be two metric spaces, and let be a function. The function is continuous if and only if is an open set in for all open sets .    Sequences can also be used to characterize closed sets.    Let be a metric space and let . Then is closed if and only if whenever is a convergent sequence in with each , then     There are times when a continuous function is automatically uniformly continuous .    Let and be metric spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.      Let be a compact metric space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.    In general topological spaces we can also define continuity of functions and convergence of sequences. It turns out that sequences do not always play the same role in topological spaces as they do in metric spaces. The correct analogue of a convergent sequence is (the more general) object of a convergent net . There are other objects called filters that can be used instead of nets. As we can avoid using nets in these notes, we will not discuss them. We will, however, need to talk about continuity. Without having a metric, the definition of continuity does not readily translate to arbitrary topological spaces. However, we do have open sets. motivates the following definition.    Let and be two topological spaces. A function is continuous if for all  continuous function on a topological space     "
+  "body": "Continuity and convergence  Recall the following definitions from a first course in real analysis. Let be a non-empty set and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is continuous if is continuous at every point in . The function is uniformly continuous if for all there is a such that if and then . Note that uniform continuity is a stronger condition than continuity. continuous function at a point in  continuous function  continuous function uniformly continuous  convergent sequence   All of these definitions can be easily adapted to apply to general metric spaces.    Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . continuous function on a metric space  continuous function uniformly continuous on a metric space     Similarly, the usual definition of convergence in is easily adapted to the metric space case.     limit of a sequence     limit of a sequence    Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when . When converges to we call the limit of the sequence . We denote this by , , or  limit  convergent sequence     We record two other characterizations of continuity, one based on open sets, and one based on sequences.    Let and be two metric spaces, and let be a function. The function is continuous if and only if whenever is a sequence in converging to , the sequence in converges to       Let and be two metric spaces, and let be a function. The function is continuous if and only if is an open set in for all open sets .    Sequences can also be used to characterize closed sets.    Let be a metric space and let . Then is closed if and only if whenever is a convergent sequence in with each , then     There are times when a continuous function is automatically uniformly continuous .    Let and be metric spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.      Let be a compact metric space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.    In general topological spaces we can also define continuity of functions and convergence of sequences. It turns out that sequences do not always play the same role in topological spaces as they do in metric spaces. The correct analogue of a convergent sequence is (the more general) object of a convergent net . There are other objects called filters that can be used instead of nets. As we can avoid using nets in these notes, we will not discuss them. We will, however, need to talk about continuity. Without having a metric, the definition of continuity does not readily translate to arbitrary topological spaces. However, we do have open sets. motivates the following definition.    Let and be two topological spaces. A function is continuous if for all  continuous function on a topological space     As hinted above, the direct analogue of does not hold in general topological spaces. However, (and ) do translate readily topological spaces.    Let and be topological spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.      Let be a compact topological space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.    "
 },
 {
   "id": "appendix-prereqs-top-5-2",
@@ -6451,7 +6001,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "B.3.1",
   "title": "",
-  "body": "   limit of a sequence    Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . When converges to we call the limit of the sequence . We denote this by , , or  continuous function on a metric space  continuous function uniformly continuous on a metric space  limit    "
+  "body": "  Let and be two metric spaces, and let be a function. The function is continuous at a point if for all there exists a such that for all with The function is uniformly continuous if for all there is a such that if and then . continuous function on a metric space  continuous function uniformly continuous on a metric space    "
 },
 {
   "id": "appendix-prereqs-top-5-6",
@@ -6460,7 +6010,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "B.3.2",
   "title": "",
-  "body": "  Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when .   "
+  "body": "   limit of a sequence     limit of a sequence    Let be a metric space and let be a sequence in . The sequence converges to a point if for all there is a natural number such that when . When converges to we call the limit of the sequence . We denote this by , , or  limit  convergent sequence    "
 },
 {
   "id": "appendix-prereqs-top-5-8",
@@ -6490,18 +6040,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a metric space and let . Then is closed if and only if whenever is a convergent sequence in with each , then    "
 },
 {
-  "id": "appendix-prereqs-top-5-13",
+  "id": "prop-compact-cont",
   "level": "2",
-  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-13",
+  "url": "appendix-prereqs-top-5.html#prop-compact-cont",
   "type": "Proposition",
   "number": "B.3.6",
   "title": "",
   "body": "  Let and be metric spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.   "
 },
 {
-  "id": "appendix-prereqs-top-5-14",
+  "id": "cor-compact-cont",
   "level": "2",
-  "url": "appendix-prereqs-top-5.html#appendix-prereqs-top-5-14",
+  "url": "appendix-prereqs-top-5.html#cor-compact-cont",
   "type": "Corollary",
   "number": "B.3.7",
   "title": "",
@@ -6524,6 +6074,24 @@ var ptx_lunr_docs = [
   "number": "B.3.8",
   "title": "",
   "body": "  Let and be two topological spaces. A function is continuous if for all  continuous function on a topological space    "
+},
+{
+  "id": "prop-top-compact-cont",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#prop-top-compact-cont",
+  "type": "Proposition",
+  "number": "B.3.9",
+  "title": "",
+  "body": "  Let and be topological spaces. Further suppose that is compact. Let be a continuous function. Then, is a compact subset of and is uniformly continuous.   "
+},
+{
+  "id": "cor-top-compact-cont",
+  "level": "2",
+  "url": "appendix-prereqs-top-5.html#cor-top-compact-cont",
+  "type": "Corollary",
+  "number": "B.3.10",
+  "title": "",
+  "body": "  Let be a compact topological space and let be a continuous function. Then is uniformly continuous and attains its maximum and minimum values.   "
 },
 {
   "id": "sec-nowhere-diff",

@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.1';
+eBookConfig.runestone_version = '8.2.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -414,11 +414,11 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="real-analysis-4-5.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<div class="toc-title-box"><a href="chap-signed-measures.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-4-5-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-measure.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-4-5-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-signed-measures-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -432,9 +432,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-integration-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-non-neg.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-integration.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-Riemann.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -632,6 +632,120 @@ eBookConfig.enable_chatcodes =  false;
 <td><a href="sec-Lebesgue.html#sec-Lebesgue-5" class="xref" data-knowl="./knowl/notation/sec-Lebesgue-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.2">Definition 3.1.2</a></td>
 </tr>
 <tr>
+<td><span class="process-math">\(\perp \)</span></td>
+<td>mutually singular measures</td>
+<td><a href="sec-signed-measure.html#sec-signed-measure-12" class="xref" data-knowl="./knowl/notation/sec-signed-measure-12.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.8">Definition 4.1.8</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\nu = \nu_+ - \nu_-\)</span></td>
+<td>Jordan decomposition of a signed measure</td>
+<td><a href="sec-signed-measure.html#def-jordan-decomp" class="xref" data-knowl="./knowl/notation/def-jordan-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.11">Definition 4.1.11</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(|\nu|\)</span></td>
+<td>measure of total variation of a signed measure</td>
+<td><a href="sec-signed-measure.html#sec-signed-measure-16" class="xref" data-knowl="./knowl/notation/sec-signed-measure-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.12">Definition 4.1.12</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(|\nu|(X)\)</span></td>
+<td>total variation of a signed measure</td>
+<td><a href="sec-signed-measure.html#sec-signed-measure-16" class="xref" data-knowl="./knowl/notation/sec-signed-measure-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.12">Definition 4.1.12</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(V(f,P)\)</span></td>
+<td>The variation of a function <span class="process-math">\(f\)</span> over a partition <span class="process-math">\(P\)</span>
+</td>
+<td><a href="sec-signed-borel.html#sec-signed-borel-7" class="xref" data-knowl="./knowl/notation/sec-signed-borel-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.3">Definition 4.2.3</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(TV(f)\)</span></td>
+<td>The total variation of a function <span class="process-math">\(f\)</span>
+</td>
+<td><a href="sec-signed-borel.html#sec-signed-borel-7" class="xref" data-knowl="./knowl/notation/sec-signed-borel-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.3">Definition 4.2.3</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\chi_A\)</span></td>
+<td>The characteristic function of a set <span class="process-math">\(A\)</span>
+</td>
+<td><a href="chap-meas-fun-3.html#chap-meas-fun-3-5" class="xref" data-knowl="./knowl/notation/chap-meas-fun-3-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(f_+\)</span></td>
+<td>positive part of a function <span class="process-math">\(f\)</span>
+</td>
+<td><a href="chap-meas-fun-3.html#chap-meas-fun-3-22" class="xref" data-knowl="./knowl/notation/chap-meas-fun-3-22.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.12">Definition 5.1.12</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(f_-\)</span></td>
+<td>negative part of a function <span class="process-math">\(f\)</span>
+</td>
+<td><a href="chap-meas-fun-3.html#chap-meas-fun-3-22" class="xref" data-knowl="./knowl/notation/chap-meas-fun-3-22.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.12">Definition 5.1.12</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\liminf_n x_n\)</span></td>
+<td>limit inferior of the sequence <span class="process-math">\((x_n)_n\)</span>
+</td>
+<td><a href="sec-int-non-neg.html#sec-int-non-neg-24" class="xref" data-knowl="./knowl/notation/sec-int-non-neg-24.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\limsup_n x_n\)</span></td>
+<td>limit superior of the sequence <span class="process-math">\((x_n)_n\)</span>
+</td>
+<td><a href="sec-int-non-neg.html#sec-int-non-neg-24" class="xref" data-knowl="./knowl/notation/sec-int-non-neg-24.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\int_X f \,d\mu\)</span></td>
+<td>The integral of <span class="process-math">\(f\)</span> over the set <span class="process-math">\(X\)</span> with respect to the measure <span class="process-math">\(\mu\)</span>
+</td>
+<td><a href="sec-integration.html#sec-integration-3" class="xref" data-knowl="./knowl/notation/sec-integration-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.1">Definition 6.2.1</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\mathrm{R}{\int}_a^b f\)</span></td>
+<td>The Riemann integral of <span class="process-math">\(f\)</span> over <span class="process-math">\([a,b]\)</span>
+</td>
+<td><a href="sec-int-Riemann.html#sec-int-Riemann-2" class="xref" data-knowl="./knowl/notation/sec-int-Riemann-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(L(f,P)\)</span></td>
+<td>Lower Darboux sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span>
+</td>
+<td><a href="sec-int-Riemann.html#sec-int-Riemann-9" class="xref" data-knowl="./knowl/notation/sec-int-Riemann-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(U(f,P)\)</span></td>
+<td>Upper Darboux sum of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(P\)</span>
+</td>
+<td><a href="sec-int-Riemann.html#sec-int-Riemann-9" class="xref" data-knowl="./knowl/notation/sec-int-Riemann-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Paragraph">Paragraph</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\nu \ll \mu\)</span></td>
+<td>
+<span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\)</span>
+</td>
+<td><a href="chap-differentation-3.html#chap-differentation-3-7" class="xref" data-knowl="./knowl/notation/chap-differentation-3-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.1.3">Definition 7.1.3</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\frac{d\nu}{d\mu}\)</span></td>
+<td>Radon-Nikodym derivative</td>
+<td><a href="chap-differentation-3.html#chap-differentation-3-16" class="xref" data-knowl="./knowl/notation/chap-differentation-3-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.1.8">Definition 7.1.8</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(\nu = \nu_a + \nu_s\)</span></td>
+<td>Lebesgue decomposition of <span class="process-math">\(\nu\)</span>
+</td>
+<td><a href="chap-differentation-3.html#chap-differentation-3-23" class="xref" data-knowl="./knowl/notation/chap-differentation-3-23.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.1.12">Definition 7.1.12</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(A_rf(x)\)</span></td>
+<td>average value function</td>
+<td><a href="sec-ftoc.html#sec-ftoc-5" class="xref" data-knowl="./knowl/notation/sec-ftoc-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.3.3">Definition 7.3.3</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(Hf\)</span></td>
+<td>Hardy-Littlewood maximal function</td>
+<td><a href="sec-ftoc.html#sec-ftoc-5" class="xref" data-knowl="./knowl/notation/sec-ftoc-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.3.3">Definition 7.3.3</a></td>
+</tr>
+<tr>
 <td><span class="process-math">\(\P(X)\)</span></td>
 <td>the power set of a set <span class="process-math">\(X\)</span>
 </td>
@@ -671,9 +785,14 @@ eBookConfig.enable_chatcodes =  false;
 <td><a href="appendix-prereqs-top-4.html#appendix-prereqs-top-4-10" class="xref" data-knowl="./knowl/notation/appendix-prereqs-top-4-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition B.2.5">Definition B.2.5</a></td>
 </tr>
 <tr>
-<td><span class="process-math">\(\lim_{n}x_n = 0\)</span></td>
+<td><span class="process-math">\(\lim_{n}x_n = x_0\)</span></td>
 <td>limit of a sequence</td>
-<td><a href="appendix-prereqs-top-5.html#appendix-prereqs-top-5-4" class="xref" data-knowl="./knowl/notation/appendix-prereqs-top-5-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition B.3.1">Definition B.3.1</a></td>
+<td><a href="appendix-prereqs-top-5.html#appendix-prereqs-top-5-6" class="xref" data-knowl="./knowl/notation/appendix-prereqs-top-5-6.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition B.3.2">Definition B.3.2</a></td>
+</tr>
+<tr>
+<td><span class="process-math">\(x_n \rightarrow x_0 \text{ as }n\rightarrow \infty.\)</span></td>
+<td>limit of a sequence</td>
+<td><a href="appendix-prereqs-top-5.html#appendix-prereqs-top-5-6" class="xref" data-knowl="./knowl/notation/appendix-prereqs-top-5-6.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition B.3.2">Definition B.3.2</a></td>
 </tr>
 </table>
 <div class="autopermalink" data-description="Appendix D: List of Symbols"><a href="#backmatter-4" title="Copy heading and permalink for Appendix D: List of Symbols" aria-label="Copy heading and permalink for Appendix D: List of Symbols">🔗</a></div></section></div>

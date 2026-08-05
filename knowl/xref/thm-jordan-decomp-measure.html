@@ -19,19 +19,81 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jordan Decomposition Theorem.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jordan Decomposition Theorem.</span>
 </h3>
-<div class="para"> Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are mutually orthogonal measures on <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu = \nu_+ - \nu_-\text{,}\)</span> i.e.<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\nu\)</span> be a signed measure on a measurable space <span class="process-math">\((X,\mathcal{F})\text{.}\)</span> Then there are mutually orthogonal measures on <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu = \nu_+ - \nu_-\text{,}\)</span> i.e.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \nu(E) = \nu_+(E) - \nu_-(E)
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span>
 </div>
-<div class="para">Further, <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> are unique mutually orthogonal measures satisfying <span class="process-math">\(\nu = \nu_+ - \nu_-\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">Further, <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> are unique mutually orthogonal measures satisfying <span class="process-math">\(\nu = \nu_+ - \nu_-\text{.}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.1.9: The Jordan Decomposition Theorem"><a href="#thm-jordan-decomp-measure" title="Copy heading and permalink for Theorem 4.1.9: The Jordan Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 4.1.9: The Jordan Decomposition Theorem">🔗</a></div></article><span class="incontext"><a class="internal" href="real-analysis-4-5-3.html#thm-jordan-decomp-measure">in-context</a></span>
+<div class="autopermalink" data-description="Theorem 4.1.10: The Jordan Decomposition Theorem"><a href="#thm-jordan-decomp-measure" title="Copy heading and permalink for Theorem 4.1.10: The Jordan Decomposition Theorem" aria-label="Copy heading and permalink for Theorem 4.1.10: The Jordan Decomposition Theorem">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(X = A \cup B\)</span> be a Hahn decomposition for <span class="process-math">\(\nu\text{,}\)</span> with <span class="process-math">\(A\)</span> positive and <span class="process-math">\(B\)</span> negative. For each <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\nu_+(E) &amp;= \nu(E\cap A) \text{ and }\\
+\nu_-(E) &amp;= -\nu(E \cap B).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">That <span class="process-math">\(\nu_+\)</span> is a measure follows from <a href="chap-signed-measures-5.html#exer-signed-meas-to-meas" class="xref" data-knowl="./knowl/xref/exer-signed-meas-to-meas.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.3.7">Exercise 4.3.7</a>. That <span class="process-math">\(\nu_-\)</span> is a measure can be proved similarly. That <span class="process-math">\(\nu_+\)</span> and <span class="process-math">\(\nu_-\)</span> are mutually orthogonal follows from the fact that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint.<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Suppose now that <span class="process-math">\(\mu_1\)</span> and <span class="process-math">\(\mu_2\)</span> are mutually orthogonal measures satisfying <span class="process-math">\(\nu = \mu_1 - \mu_2\text{.}\)</span> Since <span class="process-math">\(\mu_1\)</span> and <span class="process-math">\(\mu_2\)</span> are mutually orthogonal, there are disjoint measurable sets <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(X = C \cup D\text{,}\)</span> <span class="process-math">\(\mu_1(C) = \mu(X)\text{,}\)</span> <span class="process-math">\(\mu_1(D) = 0\text{,}\)</span> <span class="process-math">\(\mu_2(C) = 0\text{,}\)</span> and <span class="process-math">\(\mu_2(D) = 0\text{.}\)</span> We will show that <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> give a Hahn decomposition for <span class="process-math">\(\nu\text{.}\)</span> That is, we will show that <span class="process-math">\(C\)</span> is <span class="process-math">\(\nu\)</span>-positive and <span class="process-math">\(D\)</span> is <span class="process-math">\(\nu\)</span>-negative. Take any <span class="process-math">\(E \subseteq C\text{.}\)</span> Since <span class="process-math">\(E \subseteq C\text{,}\)</span> <span class="process-math">\(\mu_2(C) = 0\text{,}\)</span> thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation*}
+\nu(E) = \mu_1(E) - \mu_2(E) = \mu_1(E) \geq 0.
+\end{equation*}
+</div>
+<div class="para">Similarly, if <span class="process-math">\(E \subseteq D\text{,}\)</span> then <span class="process-math">\(\mu_1(E) =0\)</span> and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation*}
+\nu(E) = \mu_1(E) - \mu_2(E) = 0 - \mu_2(E) \leq 0.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are a Hahn decompoistion for <span class="process-math">\(\nu\text{,}\)</span> and <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are a Hahn decompoistion for <span class="process-math">\(\nu\text{,}\)</span> it follows from <a href="sec-signed-measure.html#thm-Hahn-decomp" class="xref" data-knowl="./knowl/xref/thm-Hahn-decomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.6: Hahn Decomposition Theorem">Theorem 4.1.6</a> that <span class="process-math">\(A\backslash C \cup C \backslash A\)</span> and <span class="process-math">\(B \backslash D \cup D \backslash B\)</span> are null sets. Take any <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation*}
+E \cap C = ([E\cap C] \backslash A)  \cup ([E \cap C] \cap A)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation*}
+E \cap A = ([E\cap A] \backslash C)  \cup ([E \cap A] \cap C)
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation}
+\nu(E\cap C) = \nu(E \cap A).\tag{4.1}
+\end{equation}
+</div>
+<div class="para">Take any <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Hahn-decomp.html ./knowl/xref/eq-jord-eq.html">
+\begin{equation*}
+\begin{aligned}
+\mu_1(E) &amp;= \mu_1(E \cap C) \\
+&amp;= \mu_1(E \cap C) - \mu_2(E \cap C) \\
+&amp;= \nu(E \cap C)\\
+&amp;= \nu(E \cap A) \\
+&amp;= \nu_+(E),
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">where the penultimate equality comes from  <a href="sec-signed-measure.html#eq-jord-eq" class="xref" data-knowl="./knowl/xref/eq-jord-eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>. Hence <span class="process-math">\(\mu_1 = \nu_+\text{.}\)</span> We can show that <span class="process-math">\(\mu_2 = \nu_-\)</span> in a similar fashion.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-jordan-decomp-measure-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4.1.10.1"><a href="#thm-jordan-decomp-measure-3" title="Copy heading and permalink for Proof 4.1.10.1" aria-label="Copy heading and permalink for Proof 4.1.10.1">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-signed-measure.html#thm-jordan-decomp-measure">in-context</a></span>
 </body>
 </html>

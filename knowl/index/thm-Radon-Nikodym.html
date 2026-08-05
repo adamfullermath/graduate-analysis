@@ -21,15 +21,175 @@
 <article class="theorem theorem-like"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Radon-Nikodym Theorem.</span>
 </h3>
-<div class="para"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space, and let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu \ll \mu\text{.}\)</span> Then there is a non-negative measurable function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> such that<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure space, and let <span class="process-math">\(\nu\)</span> be a <span class="process-math">\(\sigma\)</span>-finite measure on <span class="process-math">\((X,\mathcal{F})\)</span> such that <span class="process-math">\(\nu \ll \mu\text{.}\)</span> Then there is a non-negative measurable function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> such that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html">
 \begin{equation}
 \nu(E) = \int_E f\,d\mu\tag{7.1}
 \end{equation}
 </div>
-<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Further, if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both non-negative functions satisfying  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1">(7.1)</a>, then <span class="process-math">\(f=g\)</span> a.e.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Further, if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both non-negative functions satisfying  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1">(7.1)</a>, then <span class="process-math">\(f=g\)</span> a.e. </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.1.6: Radon-Nikodym Theorem"><a href="#thm-Radon-Nikodym" title="Copy heading and permalink for Theorem 7.1.6: Radon-Nikodym Theorem" aria-label="Copy heading and permalink for Theorem 7.1.6: Radon-Nikodym Theorem">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-differentation-3.html#thm-Radon-Nikodym">in-context</a></span>
+<div class="autopermalink" data-description="Theorem 7.1.6: Radon-Nikodym Theorem"><a href="#thm-Radon-Nikodym" title="Copy heading and permalink for Theorem 7.1.6: Radon-Nikodym Theorem" aria-label="Copy heading and permalink for Theorem 7.1.6: Radon-Nikodym Theorem">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para">First assume that both <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are finite measures. If <span class="process-math">\(\nu(E) = 0\)</span> for all <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> then we can take <span class="process-math">\(f = 0\)</span> for  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1">(7.1)</a> to hold. Thus suppose that <span class="process-math">\(\nu\)</span> is not the zero measure.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathcal{A}\)</span> be the collection of non-negative measurable functions <span class="process-math">\(f\)</span> with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_E f\,d\mu \leq \nu(E)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Since the zero function <span class="process-math">\(0\)</span> is in <span class="process-math">\(\mathcal{A}\text{,}\)</span> <span class="process-math">\(\mathcal{A}\)</span> is non-empty. Let <span class="process-math">\(a = \sup\{ \int_X f\,d\mu \colon f \in \mathcal{A}\}\text{.}\)</span> Note that, since <span class="process-math">\(\nu\)</span> is finite, <span class="process-math">\(a\)</span> is finite with <span class="process-math">\(a \leq \nu(E)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Clearly, <span class="process-math">\(a \geq 0\text{.}\)</span> We claim that <span class="process-math">\(a &gt; 0\text{.}\)</span> Consider, for each real <span class="process-math">\(\alpha &gt; 0\text{,}\)</span> the signed measure <span class="process-math">\(\sigma_\alpha = \nu - \alpha\mu\text{.}\)</span> For each <span class="process-math">\(\sigma_\alpha\)</span> let <span class="process-math">\(X = P_\alpha \cup N_\alpha\)</span> be a Hahn-Decomposition of <span class="process-math">\(X\)</span> for <span class="process-math">\(\sigma_\alpha\text{.}\)</span> That is <span class="process-math">\(P_\alpha\)</span> is a positive set for <span class="process-math">\(\sigma_\alpha\text{,}\)</span> and <span class="process-math">\(N_\alpha\)</span> is a negative set for <span class="process-math">\(\sigma_\alpha\text{.}\)</span> If <span class="process-math">\(\mu(P_\alpha)= 0\)</span> for all <span class="process-math">\(\alpha\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nu(E) \leq \alpha \mu(E)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\)</span> and <span class="process-math">\(\alpha &gt; 0\text{.}\)</span> Hence, if <span class="process-math">\(\mu(E) &gt;0\)</span> then <span class="process-math">\(\nu(E) = 0\text{.}\)</span> Since <span class="process-math">\(\nu \ll \mu\)</span> we also have <span class="process-math">\(\mu(E) = 0\)</span> implies <span class="process-math">\(\nu(E) = 0\text{,}\)</span> and so <span class="process-math">\(\nu\)</span> is the <span class="process-math">\(0\)</span> measure. This contradicts the assumption that <span class="process-math">\(\nu\)</span> is non-zero. Hence there is some <span class="process-math">\(\alpha\)</span> for which <span class="process-math">\(\mu(P_\alpha)&gt;0\text{.}\)</span> Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi = \alpha \chi_{P_\alpha}.
+\end{equation*}
+</div>
+<div class="para">Then, for any <span class="process-math">\(E \in F\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_E \varphi\,d\mu = \alpha \mu(E \cap P_\alpha) \leq \nu(E\cap P_\alpha)\leq \nu(E).
+\end{equation*}
+</div>
+<div class="para">Thus, <span class="process-math">\(\varphi \in \mathcal{F}\text{.}\)</span> As <span class="process-math">\(\int_X \varphi\,d\mu = \alpha &gt;0\text{,}\)</span> we must have <span class="process-math">\(a &gt; 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">We will show that <span class="process-math">\(a\)</span> is attained by a function <span class="process-math">\(f \in \mathcal{A}\text{.}\)</span> Let <span class="process-math">\((f_n)_n\)</span> be a sequence of functions in <span class="process-math">\(\mathcal{A}\)</span> so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu = a.
+\end{equation*}
+</div>
+<div class="para">Note also that if <span class="process-math">\(f,g \in \mathcal{A}\)</span> and <span class="process-math">\(h = \max\{f,g\}\)</span> then <span class="process-math">\(h \in \mathcal{A}\text{.}\)</span> Indeed, if <span class="process-math">\(E \in F\)</span> and <span class="process-math">\(F = \{x \in E \colon f(x) &gt; g(x)\}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\int_E h\,d\mu &amp;= \int_F f \,d\mu + \int_{E\backslash F}g\,d\mu \\
+&amp;\leq \nu(F) + \nu(E\backslash F) = \nu(E).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">We can thus assume that the sequence <span class="process-math">\((f_n)_n\)</span> is increasing, by replacing each <span class="process-math">\(f_n\)</span> with <span class="process-math">\(\max\{f_1,\ldots,f_n\}\)</span> if necessary. Let <span class="process-math">\(f(x) = \lim_n f_n(x)\)</span> for all <span class="process-math">\(x \in X\text{.}\)</span> By the Monotone Convergence Theorem</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_E f\,d\mu = \lim_n\int_E f_n\,d\mu \leq \nu(E) 
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span> Thus <span class="process-math">\(f \in \mathcal{A}\text{.}\)</span> Setting <span class="process-math">\(E = X\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_X fd\mu = \lim_n \int_X f_n\,d\mu = a.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Our goal now is to show that <span class="process-math">\(f\)</span> satisfies  <a href="chap-differentation-3.html#eq-radon-nikodym" class="xref" data-knowl="./knowl/xref/eq-radon-nikodym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.1">(7.1)</a>. That is, we will show that for all <span class="process-math">\(E \in \mathcal{F}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html">
+\begin{equation*}
+\nu(E) = \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="para">Define a measure <span class="process-math">\(\lambda\)</span> on <span class="process-math">\((X,\mathcal{F})\)</span> by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-radon-nikodym.html">
+\begin{equation*}
+\lambda(E) = \nu(E) - \int_E f\,d\mu .
+\end{equation*}
+</div>
+<div class="para">(Note that <span class="process-math">\(\lambda\)</span> is indeed a measure, and not just a signed-measure, since <span class="process-math">\(f \in \mathcal{A}\)</span>).</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Since <span class="process-math">\(\nu\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{,}\)</span> and <span class="process-math">\(E \mapsto \int_E f\,d\mu\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{,}\)</span> <span class="process-math">\(\lambda\)</span> is absolutely continuous with respect to <span class="process-math">\(\mu\text{.}\)</span> Applying the above argument to <span class="process-math">\(\lambda\)</span> (in place of <span class="process-math">\(\nu\)</span>), if <span class="process-math">\(\lambda\)</span> is a non-zero measure, then there is a non-negative measurable function <span class="process-math">\(g\)</span> such that <span class="process-math">\(\int_X g \,d\mu &gt; 0\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_E g\,d\mu \leq \lambda(E)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(E \in \mathcal{F}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Taking any <span class="process-math">\(E \in F\)</span> we  have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\int_E g\,d\mu \leq \lambda(E) = \nu(E) - \int_E f\,d\mu.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_E(f+g) \,d\mu = \int_E f\,d\mu + \int_E g\,d\mu \leq \nu(E).
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(f +g \in F\text{.}\)</span> However,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_X(f+g)\,d\mu= a + \int_Xg\,d\mu &gt; a,
+\end{equation*}
+</div>
+<div class="para">contradicting the definition of <span class="process-math">\(a\text{.}\)</span> Hence <span class="process-math">\(\lambda(E) = 0\)</span> for all <span class="process-math">\(E \in \mathcal{F}\text{,}\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nu(E) = \int_E f\,d\mu
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now suppose that <span class="process-math">\(\mu\)</span> and <span class="process-math">\(\nu\)</span> are both <span class="process-math">\(\sigma\)</span>-finite. There are disjoint sets <span class="process-math">\(\{A_n\}_{n=1}^\infty\)</span> and disjoint sets <span class="process-math">\(\{B_n\}_{n=1}^\infty\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigcup_n A_n = X = \bigcup_n B_n,
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\mu(A_n)&lt; \infty\)</span> and <span class="process-math">\(\nu(B_n)&lt; \infty\)</span> for all <span class="process-math">\(n\text{.}\)</span> Let <span class="process-math">\(\{C_k\}_{k=1}^\infty\)</span> be the countable collection of disjoint sets <span class="process-math">\(\{A_n\cap B_m\}_{m,n=1}^\infty\text{.}\)</span> Then <span class="process-math">\(X = \bigcup_k C_k\text{,}\)</span> and for all <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(\mu(C_k)&lt;\infty\)</span> and <span class="process-math">\(\nu(C_k)&lt; \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For each <span class="process-math">\(k\)</span> there is a non-negative measurable function <span class="process-math">\(f_k\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html">
+\begin{equation*}
+\nu(E) = \int_E f_k \,d\mu
+\end{equation*}
+</div>
+<div class="para">for all measurable <span class="process-math">\(E \subseteq C_k\text{.}\)</span> Extend <span class="process-math">\(f_k\)</span> to all of <span class="process-math">\(x\)</span> by setting <span class="process-math">\(f_k(x) = 0\)</span> for <span class="process-math">\(x \notin C_k\text{.}\)</span> Let <span class="process-math">\(f = \sum_{k=1}^\infty f_k\text{.}\)</span> Take any <span class="process-math">\(E \in F\text{.}\)</span> Applying <a href="sec-int-non-neg.html#cor-MCT-series" class="xref" data-knowl="./knowl/xref/cor-MCT-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.1.18">Corollary 6.1.18</a>, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-MCT-series.html ./knowl/xref/exer-int-a-e.html">
+\begin{equation*}
+\begin{aligned}
+\int_E f\,d\mu &amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f\,d\mu \\
+&amp;= \sum_{k=1}^\infty \int_{E \cap C_k}f_k\,d\mu \\
+&amp;= \sum_{k=1}^\infty \nu(E \cap C_k) \\
+&amp;= \nu(E).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">The uniqueness (almost everywhere) follows from <a href="chap-integration-6.html#exer-int-a-e" class="xref" data-knowl="./knowl/xref/exer-int-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.4.1">Exercise 6.4.1</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Radon-Nikodym-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.1.6.1"><a href="#thm-Radon-Nikodym-3" title="Copy heading and permalink for Proof 7.1.6.1" aria-label="Copy heading and permalink for Proof 7.1.6.1">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-differentation-3.html#thm-Radon-Nikodym">in-context</a></span>
 </body>
 </html>

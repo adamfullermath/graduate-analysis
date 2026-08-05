@@ -21,22 +21,86 @@
 <article class="theorem theorem-like"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Differentiation Theorem.</span>
 </h3>
-<div class="para"> Let <span class="process-math">\(f\)</span> be a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}\text{.}\)</span> For each <span class="process-math">\(x \in \mathbb{R}\)</span> and <span class="process-math">\(r&gt;0\text{,}\)</span> let <span class="process-math">\(E_{r^+}(x) = (x,x+r)\)</span> and <span class="process-math">\(E_{r^-}(x) = (x-r,x)\text{.}\)</span> Then, for almost all <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f\)</span> be a Lebesgue integrable function on <span class="process-math">\(\mathbb{R}\text{.}\)</span> For each <span class="process-math">\(x \in \mathbb{R}\)</span> and <span class="process-math">\(r&gt;0\text{,}\)</span> let <span class="process-math">\(E_{r^+}(x) = (x,x+r)\)</span> and <span class="process-math">\(E_{r^-}(x) = (x-r,x)\text{.}\)</span> Then, for almost all <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
 \lim_{r\rightarrow 0} \frac{1}{m(E_r(x))} \int_{E_r(x)} |f(y) - f(x)|\,dm(y) = 0
 \end{equation*}
 </div>
-<div class="para">and<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para">and</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \lim_{r\rightarrow 0} \frac{1}{m(E_r(x))} \int_{E_r(x)} f\,dm = f(x) 
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(E_r = E_{r^+}\text{,}\)</span> <span class="process-math">\(E_r = E_{r^-}\)</span> or <span class="process-math">\(E_r = B(x,r)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">where <span class="process-math">\(E_r = E_{r^+}\text{,}\)</span> <span class="process-math">\(E_r = E_{r^-}\)</span> or <span class="process-math">\(E_r = B(x,r)\text{.}\)</span> </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.3.8: Lebesgue Differentiation Theorem"><a href="#thm-Lebesgue-differentiation" title="Copy heading and permalink for Theorem 7.3.8: Lebesgue Differentiation Theorem" aria-label="Copy heading and permalink for Theorem 7.3.8: Lebesgue Differentiation Theorem">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-ftoc.html#thm-Lebesgue-differentiation">in-context</a></span>
+<div class="autopermalink" data-description="Theorem 7.3.8: Lebesgue Differentiation Theorem"><a href="#thm-Lebesgue-differentiation" title="Copy heading and permalink for Theorem 7.3.8: Lebesgue Differentiation Theorem" aria-label="Copy heading and permalink for Theorem 7.3.8: Lebesgue Differentiation Theorem">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+L_f = \{x \in \mathbb{R} \colon \lim_{r\rightarrow}\frac{1}{2r}\int_{B(r,x)}|f(y)-f(x)|\,dm(y) =0 \}.
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(c \in \mathbb{R}\text{,}\)</span> let <span class="process-math">\(g_c(x) = |f(x) -c|.\)</span> By <a href="sec-ftoc.html#thm-lim-avg-f-f" class="xref" data-knowl="./knowl/xref/thm-lim-avg-f-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.7">Theorem 7.3.7</a>, there is a Lebesgue measurable set <span class="process-math">\(E_c \subseteq \mathbb{R}\text{,}\)</span> such that <span class="process-math">\(m(E_c) = 0\text{,}\)</span> and if <span class="process-math">\(x \notin E_c\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+\lim_{r\rightarrow 0} A_rg_c(x) = g_c(x).
+\end{equation*}
+</div>
+<div class="para">Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+E = \bigcup_{q \in \mathbb{Q}} E_q.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(m(E) = 0\text{,}\)</span> since <span class="process-math">\(\mathbb{Q}\)</span> is countable. Take <span class="process-math">\(x \notin E\)</span> and <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> By the density of <span class="process-math">\(\mathbb{Q}\)</span> in <span class="process-math">\(\mathbb{R}\text{,}\)</span> there is a <span class="process-math">\(q \in \mathbb{Q}\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+|f(x) - q| &lt; \varepsilon.
+\end{equation*}
+</div>
+<div class="para">For any <span class="process-math">\(y \in \mathbb{R}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+|f(y)-f(x)| \leq |f(y)-q| + |f(x)-q| &lt; |f(y)-q| + \varepsilon.
+\end{equation*}
+</div>
+<div class="para">Thus, since <span class="process-math">\(x \notin E_q\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+\begin{aligned}
+\limsup_{r\rightarrow 0} \frac{1}{2r} \int_{B(x,r)}|f(y)- f(x)|\,dm(y) &amp;\leq 
+\limsup_{r\rightarrow 0} \frac{1}{2r} \int_{B(x,r)}(|f(y)- q|+ \varepsilon)\,dm(y)\\
+&amp;=|f(x) - q| + \varepsilon &lt;2\varepsilon.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">As <span class="process-math">\(\varepsilon&gt;0\)</span> is arbitrary, it follows that <span class="process-math">\(x \in L_f\text{.}\)</span> Hence <span class="process-math">\(m(\mathbb{R}\backslash L_f) =0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now, for all <span class="process-math">\(x \in \mathbb{R}\text{,}\)</span> if <span class="process-math">\(E_r = E_{r^+}\)</span> or <span class="process-math">\(E_r = E_{r^-}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-lim-avg-f-f.html">
+\begin{equation*}
+\begin{aligned}
+\frac{1}{r}\int_{E_r}|f(y)-f(x)|\,dm(y) 
+&amp;\leq \frac{1}{r}\int_{B(x,r)}|f(y)-f(x)|\,dm(y) \\
+&amp;\leq 2\frac{1}{2r}\int_{B(x,r)}|f(y)-f(x)|\,dm(y).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Thus the first equality holds for all <span class="process-math">\(x \in L_f\text{.}\)</span> The second equality follows from <a href="sec-ftoc.html#thm-lim-avg-f-f" class="xref" data-knowl="./knowl/xref/thm-lim-avg-f-f.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.7">Theorem 7.3.7</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-differentiation-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.3.8.1"><a href="#thm-Lebesgue-differentiation-3" title="Copy heading and permalink for Proof 7.3.8.1" aria-label="Copy heading and permalink for Proof 7.3.8.1">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-ftoc.html#thm-Lebesgue-differentiation">in-context</a></span>
 </body>
 </html>

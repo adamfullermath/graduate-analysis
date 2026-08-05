@@ -21,13 +21,59 @@
 <article class="theorem theorem-like"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Dominated Convergence Theorem.</span>
 </h3>
-<div class="para"> Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\((f_n)\)</span> be a sequence of measurable functions which converge pointwise a.e. to a measurable function <span class="process-math">\(f\text{.}\)</span> If there is an integrable non-negative function <span class="process-math">\(g\)</span> on <span class="process-math">\(X\)</span> such that <span class="process-math">\(|f_n|\leq g\)</span> a.e. for all <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(f\)</span> is integrable over <span class="process-math">\(X\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#thm-LDC-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\((f_n)\)</span> be a sequence of measurable functions which converge pointwise a.e. to a measurable function <span class="process-math">\(f\text{.}\)</span> If there is an integrable non-negative function <span class="process-math">\(g\)</span> on <span class="process-math">\(X\)</span> such that <span class="process-math">\(|f_n|\leq g\)</span> a.e. for all <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(f\)</span> is integrable over <span class="process-math">\(X\)</span> and</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int_X f \,d\mu = \lim_n\int_X f_n\,d\mu.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Theorem 6.2.7: Lebesgue Dominated Convergence Theorem"><a href="#thm-LDC" title="Copy heading and permalink for Theorem 6.2.7: Lebesgue Dominated Convergence Theorem" aria-label="Copy heading and permalink for Theorem 6.2.7: Lebesgue Dominated Convergence Theorem">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-integration-4.html#thm-LDC">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-LDC-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.2.7: Lebesgue Dominated Convergence Theorem"><a href="#thm-LDC" title="Copy heading and permalink for Theorem 6.2.7: Lebesgue Dominated Convergence Theorem" aria-label="Copy heading and permalink for Theorem 6.2.7: Lebesgue Dominated Convergence Theorem">🔗</a></div></article><article class="proof"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para">By removing a set of measure <span class="process-math">\(0\text{,}\)</span> we will assume that the sequence <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\)</span> and <span class="process-math">\(|f_n|\leq g\)</span> everywhere. Note that each <span class="process-math">\(f_n\)</span> is integrable since <span class="process-math">\(|f_n|\leq g\)</span> and <span class="process-math">\(g\)</span> is integrable. It follows that <span class="process-math">\(|f| \leq g\text{,}\)</span> and so <span class="process-math">\(f\)</span> is integrable as well.<div class="autopermalink" data-description="Paragraph"><a href="#thm-LDC-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The sequence <span class="process-math">\((f_n + g)_n\)</span> is a sequence of non-negative measurable functions which converges pointwise to <span class="process-math">\(f +g\text{.}\)</span> Thus, by <a href="sec-int-non-neg.html#lem-fatou" class="xref" data-knowl="./knowl/xref/lem-fatou.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.1.15: Fatou’s Lemma">Fatou’s Lemma</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-fatou.html">
+\begin{equation*}
+\int_X(f+g)\,d\mu \leq \liminf_n \int_X (f_n + g)\,d\mu.
+\end{equation*}
+</div>
+<div class="para">The linearity of integration thus gives that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-fatou.html">
+\begin{equation}
+\int_X f \,d\mu \leq \liminf_n \int_X f_n\,d\mu.\tag{6.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-LDC-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The sequence <span class="process-math">\((g - f_n)_n\)</span> is also a sequence of non-negative measurable functions. This sequence converges pointwise to <span class="process-math">\(g -f\text{.}\)</span> Applying Fatou’s Lemma  and the linearity of integration we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fatou-1.html ./knowl/xref/eq-fatou-2.html">
+\begin{equation*}
+\begin{aligned}
+\int_X g\,d\mu - \int_X f\,d\mu = \int_X(g-f)\,d\mu &amp;\leq \liminf_n \int_X (g - f_n)\,d\mu\\
+&amp;= \int_X g\,d\mu - \limsup_n \int_X f_n\,d\mu.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fatou-1.html ./knowl/xref/eq-fatou-2.html">
+\begin{equation}
+\int_X f \,d\mu \geq \limsup_n \int_X f\,d\mu.\tag{6.3}
+\end{equation}
+</div>
+<div class="para">By  <a href="sec-integration.html#eq-fatou-1" class="xref" data-knowl="./knowl/xref/eq-fatou-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2">(6.2)</a> and  <a href="sec-integration.html#eq-fatou-2" class="xref" data-knowl="./knowl/xref/eq-fatou-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3">(6.3)</a> we have that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-fatou-1.html ./knowl/xref/eq-fatou-2.html">
+\begin{equation*}
+\limsup_n \int_X f_n\,d\mu \leq \int_X f \,d\mu \leq \liminf_n \int_X f_n\,d\mu 
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\left(\int_X f_n\,d\mu\right)_n\)</span> is a convergent sequence and <span class="process-math">\(\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-LDC-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.2.7.1"><a href="#thm-LDC-3" title="Copy heading and permalink for Proof 6.2.7.1" aria-label="Copy heading and permalink for Proof 6.2.7.1">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-integration.html#thm-LDC">in-context</a></span>
 </body>
 </html>

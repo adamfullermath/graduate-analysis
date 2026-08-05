@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: greens                       *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Integration of non-negative functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Graduate Real Analysis">
+<meta property="book:author" content="Adam H. Fuller">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="real-analysis.html"><span class="title">Graduate Real Analysis</span> <span class="subtitle">Measure Theory</span></a></h1>
+<p class="byline">Adam H. Fuller</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chap-integration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap-integration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-integration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(      \newcommand{\qedhere}{\blacksquare}
+      
+  \newcommand{\bA}{{\mathbb{A}}}
+  \newcommand{\bB}{{\mathbb{B}}}
+  \newcommand{\bC}{{\mathbb{C}}}
+  \newcommand{\bD}{{\mathbb{D}}}
+  \newcommand{\bE}{{\mathbb{E}}}
+  \newcommand{\bF}{{\mathbb{F}}}
+  \newcommand{\bG}{{\mathbb{G}}}
+  \newcommand{\bH}{{\mathbb{H}}}
+  \newcommand{\bI}{{\mathbb{I}}}
+  \newcommand{\bJ}{{\mathbb{J}}}
+  \newcommand{\bK}{{\mathbb{K}}}
+  \newcommand{\bL}{{\mathbb{L}}}
+  \newcommand{\bM}{{\mathbb{M}}}
+  \newcommand{\bN}{{\mathbb{N}}}
+  \newcommand{\bO}{{\mathbb{O}}}
+  \newcommand{\bP}{{\mathbb{P}}}
+  \newcommand{\bQ}{{\mathbb{Q}}}
+  \newcommand{\bR}{{\mathbb{R}}}
+  \newcommand{\bS}{{\mathbb{S}}}
+  \newcommand{\bT}{{\mathbb{T}}}
+  \newcommand{\bU}{{\mathbb{U}}}
+  \newcommand{\bV}{{\mathbb{V}}}
+  \newcommand{\bW}{{\mathbb{W}}}
+  \newcommand{\bX}{{\mathbb{X}}}
+  \newcommand{\bY}{{\mathbb{Y}}}
+  \newcommand{\bZ}{{\mathbb{Z}}}
+
+  
+  \newcommand{\bm}{{\mathbf{m}}}
+  \newcommand{\bn}{{\mathbf{n}}}
+  \newcommand{\bt}{{\mathbf{t}}}
+
+  
+    \newcommand{\A}{{\mathcal{A}}}
+    \newcommand{\B}{{\mathcal{B}}}
+    \newcommand{\C}{{\mathcal{C}}}
+    \newcommand{\D}{{\mathcal{D}}}
+    \newcommand{\E}{{\mathcal{E}}}
+    \newcommand{\F}{{\mathcal{F}}}
+    \newcommand{\G}{{\mathcal{G}}}
+  \renewcommand{\H}{{\mathcal{H}}}
+    \newcommand{\I}{{\mathcal{I}}}
+    \newcommand{\J}{{\mathcal{J}}}
+    \newcommand{\K}{{\mathcal{K}}}
+  \renewcommand{\L}{{\mathcal{L}}}
+  \newcommand{\M}{{\mathcal{M}}}
+    \newcommand{\N}{{\mathcal{N}}}
+  \renewcommand{\O}{{\mathcal{O}}}
+  \renewcommand{\P}{{\mathcal{P}}}
+    \newcommand{\Q}{{\mathcal{Q}}}
+    \newcommand{\R}{{\mathcal{R}}}
+  \renewcommand{\S}{{\mathcal{S}}}
+    \newcommand{\T}{{\mathcal{T}}}
+    \newcommand{\U}{{\mathcal{U}}}
+    \newcommand{\V}{{\mathcal{V}}}
+    \newcommand{\W}{{\mathcal{W}}}
+    \newcommand{\X}{{\mathcal{X}}}
+    \newcommand{\Y}{{\mathcal{Y}}}
+    \newcommand{\Z}{{\mathcal{Z}}}
+
+  
+  \newcommand{\fA}{{\mathfrak{A}}}
+  \newcommand{\fB}{{\mathfrak{B}}}
+  \newcommand{\fC}{{\mathfrak{C}}}
+  \newcommand{\fD}{{\mathfrak{D}}}
+  \newcommand{\fE}{{\mathfrak{E}}}
+  \newcommand{\fF}{{\mathfrak{F}}}
+  \newcommand{\fG}{{\mathfrak{G}}}
+  \newcommand{\fH}{{\mathfrak{H}}}
+  \newcommand{\fI}{{\mathfrak{I}}}
+  \newcommand{\fJ}{{\mathfrak{J}}}
+  \newcommand{\fK}{{\mathfrak{K}}}
+  \newcommand{\fL}{{\mathfrak{L}}}
+  \newcommand{\fM}{{\mathfrak{M}}}
+  \newcommand{\fN}{{\mathfrak{N}}}
+  \newcommand{\fO}{{\mathfrak{O}}}
+  \newcommand{\fP}{{\mathfrak{P}}}
+  \newcommand{\fQ}{{\mathfrak{Q}}}
+  \newcommand{\fR}{{\mathfrak{R}}}
+  \newcommand{\fS}{{\mathfrak{S}}}
+  \newcommand{\fT}{{\mathfrak{T}}}
+  \newcommand{\fU}{{\mathfrak{U}}}
+  \newcommand{\fV}{{\mathfrak{V}}}
+  \newcommand{\fW}{{\mathfrak{W}}}
+  \newcommand{\fX}{{\mathfrak{X}}}
+  \newcommand{\fY}{{\mathfrak{Y}}}
+  \newcommand{\fZ}{{\mathfrak{Z}}}
+
+  \newcommand{\fc}{{\mathfrak{c}}}
+  \newcommand{\fg}{{\mathfrak{g}}}
+  \newcommand{\fh}{{\mathfrak{h}}}
+  \newcommand{\fk}{{\mathfrak{k}}}
+  \newcommand{\fs}{{\mathfrak{s}}}
+  \newcommand{\ft}{{\mathfrak{t}}}
+  \newcommand{\fu}{{\mathfrak{u}}}
+  \newcommand{\fj}{{\mathfrak{j}}}
+
+  
+  \newcommand{\Ba}{{\mathbf{a}}}
+  \newcommand{\Bb}{{\mathbf{b}}}
+  \newcommand{\Bc}{{\mathbf{c}}}
+  \newcommand{\Bd}{{\mathbf{d}}}
+  \newcommand{\Be}{{\mathbf{e}}}
+  \newcommand{\Bf}{{\mathbf{f}}}
+  \newcommand{\Bg}{{\mathbf{g}}}
+  \newcommand{\Bh}{{\mathbf{h}}}
+  \newcommand{\Bi}{{\mathbf{i}}}
+  \newcommand{\Bj}{{\mathbf{j}}}
+  \newcommand{\Bk}{{\mathbf{k}}}
+  \newcommand{\Bl}{{\mathbf{l}}}
+  \newcommand{\Bm}{{\mathbf{m}}}
+  \newcommand{\Bn}{{\mathbf{n}}}
+  \newcommand{\Bo}{{\mathbf{o}}}
+  \newcommand{\Bp}{{\mathbf{p}}}
+  \newcommand{\Bq}{{\mathbf{q}}}
+  \newcommand{\Br}{{\mathbf{r}}}
+  \newcommand{\Bs}{{\mathbf{s}}}
+  \newcommand{\Bt}{{\mathbf{t}}}
+  \newcommand{\Bu}{{\mathbf{u}}}
+  \newcommand{\Bv}{{\mathbf{v}}}
+  \newcommand{\Bw}{{\mathbf{w}}}
+  \newcommand{\Bx}{{\mathbf{x}}}
+  \newcommand{\By}{{\mathbf{y}}}
+  \newcommand{\Bz}{{\mathbf{z}}}
+
+  
+  \newcommand{\rA}{{\mathrm{A}}}
+  \newcommand{\rB}{{\mathrm{B}}}
+  \newcommand{\rC}{{\mathrm{C}}}
+  \newcommand{\rD}{{\mathrm{D}}}
+  \newcommand{\rE}{{\mathrm{E}}}
+  \newcommand{\rF}{{\mathrm{F}}}
+  \newcommand{\rG}{{\mathrm{G}}}
+  \newcommand{\rH}{{\mathrm{H}}}
+  \newcommand{\rI}{{\mathrm{I}}}
+  \newcommand{\rJ}{{\mathrm{J}}}
+  \newcommand{\rK}{{\mathrm{K}}}
+  \newcommand{\rL}{{\mathrm{L}}}
+  \newcommand{\rM}{{\mathrm{M}}}
+  \newcommand{\rN}{{\mathrm{N}}}
+  \newcommand{\rO}{{\mathrm{O}}}
+  \newcommand{\rP}{{\mathrm{P}}}
+  \newcommand{\rQ}{{\mathrm{Q}}}
+  \newcommand{\rR}{{\mathrm{R}}}
+  \newcommand{\rS}{{\mathrm{S}}}
+  \newcommand{\rT}{{\mathrm{T}}}
+  \newcommand{\rU}{{\mathrm{U}}}
+  \newcommand{\rV}{{\mathrm{V}}}
+  \newcommand{\rW}{{\mathrm{W}}}
+  \newcommand{\rX}{{\mathrm{X}}}
+  \newcommand{\rY}{{\mathrm{Y}}}
+  \newcommand{\rZ}{{\mathrm{Z}}}
+
+  
+  \newcommand{\ep}{\varepsilon}
+  \renewcommand{\phi}{\varphi}
+  \newcommand{\upchi}{{\raise.35ex\hbox{\ensuremath{\chi}}}}
+  \newcommand{\om}{\omega}
+
+  
+  \newcommand{\foral}{\text{ for all }}
+  \newcommand{\qand}{\quad\text{and}\quad}
+  \newcommand{\qif}{\quad\text{if}\quad}
+  \newcommand{\qor}{\quad\text{or}\quad}
+  \newcommand{\qfor}{\quad\text{for}\quad}
+  \newcommand{\qforal}{\quad\text{for all}\quad}
+  \newcommand{\qforsome}{\quad\text{for some}\quad}
+  \newcommand{\AND}{\text{ and }}
+  \newcommand{\FOR}{\text{ for }}
+  \newcommand{\FORAL}{\text{ for all }}
+  \newcommand{\IF}{\text{ if }}
+  \newcommand{\IFF}{\text{ if and only if }}
+  \newcommand{\OR}{\text{ or }}
+
+  
+  \newcommand{\Ad}{\operatorname{Ad}}
+  \newcommand{\Alg}{\operatorname{Alg}}
+  \newcommand{\alg}{\operatorname{alg}}
+  \newcommand{\Aut}{\operatorname{Aut}}
+  \newcommand{\dcup}{\operatorname{\,\dot\cup\,}}
+  \newcommand{\diag}{\operatorname{diag}}
+  \newcommand{\diam}{\operatorname{diam}}
+  \newcommand{\Dim}{\operatorname{dim}}
+  \newcommand{\dist}{\operatorname{dist}}
+  \newcommand{\End}{\operatorname{End}}
+  \newcommand{\id}{{\operatorname{id}}}
+  \newcommand{\Lat}{\operatorname{Lat}}
+  \newcommand{\ran}{\operatorname{Ran}}
+  \newcommand{\spn}{\operatorname{span}}
+  \newcommand{\rad}{\operatorname{rad}}
+  \newcommand{\rep}{\operatorname{rep}}
+  \newcommand{\spr}{\operatorname{spr}}
+  \newcommand{\supp}{\operatorname{supp}}
+  \newcommand{\Tr}{\operatorname{Tr}}
+
+  
+  \newcommand{\Ath}{\A_\theta}
+  \newcommand{\BH}{{\B(\H)}}
+  \newcommand{\bsl}{\setminus}
+  \newcommand{\ca}{\mathrm{C}^*}
+  \newcommand{\cenv}{\mathrm{C}^*_{\text{env}}}
+  \newcommand{\dint}{\displaystyle\int}
+  \newcommand{\dlim}{\displaystyle\lim\limits}
+  \newcommand{\dsum}{\displaystyle\sum}
+
+  \newcommand{\Fn}{\mathbb{F}_n^+}
+  \newcommand{\Fm}{\mathbb{F}_m^+}
+  \newcommand{\Fmn}{\mathbb{F}_{mn}^+}
+  \newcommand{\Fth}{\mathbb{F}_\theta^+}
+  \newcommand{\Ftheta}{\mathbb{F}_\theta^+}
+  \newcommand{\Fu}{\mathbb{F}_u^+}
+  \newcommand{\Ftwo}{\mathbb{F}_2^+}
+  \newcommand{\Fock}{\ell^2(\Fn)}
+  \newcommand{\Fockm}{\ell^2(\Fm)}
+  \newcommand{\Fockmn}{\ell^2(\Fmn)}
+  \newcommand{\Fockth}{\ell^2(\Fth)}
+  \newcommand{\lip}{\langle}
+  \newcommand{\rip}{\rangle}
+  \newcommand{\ip}[1]{\langle #1 \rangle}
+  \DeclareMathOperator{\sgn}{\mathrm{sgn}}
+  \newcommand{\mt}{\varnothing}
+  \newcommand{\norm}[1]{\left\| #1 \right\|}
+  \newcommand{\ol}{\overline}
+  \newcommand{\one}{{\boldsymbol{1}}}
+  \newcommand{\td}{\widetilde}
+  \newcommand{\wh}{\widehat}
+  \newcommand{\sot}{\textsc{sot}}
+  \newcommand{\wot}{\textsc{wot}}
+  \newcommand{\ltwo}{\ell^2}
+  
+  \newcommand{\aut}{{\rm Aut}(\ca(\Fth))}
+  \newcommand{\innaut}{{\rm Aut}_{\rm Inn}(\ca(\Fth))}
+  \newcommand{\yp}{\varphi_{(1,0)}} 
+  \newcommand{\ypp}{\varphi_{(0,1)}}
+  \newcommand{\yppp}{\varphi_{(1,1)}}
+  \newenvironment{sbmatrix}{\left[\begin{smallmatrix}}{\end{smallmatrix}\right]}
+
+  \newcommand{\intd}[3]{\int_{#1}{#2}\, d{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="real-analysis-4.html" class="internal"><span class="codenumber">I</span> <span class="title">Measure and Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Why study measure theory?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-intro-ftoc.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The integral of a derivative</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-else.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Yeah, but why else?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-else.html#sec-int-lim-swap" class="internal"><span class="title">More shortcomings of Riemann integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-else.html#sec-why-else-4" class="internal"><span class="title">On beyond</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-measure-space.html" class="internal"><span class="codenumber">2</span> <span class="title">Measure Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Measure spaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-measure-space-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Properties of measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-construction.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Constructing measures</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-measure-space-6.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-lebesgue-measure.html" class="internal"><span class="codenumber">3</span> <span class="title">Lebesgue Measure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Lebesgue.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-nonmeasurable.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Borel sets, Lebesgue measurable sets, and subsets of <span class="process-math">\(\mathbb{R}\text{.}\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-borel-on-R.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Borel measures on <span class="process-math">\(\mathbb{R}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-lebesgue-measure-6.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-signed-measures.html" class="internal"><span class="codenumber">4</span> <span class="title">Signed Measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-measure.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Signed measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-signed-borel.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Signed Borel measures on <span class="process-math">\(\mathbb{R}\)</span> and functions of bounded variation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-signed-measures-5.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-meas-fun.html" class="internal"><span class="codenumber">5</span> <span class="title">Measurable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-meas-fun-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Approximations of measurable functions</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-meas-fun-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chap-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-int-non-neg.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Integration of non-negative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-integration.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Integration of measurable functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-int-Riemann.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Lebesgue integration and Riemann integration</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-integration-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-differentation.html" class="internal"><span class="codenumber">7</span> <span class="title">Integration and Differentiation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">The Radon-Nikodym Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-4.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Absolutely continuous functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftoc.html" class="internal"><span class="codenumber">7.3</span> <span class="title">The fundamental theorem of calculus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-differentation-6.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The Lebesgue Decomposition of function</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-differentation-7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-5.html" class="internal"><span class="codenumber">II</span> <span class="title">Spaces of Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-Lp.html" class="internal"><span class="codenumber">1</span> <span class="title"><span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Lp-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Banach spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap-Lp-4.html" class="internal"><span class="codenumber">1.2</span> <span class="title"><span class="process-math">\(L^p\)</span>-norms</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap-Lp-4.html#chap-Lp-4-49" class="internal"><span class="title"><span class="process-math">\(\ell^p\)</span>-spaces and <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Lp-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title"><span class="process-math">\(L^p\)</span>-approximations and the Riesz-Fischer Theorem</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Lp-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-dual-spaces.html" class="internal"><span class="codenumber">2</span> <span class="title">Dual spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-dual-spaces-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear functionals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chap-dual-spaces-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The dual of <span class="process-math">\(L^p\)</span>-spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chap-dual-spaces-4.html#chap-dual-spaces-4-19" class="internal"><span class="title">The dual of <span class="process-math">\(\ell^\infty\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-dual-spaces-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Locally compact Hausdorff spaces</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-RMK.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear functionals on <span class="process-math">\(C_0(X)\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-RMK.html#sec-RMK-39" class="internal"><span class="title">Riesz’s result and Riemann-Stieltjes integration</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-dual-spaces-7.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="real-analysis-6.html" class="internal"><span class="codenumber">III</span> <span class="title">Further examples of measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="real-analysis-6-2.html" class="internal"><span class="codenumber">1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="real-analysis-6-2-3.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Product measures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="real-analysis-6-2-3.html#sec-products-three-or-more" class="internal"><span class="title">Products of three or more measures</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-lebesgue-measure-on-Rn.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Lebesgue measure on <span class="process-math">\(\mathbb{R}^n\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="real-analysis-6-2-5.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Change of variables</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="real-analysis-6-2-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-Haar.html" class="internal"><span class="codenumber">2</span> <span class="title">Locally compact groups and Haar measures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Haar-3.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Locally compact groups</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chap-Haar-4.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Radon measures on locally compact groups</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Haar-5.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chap-Hausdorff.html" class="internal"><span class="codenumber">3</span> <span class="title">Hausdorff Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-meas.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Hausdorff measures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-haus-examp.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Calculating Hausdorff Dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chap-Hausdorff-5.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="chap-probability.html" class="internal"><span class="codenumber">4</span> <span class="title">Probability Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-prereqs.html" class="internal"><span class="codenumber">A</span> <span class="title">Prerequisites: Set theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-3.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Set theory notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-4.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Cardinality and choice</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-5.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Axiom of Choice</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-prereqs-top.html" class="internal"><span class="codenumber">B</span> <span class="title">Prerequisites: Topology</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-prereqs-top-3.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Open and closed sets in <span class="process-math">\(\mathbb{R}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-prereqs-top-3.html#appendix-prereqs-top-3-14" class="internal"><span class="title">Open sets in <span class="process-math">\(\bR^n\)</span></span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-top-4.html" class="internal"><span class="codenumber">B.2</span> <span class="title">Metric spaces and General topology</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-prereqs-top-5.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Continuity and convergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-real-examples.html" class="internal"><span class="codenumber">C</span> <span class="title">Interesting examples of real valued functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-nowhere-diff.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Nowhere differentiable functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-weierstrass" class="internal"><span class="title">The Weierstrass function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-nowhere-diff.html#subsec-Tak" class="internal"><span class="title">Takagi’s example</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-ae.html" class="internal"><span class="codenumber">C.2</span> <span class="title">Differentiable almost everywhere functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#subsec-Schwarz" class="internal"><span class="title">Schwarz’s example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-ae.html#sec-diff-ae-4" class="internal"><span class="title">A function that is not differentiable on a prescribed set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-diff-bounded.html" class="internal"><span class="codenumber">C.3</span> <span class="title">Differentiable functions with bounded derivative</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-diff-bounded.html#subsec-Volterra" class="internal"><span class="title">Volterra’s function</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="codenumber">D</span> <span class="title">List of Symbols</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-7.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-int-non-neg"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration of non-negative functions</span>
+</h2>
+<div class="para" id="sec-int-non-neg-2">In this section we will define the integral of non-negative measurable functions. We begin with the integral of non-negative simple functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-int-non-neg-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-int-non-neg-3-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space. Let <span class="process-math">\(\varphi = \sum_{k=1}^n a_n \chi_{E_n}\)</span> be a non-negative simple function on <span class="process-math">\(X\)</span> where <span class="process-math">\(\{a_1,\ldots,a_n\} = \varphi(X)\)</span> are distinct scalars and <span class="process-math">\(\{E_k\}_{k=1}^n\)</span> are disjoint measurable functions. We define the <dfn class="terminology">integral of <span class="process-math">\(\varphi\)</span> with respect to <span class="process-math">\(\mu\)</span></dfn>, denote <span class="process-math">\(\int_X \varphi d\mu\)</span> as</div>
+<div class="displaymath process-math" id="sec-int-non-neg-3-1-1-8">
+\begin{equation*}
+\int_X \varphi\, d\mu = \sum_{k=1}^n a_k \mu(E_k).
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(E \subseteq X\)</span> is a measurable set we define the integral of <span class="process-math">\(\varphi\)</span> over <span class="process-math">\(E\)</span> as</div>
+<div class="displaymath process-math" id="sec-int-non-neg-3-1-1-12">
+\begin{equation*}
+\int_E \varphi\,d\mu = \int_X \varphi\chi_E\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 6.1.1"><a href="#sec-int-non-neg-3" title="Copy heading and permalink for Definition 6.1.1" aria-label="Copy heading and permalink for Definition 6.1.1">🔗</a></div></article><div class="para logical" id="sec-int-non-neg-4">
+<div class="para">Note that, the condition that <span class="process-math">\(\varphi\)</span> is non-negative is necessary in order to guarantee that <span class="process-math">\(\sum_{k=1}^n a_k \mu(E_k)\)</span> is defined. If <span class="process-math">\(\mu(E_1) = \infty\)</span> and <span class="process-math">\(\mu(E_2) = \infty\)</span> then</div>
+<div class="displaymath process-math" id="sec-int-non-neg-4-5">
+\begin{equation*}
+(1) \mu(E_1) + (-1) \mu(E_2)
+\end{equation*}
+</div>
+<div class="para">is not defined.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-simp-int"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-simp-int-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(\varphi\)</span> be a non-negative simple function. If</div>
+<div class="displaymath process-math" id="lem-simp-int-1-1-3">
+\begin{equation*}
+\varphi = \sum_{k=1}^n b_k \chi_{F_k}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(b_1,\ldots,b_n\)</span> are (not necessarily distinct) scalars and <span class="process-math">\(\{F_k\}_{k=1}^n\)</span> are disjoint measurable sets, then</div>
+<div class="displaymath process-math" id="lem-simp-int-1-1-6">
+\begin{equation*}
+\int_X \varphi\, d\mu = \sum_{k=1}^n b_k \mu(F_k).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-simp-int-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 6.1.2"><a href="#lem-simp-int" title="Copy heading and permalink for Lemma 6.1.2" aria-label="Copy heading and permalink for Lemma 6.1.2">🔗</a></div></article><article class="proof" id="lem-simp-int-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-simp-int-2-1">Let <span class="process-math">\(\{a_1,\ldots,a_m\} = \varphi(X)\)</span> be distinct scalars and <span class="process-math">\(E_1,\ldots, E_m\)</span> be disjoint sets such that <span class="process-math">\(\varphi = \sum_k a_k \chi_{E_k}\text{.}\)</span> Assume <span class="process-math">\(X = \bigcup_{k=1}^n F_k\text{,}\)</span> (by adding <span class="process-math">\(0\)</span> to <span class="process-math">\(\{b_1,\ldots,b_m\}\)</span> and <span class="process-math">\(X \backslash \bigcup_k F_k\)</span> to <span class="process-math">\(\{F_1,\ldots,F_n\}\)</span> if necessary).<div class="autopermalink" data-description="Paragraph"><a href="#lem-simp-int-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-simp-int-2-2">
+<div class="para">Note that for each <span class="process-math">\(1\leq j \leq n\text{,}\)</span> <span class="process-math">\(b_j \in \{a_1,\ldots,a_m\}\text{.}\)</span> Thus, for <span class="process-math">\(1\leq k \leq m\)</span>
+</div>
+<div class="displaymath process-math" id="lem-simp-int-2-2-4">
+\begin{equation*}
+E_k = \bigcup_{j\colon b_j=a_k}F_j.
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="lem-simp-int-2-2-5">
+\begin{equation*}
+\mu(E_k) = \sum_{j \colon b_j = a_k} \mu(F_j).
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="lem-simp-int-2-2-6">
+\begin{equation*}
+\begin{aligned}
+\int_X \varphi\,d\mu &amp;=\sum_{k=1}^m a_k \mu(E_k)\\
+&amp;= \sum_{k=1}^m a_k \sum_{j \colon b_j = a_k}\mu(F_j) \\
+&amp;= \sum_{k=1}^m \sum_{j \colon b_j = a_k}b_j\mu(F_j) \\
+&amp;= \sum_{j=1}^n b_j \mu(F_j).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-simp-int-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.2.1"><a href="#lem-simp-int-2" title="Copy heading and permalink for Proof 6.1.2.1" aria-label="Copy heading and permalink for Proof 6.1.2.1">🔗</a></div></article><article class="theorem theorem-like" id="thm-simple-int-linear"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-simple-int-linear-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> be non-negative simple functions on <span class="process-math">\(X\text{.}\)</span> Then, for any scalars <span class="process-math">\(\alpha, \beta \geq 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-simple-int-linear-1-1-6">
+\begin{equation*}
+\int_X(\alpha \varphi + \beta \psi) \,d\mu = \alpha \int_X\varphi \,d\mu + \beta \int_X \psi\, d\mu.
+\end{equation*}
+</div>
+<div class="para">Further, integration is monotonic: if <span class="process-math">\(\varphi \leq \psi\)</span> then</div>
+<div class="displaymath process-math" id="thm-simple-int-linear-1-1-9">
+\begin{equation*}
+\int_X \varphi\, d\mu \leq \int_X \psi\, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-int-linear-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.3"><a href="#thm-simple-int-linear" title="Copy heading and permalink for Theorem 6.1.3" aria-label="Copy heading and permalink for Theorem 6.1.3">🔗</a></div></article><article class="proof" id="thm-simple-int-linear-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="thm-simple-int-linear-2-1">That <span class="process-math">\(\int_X \alpha \varphi\, d\mu = \alpha \int_X \varphi \,d\mu\)</span> is straightforward.<div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-int-linear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-simple-int-linear-2-2">
+<div class="para">Let <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> be simple functions. Let <span class="process-math">\(\{a_1,\ldots,a_m\} = \varphi(X)\text{,}\)</span> <span class="process-math">\(\{b_1,\ldots,b_n\} = \psi(X)\text{,}\)</span> <span class="process-math">\(E_i = \varphi^{-1}(\{a_i\})\)</span> for <span class="process-math">\(1 \leq i \leq m\text{,}\)</span> and <span class="process-math">\(F_j = \psi^{-1}(\{b_j\})\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-simp-int.html" id="thm-simple-int-linear-2-2-8">
+\begin{equation*}
+\varphi + \psi = \sum_{i=1}^m \sum_{j=1}^n(a_i + b_j) \chi_{E_i \cap F_j}.
+\end{equation*}
+</div>
+<div class="para">By <a href="sec-int-non-neg.html#lem-simp-int" class="xref" data-knowl="./knowl/xref/lem-simp-int.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.1.2">Lemma 6.1.2</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-simp-int.html" id="thm-simple-int-linear-2-2-10">
+\begin{equation*}
+\begin{aligned}
+\int_X(\varphi + \psi)\, d\mu &amp;= \sum_{i=1}^m \sum_{j=1}^n (a_i + b_j) \mu(E_i \cap F_j) \\
+&amp;= \sum_{i=1}^m\sum_{j=1}^n a_i\mu(E_i \cap F_j) + \sum_{j=1}^n\sum_{i=1}^m b_j\mu(E_i \cap F_j) \\
+&amp;= \sum_{i=1}^m a_i \sum_{j=1}^n \mu(E_i \cap F_j) + \sum_{j=1}^n b_j\sum_{i=1}^m \mu(E_i \cap F_j) \\
+&amp;= \sum_{i=1}^m a_i \mu(E_i) + \sum_{j=1}^n b_j \mu(F_j) \\
+&amp;= \int_X \varphi\,d\mu + \int_X\psi\,d\mu.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Now suppose that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\psi\)</span> are non-negative simple functions with <span class="process-math">\(\varphi \leq \psi\text{.}\)</span> Then <span class="process-math">\(\psi - \varphi \geq 0\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-simp-int.html" id="thm-simple-int-linear-2-2-15">
+\begin{equation*}
+0 \leq \int_X(\psi - \varphi)\,d\mu = \int_X \psi\,d\mu - \int_X\varphi\,d\mu.
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(\int_X \psi\,d\mu \geq \int_X \varphi\,d\mu\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-simple-int-linear-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.3.1"><a href="#thm-simple-int-linear-2" title="Copy heading and permalink for Proof 6.1.3.1" aria-label="Copy heading and permalink for Proof 6.1.3.1">🔗</a></div></article><article class="remark remark-like" id="sec-int-non-neg-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-int-non-neg-7-1">
+<div class="para">Let <span class="process-math">\(E_1,\ldots,E_n\)</span> be a collection of measurable sets, let <span class="process-math">\(a_1,\ldots,a_n\)</span> be non-negative real numbers, and let <span class="process-math">\(\varphi = \sum_{k=1}^n a_k \chi_{E_k}.\)</span> By <a href="sec-int-non-neg.html#thm-simple-int-linear" class="xref" data-knowl="./knowl/xref/thm-simple-int-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.3">Theorem 6.1.3</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-simple-int-linear.html" id="sec-int-non-neg-7-1-5">
+\begin{equation*}
+\int_X \varphi \, d\mu = \sum_{k=1}^n a_k \int_X \chi_{E_k}\,d\mu = \sum_{k=1}^n a_k \mu(E_k).
+\end{equation*}
+</div>
+<div class="para">That is, if <span class="process-math">\(\varphi = \sum_{k=1}^n a_k \chi_{E_k}\)</span> is a simple function we do not need the sets <span class="process-math">\(\{E_k\}_{k=1}^n\)</span> to be disjoint in order to easily calculate <span class="process-math">\(\int_X \varphi \,d\mu.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 6.1.4"><a href="#sec-int-non-neg-7" title="Copy heading and permalink for Remark 6.1.4" aria-label="Copy heading and permalink for Remark 6.1.4">🔗</a></div></article><div class="para logical" id="sec-int-non-neg-8">
+<div class="para">The following corollary is immediate on noting that</div>
+<div class="displaymath process-math" id="sec-int-non-neg-8-1">
+\begin{equation*}
+\chi_{A\cup B} = \chi_A + \chi_B
+\end{equation*}
+</div>
+<div class="para">for disjoint sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-simp-A-union-B"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="cor-simp-A-union-B-1-1">
+<div class="para">If <span class="process-math">\(\varphi\)</span> non-negative simple function on a measure space <span class="process-math">\((X,\mathcal{F},\mu)\)</span> and <span class="process-math">\(A, B \subseteq X\)</span> are disjoint sets, then</div>
+<div class="displaymath process-math" id="cor-simp-A-union-B-1-1-4">
+\begin{equation*}
+\int_{A \cup B} \varphi \,d\mu = \int_A \varphi\, d\mu + \int_B\varphi\, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-simp-A-union-B-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 6.1.5"><a href="#cor-simp-A-union-B" title="Copy heading and permalink for Corollary 6.1.5" aria-label="Copy heading and permalink for Corollary 6.1.5">🔗</a></div></article><div class="para" id="sec-int-non-neg-10">The next corollary will be used frequently. It tells us that the behavior of a function on a set of measure <span class="process-math">\(0\)</span> does not affect the integral.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-remove-meas-0-simp"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="cor-remove-meas-0-simp-1-1">
+<div class="para">If <span class="process-math">\(\varphi\)</span> is a simple function on a measure space <span class="process-math">\((X,\mathcal{F},\mu)\)</span> and <span class="process-math">\(E \subseteq X\)</span> satisfies <span class="process-math">\(\mu(E)= 0\)</span> then</div>
+<div class="displaymath process-math" id="cor-remove-meas-0-simp-1-1-5">
+\begin{equation*}
+\int_X \varphi\,d\mu = \int_{X\backslash E} \varphi\, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-remove-meas-0-simp-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 6.1.6"><a href="#cor-remove-meas-0-simp" title="Copy heading and permalink for Corollary 6.1.6" aria-label="Copy heading and permalink for Corollary 6.1.6">🔗</a></div></article><div class="para" id="sec-int-non-neg-12">We will now define the integral of non-negative measurable functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-int-non-neg-13"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-int-non-neg-13-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(f\)</span> be a non-negative measurable function on <span class="process-math">\(X\text{.}\)</span> Define the <dfn class="terminology">integral of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(\mu\)</span></dfn> by</div>
+<div class="displaymath process-math" id="sec-int-non-neg-13-1-1-6">
+\begin{equation*}
+\int_X f\,d\mu = \sup\left\{ \int_X \varphi\,d\mu \colon 0\leq \varphi \leq f,\ \varphi\text{ simple.}\right\}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(E \subseteq X\)</span> is a measurable set we define the integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(E\)</span> as</div>
+<div class="displaymath process-math" id="sec-int-non-neg-13-1-1-10">
+\begin{equation*}
+\int_E f\,d\mu = \int_X f\chi_E\,d\mu.
+\end{equation*}
+</div>
+<div class="para">A non-negative measurable function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> is <dfn class="terminology">integrable</dfn> if</div>
+<div class="displaymath process-math" id="sec-int-non-neg-13-1-1-15">
+\begin{equation*}
+\int_X f\,d\mu &lt; \infty.
+\end{equation*}
+</div>
+<div class="para">When <span class="process-math">\(X \subseteq \mathbb{R}\)</span> is a Lebesgue measurable set, <span class="process-math">\(\mathcal{F}\)</span> is the Lebesgue measurable subsets of <span class="process-math">\(X\text{,}\)</span> and <span class="process-math">\(\mu = m\)</span> is the Lebesgue measure, we refer to the integral with respect to <span class="process-math">\(m\)</span> as the <dfn class="terminology">Lebesgue integral</dfn>. If <span class="process-math">\(f\)</span> is an integrable function with respect to <span class="process-math">\(m\)</span> we say that <span class="process-math">\(f\)</span> is <dfn class="terminology">Lebesgue integrable.</dfn> </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 6.1.7"><a href="#sec-int-non-neg-13" title="Copy heading and permalink for Definition 6.1.7" aria-label="Copy heading and permalink for Definition 6.1.7">🔗</a></div></article><div class="para" id="sec-int-non-neg-14">The proof of the following two propositions are left to <a href="chap-integration-6.html#exer-int-a-e" class="xref" data-knowl="./knowl/xref/exer-int-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.4.1">Exercise 6.4.1</a> and <a href="chap-integration-6.html#exer-int-mono-non-neg" class="xref" data-knowl="./knowl/xref/exer-int-mono-non-neg.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.4.2">Exercise 6.4.2</a>, respectively.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-int-remove-zero-set-non-neg"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="prop-int-remove-zero-set-non-neg-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space, let <span class="process-math">\(f\)</span> be non-negative measurable function on <span class="process-math">\(X\text{,}\)</span> and let <span class="process-math">\(E \subseteq X\)</span> be a measurable set with <span class="process-math">\(\mu(E) = 0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="prop-int-remove-zero-set-non-neg-1-1-6">
+\begin{equation*}
+\int_X f\, d\mu = \int_{X\backslash E} f\, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-int-remove-zero-set-non-neg-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 6.1.8"><a href="#prop-int-remove-zero-set-non-neg" title="Copy heading and permalink for Proposition 6.1.8" aria-label="Copy heading and permalink for Proposition 6.1.8">🔗</a></div></article><article class="proposition theorem-like" id="prop-int-mono-non-neg"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotonicity of integration.</span>
+</h3>
+<div class="para logical" id="prop-int-mono-non-neg-2-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space, and let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be non-negative measurable functions on <span class="process-math">\(X\text{.}\)</span> If <span class="process-math">\(f \leq g\)</span> then</div>
+<div class="displaymath process-math" id="prop-int-mono-non-neg-2-1-6">
+\begin{equation*}
+\int_X f \,d\mu \leq \int_X g \,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-int-mono-non-neg-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 6.1.9: Monotonicity of integration"><a href="#prop-int-mono-non-neg" title="Copy heading and permalink for Proposition 6.1.9: Monotonicity of integration" aria-label="Copy heading and permalink for Proposition 6.1.9: Monotonicity of integration">🔗</a></div></article><div class="para" id="sec-int-non-neg-17">Note that it may be possible for the integral of a non-negative measurable function to be infinite. That is <span class="process-math">\(f\geq 0\)</span> does not need to integrable in order to calculate <span class="process-math">\(\int_X f\,d\mu\text{.}\)</span> If <span class="process-math">\(\varphi =\sum_{k=1}^n a_k \chi_{E_k}\)</span> is a simple function (where <span class="process-math">\(E_1,\ldots,E_n\)</span> are measurable sets), then <span class="process-math">\(\int_X \varphi\, d\mu = \infty\)</span> if and only if <span class="process-math">\(\mu(E_k) = \infty\)</span> for some <span class="process-math">\(k\text{.}\)</span> If <span class="process-math">\(f \geq 0\text{,}\)</span> it is possible to have <span class="process-math">\(\int_X f \,d\mu = \infty\)</span> even if <span class="process-math">\(\int_X \varphi \,d\mu &lt; \infty\)</span> for all simple function <span class="process-math">\(0 \leq \varphi \leq f\text{.}\)</span> The following example illustrates this point.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="exam-integral-1-x"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="exam-integral-1-x-1">Consider the function <span class="process-math">\(f(x) = \int\frac{1}{x}\)</span> on the interval <span class="process-math">\((0,\infty)\text{.}\)</span> Let <span class="process-math">\(m\)</span> be the Lebesgue measure on <span class="process-math">\((0,\infty)\text{.}\)</span> We will show <span class="process-math">\(\int_{(0,\infty)} f \,dm = \infty\)</span> whilst <span class="process-math">\(\int_{(0,\infty)}\varphi\,dm &lt;\infty\)</span> for all simple <span class="process-math">\(0 \leq \varphi \leq f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exam-integral-1-x-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="exam-integral-1-x-2">First, suppose <span class="process-math">\(\varphi = \sum_{k=1}^n a_k \chi_{E_k}\)</span> is a simple function with <span class="process-math">\(0 \leq \varphi \leq f\text{.}\)</span> For each <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(a_k \leq \frac{1}{x}\)</span> for all <span class="process-math">\(x \in E_k\text{.}\)</span> Since <span class="process-math">\(\lim_{x \rightarrow \infty}\frac{1}{x} = 0\text{,}\)</span> it follows that if <span class="process-math">\(a_k &gt; 0\text{,}\)</span> then <span class="process-math">\(E_k\)</span> is a bounded set. Thus <span class="process-math">\(m(E_k) &lt; \infty\)</span> for each <span class="process-math">\(k\)</span> when <span class="process-math">\(a_k &gt;0\text{,}\)</span> and so <span class="process-math">\(\int_{(0,\infty)}\varphi\,dm &lt; \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exam-integral-1-x-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exam-integral-1-x-3">
+<div class="para">For each <span class="process-math">\(n\)</span> define a simple function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exam-integral-1-x.html ./knowl/xref/exam-integral-1-x.html" id="exam-integral-1-x-3-2">
+\begin{equation*}
+\phi_n(x) = \begin{cases}
+\frac{1}{\lceil x\rceil}&amp; x \leq n \\
+0 &amp; x &gt;n
+\end{cases},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\lceil\cdot\rceil\)</span> denotes the ceiling function (i.e. round to the nearest integer above). Then <span class="process-math">\(\phi_n \leq f\)</span> for each <span class="process-math">\(n\text{.}\)</span> <figure class="figure figure-like" id="fig-integral-1-x"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="generated/sageplot/integral.svg" role="img" class="contained" alt="The curve of the function 1/x, for positive x, is shown in red. A simple/step function below 1/x is shown in red."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-integral-1-x-2-description"><div class="para" id="fig-integral-1-x-2-2-1">The function <span class="process-math">\(f(x) = 1/x\)</span> for positive <span class="process-math">\(x\)</span> is shown, together with the step function <span class="process-math">\(\phi_{10}\text{,}\)</span> as described in <a href="sec-int-non-neg.html#exam-integral-1-x" class="xref" data-knowl="./knowl/xref/exam-integral-1-x.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.10">Example 6.1.10</a>. The function <span class="process-math">\(\phi_{10}\)</span> is a simple function satisfying <span class="process-math">\(\phi_{10}(x) = f(n)\)</span> for <span class="process-math">\(n-1 \lt x \lt n\text{,}\)</span> when <span class="process-math">\(x\leq 10\text{,}\)</span> and <span class="process-math">\(\phi_{10}(x)= 0 \)</span> otherwise.<div class="autopermalink" data-description="Paragraph"><a href="#fig-integral-1-x-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The functions <span class="process-math">\(f(x)\)</span> (red) and <span class="process-math">\(\phi_{10}(x)\)</span> (blue) from <a href="sec-int-non-neg.html#exam-integral-1-x" class="xref" data-knowl="./knowl/xref/exam-integral-1-x.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.10">Example 6.1.10</a><div class="autopermalink" data-description="Figure 6.1.11"><a href="#fig-integral-1-x" title="Copy heading and permalink for Figure 6.1.11" aria-label="Copy heading and permalink for Figure 6.1.11">🔗</a></div></figcaption></figure>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exam-integral-1-x-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="exam-integral-1-x-4">
+<div class="para">For each <span class="process-math">\(n\)</span> we have</div>
+<div class="displaymath process-math" id="exam-integral-1-x-4-2">
+\begin{equation*}
+\int_{(0,\infty)} \phi_n\,dm =\sum_{k=1}^n \frac{1}{k},
+\end{equation*}
+</div>
+<div class="para">Thus, for each <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="exam-integral-1-x-4-4">
+\begin{equation*}
+\int_{(0,\infty)}f \,dm \geq \sum_{k=1}^n \frac{1}{k}
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" id="exam-integral-1-x-4-5">
+\begin{equation*}
+\int_{(0,\infty)}f \,dm \geq \sum_{k=1}^\infty \frac{1}{k}.
+\end{equation*}
+</div>
+<div class="para">As the harmonic series <span class="process-math">\(\sum_k \frac{1}{k}\)</span> is not convergent, it follows that</div>
+<div class="displaymath process-math" id="exam-integral-1-x-4-7">
+\begin{equation*}
+\int_{(0,\infty)} f\,d\mu = \infty.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exam-integral-1-x-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.1.10"><a href="#exam-integral-1-x" title="Copy heading and permalink for Example 6.1.10" aria-label="Copy heading and permalink for Example 6.1.10">🔗</a></div></article><div class="para" id="sec-int-non-neg-19">If <span class="process-math">\(f\)</span> is integrable, then <span class="process-math">\(f\)</span> will be, in some sense, well-behaved. We make this explicit in <a href="sec-int-non-neg.html#thm-f-integrable" class="xref" data-knowl="./knowl/xref/thm-f-integrable.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.13">Theorem 6.1.13</a> after the following important lemma.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-chenyshev"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chebyshev’s Inequality.</span>
+</h3>
+<div class="para logical" id="lem-chenyshev-2-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(f\)</span> be a non-negative measurable function. Then, for each real number <span class="process-math">\(\lambda &gt; 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-chenyshev-2-1-4">
+\begin{equation*}
+\mu(\{x \in X \colon f(x) \geq \lambda\}) \leq \frac{1}{\lambda} \int_X f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-chenyshev-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 6.1.12: Chebyshev’s Inequality"><a href="#lem-chenyshev" title="Copy heading and permalink for Lemma 6.1.12: Chebyshev’s Inequality" aria-label="Copy heading and permalink for Lemma 6.1.12: Chebyshev’s Inequality">🔗</a></div></article><article class="proof" id="lem-chenyshev-3"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="lem-chenyshev-3-1">
+<div class="para">Fix <span class="process-math">\(\lambda &gt;0\)</span> and let</div>
+<div class="displaymath process-math" id="lem-chenyshev-3-1-2">
+\begin{equation*}
+X_\lambda = \{x \in X \colon f(x) \geq \lambda \}.
+\end{equation*}
+</div>
+<div class="para">Note that, since <span class="process-math">\(f\)</span> is measurable, <span class="process-math">\(X_\lambda\)</span> is measurable. Let <span class="process-math">\(\varphi = \lambda \chi_{X_\lambda}\text{.}\)</span> Then <span class="process-math">\(\varphi\)</span> is simple and <span class="process-math">\(\varphi \leq f\text{.}\)</span> Further <span class="process-math">\(\int_X \varphi\,d\mu = \lambda \mu(X_\lambda)\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="lem-chenyshev-3-1-9">
+\begin{equation*}
+\lambda \mu(X_\lambda) \leq \int_X f\, d\mu.
+\end{equation*}
+</div>
+<div class="para">Dividing the above inequality by <span class="process-math">\(\lambda\)</span> gives the desired result.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-chenyshev-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.12.1"><a href="#lem-chenyshev-3" title="Copy heading and permalink for Proof 6.1.12.1" aria-label="Copy heading and permalink for Proof 6.1.12.1">🔗</a></div></article><article class="theorem theorem-like" id="thm-f-integrable"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-f-integrable-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\(f\)</span> be a non-negative measurable function such that <span class="process-math">\(\int_X f\, d\mu &lt; \infty\text{.}\)</span> Then <span class="process-math">\(f\)</span> is finite almost everywhere and the set</div>
+<div class="displaymath process-math" id="thm-f-integrable-1-1-5">
+\begin{equation*}
+\{x \in X \colon f(x)&gt;0 \}
+\end{equation*}
+</div>
+<div class="para">is <span class="process-math">\(\sigma\)</span>-finite.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-f-integrable-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.13"><a href="#thm-f-integrable" title="Copy heading and permalink for Theorem 6.1.13" aria-label="Copy heading and permalink for Theorem 6.1.13">🔗</a></div></article><article class="proof" id="thm-f-integrable-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="thm-f-integrable-2-1">
+<div class="para">Let <span class="process-math">\(X_\infty = \{x \in X \colon f(x) = \infty\}\text{.}\)</span> To show that <span class="process-math">\(f\)</span> is finite a.e. we must show that <span class="process-math">\(\mu(X_\infty) = 0\text{.}\)</span> For each <span class="process-math">\(n\text{,}\)</span> let <span class="process-math">\(X_n = \{x \in X \colon f(x) \geq n\}\)</span> and let <span class="process-math">\(\phi_n = n \chi_{X_n}\text{.}\)</span> Then <span class="process-math">\(\phi_n \leq f\)</span> and so</div>
+<div class="displaymath process-math" id="thm-f-integrable-2-1-8">
+\begin{equation*}
+n \mu(X_n) = \int_X \phi_n\,d\mu \leq \int_X f\, d\mu&lt;\infty.
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="thm-f-integrable-2-1-9">
+\begin{equation*}
+\mu(X_n) \leq \frac{1}{n}\int_X f\,d\mu
+\end{equation*}
+</div>
+<div class="para">and so <span class="process-math">\(\lim_n \mu(X_n) = 0\text{.}\)</span> Note that <span class="process-math">\(X_\infty = \bigcap_n X_n\text{,}\)</span> and so by the continuity of measure</div>
+<div class="displaymath process-math" id="thm-f-integrable-2-1-12">
+\begin{equation*}
+\mu(X_\infty) = \lim_{n\rightarrow \infty} \mu(X_n) = 0,
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(f\)</span> is finite a.e.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-f-integrable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-f-integrable-2-2">
+<div class="para">Let <span class="process-math">\(X_{&gt;0} = \{x \in X \colon f(x) &gt; 0\}\)</span> Note that</div>
+<div class="displaymath process-math" id="thm-f-integrable-2-2-2">
+\begin{equation*}
+X_{&gt;0} = \bigcup_{n=1}^\infty \{x \in X \colon f(x) \geq \frac{1}{n}\}.
+\end{equation*}
+</div>
+<div class="para">By Chebshev’s Inequality,</div>
+<div class="displaymath process-math" id="thm-f-integrable-2-2-3">
+\begin{equation*}
+\mu\left(\left\{x \in X \colon f(x) \geq \frac{1}{n}\right\}\right)\leq n \int_X f\,d\mu&lt;\infty.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(X_{&gt;0}\)</span> is a countable union of sets of finite measure. That is, <span class="process-math">\(X_{&gt;0}\)</span> is <span class="process-math">\(\sigma\)</span>-finite.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-f-integrable-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.13.1"><a href="#thm-f-integrable-2" title="Copy heading and permalink for Proof 6.1.13.1" aria-label="Copy heading and permalink for Proof 6.1.13.1">🔗</a></div></article><div class="para logical" id="sec-int-non-neg-22">
+<div class="para">In <a href="sec-why-else.html" class="internal" title="Section 1.2: Yeah, but why else?">Section 1.2</a> we denounced the Riemann integral for not behaving well with limits of functions. In particular, we have no significant theorems on the relationship between the Riemann integral and pointwise limits of functions. So how does our integral behave with pointwise limits, or pointwise a.e. limits? Explicitly, if <span class="process-math">\((f_n)_n\)</span> is a sequence of non-negative measurable functions converging pointwise a.e. to a measurable function <span class="process-math">\(f\text{,}\)</span> do we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-why-else.html" id="eq-int-and-limit">
+\begin{equation}
+\lim_{n\rightarrow \infty} \int_X f_n \,d\mu = \int_X f \,d\mu?\tag{6.1}
+\end{equation}
+</div>
+<div class="para">The answer is, of course: not necessarily. We give some counter examples here.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-pw-int-not-convergent"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="ex-pw-int-not-convergent-1">
+<div class="para">Let <span class="process-math">\(f = 0\)</span> on <span class="process-math">\(\mathbb{R}\)</span> and let <span class="process-math">\(m\)</span> be the Lebesgue measure.. Then <span class="process-math">\(\int_{\mathbb{R}}f\,dm = 0.\)</span> We define sequences <span class="process-math">\((f_n)_n\text{,}\)</span> <span class="process-math">\((g_n)_n\)</span> and <span class="process-math">\((h_n)_n\)</span> on <span class="process-math">\(\mathbb{R}\)</span> by</div>
+<div class="displaymath process-math" id="ex-pw-int-not-convergent-1-9">
+\begin{equation*}
+\begin{aligned}
+f_n &amp;= \chi_{[n,n+1]}; \\
+g_n &amp;= 2^{n(\bmod 2)}\chi_{[n,n+1]};\text{ and}\\
+h_n &amp;= n \chi_{[n,n+1]}.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-int-not-convergent-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-pw-int-not-convergent-2">
+<div class="para">Each of the sequences <span class="process-math">\((f_n)_n\text{,}\)</span> <span class="process-math">\((g_n)_n\)</span> and <span class="process-math">\((h_n)_n\)</span> converge pointwise to <span class="process-math">\(f = 0\text{.}\)</span> Further</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-int-and-limit.html ./knowl/xref/eq-int-and-limit.html" id="ex-pw-int-not-convergent-2-5">
+\begin{equation*}
+\begin{aligned}
+\int_{\mathbb{R}} f_n\,dm &amp;= 1;\\
+\int_{\mathbb{R}} g_n\,dm &amp;= \begin{cases} 1 &amp; n\text{ even},\\
+2 &amp; n\text{ odd};\end{cases}\text{ and}\\
+\int_{\mathbb{R}} h_n\,dm &amp;= n.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-int-and-limit.html ./knowl/xref/eq-int-and-limit.html" id="ex-pw-int-not-convergent-2-6">
+\begin{equation*}
+\begin{aligned}
+\lim_{n\rightarrow \infty}\int_{\mathbb{R}} f_n\,dm &amp;= 1; \\
+\lim_{n\rightarrow \infty}\int_{\mathbb{R}} g_n\,dm &amp; \text{ does not exist; and}\\
+\lim_{n\rightarrow \infty}\int_{\mathbb{R}} h_n\,dm &amp;= \infty.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">In conclusion, the answer to  <a href="sec-int-non-neg.html#eq-int-and-limit" class="xref" data-knowl="./knowl/xref/eq-int-and-limit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1">(6.1)</a> can be no, for a variety of reasons. The limit on the left-hand side can be finite, it may not exist, or it may be infinite. In each of these cases,  <a href="sec-int-non-neg.html#eq-int-and-limit" class="xref" data-knowl="./knowl/xref/eq-int-and-limit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1">(6.1)</a> may not hold.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-pw-int-not-convergent-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.1.14"><a href="#ex-pw-int-not-convergent" title="Copy heading and permalink for Example 6.1.14" aria-label="Copy heading and permalink for Example 6.1.14">🔗</a></div></article><div class="para logical" id="sec-int-non-neg-24">
+<div class="para"> The obvious moral to take away from <a href="sec-int-non-neg.html#ex-pw-int-not-convergent" class="xref" data-knowl="./knowl/xref/ex-pw-int-not-convergent.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.14">Example 6.1.14</a> is that, in order for there to be a positive answer to  <a href="sec-int-non-neg.html#eq-int-and-limit" class="xref" data-knowl="./knowl/xref/eq-int-and-limit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1">(6.1)</a> we need some additional conditions on the functions <span class="process-math">\((f_n)_n\)</span> and <span class="process-math">\(f\text{.}\)</span> There is, however, a less obvious, but important point that is worth observing. We first recall some terminology for sequences of numbers. Let <span class="process-math">\((x_n)_n\)</span> be a sequence of real numbers. The <dfn class="terminology">limit superior</dfn> of <span class="process-math">\((x_n)_n\)</span> is defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-pw-int-not-convergent.html ./knowl/xref/eq-int-and-limit.html ./knowl/xref/ex-pw-int-not-convergent.html" id="sec-int-non-neg-24-12">
+\begin{equation*}
+\liminf_n x_n = \lim_n \inf\{x_k \colon k \geq n\} = \sup_n\{ \inf\{x_k \colon k \geq n\}\}
+\end{equation*}
+</div>
+<div class="para">and the <dfn class="terminology">limit superior</dfn> is defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-pw-int-not-convergent.html ./knowl/xref/eq-int-and-limit.html ./knowl/xref/ex-pw-int-not-convergent.html" id="sec-int-non-neg-24-16">
+\begin{equation*}
+\limsup_n x_n = \lim_n \sup\{x_k \colon k \geq n\} = \inf_n\{ \sup\{x_k \colon k \geq n\}\}.
+\end{equation*}
+</div>
+<div class="para">The limit inferior and limit superior always exist (with <span class="process-math">\(-\infty\)</span> and <span class="process-math">\(\infty\)</span> as possible values). It is always the case that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-pw-int-not-convergent.html ./knowl/xref/eq-int-and-limit.html ./knowl/xref/ex-pw-int-not-convergent.html" id="sec-int-non-neg-24-19">
+\begin{equation*}
+\liminf x_n \leq \limsup x_n.
+\end{equation*}
+</div>
+<div class="para">Further <span class="process-math">\(\liminf x_n = \limsup x_n\)</span> if and only if <span class="process-math">\((x_n)\)</span> is a convergent sequence, in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-pw-int-not-convergent.html ./knowl/xref/eq-int-and-limit.html ./knowl/xref/ex-pw-int-not-convergent.html" id="sec-int-non-neg-24-22">
+\begin{equation*}
+\liminf x_n = \lim x_n = \limsup x_n.
+\end{equation*}
+</div>
+<div class="para">Returning to <a href="sec-int-non-neg.html#ex-pw-int-not-convergent" class="xref" data-knowl="./knowl/xref/ex-pw-int-not-convergent.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.14">Example 6.1.14</a>. Whilst we do not have that <span class="process-math">\(\int_{\mathbb{R}} f \,dm\)</span> is a limit of the integrals of the functions which converge pointwise to <span class="process-math">\(f\text{,}\)</span> we do have the following inequalities:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-pw-int-not-convergent.html ./knowl/xref/eq-int-and-limit.html ./knowl/xref/ex-pw-int-not-convergent.html" id="sec-int-non-neg-24-26">
+\begin{equation*}
+\begin{aligned}
+0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} f_n \,dm =1 \\
+0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} g_n \,dm =1 \\
+0 = \int_{\mathbb{R}} f \,dm &amp;\leq \liminf_n \int_{\mathbb{R}} h_n \,dm =\infty.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">That these inequalities hold for each of our sequences is not a coincidence.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-fatou"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fatou’s Lemma.</span>
+</h3>
+<div class="para logical" id="lem-fatou-2-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space, and let <span class="process-math">\((f_n)_n\)</span> be a sequence of non-negative measurable functions which converge pointwise a.e. to a measurable function <span class="process-math">\(f\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="lem-fatou-2-1-4">
+\begin{equation*}
+\int_X f\,d\mu \leq \liminf \int_X f_n\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-fatou-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 6.1.15: Fatou’s Lemma"><a href="#lem-fatou" title="Copy heading and permalink for Lemma 6.1.15: Fatou’s Lemma" aria-label="Copy heading and permalink for Lemma 6.1.15: Fatou’s Lemma">🔗</a></div></article><article class="proof" id="lem-fatou-3"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="lem-fatou-3-1">Let <span class="process-math">\(E \subseteq X\)</span> be a measure <span class="process-math">\(0\)</span> set such that <span class="process-math">\((f_n)_n\)</span> converges to <span class="process-math">\(f\)</span> pointwise on <span class="process-math">\(X \backslash E\text{.}\)</span> By <a href="sec-int-non-neg.html#prop-int-remove-zero-set-non-neg" class="xref" data-knowl="./knowl/xref/prop-int-remove-zero-set-non-neg.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 6.1.8">Proposition 6.1.8</a>, replacing <span class="process-math">\(X\)</span> with <span class="process-math">\(X \backslash E\)</span> does not change the value of any integrals. We can thus assume that <span class="process-math">\((f_n)_n\)</span> converges pointwise to <span class="process-math">\(f\)</span> everywhere on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-fatou-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-fatou-3-2">
+<div class="para">Let <span class="process-math">\(\varphi\)</span> be a simple function satisfying <span class="process-math">\(0 \leq \varphi \leq f\text{.}\)</span> We will show that</div>
+<div class="displaymath process-math" id="lem-fatou-3-2-3">
+\begin{equation*}
+\int_X \varphi\,d\mu \leq \liminf \int_X f_n\, d\mu.
+\end{equation*}
+</div>
+<div class="para">First, assume that <span class="process-math">\(\int_X \varphi\,d\mu = \infty\text{.}\)</span> In this case, there is a measurable set <span class="process-math">\(E \subseteq X\)</span> and a real number <span class="process-math">\(a &gt; 0\)</span> such that <span class="process-math">\(\mu(E) = \infty\)</span> and <span class="process-math">\(\varphi(x) = a\)</span> for all <span class="process-math">\(x \in E\text{.}\)</span> For each <span class="process-math">\(n\)</span> let</div>
+<div class="displaymath process-math" id="lem-fatou-3-2-11">
+\begin{equation*}
+E_n = \left\{x \in X \colon f_k(x) \geq \frac{a}{2} \text{ for }k\geq n\right\}.
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(E \subseteq \bigcup_n E_n\)</span> since, for <span class="process-math">\(x \in E\text{,}\)</span> <span class="process-math">\(\lim_n f_n(x) = f(x) \geq a\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-fatou-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-fatou-3-3">
+<div class="para">As the sets <span class="process-math">\(\{E_n\}_n\)</span> are ascending (and measurable) we have, by the continuity of measure,</div>
+<div class="displaymath process-math" id="lem-fatou-3-3-2">
+\begin{equation*}
+\infty = \mu(E) \leq \lim_n \mu(E_n).
+\end{equation*}
+</div>
+<div class="para">By Chebyshev’s Inequality,</div>
+<div class="displaymath process-math" id="lem-fatou-3-3-3">
+\begin{equation*}
+\mu(E_n)) \leq \frac{2}{a} \int_X f_n\,d\mu 
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(\lim_n \int_X f_n\, d\mu = \infty.\)</span> Thus</div>
+<div class="displaymath process-math" id="lem-fatou-3-3-5">
+\begin{equation*}
+\int_X f\, d\mu\geq \int_X \varphi\, d\mu = \infty = \lim_n \int_X f_n\, d\mu = \liminf_n \int_X f_n\, d\mu.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\int_X f \,d\mu = \liminf_n \int_X f_n\, d\mu.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-fatou-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-fatou-3-4">
+<div class="para">Assume now that <span class="process-math">\(\int_X \varphi \, d\mu &lt; \infty\text{.}\)</span> Let <span class="process-math">\(P = \{x \in E \colon \varphi(x) &gt; 0\}.\)</span> Since <span class="process-math">\(\varphi\)</span> is simple and <span class="process-math">\(\int_X \varphi\,d\mu &lt; \infty\)</span> we must have that <span class="process-math">\(\mu(P)&lt;\infty\text{.}\)</span> Fix <span class="process-math">\(\varepsilon &gt;0\text{.}\)</span> For each <span class="process-math">\(n\text{,}\)</span> let</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-8">
+\begin{equation*}
+P_n = \{x \in P \colon f_k(x) &gt; (1-\varepsilon)\varphi(x)\text{ for }k\geq n\}.
+\end{equation*}
+</div>
+<div class="para">The sequence <span class="process-math">\(\{P_n\}_n\)</span> is an ascending sequence of measurable sets with <span class="process-math">\(P = \bigcup_n P_n\text{.}\)</span> Hence <span class="process-math">\(\{P\backslash P_n\}_n\)</span> is a descending sequence of measurable sets with intersection <span class="process-math">\(\emptyset\text{.}\)</span> By the continuity of measure, since <span class="process-math">\(\mu(P)&lt;\infty\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-14">
+\begin{equation*}
+\lim_n \mu(P \backslash P_n) = 0.
+\end{equation*}
+</div>
+<div class="para">Choose <span class="process-math">\(N\)</span> such that <span class="process-math">\(\mu(P\backslash P_n) &lt; \varepsilon\)</span> for all <span class="process-math">\(n \geq N\text{.}\)</span> Let <span class="process-math">\(M\)</span> be the maximum value <span class="process-math">\(\varphi\)</span> takes. For any <span class="process-math">\(n \geq N\)</span> we have that</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-21">
+\begin{equation*}
+\begin{aligned}
+\int_X f_n \, d\mu
+&amp;\geq \int_{P_n} f_n \, d\mu \\
+&amp;\geq \int_{P_n}(1-\varepsilon) \varphi\, d\mu \\
+&amp;= (1-\varepsilon) \left[\int_P \varphi\,d\mu - \int_{P\backslash P_n} \varphi\, d\mu\right] \\
+&amp;\geq (1-\varepsilon)\int_P \varphi\,d\mu -\int_{P\backslash P_n} \varphi\, d\mu\\
+&amp;= (1-\varepsilon)\int_X \varphi\,d\mu -\int_{P\backslash P_n} \varphi\, d\mu\\
+&amp;\geq (1-\varepsilon)\int_X \varphi\,d\mu -M\mu(P\backslash P_n)\\
+&amp;&gt;(1-\varepsilon)\int_X \varphi\,d\mu -M\varepsilon \\
+&amp;= \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">Summarizing the above, for <span class="process-math">\(n\geq N\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-23">
+\begin{equation*}
+\int_X f_n \,d\mu \geq \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).
+\end{equation*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-24">
+\begin{equation*}
+\liminf_n \int_X f_n \,d\mu \geq \int_X \varphi\,d\mu -\varepsilon\left(\int_X\varphi\,d\mu + M\right).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\varepsilon&gt;0\)</span> is arbitrary, and since <span class="process-math">\(\int_X \varphi\,d\mu&lt;\infty\)</span> and <span class="process-math">\(M&lt; \infty\text{,}\)</span> it follows that</div>
+<div class="displaymath process-math" id="lem-fatou-3-4-28">
+\begin{equation*}
+\int_X \varphi\,d\mu \leq \liminf_n \int_X f_n \,d\mu.
+\end{equation*}
+</div>
+<div class="para">Now, taking a supremum over all simple <span class="process-math">\(\varphi\)</span> with <span class="process-math">\(0 \leq \varphi \leq f\)</span> gives the desired result.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-fatou-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.15.1"><a href="#lem-fatou-3" title="Copy heading and permalink for Proof 6.1.15.1" aria-label="Copy heading and permalink for Proof 6.1.15.1">🔗</a></div></article><div class="para" id="sec-int-non-neg-26">Fatou’s Lemma will prove to be a powerful tool. We give now our first application of Fatou’s Lemma, and our first theorem where a pointwise limit of functions implies a limit of integrals.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-MCT"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Convergence Theorem.</span>
+</h3>
+<div class="para logical" id="thm-MCT-2-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space and let <span class="process-math">\((f_n)_n\)</span> be an increasing sequence of non-negative measurable functions on <span class="process-math">\(X\text{.}\)</span> Define a function <span class="process-math">\(f\)</span> on <span class="process-math">\(X\)</span> by <span class="process-math">\(f(x) = \lim_n f_n(x).\)</span> Then <span class="process-math">\(f\)</span> is measurable and</div>
+<div class="displaymath process-math" id="thm-MCT-2-1-8">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-MCT-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.16: Monotone Convergence Theorem"><a href="#thm-MCT" title="Copy heading and permalink for Theorem 6.1.16: Monotone Convergence Theorem" aria-label="Copy heading and permalink for Theorem 6.1.16: Monotone Convergence Theorem">🔗</a></div></article><article class="proof" id="thm-MCT-3"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="thm-MCT-3-1">Note that <span class="process-math">\(\lim_n f_n(x)\)</span> exists for all <span class="process-math">\(x\)</span> since the sequence <span class="process-math">\((f_n)_n\)</span> is increasing. Thus <span class="process-math">\(f\)</span> is a well-defined function on <span class="process-math">\(X\text{.}\)</span> Further <span class="process-math">\(f\)</span> is measurable by <a href="chap-meas-fun-4.html#prop-pw-lim" class="xref" data-knowl="./knowl/xref/prop-pw-lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.2.3">Proposition 5.2.3</a> and <span class="process-math">\(f\)</span> is non-negative since each <span class="process-math">\(f_n\)</span> is non-negative.<div class="autopermalink" data-description="Paragraph"><a href="#thm-MCT-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="thm-MCT-3-2">
+<div class="para">By the monotonicity of integration, we have that <span class="process-math">\((\int_X f_n\,d\mu)_n\)</span> is an increasing sequence, and hence convergent. Further, since <span class="process-math">\(f_n \leq f\)</span> for each <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-fatou.html" id="thm-MCT-3-2-4">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu \leq \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="para">By Fatou’s Lemma, <a href="sec-int-non-neg.html#lem-fatou" class="xref" data-knowl="./knowl/xref/lem-fatou.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.1.15: Fatou’s Lemma">Lemma 6.1.15</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-fatou.html" id="thm-MCT-3-2-6">
+\begin{equation*}
+\int_X f\,d\mu \leq \liminf_n \int_X f_n \,d\mu = \lim_n \int_Xf_n\,d\mu.
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-fatou.html" id="thm-MCT-3-2-7">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-MCT-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.16.1"><a href="#thm-MCT-3" title="Copy heading and permalink for Proof 6.1.16.1" aria-label="Copy heading and permalink for Proof 6.1.16.1">🔗</a></div></article><div class="para logical" id="sec-int-non-neg-28">
+<div class="para">It is reasonable to ask whether `increasing’ can be replaced by `decreasing’ in the Monotone Convergence Theorem. That is, if <span class="process-math">\((f_n)_n\)</span> is a decreasing sequence of non-negative measurable functions converging pointwise to <span class="process-math">\(f\text{,}\)</span> is it true that</div>
+<div class="displaymath process-math" id="sec-int-non-neg-28-3">
+\begin{equation*}
+\lim_n \int_X f_n\,d\mu = \int_X f\,d\mu?
+\end{equation*}
+</div>
+<div class="para">The following example shows that we cannot expect the statement to hold for decreasing sequences.<details class="ptx-footnote" aria-live="polite" id="sec-int-non-neg-28-4"><summary class="ptx-footnote__number" title="Footnote 6.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-int-non-neg-28-4">You could thus reasonable argue that the Monotone Convergence Theorem should be called something else. Maybe the Increasing Convergence Theorem would be better? If you have a problem with it, take it up with the non-existent Mathematical Theorem Naming Committee.</div></details>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-int-non-neg-29"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-int-non-neg-29-1">
+<div class="para">Consider the sequence of measurable functions <span class="process-math">\((f_n)_n = (\chi_{[n,\infty)})_n\)</span> on the real line. The sequence <span class="process-math">\((f_n)_n\)</span> is decreasing, and converges pointwise to the function <span class="process-math">\(f = 0\text{.}\)</span> However, for each <span class="process-math">\(n\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-int-non-neg-29-1-5">
+\begin{equation*}
+\int_\mathbb{R} f_n\,dm = m(([n,\infty)) = \infty,
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" id="sec-int-non-neg-29-1-6">
+\begin{equation*}
+\infty = \lim_n \int_\mathbb{R} f_n\,dm \neq \int_\mathbb{R} f\,dm = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-29-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.1.17"><a href="#sec-int-non-neg-29" title="Copy heading and permalink for Example 6.1.17" aria-label="Copy heading and permalink for Example 6.1.17">🔗</a></div></article><div class="para" id="sec-int-non-neg-30">The proof of the following Corollary to the Monotone Convergence Theorem is left as an exercise, <a href="chap-integration-6.html#exer-MCT-series" class="xref" data-knowl="./knowl/xref/exer-MCT-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.4.6">Exercise 6.4.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-MCT-series"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="cor-MCT-series-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space, let <span class="process-math">\((f_n)_n\)</span> be a sequence of non-negative measurable functions, and let <span class="process-math">\(f = \sum_{n=1}^\infty f_n.\)</span> Then</div>
+<div class="displaymath process-math" id="cor-MCT-series-1-1-4">
+\begin{equation*}
+\int_X f \, d\mu = \sum_{k=1}^\infty \int_X f_n\, d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor-MCT-series-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 6.1.18"><a href="#cor-MCT-series" title="Copy heading and permalink for Corollary 6.1.18" aria-label="Copy heading and permalink for Corollary 6.1.18">🔗</a></div></article><article class="remark remark-like" id="sec-int-non-neg-32"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-int-non-neg-32-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be a non-negative measurable function on a measure space <span class="process-math">\((X,\mathcal{F},\mu)\text{.}\)</span> By the definition of the integral, <span class="process-math">\(\int_X f\,d\mu\)</span> can be approximated by integrals of simple functions below <span class="process-math">\(f\text{.}\)</span> By the Simple Approximation Theorem, <span class="process-math">\(f\)</span> can be (pointwise) approximated by simple functions below <span class="process-math">\(f\text{.}\)</span> The Monotone Convergence Theorem allows us to put these two approximations together. Explicitly, by the Simple Approximation Theorem, there is an increasing sequence of simple functions <span class="process-math">\((\phi_n)_n\text{,}\)</span> <span class="process-math">\(0\leq \phi_n \leq f\text{,}\)</span> which converge pointwise to <span class="process-math">\(f\text{.}\)</span> By the Monotone Convergence Theorem</div>
+<div class="displaymath process-math" id="sec-int-non-neg-32-1-10">
+\begin{equation*}
+\lim_n \int_X \phi_n\,d\mu = \int_X f\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 6.1.19"><a href="#sec-int-non-neg-32" title="Copy heading and permalink for Remark 6.1.19" aria-label="Copy heading and permalink for Remark 6.1.19">🔗</a></div></article><div class="para" id="sec-int-non-neg-33">We end this subsection by showing that integration is linear.<div class="autopermalink" data-description="Paragraph"><a href="#sec-int-non-neg-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-pos-int-linear"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="thm-pos-int-linear-1-1">
+<div class="para">Let <span class="process-math">\((X,\mathcal{F},\mu)\)</span> be a measure space, let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be non-negative measurable functions, and let <span class="process-math">\(\alpha\text{,}\)</span> <span class="process-math">\(\beta\)</span> be non-negative real-numbers. Then</div>
+<div class="displaymath process-math" id="thm-pos-int-linear-1-1-6">
+\begin{equation*}
+\int_X(\alpha f + \beta g)\,d\mu = \alpha \int_X f\,d\mu + \beta \int_X g\,d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-pos-int-linear-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.20"><a href="#thm-pos-int-linear" title="Copy heading and permalink for Theorem 6.1.20" aria-label="Copy heading and permalink for Theorem 6.1.20">🔗</a></div></article><article class="proof" id="thm-pos-int-linear-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="thm-pos-int-linear-2-1">
+<div class="para">By the Simple Approximation Theorem there are increasing sequences of non-negative simple functions <span class="process-math">\((\phi_n)_n\)</span> and <span class="process-math">\((\psi_n)_n\)</span> such that <span class="process-math">\((\phi_n)_n\)</span> converges to <span class="process-math">\(f\)</span> pointwise and <span class="process-math">\((\psi_n)_n\)</span> converges to <span class="process-math">\(g\)</span> pointwise. Thus <span class="process-math">\((\alpha\phi_n + \beta\psi_n)_n\)</span> is an increasing sequence of non-negative simple functions which converge pointwise to <span class="process-math">\(\alpha f +\beta g\text{.}\)</span> Using the Monotone Covergence Theorem and <a href="sec-int-non-neg.html#thm-simple-int-linear" class="xref" data-knowl="./knowl/xref/thm-simple-int-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.3">Theorem 6.1.3</a>  and the Monotone Convergence Theorem again we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-simple-int-linear.html" id="thm-pos-int-linear-2-1-10">
+\begin{equation*}
+\begin{aligned}
+\int_X (\alpha f + \beta g)\,d\mu &amp;= \lim_n \int_X(\alpha \phi_n + \beta \psi_n)\,d\mu \\
+&amp;= \alpha \lim_n\int_X \phi_n\,d\mu + \beta \lim_n \int_X \psi_n \,d\mu \\
+&amp;= \alpha \int_X f\,d\mu + \beta \int_X g\, d\mu.
+\end{aligned}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-pos-int-linear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.1.20.1"><a href="#thm-pos-int-linear-2" title="Copy heading and permalink for Proof 6.1.20.1" aria-label="Copy heading and permalink for Proof 6.1.20.1">🔗</a></div></article><div class="autopermalink" data-description="Section 6.1: Integration of non-negative functions"><a href="#sec-int-non-neg" title="Copy heading and permalink for Section 6.1: Integration of non-negative functions" aria-label="Copy heading and permalink for Section 6.1: Integration of non-negative functions">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chap-integration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-integration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
