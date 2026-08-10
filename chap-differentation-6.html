@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.2.2';
+eBookConfig.runestone_version = '8.2.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -652,74 +652,36 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="chap-differentation-6-9-2">If <span class="process-math">\(f\)</span> is not continuous, we can still apply <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.10: Lebesgue Decomposition Theorem">Theorem 7.1.10</a> to <span class="process-math">\(\nu\)</span> and decompose <span class="process-math">\(f = f_a + f_s\text{,}\)</span> where <span class="process-math">\(f_a\)</span> is absolutely continuous, and <span class="process-math">\(f_s'= 0\)</span> a.e. In this case <span class="process-math">\(f_s\)</span> will not be continuous.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chap-differentation-6-9-3">This leads us to the questions: what Borel measures have continuous cumulative distribution functions? If <span class="process-math">\(f\)</span> is right-continuous and of bounded variation, how discontinuous can it be?<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 7.4.6"><a href="#chap-differentation-6-9" title="Copy heading and permalink for Remark 7.4.6" aria-label="Copy heading and permalink for Remark 7.4.6">🔗</a></div></article><div class="para" id="chap-differentation-6-10">In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 7.4.6"><a href="#chap-differentation-6-9" title="Copy heading and permalink for Remark 7.4.6" aria-label="Copy heading and permalink for Remark 7.4.6">🔗</a></div></article><article class="definition definition-like" id="chap-differentation-6-10"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="chap-differentation-6-10-1-1">Let <span class="process-math">\(\nu\)</span> be a Borel signed-measure on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is a <dfn class="terminology">continuous Borel signed-measure</dfn> is <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Definition 7.4.7"><a href="#chap-differentation-6-10" title="Copy heading and permalink for Definition 7.4.7" aria-label="Copy heading and permalink for Definition 7.4.7">🔗</a></div></article><article class="proposition theorem-like" id="chap-differentation-6-11"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="chap-differentation-6-11-1-1">Let <span class="process-math">\(\nu\)</span> be a Borel signed-measure on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> and let <span class="process-math">\(f(x) = \nu([a,x))\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is continuous if and only if <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a) = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proposition 7.4.8"><a href="#chap-differentation-6-11" title="Copy heading and permalink for Proposition 7.4.8" aria-label="Copy heading and permalink for Proposition 7.4.8">🔗</a></div></article><article class="proof" id="chap-differentation-6-11-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para logical" id="chap-differentation-6-11-2-1">
-<div class="para">By <a href="sec-borel-on-R.html#thm-cdf" class="xref" data-knowl="./knowl/xref/thm-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.6">Theorem 3.3.6</a>, <span class="process-math">\(f\)</span> is right continuous. Assume that <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a) = 0\text{.}\)</span> Since <span class="process-math">\(f(a) = 0\text{,}\)</span> <span class="process-math">\(\nu(\{a\}) = 0\text{.}\)</span> Take any <span class="process-math">\(x \in (a,b]\text{.}\)</span> Then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cdf.html" id="chap-differentation-6-11-2-1-8">
-\begin{equation*}
-\begin{aligned}
-\nu(\{x\}) &amp;= \lim_{n\rightarrow \infty}\nu((x-1/n,x]) \\
-&amp; = f(x) - \lim_{n\rightarrow \infty}f(x-1/n)\\
-&amp;= f(x) - f(x) = 0,
-\end{aligned}
-\end{equation*}
-</div>
-<div class="para">by the (left) continuity of <span class="process-math">\(f\text{.}\)</span>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="chap-differentation-6-11-2-2">
-<div class="para">Conversely, suppose <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span> Then <span class="process-math">\(f(a) = \nu(\{a\}) =0\text{.}\)</span> If <span class="process-math">\(x \in (a,b]\)</span> then</div>
-<div class="displaymath process-math" id="chap-differentation-6-11-2-2-5">
-\begin{equation*}
-\lim_{n\rightarrow \infty} f(x) - f(x-1/n) = 
-lim_{n\rightarrow \infty} \nu((x-1/n,x])=\nu(\{x\}) = 0.
-\end{equation*}
-</div>
-<div class="para">Hence <span class="process-math">\(f\)</span> is left-continuous, and therefore continuous, at <span class="process-math">\(x\text{.}\)</span>
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Proof 7.4.8.1"><a href="#chap-differentation-6-11-2" title="Copy heading and permalink for Proof 7.4.8.1" aria-label="Copy heading and permalink for Proof 7.4.8.1">🔗</a></div></article><div class="para" id="chap-differentation-6-12">In order to get a better idea of the singular part of a function of bounded variation, we need to understand to consider not-necessarily-continuous functions of bounded variation. To this end, we need a quick aside (which may or may not be known to you).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="chap-differentation-6-13">
+<div class="para logical" id="chap-differentation-6-11">
 <div class="para">Let <span class="process-math">\(\Lambda\)</span> be an index set, and let <span class="process-math">\(\{a_\lambda\}_{\lambda \in \Lambda}\)</span> be a collection of real numbers indexed by <span class="process-math">\(\Lambda\text{.}\)</span> Let <span class="process-math">\(\mathcal{F}(\Lambda)\)</span> be the collection of all finite subsets of <span class="process-math">\(\Lambda\text{.}\)</span> Let <span class="process-math">\(s\)</span> be a real number. We say <dfn class="terminology">the series <span class="process-math">\(\sum_{\lambda \in \Lambda}a_\lambda\)</span> converges to some <span class="process-math">\(s\)</span></dfn> if for all <span class="process-math">\(\varepsilon &gt;0\)</span> there is an <span class="process-math">\(F \in \mathcal{F}(\Lambda)\)</span> such that if <span class="process-math">\(G \in \mathcal{F}(\Lambda)\)</span> with <span class="process-math">\(F \subseteq G\)</span> then</div>
-<div class="displaymath process-math" id="chap-differentation-6-13-13">
+<div class="displaymath process-math" id="chap-differentation-6-11-13">
 \begin{equation*}
 \left| s - \sum_{\lambda \in G}a_\lambda\right|&lt;\varepsilon.
 \end{equation*}
 </div>
-<div class="para">In this case we write <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda =s\text{.}\)</span>\footnote{If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums <span class="process-math">\(\left(\sum_{\lambda\in F}a_\lambda\right)_{F \in \mathcal{F}(\Lambda)}\text{.}\)</span>}</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">In this case we write <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda =s\text{.}\)</span> <details class="ptx-footnote" aria-live="polite" id="chap-differentation-6-11-15"><summary class="ptx-footnote__number" title="Footnote 7.4.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="chap-differentation-6-11-15">If you are familiar with point-set topology you will recognize this convergence as simply convergence of the net of partial sums <span class="process-math">\(\left(\sum_{\lambda\in F}a_\lambda\right)_{F \in \mathcal{F}(\Lambda)}\text{.}\)</span>
+</div></details>
 </div>
-<div class="para logical" id="chap-differentation-6-14">
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chap-differentation-6-12">
 <div class="para">If each <span class="process-math">\(a_\lambda \geq 0\text{,}\)</span> and <span class="process-math">\(\sum_{\lambda \in \Lambda}a_\lambda = s\)</span> then</div>
-<div class="displaymath process-math" id="chap-differentation-6-14-3">
+<div class="displaymath process-math" id="chap-differentation-6-12-3">
 \begin{equation*}
 s = \sup\left\{ \sum_{\lambda \in F}a_\lambda \colon F \subseteq \Lambda\text{ finite}\right\}.
 \end{equation*}
 </div>
 <div class="para">Further, if <span class="process-math">\(\Lambda = \mathbb{N}\)</span> is the set of natural numbers, then <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda = s\)</span> if and only if <span class="process-math">\(\sum_{n \in \mathbb{N}}a_n\)</span> converges absolutely.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-uncountable-series"><h3 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="lem-uncountable-series-1-1">Let <span class="process-math">\(\Lambda\)</span> be an index set, and let <span class="process-math">\(\{a_\lambda\}_{\lambda \in \Lambda}\)</span> be a collection of real numbers indexed by <span class="process-math">\(\Lambda\text{.}\)</span> If <span class="process-math">\(\sum_{\lambda \in \Lambda} a_\lambda\)</span> is convergent, then <span class="process-math">\(\{\lambda \colon a_\lambda \neq 0\}\)</span> is countable. <div class="autopermalink" data-description="Paragraph"><a href="#lem-uncountable-series-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 7.4.9"><a href="#lem-uncountable-series" title="Copy heading and permalink for Lemma 7.4.9" aria-label="Copy heading and permalink for Lemma 7.4.9">🔗</a></div></article><article class="proof" id="lem-uncountable-series-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="autopermalink" data-description="Lemma 7.4.7"><a href="#lem-uncountable-series" title="Copy heading and permalink for Lemma 7.4.7" aria-label="Copy heading and permalink for Lemma 7.4.7">🔗</a></div></article><article class="proof" id="lem-uncountable-series-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para" id="lem-uncountable-series-2-1">Let <span class="process-math">\(\Lambda_{\geq 0} = \{\lambda \in \Lambda \colon a_\lambda \geq 0\}\)</span> and <span class="process-math">\(\Lambda_{&lt; 0} = \{\lambda \in \Lambda \colon a_\lambda &lt; 0\}\text{.}\)</span> Note that <span class="process-math">\(\sum_{\lambda\in\Lambda}a_\lambda\)</span> is convergent if and only if <span class="process-math">\(\sum_{\lambda\in\Lambda_{\geq 0}}a_\lambda\)</span> and <span class="process-math">\(\sum_{\lambda\in\Lambda_{&lt;0}}a_\lambda\)</span> are both convergent. We will thus assume that <span class="process-math">\(a_\lambda \geq 0\)</span> for all <span class="process-math">\(\lambda \in \Lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-uncountable-series-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="lem-uncountable-series-2-2">
@@ -759,12 +721,12 @@ a_0 \leq a_\lambda &lt; a_0 + 1/n.
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-uncountable-series-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.4.9.1"><a href="#lem-uncountable-series-2" title="Copy heading and permalink for Proof 7.4.9.1" aria-label="Copy heading and permalink for Proof 7.4.9.1">🔗</a></div></article><article class="theorem theorem-like" id="thm-bv-countable-discont"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proof 7.4.7.1"><a href="#lem-uncountable-series-2" title="Copy heading and permalink for Proof 7.4.7.1" aria-label="Copy heading and permalink for Proof 7.4.7.1">🔗</a></div></article><article class="theorem theorem-like" id="thm-bv-countable-discont"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="thm-bv-countable-discont-1-1">Let <span class="process-math">\(f\)</span> be a function of bounded variation on <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(f\)</span> the set of discontinuities of <span class="process-math">\(f\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-bv-countable-discont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="thm-bv-countable-discont-1-1">Let <span class="process-math">\(f\)</span> be a function of bounded variation on <span class="process-math">\([a,b]\text{.}\)</span> Then the set of discontinuities of <span class="process-math">\(f\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-bv-countable-discont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.4.10"><a href="#thm-bv-countable-discont" title="Copy heading and permalink for Theorem 7.4.10" aria-label="Copy heading and permalink for Theorem 7.4.10">🔗</a></div></article><article class="proof" id="thm-bv-countable-discont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="autopermalink" data-description="Theorem 7.4.8"><a href="#thm-bv-countable-discont" title="Copy heading and permalink for Theorem 7.4.8" aria-label="Copy heading and permalink for Theorem 7.4.8">🔗</a></div></article><article class="proof" id="thm-bv-countable-discont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="thm-bv-countable-discont-2-1">
 <div class="para">Assume that <span class="process-math">\(f\)</span> is increasing. The general result follows from the increasing case by the <a href="sec-signed-borel.html#thm-jordan-decomp-function" class="xref" data-knowl="./knowl/xref/thm-jordan-decomp-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.10: Jordan Decomposition Theorem">Jordan Decomposition Theorem</a>. For each <span class="process-math">\(x \in (a,b)\text{,}\)</span> let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-jordan-decomp-function.html ./knowl/xref/lem-uncountable-series.html" id="thm-bv-countable-discont-2-1-4">
@@ -778,17 +740,17 @@ a_x = \lim_{y\rightarrow x^-}f(y)\text{ and } b_x = \lim_{y\rightarrow x^+}f(y).
 \sum_{x\in(a,b)} (b_x - a_x) \leq f(b) - f(a) &lt; \infty.
 \end{equation*}
 </div>
-<div class="para">By <a href="chap-differentation-6.html#lem-uncountable-series" class="xref" data-knowl="./knowl/xref/lem-uncountable-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.4.9">Lemma 7.4.9</a> it follows that <span class="process-math">\(a_x = b_x\)</span> for all but at most countably many points. Thus <span class="process-math">\(f\)</span> the set of discontinuities of <span class="process-math">\(f\)</span> is countable.</div>
+<div class="para">By <a href="chap-differentation-6.html#lem-uncountable-series" class="xref" data-knowl="./knowl/xref/lem-uncountable-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.4.7">Lemma 7.4.7</a> it follows that <span class="process-math">\(a_x = b_x\)</span> for all but at most countably many points. Thus <span class="process-math">\(f\)</span> the set of discontinuities of <span class="process-math">\(f\)</span> is countable.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-bv-countable-discont-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.4.10.1"><a href="#thm-bv-countable-discont-2" title="Copy heading and permalink for Proof 7.4.10.1" aria-label="Copy heading and permalink for Proof 7.4.10.1">🔗</a></div></article><div class="para" id="chap-differentation-6-17">The following result offers a sort of converse to <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.10">Theorem 7.4.10</a>: for every countable set <span class="process-math">\(A\)</span> there is an increasing function whose set of discontinuities is <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.4.8.1"><a href="#thm-bv-countable-discont-2" title="Copy heading and permalink for Proof 7.4.8.1" aria-label="Copy heading and permalink for Proof 7.4.8.1">🔗</a></div></article><div class="para" id="chap-differentation-6-15">The following result offers a sort of converse to <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8">Theorem 7.4.8</a>: for every countable set <span class="process-math">\(A\)</span> there is an increasing function whose set of discontinuities is <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-countable-discont"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="prop-countable-discont-1-1">Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a closed interval, and let <span class="process-math">\(A \subseteq [a,b]\)</span> be a countable set. There is an increasing function <span class="process-math">\(f\)</span> on <span class="process-math">\([a,b]\)</span> where <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\backslash A\)</span> and discontinuous on <span class="process-math">\(A\text{.}\)</span> Further, <span class="process-math">\(f\)</span> can be chosen to be right-continuous.<div class="autopermalink" data-description="Paragraph"><a href="#prop-countable-discont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 7.4.11"><a href="#prop-countable-discont" title="Copy heading and permalink for Proposition 7.4.11" aria-label="Copy heading and permalink for Proposition 7.4.11">🔗</a></div></article><article class="proof" id="prop-countable-discont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="autopermalink" data-description="Proposition 7.4.9"><a href="#prop-countable-discont" title="Copy heading and permalink for Proposition 7.4.9" aria-label="Copy heading and permalink for Proposition 7.4.9">🔗</a></div></article><article class="proof" id="prop-countable-discont-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="prop-countable-discont-2-1">
 <div class="para">We will assume that <span class="process-math">\(A\)</span> is countably infinite. The case when <span class="process-math">\(A\)</span> is finite is straightforward. Enumerate the points in <span class="process-math">\(A\)</span> by</div>
 <div class="displaymath process-math" id="prop-countable-discont-2-1-4">
@@ -848,32 +810,32 @@ f(x) = \sum_{n \colon x_n \leq x}a_n.
 </div>
 <div class="para" id="prop-countable-discont-2-4">The argument that <span class="process-math">\(f\)</span> is (left) continuous on <span class="process-math">\([a,b]\backslash A\)</span> follows similar reasoning as the argument that <span class="process-math">\(f\)</span> is right-continuous and is left as an exercise (<a href="chap-differentation-7.html#exer-countable-discont" class="xref" data-knowl="./knowl/xref/exer-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.7">Exercise 7.5.7</a>).<div class="autopermalink" data-description="Paragraph"><a href="#prop-countable-discont-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.4.11.1"><a href="#prop-countable-discont-2" title="Copy heading and permalink for Proof 7.4.11.1" aria-label="Copy heading and permalink for Proof 7.4.11.1">🔗</a></div></article><div class="para" id="chap-differentation-6-19">What do non-continuous Borel signed-measures look like? Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a closed interval and let <span class="process-math">\(x \in [a,b]\)</span> be any point. The Dirac measure at <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\delta_x\text{,}\)</span> is not a continuous Borel measure, since <span class="process-math">\(\delta_x(\{x\}) = 1 \neq 0\text{.}\)</span> Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. Gives a name to measures which are made from Dirac measures.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.4.9.1"><a href="#prop-countable-discont-2" title="Copy heading and permalink for Proof 7.4.9.1" aria-label="Copy heading and permalink for Proof 7.4.9.1">🔗</a></div></article><div class="para" id="chap-differentation-6-17">What do non-continuous Borel signed-measures look like? Let <span class="process-math">\([a,b]\subseteq \mathbb{R}\)</span> be a closed interval and let <span class="process-math">\(x \in [a,b]\)</span> be any point. The Dirac measure at <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\delta_x\text{,}\)</span> is not a continuous Borel measure, since <span class="process-math">\(\delta_x(\{x\}) = 1 \neq 0\text{.}\)</span> Clearly, any linear combination of Dirac measures will not be a continuous Borel signed-measure. Hence, there are many Borel measures which are not continuous. <a href="chap-differentation-6.html#def-discrete" class="xref" data-knowl="./knowl/xref/def-discrete.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.4.10">Definition 7.4.10</a> gives a name to measures which are made from Dirac measures.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="chap-differentation-6-20"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="definition definition-like" id="def-discrete"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="chap-differentation-6-20-1-1">
-<div class="para">A non-zero Borel signed-measure <span class="process-math">\(\nu\)</span> on a closed interval <span class="process-math">\([a,b]\)</span> is <dfn class="terminology">discrete</dfn> if there is a countable collection of points <span class="process-math">\(\{x_n\}^{\infty}_n\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_{n=1}^\infty\)</span> such that</div>
-<div class="displaymath process-math" id="chap-differentation-6-20-1-1-6">
+<div class="para logical" id="def-discrete-1-1">
+<div class="para">A non-zero Borel signed-measure <span class="process-math">\(\nu\)</span> on a closed interval <span class="process-math">\([a,b]\)</span> is <dfn class="terminology">discrete</dfn> if there is a countable collection of points <span class="process-math">\(\{x_n\}^{\infty}_{n=1}\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_{n=1}^\infty\)</span> such that</div>
+<div class="displaymath process-math" id="def-discrete-1-1-6">
 \begin{equation*}
 \nu = \sum_{n=1}^\infty a_n \delta_{x_n},
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\delta_{x_n}\)</span> is the Dirac measure at the point <span class="process-math">\(x_n\text{.}\)</span> </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-discrete-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.4.12"><a href="#chap-differentation-6-20" title="Copy heading and permalink for Definition 7.4.12" aria-label="Copy heading and permalink for Definition 7.4.12">🔗</a></div></article><article class="remark remark-like" id="chap-differentation-6-21"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 7.4.10"><a href="#def-discrete" title="Copy heading and permalink for Definition 7.4.10" aria-label="Copy heading and permalink for Definition 7.4.10">🔗</a></div></article><article class="remark remark-like" id="chap-differentation-6-19"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="chap-differentation-6-21-1">Note that, if <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> is a discrete Borel signed-measure, then the series <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is absolutely convergent.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chap-differentation-6-19-1">Note that, if <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> is a discrete Borel signed-measure, then the series <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is absolutely convergent.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chap-differentation-6-21-2">Conversely, if <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is an absolutely convergent series, and <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> is a countable collection of points in a closed interval <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\sum_{n} a_n \delta_{x_n}\)</span> is a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{,}\)</span> (<a href="chap-differentation-7.html#exer-discrete-measure" class="xref" data-knowl="./knowl/xref/exer-discrete-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.8">Exercise 7.5.8</a>).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-21-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chap-differentation-6-19-2">Conversely, if <span class="process-math">\(\sum_{n=1}^\infty a_n\)</span> is an absolutely convergent series, and <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> is a countable collection of points in a closed interval <span class="process-math">\([a,b]\text{,}\)</span> then <span class="process-math">\(\sum_{n} a_n \delta_{x_n}\)</span> is a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{,}\)</span> (<a href="chap-differentation-7.html#exer-discrete-measure" class="xref" data-knowl="./knowl/xref/exer-discrete-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.5.8">Exercise 7.5.8</a>).<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 7.4.13"><a href="#chap-differentation-6-21" title="Copy heading and permalink for Remark 7.4.13" aria-label="Copy heading and permalink for Remark 7.4.13">🔗</a></div></article><div class="para" id="chap-differentation-6-22">It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 7.4.11"><a href="#chap-differentation-6-19" title="Copy heading and permalink for Remark 7.4.11" aria-label="Copy heading and permalink for Remark 7.4.11">🔗</a></div></article><div class="para" id="chap-differentation-6-20">It turns out that discrete Borel measures are (up to removing a continuous measure) all the non-continuous Borel measures. We can now decompose the Lebesgue decomposition further.<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-Lebesgue-decomp-function-further"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="thm-Lebesgue-decomp-function-further-1-1">
 <div class="para">If <span class="process-math">\(\nu\)</span> is a Borel signed-measure on <span class="process-math">\([a,b]\)</span> then there are mutually singular signed Borel measures <span class="process-math">\(\nu_d\text{,}\)</span> <span class="process-math">\(\nu_{sc}\)</span> and <span class="process-math">\(\nu_{ac}\)</span> such that</div>
@@ -900,14 +862,14 @@ f(x) = \sum_{n \colon x_n \leq x}a_n.
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.4.14"><a href="#thm-Lebesgue-decomp-function-further" title="Copy heading and permalink for Theorem 7.4.14" aria-label="Copy heading and permalink for Theorem 7.4.14">🔗</a></div></article><article class="proof" id="thm-Lebesgue-decomp-function-further-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="autopermalink" data-description="Theorem 7.4.12"><a href="#thm-Lebesgue-decomp-function-further" title="Copy heading and permalink for Theorem 7.4.12" aria-label="Copy heading and permalink for Theorem 7.4.12">🔗</a></div></article><article class="proof" id="thm-Lebesgue-decomp-function-further-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para" id="thm-Lebesgue-decomp-function-further-2-1">By the Lebesgue decomposition, <a href="chap-differentation-3.html#thm-lebesegue-decomposition" class="xref" data-knowl="./knowl/xref/thm-lebesegue-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.10: Lebesgue Decomposition Theorem">Theorem 7.1.10</a>, there are mutually singular measures <span class="process-math">\(\nu_s\)</span> and <span class="process-math">\(\nu_{ac}\)</span> where <span class="process-math">\(\nu_s\)</span> is singular, <span class="process-math">\(\nu_{ac}\)</span> is absolutely continuous, and <span class="process-math">\(\nu = \nu_s + \nu_{ac}\text{.}\)</span> It remains to show that we can decompose <span class="process-math">\(\nu_s\)</span> into a discrete part and a continuous part. We will thus assume that <span class="process-math">\(\nu=\nu_s\)</span> is singular.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="thm-Lebesgue-decomp-function-further-2-2">
-<div class="para">First, assume <span class="process-math">\(\nu\)</span> is a measure. Let <span class="process-math">\(f(x) = \nu([a,x])\)</span> be the cumulative distribution function for <span class="process-math">\(\nu\text{.}\)</span> Then <span class="process-math">\(f\)</span> is a right-continuous increasing function on <span class="process-math">\([a,b]\text{.}\)</span> By <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.10">Theorem 7.4.10</a> the set <span class="process-math">\(D\)</span> of discontinuities of <span class="process-math">\(f\)</span> is countable. For each <span class="process-math">\(x \in D\text{,}\)</span> let</div>
+<div class="para">First, assume <span class="process-math">\(\nu\)</span> is a measure. Let <span class="process-math">\(f(x) = \nu([a,x])\)</span> be the cumulative distribution function for <span class="process-math">\(\nu\text{.}\)</span> Then <span class="process-math">\(f\)</span> is a right-continuous increasing function on <span class="process-math">\([a,b]\text{.}\)</span> By <a href="chap-differentation-6.html#thm-bv-countable-discont" class="xref" data-knowl="./knowl/xref/thm-bv-countable-discont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8">Theorem 7.4.8</a> the set <span class="process-math">\(D\)</span> of discontinuities of <span class="process-math">\(f\)</span> is countable. For each <span class="process-math">\(x \in D\text{,}\)</span> let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-bv-countable-discont.html" id="thm-Lebesgue-decomp-function-further-2-2-10">
 \begin{equation*}
-a_x = f(x) - lim_{y\rightarrow d^-}f(y)\neq 0.
+a_x = f(x) - \lim_{y\rightarrow x^-}f(y)\neq 0.
 \end{equation*}
 </div>
 <div class="para">Note that the sequence <span class="process-math">\(\sum_{x\in D}a_x\)</span> is absolutely convergent, since <span class="process-math">\(f\)</span> is of bounded variation. Let <span class="process-math">\(\nu_d\)</span> be the discrete Borel signed-measure</div>
@@ -934,61 +896,61 @@ a_x = f(x) - lim_{y\rightarrow d^-}f(y)\neq 0.
 <div class="para">Hence <span class="process-math">\(\nu_{sc}\)</span> is continuous, completing the proof</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm-Lebesgue-decomp-function-further-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.4.14.1"><a href="#thm-Lebesgue-decomp-function-further-2" title="Copy heading and permalink for Proof 7.4.14.1" aria-label="Copy heading and permalink for Proof 7.4.14.1">🔗</a></div></article><div class="para logical" id="chap-differentation-6-24">
+<div class="autopermalink" data-description="Proof 7.4.12.1"><a href="#thm-Lebesgue-decomp-function-further-2" title="Copy heading and permalink for Proof 7.4.12.1" aria-label="Copy heading and permalink for Proof 7.4.12.1">🔗</a></div></article><div class="para logical" id="chap-differentation-6-22">
 <div class="para">Let <span class="process-math">\(H\)</span> be the Heaviside function on <span class="process-math">\(\mathbb{R}\text{.}\)</span> That is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-dirac-cdf.html" id="chap-differentation-6-24-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exer-dirac-cdf.html" id="chap-differentation-6-22-4">
 \begin{equation*}
 H(x) = \begin{cases} 0 &amp; x&lt;0 \\ 1 &amp; x \geq 0.\end{cases}
 \end{equation*}
 </div>
 <div class="para">The Heaviside function is the cumulative distribution function for the Dirac measure at <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\delta_0\)</span> (see <a href="chap-lebesgue-measure-6.html#exer-dirac-cdf" class="xref" data-knowl="./knowl/xref/exer-dirac-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.4.8">Exercise 3.4.8</a>). Thus, if <span class="process-math">\(x_0 \in \mathbb{R}\text{,}\)</span> then the cumulative distribution function for the Dirac measure <span class="process-math">\(\delta_{x_0}\)</span> is <span class="process-math">\(H(x-x_0).\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="corollary theorem-like" id="chap-differentation-6-25"><h3 class="heading">
-<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="corollary theorem-like" id="chap-differentation-6-23"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="chap-differentation-6-25-1-1">
+<div class="para logical" id="chap-differentation-6-23-1-1">
 <div class="para">Let <span class="process-math">\(f\)</span> be a right-continuous function of bounded variation on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then there are functions <span class="process-math">\(f_d\text{,}\)</span> <span class="process-math">\(f_{sc}\text{,}\)</span> and <span class="process-math">\(f_{ac}\)</span> on <span class="process-math">\([a,b]\)</span> such that</div>
-<ol class="decimal" id="chap-differentation-6-25-1-1-7">
-<li id="chap-differentation-6-25-1-1-7-1">
-<div class="para" id="p-derived-chap-differentation-6-25-1-1-7-1"><span class="process-math">\(f = f_d + f_{sc} + f_{ac}\text{;}\)</span></div>
-<div class="autopermalink" data-description="Part 1"><a href="#chap-differentation-6-25-1-1-7-1" title="Copy heading and permalink for Part 1" aria-label="Copy heading and permalink for Part 1">🔗</a></div>
+<ol class="decimal" id="chap-differentation-6-23-1-1-7">
+<li id="chap-differentation-6-23-1-1-7-1">
+<div class="para" id="p-derived-chap-differentation-6-23-1-1-7-1"><span class="process-math">\(f = f_d + f_{sc} + f_{ac}\text{;}\)</span></div>
+<div class="autopermalink" data-description="Part 1"><a href="#chap-differentation-6-23-1-1-7-1" title="Copy heading and permalink for Part 1" aria-label="Copy heading and permalink for Part 1">🔗</a></div>
 </li>
-<li id="chap-differentation-6-25-1-1-7-2">
-<div class="para" id="p-derived-chap-differentation-6-25-1-1-7-2">
+<li id="chap-differentation-6-23-1-1-7-2">
+<div class="para" id="p-derived-chap-differentation-6-23-1-1-7-2">
 <span class="process-math">\(f_{ac}\)</span> is absolutely continuous on <span class="process-math">\([a,b]\text{;}\)</span>
 </div>
-<div class="autopermalink" data-description="Part 2"><a href="#chap-differentation-6-25-1-1-7-2" title="Copy heading and permalink for Part 2" aria-label="Copy heading and permalink for Part 2">🔗</a></div>
+<div class="autopermalink" data-description="Part 2"><a href="#chap-differentation-6-23-1-1-7-2" title="Copy heading and permalink for Part 2" aria-label="Copy heading and permalink for Part 2">🔗</a></div>
 </li>
-<li id="chap-differentation-6-25-1-1-7-3">
-<div class="para" id="p-derived-chap-differentation-6-25-1-1-7-3">
+<li id="chap-differentation-6-23-1-1-7-3">
+<div class="para" id="p-derived-chap-differentation-6-23-1-1-7-3">
 <span class="process-math">\(f_{sc}\)</span> is continuous and singular;</div>
-<div class="autopermalink" data-description="Part 3"><a href="#chap-differentation-6-25-1-1-7-3" title="Copy heading and permalink for Part 3" aria-label="Copy heading and permalink for Part 3">🔗</a></div>
+<div class="autopermalink" data-description="Part 3"><a href="#chap-differentation-6-23-1-1-7-3" title="Copy heading and permalink for Part 3" aria-label="Copy heading and permalink for Part 3">🔗</a></div>
 </li>
-<li id="chap-differentation-6-25-1-1-7-4">
-<div class="para" id="p-derived-chap-differentation-6-25-1-1-7-4">there are points <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> in <span class="process-math">\([a,b]\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_n\)</span> such that<div class="displaymath process-math" id="chap-differentation-6-25-1-1-7-4-4">
+<li id="chap-differentation-6-23-1-1-7-4">
+<div class="para" id="p-derived-chap-differentation-6-23-1-1-7-4">there are points <span class="process-math">\(\{x_n\}_{n=1}^\infty\)</span> in <span class="process-math">\([a,b]\)</span> and a sequence of real numbers <span class="process-math">\((a_n)_n\)</span> such that<div class="displaymath process-math" id="chap-differentation-6-23-1-1-7-4-4">
 \begin{equation*}
 f_d(x) = \sum_{n=1}^\infty a_nH(x-x_n)
 \end{equation*}
 </div>for all <span class="process-math">\(x \in [a,b]\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Part 4"><a href="#chap-differentation-6-25-1-1-7-4" title="Copy heading and permalink for Part 4" aria-label="Copy heading and permalink for Part 4">🔗</a></div>
+<div class="autopermalink" data-description="Part 4"><a href="#chap-differentation-6-23-1-1-7-4" title="Copy heading and permalink for Part 4" aria-label="Copy heading and permalink for Part 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 7.4.15"><a href="#chap-differentation-6-25" title="Copy heading and permalink for Corollary 7.4.15" aria-label="Copy heading and permalink for Corollary 7.4.15">🔗</a></div></article><article class="proof" id="chap-differentation-6-25-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
-<div class="para logical" id="chap-differentation-6-25-2-1">
-<div class="para">Let <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> be a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{.}\)</span> The result follows from <a href="chap-differentation-6.html#thm-Lebesgue-decomp-function-further" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-decomp-function-further.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.14">Theorem 7.4.14</a>, on noting that if <span class="process-math">\(f(x)=\nu([a,x])\text{,}\)</span> then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-25-2-1-5">
+<div class="autopermalink" data-description="Corollary 7.4.13"><a href="#chap-differentation-6-23" title="Copy heading and permalink for Corollary 7.4.13" aria-label="Copy heading and permalink for Corollary 7.4.13">🔗</a></div></article><article class="proof" id="chap-differentation-6-23-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="chap-differentation-6-23-2-1">
+<div class="para">Let <span class="process-math">\(\nu = \sum_{n=1}^\infty a_n\delta_{x_n}\)</span> be a discrete Borel signed-measure on <span class="process-math">\([a,b]\text{.}\)</span> The result follows from <a href="chap-differentation-6.html#thm-Lebesgue-decomp-function-further" class="xref" data-knowl="./knowl/xref/thm-Lebesgue-decomp-function-further.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.12">Theorem 7.4.12</a>, on noting that if <span class="process-math">\(f(x)=\nu([a,x])\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-Lebesgue-decomp-function-further.html" id="chap-differentation-6-23-2-1-5">
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty a_nH(x-x_n) = \sum_{n\colon x_n\leq x}a_n. 
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-25-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chap-differentation-6-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.4.15.1"><a href="#chap-differentation-6-25-2" title="Copy heading and permalink for Proof 7.4.15.1" aria-label="Copy heading and permalink for Proof 7.4.15.1">🔗</a></div></article><div class="autopermalink" data-description="Section 7.4: The Lebesgue Decomposition of function"><a href="#chap-differentation-6" title="Copy heading and permalink for Section 7.4: The Lebesgue Decomposition of function" aria-label="Copy heading and permalink for Section 7.4: The Lebesgue Decomposition of function">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 7.4.13.1"><a href="#chap-differentation-6-23-2" title="Copy heading and permalink for Proof 7.4.13.1" aria-label="Copy heading and permalink for Proof 7.4.13.1">🔗</a></div></article><div class="autopermalink" data-description="Section 7.4: The Lebesgue Decomposition of function"><a href="#chap-differentation-6" title="Copy heading and permalink for Section 7.4: The Lebesgue Decomposition of function" aria-label="Copy heading and permalink for Section 7.4: The Lebesgue Decomposition of function">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-ftoc.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-differentation-7.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

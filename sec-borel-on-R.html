@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.2.2';
+eBookConfig.runestone_version = '8.2.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -792,22 +792,65 @@ g(d) - g(c) \leq  \sum_{k=1}^\infty  [g(d_k) - g(c_k)],
 </h3>
 <div class="para" id="cor-cdf-and-Borel-1">Let <span class="process-math">\([a,b]\)</span> be a closed bounded interval in <span class="process-math">\(\mathbb{R}\text{.}\)</span> Every Borel measure on <span class="process-math">\([a,b]\)</span> is uniquely determined by its cumulative distribution function.<div class="autopermalink" data-description="Paragraph"><a href="#cor-cdf-and-Borel-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 3.3.10"><a href="#cor-cdf-and-Borel" title="Copy heading and permalink for Corollary 3.3.10" aria-label="Copy heading and permalink for Corollary 3.3.10">🔗</a></div></article><div class="para" id="sec-borel-on-R-18">We end by noting that Borel measures on the real line have regularity properties similar to those of the Lebesgue measure.<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Corollary 3.3.10"><a href="#cor-cdf-and-Borel" title="Copy heading and permalink for Corollary 3.3.10" aria-label="Copy heading and permalink for Corollary 3.3.10">🔗</a></div></article><div class="para" id="sec-borel-on-R-18">The above results show the relationship between Borel measures on closed intervals and right-continuous increasing functions. In most of your studies of calculus and analysis, you have studied <em class="emphasis">continuous</em> functions, not just right-continuous functions. What Borel measures have continuous cumulative distribution functions? We answer this question now.<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="sec-borel-on-R-19"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="proposition theorem-like" id="prop-cont-measure"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec-borel-on-R-19-1-1">
+<div class="para" id="prop-cont-measure-1-1">Let <span class="process-math">\(\nu\)</span> be a Borel measure on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> and let <span class="process-math">\(f(x) = \nu([a,x))\)</span> be the cumulative distribution of <span class="process-math">\(\nu\text{.}\)</span> Then <span class="process-math">\(\nu(\{x\})=0\)</span> for all <span class="process-math">\(x \in [a,b]\)</span> if and only if <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-cont-measure-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 3.3.11"><a href="#prop-cont-measure" title="Copy heading and permalink for Proposition 3.3.11" aria-label="Copy heading and permalink for Proposition 3.3.11">🔗</a></div></article><article class="proof" id="prop-cont-measure-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="prop-cont-measure-2-1">
+<div class="para">By <a href="sec-borel-on-R.html#thm-cdf" class="xref" data-knowl="./knowl/xref/thm-cdf.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.6">Theorem 3.3.6</a>, <span class="process-math">\(f\)</span> is right-continuous. Assume that <span class="process-math">\(f\)</span> is continuous and <span class="process-math">\(f(a) = 0\text{.}\)</span> Since <span class="process-math">\(f(a) = 0\text{,}\)</span> <span class="process-math">\(\nu(\{a\}) = 0\text{.}\)</span> Take any <span class="process-math">\(x \in (a,b]\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-cdf.html" id="prop-cont-measure-2-1-8">
+\begin{equation*}
+\begin{aligned}
+\nu(\{x\}) &amp;= \lim_{n\rightarrow \infty}\nu((x-1/n,x]) \\
+&amp; = f(x) - \lim_{n\rightarrow \infty}f(x-1/n)\\
+&amp;= f(x) - f(x) = 0,
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">by the (left) continuity of <span class="process-math">\(f\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-cont-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-cont-measure-2-2">
+<div class="para">Conversely, suppose <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span> Then <span class="process-math">\(f(a) = \nu(\{a\}) =0\text{.}\)</span> If <span class="process-math">\(x \in (a,b]\)</span> then</div>
+<div class="displaymath process-math" id="prop-cont-measure-2-2-5">
+\begin{equation*}
+\lim_{n\rightarrow \infty} f(x) - f(x-1/n) = 
+lim_{n\rightarrow \infty} \nu((x-1/n,x])=\nu(\{x\}) = 0.
+\end{equation*}
+</div>
+<div class="para">Hence <span class="process-math">\(f\)</span> is left-continuous, and therefore continuous, at <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-cont-measure-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.3.11.1"><a href="#prop-cont-measure-2" title="Copy heading and permalink for Proof 3.3.11.1" aria-label="Copy heading and permalink for Proof 3.3.11.1">🔗</a></div></article><div class="para" id="sec-borel-on-R-20">
+<a href="sec-borel-on-R.html#prop-cont-measure" class="xref" data-knowl="./knowl/xref/prop-cont-measure.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.3.11">Proposition 3.3.11</a> gives rise to the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-cont-meas"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-cont-meas-1-1">Let <span class="process-math">\(\nu\)</span> be a Borel measure on a closed interval <span class="process-math">\([a,b]\text{.}\)</span> Then <span class="process-math">\(\nu\)</span> is a <dfn class="terminology">continuous Borel signed-measure</dfn> if <span class="process-math">\(\nu(\{x\}) = 0\)</span> for all <span class="process-math">\(x \in [a,b]\text{.}\)</span> <div class="autopermalink" data-description="Paragraph"><a href="#def-cont-meas-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.3.12"><a href="#def-cont-meas" title="Copy heading and permalink for Definition 3.3.12" aria-label="Copy heading and permalink for Definition 3.3.12">🔗</a></div></article><div class="para" id="sec-borel-on-R-22">We end by noting that Borel measures on the real line have regularity properties similar to those of the Lebesgue measure.<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-borel-on-R-23"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec-borel-on-R-23-1-1">
 <div class="para">Let <span class="process-math">\(\nu\)</span> be a Borel measure on the real line. We say that <span class="process-math">\(\nu\)</span> is <dfn class="terminology">outer regular</dfn> if</div>
-<div class="displaymath process-math" id="sec-borel-on-R-19-1-1-4">
+<div class="displaymath process-math" id="sec-borel-on-R-23-1-1-4">
 \begin{equation*}
 \nu(E) = \inf \{\nu(U) \colon E \subseteq U,\, U \text{ open}\}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-borel-on-R-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.3.11"><a href="#sec-borel-on-R-19" title="Copy heading and permalink for Definition 3.3.11" aria-label="Copy heading and permalink for Definition 3.3.11">🔗</a></div></article><article class="lemma theorem-like" id="lem-regular-borel"><h3 class="heading">
-<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 3.3.13"><a href="#sec-borel-on-R-23" title="Copy heading and permalink for Definition 3.3.13" aria-label="Copy heading and permalink for Definition 3.3.13">🔗</a></div></article><article class="lemma theorem-like" id="lem-regular-borel"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="lem-regular-borel-1-1">
 <div class="para">Let <span class="process-math">\(\nu\)</span> be a Borel measure on a closed interval <span class="process-math">\([a,b]\text{,}\)</span> then</div>
@@ -819,7 +862,7 @@ g(d) - g(c) \leq  \sum_{k=1}^\infty  [g(d_k) - g(c_k)],
 <div class="para">for all Borel sets <span class="process-math">\(E \subseteq [a,b]\text{.}\)</span> That is, Borel measures on closed intervals are outer regular.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-regular-borel-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 3.3.12"><a href="#lem-regular-borel" title="Copy heading and permalink for Lemma 3.3.12" aria-label="Copy heading and permalink for Lemma 3.3.12">🔗</a></div></article><article class="proof" id="lem-regular-borel-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="autopermalink" data-description="Lemma 3.3.14"><a href="#lem-regular-borel" title="Copy heading and permalink for Lemma 3.3.14" aria-label="Copy heading and permalink for Lemma 3.3.14">🔗</a></div></article><article class="proof" id="lem-regular-borel-2"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="lem-regular-borel-2-1">
 <div class="para">Take any Borel set <span class="process-math">\(E \subseteq [a,b]\text{.}\)</span> By the monotonicity of the measure <span class="process-math">\(\nu\)</span>
 </div>
@@ -872,7 +915,7 @@ g(d) - g(c) \leq  \sum_{k=1}^\infty  [g(d_k) - g(c_k)],
 <div class="para">which completes the proof.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-regular-borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.3.12.1"><a href="#lem-regular-borel-2" title="Copy heading and permalink for Proof 3.3.12.1" aria-label="Copy heading and permalink for Proof 3.3.12.1">🔗</a></div></article><div class="autopermalink" data-description="Section 3.3: Borel measures on \mathbb{R}"><a href="#sec-borel-on-R" title="Copy heading and permalink for Section 3.3: Borel measures on \mathbb{R}" aria-label="Copy heading and permalink for Section 3.3: Borel measures on \mathbb{R}">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 3.3.14.1"><a href="#lem-regular-borel-2" title="Copy heading and permalink for Proof 3.3.14.1" aria-label="Copy heading and permalink for Proof 3.3.14.1">🔗</a></div></article><div class="autopermalink" data-description="Section 3.3: Borel measures on \mathbb{R}"><a href="#sec-borel-on-R" title="Copy heading and permalink for Section 3.3: Borel measures on \mathbb{R}" aria-label="Copy heading and permalink for Section 3.3: Borel measures on \mathbb{R}">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-nonmeasurable.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap-lebesgue-measure-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
