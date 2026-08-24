@@ -6207,26 +6207,26 @@ var ptx_lunr_docs = [
   "url": "backmatter-4.html",
   "type": "Appendix",
   "number": "D",
-  "title": "List of Symbols",
-  "body": " List of Symbols   "
+  "title": "List of symbols and figures",
+  "body": "List of symbols and figures    "
 },
 {
   "id": "backmatter-5",
   "level": "1",
   "url": "backmatter-5.html",
-  "type": "Index",
+  "type": "References",
   "number": "",
-  "title": "Index",
-  "body": " Index   "
+  "title": "References",
+  "body": "  Agler, Jim, McCarthy, John E.  Pick interpolation and {H  2002  44  American Mathematical Society, Providence, RI     Allaart, Pieter C., Kawamura, Kiko  The {T  Real Anal. Exchange  2011\/12  37  1     Blass, Andreas  Existence of bases implies the axiom of choice  Axiomatic set theory  1984  31  Amer. Math. Soc., Providence, RI     Cartan, Henri  Sur la mesure de {H}aar  C. R. Acad. Sci. Paris  211  1940  759--762  0001-4036    Dini, U.  Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali  1878    Dudley, R. M.  Real analysis and probability  2002  74  Cambridge University Press, Cambridge     Folland, Gerald B.  Real Analysis: Modern Techniques and Their Applications  1999  John Wiley & Sons, Inc., New York     Fremlin, D.H.  Measure Theory  II  https:\/\/www1.essex.ac.uk\/maths\/people\/fremlin\/mt.htm    Pedersen, Gert K.  The Existence and Uniqueness of the Haar integral on a locally compact topological group  2000    Riesz, Frigyes, Sz.-Nagy, B\\'ela  Functional analysis  1990  Dover Publications, Inc., New York     Lebesgue, Henri  Int{\\'e  Annali di Matematica Pura ed Applicata (1898-1922)  1902  7  1  Springer     Riesz, Frigyes  Sur les op\\'{e  Comptes rendus hebdomadaires des s\\'{e  1909  149     Riesz, Frigyes  Sur les op\\'{e}rateurs lin\\'{e}aires  2015    Royden, H.L., Fitzpatrick, P.M.  Real Analysis  2017  Pearson    Schwarz, HA  Neues Beispiel einer stetigen, nicht differentiirbaren Funktion  1874  Schaffhausen    Stromberg, Karl R.  Introduction to classical real analysis  1981  Wadsworth International, Belmont, CA     Takagi, Teiji  Collected papers  2014  Springer, Heidelberg     Thim, Johan  Continuous nowhere differentiable functions ({D  2003    Classics on fractals  2004  Westview Press. Advanced Book Program, Boulder, CO     van der Waerden, B. L.  Ein einfaches {B  Math. Z.  1930  32  1     Volterra, Vito  Sui principi del calcolo integrale  Opere matematiche: memorie e note\/Vito Volterra  1881  1  Accademia Nazionale dei Lincei     Weierstrass, Karl  Mathematische {W  1967  Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint Corp., New York     Wikipedia  Heine-Borel Theorem  https:\/\/en.wikipedia.org\/wiki\/Heine-Borel_theorem  accessed 2026-06-10    Wikipedia  Schröder–Bernstein theorem  https:\/\/en.wikipedia.org\/wiki\/Schroder-Bernstein_theorem  accessed 2026-06-02    Willard, Stephen  General topology  2004  Dover Publications, Inc., Mineola, NY    "
 },
 {
   "id": "backmatter-6",
   "level": "1",
   "url": "backmatter-6.html",
-  "type": "References",
+  "type": "Index",
   "number": "",
-  "title": "References",
-  "body": "  Agler, Jim, McCarthy, John E.  Pick interpolation and {H  2002  44  American Mathematical Society, Providence, RI     Allaart, Pieter C., Kawamura, Kiko  The {T  Real Anal. Exchange  2011\/12  37  1     Blass, Andreas  Existence of bases implies the axiom of choice  Axiomatic set theory  1984  31  Amer. Math. Soc., Providence, RI     Cartan, Henri  Sur la mesure de {H}aar  C. R. Acad. Sci. Paris  211  1940  759--762  0001-4036    Dini, U.  Fondamenti Per La Teorica Delle Funzioni Di Variabili Reali  1878    Dudley, R. M.  Real analysis and probability  2002  74  Cambridge University Press, Cambridge     Folland, Gerald B.  Real Analysis: Modern Techniques and Their Applications  1999  John Wiley & Sons, Inc., New York     Fremlin, D.H.  Measure Theory  II  https:\/\/www1.essex.ac.uk\/maths\/people\/fremlin\/mt.htm    Pedersen, Gert K.  The Existence and Uniqueness of the Haar integral on a locally compact topological group  2000    Riesz, Frigyes, Sz.-Nagy, B\\'ela  Functional analysis  1990  Dover Publications, Inc., New York     Lebesgue, Henri  Int{\\'e  Annali di Matematica Pura ed Applicata (1898-1922)  1902  7  1  Springer     Riesz, Frigyes  Sur les op\\'{e  Comptes rendus hebdomadaires des s\\'{e  1909  149     Riesz, Frigyes  Sur les op\\'{e}rateurs lin\\'{e}aires  2015    Royden, H.L., Fitzpatrick, P.M.  Real Analysis  2017  Pearson    Schwarz, HA  Neues Beispiel einer stetigen, nicht differentiirbaren Funktion  1874  Schaffhausen    Stromberg, Karl R.  Introduction to classical real analysis  1981  Wadsworth International, Belmont, CA     Takagi, Teiji  Collected papers  2014  Springer, Heidelberg     Thim, Johan  Continuous nowhere differentiable functions ({D  2003    Classics on fractals  2004  Westview Press. Advanced Book Program, Boulder, CO     van der Waerden, B. L.  Ein einfaches {B  Math. Z.  1930  32  1     Volterra, Vito  Sui principi del calcolo integrale  Opere matematiche: memorie e note\/Vito Volterra  1881  1  Accademia Nazionale dei Lincei     Weierstrass, Karl  Mathematische {W  1967  Georg Olms Verlagsbuchhandlung, Hildesheim; Johnson Reprint Corp., New York     Wikipedia  Heine-Borel Theorem  https:\/\/en.wikipedia.org\/wiki\/Heine-Borel_theorem  accessed 2026-06-10    Wikipedia  Schröder–Bernstein theorem  https:\/\/en.wikipedia.org\/wiki\/Schroder-Bernstein_theorem  accessed 2026-06-02    Willard, Stephen  General topology  2004  Dover Publications, Inc., Mineola, NY    "
+  "title": "Index",
+  "body": " Index   "
 },
 {
   "id": "backmatter-7",
