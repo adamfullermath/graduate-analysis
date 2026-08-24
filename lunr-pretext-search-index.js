@@ -6207,8 +6207,8 @@ var ptx_lunr_docs = [
   "url": "backmatter-4.html",
   "type": "Appendix",
   "number": "D",
-  "title": "List of symbols and figures",
-  "body": "List of symbols and figures    "
+  "title": "List of notation",
+  "body": "List of notation   "
 },
 {
   "id": "backmatter-5",
