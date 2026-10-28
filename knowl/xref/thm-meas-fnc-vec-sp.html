@@ -47,25 +47,25 @@
 A = \{ x\in E_0 \colon f(x) + g(x) &lt; c \}
 \end{equation*}
 </div>
-<div class="para">is a measurable set. Take <span class="process-math">\(x_0 \in A\text{.}\)</span> Then <span class="process-math">\(f(x_0) + g(x_0) &lt; q\text{.}\)</span> By the density of the rationals <span class="process-math">\(\mathbb{Q}\)</span> in <span class="process-math">\(\mathbb{R}\text{,}\)</span> there is a <span class="process-math">\(q \in \mathbb{Q}\)</span> such that</div>
+<div class="para">is a measurable set. For each <span class="process-math">\(q \in \bQ\)</span> define measurable sets <span class="process-math">\(A_q\)</span> and <span class="process-math">\(B_q\)</span> by</div>
+<div class="displaymath process-math">
+\begin{align*}
+A_q \amp=  \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\},\text{ and}\\
+B_q \amp=  \{x \in E_0 \colon g(x) &lt; q\} \cap \{x \in E_0 \colon f(x) &lt; c - q\}.
+\end{align*}
+</div>
+<div class="para">Take <span class="process-math">\(x_0 \in A\text{.}\)</span> Then <span class="process-math">\(f(x_0) + g(x_0) &lt; c\text{.}\)</span> By the density of the rationals <span class="process-math">\(\mathbb{Q}\)</span> in <span class="process-math">\(\mathbb{R}\text{,}\)</span> there is a <span class="process-math">\(q \in \mathbb{Q}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(x_0) + g(x_0) &lt; q &lt; c.
 \end{equation*}
 </div>
-<div class="para">Thus</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}.
-\end{equation*}
+<div class="para">Thus <span class="process-math">\(x_0 \in A_q\)</span> or <span class="process-math">\(x_0 \in B_q.\)</span>
 </div>
-<div class="para">Conversely, if <span class="process-math">\(x_0 \in E_0\)</span> and there is <span class="process-math">\(q \in \mathbb{Q}\)</span> such that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x_0 \in \{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\},
-\end{equation*}
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">then</div>
+<div class="para logical">
+<div class="para">Conversely, if <span class="process-math">\(x_0 \in E_0\)</span> and there is <span class="process-math">\(q \in \mathbb{Q}\)</span> such that <span class="process-math">\(x_0 \in A_q \cup B_q\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(x_0) + g(x_0) &lt; q + (c-q) = c.
@@ -74,12 +74,12 @@ f(x_0) + g(x_0) &lt; q + (c-q) = c.
 <div class="para">Thus</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A = \bigcup_{q\in \mathbb{Q}}[\{x \in E_0 \colon f(x) &lt; q\} \cap \{x \in E_0 \colon g(x) &lt; c - q\}].
+A = \bigcup_{q\in \mathbb{Q}}[A_q \cup B_q].
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are measurable the sets <span class="process-math">\(\{x \in E \colon f(x) &lt; q\}\)</span> and <span class="process-math">\(\{x \in E \colon g(x) &lt; c - q\}\)</span> are measurable for every <span class="process-math">\(q \in \mathbb{Q}\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is a measurable set. It follows that <span class="process-math">\(f+g\)</span> is a measurable function on <span class="process-math">\(E_0\text{.}\)</span>
+<div class="para">Since <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are measurable the sets <span class="process-math">\(A_q\)</span> and <span class="process-math">\(B_q\)</span> are measurable for every <span class="process-math">\(q \in \mathbb{Q}\text{.}\)</span> Hence <span class="process-math">\(A\)</span> is a measurable set. It follows that <span class="process-math">\(f+g\)</span> is a measurable function on <span class="process-math">\(E_0\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">Note that</div>
@@ -95,9 +95,9 @@ fg = \frac{1}{2}(f^2 +g^2 - (f-g)^2).
 \end{equation*}
 </div>
 <div class="para">is a measurable set. If <span class="process-math">\(c&lt;0\)</span> then <span class="process-math">\(\{x \in E \colon f(x)^2 &gt; c \}= \emptyset\)</span> is also measurable. Thus <span class="process-math">\(f^2\)</span> is a measurable function.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">If <span class="process-math">\((X,\mathcal{F},\mu)\)</span> is a complete measure space we can take <span class="process-math">\(E_0 = E\)</span> in the above cases, by <a href="chap-meas-fun-3.html#prop-f-g-a-e" class="xref" data-knowl="./knowl/xref/prop-f-g-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.6">Proposition 5.1.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">If <span class="process-math">\((X,\mathcal{F},\mu)\)</span> is a complete measure space we can take <span class="process-math">\(E_0 = E\)</span> in the above cases, by <a href="chap-meas-fun-3.html#prop-f-g-a-e" class="xref" data-knowl="./knowl/xref/prop-f-g-a-e.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.1.6">Proposition 5.1.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-meas-fnc-vec-sp-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 5.1.8.1"><a href="#thm-meas-fnc-vec-sp-2" title="Copy heading and permalink for Proof 5.1.8.1" aria-label="Copy heading and permalink for Proof 5.1.8.1">🔗</a></div></article><span class="incontext"><a class="internal" href="chap-meas-fun-3.html#thm-meas-fnc-vec-sp">in-context</a></span>
 </body>
